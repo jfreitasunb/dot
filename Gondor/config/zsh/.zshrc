@@ -26,6 +26,7 @@ alias riv='cd /ArquivosLinux/Dropbox/php/vagrant/rivendel'
 alias vul='vagrant up laravel'
 alias vud='vagrant halt laravel'
 alias vsl='vagrant ssh laravel'
+alias avell='teclado_avell.sh'
 
 plugins=(
     git
