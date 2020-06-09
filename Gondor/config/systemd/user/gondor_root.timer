@@ -2,7 +2,8 @@
 Description=Agendamento de backup do diretório etc
 
 [Timer]
-OnCalendar=*:0/1
+OnCalendar=daily
+AccuracySec=12h
 Persisten=true
 
 [Install]
