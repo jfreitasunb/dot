@@ -1,0 +1,9 @@
+[Unit]
+Description=Agendamento de backup do diretório etc
+
+[Timer]
+OnCalendar=*:0/1
+Persisten=true
+
+[Install]
+WantedBy=basic.target
