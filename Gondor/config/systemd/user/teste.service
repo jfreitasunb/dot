@@ -1,0 +1,9 @@
+[Unit]
+Description=Testando service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/jfreitas/scripts/teste.sh
+
+[Install]
+WantedBy=multi-user.target
