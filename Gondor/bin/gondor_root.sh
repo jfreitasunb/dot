@@ -24,6 +24,8 @@ tar -cvjf $LOCAL_TAR$NOME_BACKUP $LOCAL_TEMPORARIO_ROOT
 
 cp $NOME_BACKUP $LOCAL_BACKUP
 
+chown -R jfreitas:users $LOCAL_BACKUP
+
 rm $NOME_BACKUP
 
 HOJE=$(date +'%Y-%m-%d')
