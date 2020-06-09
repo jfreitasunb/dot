@@ -3,7 +3,7 @@ Description=Backup do diretório etc
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash /home/jfreitas/bin/gondor_root.sh
+ExecStart=/bin/bash /home/jfreitas/.bin/gondor_root.sh
 
 [Install]
 WantedBy=default.target
