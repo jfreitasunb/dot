@@ -1,0 +1,15 @@
+call plug#begin('~/.vim/plugged')
+
+"Fugitive Vim Github Wrapper
+Plug 'tpope/vim-fugitive'
+Plug 'lifepillar/vim-solarized8'
+Plug 'honza/vim-snippets'
+Plug 'rudrab/vimf90'
+Plug 'SirVer/ultisnips'
+call plug#end()
+
+"let g:VimF90Leader = "`"
+let g:solarized_termcolors=256
+set background=dark
+set t_Co=256
+colorscheme solarized8
