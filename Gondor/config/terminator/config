@@ -11,7 +11,7 @@
       order = 0
       parent = ""
       position = 50:77
-      size = 1271, 800
+      size = 1271, 1000
       title = jfreitas@gondor: ~
       type = Window
     [[[terminal1]]]
