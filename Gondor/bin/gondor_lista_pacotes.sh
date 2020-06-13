@@ -2,9 +2,13 @@
 
 # ROTATIVIDADE=10
 
-NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
+# NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
 
-NOME_BACKUP_YAY="gondor_lista_pacotes_instalados_YAY_"$(date +%Y-%m-%d)".lst"
+# NOME_BACKUP_YAY="gondor_lista_pacotes_instalados_YAY_"$(date +%Y-%m-%d)".lst"
+# 
+NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN.lst"
+
+NOME_BACKUP_YAY="gondor_lista_pacotes_instalados_YAY.lst"
 
 LOCAL_BACKUP="/ArquivosLinux/Dropbox/Backups/Gondor/Backup-Diario/"
 
