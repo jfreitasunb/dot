@@ -8,7 +8,7 @@ ALGEBRA1="/home/jfreitas/Bitbucket/algebra1/"
 DEST_ALGEBRA1="/ArquivosLinux/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2020-1"
 
 AULASONLINE="/home/jfreitas/Bitbucket/video_aulas"
-AULASONLINE="/ArquivosLinux/Dropbox/UnB/Disciplinas/Graduacao/video_aulas"
+DEST_AULASONLINE="/ArquivosLinux/Dropbox/UnB/Disciplinas/Graduacao/video_aulas"
 
 #ALGEBRA_LINEAR="/home/jfreitas/Bitbucket/algebra_linear/"
 #DEST_ALGEBRA_LINEAR="/ArquivosLinux/Dropbox/UnB/Disciplinas/Graduacao/Algebra_Linear/2019-1"
@@ -39,7 +39,7 @@ DEST_INSCRICOESEVENTOSMAT="/ArquivosLinux/Dropbox/UnB/Projetos-PHP/inscricoeseve
 
 rsync -avz --exclude-from=$EXCLUDE_LIST_TEX $ALGEBRA1 $DEST_ALGEBRA1
 
-rsync -avz --exclude-from=$EXCLUDE_LIST_TEX $AULASONLINE $DEST_ALGEBRA1
+rsync -avz --exclude-from=$EXCLUDE_LIST_TEX $AULASONLINE $DEST_AULASONLINE
 
 #rsync -avz --exclude-from=$EXCLUDE_LIST_TEX $ALGEBRA_LINEAR $DEST_ALGEBRA_LINEAR
 
