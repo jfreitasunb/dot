@@ -8,7 +8,7 @@ ALGEBRA1="/home/jfreitas/Bitbucket/algebra1/"
 DEST_ALGEBRA1="/ArquivosLinux/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2020-1"
 
 AULASONLINE="/home/jfreitas/Bitbucket/video_aulas"
-DEST_AULASONLINE="/ArquivosLinux/Dropbox/UnB/Disciplinas/Graduacao/video_aulas"
+DEST_AULASONLINE="/ArquivosLinux/Dropbox/UnB/Disciplinas/Graduacao"
 
 #ALGEBRA_LINEAR="/home/jfreitas/Bitbucket/algebra_linear/"
 #DEST_ALGEBRA_LINEAR="/ArquivosLinux/Dropbox/UnB/Disciplinas/Graduacao/Algebra_Linear/2019-1"
