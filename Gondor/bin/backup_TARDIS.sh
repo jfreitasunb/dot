@@ -33,7 +33,11 @@ if [ -d "$BACKUP_DESTINATION" ] ; then
 
   BACKUP_SOURCE="/ArquivosLinux/Dropbox/"
 
+<<<<<<< HEAD
   rsync -avzzc --delete $BACKUP_SOURCE $BACKUP_DESTINATION
+=======
+  rsync -avzc --delete $BACKUP_SOURCE $BACKUP_DESTINATION
+>>>>>>> master
 
   umount $BACKUP_DEVICE
   
