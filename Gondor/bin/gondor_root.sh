@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 ROTATIVIDADE=10
 
@@ -14,7 +14,7 @@ LOCAL_TAR="/ArquivosLinux/Backup_Temporario/"
 
 LOCAL_BACKUP="/ArquivosLinux/Dropbox/Backups/Gondor/Backup-Diario/"
 
-rsync -avzc --no-links --delete --exclude-from=$EXCLUDE_LIST /etc $LOCAL_TEMPORARIO_ROOT
+rsync -avzzc --links --delete --exclude-from=$EXCLUDE_LIST /etc $LOCAL_TEMPORARIO_ROOT
 
 # rsync -avzc --no-links --delete --exclude-from=$EXCLUDE_LIST /var/lib/vnstat $LOCAL_TEMPORARIO_ROOT
 

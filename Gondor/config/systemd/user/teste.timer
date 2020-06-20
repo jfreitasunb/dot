@@ -1,9 +1,0 @@
-[Unit]
-Description=Testando
-
-[Timer]
-OnCalendar=*:0/1
-Persisten=true
-
-[Install]
-WantedBy=basic.target
