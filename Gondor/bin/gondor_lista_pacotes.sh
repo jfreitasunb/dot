@@ -4,6 +4,8 @@
 
 # NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
 
+NOME_BACKUP_GNOME="gondor_gnome_settings_"$(date +%Y-%m-%d)".ini"
+
 # NOME_BACKUP_YAY="gondor_lista_pacotes_instalados_YAY_"$(date +%Y-%m-%d)".lst"
 # 
 NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN.lst"
@@ -19,6 +21,12 @@ pacman -Qqe | grep -v "$(pacman -Qqm)" > $LOCAL_BACKUP$NOME_BACKUP_PACMAN
 pacman -Qqm > $LOCAL_BACKUP$NOME_BACKUP_YAY
 
 sed -i '/yay/d' $LOCAL_BACKUP$NOME_BACKUP_YAY
+
+#salva configuraçoes do gnome
+dconf dump / > $LOCAL_BACKUP$NOME_BACKUP_GNOME
+
+#importa as configuraçoes do gnome
+#dconf load / < dconf-settings.ini
 
 # for filename in $LOCAL_BACKUP*.lst; do
 

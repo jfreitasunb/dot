@@ -14,20 +14,18 @@ LOCAL_TAR="/ArquivosLinux/Backup_Temporario/"
 
 LOCAL_BACKUP="/ArquivosLinux/Dropbox/Backups/Gondor/Backup-Diario/"
 
-rsync -avzzc --links --delete --exclude-from=$EXCLUDE_LIST /etc $LOCAL_TEMPORARIO_ROOT
-
-rsync -avzc --links --delete --exclude-from=$EXCLUDE_LIST /etc $LOCAL_TEMPORARIO_ROOT
+sudo rsync -avzzc --links --delete --exclude-from=$EXCLUDE_LIST /etc $LOCAL_TEMPORARIO_ROOT
 
 
 # rsync -avzc --no-links --delete --exclude-from=$EXCLUDE_LIST /var/lib/vnstat $LOCAL_TEMPORARIO_ROOT
 
 cd $LOCAL_TAR
 
-tar -cvjf $LOCAL_TAR$NOME_BACKUP $LOCAL_TEMPORARIO_ROOT
+sudo tar -cvjf $LOCAL_TAR$NOME_BACKUP $LOCAL_TEMPORARIO_ROOT
 
 cp $NOME_BACKUP $LOCAL_BACKUP
 
-# chown -R jfreitas:users $LOCAL_BACKUP
+sudo chown -R jfreitas:users $LOCAL_BACKUP
 
 rm $NOME_BACKUP
 
