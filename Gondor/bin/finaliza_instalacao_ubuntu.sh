@@ -29,6 +29,48 @@ apt -f install
 
 cd ../
 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/ryanoasis/nerd-fonts.git
+
+cd nerd-fonts
+
+./install FiraMono
+
+./install InconsolataGo
+
+./install Ubuntu
+
+./install UbuntuMono
+
+./install Meslo
+
+./install Monoid
+
+./install FiraCode
+
+cd ../
+
+rm -rf nerd-fonts
+
+vagrant plugin install vagrant-libvirt
+
+virsh pool-destroy default
+
+virsh pool-undefine default
+
+virsh pool-define-as --name default --type dir --target /VMs/KVM
+
+virsh pool-autostart default
+
+virsh pool-start default
+
 timedatectl set-local-rtc 1 --adjust-system-clock
 
 sed -i 's/\/home\/jfreitas:\/bin\/bash/\/home\/jfreitas:\/bin\/zsh/g' /etc/passwd
