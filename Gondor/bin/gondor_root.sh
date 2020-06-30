@@ -23,11 +23,11 @@ cd $LOCAL_TAR
 
 sudo tar -cvjf $LOCAL_TAR$NOME_BACKUP $LOCAL_TEMPORARIO_ROOT
 
-cp $NOME_BACKUP $LOCAL_BACKUP
+sudo cp $NOME_BACKUP $LOCAL_BACKUP
 
 sudo chown -R jfreitas:users $LOCAL_BACKUP
 
-rm $NOME_BACKUP
+sudo rm $NOME_BACKUP
 
 HOJE=$(date +'%Y-%m-%d')
 
