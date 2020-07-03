@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 EXCLUDE_LIST_TEX="/ArquivosLinux/Dropbox/Backups/Gondor/excludes/exclude-TEX.list"
 
