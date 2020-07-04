@@ -25,10 +25,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 alias aup='arch-update.sh'
 alias pac='sudo pacman'
 alias riv='cd /ArquivosLinux/Dropbox/php/vagrant/rivendel'
-alias vul='vagrant up laravel'
+alias vul='vagrant up laravel && vagrant rsync-auto'
 alias vud='vagrant halt laravel'
 alias vsl='vagrant ssh laravel'
 alias avell='teclado_avell.sh'
+alias tsm='transmission-remote'
+alias wtsm='watch transmission-remote -l'
 
 plugins=(
     git
