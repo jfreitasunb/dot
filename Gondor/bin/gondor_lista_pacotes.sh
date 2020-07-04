@@ -41,4 +41,5 @@ dconf dump / > $LOCAL_BACKUP$NOME_BACKUP_GNOME
 
 #Para reinstalar
 #sudo apt install `cat pkglist.txt`
-#cat pacman.lst | xargs pacman -S --needed --noconfirm
+#cat ~/gondor_lista_pacotes_instalados_PACMAN.lst | xargs pacman -S --needed --noconfirm
+#yay -S - < ~/gondor_lista_pacotes_instalados_YAY.lst
