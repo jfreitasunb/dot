@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DROPBOX="/ArquivosLinux/Dropbox/"
+
+ONEDRIVE="/ArquivosLinux/OneDrive/"
+
+rsync -avzzc --delete $DROPBOX $ONEDRIVE
