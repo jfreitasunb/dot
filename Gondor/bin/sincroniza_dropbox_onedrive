@@ -1,7 +1,9 @@
 #!/bin/bash
 
+EXCLUDE_LIST="/ArquivosLinux/Dropbox/Backups/Gondor/excludes/exclude-BACKUP-DROPBOX.list"
+
 DROPBOX="/ArquivosLinux/Dropbox/"
 
 ONEDRIVE="/ArquivosLinux/OneDrive/"
 
-rsync -avzzc --delete $DROPBOX $ONEDRIVE
+rsync -avzzc --exclude-from=$EXCLUDE_LIST --delete $DROPBOX $ONEDRIVE
