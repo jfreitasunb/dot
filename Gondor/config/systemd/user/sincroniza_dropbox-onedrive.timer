@@ -2,7 +2,7 @@
 Description=Sincronização entre Dropbox e OneDrive
 
 [Timer]
-OnCalendar=hourly
+OnCalendar=*-*-* 21:00:00
 Persistent=true
 
 [Install]

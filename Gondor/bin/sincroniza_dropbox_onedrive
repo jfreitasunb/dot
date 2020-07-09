@@ -1,8 +1,8 @@
 #!/bin/bash
 
-EXCLUDE_LIST="/ArquivosLinux/Dropbox/Backups/Gondor/excludes/exclude-BACKUP-DROPBOX.list"
+EXCLUDE_LIST="/ArquivosLinux/OneDrive/Backups/Gondor/excludes/exclude-BACKUP-DROPBOX.list"
 
-DROPBOX="/ArquivosLinux/Dropbox/"
+DROPBOX="/ArquivosLinux/Dropbox/Camera Uploads"
 
 ONEDRIVE="/ArquivosLinux/OneDrive/"
 

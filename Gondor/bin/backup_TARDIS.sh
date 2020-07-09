@@ -31,7 +31,7 @@ if [ -d "$BACKUP_DESTINATION" ] ; then
     fi
   fi
 
-  BACKUP_SOURCE="/ArquivosLinux/Dropbox/"
+  BACKUP_SOURCE="/ArquivosLinux/OneDrive/"
 
   rsync -avzzc --delete $BACKUP_SOURCE $BACKUP_DESTINATION
   
