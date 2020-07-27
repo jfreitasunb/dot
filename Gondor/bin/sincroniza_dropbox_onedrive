@@ -6,4 +6,4 @@ DROPBOX="/ArquivosLinux/Dropbox/Camera Uploads"
 
 ONEDRIVE="/ArquivosLinux/OneDrive/"
 
-rsync -avzzc --exclude-from=$EXCLUDE_LIST --delete $DROPBOX $ONEDRIVE
+rsync -avzzc --exclude-from=$EXCLUDE_LIST $DROPBOX $ONEDRIVE
