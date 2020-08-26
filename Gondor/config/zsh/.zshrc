@@ -1,7 +1,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-
+neofetch
 HISTFILE=~/.config/zsh/.zsh_history
 HISTSIZE=1000000000
 SAVEHIST=1000000000
@@ -42,3 +42,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh.
+[[ ! -f ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh ]] || source ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh
