@@ -12,18 +12,18 @@ NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN.lst"
 
 NOME_BACKUP_YAY="gondor_lista_pacotes_instalados_YAY.lst"
 
-LOCAL_BACKUP="/Arquivos/OneDrive\ -\ unb.br/Backups/Gondor/Backup-Diario/"
+LOCAL_BACKUP="/Arquivos/OneDrive - unb.br/Backups/Gondor/Backup-Diario/"
 
 # dpkg-query -f '${binary:Package}\n' -W > $LOCAL_BACKUP$NOME_BACKUP
 
-pacman -Qqe | grep -v "$(pacman -Qqm)" > $LOCAL_BACKUP$NOME_BACKUP_PACMAN
+pacman -Qqe | grep -v "$(pacman -Qqm)" > "$LOCAL_BACKUP""$NOME_BACKUP_PACMAN"
 
-pacman -Qqm > $LOCAL_BACKUP$NOME_BACKUP_YAY
+pacman -Qqm > "$LOCAL_BACKUP""$NOME_BACKUP_YAY"
 
-sed -i '/yay/d' $LOCAL_BACKUP$NOME_BACKUP_YAY
+sed -i '/yay/d' "$LOCAL_BACKUP""$NOME_BACKUP_YAY"
 
 #salva configuraçoes do gnome
-dconf dump / > $LOCAL_BACKUP$NOME_BACKUP_GNOME
+dconf dump / > "$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
 
 #importa as configuraçoes do gnome
 #dconf load / < dconf-settings.ini
