@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 echo 'Updating Applications...'
-    sudo pacman -Syyu
-    yay -Syyu
+    sudo pacman -Syu
+    yay -Syu
 
 echo ' '
 echo 'Cleaning caches & directories...'
