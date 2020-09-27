@@ -31,6 +31,6 @@ if test -x ./autogen.sh; then ./autogen.sh; else ./configure; fi && make && sudo
 
 cd ../
 
-sudo rm -rf input-wacom
+sudo rm -rf /home/jfreitas/scripts/input-wacom
 
 sudo reboot
