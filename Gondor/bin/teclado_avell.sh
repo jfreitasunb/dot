@@ -3,7 +3,7 @@
 ######## Driver do teclado Avell
 ##############################################################################################################################
 
-cd ~/avell_teclado/module
+cd ~/scripts/avell_teclado/module
 
 sudo make clean
 
@@ -21,16 +21,14 @@ sudo tee /etc/modprobe.d/clevo-xsm-wmi.conf <<< 'options clevo-xsm-wmi kb_color=
 ######## Driver Wacom
 ##############################################################################################################################
 
-cd ~/scripts
-
-7z -aoa e input-wacom.7z -oinput-wacom/
-
-cd input-wacom
+cd ~/scripts/input-wacom
 
 if test -x ./autogen.sh; then ./autogen.sh; else ./configure; fi && make && sudo make install || echo "Build Failed"
 
 cd ../
 
 sudo rm -rf /home/jfreitas/scripts/input-wacom
+
+cp -R input-wacom-BKP input-wacom
 
 sudo reboot
