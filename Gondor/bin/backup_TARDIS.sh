@@ -4,7 +4,7 @@ PIDFILE=/home/jfreitas/.temporario/backup_TARDIS.pid
 
 BACKUP_DEVICE="/run/media/jfreitas/Tardis"
 
-BACKUP_DESTINATION=$BACKUP_DEVICE/"Backup_OneDrive/"
+BACKUP_DESTINATION=$BACKUP_DEVICE/"Backup_OneDrive"
 
 if [ -d "$BACKUP_DESTINATION" ] ; then
 
