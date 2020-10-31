@@ -31,9 +31,9 @@ if [ -d "$BACKUP_DESTINATION" ] ; then
     fi
   fi
 
-  BACKUP_SOURCE="/ArquivosLinux/OneDrive/"
+  BACKUP_SOURCE="/Arquivos/OneDrive - unb.br/"
 
-  rsync -avzzc --delete $BACKUP_SOURCE $BACKUP_DESTINATION
+  rsync -avzzc --delete "$BACKUP_SOURCE" "$BACKUP_DESTINATION"
   
   umount $BACKUP_DEVICE
   

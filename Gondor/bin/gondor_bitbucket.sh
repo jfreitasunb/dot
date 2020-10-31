@@ -1,41 +1,41 @@
 #!/bin/bash
 
-EXCLUDE_LIST_TEX="/ArquivosLinux/OneDrive/Backups/Gondor/excludes/exclude-TEX.list"
+EXCLUDE_LIST_TEX="/Arquivos/OneDrive - unb.br/Backups/Gondor/excludes/exclude-TEX.list"
 
-EXCLUDE_LIST_LARAVEL="/ArquivosLinux/OneDrive/Backups/Gondor/excludes/exclude-GitHub_Repos_laravel.list"
+EXCLUDE_LIST_LARAVEL="/Arquivos/OneDrive - unb.br/Backups/Gondor/excludes/exclude-GitHub_Repos_laravel.list"
 
 ALGEBRA1="/home/jfreitas/GitHub_Repos/Algebra-1/"
-DEST_ALGEBRA1="/ArquivosLinux/OneDrive/UnB/Disciplinas/Graduacao/Algebra_1/2020-1"
+DEST_ALGEBRA1="/Arquivos/OneDrive - unb.br/UnB/Disciplinas/Graduacao/Algebra_1/2020-1"
 
 AULASONLINE="/home/jfreitas/GitHub_Repos/video_aulas/"
-DEST_AULASONLINE="/ArquivosLinux/OneDrive/UnB/Disciplinas/Graduacao/pdf_video_aulas"
+DEST_AULASONLINE="/Arquivos/OneDrive - unb.br/UnB/Disciplinas/Graduacao/pdf_video_aulas"
 
 #ALGEBRA_LINEAR="/home/jfreitas/GitHub_Repos/algebra_linear/"
-#DEST_ALGEBRA_LINEAR="/ArquivosLinux/OneDrive/UnB/Disciplinas/Graduacao/Algebra_Linear/2019-1"
+#DEST_ALGEBRA_LINEAR="/Arquivos/OneDrive - unb.br/UnB/Disciplinas/Graduacao/Algebra_Linear/2019-1"
 
 CAT="/home/jfreitas/GitHub_Repos/cat/"
-DEST_CAT="/ArquivosLinux/OneDrive/UnB/CAT"
+DEST_CAT="/Arquivos/OneDrive - unb.br/UnB/CAT"
 
 MONITORIAMAT="/home/jfreitas/GitHub_Repos/inscricoesmonitoria/"
-DEST_MONITORIAMAT="/ArquivosLinux/OneDrive/UnB/Projetos-PHP/inscricoesmonitoria"
+DEST_MONITORIAMAT="/Arquivos/OneDrive - unb.br/UnB/Projetos-PHP/inscricoesmonitoria"
 
 POSMAT="/home/jfreitas/GitHub_Repos/inscricoespos/"
-DEST_POSMAT="/ArquivosLinux/OneDrive/UnB/Projetos-PHP/inscricoespos"
+DEST_POSMAT="/Arquivos/OneDrive - unb.br/UnB/Projetos-PHP/inscricoespos"
 
 INSCRICOESPNPD="/home/jfreitas/GitHub_Repos/inscricoespnpd/"
-DEST_INSCRICOESPNPD="/ArquivosLinux/OneDrive/UnB/Projetos-PHP/inscricoespnpd"
+DEST_INSCRICOESPNPD="/Arquivos/OneDrive - unb.br/UnB/Projetos-PHP/inscricoespnpd"
 
 PROFICIENCIA="/home/jfreitas/GitHub_Repos/proficiencia/"
-DEST_PROFICIENCIA="/ArquivosLinux/OneDrive/UnB/Projetos-PHP/proficiencia"
+DEST_PROFICIENCIA="/Arquivos/OneDrive - unb.br/UnB/Projetos-PHP/proficiencia"
 
 SITEMONITORIAMAT="/home/jfreitas/GitHub_Repos/site-monitoriamat/"
-DEST_SITEMONITORIAMAT="/ArquivosLinux/OneDrive/UnB/Projetos-PHP/site-monitoriamat"
+DEST_SITEMONITORIAMAT="/Arquivos/OneDrive - unb.br/UnB/Projetos-PHP/site-monitoriamat"
 
 INSCRICOESVERAO="/home/jfreitas/GitHub_Repos/inscricoesverao/"
-DEST_INSCRICOESVERAO="/ArquivosLinux/OneDrive/UnB/Projetos-PHP/inscricoesverao"
+DEST_INSCRICOESVERAO="/Arquivos/OneDrive - unb.br/UnB/Projetos-PHP/inscricoesverao"
 
 INSCRICOESEVENTOSMAT="/home/jfreitas/GitHub_Repos/inscricoeseventos/"
-DEST_INSCRICOESEVENTOSMAT="/ArquivosLinux/OneDrive/UnB/Projetos-PHP/inscricoeseventos"
+DEST_INSCRICOESEVENTOSMAT="/Arquivos/OneDrive - unb.br/UnB/Projetos-PHP/inscricoeseventos"
 
 rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$ALGEBRA1" "$DEST_ALGEBRA1"
 
