@@ -12,7 +12,7 @@ NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN.lst"
 
 NOME_BACKUP_YAY="gondor_lista_pacotes_instalados_YAY.lst"
 
-LOCAL_BACKUP="/Arquivos/OneDrive - unb.br/Backups/Gondor/Backup-Diario/"
+LOCAL_BACKUP="/Arquivos/OneDrive/Backups/Gondor/Backup-Diario/"
 
 # dpkg-query -f '${binary:Package}\n' -W > $LOCAL_BACKUP$NOME_BACKUP
 
@@ -28,18 +28,6 @@ dconf dump / > "$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
 #importa as configuraçoes do gnome
 #dconf load / < dconf-settings.ini
 
-# for filename in $LOCAL_BACKUP*.lst; do
-
-#     DATAARQUIVO=$(echo $filename | grep -Eo '[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}')
-
-#     DIFERENCA=$(($(($(date -d $HOJE "+%s") - $(date -d $DATAARQUIVO "+%s")))  / 86400 ))
-
-#     if [[ $DIFERENCA -ge $ROTATIVIDADE ]]; then
-#         rm -f $filename
-#     fi
-# done
-
 #Para reinstalar
-#sudo apt install `cat pkglist.txt`
-#cat ~/gondor_lista_pacotes_instalados_PACMAN.lst | xargs pacman -S --needed --noconfirm
 #yay -S - < ~/gondor_lista_pacotes_instalados_YAY.lst
+#pacman -S --needed - < ~/gondor_lista_pacotes_instalados_PACMAN.lst
