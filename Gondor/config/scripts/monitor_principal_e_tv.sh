@@ -1,0 +1,1 @@
+/home/jfreitas/GitHub_Repos/dot/Gondor/bin/monitor_principal_e_tv.sh
