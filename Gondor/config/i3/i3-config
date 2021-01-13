@@ -4,7 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-exec_always "setxkbmap -layout us -variant intl"
+
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Droid Sans Mono 14
+font pango:Droid Sans Mono 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -256,32 +256,32 @@ client.urgent       $ubgcolor   $ubgcolor       $textcolor  $ubgcolor
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks -c /home/jfreitas/.config/i3blocks/i3blocks.conf
-    	i3bar_command i3bar --transparency
-    	tray_output none
-    	font pango:monospace 14
-    	colors {
-        	background $barcolor
-	        separator #282828
-        	#           border      background      text
-	        focused_workspace   $fws        $fws            $textcolor
-        	inactive_workspace  $ibgcolor   $ibgcolor       $itextcolor
-	        urgent_workspace    $ubgcolor   $ubgcolor       $textcolor
-    	}
+        status_command i3blocks -c /home/ermanno/.config/i3blocks/i3blocks.conf
+    i3bar_command i3bar --transparency
+    tray_output none
+    font pango:monospace 11
+    colors {
+        background $barcolor
+        separator #282828
+        #           border      background      text
+        focused_workspace   $fws        $fws            $textcolor
+        inactive_workspace  $ibgcolor   $ibgcolor       $itextcolor
+        urgent_workspace    $ubgcolor   $ubgcolor       $textcolor
+    }
 }
 
 # Keyboard Layout
-#exec_always setxkbmap ch
+exec_always setxkbmap ch
 
 # Display Resolution
 # exec_always xrandr --output Virtual-1 --mode 1920x1080
-exec_always /home/jfreitas/.screenlayout/virtual1.sh
+# exec_always /home/ermanno/.screenlayout/virtual1.sh
 
 # Display Wallpaper
-exec_always feh --bg-fill /home/jfreitas/Imagens/Arch_Linux.jpg
+exec_always feh --bg-fill /home/ermanno/Pictures/arch.jpg
 
 # Keybinding for i3lock
-bindsym $mod+x exec /home/jfreitas/.config/scripts/lock
+bindsym $mod+x exec /home/ermanno/.config/scripts/lock
 
 # Assign Programs to Workspaces
 for_window [class="firefox"] move to workspace $ws2
