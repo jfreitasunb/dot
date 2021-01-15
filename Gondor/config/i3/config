@@ -30,6 +30,14 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Define a saída do audio
+
+bindsym $mod+Shift+u exec echo "set-default-sink alsa_output.usb-Logitech_USB_Headset_Logitech_USB_Headset-00.analog-stereo" | pacmd
+
+bindsym $mod+Shift+h exec echo "set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo" | pacmd
+
+bindsym $mod+Shift+i exec echo "set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo" | pacmd
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
