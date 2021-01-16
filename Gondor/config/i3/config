@@ -266,7 +266,7 @@ client.urgent       $ubgcolor   $ubgcolor       $textcolor  $ubgcolor
 bar {
         status_command i3blocks -c /home/jfreitas/.config/i3blocks/i3blocks.conf
     	i3bar_command i3bar --transparency
-    	tray_output none
+#    	tray_output none
     	font pango:monospace 12
     	colors {
         	background $barcolor
