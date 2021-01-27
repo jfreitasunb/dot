@@ -2,12 +2,12 @@
 
 echo 'Updating Applications...'
     sudo pacman -Syu
-    yay -Syu
+    paru -Syu
 
 echo ' '
 echo 'Cleaning caches & directories...'
     pacman -Sc
-    yay -Sc
+    paru -Sc
 
 echo ' '
 echo 'Updating Complete!'
