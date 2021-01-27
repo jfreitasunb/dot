@@ -5,7 +5,7 @@ EXCLUDE_LIST_TEX="/Arquivos/OneDrive/Backups/Gondor/excludes/exclude-TEX.list"
 EXCLUDE_LIST_LARAVEL="/Arquivos/OneDrive/Backups/Gondor/excludes/exclude-GitHub_Repos_laravel.list"
 
 ALGEBRA1="/home/jfreitas/GitHub_Repos/Algebra-1/"
-DEST_ALGEBRA1="/Arquivos/OneDrive/UnB/Disciplinas/Graduacao/Algebra_1/2020-1"
+DEST_ALGEBRA1="/Arquivos/OneDrive/UnB/Disciplinas/Graduacao/Algebra_1/2020-2"
 
 AULASONLINE="/home/jfreitas/GitHub_Repos/video_aulas/"
 DEST_AULASONLINE="/Arquivos/OneDrive/UnB/Disciplinas/Graduacao/pdf_video_aulas"
