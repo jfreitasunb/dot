@@ -4,6 +4,9 @@ env:
   TERM: alacritty
 
 window:
+  dimensions:
+    columns: 100
+    lines: 45
   padding:
     x: 25
     y: 25
@@ -13,18 +16,18 @@ window:
 
 font:
   normal:
-    family: Source Code Pro
+    family: FiraCode Nerd Font
 
   bold:
-    family: Source Code Pro
+    family: FiraCode Nerd Font
 
   italic:
-    family: Source Code Pro
+    family: FiraCode Nerd Font
 
   bold_italic:
-    family: Source Code Pro
+    family: FiraCode Nerd Font
 
-  size: 9
+  size: 12
 
 colors:
   # Default colors
