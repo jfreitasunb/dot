@@ -113,9 +113,10 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
+          spawnOnce "setxkbmap -layout us -variant intl&"
           spawnOnce "lxsession &"
           spawnOnce "nitrogen --restore &"
-          spawnOnce "picom --experimental-backends &"
+          spawnOnce "picom --experimental-backendsetxkbmap -layout us -variant intl&s &"
           spawnOnce "nm-applet &"
           spawnOnce "volumeicon &"
           spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34  --height 25 &"
@@ -156,7 +157,7 @@ spawnSelected' lst = gridselect conf lst >>= flip whenJust spawn
 
 myAppGrid = [ ("Audacity", "audacity")
                  -- , ("Deadbeef", "deadbeef")
-                 , ("Emacs", "emacsclient -c -a emacs")
+                 -- , ("Emacs", "emacsclient -c -a emacs")
                  , ("Firefox", "firefox")
                  -- , ("Geany", "geany")
                  -- , ("Geary", "geary")
@@ -785,6 +786,8 @@ myKeys home =
         , ("M-p r", passRemovePrompt dtXPConfig)   -- passRemovePrompt
         , ("M-p s", sshPrompt dtXPConfig)          -- sshPrompt
         , ("M-p x", xmonadPrompt dtXPConfig)       -- xmonadPrompt
+        , ("M-p a", spawnOnce "setxkbmap -layout us -variant intl")       -- set keyboard international
+        , ("M-p b", spawnOnce "setxkbmap -model abnt2 -layout br -variant abnt2") -- set keyboard abnt2
         -- , ("M-p q", scrotPrompt home True)         -- scrotPrompt True
         -- , ("M-p z", scrotPrompt home False)        -- scrotPrompt False
 
