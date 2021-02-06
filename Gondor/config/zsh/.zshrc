@@ -12,9 +12,9 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
 PATH=$PATH:$HOME/.bin
-PATH=/home/jfreitas/.texlive/2020/bin/x86_64-linux:$PATH; export PATH
-MANPATH=/home/jfreitas/.texlive/2020/texmf-dist/doc/man:$MANPATH; export MANPATH
-INFOPATH=/home/jfreitas/.texlive/2020/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+# PATH=/home/jfreitas/.texlive/2020/bin/x86_64-linux:$PATH; export PATH
+# MANPATH=/home/jfreitas/.texlive/2020/texmf-dist/doc/man:$MANPATH; export MANPATH
+# INFOPATH=/home/jfreitas/.texlive/2020/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
