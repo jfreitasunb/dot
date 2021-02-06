@@ -19,6 +19,8 @@ cd nerd-fonts
 
 ./install.sh FiraCode
 
+./install.sh SourceCodePro
+
 cd ../
 
 rm -rf nerd-fonts
