@@ -1,8 +1,8 @@
 # Keyboard layout
-setxkbmap -layout us -variant intl&
+#setxkbmap -layout us -variant intl&
 
 # Wallpaper
-nitrogen --restore &
+#nitrogen --restore &
 
 # Compositor
-picom -f&
+#picom -f&
