@@ -10,7 +10,7 @@ NOME_BACKUP="gondor_backup_diario_root_"$(date +%Y-%m-%d)".tar.bz2"
 
 LOCAL_TEMPORARIO_ROOT="/Arquivos/Backup_Temporario/Gondor/ROOT/"
 
-LOCAL_TAR="/VMs/Backup_Temporario/"
+LOCAL_TAR="/Arquivos/Backup_Temporario/"
 
 LOCAL_BACKUP="/Arquivos/OneDrive/Backups/Gondor/Backup-Diario/"
 
@@ -26,3 +26,5 @@ tar -cvjf "$LOCAL_TAR""$NOME_BACKUP" "$LOCAL_TEMPORARIO_ROOT"
 cp "$NOME_BACKUP" "$LOCAL_BACKUP"
 
 chown -R jfreitas:jfreitas "$LOCAL_BACKUP"
+
+rm "$NOME_BACKUP"
