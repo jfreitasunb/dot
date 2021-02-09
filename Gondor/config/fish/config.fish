@@ -21,4 +21,7 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 # Changing "cat" to "bat"
 alias cat='bat'
 
+#Mais alguns alias personalizados
+alias aup='arch-update.sh'
+
 neofetch
