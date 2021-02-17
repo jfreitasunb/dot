@@ -10,4 +10,9 @@ echo 'Cleaning caches & directories...'
     paru -Sc
 
 echo ' '
+
+sudo rm /boot/grub/grub.cfg
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
 echo 'Updating Complete!'

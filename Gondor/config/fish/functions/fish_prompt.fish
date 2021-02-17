@@ -1,107 +1,40 @@
+_tide_detect_os
+
+# Set things that wont change
+set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
+
+set -gx _tide_fish_pid $fish_pid
+
 function fish_prompt
-    # This prompt shows:
-    # - green lines if the last return command is OK, red otherwise
-    # - your user name, in red if root or yellow otherwise
-    # - your hostname, in cyan if ssh or blue otherwise
-    # - the current path (with prompt_pwd)
-    # - date +%X
-    # - the current virtual environment, if any
-    # - the current git status, if any, with fish_git_prompt
-    # - the current battery state, if any, and if your power cable is unplugged, and if you have "acpi"
-    # - current background jobs, if any
+    set -lx _tide_last_pipestatus $pipestatus
 
-    # It goes from:
-    # ┬─[nim@Hattori:~]─[11:39:00]
-    # ╰─>$ echo here
+    if not set -e _tide_repainting
+        set -lx _tide_jobs_number (jobs --pid | count)
 
-    # To:
-    # ┬─[nim@Hattori:~/w/dashboard]─[11:37:14]─[V:django20]─[G:master↑1|●1✚1…1]─[B:85%, 05:41:42 remaining]
-    # │ 2	15054	0%	arrêtée	sleep 100000
-    # │ 1	15048	0%	arrêtée	sleep 100000
-    # ╰─>$ echo there
+        fish --command "
+        set CMD_DURATION $CMD_DURATION
+        set COLUMNS $COLUMNS
+        set fish_bind_mode $fish_bind_mode
+        set fish_term24bit $fish_term24bit
 
-    set -l retc red
-    test $status = 0; and set retc green
+        command kill $_tide_last_pid 2>/dev/null
+        set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)
+        " >&- & # >&- closes stdout. See https://github.com/fish-shell/fish-shell/issues/7559
 
-    set -q __fish_git_prompt_showupstream
-    or set -g __fish_git_prompt_showupstream auto
-
-    function _nim_prompt_wrapper
-        set retc $argv[1]
-        set field_name $argv[2]
-        set field_value $argv[3]
-
-        set_color normal
-        set_color $retc
-        echo -n '─'
-        set_color -o green
-        echo -n '['
-        set_color normal
-        test -n $field_name
-        and echo -n $field_name:
-        set_color $retc
-        echo -n $field_value
-        set_color -o green
-        echo -n ']'
+        set -g _tide_last_pid (jobs --last --pid)
+        disown $_tide_last_pid 2>/dev/null
     end
 
-    set_color $retc
-    echo -n '┬─'
-    set_color -o green
-    echo -n [
-    if test "$USER" = root -o "$USER" = toor
-        set_color -o red
-    else
-        set_color -o yellow
-    end
-    echo -n $USER
-    set_color -o white
-    echo -n @
-    if [ -z "$SSH_CLIENT" ]
-        set_color -o blue
-    else
-        set_color -o cyan
-    end
-    echo -n (prompt_hostname)
-    set_color -o white
-    echo -n :(prompt_pwd)
-    set_color -o green
-    echo -n ']'
+    string unescape $$_tide_left_prompt_display_var
+end
 
-    # Date
-    _nim_prompt_wrapper $retc '' (date +%X)
+function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid --on-variable _tide_right_prompt_display_$fish_pid
+    set -g _tide_repainting
+    commandline --function force-repaint
+end
 
-    # Virtual Environment
-    set -q VIRTUAL_ENV_DISABLE_PROMPT
-    or set -g VIRTUAL_ENV_DISABLE_PROMPT true
-    set -q VIRTUAL_ENV
-    and _nim_prompt_wrapper $retc V (basename "$VIRTUAL_ENV")
-
-    # git
-    set prompt_git (fish_git_prompt | string trim -c ' ()')
-    test -n "$prompt_git"
-    and _nim_prompt_wrapper $retc G $prompt_git
-
-    # Battery status
-    type -q acpi
-    and test (acpi -a 2> /dev/null | string match -r off)
-    and _nim_prompt_wrapper $retc B (acpi -b | cut -d' ' -f 4-)
-
-    # New line
-    echo
-
-    # Background jobs
-    set_color normal
-    for job in (jobs)
-        set_color $retc
-        echo -n '│ '
-        set_color brown
-        echo $job
-    end
-    set_color normal
-    set_color $retc
-    echo -n '╰─>'
-    set_color -o red
-    echo -n '$ '
-    set_color normal
+# Double underscores to avoid erasing this function on uninstall
+function __tide_on_fish_exit --on-event fish_exit
+    set -e _tide_left_prompt_display_$fish_pid
+    set -e _tide_right_prompt_display_$fish_pid
 end
