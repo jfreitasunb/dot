@@ -5,6 +5,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'honza/vim-snippets'
 Plug 'rudrab/vimf90'
 Plug 'SirVer/ultisnips'
+Plug 'lervag/vimtex'
 call plug#end()
 
 "let g:VimF90Leader = "`"
