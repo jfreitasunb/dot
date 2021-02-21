@@ -18,9 +18,9 @@ LOCAL_BACKUP="/Arquivos/OneDrive/Backups/Gondor/Backup-Diario/"
 
 pacman -Qqe | grep -v "$(pacman -Qqm)" > "$LOCAL_BACKUP""$NOME_BACKUP_PACMAN"
 
-pacman -Qqm > "$LOCAL_BACKUP""$NOME_BACKUP_YAY"
+pacman -Qqm > "$LOCAL_BACKUP""$NOME_BACKUP_PARU"
 
-sed -i '/yay/d' "$LOCAL_BACKUP""$NOME_BACKUP_YAY"
+sed -i '/yay/d' "$LOCAL_BACKUP""$NOME_BACKUP_PARU"
 
 #salva configuraçoes do gnome
 dconf dump / > "$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
