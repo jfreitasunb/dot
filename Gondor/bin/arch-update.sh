@@ -11,4 +11,6 @@ echo 'Cleaning caches & directories...'
 
 echo ' '
 
+xmonad --recompile
+
 echo 'Updating Complete!'
