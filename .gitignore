@@ -40,3 +40,5 @@ Gondor/config/vim/view/
 Gondor/config/zsh/.zcompdump*
 
 *.zshenv=
+
+Gondor/config/vim/plugged/
