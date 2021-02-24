@@ -732,7 +732,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                                  ||| threeCol
                                  ||| threeRow
 
-myWorkspaces = [" dev ", " www ", " TeX ", " PDF ", " chat " , " aula ", " virt ", " sys ", " doc "]
+myWorkspaces = [" dev ", " www ", " TeX ", " PDF ", " chat " , " aula ", " virt ", " sys ", " obs "]
 -- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
 
 xmobarEscape :: String -> String
@@ -744,7 +744,7 @@ xmobarEscape = concatMap doubleLts
 myClickableWorkspaces :: [String]
 myClickableWorkspaces = clickable . (map xmobarEscape)
                -- $ [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
-               $ [" dev ", " www ", " TeX ", " PDF ", " chat " , " aula ", " virt ", " sys ", " doc "]
+               $ [" dev ", " www ", " TeX ", " PDF ", " chat " , " aula ", " virt ", " sys ", " obs "]
   where
         clickable l = [ "<action=xdotool key super+" ++ show (n) ++ ">" ++ ws ++ "</action>" |
                       (i,ws) <- zip [1..9] l,
@@ -759,6 +759,9 @@ myManageHook = composeAll
      , className =? "mpv"     --> doShift ( myWorkspaces !! 7 )
      , className =? "Gimp"    --> doShift ( myWorkspaces !! 8 )
      , className =? "Gimp"    --> doFloat
+     , className =? "Evince"  --> doShift ( myWorkspaces !! 3 )
+     , className =? "obs"     --> doShift ( myWorkspaces !! 8 )
+     , className =? "virt-manager"   --> doShift ( myWorkspaces !! 6 )
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 0 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
@@ -796,7 +799,13 @@ myKeys home =
 
     -- Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn (myTerminal))
-        -- , ("M-b", spawn (myBrowser ++ " www.youtube.com/c/DistroTube/"))
+        , ("M-S-s", spawn "subl")
+        , ("M-S-f", spawn "pcmanfm")
+        , ("M-S-x", spawn "xournalpp")
+        , ("M-S-t", spawn "teams")
+        , ("M-S-g", spawn "google-chrome-stable")
+
+-- , ("M-b", spawn (myBrowser ++ " www.youtube.com/c/DistroTube/"))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
 
     -- Kill windows
@@ -812,7 +821,7 @@ myKeys home =
     -- Floating windows
         , ("M-f", sendMessage (T.Toggle "floats")) -- Toggles my 'floats' layout
         , ("M-t", withFocused $ windows . W.sink)  -- Push floating window back to tile
-        , ("M-S-t", sinkAll)                       -- Push ALL floating windows to tile
+        , ("M-C-t", sinkAll)                       -- Push ALL floating windows to tile
 
     -- Increase/decrease spacing (gaps)
         , ("M-d", decWindowSpacing 4)           -- Decrease window spacing
