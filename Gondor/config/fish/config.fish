@@ -17,11 +17,12 @@ alias ls='exa -al --color=always --group-directories-first' # my preferred listi
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias lr='exa --sort newest --color=always --group-directories-first' # tree listing
 
 # Changing "cat" to "bat"
 alias cat='bat'
 
 #Mais alguns alias personalizados
 alias aup='arch-update.sh'
-
+alias avell='teclado_avell.sh'
 neofetch
