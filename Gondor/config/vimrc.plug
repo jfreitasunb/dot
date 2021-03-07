@@ -6,6 +6,8 @@ Plug 'honza/vim-snippets'
 Plug 'rudrab/vimf90'
 Plug 'SirVer/ultisnips'
 Plug 'lervag/vimtex'
+" A Vim Plugin for Lively Previewing LaTeX PDF Output
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 "let g:VimF90Leader = "`"
