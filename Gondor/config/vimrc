@@ -93,3 +93,5 @@ endif
 
 let g:VimF90Leader = "^"
 inoremap <c-j> <Esc>/<++><CR><Esc><cf>
+
+let g:livepreview_previewer = 'zathura'

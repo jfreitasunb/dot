@@ -38,6 +38,16 @@ alias avell='teclado_avell.sh'
 alias tsm='transmission-remote'
 alias wtsm='watch transmission-remote -l'
 
+# Changing "ls" to "exa"
+alias ls='exa -al --colour=always --group-directories-first' # my preferred listing
+alias la='exa -a --group-directories-first'  # all files and dirs
+alias ll='exa -l --colour=always --group-directories-first'  # long format
+alias lt='exa -aT --group-directories-first' # tree listing
+alias lr='exa --sort newest --group-directories-first' # tree listing
+alias wtsm='watch transmission-remote -l'
+# Changing "cat" to "bat"
+alias cat='bat'
+
 plugins=(
     git
     zsh-syntax-highlighting

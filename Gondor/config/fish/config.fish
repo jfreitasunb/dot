@@ -18,7 +18,7 @@ alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias lr='exa --sort newest --color=always --group-directories-first' # tree listing
-
+alias wtsm='watch transmission-remote -l'
 # Changing "cat" to "bat"
 alias cat='bat'
 
