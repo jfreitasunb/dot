@@ -86,9 +86,14 @@ myModMask :: KeyMask
 myModMask = mod4Mask       -- Sets modkey to super/windows key
 
 myTerminal :: String
+<<<<<<< HEAD
 -- myTerminal = "alacritty -e fish"   -- Sets default terminal
 -- myTerminal = "terminator -e fish"   -- Sets default terminal
 myTerminal = "termite"   -- Sets default terminal
+=======
+myTerminal = "terminator -e fish"   -- Sets default terminal
+
+>>>>>>> master
 -- myBrowser :: String
 -- myBrowser = "qutebrowser "               -- Sets qutebrowser as browser for tree select
 -- myBrowser = myTerminal ++ " -e lynx " -- Sets lynx as browser for tree select
