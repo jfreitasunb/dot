@@ -1,0 +1,50 @@
+#!/bin/bash
+
+ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+hwclock --systohc
+sed -i '393s/.//' /etc/locale.gen
+locale-gen
+echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
+echo "KEYMAP=us-acentos" >> /etc/vconsole.conf
+echo "gondor" >> /etc/hostname
+echo "127.0.0.1 localhost" >> /etc/hosts
+echo "::1       localhost" >> /etc/hosts
+echo "127.0.1.1 gondor.localdomain gondor" >> /etc/hosts
+echo root:password | chpasswd
+
+pacman -S --noconfirm reflector
+
+reflector -c Brazil -a 12 --sort rate --save /etc/pacman.d/mirrorlist
+
+# You can add xorg to the installation packages, I usually add it at the DE or WM install script
+# You can remove the tlp package if you are installing on a desktop or vm
+
+pacman -S --noconfirm grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-headers xdg-user-dirs xdg-utils gvfs nfs-utils inetutils dnsutils bash-completion openssh rsync acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables iptables ipset nss-mdns acpid os-prober ntfs-3g terminus-font awesome-terminal-fonts bat exa bpytop zsh libreoffice-fresh libreoffice-fresh-pt-bri meld neofetchtexinfo texlive-bibtexextra texlive-core texlive-fontsextra texlive-formatsextra texlive-latexextra texlive-pictures texlive-pstricks texlive-publishers texlive-science transmission-gtk ttf-fira-code ttf-fira-mono ttf-font-awesome ttf-nerd-fonts-symbols zathura zathura-djvu zathura-pdf-mupdf zathura-ps audacity gimp gimp-help-pt_bri keepassxc p7zip papirus-icon-theme pdftk python-beautifulsoup4 python-pip rsync alacritty termite terminator
+
+
+# pacman -S --noconfirm xf86-video-amdgpu
+pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
+
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+
+systemctl enable NetworkManager
+#systemctl enable bluetooth
+#systemctl enable cups.service
+systemctl enable sshd
+#systemctl enable avahi-daemon
+systemctl enable tlp # You can comment this command out if you didn't install tlp, see above
+systemctl enable reflector.timer
+systemctl enable fstrim.timer
+systemctl enable libvirtd
+#systemctl enable firewalld
+systemctl enable acpid
+
+useradd -m jfreitas
+echo jfreitas:password | chpasswd
+usermod -aG libvirt jfreitas
+
+echo "jfreitas ALL=(ALL) ALL" >> /etc/sudoers.d/jfreitas
+
+
+printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
