@@ -86,14 +86,8 @@ myModMask :: KeyMask
 myModMask = mod4Mask       -- Sets modkey to super/windows key
 
 myTerminal :: String
-<<<<<<< HEAD
--- myTerminal = "alacritty -e fish"   -- Sets default terminal
--- myTerminal = "terminator -e fish"   -- Sets default terminal
-myTerminal = "termite"   -- Sets default terminal
-=======
-myTerminal = "terminator -e fish"   -- Sets default terminal
+myTerminal = "terminator"   -- Sets default terminal
 
->>>>>>> master
 -- myBrowser :: String
 -- myBrowser = "qutebrowser "               -- Sets qutebrowser as browser for tree select
 -- myBrowser = myTerminal ++ " -e lynx " -- Sets lynx as browser for tree select
@@ -802,6 +796,8 @@ myKeys home =
         , ("M-p s", sshPrompt dtXPConfig)          -- sshPrompt
         , ("M-p x", xmonadPrompt dtXPConfig)       -- xmonadPrompt
         , ("M-C-a", spawn "setxkbmap -layout us -variant intl")       -- set keyboard international
+        , ("M-C-i", spawn "setxkbmap -layout us")       -- set keyboard inte    rnational
+
         , ("M-C-b", spawn "setxkbmap -model abnt2 -layout br -variant abnt2") -- set keyboard abnt2
         -- , ("M-p q", scrotPrompt home True)         -- scrotPrompt True
         -- , ("M-p z", scrotPrompt home False)        -- scrotPrompt False

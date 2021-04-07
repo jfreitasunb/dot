@@ -335,6 +335,7 @@ sudo apt-get install folder-color
 : 1590701752:0;ls themes
 : 1590701752:0;mv .zshrc zshrc_antigo
 : 1590701752:0;mv .oh-my-zsh oh-my-zsh
+: 1590701752:0;vim .zshrc.pre-oh-my-zsh
 : 1590701752:0;ls -la .h*
 : 1590701752:0;sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 : 1590701725:0;ls .oh-my-zsh/custom/themes
@@ -976,6 +977,7 @@ sudo apt-get install folder-color
 : 1594078249:0;ps aux | grep cp
 : 1594078317:0;cp -R Baahubali.2.The.Conclusion Churchill Doctor.Strange.2016.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT /Arquivos/Download_Torrents && rm -rf Baahubali.2.The.Conclusion Churchill Doctor.Strange.2016.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT
 : 1594078338:0;cd Baahubali.2.The.Conclusion
+: 1594078438:0;man ls
 : 1594079232:0;cd Churchill
 : 1594079630:0;cd ../Doctor.Strange.2016.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT
 : 1594082113:0;cd Doctor.Strange.2016.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT
@@ -2501,10 +2503,12 @@ content1  content2
 : 1610562703:0;vim i3
 : 1610562708:0;cd i3
 : 1610562757:0;setxkbmap -layout us -variant intl
+: 1610563085:0;cd .config/zsh
 : 1610563136:0;vim ../i3/config
 : 1610563250:0;sudo update-alternatives --config editor
 : 1610563273:0;select-editor
 : 1610563283:0;cd ../.config/zsh
+: 1610563288:0;vim .zshrc
 : 1610563516:0;vim /etc/i3/config
 : 1610563561:0;i3-sensible-editor
 : 1610563593:0;man i3
@@ -2956,6 +2960,7 @@ content1  content2
 : 1612549958:0;volumeicon
 : 1612550030:0;sudo pacman -S volumeicon
 : 1612550170:0;sudo pacman -S 	lxsession
+: 1612550813:0;xit
 : 1612550900:0;ps aux | grep trayer
 : 1612550914:0;kill -9 26630
 : 1612550917:0;kill -9 26638
@@ -3045,6 +3050,7 @@ content1  content2
 : 1613599700:0;sudo systemctl list-service --all
 : 1613599718:0;history | grep gondor
 : 1613599778:0;sudo systemctl enable --now gondor
+: 1613602194:0;setxkbmap -model abnt -layout us -variant intl
 : 1613602948:0;sudo vim /etc/polkit-1/rules.d/10.virt.rules
 : 1613603088:0;groups
 : 1613603409:0;systemctl --user status onedrive
@@ -3171,6 +3177,7 @@ content1  content2
 : 1615236942:0;sudo virsh pool-destroy default
 : 1615902802:0;cd /Arquivos/fim_dos_tempos
 : 1615902807:0;youtube-dl -cit -x --audio-format mp3 https://www.youtube.com/watch\?v\=Dh7xVOcRxTo\&list\=PLvposoPkQY4IvKhAV0XixwYjuHV33NC12
+: 1616457850:0;vim .config/fish/config.fish
 : 1616458142:0;cd .session
 : 1616458150:0;cat cache
 : 1616458157:0;bat cache
@@ -3181,8 +3188,13 @@ content1  content2
 : 1616458537:0;rm -rf Final.Space.S03E01.And.Into.The.Fire.1080p.AMZN.WEBRip.DDP5.1.x264-NTb\[rarbg\]
 : 1616458542:0;cd ../.session
 : 1616458707:0;source ~/.bashrc
+: 1616458709:0;lr
+: 1616458742:0;man exa
 : 1616458770:0;exa -al --colour=automatic
 : 1616458911:0;source .config/fish/config.fish
+: 1616458923:0;ll
+: 1616458932:0;source .config/zsh/.zshrc
+: 1616458995:0;vim .oh-my-zsh/oh-my-zsh.sh
 : 1616459247:0;rt
 : 1616459270:0;cd /Arquivos/rtorrent
 : 1616459315:0;tail -f log/rtorrent-1616459289.log
@@ -3313,6 +3325,7 @@ content1  content2
 : 1617386963:0;cd Backup_DejaDup
 : 1617387225:0;chmod +x gondor_home.sh 
 : 1617387697:0;cd /Arquivos/BACKUP-HOME-TEMP
+: 1617387700:0;la
 : 1617388090:0;sudo pacman -S light-locker bspwm sxhkd rxvt-unicode dunst
 : 1617388279:0;cd ../.local/share
 : 1617388406:0;sudo pacman -S light-locker bspwm sxhkd rxvt-unicode dunst scrot
@@ -3385,6 +3398,7 @@ content1  content2
 : 1617394291:0;cd share/DaVinciResolve/Resolve\ Disk\ Database/Resolve\ Projects/Users/guest/Projects
 : 1617394304:0;cd /Arquivos/BACKUP-HOME-TEMP/jfreitas/.localshare/DaVinciResolve/Resolve\ Disk\ Database/Resolve\ Projects/Users/guest/Projects
 : 1617395779:0;ls -ltr
+: 1617395792:0;exa
 : 1617395823:0;vim ~/.config/zsh/.zshrc
 : 1617399037:0;kill -9 1829
 : 1617399039:0;ps aux | grep gondor_home
@@ -3401,6 +3415,7 @@ content1  content2
 : 1617473293:0;find /Arquivos/BACKUP-HOME-TEMP/gondor_backup_diario_home* -type f -mtime +5 
 : 1617473296:0;find /Arquivos/BACKUP-HOME-TEMP/gondor_backup_diario_home* -type f -mtime +1 
 : 1617473301:0;find /Arquivos/BACKUP-HOME-TEMP/gondor_backup_diario_home* -type f
+: 1617473591:0;exa -al
 : 1617473599:0;watch exa -al
 : 1617473951:0;ls /Arquivos/OneDrive/Backups/Gondor/HOME
 : 1617475302:0;pavucontrol
@@ -3431,6 +3446,8 @@ content1  content2
 : 1617641878:0;htop
 : 1617641894:0;cd /Arquivos/BACKUP-HOME-TEMP/jfreitas/
 : 1617641896:0;cd ..
+: 1617641907:0;ls -la
+: 1617641910:0;exa -la
 : 1617642255:0;cd GitHub_Repos/video_aulas/algebra_1
 : 1617642263:0;cd aula_20-exercicio
 : 1617642285:0;mv exercicio_funcao_sobrejetora_nao_injetora.tex exercicio_exemplo_grupo.tex
@@ -3439,6 +3456,7 @@ content1  content2
 : 1617642596:0;systemctl --user enable --now gondor_home.timer
 : 1617642598:0;systemctl --user list-timers --all\
 
+: 1617642650:0;vim .xmonad/xmonad.hs
 : 1617642675:0;xmonad --recompile
 : 1617642745:0;cd ../aula_21-exercicio
 : 1617642748:0;rm *.pdf
@@ -3463,51 +3481,21 @@ content1  content2
 : 1617744858:0;vim fish_plugins
 : 1617744867:0;vim fish_variables
 : 1617744873:0;cd functions
+: 1617744874:0;ls
 : 1617744882:0;vim fish_prompt.fish
 : 1617744903:0;cd
 : 1617755483:0;aup
 : 1617815193:0;vim GitHub_Repos/Algebra-1/listas/lista_semana_09.tex
 : 1617815633:0;ssh -p 13508 andu.mat.unb.br
+: 1617815912:0;ssh -X -p 13508 inga.mat.unb.br
 : 1617822685:0;ls /Arquivos/Download_Torrents
+: 1617822717:0;exit
 : 1617824052:0;ssh -X -p 13508 inga.mat.unb.br
 : 1617834938:0;cd .config/zsh
+: 1617834939:0;ls
+: 1617834946:0;vim .zshrc
+: 1617835005:0;ls
 : 1617835007:0;ls -la
 : 1617835022:0;vim .zshrc.pre-oh-my-zsh
 : 1617835038:0;cp .zshrc zshrc
 : 1617835053:0;cp .zsh_history zsh_history
-: 1617835090:0;exa -la
-: 1617835176:0;whereis exa
-: 1617835294:0;which exa
-: 1617835333:0;exa -al --colour=always --group-directories-first
-: 1617835458:0;xit
-: 1617835485:0;exa -al --colour=never
-: 1617835695:0;cat zshrc_antigo
-: 1617835821:0;vim .config/fish/config.fish
-: 1617835916:0;exa
-: 1617836007:0;lt
-: 1617836603:0;vim .config/zsh/.p10k.zsh
-: 1617836973:0;man ls
-: 1617837051:0;ls --color=always
-: 1617837058:0;ls -la --color=always
-: 1617837128:0;vim .oh-my-zsh/oh-my-zsh.sh
-: 1617837209:0;ll --color=always
-: 1617837361:0;al
-: 1617837434:0;cp zshrc .zshrc
-: 1617837452:0;ll
-: 1617837566:0;lr
-: 1617837736:0;exa -al
-: 1617837978:0;vim .xmonad/xmonad.hs
-: 1617838020:0;, ("M-C-a", spawn "setxkbmap -layout us -variant intl")       -- set keyboard inte    rnational\
-, ("M-C-a", spawn "setxkbmap -layout us -variant intl")       -- set keyboard inte    rnational\
-
-: 1617838022:0;man exa
-: 1617838083:0;la
-: 1617838279:0;vim .zshrc
-: 1617838369:0;source .config/zsh/.zshrc
-: 1617838492:0;ls
-: 1617838507:0;setxkbmap -model abnt -layout us -variant intl
-: 1617838512:0;setxkbmap -model abnt -layout us
-: 1617838721:0;exit
-: 1617838841:0;fish
-: 1617839138:0;fish_config
-: 1617839142:0;fish
