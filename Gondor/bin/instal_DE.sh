@@ -6,7 +6,7 @@ makepkg -si --noconfirm
 
 cd ..
 
-paru -S --noconfirm burpsuite candy-icons-git davinci-resolve dropbox gitkraken google-chrome nerd-fonts-mononoki onedrive-abraunegg picom-jonaburg-git siji-git teams ttf-meslo ttf-ms-fonts ttf-unifont zoom
+paru -S --noconfirm burpsuite candy-icons-git davinci-resolve dropbox gitkraken google-chrome nerd-fonts-mononoki onedrive-abraunegg picom-jonaburg-git siji-git teams ttf-meslo ttf-ms-fonts ttf-unifont nerd-fonts-iosevka zoom
 
 #pikaur -S --noconfirm lightdm-settings
 #pikaur -S --noconfirm polybar
