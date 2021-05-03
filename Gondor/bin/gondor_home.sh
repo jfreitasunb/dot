@@ -26,4 +26,4 @@ cp "$DEST_TEMP""$NOME_BACKUP"* "$DEST_HOME"
 
 rm "$DEST_TEMP""$NOME_BACKUP"*
 
-find "$DEST_HOME" -type f -mtime +15 -delete
+find "$DEST_HOME" -type f -mtime +10 -delete
