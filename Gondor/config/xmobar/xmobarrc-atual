@@ -1,10 +1,10 @@
 -- http://projects.haskell.org/xmobar/
 -- install xmobar with these flags: --flags="with_alsa" --flags="with_mpd" --flags="with_xft"  OR --flags="all_extensions"
 -- you can find weather location codes here: http://weather.noaa.gov/index.html
-Config { font    = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=true"
-       , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=11:antialias=true:hinting=true"
-                           , "xft:Font Awesome 5 Free Solid:pixelsize=12"
-                           , "xft:Font Awesome 5 Brands:pixelsize=12"
+
+Config { font    = "xft:Font Awesome 5 Free Solid:solid:size=12:antialias=true, Ubuntu:weight=bold:pixelsize=12:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=12:antialias=true:hinting=true"
+                           , "xft:FontAwesome:pixelsize=13"
                            ]
        , bgColor = "#282c34"
        , fgColor = "#ff6c6b"

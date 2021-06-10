@@ -18,7 +18,8 @@ super + Return
 	terminator
 
 # program launcher
-super + @space
+#super + @space
+super + shift + Return
 	dmenu_run
 
 # make sxhkd reload its configuration files:

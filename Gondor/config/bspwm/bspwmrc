@@ -4,8 +4,8 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 light-locker &
 /usr/bin/dunst &
-polybar gondor&
-#bash /home/jfreitas/.config/polybar/forest/launch.sh &
+#polybar gondor&
+bash /home/jfreitas/.config/polybar/forest/launch.sh &
 nitrogen --restore& 
 #xrandr --output DisplayPort-0 --mode 3840x2160 &
 picom &

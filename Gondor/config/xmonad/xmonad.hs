@@ -108,7 +108,7 @@ myStartupHook = do
           spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
           spawnOnce "lxsession &"
           spawnOnce "nitrogen --restore &"
-          spawnOnce "picom --experimental-backend &"
+          spawnOnce "picom -b &"
           spawnOnce "nm-applet &"
           spawnOnce "volumeicon &"
           spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34  --height 25 &"
@@ -298,6 +298,8 @@ myManageHook = composeAll
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 0 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
+    , (className =? "java-lang-Thread" <&&> resource =? "Dialog") --> doFloat
+    , (className =? "java-lang-Thread" <&&> resource =? "Dialog") --> doShift ( myWorkspaces !! 8)
      ]
 
 myLogHook :: X ()
