@@ -121,27 +121,3 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-# teclas personalizadas
-super + shift + s
-	subl
-
-super + shift + f
-	pcmanfm
-
-super + shift + x
-	xournalpp
-
-super + shift + t
-	teams
-
-super + shift + g
-	google-chrome-stable
-
--- Multimedia Keys
-XF86AudioMuteamixer 
-	set Master toggle
-XF86AudioLowerVolume
-	amixer set Master 5%- unmute
-XF86AudioRaiseVolume
-	amixer set Master 5%+ unmute
