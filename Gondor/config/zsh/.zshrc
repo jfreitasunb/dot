@@ -38,6 +38,8 @@ alias avell='teclado_avell.sh'
 alias tsm='transmission-remote'
 alias wtsm='watch transmission-remote -l'
 
+eval $(keychain --eval ~/.ssh/id*)
+
 plugins=(
     git
     zsh-syntax-highlighting
