@@ -22,5 +22,10 @@ set signcolumn=yes
 
 
 call plug#begin('~/.vim/plugged')
-
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'lervag/vimtex'
+" A Vim Plugin for Lively Previewing LaTeX PDF Output
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'morhetz/gruvbox'
 call plug#end()
