@@ -39,7 +39,9 @@ set t_Co=256
 colorscheme solarized8
 "colorscheme gruvbox
 
-
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+nnoremap <C-p> :GFiles<CR>
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
