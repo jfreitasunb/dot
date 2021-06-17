@@ -298,8 +298,8 @@ myManageHook = composeAll
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 0 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
-    , (className =? "java-lang-Thread" <&&> resource =? "Dialog") --> doFloat
-    , (className =? "java-lang-Thread" <&&> resource =? "Dialog") --> doShift ( myWorkspaces !! 8)
+  --  , (className =? "java-lang-Thread" <&&> resource =? "Dialog") --> doFloat
+  --  , (className =? "java-lang-Thread" <&&> resource =? "Dialog") --> doShift ( myWorkspaces !! 8)
      ]
 
 myLogHook :: X ()
@@ -317,7 +317,7 @@ myKeys home =
         , ("M-S-<Return>", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
         -- , ("M-S-<Return>", spawn "rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\"") -- Rofi
 
-    
+
         -- , ("M-p q", scrotPrompt home True)         -- scrotPrompt True
         -- , ("M-p z", scrotPrompt home False)        -- scrotPrompt False
     -- Keyboard layouts
@@ -325,7 +325,7 @@ myKeys home =
         , ("M-C-i", spawn "setxkbmap -layout us")       -- set keyboard inte    rnational
 
         , ("M-C-b", spawn "setxkbmap -model abnt2 -layout br -variant abnt2") -- set keyboard abnt2
-    
+
     -- Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn (myTerminal))
         , ("M-S-s", spawn "subl")
