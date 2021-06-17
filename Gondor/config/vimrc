@@ -28,4 +28,11 @@ Plug 'lervag/vimtex'
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-solarized8'
 call plug#end()
+
+let g:solarized_termcolors=256
+set background=dark
+set t_Co=256
+colorscheme solarized8
+"colorscheme gruvbox
