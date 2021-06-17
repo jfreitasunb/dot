@@ -20,7 +20,6 @@ set scrolloff=8
 " set colorcolumn=80
 set signcolumn=yes
 
-
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -71,6 +70,25 @@ let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:WebDevIconsOS = 'Darwin'
+
+" buffer  line configurations
+let g:bufferline_fixed_index =  0 "always first
+let g:bufferline_fixed_index =  1 "always second (default)
+let g:bufferline_fixed_index = -1 "always last
+let g:bufferline_modified = '+'
+let g:bufferline_show_bufnr = 1
+let g:bufferline_active_buffer_left = '['
+let g:bufferline_active_buffer_right = '󰍟'
+let g:bufferline_modified = '󰄴 '
+
+set splitright
+set splitbelow
+
+" open terminal on the bottom
+function! OpenTerminal()
+  split term://zsh
+  resize 20
+endfunction
 
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
