@@ -69,7 +69,7 @@ import XMonad.Util.Run (runProcessWithInput, safeSpawn, spawnPipe)
 import XMonad.Util.SpawnOnce
 
 myFont :: String
-myFont = "xft:SauceCodePro Nerd Font Mono:regular:size=9:antialias=true:hinting=true"
+myFont = "xft:SauceCodePro Nerd Font Mono:regular:size=12:antialias=true:hinting=true"
 
 myModMask :: KeyMask
 myModMask = mod4Mask       -- Sets modkey to super/windows key
@@ -108,7 +108,7 @@ myStartupHook = do
           spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
           spawnOnce "lxsession &"
           spawnOnce "nitrogen --restore &"
-          spawnOnce "picom -b &"
+          spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends &"
           spawnOnce "nm-applet &"
           spawnOnce "volumeicon &"
           spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34  --height 25 &"
