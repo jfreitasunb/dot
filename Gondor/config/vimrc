@@ -62,6 +62,16 @@ let g:airline#extensions#default#section_truncate_width = {
       \ 'error': 80,
       \ }
 
+
+"Vim-Devicons Configurations
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_unite = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:WebDevIconsOS = 'Darwin'
+
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nnoremap <C-p> :GFiles<CR>
