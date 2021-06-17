@@ -29,13 +29,14 @@ Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-let g:solarized_termcolors=256
-set background=dark
-set t_Co=256
-colorscheme solarized8
-"colorscheme gruvbox
+"let g:solarized_termcolors=256
+"set background=dark
+"set t_Co=256
+"colorscheme solarized8
+colorscheme gruvbox
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
