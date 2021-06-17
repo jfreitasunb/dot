@@ -61,6 +61,14 @@ let g:airline#extensions#default#section_truncate_width = {
       \ 'error': 80,
       \ }
 
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <space>n :set number!<CR>
+
+let g:NERDTreeDirArrowExpandable = '󰍝'
+let g:NERDTreeDirArrowCollapsible = '󰍟'
 
 "Vim-Devicons Configurations
 let g:webdevicons_enable = 1
