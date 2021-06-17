@@ -298,8 +298,6 @@ myManageHook = composeAll
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 0 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
-  --  , (className =? "java-lang-Thread" <&&> resource =? "Dialog") --> doFloat
-  --  , (className =? "java-lang-Thread" <&&> resource =? "Dialog") --> doShift ( myWorkspaces !! 8)
      ]
 
 myLogHook :: X ()
