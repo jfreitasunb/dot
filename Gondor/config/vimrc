@@ -41,13 +41,18 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'mbbill/undotree'
+    Plug 'joshdick/onedark.vim'
 call plug#end()
 
-let g:solarized_termcolors=256
-set background=dark
-set t_Co=256
-colorscheme solarized8
-"colorscheme gruvbox
+"highlight LineNr term=italic cterm=NONE ctermfg=Grey ctermbg=NONE guifg=#353b45
+"colorscheme onedark
+
+"let g:solarized_termcolors=256
+"set background=dark
+"set t_Co=256
+"colorscheme solarized8
+colorscheme gruvbox
+set bg=dark
 
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 1
@@ -66,8 +71,8 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <space>n :set number!<CR>
-nnoremap <leader>u :UndotreeShow<CR>
+"nnoremap <space>n :set number!<CR>
+"nnoremap <leader>u :UndotreeShow<CR>
 
 let g:NERDTreeDirArrowExpandable = '󰍝'
 let g:NERDTreeDirArrowCollapsible = '󰍟'
@@ -103,6 +108,16 @@ endfunction
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nnoremap <C-p> :GFiles<CR>
+
+noremap  <Up>     <NOP>
+inoremap <Down>   <NOP>
+inoremap <Left>   <NOP>
+inoremap <Right>  <NOP>
+noremap  <Up>     <NOP>
+noremap  <Down>   <NOP>
+noremap  <Left>   <NOP>
+noremap  <Right>  <NOP>
+
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
