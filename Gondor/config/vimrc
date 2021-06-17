@@ -36,3 +36,14 @@ set background=dark
 set t_Co=256
 colorscheme solarized8
 "colorscheme gruvbox
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+augroup JOTA
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup END
