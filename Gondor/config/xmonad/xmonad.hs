@@ -289,14 +289,11 @@ myManageHook = composeAll
      -- I'm doing it this way because otherwise I would have to write out the full
      -- name of my workspaces, and the names would very long if using clickable workspaces.
      [ title =? "Mozilla Firefox"     --> doShift ( myWorkspaces !! 1 )
-     , className =? "mpv"     --> doShift ( myWorkspaces !! 7 )
+     -- , className =? "mpv"     --> doShift ( myWorkspaces !! 7 )
      , className =? "Gimp"    --> doShift ( myWorkspaces !! 8 )
      , className =? "Gimp"    --> doFloat
-     , className =? "Evince"  --> doShift ( myWorkspaces !! 3 )
+     , className =? "Sublime_text"  --> doShift ( myWorkspaces !! 3 )
      , className =? "obs"     --> doShift ( myWorkspaces !! 8 )
-     , className =? "virt-manager"   --> doShift ( myWorkspaces !! 6 )
-     , title =? "Oracle VM VirtualBox Manager"     --> doFloat
-     , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 0 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      ]
 
