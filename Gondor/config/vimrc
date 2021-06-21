@@ -21,6 +21,8 @@ set scrolloff=8
 set signcolumn=yes
 set encoding=utf-8
 
+let g:coc_global_extensions = ['coc-json', '@yaegassy/coc-intelephense', 'coc-blade-linter', 'coc-css ', 'coc-cssmodules', 'coc-emmet', 'coc-html', 'coc-html-css-support', 'coc-tailwindcss', 'coc-vimtex', 'coc-blade-formatter']
+
 let mapleader = " "
 
 call plug#begin('~/.vim/plugged')
@@ -31,7 +33,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'morhetz/gruvbox'
     Plug 'lifepillar/vim-solarized8'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-fugitive'
     Plug 'mattn/emmet-vim'
     Plug 'tpope/vim-sensible'
@@ -45,6 +46,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'mbbill/undotree'
     Plug 'joshdick/onedark.vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    "CoC extensions
+"    Plug 'yaegassy/coc-blade-formatter', {'do': 'yarn install --frozen-lockfile'}
+"    Plug 'yaegassy/coc-blade-linter', {'do': 'yarn install --frozen-lockfile'}
+
 call plug#end()
 
 "highlight LineNr term=italic cterm=NONE ctermfg=Grey ctermbg=NONE guifg=#353b45
