@@ -21,14 +21,14 @@ sudo tee /etc/modprobe.d/clevo-xsm-wmi.conf <<< 'options clevo-xsm-wmi kb_color=
 ######## Driver Wacom
 ##############################################################################################################################
 
-cd ~/scripts/input-wacom
+#cd ~/scripts/input-wacom
 
-if test -x ./autogen.sh; then ./autogen.sh; else ./configure; fi && make && sudo make install || echo "Build Failed"
+#if test -x ./autogen.sh; then ./autogen.sh; else ./configure; fi && make && sudo make install || echo "Build Failed"
 
-cd ../
+#cd ../
 
-sudo rm -rf /home/jfreitas/scripts/input-wacom
+#sudo rm -rf /home/jfreitas/scripts/input-wacom
 
-cp -R input-wacom-BKP input-wacom
+#cp -R input-wacom-BKP input-wacom
 
 sudo reboot
