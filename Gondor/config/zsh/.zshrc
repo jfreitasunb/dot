@@ -38,9 +38,8 @@ alias avell='teclado_avell.sh'
 alias tsm='transmission-remote'
 alias wtsm='watch transmission-remote -l'
 
-if [[ $(wmctrl -m | grep "Name: bspwm") ]]; then
-    eval $(keychain --eval ~/.ssh/id*)
-fi
+
+eval $(keychain --eval ~/.ssh/id*)
 
 plugins=(
     git
