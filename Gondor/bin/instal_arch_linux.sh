@@ -49,5 +49,4 @@ touch /etc/sudoers.d/jfreitas
 
 echo "jfreitas ALL=(ALL) ALL" >> /etc/sudoers.d/jfreitas
 
-
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
