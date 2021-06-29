@@ -45,6 +45,8 @@ useradd -m jfreitas
 echo jfreitas:estudos | chpasswd
 usermod -aG libvirt jfreitas
 
+touch /etc/sudoers.d/jfreitas
+
 echo "jfreitas ALL=(ALL) ALL" >> /etc/sudoers.d/jfreitas
 
 
