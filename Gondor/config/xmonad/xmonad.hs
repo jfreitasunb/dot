@@ -292,7 +292,6 @@ myManageHook = composeAll
      , className =? "mpv"     --> doShift ( myWorkspaces !! 7 )
      , className =? "Gimp"    --> doShift ( myWorkspaces !! 8 )
      , className =? "Gimp"    --> doFloat
-     , className =? "Sublime_text"  --> doShift ( myWorkspaces !! 3 )
      , className =? "obs"     --> doShift ( myWorkspaces !! 8 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      ]
