@@ -20,6 +20,7 @@ set scrolloff=8
 " set colorcolumn=80
 set signcolumn=yes
 set encoding=utf-8
+set fileencoding=utf-8
 
 "let g:coc_global_extensions = ['coc-json', '@yaegassy/coc-intelephense', 'coc-blade-linter', 'coc-css ', 'coc-cssmodules', 'coc-emmet', 'coc-html', 'coc-html-css-support', 'coc-tailwindcss', 'coc-vimtex', 'coc-blade-formatter']
 
