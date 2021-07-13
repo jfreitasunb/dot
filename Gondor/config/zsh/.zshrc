@@ -39,7 +39,8 @@ alias tsm='transmission-remote'
 alias wtsm='watch transmission-remote -l'
 
 
-eval $(keychain --eval ~/.ssh/id*)
+eval $(keychain --eval ~/.ssh/id_rsa)
+eval $(keychain --eval ~/.ssh/id_ecdsa)
 
 plugins=(
     git
