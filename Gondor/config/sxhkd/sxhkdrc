@@ -7,16 +7,16 @@ super + Return
 
 # program launcher
 super + space
-	 rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'JetBrainsMono Italic 10' 
+	 rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'JetBrainsMono Italic 10'
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# screenshot 
+# screenshot
 super + Print
-	maim "/home/$USER/Pictures/$(date).png" 
-super + shift + x 
-        maim -s -o "/home/$USER/Pictures/$(date).png"  
+	maim "/home/$USER/Pictures/$(date).png"
+super + shift + x
+        maim -s -o "/home/$USER/Pictures/$(date).png"
 #
 # bspwm hotkeys
 #
@@ -145,9 +145,9 @@ super + shift + g
 	google-chrome-stable
 
 -- Multimedia Keys
-XF86AudioMuteamixer 
-	set Master toggle
+XF86AudioMuteamixer
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86AudioLowerVolume
-	amixer set Master 5%- unmute
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
 XF86AudioRaiseVolume
-	amixer set Master 5%+ unmute
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
