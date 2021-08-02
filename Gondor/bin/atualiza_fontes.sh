@@ -21,6 +21,8 @@ cd nerd-fonts
 
 ./install.sh SourceCodePro
 
+./install.sh JetBrainsMono
+
 cd ../
 
 rm -rf nerd-fonts
