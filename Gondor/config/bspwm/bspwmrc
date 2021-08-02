@@ -61,6 +61,8 @@ picom --config ~/.config/picom/picom.conf --experimental-backends &
 #xwallpaper --zoom ~/wall/forest1.png
 nitrogen --restore &
 
+stalonetray ––background '#1e222a' --geometry 1x1-17+5 --max-geometry 10x1-17+5 --transparent true --tint-color '#1e222a' --tint-level 255 --grow-gravity NE --icon-gravity NW --icon-size 20 --sticky --window-type utility --window-strut top --skip-taskbar&
+
 #sleep 5&
 dropbox&
 #setxkbmap -layout us -variant intl&
