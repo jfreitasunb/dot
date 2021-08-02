@@ -1,6 +1,7 @@
 #! /bin/sh
 killall -q nitrogen
 killall -q picom
+killall -q dropbox
 
 killall -q dunst
 killall -q polybar
@@ -20,7 +21,7 @@ if [[ $MON == 2 ]] ; then
      bspc monitor HDMI-0 -d 5 6 7 8
      # polybar example -c ~/.config/polybar/config.ini
      MON1=DP-0 polybar bar1 -c ~/.config/polybar/config_bar1.ini &
-    
+
      MON2=HDMI-0  polybar bar2 -c ~/.config/polybar/config_bar2.ini &
 else
     bspc monitor -d 1 2 3 4 5 6 7
@@ -30,23 +31,23 @@ fi
 
 ############Window Settings ####################
 bspc config border_width         1
-bspc config window_gap           5 
+bspc config window_gap           5
 bspc config focus_follows_pointer   true
 bspc config split_ratio          0.50
 bspc config borderless_monocle   false
 bspc config gapless_monocle      true
-bspc config top_padding      20 
+bspc config top_padding      20
 
 ########## Border Colors #################
 bspc config focused_border_color "#353b45"
 bspc config normal_border_color "#353b45"
 
 ######### Program settings ################
-bspc rule -a spotify ='^5' 
+bspc rule -a spotify ='^5'
 bspc rule -a TelegramDesktop desktop='^4'
 bspc rule -a Firefox desktop='^2'
-bspc rule -a Zathura state=tiled 
-dunst & 
+bspc rule -a Zathura state=tiled
+dunst &
 
 ######### Other Settings ################
 xsetroot -cursor_name left_ptr &
@@ -57,10 +58,10 @@ xsetroot -cursor_name left_ptr &
 picom --config ~/.config/picom/picom.conf --experimental-backends &
 
 ######## THe real beauty behind rice ####
-#xwallpaper --zoom ~/wall/forest1.png 
+#xwallpaper --zoom ~/wall/forest1.png
 nitrogen --restore &
 
 #sleep 5&
-
+dropbox&
 #setxkbmap -layout us -variant intl&
 setxkbmap -layout us -variant intl
