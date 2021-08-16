@@ -3,4 +3,5 @@ sed -n '/START_KEYS/,/END_KEYS/p' ~/.xmonad/xmonad.hs | \
     grep -e ', ("' \
     -e '\[ (' | \
     grep -v '\-\- , ("' | \
-    sed -e 's/^[ \t]*//'
+    sed -e 's/^[ \t]*//' \
+        -e 's/, (/(/'
