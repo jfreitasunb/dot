@@ -104,8 +104,8 @@ myStartupHook :: X ()
 myStartupHook = do
           spawnOnce "setxkbmap -layout us -variant intl&"
           spawnOnce "dropbox &"
-          spawnOnce "numlockx"
-          spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
+          spawnOnce "numlockx&"
+          spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap&"
           spawnOnce "lxsession &"
           spawnOnce "nitrogen --restore &"
           spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends &"
@@ -299,7 +299,7 @@ myManageHook = composeAll
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
     where fadeAmount = 1.0
-
+-- START_KEYS
 myKeys :: String -> [([Char], X ())]
 myKeys home =
     -- Xmonad
@@ -327,6 +327,9 @@ myKeys home =
         , ("M-S-x", spawn "xournalpp")
         , ("M-S-t", spawn "teams")
         , ("M-S-g", spawn "google-chrome-stable")
+        , ("M-S-u", spawn "/home/jfreitas/.bin/seta_headset_default.sh")
+        , ("M-S-p", spawn "/home/jfreitas/.bin/seta_audio_interno_default.sh")
+
 
 -- , ("M-b", spawn (myBrowser ++ " www.youtube.com/c/DistroTube/"))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
@@ -411,7 +414,7 @@ myKeys home =
         -- , ("<XF86Eject>", spawn "toggleeject")
         , ("<Print>", spawn "scrotd 0")
         ]
-
+-- END_KEYS
 main :: IO ()
 main = do
     home <- getHomeDirectory
