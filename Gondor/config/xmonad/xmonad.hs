@@ -302,25 +302,25 @@ myLogHook = fadeInactiveLogHook fadeAmount
 -- START_KEYS
 myKeys :: String -> [([Char], X ())]
 myKeys home =
-    -- Xmonad
+    -- KB_GROUPS Xmonad
         [ ("M-C-r", spawn "xmonad --recompile") -- Recompiles xmonad
         , ("M-S-r", spawn "xmonad --restart")   -- Restarts xmonad
         , ("M-S-q", io exitSuccess)             -- Quits xmonad
 
-    -- Run Prompt
+    -- KB_GROUPS Run Prompt
         , ("M-S-<Return>", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
         -- , ("M-S-<Return>", spawn "rofi -show drun -config ~/.config/rofi/themes/dt-dmenu.rasi -display-drun \"Run: \" -drun-display-format \"{name}\"") -- Rofi
 
 
         -- , ("M-p q", scrotPrompt home True)         -- scrotPrompt True
         -- , ("M-p z", scrotPrompt home False)        -- scrotPrompt False
-    -- Keyboard layouts
+    -- KB_GROUPS Keyboard layouts
         , ("M-C-a", spawn "setxkbmap -layout us -variant intl")       -- set keyboard international
         , ("M-C-i", spawn "setxkbmap -layout us")       -- set keyboard inte    rnational
 
         , ("M-C-b", spawn "setxkbmap -model abnt2 -layout br -variant abnt2") -- set keyboard abnt2
 
-    -- Useful programs to have a keybinding for launch
+    -- KB_GROUPS Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn (myTerminal))
         , ("M-S-s", spawn "subl")
         , ("M-S-f", spawn "pcmanfm")
@@ -334,19 +334,19 @@ myKeys home =
 -- , ("M-b", spawn (myBrowser ++ " www.youtube.com/c/DistroTube/"))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
 
-    -- Kill windows
+    -- KB_GROUPS Kill windows
         , ("M-S-c", kill1)     -- Kill the currently focused client
         , ("M-S-a", killAll)   -- Kill all windows on current workspace
 
-    -- Workspaces
+    -- KB_GROUPS Workspaces
         , ("M-.", nextScreen)  -- Switch focus to next monitor
         , ("M-,", prevScreen)  -- Switch focus to prev monitor
-    -- Floating windows
+    -- KB_GROUPS Floating windows
         , ("M-f", sendMessage (T.Toggle "floats")) -- Toggles my 'floats' layout
         , ("M-t", withFocused $ windows . W.sink)  -- Push floating window back to tile
         , ("M-C-t", sinkAll)                       -- Push ALL floating windows to tile
 
-    -- Increase/decrease spacing (gaps)
+    -- KB_GROUPS Increase/decrease spacing (gaps)
         , ("M-d", decWindowSpacing 4)           -- Decrease window spacing
         , ("M-i", incWindowSpacing 4)           -- Increase window spacing
         , ("M-S-d", decScreenSpacing 4)         -- Decrease screen spacing
@@ -357,7 +357,7 @@ myKeys home =
         -- , ("C-g t", goToSelected $ mygridConfig myColorizer)  -- goto selected window
         -- , ("C-g b", bringSelected $ mygridConfig myColorizer) -- bring selected window
 
-    -- Windows navigation
+    -- KB_GROUPS Windows navigation
         , ("M-m", windows W.focusMaster)  -- Move focus to the master window
         , ("M-j", windows W.focusDown)    -- Move focus to the next window
         , ("M-k", windows W.focusUp)      -- Move focus to the prev window
@@ -368,7 +368,7 @@ myKeys home =
         , ("M-S-<Tab>", rotSlavesDown)    -- Rotate all windows except master and keep focus in place
         , ("M-C-<Tab>", rotAllDown)       -- Rotate all the windows in the current stack
 
-    -- Layouts
+    -- KB_GROUPS Layouts
         , ("M-<Tab>", sendMessage NextLayout)           -- Switch to next layout
         , ("M-C-M1-<Up>", sendMessage Arrange)
         , ("M-C-M1-<Down>", sendMessage DeArrange)
@@ -376,19 +376,19 @@ myKeys home =
         , ("M-S-<Space>", sendMessage ToggleStruts)     -- Toggles struts
         , ("M-S-n", sendMessage $ MT.Toggle NOBORDERS)  -- Toggles noborder
 
-    -- Increase/decrease windows in the master pane or the stack
+    -- KB_GROUPS Increase/decrease windows in the master pane or the stack
         , ("M-S-<Up>", sendMessage (IncMasterN 1))      -- Increase number of clients in master pane
         , ("M-S-<Down>", sendMessage (IncMasterN (-1))) -- Decrease number of clients in master pane
         , ("M-C-<Up>", increaseLimit)                   -- Increase number of windows
         , ("M-C-<Down>", decreaseLimit)                 -- Decrease number of windows
 
-    -- Window resizing
+    -- KB_GROUPS Window resizing
         , ("M-h", sendMessage Shrink)                   -- Shrink horiz window width
         , ("M-l", sendMessage Expand)                   -- Expand horiz window width
         , ("M-M1-j", sendMessage MirrorShrink)          -- Shrink vert window width
         , ("M-M1-k", sendMessage MirrorExpand)          -- Exoand vert window width
 
-    -- Sublayouts
+    -- KB_GROUPS Sublayouts
     -- This is used to push windows to tabbed sublayouts, or pull them out of it.
         , ("M-C-h", sendMessage $ pullGroup L)
         , ("M-C-l", sendMessage $ pullGroup R)
@@ -400,7 +400,7 @@ myKeys home =
         , ("M-C-.", onGroup W.focusUp')    -- Switch focus to next tab
         , ("M-C-,", onGroup W.focusDown')  -- Switch focus to prev tab
 
-    -- Multimedia Keys
+    -- KB_GROUPS Multimedia Keys
         -- , ("<XF86AudioPlay>", spawn (myTerminal ++ "mocp --play"))
         -- , ("<XF86AudioPrev>", spawn (myTerminal ++ "mocp --previous"))
         -- , ("<XF86AudioNext>", spawn (myTerminal ++ "mocp --next"))
