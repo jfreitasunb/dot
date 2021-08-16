@@ -1,4 +1,4 @@
-#!/usr/bin/bash -x
+#!/usr/bin/bash
 sed -n '/START_KEYS/,/END_KEYS/p' ~/.xmonad/xmonad.hs | \
     grep -e ', ("' \
     -e '\[ (' \
