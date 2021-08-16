@@ -307,6 +307,7 @@ myKeys home =
         [ ("M-C-r", spawn "xmonad --recompile") -- Recompiles xmonad
         , ("M-S-r", spawn "xmonad --restart")   -- Restarts xmonad
         , ("M-S-q", io exitSuccess)             -- Quits xmonad
+        , ("M-S-/", spawn "~/.bin/xmonad_keys.sh") -- Teclas de atalho do Xmonad
 
     -- KB_GROUPS Run Prompt
         , ("M-S-<Return>", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
