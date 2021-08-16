@@ -8,4 +8,5 @@ sed -n '/START_KEYS/,/END_KEYS/p' ~/.xmonad/xmonad.hs | \
         -e 's/, (/(/' \
         -e 's/\[ (/(/' \
         -e 's/-- KB_GROUPS /\n/' \
-        -e 's/", /": /'
+        -e 's/", /": /' | \
+    yad --text-info
