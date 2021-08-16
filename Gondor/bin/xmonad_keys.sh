@@ -7,4 +7,5 @@ sed -n '/START_KEYS/,/END_KEYS/p' ~/.xmonad/xmonad.hs | \
     sed -e 's/^[ \t]*//' \
         -e 's/, (/(/' \
         -e 's/\[ (/(/' \
-        -e 's/-- KB_GROUPS /\n/'
+        -e 's/-- KB_GROUPS /\n/' \
+        -e 's/", /": /'
