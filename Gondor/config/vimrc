@@ -116,6 +116,14 @@ function! OpenTerminal()
   resize 20
 endfunction
 
+" VimTeX commands
+
+nmap <leader>ll <Plug>(vimtex-compile)
+nmap <leader>lk <Plug>(vimtex-stop)
+nmap <leader>lc <Plug>(vimtex-clean)
+
+
+
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nnoremap <C-p> :GFiles<CR>
