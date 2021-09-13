@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 echo 'Updating Applications...'
-    sudo pacman -Syu
-    paru -Syu
+    sudo aura -Syu
+    sudo aura -Au
 
-echo ' '
-echo 'Cleaning caches & directories...'
-    pacman -Sc
-    paru -Sc
+#echo ' '
+#echo 'Cleaning caches & directories...'
+#    pacman -Sc
+#   paru -Sc
 
 echo ' '
 
