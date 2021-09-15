@@ -15,7 +15,7 @@
   <property name="zoomStepScroll" value="2.00000000"/>
   <property name="displayDpi" value="72"/>
   <property name="mainWndWidth" value="1908"/>
-  <property name="mainWndHeight" value="1038"/>
+  <property name="mainWndHeight" value="1036"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
@@ -158,6 +158,10 @@
       <attribute name="deviceSource" type="int" value="6"/>
     </data>
     <data name="Wacom One by Wacom S Pen Pen (0)">
+      <attribute name="deviceClass" type="int" value="2"/>
+      <attribute name="deviceSource" type="int" value="1"/>
+    </data>
+    <data name="Wacom One by Wacom S Pen stylus">
       <attribute name="deviceClass" type="int" value="2"/>
       <attribute name="deviceSource" type="int" value="1"/>
     </data>
