@@ -289,7 +289,6 @@ myManageHook = composeAll
      -- I'm doing it this way because otherwise I would have to write out the full
      -- name of my workspaces, and the names would very long if using clickable workspaces.
      [ title =? "Mozilla Firefox"     --> doShift ( myWorkspaces !! 1 )
-     , className =? "mpv"     --> doShift ( myWorkspaces !! 7 )
      , className =? "Gimp"    --> doShift ( myWorkspaces !! 8 )
      , className =? "Gimp"    --> doFloat
      , className =? "Yad"    --> doCenterFloat
