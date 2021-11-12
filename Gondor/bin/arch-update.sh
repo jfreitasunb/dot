@@ -11,6 +11,6 @@ echo 'Updating Applications...'
 
 echo ' '
 
-xmonad --recompile
+#xmonad --recompile
 
 echo 'Updating Complete!'

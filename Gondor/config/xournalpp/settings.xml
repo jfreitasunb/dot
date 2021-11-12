@@ -6,16 +6,16 @@
   <property name="pressureMultiplier" value="1.00000000"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Portrait"/>
-  <property name="lastSavePath" value="/Arquivos/OneDrive/UnB/Disciplinas/Graduacao/Algebra_1/2021-1/aulas_de_duvidas"/>
-  <property name="lastOpenPath" value="/Arquivos/OneDrive/UnB/Disciplinas/Graduacao/Algebra_1/2021-1/Avaliacoes/Modulo_2/TD2M2"/>
+  <property name="lastSavePath" value="/home/jfreitas/Downloads/ED3-Corrigido"/>
+  <property name="lastOpenPath" value="/Arquivos/OneDrive/UnB/Disciplinas/Graduacao/Algebra_1/2021-1/Avaliacoes/Modulo_3/ED3-Corrigido"/>
   <property name="lastImagePath" value=""/>
   <property name="edgePanSpeed" value="20.00000000"/>
   <property name="edgePanMaxMult" value="5.00000000"/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="1912"/>
-  <property name="mainWndHeight" value="1042"/>
+  <property name="mainWndWidth" value="1908"/>
+  <property name="mainWndHeight" value="1038"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
@@ -77,7 +77,7 @@
   <property name="preloadPagesAfter" value="5"/>
   <property name="eagerPageCleanup" value="true"/>
   <!--Config for new pages-->
-  <property name="pageTemplate" value="xoj/template&#10;copyLastPageSize=false&#10;copyLastPageSettings=true&#10;size=841,000000x595,000000&#10;backgroundType=ruled&#10;backgroundColor=#ffffffff&#10;"/>
+  <property name="pageTemplate" value="xoj/template&#10;copyLastPageSize=true&#10;copyLastPageSettings=true&#10;size=841.000000x595.000000&#10;backgroundType=ruled&#10;backgroundColor=#ffffffff&#10;"/>
   <property name="sizeUnit" value="cm"/>
   <property name="audioFolder" value=""/>
   <property name="audioInputDevice" value="-1"/>
