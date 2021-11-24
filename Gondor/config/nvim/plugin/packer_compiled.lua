@@ -75,6 +75,7 @@ _G.packer_plugins = {
     url = "https://github.com/morhetz/gruvbox"
   },
   ["nvim-autopairs"] = {
+    config = { " require('plugins/configs_plugins/autopairs') " },
     loaded = true,
     path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
@@ -85,6 +86,7 @@ _G.packer_plugins = {
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-web-devicons"] = {
+    config = { " require('plugins/configs_plugins/web_dev_icons') " },
     loaded = true,
     path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
@@ -98,6 +100,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["staline.nvim"] = {
+    config = { " require('plugins/configs_plugins/barra_status') " },
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/staline.nvim",
+    url = "https://github.com/tamton-aquib/staline.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -120,7 +128,7 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-surround"
   },
   vimtex = {
-    config = { " require('plugins/vimtex') " },
+    config = { " require('plugins/configs_plugins/vimtex') " },
     loaded = true,
     path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
@@ -128,10 +136,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: staline.nvim
+time([[Config for staline.nvim]], true)
+ require('plugins/configs_plugins/barra_status') 
+time([[Config for staline.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+ require('plugins/configs_plugins/autopairs') 
+time([[Config for nvim-autopairs]], false)
 -- Config for: vimtex
 time([[Config for vimtex]], true)
- require('plugins/vimtex') 
+ require('plugins/configs_plugins/vimtex') 
 time([[Config for vimtex]], false)
+-- Config for: nvim-web-devicons
+time([[Config for nvim-web-devicons]], true)
+ require('plugins/configs_plugins/web_dev_icons') 
+time([[Config for nvim-web-devicons]], false)
 if should_profile then save_profiles() end
 
 end)

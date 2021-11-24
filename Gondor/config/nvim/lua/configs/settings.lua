@@ -30,6 +30,8 @@ vim.cmd([[ set bg=dark ]])
 vim.cmd([[ set termguicolors ]])
 vim.cmd([[ colorscheme gruvbox ]])
 
+vim.cmd([[ let extension = expand('%:e') ]])
+
 vim.cmd([[
   augroup packer_user_config
     autocmd!
