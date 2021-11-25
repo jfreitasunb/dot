@@ -38,3 +38,16 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
 ]])
+
+vim.cmd([[ fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+]])
+
+vim.cmd([[ augroup JOTA
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup END
+]])

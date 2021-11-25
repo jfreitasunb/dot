@@ -20,3 +20,27 @@ vim.cmd([[ autocmd BufNewFile *.sh :call append(0, '#!/usr/bin/env bash') ]])
 vim.cmd([[ nmap <leader>ll <Plug>(vimtex-compile) ]])
 vim.cmd([[ nmap <leader>lk <Plug>(vimtex-stop) ]])
 vim.cmd([[ nmap <leader>lc <Plug>(vimtex-clean) ]])
+
+--Reselect visual selection after indenting
+vim.cmd([[ vnoremap < <gv ]])
+vim.cmd([[ vnoremap > >gv ]])
+
+--Maintain the cursor position when yanking a visual selection
+--http://ddrscott.github.io/blog/2016/yank-without-jank/
+vim.cmd([[ vnoremap y myy`y ]])
+vim.cmd([[ vnoremap Y myY`y ]])
+
+--When text is wrapped, move by terminal rows, not lines, unless a count is provided
+vim.cmd([[ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j') ]])
+vim.cmd([[ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k') ]])
+
+--Paste replace visual selection without copying it
+vim.cmd([[ vnoremap <leader>p "_dP ]])
+
+--Make Y behave like the other capitals
+vim.cmd([[ nnoremap Y y$ ]])
+
+--Keep it centered
+vim.cmd([[ nnoremap n nzzzv ]])
+vim.cmd([[ nnoremap N Nzzzv ]])
+vim.cmd([[ nnoremap J mzJ`z ]])
