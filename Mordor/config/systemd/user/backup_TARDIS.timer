@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup do Dropbox para HD externo
+
+[Timer]
+OnCalendar=*:0/10
+Persistent=true
+
+[Install]
+WantedBy=basic.target
