@@ -1,3 +1,4 @@
 require('nvim-autopairs').setup({
-  enable_check_bracket_line = false
+  ignored_next_char = "",
+enable_check_bracket_line = false
 })
