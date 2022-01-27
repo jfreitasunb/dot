@@ -12,7 +12,7 @@ NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".l
 
 NOME_BACKUP_PARU="gondor_lista_pacotes_instalados_PARU_"$(date +%Y-%m-%d)".lst"
 
-LOCAL_BACKUP="/Arquivos/OneDrive/Backups/Gondor/Backup-Diario/"
+LOCAL_BACKUP="/Arquivos/OneDrive - unb.br/Backups/Gondor/Backup-Diario/"
 
 # dpkg-query -f '${binary:Package}\n' -W > $LOCAL_BACKUP$NOME_BACKUP
 
