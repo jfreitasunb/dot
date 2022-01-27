@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
 echo 'Updating Applications...'
-    sudo aura -Syu
-    sudo aura -Au
+    sudo pacman -Syyu
+    paru -Syyu
 
-#echo ' '
-#echo 'Cleaning caches & directories...'
-#    pacman -Sc
-#   paru -Sc
+echo ' '
+echo 'Cleaning caches & directories...'
+   sudo pacman -Sc
+   paru -Sc
 
+   cd /home/jfreitas/.cache/paru/clone/
+   rm -rf *
 echo ' '
 
 #xmonad --recompile
