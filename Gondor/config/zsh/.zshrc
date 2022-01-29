@@ -35,6 +35,23 @@ export ZSH="/home/jfreitas/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+eval $(keychain --eval ~/.ssh/id_rsa)
+eval $(keychain --eval ~/.ssh/id_ecdsa)
+
+plugins=(
+    git
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh.
+[[ ! -f ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh ]] || source ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh
+
 # navigation
 up () {
   local d=""
@@ -55,6 +72,7 @@ up () {
   fi
 }
 
+
 ### ALIASES #####
 alias aup='arch-update.sh'
 alias pac='sudo pacman'
@@ -64,13 +82,6 @@ alias vud='vagrant halt laravel'
 alias vsl='vagrant ssh laravel'
 alias avell='teclado_avell.sh'
 
-# Changing "ls" to "exa"
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --group-directories-first' # tree listing
-alias lr='exa --color=always --sort newest --group-directories-first' # tree listing
-alias wtsm='watch transmission-remote -l'
 # Changing "cat" to "bat"
 alias cat='bat'
 
@@ -99,19 +110,12 @@ alias pscpu='ps auxf | sort -nr -k 3'
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-eval $(keychain --eval ~/.ssh/id_rsa)
-eval $(keychain --eval ~/.ssh/id_ecdsa)
 
-plugins=(
-    git
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-)
+# Changing "ls" to "exa"
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --binary --color=always --group-directories-first'  # long format
+alias lt='exa -aT --group-directories-first' # tree listing
+alias lr='exa --color=always --sort newest --group-directories-first' # tree listing
+a
+alias ls='exa -la --binary --color=always --group-directories-first' # my preferred listing
 
-source $ZSH/oh-my-zsh.sh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh.
-[[ ! -f ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh ]] || source ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh
