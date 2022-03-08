@@ -34,8 +34,8 @@ if [ -d "$BACKUP_DESTINATION" ] ; then
   BACKUP_SOURCE="/Arquivos/OneDrive/"
 
   rsync -avzzc --delete "$BACKUP_SOURCE" "$BACKUP_DESTINATION"
-  
+
   umount $BACKUP_DEVICE
-  
+
   rm $PIDFILE
 fi

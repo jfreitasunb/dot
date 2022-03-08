@@ -1,9 +1,0 @@
-#!/bin/bash -x
-
-EXCLUDE_LIST="/Arquivos/OneDrive - unb.br/Backups/Gondor/excludes/exclude-BACKUP-DROPBOX.list"
-
-DROPBOX="/home/jfreitas/Dropbox/Camera Uploads"
-
-ONEDRIVE="/Arquivos/OneDrive - unb.br/"
-
-rsync -avzzc --exclude-from="$EXCLUDE_LIST" "$DROPBOX" "$ONEDRIVE"
