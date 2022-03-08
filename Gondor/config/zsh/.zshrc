@@ -116,6 +116,5 @@ alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --binary --color=always --group-directories-first'  # long format
 alias lt='exa -aT --group-directories-first' # tree listing
 alias lr='exa --color=always --sort newest --group-directories-first' # tree listing
-a
 alias ls='exa -la --binary --color=always --group-directories-first' # my preferred listing
 
