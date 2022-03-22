@@ -104,6 +104,7 @@ myStartupHook :: X ()
 myStartupHook = do
           spawnOnce "setxkbmap -layout us -variant intl&"
           spawnOnce "dropbox &"
+          spawnOnce "lxqt-policykit-agent&"
           spawnOnce "numlockx&"
           spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap&"
           spawnOnce "lxsession &"
