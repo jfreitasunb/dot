@@ -7,6 +7,7 @@ end
 vim.cmd([[ packadd packer.nvim ]])
 
 return require('packer').startup(function(use)
+  use 'jalvesaq/Nvim-R'
   use 'wbthomason/packer.nvim'
   use 'morhetz/gruvbox'
   use 'tpope/vim-fugitive'

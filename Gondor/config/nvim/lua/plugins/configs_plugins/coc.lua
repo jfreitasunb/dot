@@ -16,6 +16,7 @@ vim.cmd([[ let g:coc_global_extensions = [
     \ 'https://github.com/rodrigore/coc-tailwind-intellisense',
     \ 'coc-tsserver',
     \ '@yaegassy/coc-volar',
+    \ 'coc-r-lsp',
 \ ]
 ]])
 
