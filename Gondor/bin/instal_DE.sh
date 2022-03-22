@@ -6,7 +6,7 @@ makepkg -si --noconfirm
 
 cd ..
 
-paru -S --noconfirm burpsuite candy-icons-git davinci-resolve dropbox google-chrome nerd-fonts-mononoki onedrive-abraunegg picom-jonaburg-git siji-git teams ttf-meslo ttf-ms-fonts ttf-unifont nerd-fonts-iosevka cpuid2cpuflags auto-cpufreq otf-font-awesome-5-free polybar ttf-material-design-icons-git
+paru -S --noconfirm burpsuite candy-icons-git davinci-resolve dropbox google-chrome nerd-fonts-mononoki onedrive-abraunegg picom-jonaburg-git siji-git teams ttf-meslo ttf-ms-fonts ttf-unifont nerd-fonts-iosevka cpuid2cpuflags auto-cpufreq otf-font-awesome-5-free polybar ttf-material-design-icons-git appimagelauncher
 
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 
