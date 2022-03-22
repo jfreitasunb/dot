@@ -75,7 +75,7 @@ myModMask :: KeyMask
 myModMask = mod4Mask       -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "alacritty"   -- Sets default terminal
+myTerminal = "terminator"   -- Sets default terminal
 
 -- myBrowser :: String
 -- myBrowser = "qutebrowser "               -- Sets qutebrowser as browser for tree select
@@ -102,7 +102,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
-          spawnOnce "setxkbmap -layout us -variant intl&"
+          spawnOnce "setxkbmap -model abnt2 -layout br -variant abnt2&"
           spawnOnce "dropbox &"
           spawnOnce "numlockx&"
           spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap&"
