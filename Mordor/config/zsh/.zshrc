@@ -4,7 +4,7 @@
 export VISUAL=vim
 export EDITOR=vim
 neofetch
-HISTFILE=~/.config/zsh/.zsh_history
+HISTFILE=~/.zsh_history
 HISTSIZE=1000000000
 SAVEHIST=1000000000
 bindkey -e
@@ -46,8 +46,8 @@ alias tsm='transmission-remote'
 alias wtsm='watch transmission-remote -l'
 
 
-eval $(keychain --eval ~/.ssh/id_rsa)
-eval $(keychain --eval ~/.ssh/id_ecdsa)
+#eval $(keychain --eval ~/.ssh/id_rsa)
+#eval $(keychain --eval ~/.ssh/id_ecdsa)
 
 plugins=(
     git
@@ -66,6 +66,7 @@ alias lr='exa --color=always --sort newest --group-directories-first' # tree lis
 alias wtsm='watch transmission-remote -l'
 # Changing "cat" to "bat"
 alias cat='bat'
+alias vim='nvim'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
