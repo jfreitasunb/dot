@@ -4,7 +4,7 @@
 export VISUAL=vim
 export EDITOR=vim
 neofetch
-HISTFILE=~/.zsh_history
+HISTFILE=/home/jfreitas/.zsh_history
 HISTSIZE=1000000000
 SAVEHIST=1000000000
 bindkey -e
