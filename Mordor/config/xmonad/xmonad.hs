@@ -324,7 +324,7 @@ myKeys home =
 
     -- KB_GROUPS Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn (myTerminal))
-        , ("M-S-s", spawn "subl")
+        , ("M-S-l", spawn "slock")
         , ("M-S-f", spawn "pcmanfm")
         , ("M-S-x", spawn "xournalpp")
         , ("M-S-t", spawn "teams")
