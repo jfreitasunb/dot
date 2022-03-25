@@ -328,7 +328,7 @@ myKeys home =
         , ("M-S-s", spawn "slock")
         , ("M-S-f", spawn "pcmanfm")
         , ("M-S-x", spawn "xournalpp")
-        , ("M-S-t", spawn "teams")
+        , ("M-S-t", spawn "teams --no-sandbox")
         , ("M-S-g", spawn "google-chrome-stable")
         , ("M-S-u", spawn "/home/jfreitas/.bin/seta_headset_default.sh")
         , ("M-S-p", spawn "/home/jfreitas/.bin/seta_audio_interno_default.sh")

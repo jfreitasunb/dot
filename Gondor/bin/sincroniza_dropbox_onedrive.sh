@@ -8,4 +8,4 @@ DROPBOX="/Arquivos/Dropbox/"
 
 ONEDRIVE="/Arquivos/OneDrive/"
 
-rsync -avzzcrR --files-from="$LISTA_DIRETORIOS" --exclude-from="$EXCLUDE_LIST" "$DROPBOX" "$ONEDRIVE"
+rsync -avzzcrR --files-from="$LISTA_DIRETORIOS" --exclude-from="$EXCLUDE_LIST" "$DROPBOX" "$ONEDRIVE" --delete
