@@ -75,7 +75,7 @@ myModMask :: KeyMask
 myModMask = mod4Mask       -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "terminator"   -- Sets default terminal
+myTerminal = "alacritty"   -- Sets default terminal
 
 -- myBrowser :: String
 -- myBrowser = "qutebrowser "               -- Sets qutebrowser as browser for tree select
@@ -102,9 +102,9 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
-          spawnOnce "setxkbmap -model abnt2 -layout br -variant abnt2&"
-          spawnOnce "lxqt-policykit-agent&"
+          spawnOnce "setxkbmap -layout us -variant intl&"
           spawnOnce "dropbox &"
+          spawnOnce "lxqt-policykit-agent&"
           spawnOnce "numlockx&"
           spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap&"
           spawnOnce "lxsession &"
@@ -324,11 +324,12 @@ myKeys home =
 
     -- KB_GROUPS Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn (myTerminal))
-        , ("M-S-l", spawn "slock")
+        , ("M-S-b", spawn "brave")
+        , ("M-C-p", spawn "keepassxc")
+        , ("M-S-s", spawn "slock")
         , ("M-S-f", spawn "pcmanfm")
         , ("M-S-x", spawn "xournalpp")
-        , ("M-S-t", spawn "teams")
-        , ("M-S-b", spawn "brave")
+        , ("M-S-t", spawn "teams --no-sandbox")
         , ("M-S-g", spawn "google-chrome-stable")
         , ("M-S-u", spawn "/home/jfreitas/.bin/seta_headset_default.sh")
         , ("M-S-p", spawn "/home/jfreitas/.bin/seta_audio_interno_default.sh")
