@@ -74,16 +74,35 @@ _G.packer_plugins = {
     path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/Nvim-R",
     url = "https://github.com/jalvesaq/Nvim-R"
   },
-  ["coc-fzf"] = {
+  ["bufferline.nvim"] = {
     loaded = true,
-    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/coc-fzf",
-    url = "https://github.com/antoinemadec/coc-fzf"
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
   },
-  ["coc.nvim"] = {
-    config = { " require('plugins/configs_plugins/coc') " },
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["emmet-vim"] = {
     loaded = true,
@@ -101,11 +120,15 @@ _G.packer_plugins = {
     path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
-  nerdtree = {
-    config = { " require('plugins/configs_plugins/nerdtree')" },
+  ["nlsp-settings.nvim"] = {
     loaded = true,
-    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nerdtree",
-    url = "https://github.com/preservim/nerdtree"
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
+    url = "https://github.com/tamago324/nlsp-settings.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     config = { " require('plugins/configs_plugins/autopairs') " },
@@ -113,10 +136,33 @@ _G.packer_plugins = {
     path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
+  ["nvim-lsp-installer"] = {
+    config = { " require('plugins/lsp/lsp-installer') " },
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
+  },
+  ["nvim-lspconfig"] = {
+    config = { " require('plugins/lsp/init')" },
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    config = { " require('plugins/configs_plugins/treesitter') " },
+    loaded = true,
+    path = "/home/jfreitas/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-web-devicons"] = {
     config = { " require('plugins/configs_plugins/web_dev_icons') " },
@@ -195,18 +241,26 @@ time([[Defining packer_plugins]], false)
 time([[Config for vim-airline]], true)
  require('plugins/configs_plugins/airline')
 time([[Config for vim-airline]], false)
--- Config for: coc.nvim
-time([[Config for coc.nvim]], true)
- require('plugins/configs_plugins/coc') 
-time([[Config for coc.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
- require('plugins/configs_plugins/linhas_identacao')
-time([[Config for indent-blankline.nvim]], false)
--- Config for: nerdtree
-time([[Config for nerdtree]], true)
- require('plugins/configs_plugins/nerdtree')
-time([[Config for nerdtree]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+ require('plugins/configs_plugins/treesitter') 
+time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+ require('plugins/lsp/init')
+time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-web-devicons
+time([[Config for nvim-web-devicons]], true)
+ require('plugins/configs_plugins/web_dev_icons') 
+time([[Config for nvim-web-devicons]], false)
+-- Config for: nvim-lsp-installer
+time([[Config for nvim-lsp-installer]], true)
+ require('plugins/lsp/lsp-installer') 
+time([[Config for nvim-lsp-installer]], false)
+-- Config for: vimtex
+time([[Config for vimtex]], true)
+ require('plugins/configs_plugins/vimtex') 
+time([[Config for vimtex]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
  require('plugins/configs_plugins/autopairs') 
@@ -215,18 +269,14 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for vim-bufferline]], true)
  require('plugins/configs_plugins/bufferline')
 time([[Config for vim-bufferline]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+ require('plugins/configs_plugins/linhas_identacao')
+time([[Config for indent-blankline.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
  require('plugins/configs_plugins/telescope') 
 time([[Config for telescope.nvim]], false)
--- Config for: vimtex
-time([[Config for vimtex]], true)
- require('plugins/configs_plugins/vimtex') 
-time([[Config for vimtex]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
- require('plugins/configs_plugins/web_dev_icons') 
-time([[Config for nvim-web-devicons]], false)
 if should_profile then save_profiles() end
 
 end)
