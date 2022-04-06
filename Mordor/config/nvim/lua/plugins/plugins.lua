@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
       'neoclide/coc.nvim',
       requires = { {'antoinemadec/coc-fzf'} },
       config = [[ require('plugins/configs_plugins/coc') ]]
-    } 
+    }
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} },
