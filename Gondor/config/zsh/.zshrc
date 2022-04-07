@@ -12,6 +12,7 @@ setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
 
 autoload -U compinit; compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 _comp_options+=(globdots) # With hidden files
 
 ### --- Spaceship Config ------------------------------------
