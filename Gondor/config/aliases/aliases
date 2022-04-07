@@ -60,3 +60,7 @@ alias ll='exa -l --binary --color=always --group-directories-first'  # long form
 alias lt='exa -aT --group-directories-first' # tree listing
 alias lr='exa --color=always --sort newest --group-directories-first' # tree listing
 alias ls='exa -la --binary --color=always --group-directories-first' # my preferred listing
+
+# Navegação entre diretórios
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
