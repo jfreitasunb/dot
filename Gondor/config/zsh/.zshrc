@@ -1,5 +1,14 @@
 neofetch
 
+autoload -U compinit; compinit
+_comp_options+=(globdots) # With hidden files
+
+fpath=(~/.config/zsh/ $fpath)
+
+autoload -Uz prompt && prompt 
+
+source $ZDOTDIR/completion.zsh
+
 bindkey -e
 
 PATH=$PATH:$HOME/.bin
@@ -34,4 +43,4 @@ up () {
 
 source ~/.config/aliases/aliases
 
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
