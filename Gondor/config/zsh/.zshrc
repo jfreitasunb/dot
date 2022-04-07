@@ -1,5 +1,7 @@
 neofetch
 
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
 bindkey -e
 
 PATH=$PATH:$HOME/.bin
@@ -32,4 +34,4 @@ up () {
   fi
 }
 
-source $ZDOTDIR/alianes_zsh
+source ~/.config/aliases/aliases
