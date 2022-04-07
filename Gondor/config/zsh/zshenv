@@ -4,8 +4,17 @@ ZDOTDIR=$HOME/.config/zsh
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+### ---- history config -------------------------------------
 HISTFILE=~/.zsh_history
-HISTSIZE=1000000000
+
+# How many commands zsh will load to memory.
+HISTSIZE=10000
+
+# How maney commands history will save on file.
 SAVEHIST=1000000000
 
+# History won't save duplicates.
 setopt HIST_SAVE_NO_DUPS
+
+# History won't show duplicates on search.
+setopt HIST_FIND_NO_DUPS
