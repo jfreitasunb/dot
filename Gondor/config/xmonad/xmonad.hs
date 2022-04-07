@@ -416,7 +416,7 @@ myKeys home =
         -- , ("<XF86Mail>", runOrRaise "thunderbird" (resource =? "thunderbird"))
         , ("<XF86Calculator>", runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
         -- , ("<XF86Eject>", spawn "toggleeject")
-        , ("<Print>", spawn "scrotd 0")
+        , ("<Print>", spawn "maim -i $(xdotool getactivewindow) ~/Pictures/Screenshot_$(date +%Y-%m-%d_%H:%m:%S).png")
         ]
 -- END_KEYS
 main :: IO ()
