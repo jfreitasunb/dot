@@ -1,0 +1,9 @@
+ZDOTDIR=$HOME/.config/zsh
+. "$HOME/.cargo/env"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000000
+SAVEHIST=1000000000
