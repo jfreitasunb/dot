@@ -78,8 +78,6 @@ Mordor/config/zsh/.zcompdump-gondor-5.4.2
 Mordor/config/zsh/.zcompdump-gondor-5.5.1
 Mordor/config/zsh/.zcompdump-gondor-5.8
 Mordor/config/zsh/.zcompdump-mordor-5.8
-Gondor/config/zsh/plugins/fast-syntax-highlighting/
-Gondor/config/zsh/plugins/zsh-autosuggestions/
-Gondor/config/zsh/plugins/zsh-completions/
 Gondor/config/zsh/themes/spaceship-prompt/
 Gondor/config/nvim/plugin
+Gondor/config/zsh/plugins
