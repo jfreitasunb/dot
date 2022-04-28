@@ -81,6 +81,7 @@ Mordor/config/zsh/.zcompdump-mordor-5.8
 Gondor/config/zsh/themes/spaceship-prompt/
 Gondor/config/nvim/plugin
 Gondor/config/zsh/plugins
+<<<<<<< HEAD
 Gondor/config/nvim/plugin/packer_compiled.lua
 Gondor/config/nvim/plugin
 Gondor/config/nvim/plugin
@@ -90,3 +91,9 @@ Gondor/config/nvim/plugin/packer_compiled.lua
 Gondor/config/nvim/plugin/packer_compiled.lua
 Gondor/config/nvim/plugin/packer_compiled.lua
 Gondor/config/nvim/plugin/packer_compiled.lua
+=======
+Mordor/config/xmonad/xmonad-x86_64-linux
+Mordor/config/xmonad/xmonad.hi
+Mordor/config/xmonad/xmonad.hi
+Mordor/config/xmonad/xmonad.o
+>>>>>>> faa1a49 (Nada importante.)
