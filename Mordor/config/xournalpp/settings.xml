@@ -9,11 +9,13 @@
   <property name="lastSavePath" value="/home/jfreitas/Downloads/ED3-Corrigido"/>
   <property name="lastOpenPath" value="/Arquivos/OneDrive/UnB/Disciplinas/Graduacao/Algebra_1/2021-1/Avaliacoes/Modulo_3/ED3-Corrigido"/>
   <property name="lastImagePath" value=""/>
+  <property name="edgePanSpeed" value="20.00000000"/>
+  <property name="edgePanMaxMult" value="5.00000000"/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="1908"/>
-  <property name="mainWndHeight" value="1038"/>
+  <property name="mainWndWidth" value="1920"/>
+  <property name="mainWndHeight" value="1050"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>

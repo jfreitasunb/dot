@@ -12,7 +12,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
 PATH=$PATH:$HOME/.bin
-#PATH="HOME/.cargo/bin:$PATH"
+PATH="HOME/.local/bin:$PATH"
 
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
