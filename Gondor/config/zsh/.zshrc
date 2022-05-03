@@ -55,6 +55,7 @@ source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin
 
 PATH=$PATH:$HOME/.bin
 PATH="HOME/.cargo/bin:$PATH"
+PATH="HOME/.local/bin:$PATH"
 
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
