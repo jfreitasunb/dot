@@ -7,7 +7,7 @@
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Portrait"/>
   <property name="lastSavePath" value="/home/jfreitas/Downloads/ED3-Corrigido"/>
-  <property name="lastOpenPath" value="/Arquivos/OneDrive/UnB/Disciplinas/Graduacao/Algebra_1/2021-1/Avaliacoes/Modulo_3/ED3-Corrigido"/>
+  <property name="lastOpenPath" value="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2021-2/Avaliacoes/Modulo_3/ED3-Corrigido"/>
   <property name="lastImagePath" value=""/>
   <property name="edgePanSpeed" value="20.00000000"/>
   <property name="edgePanMaxMult" value="5.00000000"/>
@@ -15,7 +15,7 @@
   <property name="zoomStepScroll" value="2.00000000"/>
   <property name="displayDpi" value="72"/>
   <property name="mainWndWidth" value="1920"/>
-  <property name="mainWndHeight" value="1050"/>
+  <property name="mainWndHeight" value="1030"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
@@ -206,7 +206,7 @@
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
-      <attribute name="size" type="string" value="MEDIUM"/>
+      <attribute name="size" type="string" value="THIN"/>
       <attribute name="style" type="string" value="plain"/>
     </data>
     <data name="playObject">
