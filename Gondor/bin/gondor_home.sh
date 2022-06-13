@@ -3,9 +3,11 @@
 ultimo_backup=$(cat ~/.temporario/data_ultimo_backup)
 data_atual=$(date '+%s')
 
+
 data_ultimo_backup=$(date -d $ultimo_backup '+%s')
 
 diferenca=$(( ( data_atual - data_ultimo_backup )/(60*60*24) ))
+
 rotavidade=3
 
 if [ $diferenca -gt $rotavidade ];
@@ -29,6 +31,7 @@ then
 
     tar -cjf - /home/jfreitas --exclude-from="$EXCLUDE_LIST" | split -d -b 1G - "$NOME_BACKUP""_parte-"
 
-
     find "$DEST_HOME" -type f -mtime +10 -delete
+
+    echo $(date '+%Y-%m-%d) > ~/.temporario/data_ultimo_backup
 fi
