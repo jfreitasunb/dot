@@ -1,27 +1,34 @@
 #!/bin/bash
 
-EXCLUDE_LIST="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-HOME.list"
+ultimo_backup=$(cat ~/.temporario/data_ultimo_backup)
+data_atual=$(date '+%s')
 
-HOME="/home/jfreitas/"
+data_ultimo_backup=$(date -d $ultimo_backup '+%s')
 
-DEST_HOME_TEMP="/Arquivos/BACKUP-HOME-TEMP/jfreitas/"
+diferenca=$(( ( data_atual - data_ultimo_backup )/(60*60*24) ))
+rotavidade=3
 
-DEST_TEMP="/Arquivos/BACKUP-HOME-TEMP/"
+if [ $diferenca -gt $rotavidade ];
+then
 
-DEST_HOME="/Arquivos/Dropbox/Backups/Gondor/HOME/"
+    EXCLUDE_LIST="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-HOME.list"
 
-NOME_BACKUP="gondor_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
+    HOME="/home/jfreitas/"
 
-rsync -avzz --exclude-from="$EXCLUDE_LIST" "$HOME" "$DEST_HOME_TEMP"
+    DEST_HOME_TEMP="/Arquivos/BACKUP-HOME-TEMP/jfreitas/"
 
-cd "$DEST_HOME"
+    DEST_TEMP="/Arquivos/BACKUP-HOME-TEMP/"
 
-tar -cjf - /home/jfreitas --exclude-from="$EXCLUDE_LIST" | split -d -b 1G - "$NOME_BACKUP""_parte-"
+    DEST_HOME="/Arquivos/Dropbox/Backups/Gondor/HOME/"
 
-#rm "$DEST_TEMP""$NOME_BACKUP"
+    NOME_BACKUP="gondor_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
 
-#cp "$DEST_TEMP""$NOME_BACKUP"* "$DEST_HOME"
+    rsync -avzz --exclude-from="$EXCLUDE_LIST" "$HOME" "$DEST_HOME_TEMP"
 
-#rm "$DEST_TEMP""$NOME_BACKUP"*
+    cd "$DEST_HOME"
 
-find "$DEST_HOME" -type f -mtime +10 -delete
+    tar -cjf - /home/jfreitas --exclude-from="$EXCLUDE_LIST" | split -d -b 1G - "$NOME_BACKUP""_parte-"
+
+
+    find "$DEST_HOME" -type f -mtime +10 -delete
+fi
