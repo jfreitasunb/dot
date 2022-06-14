@@ -21,6 +21,8 @@ then
 
     DEST_TEMP="/Arquivos/BACKUP-HOME-TEMP/"
 
+    mkdir -p $DEST_TEMP
+
     DEST_HOME="/Arquivos/Dropbox/Backups/Gondor/HOME/"
 
     NOME_BACKUP="gondor_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
@@ -33,5 +35,5 @@ then
 
     find "$DEST_HOME" -type f -mtime +10 -delete
 
-    echo $(date '+%Y-%m-%d) > ~/.temporario/data_ultimo_backup
+    echo $(date '+%Y-%m-%d') > ~/.temporario/data_ultimo_backup
 fi
