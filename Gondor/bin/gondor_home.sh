@@ -15,20 +15,19 @@ then
 
     EXCLUDE_LIST="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-HOME.list"
 
-    HOME="/home/jfreitas/"
+    #HOME="/home/jfreitas/"
 
-    DEST_HOME_TEMP="/Arquivos/BACKUP-HOME-TEMP/jfreitas/"
+    #DEST_HOME_TEMP="/Arquivos/BACKUP-HOME-TEMP/jfreitas/"
 
-    DEST_TEMP="/Arquivos/BACKUP-HOME-TEMP/"
+    #DEST_TEMP="/Arquivos/BACKUP-HOME-TEMP/"
 
-    mkdir -p $DEST_TEMP
+    #mkdir -p $DEST_TEMP
 
     DEST_HOME="/Arquivos/Dropbox/Backups/Gondor/HOME/"
 
     NOME_BACKUP="gondor_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
 
-    rsync -avzz --exclude-from="$EXCLUDE_LIST" "$HOME" "$DEST_HOME_TEMP"
-
+    #rsync -avzz --exclude-from="$EXCLUDE_LIST" "$HOME" "$DEST_HOME_TEMP"
     cd "$DEST_HOME"
 
     tar -cjf - /home/jfreitas --exclude-from="$EXCLUDE_LIST" | split -d -b 1G - "$NOME_BACKUP""_parte-"
