@@ -30,7 +30,7 @@ then
     #rsync -avzz --exclude-from="$EXCLUDE_LIST" "$HOME" "$DEST_HOME_TEMP"
     cd "$DEST_HOME"
 
-    tar -cjf - /home/jfreitas --exclude-from="$EXCLUDE_LIST" | split -d -b 1G - "$NOME_BACKUP""_parte-"
+    tar --exclude-from="$EXCLUDE_LIST" -cjf - /home/jfreitas | split -d -b 1G - "$NOME_BACKUP""_parte-"
 
     find "$DEST_HOME" -type f -mtime +10 -delete
 
