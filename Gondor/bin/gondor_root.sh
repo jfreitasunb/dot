@@ -16,7 +16,7 @@ LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Gondor/Backup-Diario/"
 
 #cd "$LOCAL_BACKUP"
 
-tar -cfv "$LOCAL_TAR""$NOME_BACKUP" /etc --exclude-from="$EXCLUDE_LIST"
+tar --exclude-from="$EXCLUDE_LIST" -cfv "$LOCAL_TAR""$NOME_BACKUP" /etc
 
 # rsync -avzc --no-links --delete --exclude-from=$EXCLUDE_LIST /var/lib/vnstat $LOCAL_TEMPORARIO_ROOT
 
