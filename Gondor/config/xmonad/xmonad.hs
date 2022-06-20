@@ -103,6 +103,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
           spawnOnce "setxkbmap -layout us -variant intl&"
+          spawnOnce "xsetroot -cursor_name left_ptr"
           spawnOnce "dropbox &"
           spawnOnce "lxqt-policykit-agent&"
           spawnOnce "numlockx&"
