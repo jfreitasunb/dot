@@ -1,4 +1,5 @@
 vim.cmd([[ set encoding=utf-8 ]])
+vim.cmd([[ set clipboard+=unnamedplus ]])
 vim.cmd([[ set fileencoding=utf-8 ]])
 vim.cmd([[ set exrc ]])
 vim.cmd([[ syn on ]])
