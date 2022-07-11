@@ -333,7 +333,7 @@ myKeys home =
         , ("M-S-t", spawn "teams --no-sandbox")
         , ("M-S-g", spawn "google-chrome-stable")
         , ("M-S-u", spawn "/home/jfreitas/.bin/seta_headset_default.sh")
-        , ("M-S-c", spawn "/home/jfreitas/.bin/seta_usbc_headset_default.sh")
+        , ("M-C-c", spawn "/home/jfreitas/.bin/seta_usbc_headset_default.sh")
         , ("M-S-p", spawn "/home/jfreitas/.bin/seta_audio_interno_default.sh")
 
 
