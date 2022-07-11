@@ -131,3 +131,4 @@ Mordor/config/xournalpp/metadata
 Mordor/config/xmonad/xmonad-x86_64-linux
 *.hi
 *.o
+Mordor/config/xmonad/xmonad.o
