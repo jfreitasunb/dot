@@ -126,3 +126,8 @@ Mordor/config/xournalpp/metadata/1635965687268447.metadata
 Mordor/config/xournalpp/metadata/1635965133585706.metadata
 Mordor/config/xournalpp/metadata/1635964319922741.metadata
 Mordor/config/xournalpp/metadata
+*.hi
+*.o
+Mordor/config/xmonad/xmonad-x86_64-linux
+*.hi
+*.o
