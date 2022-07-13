@@ -257,7 +257,7 @@ myShowWNameTheme = def
 myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where
-               myDefaultLayout =     tall
+               myDefaultLayout = withBorder myBorderWidth tall
                                  ||| magnify
                                  ||| noBorders monocle
                                  ||| floats

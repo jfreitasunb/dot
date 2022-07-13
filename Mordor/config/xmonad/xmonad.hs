@@ -63,7 +63,6 @@ import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
    -- Utilities
 import XMonad.Util.Dmenu
 import XMonad.Util.EZConfig (additionalKeysP, mkNamedKeymap)
-import XMonad.Util.NamedActions
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run (runProcessWithInput, safeSpawn, spawnPipe)
 import XMonad.Util.SpawnOnce
@@ -285,7 +284,7 @@ myShowWNameTheme = def
 myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where
-               myDefaultLayout =     tall
+               myDefaultLayout = withBorder myBorderWidth tall
                                  ||| noBorders monocle
                                  ||| floats
                                  ||| noBorders tabs
@@ -325,12 +324,6 @@ myManageHook = composeAll
      , className =? "obs"     --> doShift ( myWorkspaces !! 8 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      ]
-
-subtitle' ::  String -> ((KeyMask, KeySym), NamedAction)
-subtitle' x = ((0,0), NamedAction $ map toUpper
-                      $ sep ++ "\n-- " ++ x ++ " --\n" ++ sep)
-  where
-    sep = replicate (6 + length x) '-'
 
 -- START_KEYS
 myKeys :: String -> [([Char], X ())]
