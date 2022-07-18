@@ -11,12 +11,28 @@ bindkey -e
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
-PATH=$PATH:$HOME/.bin
-PATH="HOME/.local/bin:$PATH"
+if [ -d "$HOME/.bin" ] ; then
+    PATH="$HOME/.bin:$PATH"
+fi
 
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+if [ -d "$HOME/Applications" ] ; then
+    PATH="$HOME/Applications:$PATH"
+fi
+
+#PATH=$PATH:$HOME/.bin
+#PATH="HOME/.local/bin:$PATH"
+
+#if [ -d "$HOME/.local/bin" ] ; then
+#    PATH="$HOME/.local/bin:$PATH"
+#fi
 
 
 # PATH=/home/jfreitas/.texlive/2020/bin/x86_64-linux:$PATH; export PATH
