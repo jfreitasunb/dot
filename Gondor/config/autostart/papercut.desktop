@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/local/papercut/client/pc-client-linux.sh
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[pt_BR]=papercut
+Comment[pt_BR]=Sem descrição
+X-GNOME-Autostart-Delay=0
