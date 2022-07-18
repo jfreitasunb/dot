@@ -109,7 +109,7 @@ myStartupHook = do
           spawnOnce "lxsession &"
           spawnOnce "nitrogen --restore &"
           spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends &"
-          spawnOnce "nm-applet &"
+--          spawnOnce "nm-applet &"
           spawnOnce "volumeicon &"
           spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34  --height 29 &"
           -- spawnOnce "/usr/bin/emacs --daemon &" -- emacs daemon for the emacsclient
