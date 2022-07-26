@@ -527,9 +527,17 @@ myKeys c =
   , ("M-S-.", addName "Rotate all windows current stack"       $ rotAllDown)]
 
   ^++^ subKeys "Favorite programs"
-  [ ("M-<Return>", addName "Launch terminal"   $ spawn (myTerminal))
-  , ("M-b", addName "Launch web browser"       $ spawn (myBrowser))
-  , ("M-M1-h", addName "Launch htop"           $ spawn (myTerminal ++ " -e htop"))]
+  [ ("M-<Return>", addName "Launch terminal"              $ spawn (myTerminal))
+  , ("M-b", addName "Launch web browser"                  $ spawn (myBrowser))
+  , ("M-M1-h", addName "Launch htop"                      $ spawn (myTerminal ++ " -e htop"))
+  , ("M-S-s", addName "Bloquia a tela"                    $ spawn "slock")
+  , ("M-S-f", addName "Lança gerenciador de arquivos"     $ spawn "pcmanfm")
+  , ("M-S-x", addName "Programa de mesa"                  $ spawn "xournalpp")
+  , ("M-S-t", addName "Lança o Teams"                     $ spawn "teams --no-sandbox")
+  , ("M-S-g", addName "Lança o Chrome"                    $ spawn "google-chrome-stable")
+  , ("M-S-u", addName "Áudio padrão"                      $ spawn "/home/jfreitas/.bin/seta_headset_default.sh")
+  , ("M-C-c", addName "Áudio USB-C"                       $ spawn "/home/jfreitas/.bin/seta_usbc_headset_default.sh")
+  , ("M-S-p", addName "Áudio USB"                         $ spawn "/home/jfreitas/.bin/seta_audio_interno_default.sh")]
 
   ^++^ subKeys "Monitors"
   [ ("M-.", addName "Switch focus to next monitor" $ nextScreen)
@@ -607,11 +615,11 @@ myKeys c =
 
   -- Multimedia Keys
   ^++^ subKeys "Multimedia keys"
-  [("<XF86AudioMute>", addName "Toggle audio mute"   $ spawn "amixer set Master toggle")
-  , ("<XF86AudioLowerVolume>", addName "Lower vol"    $ spawn "amixer set Master 5%- unmute")
-  , ("<XF86AudioRaiseVolume>", addName "Raise vol"    $ spawn "amixer set Master 5%+ unmute")
-  , ("<XF86Calculator>", addName "Calculator"         $ runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
-  , ("<Print>", addName "Take screenshot (dmscripts)" $ spawn "dm-maim")
+  [ ("<XF86AudioMute>", addName "Muta áudio"              $ spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+  , ("<XF86AudioLowerVolume>", addName "Diminui áudio"    $ spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
+  , ("<XF86AudioRaiseVolume>", addName "Aumenta áudio"    $ spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
+  , ("<XF86Calculator>", addName "Calculator"             $ runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
+  , ("<Print>", addName "Take screenshot (dmscripts)"     $ spawn "maim -i $(xdotool getactivewindow) ~/Pictures/Screenshot_$(date +%Y-%m-%d_%H:%m:%S).png")
   ]
   -- The following lines are needed for named scratchpads.
     where nonNSP          = WSIs (return (\ws -> W.tag ws /= "NSP"))
