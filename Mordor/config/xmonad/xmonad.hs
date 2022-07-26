@@ -112,12 +112,16 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
   spawn "killall trayer"  -- kill current trayer on each restart
-
+  spawnOnce "setxkbmap -model abnt2 -layout br -variant abnt2"
+  spawnOnce "dropbox"
+  spawnOnce "lxqt-policykit-agent"
+  spawnOnce "numlockx"
+  spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
   spawnOnce "lxsession"
-  spawnOnce "picom"
+  spawnOnce "nitrogen --restore"
+  spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends"
   spawnOnce "nm-applet"
   spawnOnce "volumeicon"
-
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22")
   spawnOnce "nitrogen --restore &"
   setWMName "LG3D"
