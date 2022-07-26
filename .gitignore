@@ -99,3 +99,4 @@ Mordor/config/xmonad/xmonad-x86_64-linux
 *.o
 Mordor/config/xmonad/xmonad.o
 Gondor/config/autostart/teams.desktop
+Gondor/bin/v
