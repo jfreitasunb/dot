@@ -526,27 +526,6 @@ myKeys c =
   , ("M-S-,", addName "Rotate all windows except master"       $ rotSlavesDown)
   , ("M-S-.", addName "Rotate all windows current stack"       $ rotAllDown)]
 
-  -- Dmenu scripts (dmscripts)
-  -- In Xmonad and many tiling window managers, M-p is the default keybinding to
-  -- launch dmenu_run, so I've decided to use M-p plus KEY for these dmenu scripts.
-  ^++^ subKeys "Dmenu scripts"
-  [ ("M-p h", addName "List all dmscripts"     $ spawn "dm-hub")
-  , ("M-p a", addName "Choose ambient sound"   $ spawn "dm-sounds")
-  , ("M-p b", addName "Set background"         $ spawn "dm-setbg")
-  , ("M-p c", addName "Choose color scheme"    $ spawn "~/.local/bin/dtos-colorscheme")
-  , ("M-p C", addName "Pick color from scheme" $ spawn "dm-colpick")
-  , ("M-p e", addName "Edit config files"      $ spawn "dm-confedit")
-  , ("M-p i", addName "Take a screenshot"      $ spawn "dm-maim")
-  , ("M-p k", addName "Kill processes"         $ spawn "dm-kill")
-  , ("M-p m", addName "View manpages"          $ spawn "dm-man")
-  , ("M-p n", addName "Store and copy notes"   $ spawn "dm-note")
-  , ("M-p o", addName "Browser bookmarks"      $ spawn "dm-bookman")
-  , ("M-p p", addName "Passmenu"               $ spawn "passmenu -p \"Pass: \"")
-  , ("M-p q", addName "Logout Menu"            $ spawn "dm-logout")
-  , ("M-p r", addName "Listen to online radio" $ spawn "dm-radio")
-  , ("M-p s", addName "Search various engines" $ spawn "dm-websearch")
-  , ("M-p t", addName "Translate text"         $ spawn "dm-translate")]
-
   ^++^ subKeys "Favorite programs"
   [ ("M-<Return>", addName "Launch terminal"   $ spawn (myTerminal))
   , ("M-b", addName "Launch web browser"       $ spawn (myBrowser))
