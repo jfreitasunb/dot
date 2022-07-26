@@ -423,7 +423,6 @@ myLayoutHook = avoidStruts
                                            ||| tallAccordion
                                            ||| wideAccordion
 
--- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
 myWorkspaces = [" dev ", " www ", " sys ", " doc ", " vbox ", " chat ", " mus ", " vid ", " gfx "]
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..] -- (,) == \x y -> (x,y)
 
@@ -457,11 +456,6 @@ myManageHook = composeAll
   , isFullscreen -->  doFullFloat
   ] <+> namedScratchpadManageHook myScratchPads
 
-soundDir = "/opt/dtos-sounds/" -- The directory that has the sound files
-
-startupSound  = soundDir ++ "startup-01.mp3"
-shutdownSound = soundDir ++ "shutdown-01.mp3"
-dmenuSound    = soundDir ++ "menu-01.mp3"
 
 subtitle' ::  String -> ((KeyMask, KeySym), NamedAction)
 subtitle' x = ((0,0), NamedAction $ map toUpper
@@ -488,7 +482,7 @@ myKeys c =
   , ("M-S-c", addName "Kill focused window"    $ kill1)
   , ("M-S-a", addName "Kill all windows on WS" $ killAll)
   , ("M-S-<Return>", addName "Run prompt"      $ spawn "dmenu_run -i -p \"Run: \"")
-  , ("M-/", addName "DTOS Help"                $ spawn "~/.local/bin/dtos-help")]
+  , ("M-/", addName "DTOS Help"                $ spawn "~/.bin/xmonad_keys.sh")]
 
   ^++^ subKeys "Switch to workspace"
   [ ("M-1", addName "Switch to workspace 1"    $ (windows $ W.greedyView $ myWorkspaces !! 0))
@@ -500,6 +494,11 @@ myKeys c =
   , ("M-7", addName "Switch to workspace 7"    $ (windows $ W.greedyView $ myWorkspaces !! 6))
   , ("M-8", addName "Switch to workspace 8"    $ (windows $ W.greedyView $ myWorkspaces !! 7))
   , ("M-9", addName "Switch to workspace 9"    $ (windows $ W.greedyView $ myWorkspaces !! 8))]
+
+  ^++^ subKeys "Keyboard layouts"
+  [ ("M-C-a", addName "Teclado internacional"    $ spawn "setxkbmap -layout us -variant intl")
+  , ("M-C-i", addName "Teclado americano"        $ spawn "setxkbmap -layout us")
+  , ("M-C-i", addName "Teclado ABNT2"            $ spawn "setxkbmap -model abnt2 -layout br -variant abnt2")]
 
   ^++^ subKeys "Send window to workspace"
   [ ("M-S-1", addName "Send to workspace 1"    $ (windows $ W.shift $ myWorkspaces !! 0))
