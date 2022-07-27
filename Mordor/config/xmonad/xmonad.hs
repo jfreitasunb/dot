@@ -277,9 +277,7 @@ gsSystem =
   ]
 
 gsUtilities =
-  [ ("Emacs", "emacs")
-  , ("Emacsclient", "emacsclient -c -a 'emacs'")
-  , ("Nitrogen", "nitrogen")
+  [("Nitrogen", "nitrogen")
   , ("Vim", (myTerminal ++ " -e vim"))
   ]
 
