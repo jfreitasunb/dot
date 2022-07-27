@@ -92,14 +92,10 @@ myTerminal :: String
 myTerminal = "alacritty"    -- Sets default terminal
 
 myBrowser :: String
-myBrowser = "qutebrowser "  -- Sets qutebrowser as browser
-
-myEmacs :: String
-myEmacs = "emacsclient -c -a 'emacs' "  -- Makes emacs keybindings easier to type
+myBrowser = "brave"  -- Sets qutebrowser as browser
 
 myEditor :: String
-myEditor = "emacsclient -c -a 'emacs' "  -- Sets emacs as editor
--- myEditor = myTerminal ++ " -e vim "    -- Sets vim as editor
+myEditor = myTerminal ++ " -e nvim "    -- Sets vim as editor
 
 myBorderWidth :: Dimension
 myBorderWidth = 2           -- Sets border width for windows
@@ -110,22 +106,22 @@ myNormColor   = colorBack   -- This variable is imported from Colors.THEME
 myFocusColor :: String      -- Border color of focused windows
 myFocusColor  = color15     -- This variable is imported from Colors.THEME
 
-mySoundPlayer :: String
-mySoundPlayer = "ffplay -nodisp -autoexit " -- The program that will play system sounds
-
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 myStartupHook :: X ()
 myStartupHook = do
-  spawnOnce (mySoundPlayer ++ startupSound)
   spawn "killall trayer"  -- kill current trayer on each restart
-
+  spawnOnce "setxkbmap -layout us -variant intl"
+  spawnOnce "dropbox"
+  spawnOnce "lxqt-policykit-agent"
+  spawnOnce "numlockx"
+  spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
   spawnOnce "lxsession"
-  spawnOnce "picom"
+  spawnOnce "nitrogen --restore"
+  spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends"
   spawnOnce "nm-applet"
   spawnOnce "volumeicon"
-
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22")
   spawnOnce "nitrogen --restore &"
   setWMName "LG3D"
@@ -281,9 +277,7 @@ gsSystem =
   ]
 
 gsUtilities =
-  [ ("Emacs", "emacs")
-  , ("Emacsclient", "emacsclient -c -a 'emacs'")
-  , ("Nitrogen", "nitrogen")
+  [("Nitrogen", "nitrogen")
   , ("Vim", (myTerminal ++ " -e vim"))
   ]
 
@@ -336,7 +330,7 @@ tall     = renamed [Replace "tall"]
            $ windowNavigation
            $ addTabs shrinkText myTabTheme
            $ subLayout [] (smartBorders Simplest)
-           $ mySpacing 8
+           $ mySpacing 2
            $ ResizableTall 1 (3/100) (1/2) []
 monocle  = renamed [Replace "monocle"]
            $ smartBorders
@@ -427,7 +421,6 @@ myLayoutHook = avoidStruts
                                            ||| tallAccordion
                                            ||| wideAccordion
 
--- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
 myWorkspaces = [" dev ", " www ", " sys ", " doc ", " vbox ", " chat ", " mus ", " vid ", " gfx "]
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..] -- (,) == \x y -> (x,y)
 
@@ -461,11 +454,6 @@ myManageHook = composeAll
   , isFullscreen -->  doFullFloat
   ] <+> namedScratchpadManageHook myScratchPads
 
-soundDir = "/opt/dtos-sounds/" -- The directory that has the sound files
-
-startupSound  = soundDir ++ "startup-01.mp3"
-shutdownSound = soundDir ++ "shutdown-01.mp3"
-dmenuSound    = soundDir ++ "menu-01.mp3"
 
 subtitle' ::  String -> ((KeyMask, KeySym), NamedAction)
 subtitle' x = ((0,0), NamedAction $ map toUpper
@@ -488,11 +476,11 @@ myKeys c =
   subKeys "Xmonad Essentials"
   [ ("M-C-r", addName "Recompile XMonad"       $ spawn "xmonad --recompile")
   , ("M-S-r", addName "Restart XMonad"         $ spawn "xmonad --restart")
-  , ("M-S-q", addName "Quit XMonad"            $ sequence_ [spawn (mySoundPlayer ++ shutdownSound), io exitSuccess])
+  , ("M-S-q", addName "Quit XMonad"            $ io exitSuccess)
   , ("M-S-c", addName "Kill focused window"    $ kill1)
   , ("M-S-a", addName "Kill all windows on WS" $ killAll)
-  , ("M-S-<Return>", addName "Run prompt"      $ sequence_ [spawn (mySoundPlayer ++ dmenuSound), spawn "dmenu_run -i -p \"Run: \""])
-  , ("M-/", addName "DTOS Help"                $ spawn "~/.local/bin/dtos-help")]
+  , ("M-S-<Return>", addName "Run prompt"      $ spawn "dmenu_run -i -p \"Run: \"")
+  , ("M-/", addName "DTOS Help"                $ spawn "~/.bin/xmonad_keys.sh")]
 
   ^++^ subKeys "Switch to workspace"
   [ ("M-1", addName "Switch to workspace 1"    $ (windows $ W.greedyView $ myWorkspaces !! 0))
@@ -504,6 +492,11 @@ myKeys c =
   , ("M-7", addName "Switch to workspace 7"    $ (windows $ W.greedyView $ myWorkspaces !! 6))
   , ("M-8", addName "Switch to workspace 8"    $ (windows $ W.greedyView $ myWorkspaces !! 7))
   , ("M-9", addName "Switch to workspace 9"    $ (windows $ W.greedyView $ myWorkspaces !! 8))]
+
+  ^++^ subKeys "Keyboard layouts"
+  [ ("M-C-a", addName "Teclado internacional"    $ spawn "setxkbmap -layout us -variant intl")
+  , ("M-C-i", addName "Teclado americano"        $ spawn "setxkbmap -layout us")
+  , ("M-C-i", addName "Teclado ABNT2"            $ spawn "setxkbmap -model abnt2 -layout br -variant abnt2")]
 
   ^++^ subKeys "Send window to workspace"
   [ ("M-S-1", addName "Send to workspace 1"    $ (windows $ W.shift $ myWorkspaces !! 0))
@@ -531,31 +524,18 @@ myKeys c =
   , ("M-S-,", addName "Rotate all windows except master"       $ rotSlavesDown)
   , ("M-S-.", addName "Rotate all windows current stack"       $ rotAllDown)]
 
-  -- Dmenu scripts (dmscripts)
-  -- In Xmonad and many tiling window managers, M-p is the default keybinding to
-  -- launch dmenu_run, so I've decided to use M-p plus KEY for these dmenu scripts.
-  ^++^ subKeys "Dmenu scripts"
-  [ ("M-p h", addName "List all dmscripts"     $ spawn "dm-hub")
-  , ("M-p a", addName "Choose ambient sound"   $ spawn "dm-sounds")
-  , ("M-p b", addName "Set background"         $ spawn "dm-setbg")
-  , ("M-p c", addName "Choose color scheme"    $ spawn "~/.local/bin/dtos-colorscheme")
-  , ("M-p C", addName "Pick color from scheme" $ spawn "dm-colpick")
-  , ("M-p e", addName "Edit config files"      $ spawn "dm-confedit")
-  , ("M-p i", addName "Take a screenshot"      $ spawn "dm-maim")
-  , ("M-p k", addName "Kill processes"         $ spawn "dm-kill")
-  , ("M-p m", addName "View manpages"          $ spawn "dm-man")
-  , ("M-p n", addName "Store and copy notes"   $ spawn "dm-note")
-  , ("M-p o", addName "Browser bookmarks"      $ spawn "dm-bookman")
-  , ("M-p p", addName "Passmenu"               $ spawn "passmenu -p \"Pass: \"")
-  , ("M-p q", addName "Logout Menu"            $ spawn "dm-logout")
-  , ("M-p r", addName "Listen to online radio" $ spawn "dm-radio")
-  , ("M-p s", addName "Search various engines" $ spawn "dm-websearch")
-  , ("M-p t", addName "Translate text"         $ spawn "dm-translate")]
-
   ^++^ subKeys "Favorite programs"
-  [ ("M-<Return>", addName "Launch terminal"   $ spawn (myTerminal))
-  , ("M-b", addName "Launch web browser"       $ spawn (myBrowser))
-  , ("M-M1-h", addName "Launch htop"           $ spawn (myTerminal ++ " -e htop"))]
+  [ ("M-<Return>", addName "Launch terminal"              $ spawn (myTerminal))
+  , ("M-b", addName "Launch web browser"                  $ spawn (myBrowser))
+  , ("M-M1-h", addName "Launch htop"                      $ spawn (myTerminal ++ " -e htop"))
+  , ("M-S-s", addName "Bloquia a tela"                    $ spawn "slock")
+  , ("M-S-f", addName "Lança gerenciador de arquivos"     $ spawn "pcmanfm")
+  , ("M-S-x", addName "Programa de mesa"                  $ spawn "xournalpp")
+  , ("M-S-t", addName "Lança o Teams"                     $ spawn "teams --no-sandbox")
+  , ("M-S-g", addName "Lança o Chrome"                    $ spawn "google-chrome-stable")
+  , ("M-S-u", addName "Áudio padrão"                      $ spawn "/home/jfreitas/.bin/seta_headset_default.sh")
+  , ("M-C-c", addName "Áudio USB-C"                       $ spawn "/home/jfreitas/.bin/seta_usbc_headset_default.sh")
+  , ("M-S-p", addName "Áudio USB"                         $ spawn "/home/jfreitas/.bin/seta_audio_interno_default.sh")]
 
   ^++^ subKeys "Monitors"
   [ ("M-.", addName "Switch focus to next monitor" $ nextScreen)
@@ -615,13 +595,6 @@ myKeys c =
   , ("M-s m", addName "Toggle scratchpad mocp"       $ namedScratchpadAction myScratchPads "mocp")
   , ("M-s c", addName "Toggle scratchpad calculator" $ namedScratchpadAction myScratchPads "calculator")]
 
-  -- Controls for mocp music player (SUPER-u followed by a key)
-  ^++^ subKeys "Mocp music player"
-  [ ("M-u p", addName "mocp play"                $ spawn "mocp --play")
-  , ("M-u l", addName "mocp next"                $ spawn "mocp --next")
-  , ("M-u h", addName "mocp prev"                $ spawn "mocp --previous")
-  , ("M-u <Space>", addName "mocp toggle pause"  $ spawn "mocp --toggle-pause")]
-
   ^++^ subKeys "GridSelect"
   -- , ("C-g g", addName "Select favorite apps"     $ runSelectedAction' defaultGSConfig gsCategories)
   [ ("M-M1-<Return>", addName "Select favorite apps" $ spawnSelected'
@@ -638,32 +611,13 @@ myKeys c =
   , ("M-M1-7", addName "Menu of system apps"     $ spawnSelected' gsSystem)
   , ("M-M1-8", addName "Menu of utilities apps"  $ spawnSelected' gsUtilities)]
 
-  -- Emacs (SUPER-e followed by a key)
-  ^++^ subKeys "Emacs"
-  [ ("M-e e", addName "Emacsclient Dashboard"    $ spawn (myEmacs ++ ("--eval '(dashboard-refresh-buffer)'")))
-  , ("M-e a", addName "Emacsclient EMMS (music)" $ spawn (myEmacs ++ ("--eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/\")'")))
-  , ("M-e b", addName "Emacsclient Ibuffer"      $ spawn (myEmacs ++ ("--eval '(ibuffer)'")))
-  , ("M-e d", addName "Emacsclient Dired"        $ spawn (myEmacs ++ ("--eval '(dired nil)'")))
-  , ("M-e i", addName "Emacsclient ERC (IRC)"    $ spawn (myEmacs ++ ("--eval '(erc)'")))
-  , ("M-e n", addName "Emacsclient Elfeed (RSS)" $ spawn (myEmacs ++ ("--eval '(elfeed)'")))
-  , ("M-e s", addName "Emacsclient Eshell"       $ spawn (myEmacs ++ ("--eval '(eshell)'")))
-  , ("M-e v", addName "Emacsclient Vterm"        $ spawn (myEmacs ++ ("--eval '(+vterm/here nil)'")))
-  , ("M-e w", addName "Emacsclient EWW Browser"  $ spawn (myEmacs ++ ("--eval '(doom/window-maximize-buffer(eww \"distro.tube\"))'")))]
-
   -- Multimedia Keys
   ^++^ subKeys "Multimedia keys"
-  [ ("<XF86AudioPlay>", addName "mocp play"           $ spawn "mocp --play")
-  , ("<XF86AudioPrev>", addName "mocp next"           $ spawn "mocp --previous")
-  , ("<XF86AudioNext>", addName "mocp prev"           $ spawn "mocp --next")
-  , ("<XF86AudioMute>", addName "Toggle audio mute"   $ spawn "amixer set Master toggle")
-  , ("<XF86AudioLowerVolume>", addName "Lower vol"    $ spawn "amixer set Master 5%- unmute")
-  , ("<XF86AudioRaiseVolume>", addName "Raise vol"    $ spawn "amixer set Master 5%+ unmute")
-  , ("<XF86HomePage>", addName "Open home page"       $ spawn (myBrowser ++ " https://www.youtube.com/c/DistroTube"))
-  , ("<XF86Search>", addName "Web search (dmscripts)" $ spawn "dm-websearch")
-  , ("<XF86Mail>", addName "Email client"             $ runOrRaise "thunderbird" (resource =? "thunderbird"))
-  , ("<XF86Calculator>", addName "Calculator"         $ runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
-  , ("<XF86Eject>", addName "Eject /dev/cdrom"        $ spawn "eject /dev/cdrom")
-  , ("<Print>", addName "Take screenshot (dmscripts)" $ spawn "dm-maim")
+  [ ("<XF86AudioMute>", addName "Muta áudio"              $ spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+  , ("<XF86AudioLowerVolume>", addName "Diminui áudio"    $ spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
+  , ("<XF86AudioRaiseVolume>", addName "Aumenta áudio"    $ spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
+  , ("<XF86Calculator>", addName "Calculator"             $ runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
+  , ("<Print>", addName "Take screenshot (dmscripts)"     $ spawn "maim -i $(xdotool getactivewindow) ~/Pictures/Screenshot_$(date +%Y-%m-%d_%H:%m:%S).png")
   ]
   -- The following lines are needed for named scratchpads.
     where nonNSP          = WSIs (return (\ws -> W.tag ws /= "NSP"))
@@ -672,7 +626,7 @@ myKeys c =
 main :: IO ()
 main = do
   -- Launching three instances of xmobar on their monitors.
-  xmproc0 <- spawnPipe ("xmobar -x 0 $HOME/.xmobarrc")
+  xmproc0 <- spawnPipe ("xmobar -x 0 $HOME/.config/xmobar/" ++ colorScheme ++ "-xmobarrc")
   -- xmproc1 <- spawnPipe ("xmobar -x 1 $HOME/.config/xmobar/" ++ colorScheme ++ "-xmobarrc")
   -- xmproc2 <- spawnPipe ("xmobar -x 2 $HOME/.config/xmobar/" ++ colorScheme ++ "-xmobarrc")
   -- the xmonad, ya know...what the WM is named after!
