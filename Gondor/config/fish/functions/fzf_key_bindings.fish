@@ -1,1 +1,0 @@
-/home/jfreitas/.fzf/shell/key-bindings.fish
