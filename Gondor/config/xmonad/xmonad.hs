@@ -469,9 +469,10 @@ showKeybindings x = addName "Show Keybindings" $ io $ do
   hClose h
   return ()
 
+-- START_KEYS
 myKeys :: XConfig l0 -> [((KeyMask, KeySym), NamedAction)]
 myKeys c =
-  --(subtitle "Custom Keys":) $ mkNamedKeymap c $
+  -- KB_GROUPS Xmonad
   let subKeys str ks = subtitle' str : mkNamedKeymap c ks in
   subKeys "Xmonad Essentials"
   [ ("M-C-r", addName "Recompile XMonad"       $ spawn "xmonad --recompile")
@@ -482,6 +483,7 @@ myKeys c =
   , ("M-S-<Return>", addName "Run prompt"      $ spawn "dmenu_run -i -p \"Run: \"")
   , ("M-/", addName "DTOS Help"                $ spawn "~/.bin/xmonad_keys.sh")]
 
+-- KB_GROUPS Switch to workspace
   ^++^ subKeys "Switch to workspace"
   [ ("M-1", addName "Switch to workspace 1"    $ (windows $ W.greedyView $ myWorkspaces !! 0))
   , ("M-2", addName "Switch to workspace 2"    $ (windows $ W.greedyView $ myWorkspaces !! 1))
@@ -493,11 +495,12 @@ myKeys c =
   , ("M-8", addName "Switch to workspace 8"    $ (windows $ W.greedyView $ myWorkspaces !! 7))
   , ("M-9", addName "Switch to workspace 9"    $ (windows $ W.greedyView $ myWorkspaces !! 8))]
 
+-- KB_GROUPS Keyboard layouts
   ^++^ subKeys "Keyboard layouts"
   [ ("M-C-a", addName "Teclado internacional"    $ spawn "setxkbmap -layout us -variant intl")
   , ("M-C-i", addName "Teclado americano"        $ spawn "setxkbmap -layout us")
   , ("M-C-b", addName "Teclado ABNT2"            $ spawn "setxkbmap -model abnt2 -layout br -variant abnt2")]
-
+-- KB_GROUPS Send window to workspace
   ^++^ subKeys "Send window to workspace"
   [ ("M-S-1", addName "Send to workspace 1"    $ (windows $ W.shift $ myWorkspaces !! 0))
   , ("M-S-2", addName "Send to workspace 2"    $ (windows $ W.shift $ myWorkspaces !! 1))
@@ -508,11 +511,11 @@ myKeys c =
   , ("M-S-7", addName "Send to workspace 7"    $ (windows $ W.shift $ myWorkspaces !! 6))
   , ("M-S-8", addName "Send to workspace 8"    $ (windows $ W.shift $ myWorkspaces !! 7))
   , ("M-S-9", addName "Send to workspace 9"    $ (windows $ W.shift $ myWorkspaces !! 8))]
-
+-- KB_GROUPS Move window to WS and go there
   ^++^ subKeys "Move window to WS and go there"
   [ ("M-S-<Page_Up>", addName "Move window to next WS"   $ shiftTo Next nonNSP >> moveTo Next nonNSP)
   , ("M-S-<Page_Down>", addName "Move window to prev WS" $ shiftTo Prev nonNSP >> moveTo Prev nonNSP)]
-
+-- KB_GROUPS Window navigation
   ^++^ subKeys "Window navigation"
   [ ("M-j", addName "Move focus to next window"                $ windows W.focusDown)
   , ("M-k", addName "Move focus to prev window"                $ windows W.focusUp)
@@ -523,7 +526,7 @@ myKeys c =
   , ("M-<Backspace>", addName "Move focused window to master"  $ promote)
   , ("M-S-,", addName "Rotate all windows except master"       $ rotSlavesDown)
   , ("M-S-.", addName "Rotate all windows current stack"       $ rotAllDown)]
-
+-- KB_GROUPS Favorite programs
   ^++^ subKeys "Favorite programs"
   [ ("M-<Return>", addName "Launch terminal"              $ spawn (myTerminal))
   , ("M-b", addName "Launch web browser"                  $ spawn (myBrowser))
@@ -536,44 +539,44 @@ myKeys c =
   , ("M-S-u", addName "Áudio padrão"                      $ spawn "/home/jfreitas/.bin/seta_headset_default.sh")
   , ("M-C-c", addName "Áudio USB-C"                       $ spawn "/home/jfreitas/.bin/seta_usbc_headset_default.sh")
   , ("M-S-p", addName "Áudio USB"                         $ spawn "/home/jfreitas/.bin/seta_audio_interno_default.sh")]
-
+-- KB_GROUPS Monitors
   ^++^ subKeys "Monitors"
   [ ("M-.", addName "Switch focus to next monitor" $ nextScreen)
   , ("M-,", addName "Switch focus to prev monitor" $ prevScreen)]
 
-  -- Switch layouts
+  -- KB_GROUPS Switch layouts
   ^++^ subKeys "Switch layouts"
   [ ("M-<Tab>", addName "Switch to next layout"   $ sendMessage NextLayout)
   , ("M-<Space>", addName "Toggle noborders/full" $ sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts)]
 
-  -- Window resizing
+  -- KB_GROUPS Window resizing
   ^++^ subKeys "Window resizing"
   [ ("M-h", addName "Shrink window"               $ sendMessage Shrink)
   , ("M-l", addName "Expand window"               $ sendMessage Expand)
   , ("M-M1-j", addName "Shrink window vertically" $ sendMessage MirrorShrink)
   , ("M-M1-k", addName "Expand window vertically" $ sendMessage MirrorExpand)]
 
-  -- Floating windows
+  -- KB_GROUPS Floating windows
   ^++^ subKeys "Floating windows"
   [ ("M-f", addName "Toggle float layout"        $ sendMessage (T.Toggle "floats"))
   , ("M-t", addName "Sink a floating window"     $ withFocused $ windows . W.sink)
   , ("M-S-t", addName "Sink all floated windows" $ sinkAll)]
 
-  -- Increase/decrease spacing (gaps)
+  -- KB_GROUPS Increase/decrease spacing (gaps)
   ^++^ subKeys "Window spacing (gaps)"
   [ ("C-M1-j", addName "Decrease window spacing" $ decWindowSpacing 4)
   , ("C-M1-k", addName "Increase window spacing" $ incWindowSpacing 4)
   , ("C-M1-h", addName "Decrease screen spacing" $ decScreenSpacing 4)
   , ("C-M1-l", addName "Increase screen spacing" $ incScreenSpacing 4)]
 
-  -- Increase/decrease windows in the master pane or the stack
+  -- KB_GROUPS Increase/decrease windows in the master pane or the stack
   ^++^ subKeys "Increase/decrease windows in master pane or the stack"
   [ ("M-S-<Up>", addName "Increase clients in master pane"   $ sendMessage (IncMasterN 1))
   , ("M-S-<Down>", addName "Decrease clients in master pane" $ sendMessage (IncMasterN (-1)))
   , ("M-=", addName "Increase max # of windows for layout"   $ increaseLimit)
   , ("M--", addName "Decrease max # of windows for layout"   $ decreaseLimit)]
 
-  -- Sublayouts
+  -- KB_GROUPS Sublayouts
   -- This is used to push windows to tabbed sublayouts, or pull them out of it.
   ^++^ subKeys "Sublayouts"
   [ ("M-C-h", addName "pullGroup L"           $ sendMessage $ pullGroup L)
@@ -586,7 +589,7 @@ myKeys c =
   , ("M-C-.", addName "Switch focus next tab" $  onGroup W.focusUp')
   , ("M-C-,", addName "Switch focus prev tab" $  onGroup W.focusDown')]
 
-  -- Scratchpads
+  -- KB_GROUPS Scratchpads
   -- Toggle show/hide these programs. They run on a hidden workspace.
   -- When you toggle them to show, it brings them to current workspace.
   -- Toggle them to hide and it sends them back to hidden workspace (NSP).
@@ -594,7 +597,7 @@ myKeys c =
   [ ("M-s t", addName "Toggle scratchpad terminal"   $ namedScratchpadAction myScratchPads "terminal")
   , ("M-s m", addName "Toggle scratchpad mocp"       $ namedScratchpadAction myScratchPads "mocp")
   , ("M-s c", addName "Toggle scratchpad calculator" $ namedScratchpadAction myScratchPads "calculator")]
-
+-- KB_GROUPS GridSelect
   ^++^ subKeys "GridSelect"
   -- , ("C-g g", addName "Select favorite apps"     $ runSelectedAction' defaultGSConfig gsCategories)
   [ ("M-M1-<Return>", addName "Select favorite apps" $ spawnSelected'
@@ -611,7 +614,7 @@ myKeys c =
   , ("M-M1-7", addName "Menu of system apps"     $ spawnSelected' gsSystem)
   , ("M-M1-8", addName "Menu of utilities apps"  $ spawnSelected' gsUtilities)]
 
-  -- Multimedia Keys
+  -- KB_GROUPS Multimedia Keys
   ^++^ subKeys "Multimedia keys"
   [ ("<XF86AudioMute>", addName "Muta áudio"              $ spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
   , ("<XF86AudioLowerVolume>", addName "Diminui áudio"    $ spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
@@ -622,7 +625,7 @@ myKeys c =
   -- The following lines are needed for named scratchpads.
     where nonNSP          = WSIs (return (\ws -> W.tag ws /= "NSP"))
           nonEmptyNonNSP  = WSIs (return (\ws -> isJust (W.stack ws) && W.tag ws /= "NSP"))
-
+-- END_KEYS
 main :: IO ()
 main = do
   -- Launching three instances of xmobar on their monitors.
