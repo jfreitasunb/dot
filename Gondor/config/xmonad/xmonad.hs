@@ -114,7 +114,7 @@ myStartupHook = do
   spawn "killall trayer"  -- kill current trayer on each restart
   spawnOnce "setxkbmap -layout us -variant intl"
   spawnOnce "dropbox"
-  spawnOnce "lxqt-policykit-agent"
+  -- spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
   spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
   spawnOnce "lxsession"
@@ -496,7 +496,7 @@ myKeys c =
   ^++^ subKeys "Keyboard layouts"
   [ ("M-C-a", addName "Teclado internacional"    $ spawn "setxkbmap -layout us -variant intl")
   , ("M-C-i", addName "Teclado americano"        $ spawn "setxkbmap -layout us")
-  , ("M-C-i", addName "Teclado ABNT2"            $ spawn "setxkbmap -model abnt2 -layout br -variant abnt2")]
+  , ("M-C-b", addName "Teclado ABNT2"            $ spawn "setxkbmap -model abnt2 -layout br -variant abnt2")]
 
   ^++^ subKeys "Send window to workspace"
   [ ("M-S-1", addName "Send to workspace 1"    $ (windows $ W.shift $ myWorkspaces !! 0))
