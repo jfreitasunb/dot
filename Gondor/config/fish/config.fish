@@ -521,6 +521,10 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
+#Mais alguns alias personalizados
+alias aup='arch-update.sh'
+alias avell='teclado_avell.sh'
+
 # vim
 alias vim='nvim'
 
