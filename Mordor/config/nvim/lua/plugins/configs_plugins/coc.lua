@@ -16,29 +16,18 @@ vim.cmd([[ let g:coc_global_extensions = [
     \ 'https://github.com/rodrigore/coc-tailwind-intellisense',
     \ 'coc-tsserver',
     \ '@yaegassy/coc-volar',
+    \ 'coc-pyright'
 \ ]
 ]])
 
---Use tab for trigger completion with characters ahead and navigate.
---NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
---other plugin before putting this into your config.
-vim.cmd([[ inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ Check_back_space() ? "\<TAB>" :
+vim.cmd([[
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! Check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 ]])
 
---Make <CR> auto-select the first completion item and notify coc.nvim to
---format on enter, <cr> could be remapped by other vim plugin
-vim.cmd([[ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>" ]])
-
+vim.cmd([[ inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() ? "\<C-y>" : "\<C-g>u\<CR>"]])
 --Use `[g` and `]g` to navigate diagnostics
 --Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 vim.cmd([[ nmap <silent> [g <Plug>(coc-diagnostic-prev) ]])
