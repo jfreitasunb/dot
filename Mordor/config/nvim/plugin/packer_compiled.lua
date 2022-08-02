@@ -186,18 +186,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: vim-airline
+time([[Config for vim-airline]], true)
+ require('plugins/configs_plugins/airline')
+time([[Config for vim-airline]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
  require('plugins/configs_plugins/linhas_identacao')
 time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
- require('plugins/configs_plugins/autopairs') 
-time([[Config for nvim-autopairs]], false)
+-- Config for: coc.nvim
+time([[Config for coc.nvim]], true)
+ require('plugins/configs_plugins/coc') 
+time([[Config for coc.nvim]], false)
 -- Config for: nerdtree
 time([[Config for nerdtree]], true)
  require('plugins/configs_plugins/nerdtree')
 time([[Config for nerdtree]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+ require('plugins/configs_plugins/autopairs') 
+time([[Config for nvim-autopairs]], false)
+-- Config for: vim-bufferline
+time([[Config for vim-bufferline]], true)
+ require('plugins/configs_plugins/bufferline')
+time([[Config for vim-bufferline]], false)
 -- Config for: vimtex
 time([[Config for vimtex]], true)
  require('plugins/configs_plugins/vimtex') 
@@ -206,22 +218,10 @@ time([[Config for vimtex]], false)
 time([[Config for nvim-web-devicons]], true)
  require('plugins/configs_plugins/web_dev_icons') 
 time([[Config for nvim-web-devicons]], false)
--- Config for: vim-airline
-time([[Config for vim-airline]], true)
- require('plugins/configs_plugins/airline')
-time([[Config for vim-airline]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
  require('plugins/configs_plugins/telescope') 
 time([[Config for telescope.nvim]], false)
--- Config for: vim-bufferline
-time([[Config for vim-bufferline]], true)
- require('plugins/configs_plugins/bufferline')
-time([[Config for vim-bufferline]], false)
--- Config for: coc.nvim
-time([[Config for coc.nvim]], true)
- require('plugins/configs_plugins/coc') 
-time([[Config for coc.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
