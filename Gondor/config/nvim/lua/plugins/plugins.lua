@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
   use 'mbbill/undotree'
   use {'lervag/vimtex', config = [[ require('plugins/configs_plugins/vimtex') ]]}
   use {'lukas-reineke/indent-blankline.nvim', config = [[ require('plugins/configs_plugins/linhas_identacao')]]}
-  use 'xuhdev/vim-latex-live-preview'
+  -- use 'xuhdev/vim-latex-live-preview'
   use {
       'vim-airline/vim-airline',
       requires = { {'vim-airline/vim-airline-themes'} },

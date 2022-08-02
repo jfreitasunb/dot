@@ -18,22 +18,38 @@ vim.cmd([[ let g:coc_global_extensions = [
     \ '@yaegassy/coc-volar',
     \ 'coc-r-lsp',
     \ 'coc-vimtex',
+    \ 'coc-pyright',
 \ ]
 ]])
 
 --Use tab for trigger completion with characters ahead and navigate.
 --NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 --other plugin before putting this into your config.
-vim.cmd([[ inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ Check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! Check_back_space() abort
+vim.cmd([[
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+]])
+
+vim.cmd([[
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+]])
+
+--Make <CR> to accept selected completion item or notify coc.nvim to format
+--<C-g>u breaks current undo, please make your own choice.
+vim.cmd([[
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+]])
+
+vim.cmd([[
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
 ]])
 
 --Make <CR> auto-select the first completion item and notify coc.nvim to
