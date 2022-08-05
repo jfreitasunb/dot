@@ -20,6 +20,10 @@ opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 opt.undodir = '~/.nvim/undodir'
 opt.confirm = true
+opt.wrapmargin=130
+opt.textwidth=120
+opt.linebreak = true
+opt.formatoptions=cqt
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
