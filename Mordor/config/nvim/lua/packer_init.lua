@@ -55,9 +55,12 @@ return packer.startup(function(use)
   use {
     'windwp/nvim-autopairs',
     config = function()
-      require('nvim-autopairs').setup{}
+      require('nvim-autopairs').setup{
+        enable_check_bracket_line = false
+      }
     end
   }
+    use 'tpope/vim-surround'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
@@ -70,13 +73,14 @@ return packer.startup(function(use)
 
   -- Color schemes
   use 'navarasu/onedark.nvim'
+  use 'morhetz/gruvbox'
   use 'tanvirtin/monokai.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
 
   -- LSP
   use 'neovim/nvim-lspconfig'
   use "williamboman/nvim-lsp-installer"
-  
+
   -- Autocomplete
   use {
     'hrsh7th/nvim-cmp',
@@ -95,6 +99,10 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
 
+  use {
+      'vim-airline/vim-airline',
+      requires = { {'vim-airline/vim-airline-themes'} }
+  }
   -- git labels
   use {
     'lewis6991/gitsigns.nvim',
@@ -104,10 +112,25 @@ return packer.startup(function(use)
     end
   }
 
+  use 'tpope/vim-fugitive'
+
+
+  -- TeX
+  use 'lervag/vimtex'
+
   -- Dashboard (start screen)
   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
+  }
+
+  -- Undotree
+  use 'mbbill/undotree'
+
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} },
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
