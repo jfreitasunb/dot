@@ -16,7 +16,10 @@ opt.mouse = 'a'                       -- Enable mouse support
 opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.swapfile = false                  -- Don't use swapfile
 opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
-
+opt.encoding = 'utf-8'
+opt.fileencoding = 'utf-8'
+opt.undodir = '~/.nvim/undodir'
+opt.confirm = true
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
