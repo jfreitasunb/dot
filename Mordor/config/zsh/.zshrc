@@ -82,7 +82,8 @@ alias lr='exa --color=always --sort newest --group-directories-first' # tree lis
 alias wtsm='watch transmission-remote -l'
 # Changing "cat" to "bat"
 alias cat='bat'
-alias vim='nvim --listen /tmp/nvimsocket'
+alias vim='nvim'
+#alias vim='nvim --listen /tmp/nvimsocket'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
