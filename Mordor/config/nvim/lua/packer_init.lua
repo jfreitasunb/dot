@@ -76,6 +76,7 @@ return packer.startup(function(use)
   use 'morhetz/gruvbox'
   use 'tanvirtin/monokai.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
+  use 'norcalli/nvim-colorizer.lua'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
