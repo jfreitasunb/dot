@@ -16,14 +16,21 @@ opt.mouse = 'a'                       -- Enable mouse support
 opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.swapfile = false                  -- Don't use swapfile
 opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
-
+opt.encoding = 'utf-8'
+opt.fileencoding = 'utf-8'
+opt.undodir = '~/.nvim/undodir'
+opt.confirm = true
+opt.wrapmargin=130
+opt.textwidth=120
+opt.linebreak = true
+opt.formatoptions=cqt
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true           -- Show line number
 opt.showmatch = true        -- Highlight matching parenthesis
 opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
-opt.colorcolumn = '140'      -- Line lenght marker at 80 columns
+opt.colorcolumn = '180'      -- Line lenght marker at 80 columns
 opt.splitright = true       -- Vertical split to the right
 opt.splitbelow = true       -- Horizontal split to the bottom
 opt.ignorecase = true       -- Ignore case letters when search

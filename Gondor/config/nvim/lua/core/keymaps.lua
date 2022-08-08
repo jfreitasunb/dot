@@ -55,6 +55,9 @@ map('i', '<leader>s', '<C-c>:w<CR>')
 -- Close all windows and exit from Neovim with <leader> and q
 map('n', '<leader>q', ':qa!<CR>')
 
+-- Selecionar tudo com 'Crtl + A'
+map('n', '<C-a>', 'ggVG')
+
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
