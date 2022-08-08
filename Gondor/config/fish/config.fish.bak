@@ -563,9 +563,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # confirm before overwriting something
-alias cp="cp -iv"
-alias mv='mv -iv'
-alias rm='rm -iv'
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
