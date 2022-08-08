@@ -92,6 +92,32 @@ up () {
   fi
 }
 
+# Backup a file with date
+function backup() {
+    cp "$1" "$1_`date +%Y-%m-%d_%H-%M-%S`_BACKUP"
+}
+
+# Update all git repos
+function update_git_repos() {
+  if [ $# -ne 1 ]; then
+    echo "This function requires one parameter which must be a directory"
+    return
+  fi
+  CURRENT_DIR=`pwd`
+  echo "Updating all Git repos"
+  for DIR in "$1"/*; do
+    echo "\n========================================\n$DIR\n========================================"
+    if [[ -d "$CURRENT_DIR/$DIR" ]]; then
+      \cd "$CURRENT_DIR/$DIR"
+      git status
+      git pull origin $(git rev-parse --abbrev-ref HEAD)
+    else
+      echo "$CURRENT_DIR/$DIR not a directory"
+    fi
+  done
+  \cd "$CURRENT_DIR"
+}
+
 source ~/.config/aliases/aliases
 
 #eval "$(starship init zsh)"
