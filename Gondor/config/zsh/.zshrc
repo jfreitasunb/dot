@@ -53,22 +53,6 @@ bindkey '^[[B' history-substring-search-down
 
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-if [ -d "$HOME/.bin" ] ; then
-    PATH="$HOME/.bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -d "$HOME/.cargo/bin" ] ; then
-    PATH="$HOME/.cargo/bin:$PATH"
-fi
-
-if [ -d "$HOME/Applications" ] ; then
-    PATH="$HOME/Applications:$PATH"
-fi
-
 eval $(keychain --eval ~/.ssh/id_rsa)
 eval $(keychain --eval ~/.ssh/id_ecdsa)
 

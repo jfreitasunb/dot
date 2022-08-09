@@ -18,3 +18,21 @@ setopt HIST_SAVE_NO_DUPS
 
 # History won't show duplicates on search.
 setopt HIST_FIND_NO_DUPS
+
+if [ -d "$HOME/.bin" ] ; then
+    PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+if [ -d "$HOME/Applications" ] ; then
+    PATH="$HOME/Applications:$PATH"
+fi
+
+export PATH
