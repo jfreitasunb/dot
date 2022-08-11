@@ -104,3 +104,5 @@ Mordor/config/fish/fish_variables
 Gondor/config/fish/fish_variables
 Gondor/config/fish/fish_variables
 Mordor/config/nvim/plugin/packer_compiled.lua
+Mordor/config/zsh/themes
+Mordor/config/zsh/plugins
