@@ -1,92 +1,107 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-export VISUAL=vim
-export EDITOR=vim
 neofetch
-HISTFILE=/home/jfreitas/.zsh_history
-HISTSIZE=1000000000
-SAVEHIST=1000000000
+
 bindkey -e
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
 
-if [ -d "$HOME/.bin" ] ; then
-    PATH="$HOME/.bin:$PATH"
-fi
+bindkey '^[[H' beginning-of-line     # Home
+bindkey '^[[F' end-of-line     # End
+bindkey '^[[3~' delete-char     # Delete
+bindkey '^?' backward-delete-char     # Backspace
 
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
-if [ -d "$HOME/.cargo/bin" ] ; then
-    PATH="$HOME/.cargo/bin:$PATH"
-fi
+setopt AUTO_PUSHD           # Push the current directory visited on the stack.
+setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
+setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
 
-if [ -d "$HOME/Applications" ] ; then
-    PATH="$HOME/Applications:$PATH"
-fi
+autoload -U compinit; compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+_comp_options+=(globdots) # With hidden files
 
-#PATH=$PATH:$HOME/.bin
-#PATH="HOME/.local/bin:$PATH"
+### --- Spaceship Config ------------------------------------
 
-#if [ -d "$HOME/.local/bin" ] ; then
-#    PATH="$HOME/.local/bin:$PATH"
-#fi
+source $ZDOTDIR/themes/spaceship-prompt/spaceship.zsh-theme
 
-
-# PATH=/home/jfreitas/.texlive/2020/bin/x86_64-linux:$PATH; export PATH
-# MANPATH=/home/jfreitas/.texlive/2020/texmf-dist/doc/man:$MANPATH; export MANPATH
-# INFOPATH=/home/jfreitas/.texlive/2020/texmf-dist/doc/info:$INFOPATH; export INFOPATH
-
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="/home/jfreitas/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-alias aup='arch-update.sh'
-alias pac='sudo pacman'
-alias riv='cd /ArquivosLinux/Dropbox/php/vagrant/rivendel'
-alias vul='vagrant up laravel && vagrant rsync-auto'
-alias vud='vagrant halt laravel'
-alias vsl='vagrant ssh laravel'
-alias avell='teclado_avell.sh'
-alias tsm='transmission-remote'
-alias wtsm='watch transmission-remote -l'
-
-
-#eval $(keychain --eval ~/.ssh/id_rsa)
-#eval $(keychain --eval ~/.ssh/id_ecdsa)
-
-plugins=(
-    git
-    zsh-syntax-highlighting
-    zsh-autosuggestions
+SPACESHIP_PROMPT_ORDER=(
+   user          # Username section
+   dir           # Current directory section
+   host          # Hostname section
+   git           # Git section (git_branch + git_status)
+   hg            # Mercurial section (hg_branch  + hg_status)
+   exec_time     # Execution time
+   line_sep      # Line break
+   vi_mode       # Vi-mode indicator
+   jobs          # Background jobs indicator
+   exit_code     # Exit code section
+   char          # Prompt character
 )
+SPACESHIP_USER_SHOW=always
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_CHAR_SUFFIX=" "
 
-source $ZSH/oh-my-zsh.sh
 
-# Changing "ls" to "exa"
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --group-directories-first' # tree listing
-alias lr='exa --color=always --sort newest --group-directories-first' # tree listing
-alias wtsm='watch transmission-remote -l'
-# Changing "cat" to "bat"
-alias cat='bat'
-alias vim='nvim'
-#alias vim='nvim --listen /tmp/nvimsocket'
+### ---- PLUGINS & THEMES -----------------------------------
+source $ZDOTDIR/themes/spaceship-prompt/spaceship.zsh-theme
+#source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath)
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+source $ZDOTDIR/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
-# To customize prompt, run `p10k configure` or edit ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh.
-[[ ! -f ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh ]] || source ~/GitHub_Repos/dot/Gondor/config/zsh/.p10k.zsh
+source $ZDOTDIR/plugins/F-Sy-H/F-Sy-H.plugin.zsh
+
+# eval $(keychain --eval ~/.ssh/id_rsa)
+# eval $(keychain --eval ~/.ssh/id_ecdsa)
+
+# navigation
+up () {
+  local d=""
+  local limit="$1"
+
+  # Default to limit of 1
+  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
+    limit=1
+  fi
+
+  for ((i=1;i<=limit;i++)); do
+    d="../$d"
+  done
+
+  # perform cd. Show error if cd fails
+  if ! cd "$d"; then
+    echo "Couldn't go up $limit dirs.";
+  fi
+}
+
+# Backup a file with date
+function backup() {
+    cp "$1" "$1_`date +%Y-%m-%d_%H-%M-%S`_BACKUP"
+}
+
+# Update all git repos
+function update_git_repos() {
+  if [ $# -ne 1 ]; then
+    echo "This function requires one parameter which must be a directory"
+    return
+  fi
+  CURRENT_DIR=`pwd`
+  echo "Updating all Git repos"
+  for DIR in "$1"/*; do
+    echo "\n========================================\n$DIR\n========================================"
+    if [[ -d "$CURRENT_DIR/$DIR" ]]; then
+      \cd "$CURRENT_DIR/$DIR"
+      git status
+      git pull origin $(git rev-parse --abbrev-ref HEAD)
+    else
+      echo "$CURRENT_DIR/$DIR not a directory"
+    fi
+  done
+  \cd "$CURRENT_DIR"
+}
+
+source ~/.config/aliases/aliases
+
+#eval "$(starship init zsh)"
