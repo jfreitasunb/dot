@@ -1,2 +1,38 @@
 ZDOTDIR=$HOME/.config/zsh
-#. "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+### ---- history config -------------------------------------
+HISTFILE=~/.zsh_history
+
+# How many commands zsh will load to memory.
+HISTSIZE=10000
+
+# How maney commands history will save on file.
+SAVEHIST=1000000000
+
+# History won't save duplicates.
+setopt HIST_SAVE_NO_DUPS
+
+# History won't show duplicates on search.
+setopt HIST_FIND_NO_DUPS
+
+if [ -d "$HOME/.bin" ] ; then
+    PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+if [ -d "$HOME/Applications" ] ; then
+    PATH="$HOME/Applications:$PATH"
+fi
+
+export PATH
