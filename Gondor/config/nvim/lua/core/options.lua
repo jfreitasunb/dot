@@ -24,6 +24,7 @@ opt.wrapmargin=130
 opt.textwidth=120
 opt.linebreak = true
 opt.formatoptions=cqt
+opt.timeoutlen = 500
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
