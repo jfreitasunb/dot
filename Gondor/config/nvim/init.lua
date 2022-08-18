@@ -22,4 +22,5 @@ require('plugins/nvim-lsp-installer')
 require('plugins/nvim-lspconfig')
 require('plugins/nvim-treesitter')
 require('plugins/alpha-nvim')
+require('plugins/comment')
 
