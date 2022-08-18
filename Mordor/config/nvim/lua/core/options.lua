@@ -23,8 +23,9 @@ opt.confirm = true
 opt.linebreak = true
 opt.breakindent=true
 opt.breakindentopt=sbr
+opt.textwidth=178
 opt.formatoptions=cqt
-opt.timeoutlen = 500
+opt.timeoutlen = 300
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
