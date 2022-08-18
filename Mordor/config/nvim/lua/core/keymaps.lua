@@ -11,9 +11,9 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Change leader to a comma
-map("", ",", "<Nop>", opts)
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+map("", "<Space>", "<Nop>", opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -----------------------------------------------------------
 -- Neovim shortcuts
