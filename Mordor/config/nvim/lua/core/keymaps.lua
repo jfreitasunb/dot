@@ -58,6 +58,8 @@ map('n', '<leader>q', ':qa!<CR>')
 -- Selecionar tudo com 'Crtl + A'
 map('n', '<C-a>', 'ggVG')
 
+-- Format paragraph (selected or not) to 80 character lines.
+map('n','g', 'gqq')
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
