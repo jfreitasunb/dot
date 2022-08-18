@@ -20,10 +20,10 @@ opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 opt.undodir = '~/.nvim/undodir'
 opt.confirm = true
-opt.linebreak = true
-opt.breakindent=true
-opt.breakindentopt=sbr
-opt.formatoptions=cqt
+--opt.linebreak = true
+--opt.breakindent=true
+--opt.breakindentopt=sbr
+--opt.formatoptions=cqt
 opt.timeoutlen = 500
 -----------------------------------------------------------
 -- Neovim UI
@@ -31,12 +31,13 @@ opt.timeoutlen = 500
 opt.number = true           -- Show line number
 opt.showmatch = true        -- Highlight matching parenthesis
 opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
+opt.textwidth = 140
 opt.colorcolumn = '140'      -- Line lenght marker at 80 columns
 opt.splitright = true       -- Vertical split to the right
 opt.splitbelow = true       -- Horizontal split to the bottom
 opt.ignorecase = true       -- Ignore case letters when search
 opt.smartcase = true        -- Ignore lowercase for the whole pattern
-opt.linebreak = true        -- Wrap on word boundary
+--opt.linebreak = true        -- Wrap on word boundary
 opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus=3            -- Set global statusline
 
