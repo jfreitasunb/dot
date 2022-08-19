@@ -46,12 +46,8 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- packer can manage itself
 
   -- Comentários
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-      }
+  use 'numToStr/Comment.nvim'
+
   -- File explorer
   use 'kyazdani42/nvim-tree.lua'
 
