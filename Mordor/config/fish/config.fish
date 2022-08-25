@@ -30,13 +30,6 @@ function fish_user_key_bindings
 end
 ### END OF VI MODE ###
 
-### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
-set fish_color_normal brcyan
-set fish_color_autosuggestion '#7d7d7d'
-set fish_color_command brcyan
-set fish_color_error '#ff6c6b'
-set fish_color_param brcyan
-
 #Mais alguns alias personalizados
 alias aup='arch-update.sh'
 alias avell='teclado_avell.sh'
@@ -44,12 +37,8 @@ alias avell='teclado_avell.sh'
 #eval $(keychain --eval ~/.ssh/id_rsa)
 #eval $(keychain --eval ~/.ssh/id_ecdsa)
 
-#Mais alguns alias personalizados
-alias aup='arch-update.sh'
-alias avell='teclado_avell.sh'
-
-#eval $(keychain --eval ~/.ssh/id_rsa)
-#eval $(keychain --eval ~/.ssh/id_ecdsa)
-
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
 
 neofetch
