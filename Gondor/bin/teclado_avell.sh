@@ -20,19 +20,3 @@ for i in /lib/modules/*; do
 done
 
 sudo tee /etc/modprobe.d/clevo-xsm-wmi.conf <<< 'options clevo-xsm-wmi kb_color=red,red,red kb_brightness=1 kb_off=0'
-
-##############################################################################################################################
-######## Driver Wacom
-##############################################################################################################################
-
-#cd ~/scripts/input-wacom
-
-#if test -x ./autogen.sh; then ./autogen.sh; else ./configure; fi && make && sudo make install || echo "Build Failed"
-
-#cd ../
-
-#sudo rm -rf /home/jfreitas/scripts/input-wacom
-
-#cp -R input-wacom-BKP input-wacom
-
-#sudo reboot
