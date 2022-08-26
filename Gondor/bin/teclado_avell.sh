@@ -3,7 +3,7 @@
 ######## Driver do teclado Avell
 ##############################################################################################################################
 
-cd ~/scripts/avell_teclado/module
+cd /home/jfreitas/scripts/avell_teclado/module
 
 sudo make clean
 
@@ -31,4 +31,4 @@ sudo tee /etc/modprobe.d/clevo-xsm-wmi.conf <<< 'options clevo-xsm-wmi kb_color=
 
 #cp -R input-wacom-BKP input-wacom
 
-sudo reboot
+#sudo reboot
