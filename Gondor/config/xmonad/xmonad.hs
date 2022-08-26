@@ -117,6 +117,8 @@ myStartupHook = do
   -- spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
   spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
+  spawnOnce "xsetroot -cursor_name left_ptr"
+
   spawnOnce "lxsession"
   spawnOnce "nitrogen --restore"
   spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends"
