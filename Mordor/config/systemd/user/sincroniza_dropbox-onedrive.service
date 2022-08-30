@@ -1,9 +1,0 @@
-[Unit]
-Description=Sincronização entre Dropbox e OneDrive
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash /home/jfreitas/.bin/sincroniza_dropbox_onedrive
-
-[Install]
-WantedBy=multi-user.target
