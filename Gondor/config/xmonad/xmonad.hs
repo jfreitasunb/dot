@@ -33,6 +33,7 @@ import XMonad.Hooks.ServerMode
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
+import XMonad.Hooks.WindowSwallowing
 import XMonad.Hooks.WorkspaceHistory
 
     -- Layouts
@@ -638,6 +639,8 @@ main = do
   -- the xmonad, ya know...what the WM is named after!
   xmonad $ addDescrKeys' ((mod4Mask, xK_F1), showKeybindings) myKeys $ ewmh $ docks $ def
     { manageHook         = myManageHook <+> manageDocks
+    , handleEventHook    = swallowEventHook (className =? "Alacritty"  <||> className =? "kitty" <||> className =? "Terminator") (return True)
+
     --, handleEventHook    = docks
                            -- Uncomment this line to enable fullscreen support on things like YouTube/Netflix.
                            -- This works perfect on SINGLE monitor systems. On multi-monitor systems,
