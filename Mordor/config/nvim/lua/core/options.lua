@@ -18,13 +18,13 @@ opt.swapfile = false                  -- Don't use swapfile
 opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
 opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
-opt.undodir = '$HOME/.nvim/undodir'
+opt.undodir = '$HOME/.vim/undodir'
 opt.confirm = true
 --opt.linebreak = true
 --opt.breakindent=true
 --opt.breakindentopt=sbr
 --opt.formatoptions=cqt
-opt.timeoutlen = 500
+--opt.timeoutlen = 500
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
