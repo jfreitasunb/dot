@@ -114,6 +114,7 @@ myStartupHook :: X ()
 myStartupHook = do
   spawn "killall trayer"  -- kill current trayer on each restart
   spawnOnce "setxkbmap -layout us -variant intl"
+  spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
   spawnOnce "dropbox"
   -- spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
