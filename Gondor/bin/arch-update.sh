@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 echo 'Updating Applications...'
-#    sudo pacman -Syyu
-    paru -Syyu
+    sudo aura -Syu
+    sudo aura -Ayu
+    #paru -Syyu
 #
 echo ' '
 echo 'Cleaning caches & directories...'
 #   sudo pacman -Sc
-   paru -Sc
+   sudo aura -Sc
 
    cd /home/jfreitas/.cache/paru/clone/
    rm -rf *
