@@ -104,7 +104,7 @@ function update_git_repos() {
 
 source ~/.config/aliases/aliases
 
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
