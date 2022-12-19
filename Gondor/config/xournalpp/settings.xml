@@ -6,15 +6,15 @@
   <property name="pressureMultiplier" value="1.00000000"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Toolbar Left"/>
-  <property name="lastSavePath" value="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2021-2/Avaliacoes/Modulo_2/ED2-Corrigido"/>
-  <property name="lastOpenPath" value="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2021-2/Avaliacoes/Modulo_2/ED2-Corrigido"/>
+  <property name="lastSavePath" value="/home/jfreitas/GitHub_Repos/video_aulas/algebra_1/aula_11"/>
+  <property name="lastOpenPath" value="/home/jfreitas/GitHub_Repos/video_aulas/algebra_1/aula_11"/>
   <property name="lastImagePath" value=""/>
   <property name="edgePanSpeed" value="20.00000000"/>
   <property name="edgePanMaxMult" value="5.00000000"/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="950"/>
+  <property name="mainWndWidth" value="1908"/>
   <property name="mainWndHeight" value="1038"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
@@ -65,6 +65,7 @@
   <property name="snapGridTolerance" value="0.50000000"/>
   <property name="snapGridSize" value="14.17000000"/>
   <property name="touchDrawing" value="false"/>
+  <property name="gtkTouchInertialScrolling" value="true"/>
   <property name="pressureGuessing" value="false"/>
   <property name="selectionBorderColor" value="4294901760"/>
   <property name="backgroundColor" value="4292664021"/>
