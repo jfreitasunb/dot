@@ -28,8 +28,8 @@ alias avell='teclado_avell.sh'
 # Changing "cat" to "bat"
 alias cat='bat'
 
-#alias vim='nvim'
-alias vim='lvim'
+alias vim='nvim'
+#alias vim='lvim'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'

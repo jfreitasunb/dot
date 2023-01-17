@@ -2,7 +2,7 @@
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
-sed -i '393s/.//' /etc/locale.gen
+sed -i '387s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=us-acentos" >> /etc/vconsole.conf
