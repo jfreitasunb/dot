@@ -6,6 +6,6 @@ LISTA_DIRETORIOS="/Arquivos/Dropbox/Backups/Gondor/OneDrive/lista_diretorios_one
 
 DROPBOX="/Arquivos/Dropbox/"
 
-ONEDRIVE="/Arquivos/OneDrive/"
+ONEDRIVE="/home/jfreitas/OneDrive/"
 
 rsync -ravzzc --files-from="$LISTA_DIRETORIOS" --exclude-from="$EXCLUDE_LIST" "$DROPBOX" "$ONEDRIVE" --delete
