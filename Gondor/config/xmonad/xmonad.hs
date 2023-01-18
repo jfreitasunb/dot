@@ -275,7 +275,7 @@ gsSystem =
   , ("Bash", (myTerminal ++ " -e bash"))
   , ("Htop", (myTerminal ++ " -e htop"))
   , ("Fish", (myTerminal ++ " -e fish"))
-  , ("PCManFM", "pcmanfm")
+  , ("PCManFM", "nemo")
   , ("VirtualBox", "virtualbox")
   , ("Virt-Manager", "virt-manager")
   , ("Zsh", (myTerminal ++ " -e zsh"))
