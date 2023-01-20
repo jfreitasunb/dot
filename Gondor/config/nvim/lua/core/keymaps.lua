@@ -10,10 +10,13 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
 -- Change leader to a comma
 --map("", "<Space>", "<Nop>", opts)
 --vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+--vim.g.maplocalleader = " "
 
 -----------------------------------------------------------
 -- Neovim shortcuts
