@@ -538,7 +538,7 @@ myKeys c =
   , ("M-C-p", addName "Gerenciador de senhas"             $ spawn "keepassxc")
   , ("M-M1-h", addName "Launch htop"                      $ spawn (myTerminal ++ " -e htop"))
   , ("M-S-s", addName "Bloquia a tela"                    $ spawn "slock")
-  , ("M-S-f", addName "Lança gerenciador de arquivos"     $ spawn "pcmanfm")
+  , ("M-S-f", addName "Lança gerenciador de arquivos"     $ spawn "nemo")
   , ("M-S-x", addName "Programa de mesa"                  $ spawn "xournalpp")
   , ("M-S-t", addName "Lança o Teams"                     $ spawn "teams --no-sandbox")
   , ("M-S-g", addName "Lança o Chrome"                    $ spawn "google-chrome-stable")
