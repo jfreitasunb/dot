@@ -6,8 +6,8 @@
   <property name="pressureMultiplier" value="1.00000000"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Toolbar Left Copy"/>
-  <property name="lastSavePath" value="/home/jfreitas/GitHub_Repos/video_aulas/algebra_1/aula_19-exercicio"/>
-  <property name="lastOpenPath" value="/home/jfreitas/GitHub_Repos/video_aulas/algebra_1/aula_19-exercicio"/>
+  <property name="lastSavePath" value="/home/jfreitas/Downloads"/>
+  <property name="lastOpenPath" value="/home/jfreitas/Downloads"/>
   <property name="lastImagePath" value=""/>
   <property name="edgePanSpeed" value="20.00000000"/>
   <property name="edgePanMaxMult" value="5.00000000"/>
@@ -19,7 +19,7 @@
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
-  <property name="sidebarWidth" value="130"/>
+  <property name="sidebarWidth" value="50"/>
   <property name="sidebarOnRight" value="true"/>
   <property name="scrollbarOnLeft" value="false"/>
   <property name="menubarVisible" value="true"/>
