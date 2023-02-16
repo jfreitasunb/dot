@@ -128,7 +128,8 @@ myStartupHook = do
   spawnOnce "nm-applet"
   spawnOnce "volumeicon"
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 2 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 28")
-  spawnOnce "nitrogen --restore &"
+  --spawnOnce "nitrogen --restore &"
+  spawnOnce "/home/jfreitas/.bin/wallpaper.sh"
   setWMName "LG3D"
 
 myNavigation :: TwoD a (Maybe a)
