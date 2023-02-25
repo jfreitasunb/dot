@@ -17,6 +17,7 @@ alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
 
+alias sudo='doas'
 alias aup='arch-update.sh'
 alias pac='sudo pacman'
 alias riv='cd /ArquivosLinux/Dropbox/php/vagrant/rivendel'
