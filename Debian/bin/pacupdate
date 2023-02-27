@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cupd=$(apt list --upgradable 2>/dev/null | wc -l)
+
+if [ "$cupd" -ge 2 ]; then
+	echo "$cupd updates "
+else
+	echo "0 updates"
+fi
