@@ -108,3 +108,5 @@ Mordor/config/zsh/themes
 Mordor/config/zsh/plugins
 Debian/config/xmonad/xmonad/
 Debian/config/xmonad/xmonad-contrib/
+Debian/config/xmonad/.stack-work/
+Debian/config/xmonad/.stack-work/install/x86_64-linux-tinfo6/8bae59914e23ced4ea72bd8997d0d5f8d91fb8727153c3ffc507f619c123d9ac/9.2.5/bin/xmonad
