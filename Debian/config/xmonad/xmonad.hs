@@ -117,7 +117,7 @@ myStartupHook = do
   spawnOnce "/home/jfreitas/.bin/seta_monitores_login.sh"
   spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
   spawnOnce "dropbox"
-  -- spawnOnce "lxqt-policykit-agent"
+  spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
   spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
   spawnOnce "xsetroot -cursor_name left_ptr"
