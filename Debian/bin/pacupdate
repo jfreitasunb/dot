@@ -1,7 +1,8 @@
 #!/bin/bash
 
-cupd=$(apt list --upgradable 2>/dev/null | wc -l)
+apt update &>/dev/null
 
+cupd=$(($(apt list --upgradable 2>/dev/null | wc -l) - 1))
 if [ "$cupd" -ge 2 ]; then
 	echo "$cupd updates "
 else
