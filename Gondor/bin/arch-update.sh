@@ -7,7 +7,7 @@ echo 'Updating Applications...'
 echo ' '
 echo 'Cleaning caches & directories...'
 #   sudo pacman -Sc
-   paru -Suac
+   paru -Syuac
 
    cd /home/jfreitas/.cache/paru/clone/
    rm -rf *
