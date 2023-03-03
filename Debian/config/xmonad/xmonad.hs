@@ -115,7 +115,7 @@ myStartupHook = do
   spawn "killall trayer"  -- kill current trayer on each restart
   spawnOnce "setxkbmap -layout us -variant intl"
   spawnOnce "/home/jfreitas/.bin/seta_monitores_login.sh"
-  spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
+  --spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
   spawnOnce "dropbox"
   spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
@@ -129,6 +129,7 @@ myStartupHook = do
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 2 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 28")
   --spawnOnce "nitrogen --restore &"
   spawnOnce "/home/jfreitas/.bin/wallpaper.sh"
+  spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
   setWMName "LG3D"
 
 myNavigation :: TwoD a (Maybe a)
