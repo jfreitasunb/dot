@@ -1,4 +1,4 @@
-neofetch
+#neofetch
 
 bindkey -e
 
@@ -53,8 +53,8 @@ bindkey '^[[B' history-substring-search-down
 
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-eval $(keychain --eval ~/.ssh/id_rsa)
-eval $(keychain --eval ~/.ssh/id_ecdsa)
+#eval $(keychain --eval ~/.ssh/id_rsa)
+#eval $(keychain --eval ~/.ssh/id_ecdsa)
 
 # navigation
 up () {
