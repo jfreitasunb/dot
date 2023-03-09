@@ -25,6 +25,9 @@ setopt HIST_SAVE_NO_DUPS
 
 # History won't show duplicates on search.
 setopt HIST_FIND_NO_DUPS
+if [ -d "/usr/local/texlive/2022/bin/x86_64-linux" ] ; then
+    PATH="/usr/local/texlive/2022/bin/x86_64-linux:$PATH"
+fi
 
 if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
