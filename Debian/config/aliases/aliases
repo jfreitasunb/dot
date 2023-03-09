@@ -1,5 +1,58 @@
 alias vim='nvim'
-alias sudo='doas'
-alias reboot='doas /sbin/reboot'
-alias poweroff='doas /sbin/poweroff'
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
 alias cat='batcat'
+
+#### Git ####
+alias ge='git status'
+alias ga='git add'
+alias gp='git push'
+alias gpo='git push origin'
+alias gtd='git tag --delete'
+alias gtdr='git tag --delete origin'
+alias gr='git branch -r'
+alias gplo='git pull origin'
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias gco='git checkout '
+alias gl='git log'
+alias gr='git remote'
+alias grs='git remote show'
+alias glo='git log --pretty="oneline"'
+alias glol='git log --graph --oneline --decorate'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# confirm before overwriting something
+alias cp="cp -iv"
+alias mv='mv -iv'
+alias rm='rm -iv'
+
+# adding flags
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+
+# ps
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias psmem='ps auxf | sort -nr -k 4'
+alias pscpu='ps auxf | sort -nr -k 3'
+
+# get error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+
+# Changing "ls" to "exa"
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --binary --color=always --group-directories-first'  # long format
+alias lt='exa -aT --group-directories-first' # tree listing
+alias lr='exa --color=always --sort newest --group-directories-first' # tree listing
+alias ls='exa -la --binary --color=always --group-directories-first' # my preferred listing
+
+# Navegação entre diretórios
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
