@@ -1,0 +1,5 @@
+alias vim='nvim'
+alias sudo='doas'
+alias reboot='doas /sbin/reboot'
+alias poweroff='doas /sbin/poweroff'
+alias cat='batcat'
