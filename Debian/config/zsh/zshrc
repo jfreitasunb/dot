@@ -1,3 +1,46 @@
+if [ -d "$HOME/.cargo/env" ] ; then
+    . "$HOME/.cargo/env"
+fi
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
+
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+
+### ---- history config -------------------------------------
+HISTFILE=~/.zsh_history
+
+# How many commands zsh will load to memory.
+HISTSIZE=10000
+
+# How maney commands history will save on file.
+SAVEHIST=1000000000
+
+# History won't save duplicates.
+setopt HIST_SAVE_NO_DUPS
+
+# History won't show duplicates on search.
+setopt HIST_FIND_NO_DUPS
+
+if [ -d "$HOME/.bin" ] ; then
+    PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+export PATH
+. "$HOME/.cargo/env"
+
 bindkey -e
 
 bindkey '^[[H' beginning-of-line     # Home
@@ -16,8 +59,7 @@ autoload -U compinit; compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 _comp_options+=(globdots) # With hidden files
 
-POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+plugins=(git zsh-autosuggestions fzf)
 
 if [ -f ~/.config/aliases/aliases ]; then
     . ~/.config/aliases/aliases
@@ -26,3 +68,8 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #neofetch
+source  /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme
+
+source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme
