@@ -1,0 +1,28 @@
+bindkey -e
+
+bindkey '^[[H' beginning-of-line     # Home
+bindkey '^[[F' end-of-line     # End
+bindkey '^[[3~' delete-char     # Delete
+bindkey '^?' backward-delete-char     # Backspace
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+setopt AUTO_PUSHD           # Push the current directory visited on the stack.
+setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
+setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
+
+autoload -U compinit; compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+_comp_options+=(globdots) # With hidden files
+
+POWERLEVEL9K_MODE='nerdfont-complete'
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+if [ -f ~/.config/aliases/aliases ]; then
+    . ~/.config/aliases/aliases
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#neofetch
