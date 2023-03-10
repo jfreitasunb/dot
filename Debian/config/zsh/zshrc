@@ -1,3 +1,4 @@
+ZDOTDIR=$HOME/.config/zsh
 if [ -d "$HOME/.cargo/env" ] ; then
     . "$HOME/.cargo/env"
 fi
@@ -71,8 +72,15 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #neofetch
+
 source  /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme
+
+fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath)
+
+source $ZDOTDIR/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme
