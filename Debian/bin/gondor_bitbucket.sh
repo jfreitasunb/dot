@@ -2,42 +2,42 @@
 
 EXCLUDE_LIST_TEX="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-TEX.list"
 
-EXCLUDE_LIST_LARAVEL="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-GitHub_Repos_laravel.list"
+EXCLUDE_LIST_LARAVEL="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-GitHub_laravel.list"
 
-ALGEBRA1="/home/jfreitas/GitHub_Repos/Algebra-1/"
+ALGEBRA1="/home/jfreitas/GitHub/Algebra-1/"
 DEST_ALGEBRA1="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2022-2"
 
-IAL="/home/jfreitas/GitHub_Repos/IAL/"
+IAL="/home/jfreitas/GitHub/IAL/"
 DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-1"
 
-AULASONLINE="/home/jfreitas/GitHub_Repos/video_aulas/"
+AULASONLINE="/home/jfreitas/GitHub/video_aulas/"
 DEST_AULASONLINE="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/pdf_video_aulas"
 
-#ALGEBRA_LINEAR="/home/jfreitas/GitHub_Repos/algebra_linear/"
+#ALGEBRA_LINEAR="/home/jfreitas/GitHub/algebra_linear/"
 #DEST_ALGEBRA_LINEAR="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_Linear/2019-1"
 
-#CAT="/home/jfreitas/GitHub_Repos/cat/"
+#CAT="/home/jfreitas/GitHub/cat/"
 #DEST_CAT="/Arquivos/Dropbox/UnB/CAT"
 
-#MONITORIAMAT="/home/jfreitas/GitHub_Repos/inscricoesmonitoria/"
+#MONITORIAMAT="/home/jfreitas/GitHub/inscricoesmonitoria/"
 #DEST_MONITORIAMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoesmonitoria"
 
-POSMAT="/home/jfreitas/GitHub_Repos/inscricoespos/"
+POSMAT="/home/jfreitas/GitHub/inscricoespos/"
 DEST_POSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespos"
 
-#INSCRICOESPNPD="/home/jfreitas/GitHub_Repos/inscricoespnpd/"
+#INSCRICOESPNPD="/home/jfreitas/GitHub/inscricoespnpd/"
 #DEST_INSCRICOESPNPD="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespnpd"
 
-#PROFICIENCIA="/home/jfreitas/GitHub_Repos/proficiencia/"
+#PROFICIENCIA="/home/jfreitas/GitHub/proficiencia/"
 #DEST_PROFICIENCIA="/Arquivos/Dropbox/UnB/Projetos-PHP/proficiencia"
 
-#SITEMONITORIAMAT="/home/jfreitas/GitHub_Repos/site-monitoriamat/"
+#SITEMONITORIAMAT="/home/jfreitas/GitHub/site-monitoriamat/"
 #DEST_SITEMONITORIAMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/site-monitoriamat"
 
-#INSCRICOESVERAO="/home/jfreitas/GitHub_Repos/inscricoesverao/"
+#INSCRICOESVERAO="/home/jfreitas/GitHub/inscricoesverao/"
 #DEST_INSCRICOESVERAO="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoesverao"
 
-#INSCRICOESEVENTOSMAT="/home/jfreitas/GitHub_Repos/inscricoeseventos/"
+#INSCRICOESEVENTOSMAT="/home/jfreitas/GitHub/inscricoeseventos/"
 #DEST_INSCRICOESEVENTOSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoeseventos"
 
 rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$ALGEBRA1" "$DEST_ALGEBRA1"
