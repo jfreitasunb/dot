@@ -73,14 +73,13 @@ fi
 
 #neofetch
 
-source  /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme
-
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath)
 
 source $ZDOTDIR/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme
