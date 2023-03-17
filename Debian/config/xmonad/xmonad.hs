@@ -130,7 +130,7 @@ myStartupHook = do
   --spawnOnce "nitrogen --restore &"
   spawnOnce "/home/jfreitas/.bin/wallpaper.sh"
   spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
-  setWMName "LG3D"
+  setWMName "Jota"
 
 myNavigation :: TwoD a (Maybe a)
 myNavigation = makeXEventhandler $ shadowWithKeymap navKeyMap navDefaultHandler
@@ -427,7 +427,7 @@ myLayoutHook = avoidStruts
                                            ||| tallAccordion
                                            ||| wideAccordion
 
-myWorkspaces = [" dev ", " www ", " TeX ", " PDF ", " chat " , " aula ", " virt ", " sys ", " obs "]
+myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 " , " 6 ", " 7 ", " 8 ", " 9 "]
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..] -- (,) == \x y -> (x,y)
 
 clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
