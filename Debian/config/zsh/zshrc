@@ -83,3 +83,10 @@ bindkey '^[[B' history-substring-search-down
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# added by Anaconda3 2.4.1 installer
+ export PATH="/home/jfreitas/anaconda3/bin:$PATH"
