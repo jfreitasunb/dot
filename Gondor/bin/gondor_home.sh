@@ -1,14 +1,14 @@
 #!/bin/bash
 
 ultimo_backup=$(cat ~/.temporario/data_ultimo_backup)
-data_atual=$(date '+%s')
 
+data_atual=$(date '+%s')
 
 data_ultimo_backup=$(date -d $ultimo_backup '+%s')
 
 diferenca=$(( ( data_atual - data_ultimo_backup )/(60*60*24) ))
 
-rotavidade=3
+rotavidade=7
 
 if [ $diferenca -gt $rotavidade ];
 then
