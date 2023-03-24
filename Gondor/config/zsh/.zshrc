@@ -1,4 +1,4 @@
-#neofetch
+neofetch
 
 bindkey -e
 
