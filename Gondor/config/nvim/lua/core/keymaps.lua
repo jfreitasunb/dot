@@ -10,8 +10,8 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Change leader to a comma
 --map("", "<Space>", "<Nop>", opts)
