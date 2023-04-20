@@ -39,6 +39,7 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
 export PATH
 
 neofetch
