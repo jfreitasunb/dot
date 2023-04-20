@@ -103,7 +103,7 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: FiraMono Nerd Font
+    family: JetBrainsMono Nerd Font
     # Font family
     #
     # Default:
@@ -125,7 +125,7 @@ font:
 
   # Bold font face
   bold:
-    family: FiraMono Nerd Font
+    family: JetBrainsMono Nerd Font
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
@@ -145,7 +145,7 @@ font:
 
   # Italic font face
   italic:
-    family: FiraMono Nerd Font
+    family: JetBrainsMono Nerd Font
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
@@ -169,7 +169,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraMono Nerd Font
+    family: JetBrainsMono Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
