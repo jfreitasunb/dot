@@ -159,7 +159,7 @@ NoDisplay=true
 X-GNOME-WMName=Xmonad
 X-GNOME-Autostart-Phase=WindowManager
 X-GNOME-Provides=windowmanager
-X-GNOME-Autostart-Notify=false" >> /usr/share/xsessions/xmonad.desktop
+X-GNOME-Autostart-Notify=false" >> sudo tee /usr/share/xsessions/xmonad.desktop
 
 cd ~
 
