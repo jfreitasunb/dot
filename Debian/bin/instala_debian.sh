@@ -82,7 +82,7 @@ sudo mv astronaut/ /usr/share/sddm/themes/
 
 curl -fsS https://dlang.org/install.sh | bash -s dmd
 
-source ~/dlang/dmd-2.102.2/activate
+source $(echo ~/dlang/*/)/activate
 
 git clone https://github.com/abraunegg/onedrive.git
 
