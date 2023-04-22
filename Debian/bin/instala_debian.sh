@@ -1,4 +1,16 @@
-sudo apt -y install python3-pip
+sudo apt -y install curl build-essential python3-pip git python3-apt python3-debian pandoc
+
+cd ~
+
+git clone https://gitlab.com/volian/nala.git
+
+cd nala/
+
+sudo make install
+
+cd ~
+
+sudo rm -rf nala
 
 sudo apt -y install fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adapta-gtk-theme adwaita-icon-theme arandr automake autorandr bat bzip2 exa feh flameshot flatpak fzf gimp gimp-help-pt git keepassxc syncthing linux-headers-$(uname -r) lxappearance lxqt-policykit nvidia-driver nvidia-cuda-dev nvidia-cuda-gdb nvidia-cuda-toolkit obs-studio p7zip p7zip-full pavucontrol pdftk tcl tk8.6 picom qemu qemu-system-common qemu-system-data qemu-system-gui qemu-utils r-base ranger rsync sddm virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-pip python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev suckless-tools gnome-software-plugin-flatpak build-essential install libcurl4-openssl-dev libsqlite3-dev pkg-config git curl libnotify-dev libcurl4-openssl-dev haskell-stack libpango1.0-0 fonts-liberation libu2f-udev numlockx
 
@@ -14,7 +26,7 @@ sudo make install
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-cd
+cd ~
 
 rm -rf neovim
 
