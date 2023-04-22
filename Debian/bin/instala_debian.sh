@@ -159,13 +159,25 @@ NoDisplay=true
 X-GNOME-WMName=Xmonad
 X-GNOME-Autostart-Phase=WindowManager
 X-GNOME-Provides=windowmanager
-X-GNOME-Autostart-Notify=false" >> sudo tee /usr/share/xsessions/xmonad.desktop
+X-GNOME-Autostart-Notify=false" | sudo tee /usr/share/xsessions/xmonad.desktop
 
 cd ~
 
 rm .zshenv
 
 ln -s GitHub/dot/Debian/config/zsh/zshenv ./.zshenv
+
+ln -s GitHub/dot/Debian/config/R/Renviron ./.Renviron
+
+ln -s GitHub/dot/Debian/config/R/Renviron.site ./.Renviron.site
+
+ln -s GitHub/dot/Debian/config/R/Rhistory ./.Rhistory
+
+ln -s GitHub/dot/Debian/config/R/Rprofile ./.Rprofile
+
+ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
+
+ln -s GitHub/dot/Debian/config/Xmodmap ./.Xmodmap
 
 cd /tmp
 
