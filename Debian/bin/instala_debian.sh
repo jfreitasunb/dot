@@ -98,7 +98,7 @@ deactivate
 
 cd ..
 
-rm -rf onedrive
+sudo rm -rf onedrive
 
 systemctl --user enable syncthing.service --now
 
