@@ -102,7 +102,7 @@ sudo rm -rf onedrive
 
 systemctl --user enable syncthing.service --now
 
-systemctl --user status onedrive.service 
+systemctl --user enable onedrive.service 
 
 cd .config/
 
