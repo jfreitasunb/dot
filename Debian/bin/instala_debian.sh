@@ -108,11 +108,23 @@ cd .config/
 
 ln -s ~/GitHub/dot/Debian/config/alacritty ./
 
+ln -s ~/GitHub/dot/Debian/config/aliases/ ./
+
+ln -s ~/GitHub/dot/Debian/config/autorandr/ ./
+
 ln -s ~/GitHub/dot/Debian/config/nvim/ ./
+
+ln -s ~/GitHub/dot/Debian/config/picom/ ./
+
+ln -s ~/GitHub/dot/Debian/config/terminator/ ./
 
 ln -s ~/GitHub/dot/Debian/config/xmonad/ ./
 
 ln -s ~/GitHub/dot/Debian/config/xmobar/ ./
+
+ln -s ~/GitHub/dot/Debian/config/zathura/ ./
+
+ln -s ~/GitHub/dot/Debian/config/zsh/ ./
 
 cd ../
 
@@ -149,11 +161,7 @@ X-GNOME-Autostart-Phase=WindowManager
 X-GNOME-Provides=windowmanager
 X-GNOME-Autostart-Notify=false" >> /usr/share/xsessions/xmonad.desktop
 
-cd ~/.config/
-
-ln -s ~/GitHub/dot/Debian/config/zsh/ ./
-
-cd
+cd ~
 
 rm .zshenv
 
