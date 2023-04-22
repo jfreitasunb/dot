@@ -36,11 +36,11 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 
 sudo make install
 
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 cd ~
 
 rm -rf neovim
+
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 sudo curl https://sh.rustup.rs -sSf | sh
 
