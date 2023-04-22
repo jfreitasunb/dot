@@ -68,7 +68,7 @@ sudo update-desktop-database
 
 cd ~
 
-rm -rf alacritty
+sudo rm -rf alacritty
 
 git clone https://github.com/totoro-ghost/sddm-astronaut.git ~/astronaut/
 
