@@ -1,4 +1,4 @@
-sudo apt -y install curl build-essential python3-pip git python3-apt python3-debian pandoc
+sudo apt -y install curl ninja-build gettext cmake unzip build-essential python3-pip git python3-apt python3-debian pandoc
 
 cd ~
 
