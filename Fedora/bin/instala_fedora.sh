@@ -3,10 +3,6 @@ echo "max_parallel_downloads=10" >> sudo tee -a /etc/dnf/dnf.conf
 
 echo "fastestmirror=True" >> sudo tee -a /etc/dnf/dnf.conf 
 
-sudo dnf update
-
-sudo dnf upgrade
-
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
@@ -15,7 +11,11 @@ sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 
 sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 
-sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim
+sudo dnf update
+
+sudo dnf upgrade
+
+sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim tck tk
 
 sudo grub2-editenv - unset menu_auto_hide
 
