@@ -175,6 +175,8 @@ ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Debian/config/Xmodmap ./.Xmodmap
 
+sudo usermod -aG libvirt jfreitas
+
 cd /tmp
 
 wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
