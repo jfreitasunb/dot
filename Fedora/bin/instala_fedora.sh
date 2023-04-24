@@ -43,53 +43,53 @@ sudo grub2-editenv - unset menu_auto_hide
 
 # systemctl --user enable onedrive.service 
 
-# cd .config/
+cd ~/.config/
 
-# ln -s ~/GitHub/dot/Fedora/config/alacritty ./
+ln -s ~/GitHub/dot/Fedora/config/alacritty ./
 
-# ln -s ~/GitHub/dot/Fedora/config/aliases/ ./
+ln -s ~/GitHub/dot/Fedora/config/aliases/ ./
 
-# ln -s ~/GitHub/dot/Fedora/config/autorandr/ ./
+ln -s ~/GitHub/dot/Fedora/config/autorandr/ ./
 
-# ln -s ~/GitHub/dot/Fedora/config/nvim/ ./
+ln -s ~/GitHub/dot/Fedora/config/nvim/ ./
 
-# ln -s ~/GitHub/dot/Fedora/config/picom/ ./
+ln -s ~/GitHub/dot/Fedora/config/picom/ ./
 
-# ln -s ~/GitHub/dot/Fedora/config/terminator/ ./
+ln -s ~/GitHub/dot/Fedora/config/terminator/ ./
 
-# ln -s ~/GitHub/dot/Fedora/config/xmonad/ ./
+ln -s ~/GitHub/dot/Fedora/config/xmonad/ ./
 
-# ln -s ~/GitHub/dot/Fedora/config/xmobar/ ./
+ln -s ~/GitHub/dot/Fedora/config/xmobar/ ./
 
-# ln -s ~/GitHub/dot/Fedora/config/zathura/ ./
+ln -s ~/GitHub/dot/Fedora/config/zathura/ ./
 
-# ln -s ~/GitHub/dot/Fedora/config/zsh/ ./
+ln -s ~/GitHub/dot/Fedora/config/zsh/ ./
 
-# cd ../
+cd ~
 
-# ln -s ~/GitHub/dot/Fedora/bin/ ./.bin
+ln -s ~/GitHub/dot/Fedora/bin/ ./.bin
 
-# cd .local/share/
+cd .local/share/
 
-# ln -s ~/GitHub/dot/Fedora/fonts/ ./
+ln -s ~/GitHub/dot/Fedora/fonts/ ./
 
-# fc-cache -f -v
+fc-cache -f -v
 
-# rm .zshenv
+rm .zshenv
 
-# ln -s GitHub/dot/Fedora/config/zsh/zshenv ./.zshenv
+ln -s GitHub/dot/Fedora/config/zsh/zshenv ./.zshenv
 
-# ln -s GitHub/dot/Fedora/config/R/Renviron ./.Renviron
+ln -s GitHub/dot/Fedora/config/R/Renviron ./.Renviron
 
-# ln -s GitHub/dot/Fedora/config/R/Renviron.site ./.Renviron.site
+ln -s GitHub/dot/Fedora/config/R/Renviron.site ./.Renviron.site
 
-# ln -s GitHub/dot/Fedora/config/R/Rhistory ./.Rhistory
+ln -s GitHub/dot/Fedora/config/R/Rhistory ./.Rhistory
 
-# ln -s GitHub/dot/Fedora/config/R/Rprofile ./.Rprofile
+ln -s GitHub/dot/Fedora/config/R/Rprofile ./.Rprofile
 
-# ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
+ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
-# ln -s GitHub/dot/Fedora/config/Xmodmap ./.Xmodmap
+ln -s GitHub/dot/Fedora/config/Xmodmap ./.Xmodmap
 
 cd /tmp
 
