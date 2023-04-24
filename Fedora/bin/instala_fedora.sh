@@ -1,7 +1,8 @@
 cd ~
-echo "max_parallel_downloads=10" >> sudo tee -a /etc/dnf/dnf.conf
 
-echo "fastestmirror=True" >> sudo tee -a /etc/dnf/dnf.conf 
+echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf > /dev/null 2>&1
+
+echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf > /dev/null 2>&1
 
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
