@@ -15,31 +15,7 @@ sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 
 sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 
-sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar
-
-git clone https://github.com/neovim/neovim
-
-cd neovim/
-
-git checkout stable
-
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-
-sudo make install
-
-cd ~
-
-rm -rf neovim
-
-# git clone https://github.com/totoro-ghost/sddm-astronaut.git ~/astronaut/
-
-# cd astronaut/
-
-# rm -rf .git/
-
-# cd ..
-
-# sudo mv astronaut/ /usr/share/sddm/themes/
+sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim
 
 # curl -fsS https://dlang.org/install.sh | bash -s dmd
 
@@ -113,12 +89,12 @@ rm -rf neovim
 
 # ln -s GitHub/dot/Debian/config/Xmodmap ./.Xmodmap
 
-# cd /tmp
+cd /tmp
 
-# wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 
-# zcat install-tl-unx.tar.gz | tar xf -
+zcat install-tl-unx.tar.gz | tar xf -
 
-# cd install-tl-*/
+cd install-tl-*/
 
-# sudo perl ./install-tl --gui
+sudo perl ./install-tl --gui
