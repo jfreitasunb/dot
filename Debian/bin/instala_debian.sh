@@ -151,15 +151,11 @@ stack install
 sudo ln -s ~/.local/bin/xmonad /usr/bin
 
 sudo echo "[Desktop Entry]
-Type=Application
-Encoding=UTF-8
-Name=Xmonad
+Name=XMonad
+Comment=Lightweight tiling window manager
 Exec=xmonad
-NoDisplay=true
-X-GNOME-WMName=Xmonad
-X-GNOME-Autostart-Phase=WindowManager
-X-GNOME-Provides=windowmanager
-X-GNOME-Autostart-Notify=false" | sudo tee /usr/share/xsessions/xmonad.desktop
+Icon=xmonad.png
+Type=XSession" | sudo tee /usr/share/xsessions/xmonad.desktop
 
 cd ~
 
