@@ -43,51 +43,51 @@ sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc m
 
 # cd .config/
 
-# ln -s ~/GitHub/dot/Debian/config/alacritty ./
+# ln -s ~/GitHub/dot/Fedora/config/alacritty ./
 
-# ln -s ~/GitHub/dot/Debian/config/aliases/ ./
+# ln -s ~/GitHub/dot/Fedora/config/aliases/ ./
 
-# ln -s ~/GitHub/dot/Debian/config/autorandr/ ./
+# ln -s ~/GitHub/dot/Fedora/config/autorandr/ ./
 
-# ln -s ~/GitHub/dot/Debian/config/nvim/ ./
+# ln -s ~/GitHub/dot/Fedora/config/nvim/ ./
 
-# ln -s ~/GitHub/dot/Debian/config/picom/ ./
+# ln -s ~/GitHub/dot/Fedora/config/picom/ ./
 
-# ln -s ~/GitHub/dot/Debian/config/terminator/ ./
+# ln -s ~/GitHub/dot/Fedora/config/terminator/ ./
 
-# ln -s ~/GitHub/dot/Debian/config/xmonad/ ./
+# ln -s ~/GitHub/dot/Fedora/config/xmonad/ ./
 
-# ln -s ~/GitHub/dot/Debian/config/xmobar/ ./
+# ln -s ~/GitHub/dot/Fedora/config/xmobar/ ./
 
-# ln -s ~/GitHub/dot/Debian/config/zathura/ ./
+# ln -s ~/GitHub/dot/Fedora/config/zathura/ ./
 
-# ln -s ~/GitHub/dot/Debian/config/zsh/ ./
+# ln -s ~/GitHub/dot/Fedora/config/zsh/ ./
 
 # cd ../
 
-# ln -s ~/GitHub/dot/Debian/bin/ ./.bin
+# ln -s ~/GitHub/dot/Fedora/bin/ ./.bin
 
 # cd .local/share/
 
-# ln -s ~/GitHub/dot/Debian/fonts/ ./
+# ln -s ~/GitHub/dot/Fedora/fonts/ ./
 
 # fc-cache -f -v
 
 # rm .zshenv
 
-# ln -s GitHub/dot/Debian/config/zsh/zshenv ./.zshenv
+# ln -s GitHub/dot/Fedora/config/zsh/zshenv ./.zshenv
 
-# ln -s GitHub/dot/Debian/config/R/Renviron ./.Renviron
+# ln -s GitHub/dot/Fedora/config/R/Renviron ./.Renviron
 
-# ln -s GitHub/dot/Debian/config/R/Renviron.site ./.Renviron.site
+# ln -s GitHub/dot/Fedora/config/R/Renviron.site ./.Renviron.site
 
-# ln -s GitHub/dot/Debian/config/R/Rhistory ./.Rhistory
+# ln -s GitHub/dot/Fedora/config/R/Rhistory ./.Rhistory
 
-# ln -s GitHub/dot/Debian/config/R/Rprofile ./.Rprofile
+# ln -s GitHub/dot/Fedora/config/R/Rprofile ./.Rprofile
 
 # ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
-# ln -s GitHub/dot/Debian/config/Xmodmap ./.Xmodmap
+# ln -s GitHub/dot/Fedora/config/Xmodmap ./.Xmodmap
 
 cd /tmp
 
