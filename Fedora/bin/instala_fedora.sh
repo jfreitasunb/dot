@@ -17,6 +17,8 @@ sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x
 
 sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim
 
+sudo grub2-editenv - unset menu_auto_hide
+
 # curl -fsS https://dlang.org/install.sh | bash -s dmd
 
 # source $(echo ~/dlang/*/)/activate
