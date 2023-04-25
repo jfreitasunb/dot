@@ -20,7 +20,7 @@ sudo dnf update
 
 sudo dnf upgrade
 
-sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim onedrive meld arandr autorandr automake bat bzip2 exa feh flameshot fzf keepassxc p7zip pavucontrol pdftk virt-manager transmission-gtk tcl tk picom qemu ranger vlc zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh nemo nemo-fileroller dconf-editor python3-pip numlockx nodejs npm onedrive texlive-scheme-full R ImageMagick kernel-devel kernel-headers
+sudo dnf install -y util-linux-user brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim onedrive meld arandr autorandr automake bat bzip2 exa feh flameshot fzf keepassxc p7zip pavucontrol pdftk virt-manager transmission-gtk tcl tk picom qemu ranger vlc zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh nemo nemo-fileroller dconf-editor python3-pip numlockx nodejs npm onedrive texlive-scheme-full R ImageMagick kernel-devel kernel-headers
 
 sudo grub2-editenv - unset menu_auto_hide
 
