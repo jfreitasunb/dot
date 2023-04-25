@@ -58,6 +58,8 @@ fc-cache -f -v
 
 rm .zshenv
 
+cd ~
+
 ln -s GitHub/dot/Fedora/config/zsh/zshenv ./.zshenv
 
 ln -s GitHub/dot/Fedora/config/R/Renviron ./.Renviron
