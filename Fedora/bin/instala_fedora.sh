@@ -16,7 +16,7 @@ sudo dnf update
 
 sudo dnf upgrade
 
-sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim tck tk
+sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim tck tk picom qemu ranger virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh nemo nemo-fileroller meld dconf-editor python3-pip nodejs npm
 
 sudo grub2-editenv - unset menu_auto_hide
 
