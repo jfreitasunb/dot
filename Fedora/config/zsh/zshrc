@@ -83,3 +83,5 @@ bindkey "^[[1;5D" backward-word
 
 #added by Anaconda3 2.4.1 installer
 #export PATH="/home/jfreitas/anaconda3/bin:$PATH"
+
+source ~/.config/aliases/aliases
