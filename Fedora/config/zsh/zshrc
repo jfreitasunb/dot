@@ -1,9 +1,6 @@
 source ~/.zplug/init.zsh
 
 ZDOTDIR=$HOME/.config/zsh
-if [ -d "$HOME/.cargo/env" ] ; then
-    . "$HOME/.cargo/env"
-fi
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -44,11 +41,7 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-export PATH
-. "$HOME/.cargo/env"
-
 bindkey -e
-
 
 # Use modern completion system
 autoload -U compinit; compinit
@@ -56,7 +49,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 _comp_options+=(globdots) # With hidden files
 
 # zplug - manage plugins
-source /usr/share/zplug/init.zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
