@@ -20,33 +20,9 @@ sudo dnf update
 
 sudo dnf upgrade
 
-sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim tck tk picom qemu ranger virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh nemo nemo-fileroller meld dconf-editor python3-pip nodejs npm
+sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc make unzip gettext curl alacritty xmonad xmobar neovim tcl tk picom qemu ranger virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh nemo nemo-fileroller meld dconf-editor python3-pip nodejs npm onedrive texlive
 
 sudo grub2-editenv - unset menu_auto_hide
-
-# curl -fsS https://dlang.org/install.sh | bash -s dmd
-
-# source $(echo ~/dlang/*/)/activate
-
-# git clone https://github.com/abraunegg/onedrive.git
-
-# cd onedrive
-
-# ./configure --enable-notifications
-
-# make clean; make;
-
-# sudo make install
-
-# deactivate
-
-# cd ..
-
-# sudo rm -rf onedrive
-
-# systemctl --user enable syncthing.service --now
-
-# systemctl --user enable onedrive.service 
 
 cd ~/.config/
 
@@ -95,13 +71,3 @@ ln -s GitHub/dot/Fedora/config/R/Rprofile ./.Rprofile
 ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Fedora/config/Xmodmap ./.Xmodmap
-
-cd /tmp
-
-wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-
-zcat install-tl-unx.tar.gz | tar xf -
-
-cd install-tl-*/
-
-sudo perl ./install-tl --gui
