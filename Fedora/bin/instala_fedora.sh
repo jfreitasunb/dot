@@ -56,11 +56,11 @@ ln -s ~/GitHub/dot/Fedora/fonts/ ./
 
 fc-cache -f -v
 
-rm .zshenv
-
 cd ~
 
-ln -s GitHub/dot/Fedora/config/zsh/zshenv ./.zshenv
+rm .zshenv
+
+ln -s GitHub/dot/Fedora/config/zsh/zshrc ./.zshrc
 
 ln -s GitHub/dot/Fedora/config/R/Renviron ./.Renviron
 
