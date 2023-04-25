@@ -24,23 +24,6 @@ sudo dnf install -y brave-browser syncthing sublime-text ninja-build cmake gcc m
 
 sudo grub2-editenv - unset menu_auto_hide
 
-cd ~
-
-git clone https://github.com/neovim/neovim
-
-cd neovim/
-
-git checkout stable
-
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-
-sudo make install
-
-cd ~
-
-rm -rf neovim
-
-
 cd ~/.config/
 
 ln -s ~/GitHub/dot/Fedora/config/alacritty ./
