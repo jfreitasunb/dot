@@ -56,3 +56,5 @@ alias ls='exa -la --binary --color=always --group-directories-first' # my prefer
 # Navegação entre diretórios
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
+alias jn='jupyter notebook'
