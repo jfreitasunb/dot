@@ -1,1 +1,1 @@
-R_LIBS_SITE="/home/jfreitas/.cache/R:/usr/lib/R/library"
+R_LIBS_SITE="~/.cache/R"
