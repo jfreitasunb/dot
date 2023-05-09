@@ -228,3 +228,12 @@ bb8
 # save --------------------------------------------------------------------
 #ggsave(filename = "#144_bb8_ggplot2.png", plot = bb8, width = 6, height = 8)
 #ggsave(filename = "#144_bb8_ggplot2_void.png", plot = bb8 + theme_void(), width = 6, height = 8)
+install.packages("tidyverse")
+install.packages("palmerpenguins")
+install.packages("palmerpenguins")
+install.packages("tidyverse")
+install.packages("tidyverse")
+install.packages("tidyverse")
+install.packages("tidyverse")
+install.packages("tidyverse")
+install.packages("tidyverse")
