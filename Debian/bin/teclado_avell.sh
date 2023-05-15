@@ -21,4 +21,6 @@ done
 
 sudo /usr/sbin/update-initramfs -uk all
 
+sudo modprobe clevo-xsm-wmi
+
 sudo tee /etc/modprobe.d/clevo-xsm-wmi.conf <<< 'options clevo-xsm-wmi kb_color=red,red,red kb_brightness=1 kb_off=0'
