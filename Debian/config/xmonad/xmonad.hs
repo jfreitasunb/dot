@@ -113,13 +113,12 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
   spawn "killall trayer"  -- kill current trayer on each restart
-  spawnOnce "setxkbmap -layout us -variant intl"
+  --spawnOnce "setxkbmap -layout us -variant intl"
   spawnOnce "/home/jfreitas/.bin/seta_monitores_login.sh"
-  --spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
   spawnOnce "dropbox"
   spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
-  spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
+  spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Debian/config/Xmodmap"
   spawnOnce "xsetroot -cursor_name left_ptr"
 
   --spawnOnce "lxsession"
