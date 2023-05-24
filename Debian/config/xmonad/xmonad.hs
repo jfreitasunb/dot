@@ -115,7 +115,8 @@ myStartupHook = do
   spawn "killall trayer"  -- kill current trayer on each restart
   --spawnOnce "setxkbmap -layout us -variant intl"
   spawnOnce "/home/jfreitas/.bin/seta_monitores_login.sh"
-  spawnOnce "dropbox"
+  spawn "killall dropbox"
+  spawnOnce "dropbox start"
   spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
   spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Debian/config/Xmodmap"
