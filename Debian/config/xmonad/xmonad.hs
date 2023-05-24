@@ -114,22 +114,22 @@ myStartupHook :: X ()
 myStartupHook = do
   spawn "killall trayer"  -- kill current trayer on each restart
   --spawnOnce "setxkbmap -layout us -variant intl"
-  spawnOnce "/home/jfreitas/.bin/seta_monitores_login.sh"
+  spawnOnce "/home/jfreitas/.local/bin/seta_monitores_login.sh"
   spawn "killall dropbox"
   spawnOnce "dropbox start"
   spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
   spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Debian/config/Xmodmap"
   spawnOnce "xsetroot -cursor_name left_ptr"
-
   --spawnOnce "lxsession"
   spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends"
   spawnOnce "nm-applet"
-  spawnOnce "volumeicon"
+  --spawnOnce "volumeicon"
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 2 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 28")
   --spawnOnce "nitrogen --restore &"
-  spawnOnce "/home/jfreitas/.bin/wallpaper.sh"
-  spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
+  spawnOnce "/home/jfreitas/.local/bin/wallpaper.sh"
+  spawn "pkill ibus"
+  spawnOnce "/home/jfreitas/.local/bin/seta_keyboard_login.sh"
   setWMName "Jota"
 
 myNavigation :: TwoD a (Maybe a)
