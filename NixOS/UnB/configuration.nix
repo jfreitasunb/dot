@@ -184,17 +184,17 @@
       dejavu_fonts
       fira-code
       fira-mono
+      font-awesome
       inconsolata
+      nerdfonts
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
-      font-awesome
       roboto
       source-han-sans
       source-han-sans-japanese
       source-han-serif-japanese
       ttf_bitstream_vera
-      nerdfonts
     ];
     fontconfig = {
       enable = true;
