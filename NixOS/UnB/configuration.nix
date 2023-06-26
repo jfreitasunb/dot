@@ -141,6 +141,7 @@
     git
     gparted
     gnome.adwaita-icon-theme
+    haskellPackages.xmobar
     imagemagick
     img2pdf
     keepassxc
@@ -166,6 +167,8 @@
     wget
     zathura
     zsh
+    xclip
+    xdotool
   ];
   
   # Instalando fontes
