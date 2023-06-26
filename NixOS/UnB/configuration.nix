@@ -1,4 +1,3 @@
-
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
@@ -31,13 +30,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "pt_BR.UTF-8";
 
-  console = {
-    packages=[ pkgs.terminus_font ];
-    font="${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
-#    useXkbConfig = true; # use xkbOptions in tty.
-    keyMap = "us-acentos";
-  };
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pt_BR.UTF-8";
     LC_IDENTIFICATION = "pt_BR.UTF-8";
@@ -50,30 +42,16 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "alt-intl";
-  };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.jfreitas = {
-    isNormalUser = true;
-    description = "José Antônio";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
   services.gnome.games.enable = false;
   services.xserver.desktopManager.gnome.flashback.enableMetacity = true;
   programs.dconf.enable = true;
-
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  
   # Removendo alguns pacotes do Gnome
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
@@ -91,11 +69,24 @@
    gnome-characters
    totem # video player
   ]);
-  # Autologin
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "jfreitas";  
 
-  # Enable sound.
+  # Configure keymap in X11
+  services.xserver = {
+    layout = "br";
+    xkbVariant = "nodeadkeys";
+  };
+
+  # Configure console keymap
+   console = {
+    packages=[ pkgs.terminus_font ];
+    font="${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
+    keyMap = "br-abnt2";
+  };
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -112,23 +103,28 @@
     #media-session.enable = true;
   };
 
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.jfreitas = {
+    isNormalUser = true;
+    description = "Jose Antonio";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      firefox
+    #  thunderbird
+    ];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [ "openssl-1.1.1u" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    gnome.adwaita-icon-theme 
-    gnomeExtensions.appindicator
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
   ];
-
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-
-  # enable flatpak support
-  services.flatpak.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -141,44 +137,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-# Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-  networking.enableIPv6 = false;
-
-  # Fontes
-  fonts = {
-    fonts = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-      font-awesome
-      source-han-sans
-      source-han-sans-japanese
-      source-han-serif-japanese
-      (nerdfonts.override { fonts = [ "Meslo" ]; })
-    ];
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-	      monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
-	      serif = [ "Noto Serif" "Source Han Serif" ];
-	      sansSerif = [ "Noto Sans" "Source Han Sans" ];
-      };
-    };
-};
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  system.copySystemConfiguration = true;
-  system.autoUpgrade.enable = true;  
-  system.autoUpgrade.allowReboot = true; 
-  # system.autoUpgrade.channel = "https://channels.nixos.org/nixos-23.05";
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
