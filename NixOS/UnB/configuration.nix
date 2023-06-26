@@ -123,7 +123,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     adapta-gtk-theme
-    adwaita-icon-theme
     arandr
     automake
     autorandr
@@ -136,23 +135,19 @@
     flameshot
     fzf
     git
+    gnome.adwaita-icon-theme
     neovim
     p7zip
-    p7zip-full
     pavucontrol
     pdftk
     picom
     tcl
-    tk8.6
+    tk
     tldr
     vlc
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     zathura
-    zathura-cb
-    zathura-djvu
-    zathura-pdf-poppler
-    zathura-ps
     zsh
   ];
   
