@@ -122,26 +122,43 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    alacritty
     adapta-gtk-theme
     arandr
     automake
     autorandr
+    bash-completion
     bat
     brave
     bzip2
     curl
+    dmenu-rs
     exa
     feh
     flameshot
     fzf
+    gimp-with-plugins
     git
+    gparted
     gnome.adwaita-icon-theme
+    imagemagick
+    img2pdf
+    keepassxc
+    libreoffice-fresh
+    neofetch
     neovim
+    nitrogen
+    nodejs
+    ntfs3g
+    numlockx
     p7zip
     pavucontrol
     pdftk
     picom
+    python.pkgs.pip
+    rsync
     tcl
+    texlive.combined.scheme-full
     tk
     tldr
     vlc
