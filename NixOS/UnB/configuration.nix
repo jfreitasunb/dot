@@ -49,6 +49,7 @@
   services.gnome.games.enable = false;
   services.xserver.desktopManager.gnome.flashback.enableMetacity = true;
   programs.dconf.enable = true;
+  services.flatpak.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
@@ -73,7 +74,6 @@
   # Configure keymap in X11
   services.xserver = {
     layout = "br";
-    xkbVariant = "nodeadkeys";
   };
 
   # Configure console keymap
