@@ -234,6 +234,10 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
 
+  # Limpeza automática
+  nix.gc.automatic = true;
+  nix.gc.options = "--delete-older-than 8d";
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
