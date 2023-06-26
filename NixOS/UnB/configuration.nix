@@ -52,6 +52,12 @@
   services.flatpak.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  # Ativando o Xmonad
+  services.xserver.windowManager.xmonad = {
+     enable = true;
+     enableContribAndExtras = true;
+  };
   
   # Removendo alguns pacotes do Gnome
   environment.gnome.excludePackages = (with pkgs; [
