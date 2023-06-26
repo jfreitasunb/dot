@@ -122,10 +122,38 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    adapta-gtk-theme
+    adwaita-icon-theme
+    arandr
+    automake
+    autorandr
+    bat
+    brave
+    bzip2
+    curl
+    exa
+    feh
+    flameshot
+    fzf
     git
     neovim
+    p7zip
+    p7zip-full
+    pavucontrol
+    pdftk
+    picom
+    tcl
+    tk8.6
+    tldr
+    vlc
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    zathura
+    zathura-cb
+    zathura-djvu
+    zathura-pdf-poppler
+    zathura-ps
+    zsh
   ];
   
   # Instalando fontes
