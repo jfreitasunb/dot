@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -115,6 +116,12 @@
   programs.zsh = {
     enable = true;
   };
+  # Configurando o oh-my-zsh
+   programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = [ "git" "python" "man" "fzf"];
+    theme = "agnoster";
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -129,6 +136,26 @@
     #  thunderbird
     ];
   };
+
+  home-manager.users.jfreitas = { pkgs, ... }: {
+
+ home.stateVersion = "23.05";
+ home.packages = with pkgs;
+    [ 
+    zsh
+    zsh-powerlevel10k
+    ];
+    programs.zsh = {
+            enable = true;
+            plugins = [
+                    {
+                    name = "powerlevel10k";
+                    src = pkgs.zsh-powerlevel10k;
+                    file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+                    }
+];
+};
+};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -145,6 +172,10 @@
     bat
     brave
     bzip2
+    cinnamon.folder-color-switcher
+    cinnamon.nemo
+    cinnamon.nemo-python
+    cinnamon.nemo-fileroller
     curl
     dmenu
     dropbox
@@ -153,6 +184,7 @@
     feh
     flameshot
     fzf
+    fzf-zsh
     gimp-with-plugins
     git
     gnomeExtensions.appindicator
@@ -172,6 +204,7 @@
     neovim
     networkmanagerapplet
     nitrogen
+    nix-zsh-completions
     nodejs
     ntfs3g
     numlockx
@@ -179,7 +212,6 @@
     pavucontrol
     pdftk
     picom
-    zplug
     python.pkgs.pip
     rsync
     slock
@@ -195,6 +227,13 @@
     wget
     zathura
     zsh
+    zsh-autocomplete
+    zsh-autosuggestions
+    zsh-completions
+    zsh-fast-syntax-highlighting
+    zsh-history-substring-search
+    zsh-powerlevel10k
+    zsh-syntax-highlighting
     xclip
     xdotool
   ];
