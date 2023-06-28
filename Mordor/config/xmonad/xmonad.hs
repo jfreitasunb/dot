@@ -111,6 +111,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
+  spawnOnce "xrandr --output HDMI-1 --primary --mode 1920x1080 --pos 1600x0 --rotate normal --output DVI-I-1 --mode 1600x900 --pos 0x0 --rotate normal --output VGA-1 --off"
   spawn "killall trayer"  -- kill current trayer on each restart
   spawnOnce "setxkbmap -model abnt2 -layout br -variant abnt2"
   spawnOnce "dropbox"
