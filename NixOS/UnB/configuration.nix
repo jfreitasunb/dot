@@ -179,6 +179,7 @@
     picom
     python.pkgs.pip
     rsync
+    slock
     tcl
     texlive.combined.scheme-full
     tk
