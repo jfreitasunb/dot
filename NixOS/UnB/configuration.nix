@@ -168,6 +168,7 @@
     keepassxc
     libreoffice-fresh
     lxde.lxsession
+    lxappearance
     meld
     neofetch
     neovim
