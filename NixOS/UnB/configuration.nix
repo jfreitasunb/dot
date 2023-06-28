@@ -44,10 +44,6 @@
   # Permitindo pacotes sem atualizações
   nixpkgs.config.permittedInsecurePackages = [ "python-2.7.18.6" ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-                "python-2.7.18.6"
-              ];
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
