@@ -111,7 +111,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
-  spawnOnce "xrandr --output HDMI-1 --primary --mode 1920x1080 --pos 1600x0 --rotate normal --output DVI-I-1 --mode 1600x900 --pos 0x0 --rotate normal --output VGA-1 --off"
+  spawnOnce "xrandr --output HDMI-1 --mode 1920x1080 --pos 1600x0 --rotate normal --output DVI-I-1 --primary --mode 1600x900 --pos 0x0 --rotate normal --output VGA-1 --off"
   spawn "killall trayer"  -- kill current trayer on each restart
   spawnOnce "setxkbmap -model abnt2 -layout br -variant abnt2"
   spawnOnce "dropbox"
@@ -119,12 +119,11 @@ myStartupHook = do
   spawnOnce "numlockx"
   spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Mordor/config/Xmodmap"
   spawnOnce "lxsession"
-  spawnOnce "nitrogen --restore"
   spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends"
   spawnOnce "nm-applet"
   spawnOnce "volumeicon"
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22")
-  spawnOnce "nitrogen --restore &"
+  spawnOnce "/home/jfreitas/.bin/wallpaper.sh"
   setWMName "LG3D"
 
 myNavigation :: TwoD a (Maybe a)
