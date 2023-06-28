@@ -143,12 +143,14 @@
     bzip2
     curl
     dmenu-rs
+    dropbox
     exa
     feh
     flameshot
     fzf
     gimp-with-plugins
     git
+    gnomeExtensions.appindicator
     gnome3.gnome-tweaks
     gparted
     gnome.adwaita-icon-theme
@@ -182,6 +184,11 @@
     xclip
     xdotool
   ];
+  
+  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  
+  # Ativando o onedrive
+  services.onedrive.enable = true;
   
   # Instalando fontes
   fonts = {
