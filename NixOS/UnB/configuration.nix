@@ -148,7 +148,7 @@
     brave
     bzip2
     curl
-    dmenu-rs
+    dmenu
     dropbox
     dropbox-cli
     exa
