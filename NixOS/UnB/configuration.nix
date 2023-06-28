@@ -112,7 +112,14 @@
   };
 
   # Ativando o zsh
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    ohMyZsh.enable = true;
+    ohMyZsh.plugins = [ "git" ];
+    ohMyZsh.theme = "frisk";
+    syntaxHighlighting.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -180,6 +187,7 @@
     python.pkgs.pip
     rsync
     slock
+    sublime4
     tcl
     texlive.combined.scheme-full
     tk
