@@ -42,6 +42,10 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+                "python-2.7.18.6"
+              ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -145,6 +149,7 @@
     fzf
     gimp-with-plugins
     git
+    gnome3.gnome-tweaks
     gparted
     gnome.adwaita-icon-theme
     haskellPackages.xmobar
@@ -152,6 +157,7 @@
     img2pdf
     keepassxc
     libreoffice-fresh
+    meld
     neofetch
     neovim
     nitrogen
