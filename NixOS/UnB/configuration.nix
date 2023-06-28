@@ -114,11 +114,6 @@
   # Ativando o zsh
   programs.zsh = {
     enable = true;
-    autosuggestions.enable = true;
-    ohMyZsh.enable = true;
-    ohMyZsh.plugins = [ "git" ];
-    ohMyZsh.theme = "frisk";
-    syntaxHighlighting.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -184,6 +179,7 @@
     pavucontrol
     pdftk
     picom
+    zplug
     python.pkgs.pip
     rsync
     slock
