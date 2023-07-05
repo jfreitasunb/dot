@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -117,11 +116,11 @@
     enable = true;
   };
   # Configurando o oh-my-zsh
-   programs.zsh.ohMyZsh = {
-    enable = true;
-    plugins = [ "git" "python" "man" "fzf"];
-    theme = "agnoster";
-  };
+#   programs.zsh.ohMyZsh = {
+#    enable = true;
+#    plugins = [ "git" "python" "man" "fzf" ];
+#    theme = "powerlevel10k";
+#  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -136,26 +135,6 @@
     #  thunderbird
     ];
   };
-
-  home-manager.users.jfreitas = { pkgs, ... }: {
-
- home.stateVersion = "23.05";
- home.packages = with pkgs;
-    [ 
-    zsh
-    zsh-powerlevel10k
-    ];
-    programs.zsh = {
-            enable = true;
-            plugins = [
-                    {
-                    name = "powerlevel10k";
-                    src = pkgs.zsh-powerlevel10k;
-                    file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-                    }
-];
-};
-};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -227,14 +206,15 @@
     volumeicon
     wget
     zathura
+    zplug
     zsh
-    zsh-autocomplete
-    zsh-autosuggestions
-    zsh-completions
-    zsh-fast-syntax-highlighting
-    zsh-history-substring-search
-    zsh-powerlevel10k
-    zsh-syntax-highlighting
+#    zsh-autocomplete
+#    zsh-autosuggestions
+#    zsh-completions
+#    zsh-fast-syntax-highlighting
+#    zsh-history-substring-search
+#    zsh-powerlevel10k
+#    zsh-syntax-highlighting
     xclip
     xdotool
   ];

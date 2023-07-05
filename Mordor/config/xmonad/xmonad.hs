@@ -114,7 +114,7 @@ myStartupHook = do
   spawnOnce "xrandr --output HDMI-1 --mode 1920x1080 --pos 1600x0 --rotate normal --output DVI-I-1 --primary --mode 1600x900 --pos 0x0 --rotate normal --output VGA-1 --off"
   spawn "killall trayer"  -- kill current trayer on each restart
   spawnOnce "setxkbmap -model abnt2 -layout br -variant abnt2"
-  spawnOnce "dropbox"
+  -- spawnOnce "dropbox"
   -- spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
   spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Mordor/config/Xmodmap"
