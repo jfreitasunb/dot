@@ -172,6 +172,7 @@
     gparted
     gnome.adwaita-icon-theme
     haskellPackages.xmobar
+    htop
     imagemagick
     img2pdf
     keepassxc
