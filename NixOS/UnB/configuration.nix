@@ -218,6 +218,7 @@
     sublime4
     tcl
     texlive.combined.scheme-full
+    texstudio
     tk
     tldr
     trayer
