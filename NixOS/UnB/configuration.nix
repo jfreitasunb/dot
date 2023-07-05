@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -135,6 +136,26 @@
     #  thunderbird
     ];
   };
+
+  home-manager.users.jfreitas = { pkgs, ... }: {
+
+ home.stateVersion = "23.05";
+ home.packages = with pkgs;
+    [ 
+    zsh
+    zsh-powerlevel10k
+    ];
+    programs.zsh = {
+            enable = true;
+            plugins = [
+                    {
+                    name = "powerlevel10k";
+                    src = pkgs.zsh-powerlevel10k;
+                    file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+                    }
+];
+};
+};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
