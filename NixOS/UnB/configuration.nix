@@ -315,7 +315,7 @@
 
   # Limpeza automática
   nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 8d";
+  nix.gc.options = "--delete-older-than 10d";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
