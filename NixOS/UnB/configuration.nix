@@ -60,6 +60,9 @@
      enable = true;
      enableContribAndExtras = true;
   };
+
+  # Instalando o Hyprland
+  programs.hyprland.enable = true;
   
   # Removendo alguns pacotes do Gnome
   environment.gnome.excludePackages = (with pkgs; [
