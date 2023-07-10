@@ -201,10 +201,6 @@
     python.pkgs.pip
     quarto
     R
-    rPackages.raster
-    rPackages.rgdal
-    rPackages.tmap
-    rPackages.tmaptools
     rstudio
     rsync
     slock
