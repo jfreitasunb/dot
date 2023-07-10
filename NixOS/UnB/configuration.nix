@@ -167,6 +167,7 @@
     flameshot
     fzf
     fzf-zsh
+    gdal
     gimp-with-plugins
     git
     gnomeExtensions.appindicator
@@ -195,7 +196,16 @@
     pavucontrol
     pdftk
     picom
+    proj
+    pkg-config
     python.pkgs.pip
+    quarto
+    R
+    rPackages.raster
+    rPackages.rgdal
+    rPackages.tmap
+    rPackages.tmaptools
+    rstudio
     rsync
     slock
     sublime4
