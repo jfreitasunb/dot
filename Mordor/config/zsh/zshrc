@@ -86,3 +86,5 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 source ~/.config/aliases/aliases
+
+source ~/.config/zsh/.p10k.zsh
