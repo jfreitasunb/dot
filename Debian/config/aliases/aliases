@@ -3,6 +3,11 @@ alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias cat='batcat'
 
+#### Docker ####
+alias dcd='docker-compose down --rmi all --volumes'
+alias dcu='docker-compose up -d'
+alias dcs='docker-compose down'
+
 #### Git ####
 alias ge='git status'
 alias ga='git add'
