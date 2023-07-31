@@ -1,14 +1,14 @@
 #!/bin/bash
 
-EXCLUDE_LIST_TEX="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-TEX.list"
+EXCLUDE_LIST_TEX="/Arquivos/Dropbox/Backups/Debian/excludes/exclude-TEX.list"
 
-EXCLUDE_LIST_LARAVEL="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-GitHub_laravel.list"
+EXCLUDE_LIST_LARAVEL="/Arquivos/Dropbox/Backups/Debian/excludes/exclude-GitHub_laravel.list"
 
 ALGEBRA1="/home/jfreitas/GitHub/Algebra-1/"
 DEST_ALGEBRA1="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2022-2"
 
 IAL="/home/jfreitas/GitHub/IAL/"
-DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-1"
+DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-2"
 
 AULASONLINE="/home/jfreitas/GitHub/video_aulas/"
 DEST_AULASONLINE="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/pdf_video_aulas"
