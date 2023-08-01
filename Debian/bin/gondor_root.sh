@@ -6,7 +6,7 @@ NOME_BACKUP="debian_backup_diario_root_"$(date +%Y-%m-%d)".tar.bz2"
 
 LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Debian/Backup-Diario/"
 
-tar --exclude-from="$EXCLUDE_LIST" -cjf "$LOCAL_BACKUP""$NOME_BACKUP" /etc
+tar -cjf "$LOCAL_BACKUP""$NOME_BACKUP" /etc
 
 find "$LOCAL_BACKUP""$NOME_BACKUP" -type f -mtime +10 -delete
 
