@@ -18,6 +18,8 @@ LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Debian/Backup-Diario/"
 
 tar --exclude-from="$EXCLUDE_LIST" -cjf "$LOCAL_BACKUP""$NOME_BACKUP" /etc
 
+find "$LOCAL_BACKUP""$NOME_BACKUP" -type f -mtime +10 -delete
+
 # rsync -avzc --no-links --delete --exclude-from=$EXCLUDE_LIST /var/lib/vnstat $LOCAL_TEMPORARIO_ROOT
 
 #$cd "$LOCAL_TAR"
