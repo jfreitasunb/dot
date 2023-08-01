@@ -14,13 +14,13 @@ NOME_BACKUP_PARU="gondor_lista_pacotes_instalados_PARU_"$(date +%Y-%m-%d)".lst"
 
 LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Gondor/Backup-Diario/"
 
-# dpkg-query -f '${binary:Package}\n' -W > $LOCAL_BACKUP$NOME_BACKUP
+dpkg-query -f '${binary:Package}\n' -W > $LOCAL_BACKUP$NOME_BACKUP
 
-pacman -Qqe | grep -v "$(pacman -Qqm)" > "$LOCAL_BACKUP""$NOME_BACKUP_PACMAN"
+#pacman -Qqe | grep -v "$(pacman -Qqm)" > "$LOCAL_BACKUP""$NOME_BACKUP_PACMAN"
 
-pacman -Qqm > "$LOCAL_BACKUP""$NOME_BACKUP_PARU"
+#pacman -Qqm > "$LOCAL_BACKUP""$NOME_BACKUP_PARU"
 
-sed -i '/paru/d' "$LOCAL_BACKUP""$NOME_BACKUP_PARU"
+#sed -i '/paru/d' "$LOCAL_BACKUP""$NOME_BACKUP_PARU"
 
 find "$LOCAL_BACKUP" -type f -mtime +10 -delete
 
