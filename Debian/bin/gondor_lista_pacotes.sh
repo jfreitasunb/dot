@@ -33,3 +33,4 @@ find "$LOCAL_BACKUP" -type f -mtime +10 -delete
 #Para reinstalar
 #yay -S - < ~/gondor_lista_pacotes_instalados_YAY.lst
 #pacman -S --needed - < ~/gondor_lista_pacotes_instalados_PACMAN.lst
+#sudo xargs -a packages_list.txt apt install
