@@ -2,21 +2,17 @@
 
 # ROTATIVIDADE=10
 
-# NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
+# NOME_BACKUP_APT="debian_lista_pacotes_instalados_APT_"$(date +%Y-%m-%d)".lst"
 
-NOME_BACKUP_GNOME="gondor_gnome_settings_"$(date +%Y-%m-%d)".ini"
+NOME_BACKUP_GNOME="debian_gnome_settings_"$(date +%Y-%m-%d)".ini"
 
-# NOME_BACKUP_YAY="gondor_lista_pacotes_instalados_YAY_"$(date +%Y-%m-%d)".lst"
-#
-NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
+NOME_BACKUP_APT="debian_lista_pacotes_instalados_APT_"$(date +%Y-%m-%d)".lst"
 
-NOME_BACKUP_PARU="gondor_lista_pacotes_instalados_PARU_"$(date +%Y-%m-%d)".lst"
-
-LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Gondor/Backup-Diario/"
+LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Debian/Backup-Diario/"
 
 dpkg-query -f '${binary:Package}\n' -W > $LOCAL_BACKUP$NOME_BACKUP
 
-#pacman -Qqe | grep -v "$(pacman -Qqm)" > "$LOCAL_BACKUP""$NOME_BACKUP_PACMAN"
+#pacman -Qqe | grep -v "$(pacman -Qqm)" > "$LOCAL_BACKUP""$NOME_BACKUP_APT"
 
 #pacman -Qqm > "$LOCAL_BACKUP""$NOME_BACKUP_PARU"
 
@@ -31,6 +27,6 @@ find "$LOCAL_BACKUP" -type f -mtime +10 -delete
 #dconf load / < dconf-settings.ini
 
 #Para reinstalar
-#yay -S - < ~/gondor_lista_pacotes_instalados_YAY.lst
-#pacman -S --needed - < ~/gondor_lista_pacotes_instalados_PACMAN.lst
+#yay -S - < ~/debian_lista_pacotes_instalados_YAY.lst
+#pacman -S --needed - < ~/debian_lista_pacotes_instalados_APT.lst
 #sudo xargs -a packages_list.txt apt install
