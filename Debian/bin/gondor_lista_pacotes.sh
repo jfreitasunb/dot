@@ -11,7 +11,7 @@ dpkg-query -f '${binary:Package}\n' -W > $LOCAL_BACKUP$NOME_BACKUP
 find "$LOCAL_BACKUP" -type f -mtime +10 -delete
 
 #salva configuraçoes do gnome
-#dconf dump / > "$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
+dconf dump / > "$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
 
 #importa as configuraçoes do gnome
 #dconf load / < dconf-settings.ini
