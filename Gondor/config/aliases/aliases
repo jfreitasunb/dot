@@ -1,3 +1,14 @@
+alias vim='nvim'
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias cat='batcat'
+
+#### Docker ####
+alias dcd='docker-compose down --rmi all --volumes'
+alias dcu='docker-compose up -d'
+alias dcs='docker-compose down'
+alias dcb='docker-compose exec app bash'
+
 #### Git ####
 alias ge='git status'
 alias ga='git add'
@@ -16,21 +27,6 @@ alias gr='git remote'
 alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
-
-#alias sudo='doas'
-alias aup='arch-update.sh'
-alias pac='sudo pacman'
-alias riv='cd /ArquivosLinux/Dropbox/php/vagrant/rivendel'
-alias vul='vagrant up laravel && vagrant rsync-auto'
-alias vud='vagrant halt laravel'
-alias vsl='vagrant ssh laravel'
-alias avell='teclado_avell.sh'
-
-# Changing "cat" to "bat"
-alias cat='bat'
-
-alias vim='nvim'
-#alias vim='lvim'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
