@@ -124,7 +124,7 @@ myStartupHook = do
 
   spawnOnce "lxsession"
   -- spawnOnce "nitrogen --restore"
-  spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends"
+  spawnOnce "picom -b --config ~/.config/picom/picom.conf"
   spawnOnce "nm-applet"
   spawnOnce "volumeicon"
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 2 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 28")
