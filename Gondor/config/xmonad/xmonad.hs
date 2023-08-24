@@ -119,7 +119,7 @@ myStartupHook = do
   -- spawnOnce "dropbox"
   -- spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
-  spawnOnce "xmodmap /home/jfreitas/GitHub_Repos/dot/Gondor/config/Xmodmap"
+  spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Gondor/config/Xmodmap"
   spawnOnce "xsetroot -cursor_name left_ptr"
 
   spawnOnce "lxsession"
@@ -129,8 +129,9 @@ myStartupHook = do
   spawnOnce "volumeicon"
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 2 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 28")
   --spawnOnce "nitrogen --restore &"
+  spawn "pkill ibus"
   spawnOnce "/home/jfreitas/.bin/wallpaper.sh"
-  setWMName "LG3D"
+  setWMName "Jota"
 
 myNavigation :: TwoD a (Maybe a)
 myNavigation = makeXEventhandler $ shadowWithKeymap navKeyMap navDefaultHandler
