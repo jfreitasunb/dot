@@ -1,4 +1,7 @@
 ZDOTDIR=$HOME/.config/zsh
+
+source ~/.config/zsh/.p10k.zsh
+
 if [ -d "$HOME/.cargo/env" ] ; then
     . "$HOME/.cargo/env"
 fi
@@ -47,10 +50,8 @@ if [ -d "$HOME/.cargo/bin" ] ; then
 fi
 
 export PATH
-. "$HOME/.cargo/env"
 
 bindkey -e
-
 
 # Use modern completion system
 autoload -U compinit; compinit
@@ -67,7 +68,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "junegunn/fzf"
-zplug "themes/robbyrussell", from:oh-my-zsh, as:theme   # Theme
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # zplug - install/load new plugins when zsh is started or reloaded
 if ! zplug check --verbose; then
