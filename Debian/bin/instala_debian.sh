@@ -103,7 +103,7 @@ cd texstudio
 
 ln -s ~/GitHub/dot/Debian/config/texstudio/texstudio.ini ./
 
-cd ../
+cd 
 
 ln -s ~/GitHub/dot/Debian/bin/ ./.local/bin
 
@@ -112,31 +112,6 @@ cd .local/share/
 ln -s ~/GitHub/dot/Debian/fonts/ ./
 
 fc-cache -f -v
-
-cd ~/.config/xmonad
-
-git clone https://github.com/xmonad/xmonad
-
-git clone https://github.com/xmonad/xmonad-contrib
-
-stack upgrade
-
-stack init
-
-stack install
-
-sudo ln -s ~/.local/bin/xmonad /usr/bin
-
-sudo echo "[Desktop Entry]
-Name=XMonad
-Comment=Lightweight tiling window manager
-Exec=xmonad
-Icon=xmonad.png
-Type=XSession" | sudo tee /usr/share/xsessions/xmonad.desktop
-
-cd ~
-
-rm .zshenv
 
 ln -s GitHub/dot/Debian/config/zsh/zshenv ./.zshenv
 
