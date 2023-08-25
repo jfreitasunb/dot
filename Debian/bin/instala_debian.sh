@@ -93,6 +93,8 @@ ln -s ~/GitHub/dot/Debian/config/zsh/ ./
 
 ln -s ~/GitHub/dot/Debian/config/keepassxc/ ./
 
+ln -s ~/GitHub/dot/Debian/config/gtk-3.0 ./
+
 mkdir texstudio
 
 cd texstudio
