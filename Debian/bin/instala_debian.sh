@@ -71,29 +71,7 @@ cd ..
 
 sudo mv astronaut/ /usr/share/sddm/themes/
 
-curl -fsS https://dlang.org/install.sh | bash -s dmd
 
-source $(echo ~/dlang/*/)/activate
-
-git clone https://github.com/abraunegg/onedrive.git
-
-cd onedrive
-
-./configure --enable-notifications
-
-make clean; make;
-
-sudo make install
-
-deactivate
-
-cd ..
-
-sudo rm -rf onedrive
-
-systemctl --user enable syncthing.service --now
-
-systemctl --user enable onedrive.service 
 
 cd .config/
 
