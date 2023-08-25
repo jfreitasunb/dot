@@ -1,8 +1,4 @@
 #!/bin/bash
-sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks tex-common --purge
-
-sudo nala autoremove
-
 cd ~
 
 sudo nala install -y curl ninja-build gettext cmake unzip build-essential python3-pip git python3-apt python3-debian pandoc
@@ -138,3 +134,7 @@ cd install-tl-*/
 sudo perl ./install-tl --gui
 
 sudo usermod -aG libvirt jfreitas
+
+sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks tex-common --purge
+
+sudo nala autoremove
