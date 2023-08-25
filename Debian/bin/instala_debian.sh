@@ -105,7 +105,7 @@ ln -s ~/GitHub/dot/Debian/config/texstudio/texstudio.ini ./
 
 cd ../
 
-ln -s ~/GitHub/dot/Debian/bin/ ./.bin
+ln -s ~/GitHub/dot/Debian/bin/ ./.local/bin
 
 cd .local/share/
 
