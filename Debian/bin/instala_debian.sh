@@ -71,7 +71,7 @@ cd ..
 
 sudo mv astronaut/ /usr/share/sddm/themes/
 
-
+sudo rm -rf astronaut
 
 cd .config/
 
