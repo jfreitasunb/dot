@@ -101,7 +101,7 @@ cd texstudio
 
 ln -s ~/GitHub/dot/Debian/config/texstudio/texstudio.ini ./
 
-cd 
+cd ~
 
 ln -s ~/GitHub/dot/Debian/bin/ ./.local/bin
 
