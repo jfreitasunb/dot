@@ -97,6 +97,12 @@ ln -s ~/GitHub/dot/Debian/config/zsh/ ./
 
 ln -s ~/GitHub/dot/Debian/config/keepassxc/ ./
 
+mkdir texstudio
+
+cd texstudio
+
+ln -s ~/GitHub/dot/Debian/config/texstudio/texstudio.ini ./
+
 cd ../
 
 ln -s ~/GitHub/dot/Debian/bin/ ./.bin
