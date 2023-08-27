@@ -111,16 +111,6 @@ ln -s ~/GitHub/dot/Debian/fonts/ ./
 
 fc-cache -f -v
 
-ln -s GitHub/dot/Debian/config/zsh/zshenv ./.zshenv
-
-ln -s GitHub/dot/Debian/config/R/Renviron ./.Renviron
-
-ln -s GitHub/dot/Debian/config/R/Renviron.site ./.Renviron.site
-
-ln -s GitHub/dot/Debian/config/R/Rhistory ./.Rhistory
-
-ln -s GitHub/dot/Debian/config/R/Rprofile ./.Rprofile
-
 ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Debian/config/Xmodmap ./.Xmodmap
