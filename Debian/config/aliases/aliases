@@ -2,6 +2,7 @@ alias vim='nvim'
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias cat='batcat'
+alias jn='jupyter notebook'
 
 #### Docker ####
 alias dcd='docker-compose down --rmi all --volumes'
