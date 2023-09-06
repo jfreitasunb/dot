@@ -1,10 +1,9 @@
 [Unit]
-Description=Agendamento de backup do diretório etc
+Description=Backup do diretório etc
 
-[Timer]
-OnCalendar=daily
-AccuracySec=12h
-Persistent=true
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/jfreitas/.bin/gondor_root.sh
 
 [Install]
-WantedBy=basic.target
+WantedBy=multi-user.target
