@@ -47,8 +47,6 @@ sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 
 infocmp alacritty
 
-sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
-
 sudo cp target/release/alacritty /usr/local/bin
 
 sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
