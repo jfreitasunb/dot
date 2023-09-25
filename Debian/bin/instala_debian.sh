@@ -37,7 +37,7 @@ sudo curl https://sh.rustup.rs -sSf | sh
 
 source ~/.cargo/env
 
-git clone https://github.com/jwilm/alacritty.git
+git clone -b v0.12.2 https://github.com/jwilm/alacritty.git
 
 cd alacritty/
 
@@ -133,13 +133,19 @@ mkdir ~/nvidia/ && cd ~/nvidia/
 
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 
-cd nv-codec-headers && sudo make install
+cd nv-codec-headers
+
+git checkout 4026cb02a6fee06068e45ce296e2f2fa947688d9
+
+sudo make install
 
 cd ~/nvidia/
 
 git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg/
 
 cd ~/nvidia/ffmpeg/
+
+#./configure --enable-nonfree --enable-cuda-nvcc --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --disable-static --enable-shared
 
 ./configure --enable-nonfree --enable-cuda-nvcc --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --enable-gpl \
 --enable-gnutls \
