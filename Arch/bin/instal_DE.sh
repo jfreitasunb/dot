@@ -12,9 +12,7 @@ cd ..
 
 rm -rf paru
 
-paru -S burpsuite candy-icons-git nerd-fonts-mononoki \
-  picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont nerd-fonts-iosevka auto-cpufreq otf-font-awesome-5 \
-  ttf-material-design-icons-git brave-bin
+paru -S burpsuite candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git brave-bin
 
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 
@@ -24,7 +22,7 @@ sudo pacman -Syy
 
 sleep 5
 
-sudo pacman -S xorg firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \
+sudo pacman -S --needed xorg firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \
   ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts \
   ttf-roboto tex-gyre-fonts ttf-ubuntu-font-family ttf-anonymous-pro ttf-cascadia-code ttf-fantasque-sans-mono ttf-hack ttf-inconsolata \
   ttf-jetbrains-mono ttf-monofur adobe-source-code-pro-fonts cantarell-fonts inter-font ttf-opensans gentium-plus-font \
