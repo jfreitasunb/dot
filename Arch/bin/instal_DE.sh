@@ -14,7 +14,7 @@ rm -rf paru
 
 paru -S burpsuite candy-icons-git nerd-fonts-mononoki \
   picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont nerd-fonts-iosevka auto-cpufreq otf-font-awesome-5 \
-  ttf-material-design-icons-git
+  ttf-material-design-icons-git brave-bin
 
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 
