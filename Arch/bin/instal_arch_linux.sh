@@ -21,7 +21,7 @@ pacman -Syyy
 # You can add xorg to the installation packages, I usually add it at the DE or WM install script
 # You can remove the tlp package if you are installing on a desktop or vm
 
-pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-lts-headers xdg-user-dirs xdg-utils gvfs nfs-utils inetutils dnsutils bash-completion openssh acpi acpi_call tlp edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables ipset nss-mdns acpid os-prober ntfs-3g terminus-font awesome-terminal-fonts bat exa bpytop zsh libreoffice-fresh libreoffice-fresh-pt-br meld neofetch transmission-gtk ttf-fira-code ttf-fira-mono ttf-font-awesome zathura zathura-djvu zathura-pdf-mupdf zathura-ps gimp gimp-help-pt_br keepassxc p7zip papirus-icon-theme pdftk python-beautifulsoup4 python-pip terminator alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol xorg-xinit fzf wget texstudio less flatpak cmake unzip ninja curl docker yasm cuda
+pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-lts-headers xdg-user-dirs xdg-utils gvfs nfs-utils inetutils dnsutils bash-completion openssh acpi acpi_call tlp edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables ipset nss-mdns acpid os-prober ntfs-3g terminus-font awesome-terminal-fonts bat exa bpytop zsh libreoffice-fresh libreoffice-fresh-pt-br meld neofetch transmission-gtk ttf-fira-code ttf-fira-mono ttf-font-awesome zathura zathura-djvu zathura-pdf-mupdf zathura-ps gimp gimp-help-pt_br keepassxc p7zip papirus-icon-theme pdftk python-beautifulsoup4 python-pip terminator alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol xorg-xinit fzf wget texstudio less flatpak cmake unzip ninja curl docker yasm cuda cuda-tools nemo nemo-fileroller nemo-preview virt-manager iptables-nft libvirt qemu-full
 
 # pacman -S --noconfirm xf86-video-amdgpu
 pacman -S nvidia-lts nvidia-utils nvidia-settings linux-headers
@@ -37,7 +37,7 @@ systemctl enable sshd
 systemctl enable tlp # You can comment this command out if you didn't install tlp, see above
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
-#systemctl enable libvirtd
+systemctl enable libvirtd
 #systemctl enable firewalld
 systemctl enable acpid
 
