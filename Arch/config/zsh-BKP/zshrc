@@ -1,5 +1,5 @@
 ZDOTDIR=$HOME/.config/zsh
-
+source ~/.config/zsh/.p10k.zsh
 if [ -d "$HOME/.cargo/env" ] ; then
     . "$HOME/.cargo/env"
 fi
@@ -51,13 +51,14 @@ export PATH
 
 bindkey -e
 
+
 # Use modern completion system
 autoload -U compinit; compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 _comp_options+=(globdots) # With hidden files
 
 # zplug - manage plugins
-source /usr/share/zplug/init.zsh
+source /usr/share/zsh/scripts/zplug/init.zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
@@ -94,4 +95,3 @@ source ~/.config/aliases/aliases
 
 #added by Anaconda3 2.4.1 installer
 #export PATH="/home/jfreitas/anaconda3/bin:$PATH"
-source ~/.config/zsh/.p10k.zsh

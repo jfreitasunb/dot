@@ -145,5 +145,6 @@ ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Arch/config/Xmodmap ./.Xmodmap
 
+chsh -s $(which zsh)
 
 printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
