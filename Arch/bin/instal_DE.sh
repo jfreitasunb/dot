@@ -1,19 +1,24 @@
 #!/bin/bash
 
+cd ~/
+
 git clone https://aur.archlinux.org/paru.git
+
 cd paru/
+
 makepkg -si --noconfirm
 
 cd ..
+
+rm -rf paru
 
 paru -S burpsuite candy-icons-git nerd-fonts-mononoki \
   picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont nerd-fonts-iosevka auto-cpufreq otf-font-awesome-5 \
   ttf-material-design-icons-git
 
-#curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && \ 
-#  sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 
-#echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 
 sudo pacman -Syy
 
@@ -29,6 +34,16 @@ sudo pacman -S xorg firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc
   xorg-xinit pcmanfm keychain alacritty autorandr nvidia-dkms ranger ripgrep the_silver_searcher \
   ttf-liberation usbutils wmctrl xorg-xauth xorg-xmodmap xorg-xrdb
 
+
+#cd /tmp
+
+#wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+
+#zcat install-tl-unx.tar.gz | tar xf -
+
+#cd install-tl-*/
+
+#sudo perl ./install-tl
 
 # sudo systemctl enable lightdm
 
