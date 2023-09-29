@@ -43,6 +43,20 @@ sudo pacman -S --needed xorg firefox nitrogen lxappearance dmenu arandr arc-gtk-
 
 #sudo perl ./install-tl
 
-# sudo systemctl enable lightdm
+git clone https://github.com/neovim/neovim
+
+cd neovim/
+
+git checkout stable
+
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+
+sudo make install
+
+cd ~
+
+rm -rf neovim
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
