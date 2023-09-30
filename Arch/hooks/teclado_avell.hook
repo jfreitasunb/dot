@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = linux* 
+
+[Action]
+Description = Recompiling LED modules for keyboard 
+When = PostTransaction
+Depends = xmonad
+Exec = /home/jfreitas/.bin/teclado_avell.sh

@@ -147,4 +147,6 @@ ln -s GitHub/dot/Arch/config/Xmodmap ./.Xmodmap
 
 chsh -s $(which zsh)
 
+sudo ln -s ~/GitHub/dot/Arch/hooks /etc/pacman.d/
+
 printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
