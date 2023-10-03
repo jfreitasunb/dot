@@ -156,6 +156,12 @@ chsh -s $(which zsh)
 
 sudo ln -s ~/GitHub/dot/Arch/hooks /etc/pacman.d/
 
-sudo cp ~/GitHub/dot/Arch/sys 
+sudo cp ~/GitHub/dot/Arch/systemd/gondor_root.service /etc/systemd/system/
+
+sudo cp ~/GitHub/dot/Arch/systemd/gondor_root.timer /etc/systemd/system/
+
+sudo systemctl enable gondor_root.timer
+
+sudo systemctl enable gondor_root.service
 
 printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
