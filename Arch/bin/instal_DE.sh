@@ -129,6 +129,9 @@ ln -s ~/GitHub/dot/Arch/config/gtk-3.0 ./
 
 ln -s ~/GitHub/dot/Arch/config/autostart ./
 
+ln -s ~/GitHub/dot/Arch/config/systemd ./
+
+
 mkdir texstudio
 
 cd texstudio
@@ -152,5 +155,7 @@ ln -s GitHub/dot/Arch/config/Xmodmap ./.Xmodmap
 chsh -s $(which zsh)
 
 sudo ln -s ~/GitHub/dot/Arch/hooks /etc/pacman.d/
+
+sudo cp ~/GitHub/dot/Arch/sys 
 
 printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
