@@ -30,7 +30,7 @@ sudo pacman -S --needed xorg firefox nitrogen lxappearance dmenu arandr arc-gtk-
   scrot dunst pacman-contrib cuda composer file-roller filezilla htop imagemagick img2pdf mousetweaks nodejs npm php \
   numlockx pinta qalculate-gtk trayer vim-spell-pt volumeicon wget xdotool xmobar xmonad xmonad-contrib xournalpp youtube-dl vifm \
   xorg-xinit pcmanfm keychain alacritty autorandr nvidia-dkms ranger ripgrep the_silver_searcher \
-  ttf-liberation usbutils wmctrl xorg-xauth xorg-xmodmap xorg-xrdb
+  ttf-liberation usbutils wmctrl xorg-xauth xorg-xmodmap xorg-xrdb vlc sublime-text
 
 
 #cd /tmp
