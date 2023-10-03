@@ -123,7 +123,11 @@ ln -s ~/GitHub/dot/Arch/config/zsh/ ./
 
 ln -s ~/GitHub/dot/Arch/config/keepassxc/ ./
 
+ln -s ~/GitHub/dot/Arch/config/nemo/ ./
+
 ln -s ~/GitHub/dot/Arch/config/gtk-3.0 ./
+
+ln -s ~/GitHub/dot/Arch/config/autostart ./
 
 mkdir texstudio
 
