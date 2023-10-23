@@ -170,4 +170,20 @@ sudo systemctl enable gondor_root.timer
 
 sudo systemctl enable gondor_root.service
 
+sudo systemctl enable sshd
+
+sudo systemctl enable tlp # You can comment this command out if you didn't install tlp, see above
+
+sudo systemctl enable fstrim.timer
+
+sudo systemctl enable libvirtd
+
+sudo systemctl enable docker
+
+sudo usermod -aG libvirt jfreitas
+
+sudo usermod -aG docker jfreitas
+
+sudo timedatectl set-local-rtc 1
+
 printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
