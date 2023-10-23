@@ -131,7 +131,6 @@ ln -s ~/GitHub/dot/Manjaro/config/autostart ./
 
 ln -s ~/GitHub/dot/Manjaro/config/systemd ./
 
-
 mkdir texstudio
 
 cd texstudio
@@ -153,8 +152,6 @@ cd ~
 ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
-
-chsh -s $(which zsh)
 
 sudo ln -s ~/GitHub/dot/Manjaro/hooks /etc/pacman.d/
 
