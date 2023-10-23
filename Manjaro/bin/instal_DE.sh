@@ -43,19 +43,19 @@ sudo pacman -S --needed firefox nitrogen lxappearance dmenu arandr arc-gtk-theme
 
 #sudo perl ./install-tl
 
-git clone https://github.com/neovim/neovim
+#git clone https://github.com/neovim/neovim
 
-cd neovim/
+#cd neovim/
 
-git checkout stable
+#git checkout stable
 
-make CMAKE_BUILD_TYPE=RelWithDebInfo
+#make CMAKE_BUILD_TYPE=RelWithDebInfo
 
-sudo make install
+#sudo make install
 
-cd ~
+#cd ~
 
-rm -rf neovim
+#rm -rf neovim
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
