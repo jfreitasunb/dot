@@ -148,6 +148,8 @@ ln -s ~/GitHub/dot/Manjaro/fonts/ ./
 
 fc-cache -f -v
 
+cd ~
+
 ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
@@ -156,9 +158,9 @@ chsh -s $(which zsh)
 
 sudo ln -s ~/GitHub/dot/Manjaro/hooks /etc/pacman.d/
 
-sudo cp ~/GitHub/dot/Manjaro/systemd/gondor_root.service /etc/systemd/system/
+sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
 
-sudo cp ~/GitHub/dot/Manjaro/systemd/gondor_root.timer /etc/systemd/system/
+sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.timer /etc/systemd/system/
 
 sudo systemctl enable gondor_root.timer
 
