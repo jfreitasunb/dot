@@ -160,7 +160,9 @@ ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
-sudo ln -s ~/GitHub/dot/Manjaro/hooks /etc/pacman.d/
+sudo ln -s ~/GitHub/dot/Manjaro/pacman/hooks /etc/pacman.d/
+
+sudo ln -s ~/GitHub/dot/Manjaro/grub/grub ./
 
 sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
 
