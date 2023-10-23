@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = linux-lts 
+
+[Action]
+Description = Recompiling LED modules for keyboard 
+When = PostTransaction
+Depends = linux-lts 
+Exec = /home/jfreitas/.bin/teclado_avell.sh

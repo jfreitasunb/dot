@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup dos repositórios do Bitbucket
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=basic.target

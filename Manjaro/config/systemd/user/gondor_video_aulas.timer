@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup das videos aulas para o Dropbox
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=basic.target

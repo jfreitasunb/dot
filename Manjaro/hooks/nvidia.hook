@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = nvidia*
+
+[Action]
+Description = Gera os modulos do driver nvidia
+When = PostTransaction
+Depends = nvidia*
+Exec = /bin/sh -c "/home/jfreitas/.bin/gera_nvidia.sh"
