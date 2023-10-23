@@ -101,64 +101,64 @@ rm -rf nvidia
 
 cd ~/.config/
 
-ln -s ~/GitHub/dot/Arch/config/alacritty ./
+ln -s ~/GitHub/dot/Manjaro/config/alacritty ./
 
-ln -s ~/GitHub/dot/Arch/config/aliases/ ./
+ln -s ~/GitHub/dot/Manjaro/config/aliases/ ./
 
-ln -s ~/GitHub/dot/Arch/config/autorandr/ ./
+ln -s ~/GitHub/dot/Manjaro/config/autorandr/ ./
 
-ln -s ~/GitHub/dot/Arch/config/nvim/ ./
+ln -s ~/GitHub/dot/Manjaro/config/nvim/ ./
 
-ln -s ~/GitHub/dot/Arch/config/picom/ ./
+ln -s ~/GitHub/dot/Manjaro/config/picom/ ./
 
-ln -s ~/GitHub/dot/Arch/config/terminator/ ./
+ln -s ~/GitHub/dot/Manjaro/config/terminator/ ./
 
-ln -s ~/GitHub/dot/Arch/config/xmonad/ ./
+ln -s ~/GitHub/dot/Manjaro/config/xmonad/ ./
 
-ln -s ~/GitHub/dot/Arch/config/xmobar/ ./
+ln -s ~/GitHub/dot/Manjaro/config/xmobar/ ./
 
-ln -s ~/GitHub/dot/Arch/config/zathura/ ./
+ln -s ~/GitHub/dot/Manjaro/config/zathura/ ./
 
-ln -s ~/GitHub/dot/Arch/config/zsh/ ./
+ln -s ~/GitHub/dot/Manjaro/config/zsh/ ./
 
-ln -s ~/GitHub/dot/Arch/config/keepassxc/ ./
+ln -s ~/GitHub/dot/Manjaro/config/keepassxc/ ./
 
-ln -s ~/GitHub/dot/Arch/config/nemo/ ./
+ln -s ~/GitHub/dot/Manjaro/config/nemo/ ./
 
-ln -s ~/GitHub/dot/Arch/config/gtk-3.0 ./
+ln -s ~/GitHub/dot/Manjaro/config/gtk-3.0 ./
 
-ln -s ~/GitHub/dot/Arch/config/autostart ./
+ln -s ~/GitHub/dot/Manjaro/config/autostart ./
 
-ln -s ~/GitHub/dot/Arch/config/systemd ./
+ln -s ~/GitHub/dot/Manjaro/config/systemd ./
 
 
 mkdir texstudio
 
 cd texstudio
 
-ln -s ~/GitHub/dot/Arch/config/texstudio/texstudio.ini ./
+ln -s ~/GitHub/dot/Manjaro/config/texstudio/texstudio.ini ./
 
 cd ~
 
-ln -s ~/GitHub/dot/Arch/bin/ ./.local/bin
+ln -s ~/GitHub/dot/Manjaro/bin/ ./.local/bin
 
 cd .local/share/
 
-ln -s ~/GitHub/dot/Arch/fonts/ ./
+ln -s ~/GitHub/dot/Manjaro/fonts/ ./
 
 fc-cache -f -v
 
 ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
-ln -s GitHub/dot/Arch/config/Xmodmap ./.Xmodmap
+ln -s GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
 chsh -s $(which zsh)
 
-sudo ln -s ~/GitHub/dot/Arch/hooks /etc/pacman.d/
+sudo ln -s ~/GitHub/dot/Manjaro/hooks /etc/pacman.d/
 
-sudo cp ~/GitHub/dot/Arch/systemd/gondor_root.service /etc/systemd/system/
+sudo cp ~/GitHub/dot/Manjaro/systemd/gondor_root.service /etc/systemd/system/
 
-sudo cp ~/GitHub/dot/Arch/systemd/gondor_root.timer /etc/systemd/system/
+sudo cp ~/GitHub/dot/Manjaro/systemd/gondor_root.timer /etc/systemd/system/
 
 sudo systemctl enable gondor_root.timer
 
