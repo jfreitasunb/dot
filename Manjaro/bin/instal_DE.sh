@@ -162,6 +162,8 @@ ln -s GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
 sudo ln -s ~/GitHub/dot/Manjaro/pacman/hooks /etc/pacman.d/
 
+sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.d/pacman.conf
+
 sudo ln -s ~/GitHub/dot/Manjaro/grub/grub ./
 
 sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
