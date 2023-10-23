@@ -10,3 +10,6 @@
 window.thunar paned > scrolledwindow treeview.view {
   background: rgba(21,24,40,0.3);
 }
+
+@define-color accent_color #55dfc4;
+@define-color accent_bg_color #16a085;
