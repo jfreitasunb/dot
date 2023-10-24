@@ -25,7 +25,7 @@ then
 
     DEST_HOME="/Arquivos/Dropbox/Backups/Gondor/HOME/"
 
-    NOME_BACKUP="gondor_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
+    NOME_BACKUP="manjaro_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
 
     #rsync -avzz --exclude-from="$EXCLUDE_LIST" "$HOME" "$DEST_HOME_TEMP"
     cd "$DEST_HOME"

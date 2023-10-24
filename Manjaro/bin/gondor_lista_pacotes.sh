@@ -4,13 +4,13 @@
 
 # NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
 
-NOME_BACKUP_GNOME="gondor_gnome_settings_"$(date +%Y-%m-%d)".ini"
+NOME_BACKUP_GNOME="manjaro_gnome_settings_"$(date +%Y-%m-%d)".ini"
 
 # NOME_BACKUP_YAY="gondor_lista_pacotes_instalados_YAY_"$(date +%Y-%m-%d)".lst"
 #
-NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
+NOME_BACKUP_PACMAN="manjaro_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
 
-NOME_BACKUP_PARU="gondor_lista_pacotes_instalados_PARU_"$(date +%Y-%m-%d)".lst"
+NOME_BACKUP_PARU="manjaro_lista_pacotes_instalados_PARU_"$(date +%Y-%m-%d)".lst"
 
 LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Gondor/Backup-Diario/"
 
