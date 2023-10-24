@@ -13,7 +13,7 @@ rotavidade=7
 if [ $diferenca -gt $rotavidade ];
 then
 
-    EXCLUDE_LIST="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-HOME.list"
+    EXCLUDE_LIST="/Arquivos/Dropbox/Backups/Manjaro/excludes/exclude-HOME.list"
 
     #HOME="/home/jfreitas/"
 
@@ -23,7 +23,7 @@ then
 
     #mkdir -p $DEST_TEMP
 
-    DEST_HOME="/Arquivos/Dropbox/Backups/Gondor/HOME/"
+    DEST_HOME="/Arquivos/Dropbox/Backups/Majaro/HOME/"
 
     NOME_BACKUP="manjaro_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
 
