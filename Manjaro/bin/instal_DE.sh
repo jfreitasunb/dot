@@ -195,4 +195,5 @@ sudo chattr +C /var/log
 sudo chattr +C /var/lib/docker
 
 sudo chattr +C /var/lib/libvirt
+
 printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
