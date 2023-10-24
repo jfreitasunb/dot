@@ -11,14 +11,14 @@ make
 
 sudo make install
 
-for i in /lib/modules/*; do
-    if [ -d $i'/extra/' ]; then
-        sudo install -m644 clevo-xsm-wmi.ko $i'/extra'
+vkernel=$(uname --kernel-release)
 
-        sudo depmod
-    fi
-done
+if [ -d /lib/modules/'$vkernel'/extra/ ]; then
+    sudo install -m644 clevo-xsm-wmi.ko /lib/modules/'$vkernel'/extra
 
-sudo modprobe clevo-xsm-wmi
+    sudo depmod
+fi
+
+sudo modprobe /lib/modules/$(echo $vkernel)/updates/clevo-xsm-wmi.ko.zst
 
 sudo tee /etc/modprobe.d/clevo-xsm-wmi.conf <<< 'options clevo-xsm-wmi kb_color=red,red,red kb_brightness=1 kb_off=0'
