@@ -37,7 +37,8 @@ sudo pacman -S --needed firefox nitrogen lxappearance dmenu arandr arc-gtk-theme
   pavucontrol xorg-xinit fzf wget less flatpak cmake unzip ninja curl docker-compose yasm cuda cuda-tools nemo nemo-fileroller nemo-preview \
   virt-manager iptables-nft libvirt qemu-full base-devel texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context \
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
-  texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex texstudio tldr
+  texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
+  texstudio tldr linux-headers gdal jq
 
 
 #cd /tmp
