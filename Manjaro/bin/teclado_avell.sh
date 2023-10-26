@@ -21,4 +21,4 @@ fi
 
 sudo modprobe /lib/modules/$(echo $vkernel)/updates/clevo-xsm-wmi.ko.zst
 
-sudo tee /etc/modprobe.d/clevo-xsm-wmi.conf <<< 'options clevo-xsm-wmi kb_color=red,red,red kb_brightness=1 kb_off=0'
+sudo tee /etc/modprobe.d/clevo-xsm-wmi.conf <<< 'options clevo-xsm-wmi kb_color=green,green,green kb_brightness=1 kb_off=0'
