@@ -1,7 +1,7 @@
 alias vim='nvim'
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
-alias cat='bat'
+alias cat='bat --language=auto'
 alias aup='arch-update.sh'
 
 #### Docker ####
@@ -54,11 +54,11 @@ alias jctl="journalctl -p 3 -xb"
 
 
 # Changing "ls" to "exa"
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --binary --color=always --group-directories-first'  # long format
-alias lt='exa -aT --group-directories-first' # tree listing
-alias lr='exa --color=always --sort newest --group-directories-first' # tree listing
-alias ls='exa -la -snewest --binary --color=always --group-directories-first' # my preferred listing
+alias la='exa -a --icons --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --icons --binary --color=always --group-directories-first'  # long format
+alias lt='exa -aT --icons --group-directories-first' # tree listing
+alias lr='exa --icons --color=always --sort newest --group-directories-first' # tree listing
+alias ls='exa -la --icons -snewest --binary --color=always --group-directories-first' # my preferred listing
 
 # Navegação entre diretórios
 alias d='dirs -v'
