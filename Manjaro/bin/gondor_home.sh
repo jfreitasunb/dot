@@ -23,7 +23,7 @@ then
 
     #mkdir -p $DEST_TEMP
 
-    DEST_HOME="/Arquivos/Dropbox/Backups/Majaro/HOME/"
+    DEST_HOME="/Arquivos/Dropbox/Backups/Manjaro/HOME/"
 
     NOME_BACKUP="manjaro_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
 
