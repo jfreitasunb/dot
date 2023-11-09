@@ -1,7 +1,7 @@
 alias vim='nvim'
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
-alias cat='bat --language=auto'
+alias cat='bat'
 alias aup='arch-update.sh'
 
 #### Docker ####
