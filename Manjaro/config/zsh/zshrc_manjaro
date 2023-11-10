@@ -49,3 +49,7 @@ source ~/.config/aliases/aliases
 if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
 fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.lcoal/bin:$PATH"
+fi
