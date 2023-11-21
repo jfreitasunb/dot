@@ -13,7 +13,7 @@ DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-2"
 AULASONLINE="/home/jfreitas/GitHub/video_aulas/"
 DEST_AULASONLINE="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/pdf_video_aulas"
 
-CODIGOSR="/home/jfreitas/GitHub/Codigos-R/"
+CODIGOSR="/home/jfreitas/GitHub/Codigos-R"
 DEST_CODIGOSR="/Arquivos/Dropbox/UnB"
 
 #ALGEBRA_LINEAR="/home/jfreitas/GitHub/algebra_linear/"
