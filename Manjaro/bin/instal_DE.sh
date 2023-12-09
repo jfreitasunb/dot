@@ -159,11 +159,11 @@ ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
-sudo rm /etc/pacman.d/pacman.conf
+sudo rm /etc/pacman.conf
 
 sudo ln -s ~/GitHub/dot/Manjaro/pacman/hooks /etc/pacman.d/
 
-sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.d/pacman.conf
+sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.conf
 
 sudo rm /etc/default/grub
 
