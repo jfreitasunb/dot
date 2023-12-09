@@ -2,15 +2,13 @@
 
 cd ~/
 
-git clone https://aur.archlinux.org/paru.git
-
-cd paru/
-
-makepkg -si --noconfirm
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 cd ..
 
-rm -rf paru
+rm -rf yay
+
+yay -Syyu
 
 paru -S burpsuite candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git brave-bin zplug rstudio-desktop-bin
 
