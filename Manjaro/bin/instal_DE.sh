@@ -181,7 +181,7 @@ sudo systemctl enable manjaro_keyboard.service
 
 sudo systemctl enable sshd
 
-sudo systemctl enable tlp # You can comment this command out if you didn't install tlp, see above
+sudo systemctl enable tlp
 
 sudo systemctl enable fstrim.timer
 
