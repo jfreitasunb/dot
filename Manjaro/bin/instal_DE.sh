@@ -153,9 +153,9 @@ fc-cache -f -v
 
 cd ~
 
-ln -s GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
+ln -s ~/GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
 
-ln -s GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
+ln -s ~/GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
 sudo rm /etc/pacman.conf
 
