@@ -157,6 +157,10 @@ ln -s ~/GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
 
 ln -s ~/GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
+rm .zshrc
+
+ln -s ~/GitHub/dot/Manjaro/config/zsh/zshrc ./.zshrc
+
 sudo rm /etc/pacman.conf
 
 sudo ln -s ~/GitHub/dot/Manjaro/pacman/hooks /etc/pacman.d/
