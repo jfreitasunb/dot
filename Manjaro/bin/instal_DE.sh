@@ -157,6 +157,8 @@ ln -s ~/GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
 
 ln -s ~/GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
+ln -s ~/GitHub/dot/Manjaro/config/histdb  /.histdb
+
 rm .zshrc
 
 ln -s ~/GitHub/dot/Manjaro/config/zsh/zshrc ./.zshrc
