@@ -153,7 +153,7 @@ fc-cache -f -v
 
 cd ~
 
-ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
+ln -s GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
