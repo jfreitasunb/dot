@@ -34,7 +34,7 @@ yay -S --needed burpsuite candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts 
   virt-manager iptables-nft libvirt qemu-full base-devel texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context \
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
-  texstudio tldr linux-headers gdal jq
+  texstudio tldr linux-headers gdal jq docker
 
 
 #cd /tmp
@@ -166,6 +166,10 @@ sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.conf
 sudo rm /etc/default/grub
 
 sudo ln -s ~/GitHub/dot/Manjaro/grub/grub /etc/default/grub
+
+sudo rm -rf /etc/libvirt
+
+sudo ln -s ~/GitHub/dot/Manjaro/libvirt /etc/libvirt
 
 sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
 
