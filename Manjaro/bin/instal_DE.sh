@@ -143,7 +143,7 @@ ln -s ~/GitHub/dot/Manjaro/config/texstudio/texstudio.ini ./
 
 cd ~
 
-ln -s ~/GitHub/dot/Manjaro/bin/ ./.local/bin
+ln -s ~/GitHub/dot/Manjaro/bin/ ./.bin
 
 cd .local/share/
 
