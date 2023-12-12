@@ -6,10 +6,6 @@ EXCLUDE_LIST="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-gondor.list"
 
 NOME_BACKUP="gondor_backup_diario_root_"$(date +%Y-%m-%d)".tar.bz2"
 
-LOCAL_TEMPORARIO_ROOT="/Arquivos/Backup_Temporario/Gondor/ROOT/"
-
-LOCAL_TAR="/Arquivos/Backup_Temporario/"
-
 LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Gondor/Backup-Diario/"
 
 #rsync -avzzc --links --delete --exclude-from="$EXCLUDE_LIST" /etc "$LOCAL_TEMPORARIO_ROOT"

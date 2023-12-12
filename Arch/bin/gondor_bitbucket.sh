@@ -8,10 +8,13 @@ ALGEBRA1="/home/jfreitas/GitHub/Algebra-1/"
 DEST_ALGEBRA1="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2022-2"
 
 IAL="/home/jfreitas/GitHub/IAL/"
-DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-1"
+DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-2"
 
 AULASONLINE="/home/jfreitas/GitHub/video_aulas/"
 DEST_AULASONLINE="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/pdf_video_aulas"
+
+CODIGOSR="/home/jfreitas/GitHub/Codigos-R"
+DEST_CODIGOSR="/Arquivos/Dropbox/UnB"
 
 #ALGEBRA_LINEAR="/home/jfreitas/GitHub/algebra_linear/"
 #DEST_ALGEBRA_LINEAR="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_Linear/2019-1"
@@ -40,11 +43,12 @@ DEST_POSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespos"
 #INSCRICOESEVENTOSMAT="/home/jfreitas/GitHub/inscricoeseventos/"
 #DEST_INSCRICOESEVENTOSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoeseventos"
 
-rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$ALGEBRA1" "$DEST_ALGEBRA1"
+#rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$ALGEBRA1" "$DEST_ALGEBRA1"
 
 rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$IAL" "$DEST_IAL"
 
-rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$AULASONLINE" "$DEST_AULASONLINE"
+rsync -avzz "$CODIGOSR" "$DEST_CODIGOSR"
+#rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$AULASONLINE" "$DEST_AULASONLINE"
 
 #rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" $ALGEBRA_LINEAR $DEST_ALGEBRA_LINEAR
 
@@ -52,7 +56,7 @@ rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$AULASONLINE" "$DEST_AULASONLINE
 
 #rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$MONITORIAMAT" "$DEST_MONITORIAMAT"
 
-rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$POSMAT" "$DEST_POSMAT"
+#rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$POSMAT" "$DEST_POSMAT"
 
 #rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$PROFICIENCIA" "$DEST_PROFICIENCIA"
 
