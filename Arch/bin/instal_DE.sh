@@ -163,6 +163,10 @@ sudo rm /etc/default/grub
 
 sudo ln -s ~/GitHub/dot/Arch/grub/grub /etc/default/
 
+sudo rm -rf /etc/libvirt
+
+sudo ln -s ~/GitHub/dot/Arch/libvirt /etc/libvirt
+
 sudo cp ~/GitHub/dot/Arch/config/systemd/gondor_root.service /etc/systemd/system/
 
 sudo cp ~/GitHub/dot/Arch/config/systemd/gondor_root.timer /etc/systemd/system/
