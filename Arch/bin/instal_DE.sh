@@ -32,8 +32,9 @@ yay -S --needed firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-ico
   virt-manager iptables-nft libvirt qemu-full base-devel texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context \
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
-  dconf-editor gparted gnome-browser-connector texstudio tldr linux-lts-headers gdal jq burpsuite candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont auto-cpufreq \
-  otf-font-awesome-5 ttf-material-design-icons-git brave-bin zplug rstudio-desktop-bin google-chrome github-desktop-bin
+  dconf-editor gparted gnome-browser-connector texstudio tldr linux-lts-headers gdal jq burpsuite candy-icons-git picom siji-git ttf-meslo \
+  ttf-ms-fonts ttf-unifont auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git brave-bin zplug rstudio-desktop-bin google-chrome \
+  github-desktop-bin timeshift-autosnap timeshift grub-btrfs
 
 git clone https://github.com/neovim/neovim
 
