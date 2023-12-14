@@ -93,8 +93,8 @@ myTerminal :: String
 myTerminal = "alacritty"    -- Sets default terminal
 
 myBrowser :: String
-myBrowser = "google-chrome-stable"  -- Sets qutebrowser as browser
---myBrowser = "brave"  -- Sets qutebrowser as browser
+--myBrowser = "google-chrome-stable"  -- Sets qutebrowser as browser
+myBrowser = "brave"  -- Sets qutebrowser as browser
 
 myEditor :: String
 myEditor = myTerminal ++ " -e nvim "    -- Sets vim as editor
