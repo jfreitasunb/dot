@@ -5,7 +5,7 @@ EXCLUDE_LIST_TEX="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-TEX.list"
 EXCLUDE_LIST_LARAVEL="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-GitHub_Repos_laravel.list"
 
 ALGEBRA1="/home/jfreitas/GitHub/Algebra-1/"
-DEST_ALGEBRA1="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2022-2"
+DEST_ALGEBRA1="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2024-1"
 
 IAL="/home/jfreitas/GitHub/IAL/"
 DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-2"
@@ -25,8 +25,8 @@ DEST_CODIGOSR="/Arquivos/Dropbox/UnB"
 #MONITORIAMAT="/home/jfreitas/GitHub/inscricoesmonitoria/"
 #DEST_MONITORIAMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoesmonitoria"
 
-POSMAT="/home/jfreitas/GitHub/inscricoespos/"
-DEST_POSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespos"
+#POSMAT="/home/jfreitas/GitHub/inscricoespos/"
+#DEST_POSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespos"
 
 #INSCRICOESPNPD="/home/jfreitas/GitHub/inscricoespnpd/"
 #DEST_INSCRICOESPNPD="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespnpd"
@@ -43,7 +43,7 @@ DEST_POSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespos"
 #INSCRICOESEVENTOSMAT="/home/jfreitas/GitHub/inscricoeseventos/"
 #DEST_INSCRICOESEVENTOSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoeseventos"
 
-#rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$ALGEBRA1" "$DEST_ALGEBRA1"
+rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$ALGEBRA1" "$DEST_ALGEBRA1"
 
 rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$IAL" "$DEST_IAL"
 
