@@ -40,7 +40,8 @@ Config { font            = "Ubuntu bold 11"
                         -- Ram used number and percent
                     , Run Memory ["-t", "<fn=2>\xf233</fn>  mem: <used>M (<usedratio>%)"] 20
                         -- Disk space free
-                    , Run DiskU [("/", "<fn=2>\xf0c7</fn>  hdd: <free> free"),("/home", "<fn=2>\xf015</fn>  home: <free> free")] [] 60
+                    , Run DiskU [("/", "<fn=2>\xf0c7</fn>  hdd: <free> free")] [] 60
+                    --, Run DiskU [("/", "<fn=2>\xf0c7</fn>  hdd: <free> free"),("/home", "<fn=2>\xf015</fn>  home: <free> free")] [] 60
                         -- Echos an "up arrow" icon in front of the uptime output.
                     , Run Com "echo" ["<fn=2>\xf0aa</fn>"] "uparrow" 3600
                         -- Uptime
