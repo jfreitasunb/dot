@@ -93,7 +93,8 @@ myTerminal :: String
 myTerminal = "alacritty"    -- Sets default terminal
 
 myBrowser :: String
-myBrowser = "brave"  -- Sets qutebrowser as browser
+myBrowser = "google-chrome-stable"  -- Sets qutebrowser as browser
+--myBrowser = "brave"  -- Sets qutebrowser as browser
 
 myEditor :: String
 myEditor = myTerminal ++ " -e nvim "    -- Sets vim as editor
@@ -119,7 +120,7 @@ myStartupHook = do
   -- spawnOnce "dropbox"
   -- spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
-  spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Gondor/config/Xmodmap"
+  spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Arch/config/Xmodmap"
   spawnOnce "xsetroot -cursor_name left_ptr"
 
   spawnOnce "lxsession"
@@ -454,6 +455,7 @@ myManageHook = composeAll
   , title =? "Oracle VM VirtualBox Manager"  --> doFloat
   , title =? "Mozilla Firefox"     --> doShift ( myWorkspaces !! 1 )
   , className =? "brave-browser"   --> doShift ( myWorkspaces !! 1 )
+  , className =? "google-chrome"   --> doShift ( myWorkspaces !! 1 )
   , className =? "mpv"             --> doShift ( myWorkspaces !! 7 )
   , className =? "Gimp"            --> doShift ( myWorkspaces !! 8 )
   , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 4 )
