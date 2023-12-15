@@ -111,8 +111,6 @@ ln -s ~/GitHub/dot/Manjaro/config/nvim/ ./
 
 ln -s ~/GitHub/dot/Manjaro/config/picom/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/terminator/ ./
-
 ln -s ~/GitHub/dot/Manjaro/config/xmonad/ ./
 
 ln -s ~/GitHub/dot/Manjaro/config/xmobar/ ./
