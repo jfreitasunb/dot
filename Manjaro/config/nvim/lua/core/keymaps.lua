@@ -23,10 +23,10 @@ vim.g.maplocalleader = ' '
 -----------------------------------------------------------
 
 -- Disable arrow keys
-map('', '<up>', '<nop>')
-map('', '<down>', '<nop>')
-map('', '<left>', '<nop>')
-map('', '<right>', '<nop>')
+--map('', '<up>', '<nop>')
+--map('', '<down>', '<nop>')
+--map('', '<left>', '<nop>')
+--map('', '<right>', '<nop>')
 
 -- Map Esc to kk
 map('i', 'kk', '<Esc>')
