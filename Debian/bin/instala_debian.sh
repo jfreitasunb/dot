@@ -117,16 +117,6 @@ ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Debian/config/Xmodmap ./.Xmodmap
 
-cd /tmp
-
-wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-
-zcat install-tl-unx.tar.gz | tar xf -
-
-cd install-tl-*/
-
-sudo perl ./install-tl --gui
-
 sudo usermod -aG libvirt jfreitas
 
 mkdir ~/nvidia/ && cd ~/nvidia/
@@ -170,3 +160,14 @@ sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music
 sudo nala autoremove
 
 sudo systemctl enable docker
+
+cd /tmp
+
+wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+
+zcat install-tl-unx.tar.gz | tar xf -
+
+cd install-tl-*/
+
+sudo perl ./install-tl --gui
+
