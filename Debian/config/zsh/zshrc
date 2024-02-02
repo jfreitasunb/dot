@@ -26,10 +26,10 @@ SAVEHIST=1000000000
 setopt HIST_SAVE_NO_DUPS
 
 # History won't show duplicates on search.
-setopt HIST_FIND_NO_DUPS
-if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ] ; then
-    PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
-fi
+#setopt HIST_FIND_NO_DUPS
+#if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ] ; then
+#    PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
+#fi
 
 if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
@@ -43,9 +43,9 @@ if [ -d "$HOME/.cabal/bin" ] ; then
     PATH="$HOME/.cabal/bin:$PATH"
 fi
 
-if [ -d "$HOME/.cargo/bin" ] ; then
-    PATH="$HOME/.cargo/bin:$PATH"
-fi
+#if [ -d "$HOME/.cargo/bin" ] ; then
+#    PATH="$HOME/.cargo/bin:$PATH"
+#fi
 
 export PATH
 
