@@ -15,7 +15,7 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o 
 
 sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 
-sudo nala install -y fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 exa feh flameshot flatpak fzf git keepassxc linux-headers-$(uname -r) lxappearance lxqt-policykit nvidia-driver nvidia-cuda-dev nvidia-cuda-gdb nvidia-cuda-toolkit p7zip p7zip-full pavucontrol pdftk tcl tk8.6 picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync sddm virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev suckless-tools gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev git curl libnotify-dev libcurl4-openssl-dev haskell-stack libpango1.0-0 fonts-liberation libu2f-udev numlockx nodejs npm libx11-dev libxinerama-dev texstudio tldr jupyter docker-ce docker-ce-cli containerd.io docker-compose-plugin yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk
+sudo nala install -y fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 exa feh flameshot flatpak fzf git keepassxc linux-headers-$(uname -r) lxappearance lxqt-policykit nvidia-driver nvidia-cuda-dev nvidia-cuda-gdb nvidia-cuda-toolkit p7zip p7zip-full pavucontrol pdftk tcl tk8.6 picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync sddm virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev suckless-tools gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev git curl libnotify-dev libcurl4-openssl-dev haskell-stack libpango1.0-0 fonts-liberation libu2f-udev numlockx nodejs npm libx11-dev libxinerama-dev texstudio tldr jupyter docker-ce docker-ce-cli containerd.io docker-compose-plugin yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk alacritty
 
 git clone https://github.com/neovim/neovim
 
@@ -31,45 +31,45 @@ cd ~
 
 rm -rf neovim
 
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-sudo curl https://sh.rustup.rs -sSf | sh
+#sudo curl https://sh.rustup.rs -sSf | sh
 
-source ~/.cargo/env
+#source ~/.cargo/env
 
-git clone -b v0.12.2 https://github.com/jwilm/alacritty.git
+#git clone -b v0.12.2 https://github.com/jwilm/alacritty.git
 
-cd alacritty/
+#cd alacritty/
 
-cargo build --release
+#cargo build --release
 
-sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+#sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 
-infocmp alacritty
+#infocmp alacritty
 
-sudo cp target/release/alacritty /usr/local/bin
+#sudo cp target/release/alacritty /usr/local/bin
 
-sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+#sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
 
-sudo desktop-file-install extra/linux/Alacritty.desktop
+#sudo desktop-file-install extra/linux/Alacritty.desktop
 
-sudo update-desktop-database
+#sudo update-desktop-database
 
-cd ~
+#cd ~
 
-sudo rm -rf alacritty
+#sudo rm -rf alacritty
 
-git clone https://github.com/totoro-ghost/sddm-astronaut.git ~/astronaut/
+#git clone https://github.com/totoro-ghost/sddm-astronaut.git ~/astronaut/
 
-cd astronaut/
+#cd astronaut/
 
-rm -rf .git/
+#rm -rf .git/
 
-cd ..
+#cd ..
 
-sudo mv astronaut/ /usr/share/sddm/themes/
+#sudo mv astronaut/ /usr/share/sddm/themes/
 
-sudo rm -rf astronaut
+#sudo rm -rf astronaut
 
 cd .config/
 
@@ -155,19 +155,21 @@ make -j $(nproc)
 
 sudo make install
 
-sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks tex-common --purge
+#sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks tex-common --purge
+
+sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks --purge
 
 sudo nala autoremove
 
 sudo systemctl enable docker
 
-cd /tmp
+#cd /tmp
 
-wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+#wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 
-zcat install-tl-unx.tar.gz | tar xf -
+#zcat install-tl-unx.tar.gz | tar xf -
 
-cd install-tl-*/
+#cd install-tl-*/
 
-sudo perl ./install-tl --gui
+#sudo perl ./install-tl --gui
 
