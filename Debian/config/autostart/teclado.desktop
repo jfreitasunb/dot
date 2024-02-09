@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Teclado
-Exec=/bin/bash -c '/home/jfreitas/.local/bin/seta_keyboard_login_gnome.sh'
+Exec=/bin/bash -c '/home/jfreitas/.bin/seta_keyboard_login_gnome.sh'
 Terminal=false
 Type=Application
 StartupNotify=True
