@@ -95,3 +95,7 @@ source ~/.config/aliases/aliases
 #added by Anaconda3 2.4.1 installer
 #export PATH="/home/jfreitas/anaconda3/bin:$PATH"
 source ~/.config/zsh/.p10k.zsh
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
