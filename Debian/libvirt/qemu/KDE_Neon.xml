@@ -1,16 +1,16 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit Manjaro
+  virsh edit KDE_Neon
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>Manjaro</name>
-  <uuid>7fd7bd3f-63cc-4007-b734-1286e8337bb6</uuid>
+  <name>KDE_Neon</name>
+  <uuid>f438e311-996f-483d-9acf-1771e8b395b1</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
-      <libosinfo:os id="http://manjaro.org/manjaro/rolling"/>
+      <libosinfo:os id="http://ubuntu.com/ubuntu/22.04"/>
     </libosinfo:libosinfo>
   </metadata>
   <memory unit='KiB'>8388608</memory>
@@ -43,7 +43,7 @@ or other application using the libvirt API.
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2'/>
-      <source file='/home/jfreitas/VMs/KVM/manjaro.qcow2'/>
+      <source file='/home/jfreitas/VMs/KVM/ubuntu22.04'/>
       <target dev='vda' bus='virtio'/>
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
@@ -52,6 +52,7 @@ or other application using the libvirt API.
       <driver name='qemu' type='raw'/>
       <target dev='sda' bus='sata'/>
       <readonly/>
+      <boot order='2'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <controller type='usb' index='0' model='qemu-xhci' ports='15'>
@@ -135,7 +136,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
     <interface type='network'>
-      <mac address='52:54:00:45:9f:57'/>
+      <mac address='52:54:00:3d:2e:bc'/>
       <source network='default'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
@@ -170,7 +171,7 @@ or other application using the libvirt API.
     </sound>
     <audio id='1' type='spice'/>
     <video>
-      <model type='virtio' heads='1' primary='yes'/>
+      <model type='qxl' ram='65536' vram='65536' vgamem='16384' heads='1' primary='yes'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x0'/>
     </video>
     <redirdev bus='usb' type='spicevmc'>
