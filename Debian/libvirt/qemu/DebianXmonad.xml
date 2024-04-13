@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit ubuntu22.04
+  virsh edit DebianXmonad
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>ubuntu22.04</name>
+  <name>DebianXmonad</name>
   <uuid>5a61d88b-88e2-4fa1-b145-bb2819391989</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
@@ -43,13 +43,14 @@ or other application using the libvirt API.
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2' discard='unmap'/>
-      <source file='/home/jfreitas/VMs/KVM/ubuntu22.04.qcow2'/>
+      <source file='/home/jfreitas/VMs/KVM/debian_xmonad.qcow2'/>
       <target dev='vda' bus='virtio'/>
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
+      <source file='/home/jfreitas/Downloads/debian-12.5.0-amd64-netinst.iso'/>
       <target dev='sda' bus='sata'/>
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
