@@ -10,6 +10,7 @@ Mordor/config/nvim/plugin/packer_compiled.lua
 Arch/config/zsh/.zcompdump
 Debian/config/zsh/.zcompdump
 Debian/config/xmonad/.ghc.environment.x86_64-linux-8.8.4
+Debian/config/xmonad/.stack-work
 Debian/config/xmonad/.ghc.environment.x86_64-linux-8.8.4
 Debian/config/xmonad/.stack-work/install/x86_64-linux-tinfo6/358fb2ad185a6cc59f5d15999c0c34716a721389363b2cb066cd4d478f42a717/9.6.4/bin/xmonad
 Debian/config/xmonad/.stack-work/install/x86_64-linux-tinfo6/358fb2ad185a6cc59f5d15999c0c34716a721389363b2cb066cd4d478f42a717/9.6.4/doc/xmonad-0.18.0.9/LICENSE
