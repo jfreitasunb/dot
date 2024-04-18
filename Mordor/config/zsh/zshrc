@@ -1,5 +1,8 @@
-neofetch
 ZDOTDIR=$HOME/.config/zsh
+
+if [ -d "$HOME/.cargo/env" ] ; then
+    . "$HOME/.cargo/env"
+fi
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -24,9 +27,6 @@ setopt HIST_SAVE_NO_DUPS
 
 # History won't show duplicates on search.
 setopt HIST_FIND_NO_DUPS
-if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ] ; then
-    PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
-fi
 
 if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
@@ -48,7 +48,6 @@ export PATH
 
 bindkey -e
 
-
 # Use modern completion system
 autoload -U compinit; compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -64,8 +63,8 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "junegunn/fzf"
-zplug romkatv/powerlevel10k, as:theme, depth:1
-#zplug "themes/robbyrussell", from:oh-my-zsh, as:theme   # Theme
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "larkery/zsh-histdb"
 
 # zplug - install/load new plugins when zsh is started or reloaded
 if ! zplug check --verbose; then
@@ -79,12 +78,35 @@ zplug load
 #bindkey '^[[A' history-substring-search-up
 #bindkey '^[[B' history-substring-search-down
 
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+#bindkey "$terminfo[kcuu1]" history-substring-search-up
+#bindkey "$terminfo[kcud1]" history-substring-search-down
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-source ~/.config/zsh/.p10k.zsh
-
 source ~/.config/aliases/aliases
+
+autoload -Uz add-zsh-hook
+
+_zsh_autosuggest_strategy_histdb_top() {
+    local query="
+        select commands.argv from history
+        left join commands on history.command_id = commands.rowid
+        left join places on history.place_id = places.rowid
+        where commands.argv LIKE '$(sql_escape $1)%'
+        group by commands.argv, places.dir
+        order by places.dir != '$(sql_escape $PWD)', count(*) desc
+        limit 1
+    "
+    suggestion=$(_histdb_query "$query")
+}
+
+ZSH_AUTOSUGGEST_STRATEGY=histdb_top
+
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+
+#added by Anaconda3 2.4.1 installer
+#export PATH="/home/jfreitas/anaconda3/bin:$PATH"
+source ~/.config/zsh/.p10k.zsh
