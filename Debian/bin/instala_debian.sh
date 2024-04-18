@@ -137,6 +137,8 @@ sudo rm /etc/default/grub
 
 sudo ln -s ~/GitHub/dot/Debian/grub/grub /etc/default/grub
 
+sudo ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+
 sudo update-grub2
 
 sudo rm -rf /etc/libvirt
