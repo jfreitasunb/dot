@@ -1,16 +1,16 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit DebianTesting
+  virsh edit archlinux
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>DebianTesting</name>
-  <uuid>5a61d88b-88e2-4fa1-b145-bb2819391989</uuid>
+  <name>archlinux</name>
+  <uuid>826e4f5d-fa69-41e9-8c06-1fc3108a4c3a</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
-      <libosinfo:os id="http://ubuntu.com/ubuntu/22.04"/>
+      <libosinfo:os id="http://archlinux.org/archlinux/rolling"/>
     </libosinfo:libosinfo>
   </metadata>
   <memory unit='KiB'>8388608</memory>
@@ -42,15 +42,15 @@ or other application using the libvirt API.
   <devices>
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
-      <driver name='qemu' type='qcow2' discard='unmap'/>
-      <source file='/home/jfreitas/VMs/KVM/debian_testing.qcow2'/>
+      <driver name='qemu' type='qcow2'/>
+      <source file='/home/jfreitas/VMs/KVM/archlinux.qcow2'/>
       <target dev='vda' bus='virtio'/>
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/home/jfreitas/Downloads/debian-testing-amd64-netinst.iso'/>
+      <source file='/home/jfreitas/Downloads/archlinux-2024.04.01-x86_64.iso'/>
       <target dev='sda' bus='sata'/>
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
@@ -136,7 +136,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
     <interface type='network'>
-      <mac address='52:54:00:cc:7e:d5'/>
+      <mac address='52:54:00:ac:b9:1f'/>
       <source network='default'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
@@ -171,7 +171,7 @@ or other application using the libvirt API.
     </sound>
     <audio id='1' type='spice'/>
     <video>
-      <model type='qxl' ram='65536' vram='65536' vgamem='16384' heads='1' primary='yes'/>
+      <model type='virtio' heads='1' primary='yes'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x0'/>
     </video>
     <redirdev bus='usb' type='spicevmc'>
