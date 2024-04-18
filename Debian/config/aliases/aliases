@@ -9,6 +9,7 @@ alias dcd='docker-compose down --rmi all --volumes'
 alias dcu='docker-compose up -d'
 alias dcs='docker-compose down'
 alias dcb='docker-compose exec app bash'
+alias dcp='docker system prune -a'
 
 #### Git ####
 alias ge='git status'

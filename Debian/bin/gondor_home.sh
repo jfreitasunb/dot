@@ -13,9 +13,9 @@ rotavidade=3
 if [ $diferenca -gt $rotavidade ];
 then
 
-    EXCLUDE_LIST="/Arquivos/Dropbox/Backups/Debian/excludes/exclude-HOME.list"
+    EXCLUDE_LIST="/Arquivos/OneDrive/Backups/Debian/excludes/exclude-HOME.list"
 
-    DEST_HOME="/Arquivos/Dropbox/Backups/Debian/HOME/"
+    DEST_HOME="/Arquivos/OneDrive/Backups/Debian/HOME/"
 
     NOME_BACKUP="debian_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
 

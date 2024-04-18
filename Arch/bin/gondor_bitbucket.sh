@@ -5,13 +5,16 @@ EXCLUDE_LIST_TEX="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-TEX.list"
 EXCLUDE_LIST_LARAVEL="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-GitHub_Repos_laravel.list"
 
 ALGEBRA1="/home/jfreitas/GitHub/Algebra-1/"
-DEST_ALGEBRA1="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2022-2"
+DEST_ALGEBRA1="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2024-1"
 
 IAL="/home/jfreitas/GitHub/IAL/"
-DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-1"
+DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-2"
 
 AULASONLINE="/home/jfreitas/GitHub/video_aulas/"
 DEST_AULASONLINE="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/pdf_video_aulas"
+
+CODIGOSR="/home/jfreitas/GitHub/Codigos-R"
+DEST_CODIGOSR="/Arquivos/Dropbox/UnB"
 
 #ALGEBRA_LINEAR="/home/jfreitas/GitHub/algebra_linear/"
 #DEST_ALGEBRA_LINEAR="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_Linear/2019-1"
@@ -22,8 +25,8 @@ DEST_AULASONLINE="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/pdf_video_aulas"
 #MONITORIAMAT="/home/jfreitas/GitHub/inscricoesmonitoria/"
 #DEST_MONITORIAMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoesmonitoria"
 
-POSMAT="/home/jfreitas/GitHub/inscricoespos/"
-DEST_POSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespos"
+#POSMAT="/home/jfreitas/GitHub/inscricoespos/"
+#DEST_POSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespos"
 
 #INSCRICOESPNPD="/home/jfreitas/GitHub/inscricoespnpd/"
 #DEST_INSCRICOESPNPD="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespnpd"
@@ -44,7 +47,8 @@ rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$ALGEBRA1" "$DEST_ALGEBRA1"
 
 rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$IAL" "$DEST_IAL"
 
-rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$AULASONLINE" "$DEST_AULASONLINE"
+rsync -avzz "$CODIGOSR" "$DEST_CODIGOSR"
+#rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$AULASONLINE" "$DEST_AULASONLINE"
 
 #rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" $ALGEBRA_LINEAR $DEST_ALGEBRA_LINEAR
 
@@ -52,7 +56,7 @@ rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$AULASONLINE" "$DEST_AULASONLINE
 
 #rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$MONITORIAMAT" "$DEST_MONITORIAMAT"
 
-rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$POSMAT" "$DEST_POSMAT"
+#rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$POSMAT" "$DEST_POSMAT"
 
 #rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$PROFICIENCIA" "$DEST_PROFICIENCIA"
 

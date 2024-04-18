@@ -34,13 +34,14 @@ Config { font            = "Ubuntu bold 11"
                         -- Echos a "penguin" icon in front of the kernel output.
                       Run Com "echo" ["<fn=3>\xf17c</fn>"] "penguin" 3600
                         -- Get kernel version (script found in .local/bin)
-                    , Run Com "/home/jfreitas/GitHub/dot/Gondor/bin/kernel" [] "kernel" 36000
+                    , Run Com "/home/jfreitas/GitHub/dot/Arch/bin/kernel" [] "kernel" 36000
                         -- Cpu usage in percent
                     , Run Cpu ["-t", "<fn=2>\xf108</fn>  cpu: (<total>%)","-H","50","--high","red"] 20
                         -- Ram used number and percent
                     , Run Memory ["-t", "<fn=2>\xf233</fn>  mem: <used>M (<usedratio>%)"] 20
                         -- Disk space free
-                    , Run DiskU [("/", "<fn=2>\xf0c7</fn>  hdd: <free> free"),("/home", "<fn=2>\xf015</fn>  home: <free> free")] [] 60
+                    , Run DiskU [("/", "<fn=2>\xf0c7</fn>  hdd: <free> free")] [] 60
+                    --, Run DiskU [("/", "<fn=2>\xf0c7</fn>  hdd: <free> free"),("/home", "<fn=2>\xf015</fn>  home: <free> free")] [] 60
                         -- Echos an "up arrow" icon in front of the uptime output.
                     , Run Com "echo" ["<fn=2>\xf0aa</fn>"] "uparrow" 3600
                         -- Uptime
@@ -48,7 +49,7 @@ Config { font            = "Ubuntu bold 11"
                         -- Echos a "bell" icon in front of the pacman updates.
                     , Run Com "echo" ["<fn=2>\xf0f3</fn>"] "bell" 3600
                         -- Check for pacman updates (script found in .local/bin)
-                    -- , Run Com "/home/jfreitas/GitHub/dot/Gondor/bin/pacupdate" [] "pacupdate" 36000
+                    -- , Run Com "/home/jfreitas/GitHub/dot/Arch/bin/pacupdate" [] "pacupdate" 36000
                     -- Echos a "battery" icon in front of the pacman updates.
                     , Run Com "echo" ["<fn=2>\xf242</fn>"] "baticon" 3600
                     -- Battery information. This is likely to require some customization
@@ -69,7 +70,7 @@ Config { font            = "Ubuntu bold 11"
                     -- Time and date
                     , Run Date "<fn=2>\xf017</fn>  %d %b %Y - (%H:%M) " "date" 50
                         -- Script that dynamically adjusts xmobar padding depending on number of trayer icons.
-                    , Run Com "/home/jfreitas/GitHub/dot/Gondor/config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 20
+                    , Run Com "/home/jfreitas/GitHub/dot/Arch/config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 20
                         -- Prints out the left side items such as workspaces, layout, etc.
                     , Run UnsafeStdinReader
                     -- keyboard layout indicator

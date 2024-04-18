@@ -1,6 +1,8 @@
 #!/bin/bash
 cd ~
 
+sudo apt install nala
+
 sudo nala install -y curl ninja-build gettext cmake unzip build-essential python3-pip git python3-apt python3-debian pandoc wget
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -15,7 +17,13 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o 
 
 sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 
-sudo nala install -y fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 exa feh flameshot flatpak fzf git keepassxc linux-headers-$(uname -r) lxappearance lxqt-policykit nvidia-driver nvidia-cuda-dev nvidia-cuda-gdb nvidia-cuda-toolkit p7zip p7zip-full pavucontrol pdftk tcl tk8.6 picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync sddm virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev suckless-tools gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev git curl libnotify-dev libcurl4-openssl-dev haskell-stack libpango1.0-0 fonts-liberation libu2f-udev numlockx install nodejs npm libx11-dev libxinerama-dev texstudio tldr jupyter docker-ce docker-ce-cli containerd.io docker-compose-plugin yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+
+sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft-archive-keyring.gpg
+
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+sudo nala install -y ttf-mscorefonts-installer fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 exa feh flameshot flatpak fzf git keepassxc linux-headers-$(uname -r) lxappearance lxqt-policykit nvidia-driver nvidia-cuda-dev nvidia-cuda-gdb nvidia-cuda-toolkit p7zip p7zip-full pavucontrol pdftk tcl tk8.6 picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev suckless-tools gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev git curl libnotify-dev libcurl4-openssl-dev haskell-stack libpango1.0-0 fonts-liberation libu2f-udev numlockx libx11-dev libxinerama-dev texstudio tldr jupyter docker-ce docker-ce-cli containerd.io docker-compose-plugin yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk alacritty gparted libclang-dev brave-browser sublime-text code
 
 git clone https://github.com/neovim/neovim
 
@@ -33,47 +41,11 @@ rm -rf neovim
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-sudo curl https://sh.rustup.rs -sSf | sh
-
-source ~/.cargo/env
-
-git clone -b v0.12.2 https://github.com/jwilm/alacritty.git
-
-cd alacritty/
-
-cargo build --release
-
-sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
-
-infocmp alacritty
-
-sudo cp target/release/alacritty /usr/local/bin
-
-sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
-
-sudo desktop-file-install extra/linux/Alacritty.desktop
-
-sudo update-desktop-database
-
-cd ~
-
-sudo rm -rf alacritty
-
-git clone https://github.com/totoro-ghost/sddm-astronaut.git ~/astronaut/
-
-cd astronaut/
-
-rm -rf .git/
-
-cd ..
-
-sudo mv astronaut/ /usr/share/sddm/themes/
-
-sudo rm -rf astronaut
-
-cd .config/
+cd ~/.config/
 
 ln -s ~/GitHub/dot/Debian/config/alacritty ./
+
+ln -s ~/GitHub/dot/Debian/config/autostart ./
 
 ln -s ~/GitHub/dot/Debian/config/aliases/ ./
 
@@ -83,8 +55,6 @@ ln -s ~/GitHub/dot/Debian/config/nvim/ ./
 
 ln -s ~/GitHub/dot/Debian/config/picom/ ./
 
-ln -s ~/GitHub/dot/Debian/config/terminator/ ./
-
 ln -s ~/GitHub/dot/Debian/config/xmonad/ ./
 
 ln -s ~/GitHub/dot/Debian/config/xmobar/ ./
@@ -92,6 +62,8 @@ ln -s ~/GitHub/dot/Debian/config/xmobar/ ./
 ln -s ~/GitHub/dot/Debian/config/zathura/ ./
 
 ln -s ~/GitHub/dot/Debian/config/zsh/ ./
+
+rm -rf keepassxc
 
 ln -s ~/GitHub/dot/Debian/config/keepassxc/ ./
 
@@ -105,7 +77,9 @@ ln -s ~/GitHub/dot/Debian/config/texstudio/texstudio.ini ./
 
 cd ~
 
-ln -s ~/GitHub/dot/Debian/bin/ ./.local/bin
+ln -s ~/GitHub/dot/Debian/config/zsh/zshrc ./.zshrc
+
+ln -s ~/GitHub/dot/Debian/bin/ ./.bin
 
 cd .local/share/
 
@@ -113,21 +87,15 @@ ln -s ~/GitHub/dot/Debian/fonts/ ./
 
 fc-cache -f -v
 
-ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
+ln -s GitHub/dot/Debian/config/latexmkrc ./.latexmkrc
 
 ln -s GitHub/dot/Debian/config/Xmodmap ./.Xmodmap
 
-cd /tmp
+cd ~/.local/share/gnome-shell
 
-wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+ln -s ~/GitHub/dot/Debian/gnome_extensions/extensions ./extensions
 
-zcat install-tl-unx.tar.gz | tar xf -
-
-cd install-tl-*/
-
-sudo perl ./install-tl --gui
-
-sudo usermod -aG libvirt jfreitas
+cd ~
 
 mkdir ~/nvidia/ && cd ~/nvidia/
 
@@ -135,7 +103,7 @@ git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 
 cd nv-codec-headers
 
-git checkout 4026cb02a6fee06068e45ce296e2f2fa947688d9
+#git checkout 4026cb02a6fee06068e45ce296e2f2fa947688d9
 
 sudo make install
 
@@ -144,8 +112,6 @@ cd ~/nvidia/
 git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg/
 
 cd ~/nvidia/ffmpeg/
-
-#./configure --enable-nonfree --enable-cuda-nvcc --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --disable-static --enable-shared
 
 ./configure --enable-nonfree --enable-cuda-nvcc --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --enable-gpl \
 --enable-gnutls \
@@ -165,8 +131,42 @@ make -j $(nproc)
 
 sudo make install
 
-sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks tex-common --purge
+sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks --purge
 
-sudo nala autoremove
+sudo rm /etc/default/grub
+
+sudo ln -s ~/GitHub/dot/Debian/grub/grub /etc/default/grub
+
+sudo ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+
+sudo update-grub2
+
+sudo rm -rf /etc/libvirt
+
+sudo ln -s ~/GitHub/dot/Debian/libvirt /etc/libvirt
+
+sudo rm /etc/environment
+
+sudo ln -s ~/GitHub/dot/Debian/environment/environment /etc/environment
+
+sudo cp ~/GitHub/dot/Debian/config/systemd/gondor_root.service /etc/systemd/system/
+
+sudo cp ~/GitHub/dot/Debian/config/systemd/gondor_root.timer /etc/systemd/system/
+
+sudo systemctl enable gondor_root.timer
+
+sudo systemctl enable gondor_root.service
+
+sudo systemctl enable fstrim.timer
+
+sudo systemctl enable libvirtd
 
 sudo systemctl enable docker
+
+sudo usermod -aG libvirt jfreitas
+
+sudo usermod -aG docker jfreitas
+
+sudo timedatectl set-local-rtc 1
+
+sudo chsh -s /bin/zsh jfreitas

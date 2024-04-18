@@ -2,43 +2,39 @@
 
 cd ~/
 
-git clone https://aur.archlinux.org/paru.git
-
-cd paru/
-
-makepkg -si --noconfirm
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 cd ..
 
-rm -rf paru
+rm -rf yay
 
-paru -S burpsuite candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git brave-bin zplug rstudio-desktop-bin
-
-curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+sudo curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 
-sudo pacman -Syy
+yay -Syy
 
 sleep 5
 
-sudo pacman -S --needed firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \
+yay -S burpsuite candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont \
+  auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git brave-bin zplug rstudio-desktop-bin \
+  google-chrome firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \
   ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts \
   ttf-roboto tex-gyre-fonts ttf-ubuntu-font-family ttf-anonymous-pro ttf-cascadia-code ttf-fantasque-sans-mono ttf-hack ttf-inconsolata \
   ttf-jetbrains-mono ttf-monofur adobe-source-code-pro-fonts cantarell-fonts inter-font ttf-opensans gentium-plus-font \
   adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk noto-fonts-emoji rofi playerctl \
-  scrot dunst pacman-contrib cuda composer file-roller filezilla htop imagemagick img2pdf mousetweaks nodejs npm php \
+  scrot dunst pacman-contrib composer file-roller filezilla htop imagemagick img2pdf mousetweaks nodejs npm php \
   numlockx pinta qalculate-gtk trayer vim-spell-pt volumeicon wget xdotool xmobar xmonad xmonad-contrib xournalpp vifm \
   xorg-xinit pcmanfm keychain alacritty autorandr ranger ripgrep the_silver_searcher \
   ttf-liberation usbutils wmctrl xorg-xauth xorg-xmodmap xorg-xrdb vlc sublime-text nasm \
   inetutils dnsutils bash-completion openssh tlp edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables ipset nss-mdns terminus-font \
   awesome-terminal-fonts bat exa bpytop meld neofetch transmission-gtk ttf-fira-code ttf-fira-mono ttf-font-awesome zathura zathura-djvu \
   zathura-pdf-mupdf zathura-ps gimp gimp-help-pt_br keepassxc p7zip papirus-icon-theme pdftk python-beautifulsoup4 python-pip terminator \
-  pavucontrol xorg-xinit fzf wget less flatpak cmake unzip ninja curl docker-compose yasm cuda cuda-tools nemo nemo-fileroller nemo-preview \
+  pavucontrol xorg-xinit fzf less flatpak cmake unzip ninja curl docker-compose yasm cuda cuda-tools nemo nemo-fileroller nemo-preview \
   virt-manager iptables-nft libvirt qemu-full base-devel texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context \
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
-  texstudio tldr linux-headers gdal jq
+  texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot
 
 
 #cd /tmp
@@ -65,15 +61,13 @@ sudo pacman -S --needed firefox nitrogen lxappearance dmenu arandr arc-gtk-theme
 
 #rm -rf neovim
 
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 mkdir ~/nvidia/ && cd ~/nvidia/
 
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 
 cd nv-codec-headers
-
-git checkout 4026cb02a6fee06068e45ce296e2f2fa947688d9
 
 sudo make install
 
@@ -82,8 +76,6 @@ cd ~/nvidia/
 git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg/
 
 cd ~/nvidia/ffmpeg/
-
-#./configure --enable-nonfree --enable-cuda-nvcc --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --disable-static --enable-shared
 
 ./configure --enable-nonfree --enable-cuda-nvcc --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --enable-gpl \
 --enable-gnutls \
@@ -119,8 +111,6 @@ ln -s ~/GitHub/dot/Manjaro/config/nvim/ ./
 
 ln -s ~/GitHub/dot/Manjaro/config/picom/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/terminator/ ./
-
 ln -s ~/GitHub/dot/Manjaro/config/xmonad/ ./
 
 ln -s ~/GitHub/dot/Manjaro/config/xmobar/ ./
@@ -147,7 +137,7 @@ ln -s ~/GitHub/dot/Manjaro/config/texstudio/texstudio.ini ./
 
 cd ~
 
-ln -s ~/GitHub/dot/Manjaro/bin/ ./.local/bin
+ln -s ~/GitHub/dot/Manjaro/bin/ ./.bin
 
 cd .local/share/
 
@@ -157,15 +147,29 @@ fc-cache -f -v
 
 cd ~
 
-ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc
+ln -s ~/GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
 
-ln -s GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
+ln -s ~/GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
+
+ln -s ~/GitHub/dot/Manjaro/config/histdb  /.histdb
+
+rm .zshrc
+
+ln -s ~/GitHub/dot/Manjaro/config/zsh/zshrc ./.zshrc
+
+sudo rm /etc/pacman.conf
 
 sudo ln -s ~/GitHub/dot/Manjaro/pacman/hooks /etc/pacman.d/
 
-sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.d/pacman.conf
+sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.conf
 
-sudo ln -s ~/GitHub/dot/Manjaro/grub/grub ./
+sudo rm /etc/default/grub
+
+sudo ln -s ~/GitHub/dot/Manjaro/grub/grub /etc/default/grub
+
+sudo rm -rf /etc/libvirt
+
+sudo ln -s ~/GitHub/dot/Manjaro/libvirt /etc/libvirt
 
 sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
 
@@ -181,7 +185,7 @@ sudo systemctl enable manjaro_keyboard.service
 
 sudo systemctl enable sshd
 
-sudo systemctl enable tlp # You can comment this command out if you didn't install tlp, see above
+sudo systemctl enable tlp
 
 sudo systemctl enable fstrim.timer
 
