@@ -1,3 +1,15 @@
+alias vim='nvim'
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias cat='bat'
+alias aup='arch-update.sh'
+
+#### Docker ####
+alias dcd='docker-compose down --rmi all --volumes'
+alias dcu='docker-compose up -d'
+alias dcs='docker-compose down'
+alias dcb='docker-compose exec app bash'
+
 #### Git ####
 alias ge='git status'
 alias ga='git add'
@@ -16,19 +28,6 @@ alias gr='git remote'
 alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
-
-alias aup='arch-update.sh'
-alias pac='sudo pacman'
-alias riv='cd /ArquivosLinux/Dropbox/php/vagrant/rivendel'
-alias vul='vagrant up laravel && vagrant rsync-auto'
-alias vud='vagrant halt laravel'
-alias vsl='vagrant ssh laravel'
-alias avell='teclado_avell.sh'
-
-# Changing "cat" to "bat"
-alias cat='bat'
-
-alias vim='nvim'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -55,12 +54,8 @@ alias jctl="journalctl -p 3 -xb"
 
 
 # Changing "ls" to "exa"
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --binary --color=always --group-directories-first'  # long format
-alias lt='exa -aT --group-directories-first' # tree listing
-alias lr='exa --color=always --sort newest --group-directories-first' # tree listing
-alias ls='/usr/bin/exa -la --binary --color=always --group-directories-first' # my preferred listing
-
-# Navegação entre diretórios
-alias d='dirs -v'
-for index ({1..9}) alias "$index"="cd +${index}"; unset index
+alias la='exa -a --icons --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --icons --binary --color=always --group-directories-first'  # long format
+alias lt='exa -aT --icons --group-directories-first' # tree listing
+alias lr='exa --icons --color=always --sort newest --group-directories-first' # tree listing
+alias ls='exa -la --icons -snewest --binary --color=always --group-directories-first' # my preferred listing
