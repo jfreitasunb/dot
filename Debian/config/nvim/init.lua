@@ -23,4 +23,5 @@ require('plugins/nvim-lspconfig')
 require('plugins/nvim-treesitter')
 require('plugins/alpha-nvim')
 require('plugins/comment')
+require('plugins/fundo')
 

@@ -96,7 +96,11 @@ return packer.startup(function(use)
       'saadparwaiz1/cmp_luasnip',
     },
   }
-
+  -- Undo
+  use {
+    'kevinhwang91/nvim-fundo', requires = 'kevinhwang91/promise-async',
+     run = function() require('fundo').install() end
+  }
   -- Statusline
   use {
     'feline-nvim/feline.nvim',
