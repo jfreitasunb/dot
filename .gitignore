@@ -713,3 +713,4 @@ Debian/config/xmonad/stack.yaml
 Debian/config/xmonad/stack.yaml.lock
 Debian/config/xmonad/xmonad-contrib/
 Debian/config/xmonad/xmonad/
+Debian/config/nvim/plugin/packer_compiled.lua
