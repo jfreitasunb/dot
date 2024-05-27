@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+#if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
@@ -6,52 +6,8 @@ if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 ---@type LazySpec
 return {
 
-  -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
-
-  -- == Examples of Overriding Plugins ==
-
-  -- customize alpha options
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
-      }
-      return opts
-    end,
-  },
-
   -- You can disable default plugins as follows:
   { "max397574/better-escape.nvim", enabled = false },
-
-  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-  {
-    "L3MON4D3/LuaSnip",
-    config = function(plugin, opts)
-      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
-      -- add more custom luasnip configuration such as filetype extend or custom snippets
-      local luasnip = require "luasnip"
-      luasnip.filetype_extend("javascript", { "javascriptreact" })
-    end,
-  },
 
   {
     "windwp/nvim-autopairs",
@@ -81,5 +37,52 @@ return {
         Rule("a", "a", "-vim")
       )
     end,
+  },
+  {
+    "lervag/vimtex",
+    config = function()
+      vim.g.vimtex_quickfix_open_on_warning = 0
+      vim.g.vimtex_quickfix_ignore_filters = "Underfull"
+      vim.g.vimtex_quickfix_ignore_filters = "Overfull"
+      vim.g.vimtex_quickfix_ignore_filters = "specifier changed to"
+      vim.g.tex_flavor = "latex"
+      vim.g.vimtex_view_method = "zathura"
+    end,
+  },
+  {
+    'kevinhwang91/nvim-fundo', requires = 'kevinhwang91/promise-async',
+    config = function()
+      require("fundo").setup()
+      vim.o.undofile = true
+    end,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function ()
+      -- PARA AS LINHAS DE INDENTAÇÃO
+      local highlight = {
+        "RainbowRed",
+        "RainbowYellow",
+        "RainbowBlue",
+        "RainbowOrange",
+        "RainbowGreen",
+        "RainbowViolet",
+        "RainbowCyan",
+      }
+      
+      local hooks = require "ibl.hooks"
+      -- create the highlight groups in the highlight setup hook, so they are reset
+      -- every time the colorscheme changes
+      hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+          vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+          vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+          vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+          vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+          vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+          vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+          vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+      end)
+      require("ibl").setup { indent = { highlight = highlight } }      
+    end
   },
 }
