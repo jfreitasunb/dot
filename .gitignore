@@ -1,12 +1,5 @@
 Manjaro/config/zsh/.zcompdump
-Manjaro/config/zsh/.zcompdump
 Manjaro/config/R/Rhistory
-Manjaro/config/zsh/.zcompdump
-Manjaro/config/zsh/.zcompdump
-Manjaro/config/zsh/.zcompdump
-Manjaro/config/zsh/.zcompcache/composer-pkgs
-Manjaro/config/zsh/.zcompdump
-Mordor/config/nvim/plugin/packer_compiled.lua
 Arch/config/zsh/.zcompdump
 Debian/config/zsh/.zcompdump
 Debian/config/xmonad/.ghc.environment.x86_64-linux-8.8.4
@@ -714,3 +707,4 @@ Debian/config/xmonad/stack.yaml.lock
 Debian/config/xmonad/xmonad-contrib/
 Debian/config/xmonad/xmonad/
 Debian/config/nvim/plugin/packer_compiled.lua
+Manjaro/config/zsh/.zcompdump
