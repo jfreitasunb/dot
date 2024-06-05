@@ -107,7 +107,8 @@ ln -s ~/GitHub/dot/Manjaro/config/aliases/ ./
 
 ln -s ~/GitHub/dot/Manjaro/config/autorandr/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/nvim/ ./
+#ln -s ~/GitHub/dot/Manjaro/config/nvim/ ./
+ln -s ~/GitHub/dot/Manjaro/config/astronvim-jfreitas ./nvim
 
 ln -s ~/GitHub/dot/Manjaro/config/picom/ ./
 
@@ -151,7 +152,7 @@ ln -s ~/GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
 
 ln -s ~/GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
-ln -s ~/GitHub/dot/Manjaro/config/histdb  /.histdb
+#ln -s ~/GitHub/dot/Manjaro/config/histdb  /.histdb
 
 rm .zshrc
 
