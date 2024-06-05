@@ -1,9 +1,0 @@
-[Unit]
-Description=Sincronização entre Dropbox e OneDrive
-
-[Timer]
-OnCalendar=*-*-* 17:25:00
-Persistent=true
-
-[Install]
-WantedBy=basic.target

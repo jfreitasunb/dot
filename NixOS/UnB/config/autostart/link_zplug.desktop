@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Zplug
-GenericName=Link zplug
-Comment=Atualiza o link para o zplug
-Exec=/home/jfreitas/.bin/atualiza_link_zplug.sh
-Terminal=false
-Type=Application
-StartupNotify=false
