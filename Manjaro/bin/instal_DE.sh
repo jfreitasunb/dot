@@ -34,7 +34,7 @@ yay -S burpsuite candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifo
   virt-manager iptables-nft libvirt qemu-full base-devel texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context \
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
-  texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot
+  texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox onedrive-abraunegg
 
 
 #cd /tmp
@@ -147,6 +147,8 @@ ln -s ~/GitHub/dot/Manjaro/fonts/ ./
 fc-cache -f -v
 
 cd ~
+
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 
 ln -s ~/GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
 
