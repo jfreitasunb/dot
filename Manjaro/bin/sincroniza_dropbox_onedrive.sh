@@ -6,6 +6,6 @@ LISTA_DIRETORIOS="/Arquivos/Dropbox/Backups/Manjaro/OneDrive/lista_diretorios_on
 
 DROPBOX="/Arquivos/Dropbox/"
 
-ONEDRIVE="/Windows/Users/josea/OneDrive - unb.br/"
+ONEDRIVE="/Windows/Users/josea/OneDrive\ -\ unb.br"
 
 rsync -ravzzc --files-from="$LISTA_DIRETORIOS" --exclude-from="$EXCLUDE_LIST" "$DROPBOX" "$ONEDRIVE" --delete
