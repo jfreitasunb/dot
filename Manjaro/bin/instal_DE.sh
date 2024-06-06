@@ -142,7 +142,7 @@ ln -s ~/GitHub/dot/Manjaro/bin/ ./.bin
 
 cd .local/share/
 
-ln -s ~/GitHub/dot/Manjaro/fonts/ ./
+ln -s ~/GitHub/dot/fonts/ ./
 
 fc-cache -f -v
 
