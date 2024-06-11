@@ -31,7 +31,7 @@ if [ -d "$BACKUP_DESTINATION" ] ; then
     fi
   fi
 
-  BACKUP_SOURCE="/Arquivos/OneDrive/"
+  BACKUP_SOURCE="/home/jfreitas/OneDrive/"
 
   rsync -avzzc --delete "$BACKUP_SOURCE" "$BACKUP_DESTINATION"
 

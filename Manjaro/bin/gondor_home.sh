@@ -13,9 +13,9 @@ rotavidade=7
 if [ $diferenca -gt $rotavidade ];
 then
 
-    EXCLUDE_LIST="/Arquivos/OneDrive/Backups/Manjaro/excludes/exclude-HOME.list"
+    EXCLUDE_LIST="/home/jfreitas/OneDrive/Backups/Manjaro/excludes/exclude-HOME.list"
 
-    DEST_HOME="/Arquivos/OneDrive/Backups/Manjaro/HOME/"
+    DEST_HOME="/home/jfreitas/OneDrive/Backups/Manjaro/HOME/"
 
     NOME_BACKUP="manjaro_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
 
