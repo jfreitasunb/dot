@@ -1,10 +1,10 @@
 #!/bin/bash
 
-EXCLUDE_LIST="/Arquivos/OneDrive/Backups/Debian/excludes/exclude-debian.list"
+EXCLUDE_LIST="/home/jfreitas/OneDrive/Backups/Debian/excludes/exclude-debian.list"
 
 NOME_BACKUP="debian_backup_diario_root_"$(date +%Y-%m-%d)".tar.bz2"
 
-LOCAL_BACKUP="/Arquivos/OneDrive/Backups/Debian/Backup-Diario/"
+LOCAL_BACKUP="/home/jfreitas/OneDrive/Backups/Debian/Backup-Diario/"
 
 tar -cjf "$LOCAL_BACKUP""$NOME_BACKUP" /etc
 

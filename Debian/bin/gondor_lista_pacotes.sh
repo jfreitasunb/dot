@@ -4,7 +4,7 @@ NOME_BACKUP_GNOME="debian_gnome_settings_"$(date +%Y-%m-%d)".ini"
 
 NOME_BACKUP="debian_lista_pacotes_instalados_APT_"$(date +%Y-%m-%d)".lst"
 
-LOCAL_BACKUP="/Arquivos/OneDrive/Backups/Debian/Backup-Diario/"
+LOCAL_BACKUP="/home/jfreitas/OneDrive/Backups/Debian/Backup-Diario/"
 
 dpkg-query -f '${binary:Package}\n' -W > "$LOCAL_BACKUP""$NOME_BACKUP"
 

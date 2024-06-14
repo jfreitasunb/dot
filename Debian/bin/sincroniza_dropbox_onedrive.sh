@@ -1,10 +1,10 @@
 #!/bin/bash -x
 
-EXCLUDE_LIST="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-BACKUP-DROPBOX.list"
+EXCLUDE_LIST="/home/jfreitas/Dropbox/Backups/Gondor/excludes/exclude-BACKUP-DROPBOX.list"
 
-LISTA_DIRETORIOS="/Arquivos/Dropbox/Backups/Gondor/OneDrive/lista_diretorios_onedrive.list"
+LISTA_DIRETORIOS="/home/jfreitas/Dropbox/Backups/Gondor/OneDrive/lista_diretorios_onedrive.list"
 
-DROPBOX="/Arquivos/Dropbox/"
+DROPBOX="/home/jfreitas/Dropbox/"
 
 ONEDRIVE="/Windows/Users/josea/OneDrive\ -\ unb.br"
 
