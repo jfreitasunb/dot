@@ -2,11 +2,11 @@
 
 cd ~/
 
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 
 cd ..
 
-rm -rf yay
+rm -rf yay-bin
 
 sudo curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 
@@ -16,7 +16,7 @@ yay -Syy
 
 sleep 5
 
-yay -S burpsuite candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont \
+yay -S --needed burpsuite candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont \
   auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git brave-bin zplug rstudio-desktop-bin \
   google-chrome firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \
   ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts \
