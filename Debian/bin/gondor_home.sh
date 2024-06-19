@@ -13,11 +13,11 @@ rotavidade=7
 if [ $diferenca -gt $rotavidade ];
 then
 
-    EXCLUDE_LIST="/home/jfreitas/OneDrive/Backups/Manjaro/excludes/exclude-HOME.list"
+    EXCLUDE_LIST="/home/jfreitas/OneDrive/Backups/Debian/excludes/exclude-HOME.list"
 
-    DEST_HOME="/home/jfreitas/OneDrive/Backups/Manjaro/HOME/"
+    DEST_HOME="/home/jfreitas/OneDrive/Backups/Debian/HOME/"
 
-    NOME_BACKUP="manjaro_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
+    NOME_BACKUP="debian_backup_diario_home-jfreitas_"$(date +%Y-%m-%d)".tar.bz2"
 
     cd "$DEST_HOME"
 
