@@ -34,7 +34,7 @@ yay -S --needed firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-ico
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
   dconf-editor gparted gnome-browser-connector texstudio tldr gdal jq candy-icons-git picom siji-git ttf-meslo \
   ttf-ms-fonts ttf-unifont auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git xorg-xsetroot feh brave-bin zplug rstudio-desktop-bin \
-  dropbox
+  dropbox docker
 
 git clone https://github.com/neovim/neovim
 
@@ -45,6 +45,10 @@ git checkout stable
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 
 sudo make install
+
+cd ~
+
+rm -rf neovim
 
 cd ~/.config/
 
@@ -154,4 +158,4 @@ sudo chattr +C /var/lib/docker
 
 sudo chattr +C /var/lib/libvirt
 
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
