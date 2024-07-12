@@ -26,7 +26,7 @@ SAVEHIST=1000000000
 setopt HIST_SAVE_NO_DUPS
 
 # History won't show duplicates on search.
-#setopt HIST_FIND_NO_DUPS
+setopt HIST_FIND_NO_DUPS
 #if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ] ; then
 #    PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
 #fi
@@ -43,9 +43,11 @@ if [ -d "$HOME/.cabal/bin" ] ; then
     PATH="$HOME/.cabal/bin:$PATH"
 fi
 
-#if [ -d "$HOME/.cargo/bin" ] ; then
-#    PATH="$HOME/.cargo/bin:$PATH"
-#fi
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+PATH="/opt/cuda/bin/:$PATH"
 
 export PATH
 
@@ -57,7 +59,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 _comp_options+=(globdots) # With hidden files
 
 # zplug - manage plugins
-source /usr/share/zplug/init.zsh
+source /usr/share/zsh/scripts/zplug/init.zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
@@ -67,6 +69,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "junegunn/fzf"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "larkery/zsh-histdb"
 
 # zplug - install/load new plugins when zsh is started or reloaded
 if ! zplug check --verbose; then
@@ -80,26 +83,35 @@ zplug load
 #bindkey '^[[A' history-substring-search-up
 #bindkey '^[[B' history-substring-search-down
 
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+#bindkey "$terminfo[kcuu1]" history-substring-search-up
+#bindkey "$terminfo[kcud1]" history-substring-search-down
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 source ~/.config/aliases/aliases
 
-if [ -d "$HOME/.pyenv" ] ; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-fi
+autoload -Uz add-zsh-hook
 
+_zsh_autosuggest_strategy_histdb_top() {
+    local query="
+        select commands.argv from history
+        left join commands on history.command_id = commands.rowid
+        left join places on history.place_id = places.rowid
+        where commands.argv LIKE '$(sql_escape $1)%'
+        group by commands.argv, places.dir
+        order by places.dir != '$(sql_escape $PWD)', count(*) desc
+        limit 1
+    "
+    suggestion=$(_histdb_query "$query")
+}
+
+ZSH_AUTOSUGGEST_STRATEGY=histdb_top
+
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+
+#added by Anaconda3 2.4.1 installer
+#export PATH="/home/jfreitas/anaconda3/bin:$PATH"
 source ~/.config/zsh/.p10k.zsh
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-#neofetch
-
