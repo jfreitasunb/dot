@@ -33,6 +33,8 @@ cd ~
 
 rm -rf neovim
 
+curl -fsS https://dlang.org/install.sh | bash -s dmd
+
 git clone https://github.com/abraunegg/onedrive.git
 
 cd onedrive
@@ -105,7 +107,7 @@ ln -s ~/GitHub/dot/Debian/gnome_extensions/extensions ./extensions
 
 cd ~
 
-curl -fsS https://dlang.org/install.sh | bash -s dmd
+curl https://pyenv.run | bash
 
 sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks --purge
 
