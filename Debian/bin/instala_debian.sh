@@ -93,61 +93,17 @@ ln -s ~/GitHub/dot/Debian/gnome_extensions/extensions ./extensions
 
 cd ~
 
-mkdir ~/nvidia/ && cd ~/nvidia/
-
-git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
-
-cd nv-codec-headers
-
-#git checkout 4026cb02a6fee06068e45ce296e2f2fa947688d9
-
-sudo make install
-
-cd ~/nvidia/
-
-git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg/
-
-cd ~/nvidia/ffmpeg/
-
-./configure --enable-nonfree --enable-cuda-nvcc --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --enable-gpl \
---enable-gnutls \
---enable-libaom \
---enable-libass \
---enable-libfdk-aac \
---enable-libfreetype \
---enable-libmp3lame \
---enable-libopus \
---enable-libvorbis \
---enable-libvpx \
---enable-libx264 \
---enable-libx265 \
---enable-nonfree
-
-make -j $(nproc)
-
-sudo make install
-
-cd ~
-
-rm -rf nvidia
-
 sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks --purge
 
 sudo rm /etc/default/grub
 
 sudo ln -s ~/GitHub/dot/Debian/grub/grub /etc/default/grub
 
-sudo ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
-
 sudo update-grub2
 
 sudo rm -rf /etc/libvirt
 
 sudo ln -s ~/GitHub/dot/Debian/libvirt /etc/libvirt
-
-sudo rm /etc/environment
-
-sudo ln -s ~/GitHub/dot/Debian/environment/environment /etc/environment
 
 sudo cp ~/GitHub/dot/Debian/config/systemd/gondor_root.service /etc/systemd/system/
 
