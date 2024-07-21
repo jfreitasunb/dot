@@ -57,12 +57,13 @@ rm -rf dlang
 
 rm -rf onedrive
 
-
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 cd ~/.config/
 
 ln -s ~/GitHub/dot/Debian/config/alacritty ./
+
+rm -rf autostart
 
 ln -s ~/GitHub/dot/Debian/config/autostart ./
 
