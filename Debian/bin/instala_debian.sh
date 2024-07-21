@@ -35,6 +35,10 @@ rm -rf neovim
 
 curl -fsS https://dlang.org/install.sh | bash -s dmd
 
+DLANG=$(/usr/bin/ls ~/dlang/ | grep dmd | awk '{print $1}')
+
+source ~/dlang/$DLANG/activate
+
 git clone https://github.com/abraunegg/onedrive.git
 
 cd onedrive
@@ -44,6 +48,15 @@ cd onedrive
 make clean; make;
 
 sudo make install
+
+deactivate
+
+cd ~
+
+rm -rf dlang
+
+rm -rf onedrive
+
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
