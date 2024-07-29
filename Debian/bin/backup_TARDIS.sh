@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 #Ler: https://bencane.com/2015/09/22/preventing-duplicate-cron-job-executions/
 PIDFILE=/home/jfreitas/.temporario/backup_TARDIS.pid
 
