@@ -34,7 +34,7 @@ yay -S --needed firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-ico
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
   dconf-editor gparted gnome-browser-connector texstudio tldr gdal jq candy-icons-git picom siji-git ttf-meslo \
   ttf-ms-fonts ttf-unifont auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git xorg-xsetroot feh brave-bin zplug rstudio-desktop-bin \
-  dropbox docker sof-firmware
+  dropbox docker sof-firmware flatpak man
 
 git clone https://github.com/neovim/neovim
 
@@ -63,8 +63,6 @@ ln -s ~/GitHub/dot/Arch/config/autorandr/ ./
 ln -s ~/GitHub/dot/Debian/config/astronvim-jfreitas ./nvim
 
 ln -s ~/GitHub/dot/Arch/config/picom/ ./
-
-ln -s ~/GitHub/dot/Arch/config/terminator/ ./
 
 ln -s ~/GitHub/dot/Arch/config/xmonad/ ./
 
