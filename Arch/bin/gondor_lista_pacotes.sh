@@ -1,20 +1,12 @@
 #!/bin/bash
 
-# ROTATIVIDADE=10
+NOME_BACKUP_GNOME="arch_gnome_settings_"$(date +%Y-%m-%d)".ini"
 
-# NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
+NOME_BACKUP_YAY="arch_lista_pacotes_instalados_YAY_"$(date +%Y-%m-%d)".lst"
 
-NOME_BACKUP_GNOME="gondor_gnome_settings_"$(date +%Y-%m-%d)".ini"
+NOME_BACKUP_PACMAN="arch_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
 
-# NOME_BACKUP_YAY="gondor_lista_pacotes_instalados_YAY_"$(date +%Y-%m-%d)".lst"
-#
-NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
-
-NOME_BACKUP_PARU="gondor_lista_pacotes_instalados_YAY_"$(date +%Y-%m-%d)".lst"
-
-LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Gondor/Backup-Diario/"
-
-# dpkg-query -f '${binary:Package}\n' -W > $LOCAL_BACKUP$NOME_BACKUP
+LOCAL_BACKUP="/Arquivos/Dropbox/Backups/Arch/Backup-Diario/"
 
 pacman -Qqe | grep -v "$(pacman -Qqm)" > "$LOCAL_BACKUP""$NOME_BACKUP_PACMAN"
 

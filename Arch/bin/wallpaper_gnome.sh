@@ -2,7 +2,7 @@
 # script that changes me GNOME wallpapers in random order
 
 # setting the base path
-export wallpaper_path=/Arquivos/Dropbox/Wallpapers
+export wallpaper_path=/home/jfreitas/OneDrive/Pictures/Wallpapers
 shopt -s nullglob
 
 # storing images in an array

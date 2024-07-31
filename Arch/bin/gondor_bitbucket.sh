@@ -1,51 +1,51 @@
 #!/bin/bash
 
-EXCLUDE_LIST_TEX="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-TEX.list"
+EXCLUDE_LIST_TEX="/home/jfreitas/OneDriveUnB/Backups/Debian/excludes/exclude-TEX.list"
 
-EXCLUDE_LIST_LARAVEL="/Arquivos/Dropbox/Backups/Gondor/excludes/exclude-GitHub_Repos_laravel.list"
+EXCLUDE_LIST_LARAVEL="/home/jfreitas/OneDriveUnB/Backups/Debian/excludes/exclude-GitHub_laravel.list"
 
 ALGEBRA1="/home/jfreitas/GitHub/Algebra-1/"
-DEST_ALGEBRA1="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_1/2024-1"
+DEST_ALGEBRA1="/home/jfreitas/OneDriveUnB/UnB/Disciplinas/Graduacao/Algebra_1/2024-1"
 
-IAL="/home/jfreitas/GitHub/IAL/"
-DEST_IAL="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/IAL/2023-2"
+#IAL="/home/jfreitas/GitHub/IAL/"
+#DEST_IAL="/home/jfreitas/OneDriveUnB/UnB/Disciplinas/Graduacao/IAL/2023-2"
 
-AULASONLINE="/home/jfreitas/GitHub/video_aulas/"
-DEST_AULASONLINE="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/pdf_video_aulas"
-
-CODIGOSR="/home/jfreitas/GitHub/Codigos-R"
-DEST_CODIGOSR="/Arquivos/Dropbox/UnB"
+#AULASONLINE="/home/jfreitas/GitHub/video_aulas/"
+#DEST_AULASONLINE="/home/jfreitas/OneDriveUnB/UnB/Disciplinas/Graduacao/pdf_video_aulas"
 
 #ALGEBRA_LINEAR="/home/jfreitas/GitHub/algebra_linear/"
-#DEST_ALGEBRA_LINEAR="/Arquivos/Dropbox/UnB/Disciplinas/Graduacao/Algebra_Linear/2019-1"
+#DEST_ALGEBRA_LINEAR="/home/jfreitas/OneDriveUnB/UnB/Disciplinas/Graduacao/Algebra_Linear/2019-1"
 
 #CAT="/home/jfreitas/GitHub/cat/"
-#DEST_CAT="/Arquivos/Dropbox/UnB/CAT"
+#DEST_CAT="/home/jfreitas/OneDriveUnB/UnB/CAT"
 
 #MONITORIAMAT="/home/jfreitas/GitHub/inscricoesmonitoria/"
-#DEST_MONITORIAMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoesmonitoria"
+#DEST_MONITORIAMAT="/home/jfreitas/OneDriveUnB/UnB/Projetos-PHP/inscricoesmonitoria"
+
+#INSCRICOESPOSMAT="/home/jfreitas/GitHub/inscricoespos/"                  
+#DEST_INSCRICOESPOSMAT="/home/jfreitas/OneDriveUnB/UnB/Projetos-PHP/inscricoespos"
 
 #POSMAT="/home/jfreitas/GitHub/inscricoespos/"
-#DEST_POSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespos"
+#DEST_POSMAT="/home/jfreitas/OneDriveUnB/UnB/Projetos-PHP/inscricoespos"
 
 #INSCRICOESPNPD="/home/jfreitas/GitHub/inscricoespnpd/"
-#DEST_INSCRICOESPNPD="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoespnpd"
+#DEST_INSCRICOESPNPD="/home/jfreitas/OneDriveUnB/UnB/Projetos-PHP/inscricoespnpd"
 
 #PROFICIENCIA="/home/jfreitas/GitHub/proficiencia/"
-#DEST_PROFICIENCIA="/Arquivos/Dropbox/UnB/Projetos-PHP/proficiencia"
+#DEST_PROFICIENCIA="/home/jfreitas/OneDriveUnB/UnB/Projetos-PHP/proficiencia"
 
 #SITEMONITORIAMAT="/home/jfreitas/GitHub/site-monitoriamat/"
-#DEST_SITEMONITORIAMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/site-monitoriamat"
+#DEST_SITEMONITORIAMAT="/home/jfreitas/OneDriveUnB/UnB/Projetos-PHP/site-monitoriamat"
 
 #INSCRICOESVERAO="/home/jfreitas/GitHub/inscricoesverao/"
-#DEST_INSCRICOESVERAO="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoesverao"
+#DEST_INSCRICOESVERAO="/home/jfreitas/OneDriveUnB/UnB/Projetos-PHP/inscricoesverao"
 
 #INSCRICOESEVENTOSMAT="/home/jfreitas/GitHub/inscricoeseventos/"
-#DEST_INSCRICOESEVENTOSMAT="/Arquivos/Dropbox/UnB/Projetos-PHP/inscricoeseventos"
+#DEST_INSCRICOESEVENTOSMAT="/home/jfreitas/OneDriveUnB/UnB/Projetos-PHP/inscricoeseventos"
 
 rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$ALGEBRA1" "$DEST_ALGEBRA1"
 
-rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$IAL" "$DEST_IAL"
+#rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$IAL" "$DEST_IAL"
 
 rsync -avzz "$CODIGOSR" "$DEST_CODIGOSR"
 #rsync -avzz --exclude-from="$EXCLUDE_LIST_TEX" "$AULASONLINE" "$DEST_AULASONLINE"
@@ -55,6 +55,8 @@ rsync -avzz "$CODIGOSR" "$DEST_CODIGOSR"
 #rsync -avzz "$CAT" "$DEST_CAT"
 
 #rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$MONITORIAMAT" "$DEST_MONITORIAMAT"
+
+rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$INSCRICOESPOSMAT" "$DEST_INSCRICOESPOSMAT"
 
 #rsync -avzz --exclude-from="$EXCLUDE_LIST_LARAVEL" "$POSMAT" "$DEST_POSMAT"
 
