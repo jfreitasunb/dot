@@ -18,7 +18,7 @@ reflector -c Brazil -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 
 pacman -Syyy
 
-pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-lts-headers xdg-user-dirs xdg-utils gvfs nfs-utils inetutils dnsutils bash-completion openssh acpi acpi_call tlp edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables ipset nss-mdns acpid os-prober ntfs-3g terminus-font awesome-terminal-fonts bat exa bpytop zsh libreoffice-fresh libreoffice-fresh-pt-br meld neofetch transmission-gtk ttf-fira-code ttf-fira-mono ttf-font-awesome zathura zathura-djvu zathura-pdf-mupdf zathura-ps gimp gimp-help-pt_br keepassxc p7zip papirus-icon-theme pdftk python-beautifulsoup4 python-pip terminator alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol xorg-xinit fzf wget texstudio less flatpak cmake unzip ninja curl docker-compose yasm cuda cuda-tools nemo nemo-fileroller nemo-preview virt-manager iptables-nft libvirt qemu-full
+pacman -S acpi acpi_call acpid alsa-utils awesome-terminal-fonts base-devel bash-completion bat bpytop bridge-utils cmake curl dialog dnsmasq dnsutils dosfstools ebtables edk2-ovmf efibootmgr grub gvfs inetutils ipset iptables-nft less libvirt linux-lts-headers mtools network-manager-applet networkmanager nfs-utils nss-mdns ntfs-3g openbsd-netcat openssh os-prober pacman-contrib p7zip pipewire pipewire-alsa pipewire-jack pipewire-pulse python-beautifulsoup4 python-pip qemu-full terminus-font tlp ttf-fira-code ttf-fira-mono ttf-font-awesome unzip vde2 virt-manager wget wpa_supplicant xdg-user-dirs xdg-utils xorg-xinit zsh
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
