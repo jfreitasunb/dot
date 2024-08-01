@@ -30,13 +30,10 @@ systemctl enable tlp
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable libvirtd
-systemctl enable docker
 
 useradd -m jfreitas
 
 usermod -aG libvirt jfreitas
-
-usermod -aG docker jfreitas
 
 touch /etc/sudoers.d/jfreitas
 
