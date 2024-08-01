@@ -16,25 +16,7 @@ yay -Syy
 
 sleep 5
 
-yay -S --needed firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \
-  ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts \
-  ttf-roboto tex-gyre-fonts ttf-ubuntu-font-family ttf-anonymous-pro ttf-cascadia-code ttf-fantasque-sans-mono ttf-hack ttf-inconsolata \
-  ttf-jetbrains-mono ttf-monofur adobe-source-code-pro-fonts cantarell-fonts inter-font ttf-opensans gentium-plus-font \
-  adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk noto-fonts-emoji rofi playerctl \
-  scrot dunst pacman-contrib composer file-roller filezilla htop imagemagick img2pdf mousetweaks \
-  pinta qalculate-gtk trayer vim-spell-pt volumeicon wget xdotool xmobar xmonad xmonad-contrib xournalpp vifm \
-  xorg-xinit pcmanfm keychain alacritty autorandr ranger ripgrep the_silver_searcher \
-  ttf-liberation usbutils wmctrl xorg-xauth xorg-xmodmap xorg-xrdb vlc sublime-text \
-  inetutils dnsutils bash-completion openssh tlp edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables ipset nss-mdns terminus-font \
-  awesome-terminal-fonts bat exa bpytop meld neofetch transmission-gtk ttf-fira-code ttf-fira-mono ttf-font-awesome zathura zathura-djvu \
-  zathura-pdf-mupdf zathura-ps gimp gimp-help-pt_br keepassxc p7zip papirus-icon-theme pdftk python-beautifulsoup4 terminator \
-  pavucontrol xorg-xinit fzf wget less flatpak cmake unzip ninja curl docker-compose yasm nemo nemo-fileroller nemo-preview \
-  virt-manager iptables-nft libvirt qemu-full base-devel texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context \
-  texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
-  texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
-  dconf-editor gparted gnome-browser-connector texstudio tldr gdal jq candy-icons-git picom siji-git ttf-meslo \
-  ttf-ms-fonts ttf-unifont auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git xorg-xsetroot feh brave-bin zplug rstudio-desktop-bin \
-  dropbox docker sof-firmware flatpak man
+yay -S --needed adobe-source-code-pro-fonts adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts alacritty arandr arc-gtk-theme arc-icon-theme auto-cpufreq autorandr brave-bin candy-icons-git cantarell-fonts composer dconf-editor dmenu docker docker-compose dropbox dunst exa feh file-roller filezilla firefox flatpak flatpak fzf gdal gentium-plus-font gimp gimp-help-pt_br gnome-browser-connector gnu-free-fonts gparted htop imagemagick img2pdf inter-font jq keepassxc keychain libreoffice-fresh libreoffice-fresh-pt-br lxappearance man meld mousetweaks nemo nemo-fileroller nemo-preview neofetch ninja nitrogen noto-fonts noto-fonts-cjk noto-fonts-emoji nss-mdns openbsd-netcat openssh otf-font-awesome-5 papirus-icon-theme pavucontrol pcmanfm pdftk picom pinta playerctl python-beautifulsoup4 qalculate-gtk ranger ripgrep rofi rstudio-desktop-bin scrot siji-git sof-firmware sublime-text terminus-font tex-gyre-fonts texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex texstudio the_silver_searcher tldr transmission-gtk trayer ttf-anonymous-pro ttf-bitstream-vera ttf-cascadia-code ttf-croscore ttf-dejavu ttf-droid ttf-fantasque-sans-mono ttf-fira-code ttf-fira-mono ttf-font-awesome ttf-hack ttf-ibm-plex ttf-inconsolata ttf-jetbrains-mono ttf-liberation ttf-liberation ttf-linux-libertine ttf-material-design-icons-git ttf-meslo ttf-monofur ttf-ms-fonts ttf-opensans ttf-roboto ttf-ubuntu-font-family ttf-unifont unzip usbutils vifm vim-spell-pt vlc vlc volumeicon wget wget wmctrl xdotool xmobar xmonad xmonad-contrib xorg-xauth xorg-xinit xorg-xinit xorg-xmodmap xorg-xrdb xorg-xsetroot xournalpp yasm zathura zathura-djvu zathura-pdf-mupdf zathura-ps zplug
 
 git clone https://github.com/neovim/neovim
 
@@ -132,23 +114,11 @@ sudo systemctl enable gondor_root.timer
 
 sudo systemctl enable gondor_root.service
 
-sudo systemctl enable sshd
-
-sudo systemctl enable tlp
-
-sudo systemctl enable fstrim.timer
-
-sudo systemctl enable libvirtd
-
 sudo systemctl enable docker
 
 sudo systemctl enable --now auto-cpufreq.service
 
-sudo usermod -aG libvirt jfreitas
-
 sudo usermod -aG docker jfreitas
-
-sudo timedatectl set-local-rtc 1
 
 sudo chattr +C /var/log
 
@@ -156,4 +126,4 @@ sudo chattr +C /var/lib/docker
 
 sudo chattr +C /var/lib/libvirt
 
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
