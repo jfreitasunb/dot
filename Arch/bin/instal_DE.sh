@@ -127,3 +127,5 @@ sudo chattr +C /var/lib/docker
 sudo chattr +C /var/lib/libvirt
 
 chsh -s $(which zsh)
+
+curl https://pyenv.run | bash
