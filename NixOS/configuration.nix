@@ -167,6 +167,7 @@
     brave
     git
     github-desktop
+    gnome.gnome-tweaks
     libnotify
     neovim
     sof-firmware
