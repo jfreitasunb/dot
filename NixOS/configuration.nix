@@ -171,6 +171,7 @@
     neovim
     sof-firmware
     wget
+    zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
