@@ -167,6 +167,7 @@
     brave
     git
     github-desktop
+    libnotify
     neovim
     sof-firmware
     wget
