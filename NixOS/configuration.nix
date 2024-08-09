@@ -43,7 +43,43 @@
   };
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.gnome.games.enable = false;
+  services.xserver.desktopManager.gnome.flashback.enableMetacity = true;
+  programs.dconf.enable = true;
+  services.flatpak.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  services.power-profiles-daemon.enable = false;
+
+  # Ativando o Xmonad
+  services.xserver.windowManager.xmonad = {
+     enable = true;
+     enableContribAndExtras = true;
+  };
+
+  # Instalando o Hyprland
+  programs.hyprland.enable = true;
+  
+  # Removendo alguns pacotes do Gnome
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+   cheese # webcam tool
+   gnome-calendar
+   gnome-clocks
+   gnome-contacts
+   gnome-weather
+   gnome-maps
+   gnome-music
+   epiphany # web browser
+   geary # email reader
+   gnome-characters
+   totem # video player
+  ]);
 
   #Gerenciamento de energia
   powerManagement.enable = true;
