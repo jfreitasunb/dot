@@ -710,3 +710,4 @@ Debian/config/nvim/plugin/packer_compiled.lua
 Manjaro/config/zsh/.zcompdump
 Manjaro/config/astronvim-jfreitas/lazy-lock.json
 Debian/config/astronvim-jfreitas/lazy-lock.json
+NixOS/nixos-switch.log

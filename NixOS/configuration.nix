@@ -1,14 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +19,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -56,73 +58,73 @@
 
   # Ativando o Xmonad
   services.xserver.windowManager.xmonad = {
-     enable = true;
-     enableContribAndExtras = true;
+    enable = true;
+    enableContribAndExtras = true;
   };
 
   # Instalando o Hyprland
   programs.hyprland.enable = true;
-  
+
   # Removendo alguns pacotes do Gnome
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
-   cheese # webcam tool
-   gnome-calendar
-   gnome-clocks
-   gnome-contacts
-   gnome-weather
-   gnome-maps
-   gnome-music
-   epiphany # web browser
-   geary # email reader
-   gnome-characters
-   totem # video player
-  ]);
+  environment.gnome.excludePackages =
+    (with pkgs; [
+      gnome-photos
+      gnome-tour
+    ])
+    ++ (with pkgs.gnome; [
+      cheese
+      gnome-calendar
+      gnome-clocks
+      gnome-contacts
+      gnome-weather
+      gnome-maps
+      gnome-music
+      epiphany
+      geary
+      gnome-characters
+      totem
+    ]);
 
   #Gerenciamento de energia
   powerManagement.enable = true;
   services.thermald.enable = true;
   services.tlp = {
-      enable = true;
-      settings = {
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
-        CPU_MIN_PERF_ON_AC = 0;
-        CPU_MAX_PERF_ON_AC = 100;
-        CPU_MIN_PERF_ON_BAT = 0;
-        CPU_MAX_PERF_ON_BAT = 20;
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 20;
 
-       #Optional helps save long term battery health
-       START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
-       STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
-
-      };
+      #Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+    };
   };
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
-   battery = {
+    battery = {
       governor = "powersave";
       turbo = "never";
-   };
-   charger = {
+    };
+    charger = {
       governor = "performance";
       turbo = "auto";
-   };
+    };
   };
-  
 
   # Configure keymap in X11
   services.xserver = {
     layout = "br";
     xkbVariant = "thinkpad";
   };
-  
+
   # Configure console keymap
   console.keyMap = "br-abnt2";
 
@@ -152,17 +154,25 @@
   users.users.jfreitas = {
     isNormalUser = true;
     description = "José Antônio";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     neovim
-     wget
+    alejandra
+    brave
+    git
+    github-desktop
+    gnome.gnome-tweaks
+    libnotify
+    neovim
+    sof-firmware
+    wget
+    zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -209,6 +219,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
-
