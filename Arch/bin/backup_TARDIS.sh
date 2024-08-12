@@ -37,20 +37,12 @@ then
         fi
       fi
     else
-      ## Process not found assume not running
       echo $$ > $PIDFILE
       if [ $? -ne 0 ]
       then
         exit 1
       fi
     fi
-  else
-    echo $$ > $PIDFILE
-    if [ $? -ne 0 ]
-    then
-      exit 1
-    fi
-  fi
 
     BACKUP_SOURCE="/home/jfreitas/"
 
@@ -61,7 +53,7 @@ then
     umount $BACKUP_DEVICE
 
     rm $PIDFILE
-  fi
 
- echo $(date '+%Y-%m-%d') > ~/.temporario/data_ultimo_backup_tardis
+    echo $(date '+%Y-%m-%d') > ~/.temporario/data_ultimo_backup_tardis
+  fi
 fi
