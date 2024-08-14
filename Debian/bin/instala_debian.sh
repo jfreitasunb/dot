@@ -103,6 +103,8 @@ cd ~
 
 ln -s ~/GitHub/dot/Debian/config/zsh/zshrc ./.zshrc
 
+ln -s ~/GitHub/dot/Debian/config/zsh/zsh_history ./.zsh_history
+
 ln -s ~/GitHub/dot/Debian/bin/ ./.bin
 
 ln -s GitHub/dot/Debian/config/latexmkrc ./.latexmkrc
@@ -124,6 +126,10 @@ cd ~
 curl https://pyenv.run | bash
 
 sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks --purge
+
+sudo rm /etc/systemd/logind.conf
+
+sudo ln -s ~/GitHub/dot/Debian/logind/logind.conf /etc/systemd/logind.conf
 
 sudo rm /etc/default/grub
 
