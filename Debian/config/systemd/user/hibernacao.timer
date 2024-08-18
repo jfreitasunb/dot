@@ -1,0 +1,10 @@
+[Unit]
+Description=Hiberna quando a tela é fechada
+
+[Timer]
+Restart=always
+OnUnitInactiveSec=10s
+Persistent=true
+
+[Install]
+WantedBy=basic.target
