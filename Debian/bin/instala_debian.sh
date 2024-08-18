@@ -103,7 +103,7 @@ ln -s ~/GitHub/dot/Debian/config/zathura/ ./
 
 ln -s ~/GitHub/dot/Debian/config/zsh/ ./
 
-ln -s ~/GitHub/dot/Arch/config/systemd ./
+ln -s ~/GitHub/dot/Debian/config/systemd ./
 
 rm -rf keepassxc
 
