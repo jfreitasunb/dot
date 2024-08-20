@@ -94,6 +94,14 @@ rm .zshrc
 
 ln -s ~/GitHub/dot/Arch/config/zsh/zshrc ./.zshrc
 
+sudo rm /etc/systemd/logind.conf
+
+sudo ln -s /home/jfreitas/GitHub/dot/Arch/logind/logind.conf /etc/systemd/
+
+sudo rm /etc/mkinitcpio.conf
+
+sudo ln -s /home/jfreitas/GitHub/dot/Arch/mkinitcpio/mkinitcpio.conf /etc/ 
+
 sudo rm /etc/pacman.conf
 
 sudo ln -s ~/GitHub/dot/Arch/pacman/pacman.conf /etc/
@@ -125,6 +133,8 @@ sudo chattr +C /var/log
 sudo chattr +C /var/lib/docker
 
 sudo chattr +C /var/lib/libvirt
+
+sudo mkinitcpio P
 
 chsh -s $(which zsh)
 
