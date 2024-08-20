@@ -1,0 +1,1845 @@
+rm -rf kdeconnect
+lscd ~/.config/\
+\
+ln -s ~/GitHub/dot/Debian/config/alacritty ./\
+\
+ln -s ~/GitHub/dot/Debian/config/autostart ./\
+\
+ln -s ~/GitHub/dot/Debian/config/aliases/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/autorandr/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/nvim/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/picom/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/terminator/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/xmonad/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/xmobar/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/zathura/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/zsh/ ./
+cd ~/.config/
+ln -s ~/GitHub/dot/Debian/config/alacritty ./\
+\
+ln -s ~/GitHub/dot/Debian/config/autostart ./\
+\
+ln -s ~/GitHub/dot/Debian/config/aliases/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/autorandr/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/nvim/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/picom/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/terminator/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/xmonad/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/xmobar/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/zathura/ ./\
+\
+ln -s ~/GitHub/dot/Debian/config/zsh/ ./
+rm -rf autostart
+ln -s ~/GitHub/dot/Debian/config/autostart ./
+rm QtProject.conf
+rm -rf keepassxc\
+\
+ln -s ~/GitHub/dot/Debian/config/keepassxc/ ./
+mkdir texstudio\
+\
+cd texstudio\
+\
+ln -s ~/GitHub/dot/Debian/config/texstudio/texstudio.ini ./
+ln -s GitHub/dot/Gondor/config/latexmkrc ./.latexmkrc\
+\
+ln -s GitHub/dot/Debian/config/Xmodmap ./.Xmodmap\
+\
+cd ~/.local/share/gnome-shell
+unlink extensions
+ln -s ~/GitHub/dot/Debian/gnome_extensions/extensions ./extensions
+cat /etc/grub.d
+unlink alacritty autostart aliases nvim picom autorandr xmonad xmobar terminator zsh keepassxc gtk-3.0
+unlink alacritty
+unlink {autostart,aliases}
+unlink aliases
+unlink xmo*
+unlink xmonad
+unlink xmobar
+unlink autostart
+unlink picom
+unlink terminator
+unlink zsh
+unlink zathura
+unlink keepassxc
+unlink gtk-3.0
+unlink autorandr
+unlink .latexmkrc
+ln -s ~/GitHub/dot/Debian/config/latexmkrc ./.latexmkrc
+vim teclado.desktop
+vim numlockx.desktop
+cd Debian/config/systemd
+vim gondor_root.timer
+vim gondor_root.service
+cd VMs
+cd KVM
+cd GitHub/dot/Debian/libvirt
+sudo chown jfreitas:jfreitas popos20.04.xml
+cd /etc/libvirt/qemu/networks
+cd autostart
+sudo rm default.xml
+sudo virsh net-start default
+sudo virsh net-autostart default
+sudo chown jfreitas:jfreitas default.xml
+lsmod| grep nvidia
+vim instala_debian.sh
+cat instala_debian.sh
+sudo nala install -y fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 exa feh flameshot flatpak fzf git keepassxc linux-headers-$(uname -r) lxappearance lxqt-policykit nvidia-driver nvidia-cuda-dev nvidia-cuda-gdb nvidia-cuda-toolkit p7zip p7zip-full pavucontrol pdftk tcl tk8.6 picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev suckless-tools gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev git curl libnotify-dev libcurl4-openssl-dev haskell-stack libpango1.0-0 fonts-liberation libu2f-udev numlockx libx11-dev libxinerama-dev texstudio tldr jupyter docker-ce docker-ce-cli containerd.io docker-compose-plugin yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk alacritty gparted libclang-dev brave-browser sublime-text vscode
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft-archive-keyring.gpg
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo nala install code
+sudo nala remove linux-image-6.1.0-17-amd64
+sudo nala remove linux-headers-6.1.0-17-amd64
+rm microsoft.gpg
+sudo dpkg -i rstudio-2023.12.1-402-amd64.deb
+cd /etc/libvirt
+cd qemu
+virsh define MoodleMAT.xml
+qemu-system-x86_64 -machine help
+cd .config/zsh
+rm -rf .zcompdump
+sudo systemctl restart libvirtd
+scp 192.168.122.69:~/moodle.zip ~/Downloads/
+sudo nala install zip
+sudo nala install unzip
+cd Downloads/moodle4.3.3
+scp moodle-4.3.3.zip 192.168.122.69:~/
+scp moodle.zip 192.168.122.69:~/
+ssh 192.168.122.69
+scp 192.168.122.69:~/moodle_20241.zip ~/Downloads/
+cd lua/astronvim
+xclipboard
+sudo nala install xclip
+sudo nala ripgrep
+$ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb\
+$ sudo dpkg -i ripgrep_13.0.0_amd64.deb
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb\
+sudo dpkg -i ripgrep_13.0.0_amd64.deb
+ssh 192.168.122.107
+sudo nala install build-essential libssl-dev
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+command -c nvm
+command -v nvm
+nvm list
+nvm install
+nvm install node
+nvm use node
+sudo apt install curl php-cli php-mbstring git unzip
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+HASH=`curl -sS https://composer.github.io/installer.sig`
+echo $HASH
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+composer
+sudo vim /etc/php/8.2/cli/php.ini
+php -v
+sudo nala install php8.2-curl
+sudo install php-mbstring
+sudo nala install php-mbstring
+sudo nala install php-xml
+sudo nvim /etc/php/8.2/cli/php.ini
+omposer dump autoload
+composer dump autoload
+composer dump
+vim .env
+rm -rf inscricoespos
+composer run refresh
+composer dump-autoload
+php artisan config:clear
+composer --no-scripts
+composer install --no-scripts
+php artisan package:discover --ansi\
+
+php artisan package:discover --ansi
+mkdir -p {sessions,views,cache}
+cd storage
+mkdir framework
+mv sessions framework
+mv cache framework
+mv views framework
+composer install
+sudo nala install docker-compose
+npx update-browserslist-db@latest
+mkdir .temporario
+touch data_ultimo_backup
+systemctl list-units --user
+ln -s ~/GitHub/dot/Debian/config/systemd/ ./
+mkdir system
+rm -rf system
+mkdir systemd
+ln -s ~/GitHub/dot/Debian/config/systemd/user ./
+cd default.target.wants
+unlink onedrive.service
+vim ~/.bin/gondor_home.sh
+ls timers.target.wants
+vim ~/.bin/gondor_lista_pacotes.sh
+systemctl list-timers --user
+vim .bin/gondor_lista_pacotes.sh
+desktop
+whereis github-desktop
+ls .local/share/flatpak
+ls /var/lib/flatpak/exports/share
+ls /var/lib/flatpak/exports/share/applications
+cat /var/lib/flatpak/exports/share/applications/io.github.shiftey.Desktop.desktop
+cd /var/lib/flatpak/exports/share/applications
+grep -i Exec= io.github.shiftey.Desktop.desktop
+cd .config/nvim/lua/astronvim
+rm ripgrep_13.0.0_amd64.deb
+sudo chown jfreitas:jfreitas Manjaro.xml
+cd /Arquivos/VMs_Temp
+sudo chown jfreitas:jfreitas popos20.04 manjaro.qcow2
+sudo chown jfreitas:jfreitas popos20.0
+sudo chown jfreitas:jfreitas popos20.04
+scp SI-20240223.sql 192.168.122.36:~/
+cd GitHub/SI/modules/oferta
+vim funcoes.php
+vim Downloads/LO-20232.txt
+scp andu.mat.unb.br:~/SI-20240223.sql ~/
+ssh 192.168.122.71
+mv LO-20241.csv LO-20241.txt
+vim LO-20232.txt
+vim LO-20241.txt
+scp moodle_20241.zip andu.mat.unb.br:~/
+ssh 172.16.36.236
+scp LO-20241.txt root@andu.mat.unb.br:/home/PAGINAS/si/modules/oferta_atualizacao/listas_SAA/
+scp LO-20241.txt andu.mat.unb.br:~/
+ssh moodle.mat.unb.br
+python3 -v
+vim wallpaper_gnome.desktop
+git clone https://github.com/abraunegg/onedrive.git\
+cd onedrive\
+./configure\
+make clean; make;\
+sudo make install
+onedrive --display-config
+onedrive --display-config >> config
+ls OneDrive
+rm -rf OneDrive
+cp /usr/lib/systemd/user/onedrive.service ~/.config/systemd/user/
+cp onedrive.service onedriveunb.service
+vim onedriveunb.service
+ls gtk-3.0/bookmarks
+vim gtk-3.0/bookmarks
+ls /Arquivos
+vim gondor_home.sh
+vim gondor_root.sh
+vim gondor_lista_pacotes.sh
+mkdir onedrive_unb
+cd onedrive_unb
+cp ../onedrive/config ./
+onedrive --confdir="~/.config/onedriveunb"
+cd .config/onedrive_unb
+cp config ../onedriveunb/
+rm -rf onedrive_unb
+cd onedriveunb
+kill -9 8111
+cd .config/onedrive
+sudo chown jfreitas:jfreitas Arquivos
+wget https://raw.githubusercontent.com/abraunegg/onedrive/master/config -O ~/.config/onedrive/config
+onedrive --confdir="~/.config/onedriveunb" --synchronize --verbose
+systemctl --user one
+systemctl --user enable onedriveunb.service
+systemctl --user enable onedriveunb.service --now
+rm -rf mozilla
+cd /Arquivos/OneDrive/php
+ls vagrant
+cd vagrant/rivendel
+ls Emural_Moodle
+ls Emural_Moodle/moodle/
+rm -rf onedrive
+make clean; make;\
+sudo make install
+ps aufxw | grep onedrive
+sudo nala install neofetch
+sudo nala install ftp
+ftp ftp://ftp.datasus.gov.br/cnes/
+ftp ftp://ftp.datasus.gov.br/cnes/BASE_DE_DADOS_CNES_202401.ZIP
+onedrive --synchronize
+ls /Arquivos/OneDrive/Pictures/Galeria\ Samsung/DCIM/Camera
+watch ls /Arquivos/OneDrive/Pictures/Galeria\ Samsung/DCIM/Camera | wc -l
+watch $(ls /Arquivos/OneDrive/Pictures/Galeria\ Samsung/DCIM/Camera | wc -l)
+watch (ls /Arquivos/OneDrive/Pictures/Galeria\ Samsung/DCIM/Camera | wc -l)
+ls /Arquivos/OneDrive/Pictures/Galeria\ Samsung/DCIM/Camera | wc -l
+cd /Arquivos/OneDrive/
+tar -czf video_aulas_MAT.tar.gz -C /Arquivos/ Video_aulas-MAT_UnB
+ps aufxw | grep tar
+tar -czf video_aulas_MAT.tar.gz /Arquivos/ Video_aulas-MAT_UnB
+rm video_aulas_MAT.tar.gz
+watch /bin/ls
+watch /bin/ls -ltrh
+tar -czf video_aulas_MAT.tar.gz /Arquivos/OneDrive/Video_aulas-MAT_UnB
+systemctl --user enable onedrive.service
+vim .bin/wallpaper_gnome.sh
+ssh root@172.16.37.109
+python -v venv testePDF
+sudo nala install virtualenv
+python3 -v venv testePDF
+sudo nala install python3.11-venv
+cd bin
+./activate
+pip install camelot
+cp ~/Downloads/teste_PDF.py ./
+chmod +x teste_PDF.py
+ls include/python3.11
+pip install pdfplumber pandas
+python --v
+python --V
+./teste_PDF.py
+. ./activate
+. ./bin/activate
+cp p1.pdf listapresenca_MAT0034_2024.1_01.pdf teste_PDF.py ../
+rm -rf testePDF
+python3 -m venv testePDF
+ls testePDF
+. ./testePDF/bin/activate
+mv teste_PDF.py testePDF/
+mv p1.pdf testePDF/
+mv listapresenca_MAT0034_2024.1_01.pdf testePDF/
+pip install cv2
+pip install camelot-py[cv]
+pip install "camelot-py[base]"
+python3 teste_PDF.py
+sudo nala install build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils libncursesw5-dev tk-dev libffi-dev liblzma-dev git -y
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+pyenv install --list
+pyenv install 3.12.0
+rm -rf lib include lib64 bin pyvenv.cfg
+pip install camelot-py[all]
+pip install camelot-py
+pip install opencv-python
+pip install ghostscript
+vim teste_PDF.py
+python teste_PDF.py
+cd .local/
+ls versions
+cd versions/3.12.0
+ls include
+ls include/python3.12
+ls lib
+ls share/man
+ls share/man/man1
+ls lib/python3.12/
+ls lib/python3.12/site-packages
+python3 -V
+pip install spyderâ€ƒ±kernels
+pip install spyder-kernels
+cd /Arquivos
+vim /Arquivos/OneDrive/Backups/Debian/excludes/exclude-HOME.list
+rm -rf .mozilla
+ls share
+java -version
+chmod +x burpsuite_community_linux_v2024_1_1_5.sh
+sudo ./burpsuite_community_linux_v2024_1_1_5.sh
+sudo dpkg -i dropbox_2024.01.22_amd64.deb
+vim keepassxc/keepassxc.ini
+ls Dropbox
+ls Dropbox/jota
+rm Dropbox/jota/jota\ \(jose\ freitas\'s\ conflicted\ copy\).kdbx
+ls Dropbox/Camera\ Uploads
+ssh 192.168.122.62
+cd testePDF
+cp .python-version ~/GitHub/Scripts-MAT-UnB/Emural/
+chmod +x novo_recupera_alunos_sigaa.sh
+pip install BeautifulSoup
+pip install BeautifulSoup4
+./trata_arquivos_sigaa.py
+./trata_arquivos_sigaa.py --folder ~/sigaa_arquivos-2024_1 --ano 2024 --semestre 1
+cat sigaa_arquivos-2024_1alunos_MAT_20241_2024-03-14_09:52:41.txt
+ls sigaa_arquivos-2024_1/
+python trata_arquivos_sigaa.py
+rm -rf sigaa_arquivos-2024_1
+rm sigaa_arquivos-2024_1alunos_MAT_20241_2024-03-14_*
+y
+cd scripts
+kill -9 26325
+./novo_recupera_alunos_sigaa.sh
+cd sigaa_arquivos-2024_1
+rm -rf sigaa_arquivos-2023_2
+rm sigaa_arquivos-2024_1a*
+rm sigaa_arquivos-2024_1_a*
+rm alunos_teste* sigaa_arquivos-2024_1temp_alunos_MAT_20241_2024-03-14_16:31:39.txt
+rm ~/atualiza_alunos.csv
+cd ../GitHub/Scripts-MAT-UnB/Emural
+touch ~/atualiza_alunos.csv
+cat ~/atualiza_alunos.csv
+py
+vim ~/sigaa_arquivos-202_alunos_MAT_20241_2024-03-14_10:48:04.txt
+vim ~/sigaa_arquivos-2024_1_alunos_MAT_20241_2024-03-14_10:48:04.txt
+r
+touch ~/alunos_teste.txt
+rm ~/alunos_teste.txt
+rm ~/alunos_teste_temp.txt
+cat ~/alunos_teste.txt
+cat ~/sigaa_arquivos-2024_1_alunos_MAT_20241_2024-03-14_16:34:50_temp.txt
+cat ~/sigaa_arquivos-2024_1_alunos_MAT_20241_2024-03-14_16:37:18_temp.txt
+cat ~/sigaa_arquivos-2024_1_arquivo_para_emural20241_2024-03-14_16:44:18.txt
+cat ~/sigaa_arquivos-2024_1_alunos_MAT_20241_2024-03-14_17:05:16.txt
+./extraiAlunosPDF.py
+vim extraiAlunosPDF.py
+ls ~/Downloads/listapresenca_MAT0034_2024.1_01.txt
+cat ~/Downloads/listapresenca_MAT0034_2024.1_01.txt
+chown jfreitas:jfreitas Manjaro.xml popos20.04.xml KDE_Neon.xml
+sudo chown jfreitas:jfreitas Manjaro.xml popos20.04.xml KDE_Neon.xml
+vim ~/sigaa_arquivos-2024_1_alunos_MAT_20241_2024-03-14_18:54:17.txt
+rm ~/Downloads/listapresenca_MAT0027_2024.1_04.txt
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0027_2024.1_04.pdf
+chmod +x insereturmaHTML.py
+./insereturmaHTML.py lista_alunos_matricula_MAT0027_1557036.html
+cp ~/sigaa_arquivos-2024_1/lista_alunos_matricula_MAT0027_1557036.html ./
+./insereturmaHTML.py -a lista_alunos_matricula_MAT0027_1557036.html
+rm insereturmaHTML.py lista_alunos_matricula_MAT0027_1557036.html
+./extraiAlunosPDF.py -a ~/Downloads/ialturma8.pdf
+cat GitHub/Scripts-MAT-UnB/Emural/trata_arquivos_sigaa.py
+cat atualiza_alunos.csv
+vim atualiza_alunos.csv
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0006_2024.1_01.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_06.pdf
+vim cn_3.txt
+vim c2_3.txt
+rm ~/.local/state/nvim/swap/%home%jfreitas%Downloads%Calculo\ 3\ Turrma\ 7\ SIGGAA\ .txt.swp
+vim Calculo\ 3\ Turrma\ 7\ SIGGAA\ .txt
+./extraiAlunosPDF.py -a ~/Downloads/Alunos_CN_3_1-2024.pdf
+cd ~/GitHub/Scripts-MAT-UnB/Emural
+eixt
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_01.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_IAL_2024.1_Hemar.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0031_2024.1_02.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_07.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_09.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_21.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_19.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_11.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_16.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_08.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_18.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0137_2024.1_09.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0031_2024.1_05.pdf
+./extraiAlunosPDF.py -a ~/Downloads/diario_MAT0031_2024.1_01.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0027_2024.1_06.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_05.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_14.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_17.pdf
+./extraiAlunosPDF.py -a ~/Downloads/Lista\ de\ presenÃ§a\ -\ CÃƒlculo\ 1\ -\ Turma\ 9\ -\ 2024.1.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_03.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_IAL\ MAT0031_2024.1_07.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_C2\ MAT0026_2024.1_12.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0026_2024.1_06.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0114_2024.1_02\ \(2\).pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0060_2024.1_01_22marco.pdf
+ssh 192.168.122.197
+neo
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0031_2024.1_03\ \(1\).pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0039_2024.1_01\ \(1\).pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_07-2.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_09-2.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_21-2.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_19-2.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_11-2.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_16-2.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_08-2.pdf
+ls -ltr
+curl -i -s -k -X $'POST' \\
+    -H $'Host: sigaa.unb.br' -H $'Content-Length: 254' -H $'Cache-Control: max-age=0' -H $'Sec-Ch-Ua: \"Not(A:Brand\";v=\"24\", \"Chromium\";v=\"122\"' -H $'Sec-Ch-Ua-Mobile: ?0' -H $'Sec-Ch-Ua-Platform: \"Linux\"' -H $'Upgrade-Insecure-Requests: 1' -H $'Origin: https://sigaa.unb.br' -H $'Content-Type: application/x-www-form-urlencoded' -H $'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.95 Safari/537.36' -H $'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' -H $'Sec-Fetch-Site: same-origin' -H $'Sec-Fetch-Mode: navigate' -H $'Sec-Fetch-User: ?1' -H $'Sec-Fetch-Dest: document' -H $'Referer: https://sigaa.unb.br/sigaa/portais/docente/docente.jsf' -H $'Accept-Encoding: gzip, deflate, br' -H $'Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7' -H $'Priority: u=0, i' -H $'Connection: close' \\
+    -b $'_ga=GA1.2.48771331.1710420019; JSESSIONID=08E89327A74CFF1300D0F04EC77C974B.sigaa38; _gid=GA1.2.1418308901.1711477742' \\
+    --data-binary $'formMenu=formMenu&formMenu%3Aj_id_jsp_1879301362_132=formMenu%3Aj_id_jsp_1879301362_133&formMenu%3Aj_id_jsp_1879301362_71=formMenu%3Aj_id_jsp_1879301362_108&javax.faces.ViewState=j_id3&formMenu%3Aj_id_jsp_1879301362_112=formMenu%3Aj_id_jsp_1879301362_112' \\
+    $'https://sigaa.unb.br/sigaa/ava/index.jsf'
+curl -i -s -k -X $'POST' \\
+    -H $'Host: sigaa.unb.br' -H $'Content-Length: 254' -H $'Cache-Control: max-age=0' -H $'Sec-Ch-Ua: \"Not(A:Brand\";v=\"24\", \"Chromium\";v=\"122\"' -H $'Sec-Ch-Ua-Mobile: ?0' -H $'Sec-Ch-Ua-Platform: \"Linux\"' -H $'Upgrade-Insecure-Requests: 1' -H $'Origin: https://sigaa.unb.br' -H $'Content-Type: application/x-www-form-urlencoded' -H $'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.95 Safari/537.36' -H $'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' -H $'Sec-Fetch-Site: same-origin' -H $'Sec-Fetch-Mode: navigate' -H $'Sec-Fetch-User: ?1' -H $'Sec-Fetch-Dest: document' -H $'Referer: https://sigaa.unb.br/sigaa/portais/docente/docente.jsf' -H $'Accept-Encoding: gzip, deflate, br' -H $'Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7' -H $'Priority: u=0, i' -H $'Connection: close' \\
+    -b $'_ga=GA1.2.48771331.1710420019; JSESSIONID=08E89327A74CFF1300D0F04EC77C974B.sigaa38; _gid=GA1.2.1418308901.1711477742' \\
+    --data-binary $'formMenu=formMenu&formMenu%3Aj_id_jsp_1879301362_132=formMenu%3Aj_id_jsp_1879301362_133&formMenu%3Aj_id_jsp_1879301362_71=formMenu%3Aj_id_jsp_1879301362_108&javax.faces.ViewState=j_id3&formMenu%3Aj_id_jsp_1879301362_112=formMenu%3Aj_id_jsp_1879301362_112' \\
+    $'https://sigaa.unb.br/sigaa/ava/index.jsf' > temp.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0031_2024.1_11.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0053_2024.1_03\ \(CN\).pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0026_2024.1_03\(C2\).pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0137_2024.1_04.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0137_2024.1_03.pdf
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0034_2024.1_03.pdf
+xz -V
+sudo systemctl status sshd
+sudo systemctl stop sshd
+sudo systemctl disable sshd
+sudo apt install \\
+> git \\
+> libx11-dev libxft-dev libxinerama-dev libxrandr-dev libxss-dev
+sudo apt install git libx11-dev libxft-dev libxinerama-dev libxrandr-dev libxss-dev
+ln -s ~/GitHub/dot/Debian/config/xmonad ./
+rm cabal.project
+rm -rf lib dist-newstyle .ghc.environment.x86_64-linux-8.8.4
+lx xpm
+ls xpm
+git clone https://github.com/xmonad/xmonad
+git clone https://github.com/xmonad/xmonad-contrib
+stack ghc
+sudo echo "[Desktop Entry]\
+Name=XMonad\
+Comment=Lightweight tiling window manager\
+Exec=xmonad\
+Icon=xmonad.png\
+Type=XSession" | sudo tee /usr/share/xsessions/xmonad.desktop
+stack upgrade
+vim conta_desativar_processada.csv
+awk '{printf("\"%s\" ",$0)} END { printf "\n" }' conta_desativar_processada.csv
+awk '{printf("\"%s\" ",$0)} END { printf "\n" }' conta_desativar_processada.csv > contas_desativar_emural.txt
+cat contas_desativar_emural.txt
+ssh root@172.16.4.21
+ssh jucelia@andu.mat.unb.br
+chown jfreitas:jfreitas ubuntu24.xml
+sudo chown jfreitas:jfreitas ubuntu24.xml
+sudo rm ubuntu22.04
+sudo chown jfreitas:jfreitas ubuntu24.qcow2
+onedrive
+onedrive --reauth
+ssh jfreitas@172.16.37.109
+./extraiAlunosPDF.py -a ~/Downloads/diario_MAT0053_2024.1_02.pdf
+./extraiAlunosPDF.py -a ~/Downloads/diario_MAT0059_2024.1_01.pdf
+neofetch
+sudo chown jfreitas:jfreitas ubuntu22.04.xml
+sudo nala install ttf-mscorefonts-installer
+rm -rf xmonad
+rm -rf xmonad-contrib
+rm rf .stack-work stack.yaml stack.yaml.lock
+rm -rf .stack-work
+ps aux | grep xmonad
+kill -9 7157
+xmonad
+cd xmonad
+tail xmonad.errors
+ls .cache/xmonad
+ghc
+sudo chown jfreitas:jfreitas ubuntu22.04.qcow2
+mv ubuntu22.04.qcow2 debian_xfce.qcow2
+mv debian_xfce.qcow2 debian_xmonad.qcow2
+ssh 192.168.122.121
+ssh root@172.16.4.3
+vim CID_10.xlsx
+vim CID_10.csv
+vim CID_10_principal.csv
+vim CID_10_secundaria.csv
+cd Documentos/temp
+ffmpeg -y -i 008_R_09042024_100000.dav -c:v libx264 -crf 24 008_R_09042024_100000.mp4
+ffmpeg -y -i 020_R_09042024_100002.dav -c:v libx264 -crf 24 020_R_09042024_100002.mp4
+ffmpeg -y -i 023_R_09042024_100002.dav -c:v libx264 -crf 24 023_R_09042024_100002.mp4
+ssh 172.16.4.3
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0034_2024.1_01.pdf
+ssh 192.168.122.123
+cd GitHub/dot/Debian/config
+scp -r xmonad 192.168.122.120:~/
+scp -r xmobar 192.168.122.120:~/
+scp -r lib 192.168.122.120:~/.config/xmonad/
+cd /usr/bin
+ls xmonad
+ls -la xmonad
+cd GitHub/dot/Arch/config/xmonad
+rm -rf xmonad stack
+cd .stack
+rm -rf .stack
+sudo nala install xmobar
+sudo apt install xmonad
+cd /usr/share/xsessions
+vun xmonad.desktop
+vim xmonad.desktop
+cp -R ~/GitHub/dot/Arch/config/xmonad/lib ./
+cd .config/xmobar
+vim trayer-padding-icon.sh
+sudo nala install trayer 0ad-dataf
+sudo nala install trayer feh
+cd ../xmobar
+bim doom-one-xmobarrc
+vim doom-one-xmobarrc
+cp -R ~/GitHub/dot/Arch/bin/kernel ./
+vim kernel
+cd /Arquivos/OneDrive/Pictures/Wallpapers
+pwd
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0025_2024.1_16-3.pdf
+cd .config/xmonad
+sudo nala install git libx11-dev libxft-dev libxinerama-dev libxrandr-dev libxss-dev
+git clone https://github.com/xmonad/xmonad\
+git clone https://github.com/xmonad/xmonad-contrib
+sudo apt install haskell-stack
+stack init
+stack install
+sudo apt remove xmonad libghc-xmonad-contrib-dev
+ls /usr/bin/xmonad
+sudo ln -s ~/.local/bin/xmonad /usr/bin
+sudo vim /usr/share/xsessions/xmonad.desktop
+sudo nvim /usr/share/xsessions/xmonad.desktop
+vim .config/nvim/init.lua
+vim .config/
+cp -R ~/GitHub/dot/Manjaro/config/nvim ./
+vim 03_relacoes.tex
+vim xmonad.hs
+cd GitHub/Algebra-1/Testes_semanais
+cd modulo_1
+rm Teste_1_Modulo_1.synctex.gz
+cp Teste_1_Modulo_1.tex Teste_1_Modulo_2.tex
+git add Teste_1_Modulo_2.tex
+mv Teste_1_Modulo_2.tex Teste_2_Modulo_1.tex
+rm Teste_1_Modulo_1.pdf
+mv Teste_1_Modulo_1.tex Teste_1.tex
+git commit -am "Mudando os nomes dos arquivos"
+mv Teste_2_Modulo_1.tex Teste_2.tex
+git commit -am "Renomenando arquivo"
+gs
+vim Teste_2.tex
+git status
+git push
+/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=start-github-desktop --file-forwarding io.github.shiftey.Desktop @@u %U @@
+sudo nala install blueman
+ssh -p 13508 moodle.mat.unb.br
+sudo nvim /etc/xdg/autostart/blueman.desktop
+cd GitHub/dot/Debian/
+mkdir blueman
+sudo cp /etc/xdg/autostart/blueman.desktop blueman
+sudo chown jfreitas:jfreitas blueman
+cd /etc/xdg/autostart
+sudo rm blueman.desktop
+sudo ln -s ~/GitHub/dot/Debian/blueman/blueman.desktop ./
+cd GitHub/dot
+vim .gitignore
+cd Debian/config/xmonad
+vim ~/GitHub/dot/.gitignore
+mv debian_xmonad.qcow2 debian_testing.qcow2
+ssh-keygen -f "/home/jfreitas/.ssh/known_hosts" -R "192.168.122.120"
+ssh 192.168.122.120
+cat /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_debian-bookworm.list
+exa
+exa -la
+ssh 172.16.36.203
+lsmod
+udo ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+blueman-applet
+vim nvidia.conf
+sudo touch nvidia.conf
+cat nvidia-blacklists-nouveau.conf >> nvidia.conf
+sudo cat nvidia-blacklists-nouveau.conf >> nvidia.conf
+cat nvidia-blacklists-nouveau.conf
+sudo vim nvidia.conf
+sudo nvim nvidia.conf
+sudo vim /etc/modprobe.d/nvidia-blacklists-nouveau.conf
+sudo nvim /etc/modprobe.d/nvidia-blacklists-nouveau.conf
+sudo nvim /etc/modprobe.d/nvidia.conf
+sudo batcat /boot/grub/grub.cfg
+vim nvidia-blacklists-nouveau.conf
+sudo rm nvidia.conf
+sudo ln -s /etc/alternatives/glx--nvidia-modprobe.conf ./nvidia.conf
+sudo ln -s /etc/alternatives/nvidia--nvidia-options.conf ./nvidia-options.conf
+cat nvidia-options.conf
+cp archlinux.qcow2 archlinux.qcow2-BKP-20240418
+mv archlinux.qcow2-BKP-20240418 archlinux.qcow2
+lspci| grep HDMI
+cat monitor_principal_e_tv.sh
+cat seta_monitores_login.sh
+xrandr | grep -c 'HDMI-0 connected'
+cd grub
+cat /etc/default/grub
+pyenv install -l
+ls .pyenv
+python -m venv xgboost
+python3 -m venv xgboost
+mkdir xgboost
+source ~/python_venvs/xgboost/bin/activate
+pip install spyder-kernels==2.4.*
+pip install pandas sklearn xgboost
+pip install xgboost
+rm -rf __pycache__
+rm -rf python_venvs
+pyenv versions
+./extraiAlunosPDF.py -a ~/Downloads/listapresenca_MAT0031_2024.1_09.pdf
+rm xgboost.py
+mkdir python_venvs
+which python3
+which python3.12
+python -m venv teste_xgboost
+source teste_xgboost/bin/activate
+pip install pandas scikit-learn xgboost
+pip uninstall pandas scikit-learn xgboost
+lsmod | grep nvidia
+lsmod | grep i915
+sudo rm /etc/udev/rules.d/61-gdm.rules
+pip install seaborn
+source python_venvs/teste_xgboost/bin/activate
+vim iris_xgboost.py
+scp iris_xgboost.py 192.168.122.28:~/
+cd GitHub/Scripts-MAT-UnB/Emural
+python trata_arquivos_sigaa.py --folder ~/sigaa_arquivos-2024_1 --ano 2024 --semestre 1
+cat .zshrc
+cd .pyenv
+ls shims
+curl -s https://s3.eu-central-1.amazonaws.com/jetbrains-ppa/0xA6E8698A.pub.asc | gpg --dearmor | sudo tee /usr/share/keyrings/jetbrains-ppa-archive-keyring.gpg > /dev/null\
+echo "deb [signed-by=/usr/share/keyrings/jetbrains-ppa-archive-keyring.gpg] http://jetbrains-ppa.s3-website.eu-central-1.amazonaws.com any main" | sudo tee /etc/apt/sources.list.d/jetbrains-ppa.list > /dev/null\
+sudo apt update\
+sudo apt install pycharm-community
+sudo nala install pycharm-community
+cd xgboost
+vim data/covid_data.csv
+kill -9 14380
+ps aux | grep python
+cd xgboost/data
+pip install cupy
+pip install cuml
+lspci
+nvidia-settings
+__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia firefox
+sudo nvidia-xconfig --prime
+cat /sys/bus/pci/devices/0000:01:00.0/power_state
+cat /boot/grub/grub.cfg
+sudo cat /boot/grub/grub.cfg
+cat /etc/modprobe.d/nvidia-options.conf
+cat /etc/modprobe.d/nvidia.conf
+__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia vlc
+echo $XDG_SESSION_TYPE
+ps aux | grep vlc
+cat .config/aliases/aliases
+cd xgboost/
+pip install jypiter
+pip install matplotlib
+pip install numpy pandas xgboost sklearn
+pip install numpy pandas xgboost scikit-learn
+pip install shap
+sudo nala remove pycharm-community
+sudo rm /etc/apt/sources.list.d/jetbrains-ppa.list
+rm -rf JetBrains/
+ls JNA
+ls JNA/temp
+rm -rf JetBrains
+source ~/python_venvs/teste_xgboost/bin/activate
+pip install kmodes
+pip install lightgbm
+pip install category_encoders
+pip install tpot timeit
+pip install tpot
+cd xgboost/kaggle
+python kaggle.py
+cp ~/Downloads/tps-06-mljar-quick-approach-with-eda.ipynb ./
+jupyter notebook
+cd GitHub/dot/Debian/bin
+cp instala_debian.sh 192.168.122.36:~/
+scp instala_debian.sh 192.168.122.36:~/
+composer update -W
+vim composer.json
+composer update
+php artisan clear-compiled\
+php artisan optimize:clear
+cat ~/.zsh_history
+vim ~/.zsh_history
+vim docker-compose.yml
+cd .vim
+cd .local/share/Trash
+ls expunged
+ls files
+cd files
+vim nvim/lua/astronvim/options.lua
+ssh anud
+mkdir .nvim
+mkdir undodir
+vim Dockerfile
+cd GitHub/dot/Debian/gnome_extensions/extensions/Vitals@CoreCoding.com
+ls schemas
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+vim GitHub/Algebra-1/notas_de_aula/Algebra_1.tex
+vim lua/plugins/user.lua
+vim neovim.yml
+vim .neoconf.json
+vim init.lua 
+vim xgboost/diabetes.py
+vim .config/nvim/lua/community.lua
+sudo -e Algebra_1.texOA
+vim ~/.config/nvim/lua/community.lua
+vim ~/.config/nvim/lua/plugins/user.lua
+rm -rf ~/.cache/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.local/share/nvim
+rm -rf .config/nvim
+ln -s ~/GitHub/dot/Debian/config/nvim ./
+vim .config/nvim/lua/plugins/fundo.lua
+vim .config/nvim/lua/plugins/vimtex.lua
+rm .config/nvim/lua/plugins/fundo.lua
+vim .config/nvim/lua/core/options.lua
+vim ~/.config/nvim/lua/core/options.lua
+vim lua/plugins/airline.lua
+ls plugin
+cd lua/core
+cd ../core
+cd ../plugins
+cat comment.lua
+cat nvim-tree.lua
+touch fundo.lua
+vim fundo.lua
+cd .nvim
+ls undodir
+cd /Arquivos/OneDrive/UnB/Afastamentos
+cd Verao-UFV
+cd ../ufg-catalao
+cd /Arquivos/OneDriveUnB/UnB/Afastamentos
+scp afastamento-modelo.tex 192.168.122.28:~/
+ssh 192.168.122.28
+cd GitHub/dot/Debian/gnome_extensions/extensions/
+scp nvim-main.zip 192.168.122.28:~/
+nvim Algebra_1.tex
+vim lua/plugins/whichkey.lua
+vim lua/packer_init.lua
+vim ~/GitHub/Algebra-1/notas_de_aula/Algebra_1.tex
+kill -9 1803
+kill -9 16894
+kill -9 16465
+npm install flowbite
+npm install sweetalert2
+sudo nala update && sudo nala upgrade
+cd GitHub
+history | grep composer
+composer create-project laravel/laravel livewire
+cd livewire
+cd GitHub/livewire
+cd ...
+cd inscricoespos
+cd ../livewire
+composer require livewire/livewire
+composer require laravel/breeze --dev
+npm install
+php artisan breeze:install
+php artisan make:livewire wizard
+npm install -D flowbite
+npm run dev
+ssh 172.16.4.21
+ssh-keygen -f "/home/jfreitas/.ssh/known_hosts" -R "192.168.122.36"
+scp root@172.16.4.161:/home/SERVERS/jatoba-nova/pgsql_dump.sql 
+scp root@172.16.4.161:/home/SERVERS/jatoba-nova/pgsql_dump.sql /
+ls ltrh
+ssh 192.168.122.36
+scp 172.16.4.161:/home/SERVERS/jatoba-nova/pgsql_dump.sql ~/
+scp root@172.16.4.161:/home/SERVERS/jatoba-nova/pgsql_dump.sql ~/
+exot
+ssh moodle
+scp -p 13508 andu.mat.unb.br:~/SI-20240508.sql ~/
+scp -P 13508 andu.mat.unb.br:~/SI-20240508.sql ~/
+scp -P 13508 andu.mat.unb.br:~/SI-2024058.sql ~/
+scp -P 13508 andu.mat.unb.br:~/banco_exercicios-20240508.sql ~/
+scp -P 13508 andu.mat.unb.br:~/banco_ex-20240508.sql ~/
+scp -P 13508 andu.mat.unb.br:~/banco_ex.sql ~/
+scp -P 13508 SI-2024058.sql  andu.mat.unb.br:~/
+scp -P 13508 banco_ex  andu.mat.unb.br:~/
+scp -P 13508 banco_ex.sql  andu.mat.unb.br:~/
+scp -P 13508 andu.mat.unb.br:~/teste.sql ~/
+ssh 172.16.1.103
+ssh root@andu
+ssh root@andu.mat.unb.br
+scp nova-andu.qcow2 172.16.37.109:~/
+sudo systemctl start ssh
+sudo systemctl start sshd
+sudo apt install sshd
+sudo apt install openssh-server
+sudo systemctl status ssh
+qemu-img convert nova-andu.qcow2 nova-andu.img
+python -m venv dengue_forecast
+cd dengue_forecast
+cp nova-andu.qcow2 nova-andu.qcow2-BKP
+ssh root@192.168.122.19
+scp -P 13508 nova-andu.img andu.mat.unb.br:~/
+rm nova-andu.img
+cp nova-andu.qcow2-BKP nova-andu.qcow2
+ssh 192.168.122.19
+ping DEP-MAT
+ping andu
+ssh root@172.16.4.9
+ssh 172.16.4.132
+ssh 172.16.4.134
+ls /boot
+sudo apt autoremove
+xit
+scp andu.mat.unb.br:~/Makefile_jatoba ~/
+scp andu.mat.unb.br:~/Makefile_nova-jatoba ~/
+scp andu.mat.unb.br:~/yp-jatoba ~/
+scp -r andu.mat.unb.br:~/yp-jatoba ~/
+scp -r andu.mat.unb.br:~/yp-nova-jatoba ~/
+scp -r andu.mat.unb.br:~/etc-jatoba ~/
+scp -r andu.mat.unb.br:~/nova-jatoba ~/
+ip -c a
+rm -rf yp-nova-jatoba
+scp -P13508 -r andu.mat.unb.br:~/yp-nova-jatoba ~/
+vim QuestionrioSBD2024_Report.csv
+ssh 172.16.36.203 -x
+unlink texstudio.ini
+sudo apt install ./google-chrome-stable_current_amd64.deb
+ssh inscricoesmat
+ssh inscricoes
+cp debian_kde.qcow2 debian_kde.qcow2-BKP-20240520
+scp andu.mat.unb.br:~/mysql_history ~/
+ssh 172.16.4.161
+ssh root@172.16.4.161
+ssh 172.16.37.109
+\:q
+mv debian_kde.qcow2-BKP-20240520 debian_kde.qcow2
+s
+ip install spyder-kernels
+ip install spyder-kernels==2.4
+ls teste_xgboost/lib
+ls teste_xgboost/share
+ls teste_xgboost
+ls dengue_forecast
+rm -rf teste_xgboost dengue_forecast
+python -m venv data_science
+source ~/python_venvs/data_science/bin/activate
+pip install spyder-kernels==2.4
+vim ~/.config/nvim/init.lua
+vim ~/.config/nvim/lua/core/keymaps.lua
+rm -rf .nvim
+rm -rf .cache/nvim
+rm -rf .local/share/nvim
+cd temp_manim
+ls lua
+ls lua/community.lua
+vim ~/temp_manim/teste.py
+cd ~/GitHub/Algebra-1/notas_de_aula
+cd .config/nvim
+vim lua/community.lua
+vim init.lua
+cd lua
+vim lazy_setup.lua
+cat polish.lua
+cat community.lua
+clear
+cd plugins
+vim user.lua
+rm -rf .local/share/nvim && rm -rf .cache/nvim
+nvim
+mkdir ~/.nvim
+ls ~/.vim
+rm -rf ~/.local/share/nvim && rm -rf ~/.cache/nvim
+cd .cache/nvim
+ls luac
+cd .local/share/nvim
+ls session
+ls lazy
+cd lazy
+cd astrocore
+ls doc
+cd GitHub/Algebra-1/notas_de_aula
+vim Algebra_1.tex
+cd /Arquivos/OneDriveUnB/UnB/Laboratorio_MAT
+sudo nala -y install podman
+sudo nala install podman
+cd GitHub/inscricoespos
+cd .config/texstudio
+whereis latex
+whereis xetex
+whereis texlive
+ls /usr/share/texlive
+ls /usr/share/texlive/texmf-dist
+cd GitHub/
+scp -P 13508 -r animacoes_manim andu:~/
+scp -P 13508 -r animacoes_manim jfreitas@andu.mat.unb.br:~/
+scp -P 13508 -R animacoes_manim jfreitas@andu.mat.unb.br:~/
+scp -P 13508 -r animacoes_manim/ jfreitas@andu.mat.unb.br:~/
+scp -P 13508 -r  animacoes_manim andu.mat.unb.br:~/
+scp -P 13508 animacoes_manim-main.zip andu:~/
+ls python_venvs
+cd GitHub/animacoes_manim
+cd algebra_linear
+cd sistemas_lineares
+ps aux 
+ps aux  | grep manim
+vim metodo_gaus_jordan_3x3_multiplas_solucoes.py
+rm -rf media __pycache__
+manim -qk metodo_gaus_jordan_3x3_multiplas_solucoes.py
+q
+watch nvidia-smi
+nvcc
+nvcc --help
+cuda
+ffmpeg -decoders |grep -i nvidia
+ffmpeg -encoders\
+
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim\
+rm -rf ~/.config/nvim/.git\
+nvim
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim\
+rm -rf ~/.config/nvim/.git
+cd ~/.config/libvirt
+cd qemu/
+chown jfreitas:jfreitas *
+cat /etc/fstab
+ssh 172.16.4.9
+mkdir nv-codec-headers
+suod make install
+git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg/
+sudo nala install build-essential yasm cmake libtool libc6 libc6-dev unzip wget libnuma1 libnuma-dev
+cd ffmpeg
+cd ../Download_torrents
+rm -rf nv-codec-headers
+git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
+cd nv-codec-headers
+git checkout origin/sdk/11.1
+cd ../ffmpeg
+./configure --enable-nonfree --enable-cuda-nvcc --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --enable-gpl \\
+--enable-gnutls \\
+--enable-libaom \\
+--enable-libass \\
+--enable-libfdk-aac \\
+--enable-libfreetype \\
+--enable-libmp3lame \\
+--enable-libopus \\
+--enable-libvorbis \\
+--enable-libvpx \\
+--enable-libx264 \\
+--enable-libx265 \\
+--enable-nonfree
+make -j $(nproc)
+cd ../../Download_torrents
+ffmpeg -y -vsync 0 -hwaccel cuda -hwaccel_output_format cuda -i The.Simpsons.S35E16.mkv -c:a copy -c:v h264_nvenc -b:v 5M output.mp4
+vlc output.mp4
+source ~/python_venvs/manim/bin/activate
+rm -rf manim*
+python -m venv manimgl
+python -m venv manim
+source ~/python_venvs/manimgl/bin/activate
+cd GitHub/dot/Manjaro/grub
+timedatectl
+rm manjaro-*
+vim msm_notifier.desktop
+sudo pru
+sqource .zshrc
+docker --remove-orphans
+dcy
+mkdir env
+vim env/mysql.env
+cd ../inscricoespos
+cd ../site_mat_joomla
+vim index.html
+rm index.html
+ps axu
+ps axu | grep docker
+kill -9 12122
+kill -9 638885
+pyenv version
+pyenv which python
+pyenv python -m venv .dengue
+pyenv python3.10 -m venv .dengue
+python -m venv ~/python_venvs/dengue
+showkey --scancodes
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+ps aux | grep docker
+kill -9 607118
+sudo
+poweroff
+sudo vim /etc/gdm/custom.conf
+gsettings set org.gnome.mutter experimental-features '["kms-modifiers"]'
+sudo vim /etc/mkinitcpio.
+sudo pacman -Syu --needed xorg-xwayland libxcb egl-wayland
+sudo rm -rf database
+dcb
+docker-compose down --remove-orphans
+wget https://downloads.joomla.org/br/cms/joomla3/3-10-12/Joomla_3-10-12-Stable-Full_Package.zip?format=zip
+onedrive --confdir="~/.config/onedriveunb" --reauth
+ls .config/onedriveunb
+cd .config/onedriveunb
+vim config
+onedrive --confdir="~/.config/onedrive" --reauth
+cp config ../onedrive/
+vim onedrive/config
+ssh 192.168.122.118
+scp Joomla_3.10.0-Stable-Full_Package.zip 192.168.122.118:~/
+cd GitHub/site_mat_joomla
+rm Dockerfile
+dcs
+dcd
+sudo docker system prune -a --volumes
+dcu
+scp -r andu.mat.unb.br:~/horde-novo ~/
+scp -p 13508 -r andu.mat.unb.br:~/horde-novo ~/
+scp -P 13508 -r andu.mat.unb.br:~/horde-novo ~/
+ssh -p 13508 caixeta@andu.mat.unb.br
+ssh -p 13508 -X caixeta@inga.mat.unb.br
+sudo systemctl restart gdm.service
+sudo systemctl status gdm.service
+yay -S sddm
+sudo systemctl disable gdm.service
+sudo systemctl enable sddm.service
+yay -Syyu
+sudo systemctl status sddm.service
+sudo vim /etc/mkinitcpio.conf
+vim GitHub/dot/Manjaro/grub/grub
+sudo mkinitcpio -P
+sudo systemctl disable sddm.service
+sudo systemctl enable gdm.service
+sudo chattr +C /var/log\
+\
+sudo chattr +C /var/lib/docker\
+\
+sudo chattr +C /var/lib/libvirt
+cd .config/systemd
+mkdir OneDrive
+mkdir OneDriveUnB
+vim .config/onedrive/config
+vim .config/onedriveunb/config
+vim
+onedrive --confdir="~/.config/onedriveunb" --synchronize --resync
+onedrive --confdir="~/.config/onedriveunb" --synchronize
+vim wallpaper_gnome.sh
+source ~/python_venvs/dengue/bin/activate
+deactivate
+ls ~/.pyenv
+ps aux | grep pip
+kill -9 30236
+cd python_venvs
+rm -rf dengue_forecast dengue
+rm .python-version
+rm teste.py
+cd .pyenv/versions
+rm -rf .pyenv
+onedrive --confdir="~/.config/onedrive" --synchronize
+onedrive --confdir="~/.config/onedrive" --synchronize --resync
+vim .config/xmonad/xmonad.hs
+./teclado_avell.sh
+sudo vim /etc/modprobe.d/clevo-xsm-wmi.conf
+yay -S spyder
+ls .ssh
+vim .ssh/config
+ssh inga
+yay -S nvidia-prime
+yay -S glxinfo
+prime-run glxinfo | grep "OpenGL render"
+prime-run subl
+prime-run nemo
+cp Dropbox/Artigo\ hanseniase/Brazil_UF_TB_monthly.xls tuberculo_ensamble
+rm -rf Dropbox
+DRI_PRIME=0 glxspheres64
+optimus-manager --status
+inxi -G
+mhwd -l -li
+yay -S optimus-manager
+viim settings.ini
+vim settings.ini
+ssh -X inga
+cat ../data/Brazil_UF_TB_monthly.csv
+cd codigo_artigo
+mv codigo_artigo tuberculo_ensamble
+cd tuberculo_ensamble
+mv tres_modelos.py tres_modelos_tuberculose_ensamble.py
+history | grep pyenv
+pyenv local 3.12.4
+cat .python-version
+vim .python-version
+mkdir data
+mv Brazil_UF_TB_monthly.xls data
+source ~/python_venvs/tb_ensamble/bin/activate
+python -v
+pip install jupyter
+jn
+jupyter
+pip install jupyter-notebook
+pip install jupyter-lab
+pip install jupyterlab
+mv tuberculo_ensamble tuberculose_ensamble
+source ~/python_venvs/dengue_forecast/bin/activate
+vim ~/.ssh/config
+sudo apt install build-essential\
+sudo apt install libcurl4-openssl-dev libsqlite3-dev pkg-config git curl\
+curl -fsS https://dlang.org/install.sh | bash -s dmd
+sudo apt install libnotify-dev
+source dlang/dmd-2.109.0/activate
+git clone https://github.com/abraunegg/onedrive.git\
+cd onedrive
+./configure --enable-notifications
+make clean; make;
+sudo make install
+systemctl --user restart onedrive.service
+ls dlang/dm*
+ls ~/dlang | grep dmd
+ls ~/dlang | grep dmd-
+ls ~/dlang | grep dmd | cut -f8
+ls ~/dlang | grep dmd | cut -f6 ''
+ls -l
+ls -l ~/dlang
+ls -l ~/dlang | grep dmd
+ls -l | awk '{print $7}'
+ls -l ~dlang/ | awk '{print $7}'
+ls -l ~/dlang/ | awk '{print $7}'
+source ~/dlang/$('ls ~/dlang/ | grep dmd | awk '{print $7}'')/activate
+DLANG = $('ls ~/dlang/ | grep dmd | awk '{print $7}'')
+DLANG = ls ~/dlang/ | grep dmd | awk '{print $7}'
+DLANG = (ls ~/dlang/ | grep dmd | awk '{print $7}')
+DLANG = $(ls ~/dlang/ | grep dmd | awk '{print $7}')
+DLANG=$(ls ~/dlang/ | grep dmd | awk '{print $7}')
+DLANG=$(/usr/bin/ls ~/dlang/ | grep dmd | awk '{print $7}')
+/usr/bin/ls ~/dlang/ | grep dmd | awk '{print $7}'
+/usr/bin/ls ~/dlang/ | grep dmd
+/usr/bin/ls ~/dlang/ | grep dmd | awk '{print $1}'
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo nala install xmonad xmobar libghc-xmonad-contrib-prof libghc-xmonad-extras-prof libghc-xmonad-wallpaper-prof
+onedrive --confdir="~/.config/onedrive"
+sudo nala install onedrive
+whereis onedrive
+systemctl --user restart onedriveunb.service
+systemctl --user daemon-reload
+systemctl --user stop onedriveunb.service
+sudo apt remove onedrive
+sudo add-apt-repository --remove ppa:yann1ck/onedrive
+wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_12/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/obs-onedrive.gpg > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_12/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
+sudo apt-get update
+sudo apt install --no-install-recommends --no-install-suggests onedrive
+ps aux | grep onedrive
+kill -9 16919
+sudo apt remove onedrive\
+sudo add-apt-repository --remove ppa:yann1ck/onedrive
+sudo rm /etc/systemd/user/default.target.wants/onedrive.service
+ls /usr/share/keyrings
+sudo rm /usr/share/keyrings/obs-onedrive.gpg
+sudo rm /etc/apt/sources.list.d/onedrive.list
+sudo apt update
+vim systemd/user/onedrive.service
+vim systemd/user/onedriveunb.service
+dconf load / < ~/OneDrive/Backups/Debian/Backup-Diario/debian_gnome_settings_2024-06-04.ini
+sudo apt -y install ./python3-envycontrol_3.4.0-1_all.deb
+sudo envycontrol -s hybrid
+cd .config/xmonad/
+rm -rf xmonad xmonad-contrib .stack-work stack.yaml stack.yaml.lock
+xmonad --recompile
+feh 
+vim wallpaper.sh
+wallpaper.sh
+sudo dpkg -i rstudio-2024.04.2-764-amd64.deb
+ls /etc/udev/rules.d
+xrandr
+lspci | grep -E "VGA|3D"
+cd /etc/udev/rules.d
+sudo unlink 61-gdm.rules
+ssh inga.mat.unb.br
+ssh -X inga.mat.unb.br
+sudo nala install libncurses-dev fakeroot wget bzip2 build-essential build-essential bc python bison flex rsync libelf-dev libssl-dev ibncurses-dev dwarves git debhelper kernel-package ncurses-dev fakeroot wget bzip2
+sudo nala install libncurses-dev fakeroot wget bzip2 build-essential
+sudo nala install libncurses-dev fakeroot wget bzip2 build-essential bc python bison flex rsync libelf-dev libssl-dev warves git debhelper kernel-package ncurses-dev fakeroot wget bzip2
+sudo nala install libncurses-dev fakeroot wget bzip2 build-essential bc python bison flex rsync libelf-dev libssl-dev warves git debhelper kernel-package fakeroot wget bzip2
+uname -a
+cp -v /boot/config-6.1.0-21-amd64 .config
+sudo nala install bison
+sudo nala install build-essential linux-headers-$(uname -r)
+sudo nala install libncurses5-dev
+sudo nala install debhelper-compat
+sudo nala install debhelper
+sudo nala install libelf-dev
+make bindeb-pkg -j `nproc` LOCALVERSION=-custom
+python -m venv ~/python_venvs/tb_ensamble
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo rm -rf jfreitas-BKP
+sudo rm -rfv jfreitas-BKP
+ps aux | grep dropbox
+kill -9 10533
+cd keepassxc
+sudo ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+sudo nvidia-modprobe -u
+source deactivate
+watch -n 1 nvidia-smi
+pip install catboost
+vim ~/.config/pip/pip.conf
+rm -rf .python-version
+vim ~/.zshrc
+cd .local/bin
+pip uninstall catboost 
+ls etc
+rm -rf etc lib
+ls bin
+rm -rf bin
+ls state
+rm -rf jupyter
+onedrive --confdir="~/.config/onedrive" --monitor
+onedrive --confdir="~/.config/onedriveunb" --monitor
+systemctl --user start onedriveunb.service
+sudo nala install trayer
+sudo dpkg -i python3-envycontrol_3.4.0-1_all.deb
+sudo envycontrol -s integrated
+inxi
+sudo envycontrol --reset
+load / < debian_gnome_settings_2024-06-14.ini
+dconf load / < debian_gnome_settings_2024-06-14.ini
+touch backup_TARDIS.pid
+cd share
+rm -rf nvim
+unlink nvim
+ln -s ~/GitHub/dot/Debian/config/astronvim-jfreitas ./nvim
+nvim .zshrc
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+source .zshrc
+cd tuberculose_ensamble
+sudo nala install texworks
+cd .cache/keepassxc
+vim keepassxc.ini
+vim onedriveunb/config
+vim onedrive.service
+inxi -Fza
+sudo unlink /etc/udev/rules.d/61-gdm.rules
+cd servidor-web/sitematjoomla
+chmod +w configuration.php
+cd gtk-3.0
+cd OneDrive/Documents/
+cd ../../OneDriveUnB/UnB/Informatica-MAT
+cd Laboratorio_MAT
+vim regras_de_uso.tex
+vim algebra_2.txt
+scp -P 13508 -r ESA-UNICEF_DengueForecastProject jfreitas@andu.mat.unb.br:~/
+scp -P 13508 -r ESA-UNICEF_DengueForecastProject/ jfreitas@andu.mat.unb.br:~/
+scp -P 13508 -r ESA-UNICEF_DengueForecastProject/ jfreitas@andu.mat.unb.br:/home/jfreitas/
+scp -P 13508 -R ESA-UNICEF_DengueForecastProject/ jfreitas@andu.mat.unb.br:/home/jfreitas/
+nvidia-smi
+python models.py
+ls ~/.python_venvs
+vim modelling-Brazil.py
+ls metrics
+ls metrics/Brazil
+ls saved_models
+ls saved_models/Brazil
+cd tuberculose_ensamble/
+cd ESA-UNICEF_DengueForecastProject/code
+python modelling-Brazil.py
+sudo nala install fancontrol 
+sudo sensors-detect
+sudo pwmconfig
+sudo fancontrol
+sudo nala install nbfc
+cd Download
+cd Documentos
+sudo dpkg -i nbfc-linux_0.2.7_amd64.deb
+sudo nbfc config -r
+cd GitHub/Algebra-1
+cd GitHub/Algebra-1/apresentacoes/04-aula_congruencia_modulo-m
+vim congruencia_modulo_m_classes-de-equivalencia-de-Zm.tex
+cd OneDriveUnB/UnB/Disciplinas/Graduacao/Algebra_1/2024-1
+vim plano-algebra-1_\(2024-1\).tex
+cd /home
+rm -rf jfreitas-BKP
+sudo rm -rf jfreitas-BKP jfreitas-MANJARO
+./gondor_bitbucket.sh '\
+'
+./gondor_bitbucket.sh
+vim gondor_bitbucket.sh
+sudo nala remove texstudio
+sudo nala remove setzer
+git clone https://github.com/cvfosammmm/Setzer.git
+cd Setzer
+./scripts/setzer.dev
+ninja uninstall -C builddir
+sudo nala remove meson python3-gi gir1.2-gtk-4.0 gir1.2-gtksource-5 gir1.2-pango-1.0 gir1.2-poppler-0.18 gir1.2-webkit-6.0 gettext python3-cairo python3-gi-cairo python3-pexpect gir1.2-adw-1 python3-bibtexparser python3-willow python3-numpy gir1.2-xdp-1.0
+sudo nala install meson python3-gi gir1.2-gtk-4.0 gir1.2-gtksource-5 gir1.2-pango-1.0 gir1.2-poppler-0.18 gir1.2-webkit-6.0 gettext python3-cairo python3-gi-cairo python3-pexpect gir1.2-adw-1 python3-bibtexparser python3-willow python3-numpy gir1.2-xdp-1.0
+meson setup --reconfigure
+meson builddir
+meson setup --reconfigure builddir
+meson builddir --prefix=~/.local
+ninja install -C builddir
+setzer
+sudo ninja uninstall -C builddir
+rm -rf Setzer
+sudo nala install setzer
+teclado_avell.sh
+sensors
+sudo poweroff
+cd OneDriveUnB/UnB/Disciplinas/Graduacao/Algebra_1/2024-1/Avaliacoes
+rm .var/app/org.texstudio.TeXstudio/config/texstudio/texstudio.ini
+cd /etc/
+vim environment
+cd OneDriveUnB/UnB/Disciplinas/Graduacao/Algebra_1/2022-2/Avaliacoes
+vim prova-1-alg1.tex
+systemctl --user status onedriveunb.service
+cd ESA-UNICEF_DengueForecastProject
+source ~/.python_venvs/dengue/bin/activate
+cd /
+sudo mkdir Windows
+sudo chown jfreitas:jfreitas Windows
+sudo vim /etc/fstab
+sudo nvim /etc/fstab
+sudo mount -a
+cp GitHub/dot/Debian/config/texstudio/texstudio.ini .var/app/org.texstudio.TeXstudio/config/texstudio/texstudio.ini
+cd GitHub/Algebra-1/apresentacoes/06-aulas_aneis
+vim aneis.tex
+watch -n1 systemctl --user status onedrive.service
+sudo nala remove nvidia-driver nvidia-cuda-dev nvidia-cuda-gdb nvidia-cuda-toolkit --purge
+sudo nala install htop
+htop
+cd VMs/KVM
+cp manjaro.qcow2 manjaro.qcow2-BKP
+rm teclado.desktop numlockx.desktop
+./backup_TARDIS.sh
+rm -rf onedriveunb
+cd onedrive
+rm resume_upload refresh_token items.sqlite3 .config.backup .config.hash
+onedrive --monitor
+cd ../autostart
+cd .config/gtk-3.0
+vim bookmarks
+ls dlang | grep dmd
+source ~/dlang/$(ls ~/dlang/ | grep dmd | awk '{print $7}')/activate
+ls ~/dlang/ | grep dmd | awk '{print $7}')
+ls ~/dlang/ | grep dmd | awk '{print $7}'
+DLANG=$(/usr/bin/ls ~/dlang/ | grep dmd | awk '{print $1}')\
+1238   âƒ´‚ source ~/dlang/$DLANG/activate
+DLANG=$(/usr/bin/ls ~/dlang/ | grep dmd | awk '{print $1}')
+echo $DLANG
+source ~/dlang/$DLANG/activate
+source ~/dlang/dmd-2.107.0/activate
+ls dlang/
+source ~/dlang/dmd-2.109.1/activate
+bash
+systemctl --user stop onedrive.service
+cd .config/
+cd systemd/user
+cd GitHub/dot/Debian
+ls environment
+sudo dmesg
+sudo vim /boot/grub/grub.cfg
+sudo nvim /boot/grub/grub.cfg
+vim GitHub/dot/Debian/grub/grub
+sudo nvim /etc/default/grub
+cd /etc/default
+cat grub
+cd /etc/modprobe.d
+sudo unlink nvidia-options.conf
+sudo unlink nvidia-blacklists-nouveau.conf
+sudo unlink nvidia.conf
+sudo update-initramfs -u
+mkdir .python_venvs
+sudo apt install ffmpeg
+sudo journalctl -b -u systemd-modules-load.service
+pyenv list
+pyenv
+pyenv install 3.12
+ls manim
+which python
+python -m venv ~/.python_venvs/manim
+source ~/.python_venvs/manim/bin/activate
+pip install manim
+cd manim
+cd media/videos/teste/480p15
+mp4dump Start.mp4
+cd ../../
+rm -rf __pycache__ media
+manim -pql teste.py
+echo "deb https://www.deb-multimedia.org bookworm main non-free" > /etc/apt/sources.list.d/deb-multimedia.list\
+apt-get update -oAcquire::AllowInsecureRepositories=true\
+apt-get install deb-multimedia-keyring\
+apt-get update; apt-get dist-upgrade
+sudo echo "deb https://www.deb-multimedia.org bookworm main non-free" > /etc/apt/sources.list.d/deb-multimedia.list\
+sudo apt-get update -oAcquire::AllowInsecureRepositories=true\
+sudo apt-get install deb-multimedia-keyring\
+sudo apt-get update; apt-get dist-upgrade
+sudo echo "deb https://www.deb-multimedia.org bookworm main non-free" > /etc/apt/sources.list.d/deb-multimedia.list\
+sudo apt-get update -oAcquire::AllowInsecureRepositories=true\
+sudo apt-get install deb-multimedia-keyring\
+sudo apt-get update; sudo apt-get dist-upgrade
+sudo echo "deb https://www.deb-multimedia.org bookworm main non-free" > /etc/apt/sources.list.d/deb-multimedia.list
+ls /etc/apt/sources.list.d
+sudo vim /etc/apt/sources.list.d/deb-multimedia.list
+sudo nvim /etc/apt/sources.list.d/deb-multimedia.list
+sudo apt-get update -oAcquire::AllowInsecureRepositories=true
+sudo apt-get install deb-multimedia-keyring
+mkdir manimgl
+pyenv local 3.12
+python -m venv ~/.python_venvs/manimgl
+pip install manimgl
+manimgl
+cd manimgl
+source ~/.python_venvs/manimgl/bin/activate
+pip install setuptools
+manimgl -pql teste.py SquareToCircle
+manimgl -pql teste.py
+manimgl -pql teste.py MakingSquare
+manimgl -pql teste.py ShowingRosePattern
+watch ls
+sudo chown jfreitas:jfreitas lenovo_recovery.iso
+eit
+lsblk
+sudo dd if=/dev/sda of=Downloads/lenovo_recovery.iso bs=4M
+watch -n 1 systemctl --user status onedrive.service
+python teste.py
+vim teste.py
+vim gondor_home.service
+vim gondor_lista_pacotes.service
+vim backup_TARDIS.service
+systemctl --user enable backup_TARDIS.timer
+systemctl --user enable backup_TARDIS.service
+vim backup_TARDIS.timer
+vim .temporario/data_ultimo_backup_tardis
+backup_TARDIS.sh
+vim .bin/backup_TARDIS.sh
+vim .bin/gondor_bitbucket.sh
+vim .config/systemd/user/gondor_bitbucket.service
+vim .config/systemd/user/gondor_bitbucket.timer
+systemctl --user disable gondor_bitbucket.service
+systemctl --user enable gondor_bitbucket.timer
+systemctl --user enable gondor_bitbucket.service
+cd systemd
+cd multi-user.target.wants
+systemctl --user disable power.timer
+ls ~/OneDrive/Backups/Debian/Backup-Diario
+ls default.target.wants
+systemctl --user disable gondor_analise_dados.timer
+systemctl --user disable gondor_analise_dados.service
+systemctl --user disable backup_TARDIS.timer
+systemctl --user disable gondor_bitbucket.timer
+systemctl --user enable gondor_bitbucket.timer --now
+ls basic.target.wants
+ls multi-user.target.wants
+systemctl --user list-unit
+cd .temporario
+vim data_ultimo_backup_tardis
+cat gapminder.tsv
+watch ps aux | grep rsync
+sudo nala install python-pandas
+python
+sudo nala install python3-seaborn
+python3.11
+ssh andu.mat.unb.br
+wallpaper_gnome.sh
+sudo dmidecode -s system-version
+vim .zsh_history
+ssh andu
+cd GitHub/dot/Debian/libvirt/qemu
+cd ../storage
+sudo rm Download_torrents.xml
+rm Download_Torrents.xml
+python -m venv ~/.python_venvs/tb_ensamble
+cat requirements.txt
+pip install -r requirements.txt
+vim tres_modelos_tuberculose_ensamble.py
+vim config.py
+cd code
+pyenv install 3.10
+pyenv local 3.10
+python -m venv ~/python_venvs/dengue_forecast
+python -m venv ~/.python_venvs/dengue_forecast
+vim code/requirements.txt
+pip install -r code/requirements.txt
+pip install --upgrade pip
+python -V
+ssh gabiroba
+kill -9 27736
+ps aux | grep rsync
+cd DengueForecastProject
+source ~/.python_venvs/dengue_forecast/bin/activate
+jupyter-lab
+cd tuberculose_ensamble/code
+source ~/.python_venvs/tb_ensamble/bin/activate
+python tres_modelos_tuberculose_ensamble.py
+sudo cp /etc/fstab ~/
+gparted
+ln -s GitHub/dot/Arch/config/zsh/zsh_history ./.zsh_history
+ls debian_gnome_settings_2024-07-*
+dconf load / < debian_gnome_settings_2024-07-31.ini
+sudo nala remove texstudio --purge
+rm texstudio.ini
+ln -s ~/GitHub/dot/Debian/config/texstudio/texstudio.ini ./
+systemctl --user start onedrive.service
+sudo nala install aptitude
+sudo nala install python3-nautilus
+cd .local/share/nautilus-python
+cd .local/share
+mkdir nautilus-python
+cd nautilus-python
+mkdir extensions
+cd extensions
+vim BackSpace.py
+ps aux
+ps aux | grep brave
+ps aux | grep brave-browser
+brave-browser
+cd .config/BraveSoftware/Brave-Browser
+rm SingletonLock
+cd .cache
+cd ../.config
+rm -rf BraveSoftware
+sudo dpkg -i dropbox_2024.04.17_amd64.deb
+cd 
+cd .var/app/org.texstudio.TeXstudio/config
+cd texstudio
+vim texstudio.ini
+sudo aptitude
+sudo nala install gnome-sushi
+sudo nala install imagemagick nautilus-image-converter
+sudo nala install folder-color
+sudo add-apt-repository ppa:costales/folder-color
+cd .local/share/nautilus-python/extensions
+vim folder-color.py
+nautilus -q
+cd .config/gtk-4.0
+cat .config/gtk-4.0
+sudo nala install hibernate
+man systemd-sleep.conf
+sudo systemctl restart sleep
+gsettings get org.gnome.settings-daemon.plugins.power lid-close-ac-action
+cat /etc/UPower/UPower.conf
+sudo nvim /etc/UPower/UPower.conf
+sudo nvim /etc/gdm3/greeter.dconf-defaults
+sudo dmesg | grep error
+grep LID /proc/acpi/wakeup
+sudo nvim /etc/systemd/logind.conf
+sudo nvim /etc/systemd/sleep.conf.d/
+sudo nvim /etc/systemd/sleep.conf.d/nosuspend.conf
+sudo nvim sleep.conf.d/nosuspend.conf
+./gondor_lista_pacotes.sh
+vim ~/OneDrive/Backups/Debian/Backup-Diario/debian_gnome_settings_2024-08-14.ini
+vim GitHub/dot/Debian/logind/logind.conf
+gsettings list-keys org.gnome.settings-daemon.plugins.power
+sudo mkdir sleep.conf.d
+sudo systemctl status sleep.target suspend.target hibernate.target hybrid-sleep.target
+sudo systemctl start hibernate.target
+sudo mv sleep.conf.d ~/
+sudo shutdown -h now
+sudo cp -R sleep.conf.d /etc/systemd
+vim sleep.conf.d
+cd sleep.conf.d
+sudo cp nosuspend.conf nohibernate.conf
+sudo nvim nosuspend.conf
+sudo nvim nohibernate.conf
+sudo systemctl status hibernate.target
+cd /etc/systemd/system
+sudo systemctl mask hibernate.target
+sudo systemctl mask suspend.target
+sudo systemctl unmask hibernate.target
+cat suspend.target
+sudo systemctl daemon-reload
+cd ..;
+sudo nvim /etc/xdg/autostart/org.gnome.SettingsDaemon.Power.desktop
+gsettings set org.gnome.settings-daemon.plugins.power power-button-action hibernate
+sudo systemd-inhibit
+cd system
+sudo unmask suspend.target
+sudo systemctl unmask suspend.target
+systemctl --user status onedrive.service
+cd Downloads
+scp Edital_06_2024_assinado.pdf inscricoespos.mat.unb.br:~/
+ssh inscricoes.mat.unb.br
+ssh inscricoespos.mat.unb.br
+sudo vim sleep.conf
+sudo nvim sleep.conf
+ssh e-mural.mat.unb.br
+sudo nvim /etc/systemd/sleep.conf
+cd OneDrive/Backups/Debian/Backup-Diario
+cp debian_gnome_settings_2024-08-15.ini ~/
+sudo journalctl -b -u systemd-logind
+sudo nvim logind.conf
+sudo systemctl hibernate
+systemd-analyze cat-config systemd/logind.conf
+cd ~\
+ dconf dump / > saved_settings.dconf
+cat saved_settings.dconf
+cd ~\
+ dconf dump / > saved_settings.dconf2
+gsettings --list-recursively
+sudo nala install gconf2
+gconftool-2 --dump / > gconf_dump.xml
+gconftool-2 --dump / > gconf_dump.xml2
+cd .config/dconf
+cd user
+cat user
+dconf watch /
+cd /etc/systemd
+sudo mv sleep.conf ~/GitHub/dot/Debian/logind
+sudo ln -s /home/jfreitas/GitHub/dot/Debian/logind/sleep.conf ./
+sudo chown jfreitas:jfreitas *
+sudo nala uninstall gconf2 --purge
+cat .zsh_history
+cat .zsh_history | grep sudo nala install
+cat .zsh_history | grep 'sudo nala install'
+cd /usr/libexec
+ls gnome-*
+ls -la
+/usr/libexec/gnome-tweak-tool-lid-inhibitor
+gnome-tweak-tool-lid-inhibitor
+cd /lib/python3.11/
+whereis tweak_group_general
+cd GitHub/dot/Debian/logind
+vim logind.conf
+sudo evtest
+systemd-inhibit
+sudo nala update
+sudo nala upgrade
+sudo reboot
+sudo journalctl --unit=systemd-logind --follow\
+
+sudo journalctl --unit=systemd-logind --follow
+sudo journalctl --unit=systemd-logind --follow | grep Suspending
+cd GitHub/dot/Debian/grub
+vim grub
+sudo update-grub
+sudo update-initramfs -k all -u
+systemd-inhibit --list --mode=block
+grep . /sys/class/drm/*/status
+systemctl hibernate
+cd ../logind
+vim sleep.conf
+sudo systemctl reload systemd-logind.service
+sudo journalctl --unit=systemd-logind | grep Suspending
+sudo journalctl --unit=systemd-logind
+whereis systemctl
+vim .config/autostart/ignore-lid-switch-tweak.desktop
+cp wallpaper_gnome.sh hiberna.sh
+vim hiberna.sh
+vim ~/.config/autostart/ignore-lid-switch-tweak.desktop
+hiberna.sh
+cd .config/autostart
+cat ignore-lid-switch-tweak.desktop
+chmod +x instala_debian.sh
+cat hiberna.sh
+sudo nala install libncurses-dev fakeroot wget bzip2 build-essential \\
+build-essential bc python bison flex rsync libelf-dev libssl-dev \\
+libncurses-dev dwarves git debhelper kernel-package ncurses-dev \\
+fakeroot wget bzip2
+sudo nala install libncurses-dev fakeroot wget bzip2 build-essential build-essential bc python bison flex rsync libelf-dev libssl-dev libncurses-dev dwarves git debhelper kernel-package ncurses-dev fakeroot wget bzip2
+sudo nala install fakeroot wget bzip2 build-essential build-essential bc python bison flex rsync libelf-dev libssl-dev  dwarves git debhelper kernel-package fakeroot wget bzip2
+sudo apt-get install libncurses-dev fakeroot wget bzip2 build-essential \\
+build-essential bc python bison flex rsync libelf-dev libssl-dev \\
+libncurses-dev dwarves git debhelper kernel-package ncurses-dev \\
+fakeroot wget bzip2
+curl -O https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.8.tar.xz
+xz -v -d linux-6.8.tar.xz
+sudo nala install flex
+sudo nala install flex bison
+sudo nala install btop
+btop
+vim .config/alacritty/alacritty.toml
+vim alacritty.yml
+cp alacritty.yml alacritty.yml-BKP
+cp ~/GitHub/dot/Arch/config/alacritty/alacritty.toml ./
+cd .config/alacritty
+cp alacritty.yml-BKP alacritty.yml
+rm alacritty.toml
+alacritty migrate
+rm alacritty.yml
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+git clone https://github.com/alacritty/alacritty.git
+sudo apt install cargo
+apt install curl -y
+sudo apt install curl -y
+sudo nala remove rustc 
+curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
+vim .zshrc
+cd alacritty
+cargo build --release
+sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+sudo nala remove alacritty
+sudo cp target/release/alacritty /usr/local/bin
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+sudo desktop-file-install extra/linux/Alacritty.desktop
+sudo update-desktop-database
+sudo mkdir -p /usr/local/share/man/man1
+gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+gzip -c extra/alacritty/man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+ls extra
+gzip -c extra/man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+scripts/config --disable SYSTEM_TRUSTED_KEYS
+sudo nala install debhelper-compat libelf-dev
+sudo apt install debhelper-compat libelf-dev
+rm hiberna.sh
+history
+fzr
+fzf --preview="cat {}"
+cat teste.py
+fzf --preview="bat {}"
+batcat
+fzf --preview="batcat --color=always {}"
+vim .config/aliases/aliases
+source ~/.zshrc
+fzf
+sudo nala install yazi
+rustup update
+cargo install --locked yazi-fm yazi-cli
+a
+sudo nala install kitten
+git clone https://github.com/kovidgoyal/kitty.git && cd kitty\
+./dev.sh build
+sudo nala install golang
+./dev.sh build
+gondor_lista_pacotes.sh
+cd .local
+cd kitty.app
+cd ..
+cp -R kitty.app ~/.bin
+sudo nala remove kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+kitty
+kitty.app
+rm -rf kitty.app
+sudo nala install kitty
+kitten
+kitten theme
+cat /usr/share/doc/kitty/examples/kitty.conf
+cp /usr/share/doc/kitty/examples/kitty.conf ./
+ks
+vim .config/kitty/kitty.conf
+vim .config/kitty/theme.conf
+cd .config/kitty
+mkdir themes
+mv theme.conf themes
+cd themes
+mv theme.conf catppuccin_macchiato.conf
+yazi
+vim kitty.conf
+cd .config
+mv kitty ~/GitHub/dot/Debian/config
+ln -s ~/GitHub/dot/Debian/config/kitty ./
+sudo rm -rf sleep.conf.d
+cat /proc/acpi/button/lid/LID/state
+cat /proc/acpi/button/lid/LID/state | grep open
+cat /proc/acpi/button/lid/LID/state | grep -c open 
+cat /proc/acpi/button/lid/LID/state | grep -c close
+hibernar.sh
+chmod +x hibernar.sh
+./hibernar.sh
+cd ../.config/systemd/user
+cd systemd/
+unlink systemd
+ln -s ~/GitHub/dot/Debian/config/systemd ./
+systemctl --user reload
+reboot
+systemctl --user list-units
+cd .config/systemd/user
+systemctl --user enable hibernacao.service --now
+systemctl --user disable hibernacao.service --now
+systemctl --user disable hibernacao.timer --now
+systemctl --user enable hibernacao.timer --now
+systemctl --user enable backup_TARDIS.timer --now
+systemctl --user list-timers
+touch log_hiberna
+systemctl --user restart hibernacao.timer
+systemctl --user status hibernacao.service
+cd .bin
+cat log_hiberna
+rm log_hiberna
+systemctl --user restart hibernacao.service
+uptime
+history | grep linux
+cat .zsh_history | grep 'linux'
+curl -O https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.8.tar.xz\
+xz -v -d linux-6.8.tar.xz\
+tar xf linux-6.8.tar
+ls
+scripts/config --disable SYSTEM_REVOCATION_KEYS\
+scripts/config --disable DEBUG_INFO\
+scripts/config --enable DEBUG_INFO_NONE
+make bindeb-pkg -j `nproc` LOCALVERSION=-jota
+cd ../
+rm -rf linux-6.8
+tar xf linux-6.8.tar
+cd linux-6.8
+cp -v /boot/config-6.1.0-23-amd64 .config
+make menuconfig
+make oldconfig
+vim .config
+make
+cd
+rm -rf linux-6.8*
+exit
