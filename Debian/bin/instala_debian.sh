@@ -91,6 +91,8 @@ ln -s ~/GitHub/dot/Debian/config/aliases/ ./
 
 ln -s ~/GitHub/dot/Debian/config/autorandr/ ./
 
+ln -s ~/GitHub/dot/Debian/config/kitty ./
+
 ln -s ~/GitHub/dot/Debian/config/astronvim-jfreitas ./nvim
 
 ln -s ~/GitHub/dot/Debian/config/picom/ ./
