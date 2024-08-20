@@ -137,6 +137,8 @@ cd ~/.local/share/gnome-shell
 
 ln -s ~/GitHub/dot/Debian/gnome_extensions/extensions ./extensions
 
+ln -s ~/GitHub/dot/Debian/nautilus-python ./
+
 cd ~
 
 curl https://pyenv.run | bash
