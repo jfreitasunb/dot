@@ -115,12 +115,6 @@ rm -rf gtk-3.0
 
 ln -s ~/GitHub/dot/Debian/config/gtk-3.0 ./
 
-mkdir texstudio
-
-cd texstudio
-
-ln -s ~/GitHub/dot/Debian/config/texstudio/texstudio.ini ./
-
 cd ~
 
 ln -s ~/GitHub/dot/Debian/config/zsh/zshrc ./.zshrc
