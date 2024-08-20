@@ -2,8 +2,7 @@
 Description=Hiberna quando a tela é fechada
 
 [Timer]
-Restart=always
-OnUnitInactiveSec=10s
+OnCalendar=*:*:0/10
 Persistent=true
 
 [Install]
