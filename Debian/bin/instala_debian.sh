@@ -145,7 +145,7 @@ cd ~
 
 curl https://pyenv.run | bash
 
-sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks --purge
+sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common --purge
 
 sudo rm /etc/systemd/logind.conf
 
