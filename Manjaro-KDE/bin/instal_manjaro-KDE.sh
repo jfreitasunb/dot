@@ -101,44 +101,44 @@ rm -rf nvidia
 
 cd ~/.config/
 
-ln -s ~/GitHub/dot/Manjaro/config/alacritty ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/alacritty ./
 
-ln -s ~/GitHub/dot/Manjaro/config/aliases/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/aliases/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/autorandr/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/autorandr/ ./
 
-#ln -s ~/GitHub/dot/Manjaro/config/nvim/ ./
-ln -s ~/GitHub/dot/Manjaro/config/astronvim-jfreitas ./nvim
+#ln -s ~/GitHub/dot/Manjaro-KDE/config/nvim/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/astronvim-jfreitas ./nvim
 
-ln -s ~/GitHub/dot/Manjaro/config/picom/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/picom/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/xmonad/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/xmonad/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/xmobar/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/xmobar/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/zathura/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/zathura/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/zsh/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/zsh/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/keepassxc/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/keepassxc/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/nemo/ ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/nemo/ ./
 
-ln -s ~/GitHub/dot/Manjaro/config/gtk-3.0 ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/gtk-3.0 ./
 
-ln -s ~/GitHub/dot/Manjaro/config/autostart ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/autostart ./
 
-ln -s ~/GitHub/dot/Manjaro/config/systemd ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/systemd ./
 
 mkdir texstudio
 
 cd texstudio
 
-ln -s ~/GitHub/dot/Manjaro/config/texstudio/texstudio.ini ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/texstudio/texstudio.ini ./
 
 cd ~
 
-ln -s ~/GitHub/dot/Manjaro/bin/ ./.bin
+ln -s ~/GitHub/dot/Manjaro-KDE/bin/ ./.bin
 
 cd .local/share/
 
@@ -150,35 +150,35 @@ cd ~
 
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 
-ln -s ~/GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
+ln -s ~/GitHub/dot/Manjaro-KDE/config/latexmkrc ./.latexmkrc
 
-ln -s ~/GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
+ln -s ~/GitHub/dot/Manjaro-KDE/config/Xmodmap ./.Xmodmap
 
-#ln -s ~/GitHub/dot/Manjaro/config/histdb  /.histdb
+#ln -s ~/GitHub/dot/Manjaro-KDE/config/histdb  /.histdb
 
 rm .zshrc
 
-ln -s ~/GitHub/dot/Manjaro/config/zsh/zshrc ./.zshrc
+ln -s ~/GitHub/dot/Manjaro-KDE/config/zsh/zshrc ./.zshrc
 
 sudo rm /etc/pacman.conf
 
-sudo ln -s ~/GitHub/dot/Manjaro/pacman/hooks /etc/pacman.d/
+sudo ln -s ~/GitHub/dot/Manjaro-KDE/pacman/hooks /etc/pacman.d/
 
-sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.conf
+sudo ln -s ~/GitHub/dot/Manjaro-KDE/pacman/pacman.conf /etc/pacman.conf
 
 sudo rm /etc/default/grub
 
-sudo ln -s ~/GitHub/dot/Manjaro/grub/grub /etc/default/grub
+sudo ln -s ~/GitHub/dot/Manjaro-KDE/grub/grub /etc/default/grub
 
 sudo rm -rf /etc/libvirt
 
-sudo ln -s ~/GitHub/dot/Manjaro/libvirt /etc/libvirt
+sudo ln -s ~/GitHub/dot/Manjaro-KDE/libvirt /etc/libvirt
 
-sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
+sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/gondor_root.service /etc/systemd/system/
 
-sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.timer /etc/systemd/system/
+sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/gondor_root.timer /etc/systemd/system/
 
-sudo cp ~/GitHub/dot/Manjaro/config/systemd/manjaro_keyboard.service  /etc/systemd/system/
+sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/manjaro_keyboard.service  /etc/systemd/system/
 
 sudo systemctl enable gondor_root.timer
 
