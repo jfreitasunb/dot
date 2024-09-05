@@ -3,7 +3,7 @@
 GRUB_DEFAULT=saved
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="Manjaro"
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash udev.log_priority=3"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet resume=UUID=3121a339-1b4f-439c-bab4-ffb10fd01b6d splash udev.log_priority=3"
 GRUB_CMDLINE_LINUX=""
 
 # Preload both GPT and MBR modules so that they are not missed
