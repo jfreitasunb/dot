@@ -63,42 +63,6 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
 
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-mkdir ~/nvidia/ && cd ~/nvidia/
-
-git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
-
-cd nv-codec-headers
-
-sudo make install
-
-cd ~/nvidia/
-
-git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg/
-
-cd ~/nvidia/ffmpeg/
-
-./configure --enable-nonfree --enable-cuda-nvcc --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --enable-gpl \
---enable-gnutls \
---enable-libaom \
---enable-libass \
---enable-libfdk-aac \
---enable-libfreetype \
---enable-libmp3lame \
---enable-libopus \
---enable-libvorbis \
---enable-libvpx \
---enable-libx264 \
---enable-libx265 \
---enable-nonfree
-
-make -j $(nproc)
-
-sudo make install
-
-cd ~
-
-rm -rf nvidia
-
 cd ~/.config/
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/alacritty ./
