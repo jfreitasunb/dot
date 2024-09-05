@@ -1,0 +1,13 @@
+[Desktops]
+Id_1=bdf1f032-f30d-4871-9fea-a7651cad99ad
+Id_2=63b23426-c51d-4ae0-9a8b-780ccbce5254
+Rows=2
+
+[Tiling]
+padding=4
+
+[Tiling][9db4d7a9-7295-5350-88ec-ee7fb4a65abc]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][e46ce5e9-a73e-5a1f-a3cb-15dfbe041010]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
