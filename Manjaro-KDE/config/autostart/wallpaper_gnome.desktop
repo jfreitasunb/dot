@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Wallpaper
+Exec=/bin/bash -c '/home/jfreitas/.bin/wallpaper_gnome.sh'
+Terminal=false
+Type=Application
+StartupNotify=True
+X-GNOME-Autostart-enabled=true

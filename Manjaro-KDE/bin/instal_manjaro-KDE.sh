@@ -65,13 +65,12 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
 
 cd ~/.config/
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/alacritty ./
+ln -s ~/GitHub/dot/Manjaro-KDE/config/kitty ./
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/aliases/ ./
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/autorandr/ ./
 
-#ln -s ~/GitHub/dot/Manjaro-KDE/config/nvim/ ./
 ln -s ~/GitHub/dot/Manjaro-KDE/config/astronvim-jfreitas ./nvim
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/picom/ ./

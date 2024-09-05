@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup da lista de pacotes instalados
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/jfreitas/.bin/gondor_lista_pacotes.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup das videos aulas para o Dropbox
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/jfreitas/.bin/backup_video_aulas.sh
+
+[Install]
+WantedBy=multi-user.target
