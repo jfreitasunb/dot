@@ -162,8 +162,6 @@ ln -s ~/GitHub/dot/Manjaro-KDE/config/zsh/zshrc ./.zshrc
 
 sudo rm /etc/pacman.conf
 
-sudo ln -s ~/GitHub/dot/Manjaro-KDE/pacman/hooks /etc/pacman.d/
-
 sudo ln -s ~/GitHub/dot/Manjaro-KDE/pacman/pacman.conf /etc/pacman.conf
 
 sudo rm /etc/default/grub
