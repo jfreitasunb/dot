@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+sed -n '/START_KEYS/,/END_KEYS/p' ~/.config/xmonad/xmonad.hs | \
+    grep -e ', ("' \
+    -e '\[ (' \
+    -e 'KB_GROUPS' | \
+    grep -v '\-\- , ("' | \
+    sed -e 's/^[ \t]*//' \
+        -e 's/, (/(/' \
+        -e 's/\[ (/(/' \
+        -e 's/-- KB_GROUPS /\n/' \
+        -e 's/", /": /' | \
+    yad --text-info --fontname="FiraCode 12" --back=#282c34 --fore=#46d9ff --geometry=1200x800
