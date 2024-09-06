@@ -1,0 +1,7 @@
+[AC][SuspendAndShutdown]
+LidAction=2
+PowerButtonAction=2
+
+[Battery][SuspendAndShutdown]
+LidAction=2
+PowerButtonAction=2
