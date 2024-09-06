@@ -37,39 +37,13 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
   texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox onedrive-abraunegg
 
 
-#cd /tmp
-
-#wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-
-#zcat install-tl-unx.tar.gz | tar xf -
-
-#cd install-tl-*/
-
-#sudo perl ./install-tl
-
-#git clone https://github.com/neovim/neovim
-
-#cd neovim/
-
-#git checkout stable
-
-#make CMAKE_BUILD_TYPE=RelWithDebInfo
-
-#sudo make install
-
-#cd ~
-
-#rm -rf neovim
-
-#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 cd ~/.config/
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/kitty ./
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/aliases/ ./
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/autorandr/ ./
+#ln -s ~/GitHub/dot/Manjaro-KDE/config/autorandr/ ./
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/astronvim-jfreitas ./nvim
 
@@ -121,7 +95,6 @@ ln -s ~/GitHub/dot/Manjaro-KDE/config/latexmkrc ./.latexmkrc
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/Xmodmap ./.Xmodmap
 
-#ln -s ~/GitHub/dot/Manjaro-KDE/config/histdb  /.histdb
 
 rm .zshrc
 
@@ -143,11 +116,9 @@ sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/gondor_root.service /etc/systemd
 
 sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/gondor_root.timer /etc/systemd/system/
 
-
 sudo systemctl enable gondor_root.timer
 
 sudo systemctl enable gondor_root.service
-
 
 sudo systemctl enable sshd
 
