@@ -1,9 +1,0 @@
-[Unit]
-Description=Run once every 60 seconds
-
-[Timer]
-OnUnitActiveSec=60s
-OnBootSec=20s
-
-[Install]
-WantedBy=timers.target

@@ -1,9 +1,0 @@
-[Unit]
-Description=Atualiza as fontes instaladas pelo usuário.
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash /home/jfreitas/.bin/atualiza_fontes.sh
-
-[Install]
-WantedBy=multi-user.target
