@@ -1884,3 +1884,7 @@ ls
 dconf load / < debian_gnome_settings_2024-08-19.ini
 systemctl --user status onedrive.service
 exit
+systemctl hibernate
+ls /usr/share/zsh/scripts/zplug/
+vim .zshrc
+exit
