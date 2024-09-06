@@ -139,13 +139,11 @@ sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/gondor_root.service /etc/systemd
 
 sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/gondor_root.timer /etc/systemd/system/
 
-sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/manjaro_keyboard.service  /etc/systemd/system/
 
 sudo systemctl enable gondor_root.timer
 
 sudo systemctl enable gondor_root.service
 
-sudo systemctl enable manjaro_keyboard.service
 
 sudo systemctl enable sshd
 
