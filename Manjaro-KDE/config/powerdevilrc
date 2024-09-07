@@ -1,7 +1,10 @@
 [AC][SuspendAndShutdown]
+InhibitLidActionWhenExternalMonitorPresent=false
 LidAction=2
 PowerButtonAction=2
+SleepMode=3
 
 [Battery][SuspendAndShutdown]
 LidAction=2
 PowerButtonAction=2
+SleepMode=3
