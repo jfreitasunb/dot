@@ -113,6 +113,9 @@ plugin=org.kde.plasma.devicenotifier
 immutability=1
 plugin=org.kde.plasma.keyboardlayout
 
+[Containments][9][Applets][13][Configuration]
+PreloadWeight=60
+
 [Containments][9][Applets][14]
 immutability=1
 plugin=org.kde.plasma.notifications
