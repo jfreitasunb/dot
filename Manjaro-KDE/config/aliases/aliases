@@ -1,7 +1,7 @@
 alias vim='nvim'
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
-alias cat='batcat'
+alias cat='bat'
 alias jn='jupyter notebook'
 
 #### Docker ####
