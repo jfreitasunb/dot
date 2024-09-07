@@ -43,6 +43,26 @@ ln -s ~/GitHub/dot/Manjaro-KDE/config/kitty ./
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/aliases/ ./
 
+rm dolphinrc
+
+ln -s ~/GitHub/dot/Manjaro-KDE/config/dolphinrc ./
+
+rm kglobalshortcutsrc
+
+ln -s ~/GitHub/dot/Manjaro-KDE/config/kglobalshortcutsrc ./
+
+rm krunnerrc
+
+ln -s ~/GitHub/dot/Manjaro-KDE/config/krunnerrc ./
+
+rm plasma-org.kde.plasma.desktop-appletsrc
+
+ln -s ~/GitHub/dot/Manjaro-KDE/config/plasma-org.kde.plasma.desktop-appletsrc ./
+
+rm powerdevilrc
+
+ln -s ~/GitHub/dot/Manjaro-KDE/config/powerdevilrc ./
+
 #ln -s ~/GitHub/dot/Manjaro-KDE/config/autorandr/ ./
 
 ln -s ~/GitHub/dot/Manjaro-KDE/config/astronvim-jfreitas ./nvim
@@ -86,7 +106,6 @@ fc-cache -f -v
 cd ~
 
 ln -s ~/GitHub/dot/Manjaro-KDE/locais_dolphin/user-places.xbel ~/.local/share/
-
 
 
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
