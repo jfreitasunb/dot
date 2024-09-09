@@ -21,7 +21,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/Kokkini.png
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/celebration-winter-nights.jpg
 SlideInterval=9000
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -37,6 +37,10 @@ wallpaperplugin=org.kde.image
 [Containments][2][Applets][21]
 immutability=1
 plugin=org.kde.plasma.digitalclock
+
+[Containments][2][Applets][21][Configuration]
+popupHeight=450
+popupWidth=560
 
 [Containments][2][Applets][21][Configuration][Appearance]
 fontWeight=400
@@ -89,6 +93,15 @@ SystrayContainmentId=9
 
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;8;21
+
+[Containments][26]
+activityId=04d3a8c2-ccd7-4a0c-ae33-29a6fa9cbb8f
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
 
 [Containments][9]
 activityId=
@@ -159,14 +172,14 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][9][Applets][22][Configuration]
-PreloadWeight=34
+PreloadWeight=26
 
 [Containments][9][Applets][23]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][9][Applets][23][Configuration]
-PreloadWeight=34
+PreloadWeight=26
 
 [Containments][9][Applets][24]
 immutability=1
@@ -175,6 +188,13 @@ plugin=org.kde.plasma.bluetooth
 [Containments][9][Applets][25]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
+
+[Containments][9][Applets][27]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
+
+[Containments][9][Applets][27][Configuration]
+PreloadWeight=34
 
 [Containments][9][General]
 extraItems=org.kde.plasma.clipboard,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardlayout,org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.kdeconnect,org.kde.plasma.manage-inputmethod,org.kde.kscreen
