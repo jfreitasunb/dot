@@ -196,4 +196,15 @@
    </metadata>
   </info>
  </bookmark>
+ <bookmark href="file:///home/jfreitas/Dropbox">
+  <title>Dropbox</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="inode-directory"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1725967771/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
 </xbel>
