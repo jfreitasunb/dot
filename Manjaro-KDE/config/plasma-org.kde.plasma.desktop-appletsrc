@@ -17,7 +17,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.slideshow
 
 [Containments][1][ConfigDialog]
-DialogHeight=540
+DialogHeight=757
 DialogWidth=720
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
@@ -39,8 +39,8 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][21][Configuration]
-PreloadWeight=60
-popupHeight=450
+PreloadWeight=75
+popupHeight=453
 popupWidth=560
 
 [Containments][2][Applets][21][Configuration][Appearance]
@@ -121,6 +121,7 @@ DialogHeight=795
 DialogWidth=720
 
 [Containments][26][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0223.jpg
 SlideInterval=9000
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -150,6 +151,9 @@ plugin=org.kde.plasma.keyboardindicator
 immutability=1
 plugin=org.kde.plasma.devicenotifier
 
+[Containments][9][Applets][12][Configuration]
+PreloadWeight=70
+
 [Containments][9][Applets][13]
 immutability=1
 plugin=org.kde.plasma.keyboardlayout
@@ -172,6 +176,9 @@ plugin=org.kde.plasma.cameraindicator
 [Containments][9][Applets][17]
 immutability=1
 plugin=org.kde.plasma.volume
+
+[Containments][9][Applets][17][Configuration]
+PreloadWeight=60
 
 [Containments][9][Applets][17][Configuration][General]
 migrated=true
@@ -206,7 +213,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][9][Applets][24][Configuration]
-PreloadWeight=70
+PreloadWeight=80
 
 [Containments][9][Applets][25]
 immutability=1
@@ -217,7 +224,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][9][Applets][27][Configuration]
-PreloadWeight=18
+PreloadWeight=10
 
 [Containments][9][ConfigDialog]
 DialogHeight=948
