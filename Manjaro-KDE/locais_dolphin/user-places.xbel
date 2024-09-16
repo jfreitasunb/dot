@@ -207,4 +207,65 @@
    </metadata>
   </info>
  </bookmark>
+ <bookmark href="file:///home/jfreitas/OneDrive">
+  <title>OneDrive</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="inode-directory"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1726074292/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/jfreitas/OneDrive/UnB">
+  <title>UnB</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="inode-directory"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1726074306/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/jfreitas/OneDrive/UnB/Disciplinas">
+  <title>Disciplinas</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="inode-directory"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1726074316/2</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:14.0/usb3/3-5</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/sda1</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>78879454-1d91-4bfa-8960-a20688dffd14</uuid>
+   </metadata>
+  </info>
+ </separator>
+ <bookmark href="file:///home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao">
+  <title>Graduação</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="inode-directory"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1726251401/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
 </xbel>
