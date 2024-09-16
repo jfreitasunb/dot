@@ -3,12 +3,18 @@ Id_1=566a2075-2c96-4c65-a250-293d6c58e83e
 Id_2=117cbb06-ac99-48be-bc60-3715102ca3b7
 Rows=2
 
+[Effect-translucency]
+Inactive=56
+
 [ModifierOnlyShortcuts]
 Meta=org.kde.kglobalaccel,/component/kwin,,invokeShortcut,Overview
 
 [MouseBindings]
 CommandAll1=Resize
 CommandAllWheel=Change Opacity
+
+[Plugins]
+translucencyEnabled=true
 
 [Tiling]
 padding=4
