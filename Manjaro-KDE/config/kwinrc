@@ -8,6 +8,7 @@ Meta=org.kde.kglobalaccel,/component/kwin,,invokeShortcut,Overview
 
 [MouseBindings]
 CommandAll1=Resize
+CommandAllWheel=Change Opacity
 
 [Tiling]
 padding=4
