@@ -6,6 +6,9 @@ Rows=2
 [ModifierOnlyShortcuts]
 Meta=org.kde.kglobalaccel,/component/kwin,,invokeShortcut,Overview
 
+[MouseBindings]
+CommandAll1=Resize
+
 [Tiling]
 padding=4
 
