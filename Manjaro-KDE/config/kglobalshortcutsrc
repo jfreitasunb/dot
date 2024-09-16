@@ -260,3 +260,6 @@ _launch=Meta+Return
 
 [services][org.keepassxc.KeePassXC.desktop]
 _launch=Meta+K
+
+[services][systemctl.desktop]
+_launch=F8
