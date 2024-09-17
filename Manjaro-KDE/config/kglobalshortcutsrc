@@ -37,7 +37,7 @@ Log Out Without Confirmation=none,,Terminar sessão sem confirmação
 Reboot=none,,Reiniciar
 Reboot Without Confirmation=none,,Reiniciar sem confirmação
 Shut Down=none,,Encerrar
-_k_friendly_name=Gestão de sessões
+_k_friendly_name=ksmserver
 
 [kwin]
 Activate Window Demanding Attention=Meta+Ctrl+A,Meta+Ctrl+A,Ativar janela que demanda atenção

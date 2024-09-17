@@ -32,6 +32,17 @@ Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/Paper_Architecture_by_D
 SlideInterval=9000
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
+[Containments][108][Wallpaper][org.kde.slideshow][General]
+Image=file:///usr/share/wallpapers/North/
+
+[Containments][109][Applets][110][Configuration]
+PreloadWeight=100
+popupHeight=510
+popupWidth=628
+
+[Containments][116][Applets][120][Configuration]
+PreloadWeight=55
+
 [Containments][2]
 activityId=
 formfactor=2
@@ -108,7 +119,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][8][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 SystrayContainmentId=9
 
 [Containments][2][General]
@@ -172,6 +183,9 @@ PreloadWeight=100
 immutability=1
 plugin=org.kde.plasma.notifications
 
+[Containments][9][Applets][14][Configuration]
+PreloadWeight=55
+
 [Containments][9][Applets][15]
 immutability=1
 plugin=org.kde.plasma.printmanager
@@ -193,6 +207,9 @@ migrated=true
 [Containments][9][Applets][18]
 immutability=1
 plugin=org.kde.kdeconnect
+
+[Containments][9][Applets][18][Configuration]
+PreloadWeight=55
 
 [Containments][9][Applets][19]
 immutability=1
@@ -231,7 +248,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][9][Applets][27][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][9][ConfigDialog]
 DialogHeight=948
