@@ -1,9 +1,0 @@
-[Unit]
-After=multi-user.target
-
-[Service]
-ExecStart=/home/jfreitas/.bin/avell.sh
-Type=simple
-
-[Install]
-WantedBy=multi-user.target
