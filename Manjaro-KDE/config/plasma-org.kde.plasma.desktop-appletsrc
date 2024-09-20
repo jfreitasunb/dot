@@ -28,7 +28,7 @@ ToolBoxButtonState=topcenter
 ToolBoxButtonX=279
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/Paper_Architecture_by_Dmitri_Popov.jpg
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/Opal.png
 SlideInterval=9000
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -57,7 +57,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][21][Configuration]
-PreloadWeight=75
+PreloadWeight=100
 popupHeight=453
 popupWidth=560
 
@@ -74,8 +74,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=513
-popupWidth=637
+popupHeight=510
+popupWidth=636
 
 [Containments][2][Applets][3][Configuration][General]
 favorites=preferred://browser,org.kde.dolphin.desktop,org.kde.elisa.desktop,org.kde.konsole.desktop,org.manjaro.pamac.manager.desktop,systemsettings.desktop
@@ -96,7 +96,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2][Applets][4][Configuration][General]
-launchers=preferred://filemanager,applications:kitty.desktop,applications:brave-browser.desktop,applications:github-desktop.desktop,applications:texstudio.desktop,applications:sublime_text.desktop
+launchers=preferred://filemanager,applications:kitty.desktop,applications:brave-browser.desktop,applications:github-desktop.desktop,applications:sublime_text.desktop,applications:texstudio.desktop
 
 [Containments][2][Applets][5]
 immutability=1
@@ -119,7 +119,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][8][Configuration]
-PreloadWeight=65
+PreloadWeight=80
 SystrayContainmentId=9
 
 [Containments][2][General]
@@ -139,7 +139,7 @@ DialogHeight=795
 DialogWidth=720
 
 [Containments][26][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0223.jpg
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0195.jpg
 SlideInterval=9000
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -170,7 +170,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][9][Applets][12][Configuration]
-PreloadWeight=70
+PreloadWeight=100
 
 [Containments][9][Applets][13]
 immutability=1
@@ -199,7 +199,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][9][Applets][17][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 
 [Containments][9][Applets][17][Configuration][General]
 migrated=true
@@ -237,11 +237,14 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][9][Applets][24][Configuration]
-PreloadWeight=80
+PreloadWeight=90
 
 [Containments][9][Applets][25]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
+
+[Containments][9][Applets][25][Configuration]
+PreloadWeight=55
 
 [Containments][9][Applets][27]
 immutability=1
