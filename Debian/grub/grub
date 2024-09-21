@@ -3,11 +3,10 @@
 # For full documentation of the options in this file, see:
 #   info -f grub -n 'Simple configuration'
 
-GRUB_DEFAULT=saved
-GRUB_SAVEDEFAULT=true
-GRUB_TIMEOUT=10
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
-GRUB_CMDLINE_LINUX_DEFAULT="quiet resume=UUID=3121a339-1b4f-439c-bab4-ffb10fd01b6d"
+GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=3ad51a6c-0163-4a7a-9103-7d2f823d6d52 quiet"
 GRUB_CMDLINE_LINUX=""
 
 # If your computer has multiple operating systems installed, then you
