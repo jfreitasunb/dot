@@ -77,6 +77,10 @@ sudo desktop-file-install extra/linux/Alacritty.desktop
 
 sudo update-desktop-database
 
+cd ~
+
+rm -rf alacritty
+
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 cd ~/.config/
@@ -137,13 +141,15 @@ cd ~/.local/share/gnome-shell
 
 ln -s ~/GitHub/dot/Debian/gnome_extensions/extensions ./extensions
 
+cd ~/.local/share/
+
 ln -s ~/GitHub/dot/Debian/nautilus-python ./
 
 cd ~
 
 curl https://pyenv.run | bash
 
-sudo nala remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd --purge
+sudo apt remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd --purge
 
 sudo rm /etc/systemd/logind.conf
 
