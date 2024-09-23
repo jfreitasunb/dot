@@ -24,5 +24,6 @@ do
     # trocar pelo comando abaixo se não estiver usando o tema escuro
     gsettings set org.gnome.desktop.background picture-uri file://${wallpapers[$random_index]}
     # keeping it active for set time
-    sleep 1 && exit
+    #sleep 1 && exit
+    sleep 8200
 done

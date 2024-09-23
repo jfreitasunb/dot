@@ -18,7 +18,7 @@ ProtectKernelTunables=true
 #ProtectKernelLogs=true
 ProtectControlGroups=true
 RestrictRealtime=true
-ExecStart=/usr/local/bin/onedrive --monitor --confdir="/home/jfreitas/.config/onedriveunb"
+ExecStart=/usr/bin/onedrive --monitor --confdir="/home/jfreitas/.config/onedriveunb"
 Restart=on-failure
 RestartSec=3
 RestartPreventExitStatus=3
