@@ -141,4 +141,10 @@ sudo usermod -aG libvirt jfreitas
 
 sudo usermod -aG docker jfreitas
 
+sudo chattr +C /var/log
+
+sudo chattr +C /var/lib/docker
+
+sudo chattr +C /var/lib/libvirt
+
 sudo timedatectl set-local-rtc 1
