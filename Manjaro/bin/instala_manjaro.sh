@@ -99,8 +99,6 @@ rm .zshrc
 
 ln -s ~/GitHub/dot/Manjaro/config/zsh/zshrc ./.zshrc
 
-ln -s ~/GitHub/dot/Manjaro/config/zsh/zsh_history ./.zsh_history
-
 sudo rm /etc/pacman.conf
 
 sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.conf
