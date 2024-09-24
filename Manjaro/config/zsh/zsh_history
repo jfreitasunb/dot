@@ -2013,4 +2013,6 @@ rm .zsh_history
 eit
 ls
 vim .zshrc
+sudo pacman -S transmission-gtk
+sudo pacman -Rns transmission-gtk
 exit
