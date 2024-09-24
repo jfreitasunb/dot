@@ -34,7 +34,7 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
   virt-manager iptables-nft libvirt qemu-full base-devel texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context \
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
-  texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox onedrive-abraunegg starship yazi github-desktop-bin
+  texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox starship yazi github-desktop-bin
 
 
 cd ~/.config/
@@ -58,6 +58,10 @@ ln -s ~/GitHub/dot/Manjaro/config/zsh/ ./
 ln -s ~/GitHub/dot/Manjaro/config/keepassxc/ ./
 
 ln -s ~/GitHub/dot/Manjaro/config/nemo/ ./
+
+rm -rf gtk-3.0
+
+rm -rf autostart
 
 ln -s ~/GitHub/dot/Manjaro/config/gtk-3.0 ./
 
@@ -108,6 +112,10 @@ sudo ln -s ~/GitHub/dot/Manjaro/grub/grub /etc/default/grub
 sudo rm /etc/mkinitcpio.conf
 
 sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/mkinitcpio_conf/mkinitcpio.conf /etc/mkinitcpio.conf
+
+sudo rm /etc/systemd/logind.conf
+
+sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/logind.conf/logind.conf /etc/systemd/logind.conf
 
 sudo rm -rf /etc/libvirt
 

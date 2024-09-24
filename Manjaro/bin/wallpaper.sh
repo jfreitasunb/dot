@@ -3,7 +3,7 @@
 shopt -s nullglob
 
 # create an array with all the filer/dir inside ~/myDir
-arr=(/home/jfreitas/OneDrive/Pictures/Wallpapers/*)
+arr=(/Arquivos/OneDrive/Pictures/Wallpapers/*)
 
 if [ "$(xrandr | grep -c 'HDMI-0 connected')" -ge 1 ]; then
     i=$(shuf -i0-${#arr[@]} -n1)
