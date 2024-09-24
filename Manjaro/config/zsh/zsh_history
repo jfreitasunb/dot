@@ -1423,7 +1423,6 @@ manimgl -pql teste.py MakingSquare
 manimgl -pql teste.py ShowingRosePattern
 watch ls
 sudo chown jfreitas:jfreitas lenovo_recovery.iso
-eit
 lsblk
 sudo dd if=/dev/sda of=Downloads/lenovo_recovery.iso bs=4M
 watch -n 1 systemctl --user status onedrive.service
@@ -1790,7 +1789,6 @@ sudo desktop-file-install extra/linux/Alacritty.desktop\
 sudo update-desktop-database
 rm -rf alacritty
 unlink bin
-cd .config/zsh
 cd GitHub/dot/Debian/config
 ln -s ~/GitHub/dot/Debian/config/kitty ./
 ln -s ~/GitHub/dot/Debian/nautilus-python ./
@@ -1801,7 +1799,6 @@ dconf load / < debian_gnome_settings_2024-08-19.ini
 vim .config/aliases/aliases
 cat .config/kwinrc
 cat .zsh_history
-mv .zsh_history zsh_history
 ln -s ~/GitHub/dot/Manjaro-KDE/config/zsh/zsh_history ./.zsh_history
 ssh jfreitasa@192.168.122.3
 vim .config/kwinrc
@@ -1960,29 +1957,23 @@ cd .config
 rm -rf VSCodium
 fzf
 yay -Rns code
-vim .zshrc
 sudo pacman -Rns yay-bin
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
-cd
 rm -rf yay-bin
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 vim teste_updaters.py
 manim -pqm teste_updaters.py
 ssh 172.16.36.203
-cat .temporario/data_ultimo_backup_tardis
 vim .bin/backup_TARDIS.sh
 kill -9 3551568
 kill -9 3647229
 kill -9 3647230
 kill -9 3647231
 vim .temporario/backup_TARDIS.pid 
-backup_TARDIS.sh
 ps aux | grep rsync
-vim .temporario/data_ultimo_backup_tardis
 pyenv shell 3.12.5
 manim -pqm animando_area_abaixo_grafico.py
 cd GitHub/animacoes_manim
-ls
 pip install "manim-voiceover[azure,gtts]"
 vim voice_over.py
 pip uninstall -y setuptools
@@ -2003,9 +1994,23 @@ manim -pql animando_area_abaixo_grafico.py
 manim -pql zoom_grafico.py
 vim zoom_grafico.py
 yay -Syyu
-exit
 cat .temporario/data_ultimo_backup_tardis
 vim .temporario/data_ultimo_backup_tardis
 backup_TARDIS.sh
 starship
+la
+mv .zsh_history zsh_history
+ln -s .config/zsh/zsh_history ./.zsh_history
+mv zsh_history .zsh_history
+cd
+ln -s .config/zsh/.zsh_history ./
+unlink .zsh_history
+touch tesstte
+touch tesstte2
+touch tesstte3
+cd .config/zsh
+rm .zsh_history
+eit
+ls
+vim .zshrc
 exit
