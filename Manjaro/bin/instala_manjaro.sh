@@ -37,6 +37,7 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
   texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox starship yazi github-desktop-bin spotify onedrive-abraunegg \
   dconf-editor
 
+sudo pacman -Rns gnome-tour iagno thunderbird gnome-chess gnome-weather gnome-maps gnome-contacts gnome-characters gnome-clocks gnome-mines quadrapasse
 
 cd ~/.config/
 
