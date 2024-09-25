@@ -2016,3 +2016,24 @@ vim .zshrc
 sudo pacman -S transmission-gtk
 sudo pacman -Rns transmission-gtk
 exit
+pacman -Qqe | grep -v "$(pacman -Qqm)"
+pacman -Qqe | grep -v "$(pacman -Qqm)" | grep cups
+sudo pacman -Rns gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd
+sudo pacman -Rns gnome-chess gnome-weather gnome-maps gnome-contacts gnome-characters gnome-clocks cups 
+sudo pacman -Rns gnome-chess gnome-weather gnome-maps gnome-contacts gnome-characters gnome-clocks
+sudo pacman -Rns gnome-mines quadrapassel 
+sudo pacman -Rns gnome-tour iagno thunderbird
+sudo chattr +C /var/log\
+\
+sudo chattr +C /var/lib/docker\
+\
+sudo chattr +C /var/lib/libvirt\
+
+cd GitHub/dot/Manjaro
+ls -la logind.conf
+ls -la grub
+ls -la mkinitcpio_conf
+cat ajustes.txt
+vim ajustes.txt
+ls
+rm ajustes.txt
