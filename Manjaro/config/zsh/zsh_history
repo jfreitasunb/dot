@@ -1950,7 +1950,6 @@ ls VSCodium
 cd VSCodium
 ls User
 rm -rf *
-cd ../
 yay -S code
 rm -rf .vscode-oss
 cd .config
@@ -2002,7 +2001,6 @@ la
 mv .zsh_history zsh_history
 ln -s .config/zsh/zsh_history ./.zsh_history
 mv zsh_history .zsh_history
-cd
 ln -s .config/zsh/.zsh_history ./
 unlink .zsh_history
 touch tesstte
@@ -2011,11 +2009,9 @@ touch tesstte3
 cd .config/zsh
 rm .zsh_history
 eit
-ls
 vim .zshrc
 sudo pacman -S transmission-gtk
 sudo pacman -Rns transmission-gtk
-exit
 pacman -Qqe | grep -v "$(pacman -Qqm)"
 pacman -Qqe | grep -v "$(pacman -Qqm)" | grep cups
 sudo pacman -Rns gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd
@@ -2035,5 +2031,29 @@ ls -la grub
 ls -la mkinitcpio_conf
 cat ajustes.txt
 vim ajustes.txt
-ls
 rm ajustes.txt
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv\) 
+cd /run/media/jfreitas/Tardis/Backup_Rivendel/OneDrive
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv \) 
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv \) -delete
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~ \)
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~ \) -delete
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname .Auto\* \)
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.Auto\* \)
+cd UnB
+cd Graduacao
+cd Algebra_Linear
+cd Calculo_1
+cd Algebra_1
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.\* \) -delete
+cd ../
+cd OneDrive
+cd Disciplinas
+ls
+cd UnB/Disciplinas
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.\* \)
+cd
+sudo pacman -S dconf-editor
+vim .config/zsh/zsh_history
+cat .config/zsh/zsh_history
+exit
