@@ -902,7 +902,6 @@ cd lua
 vim lazy_setup.lua
 cat polish.lua
 cat community.lua
-clear
 cd plugins
 vim user.lua
 rm -rf .local/share/nvim && rm -rf .cache/nvim
@@ -942,7 +941,6 @@ ps aux
 ps aux  | grep manim
 rm -rf media __pycache__
 manim -qk metodo_gaus_jordan_3x3_multiplas_solucoes.py
-q
 watch nvidia-smi
 nvcc
 nvcc --help
@@ -1060,11 +1058,6 @@ vim GitHub/dot/Manjaro/grub/grub
 sudo mkinitcpio -P
 sudo systemctl disable sddm.service
 sudo systemctl enable gdm.service
-sudo chattr +C /var/log\
-\
-sudo chattr +C /var/lib/docker\
-\
-sudo chattr +C /var/lib/libvirt
 cd .config/systemd
 mkdir OneDrive
 mkdir OneDriveUnB
@@ -1573,7 +1566,6 @@ ssh inscricoes.mat.unb.br
 ssh inscricoespos.mat.unb.br
 sudo vim sleep.conf
 sudo nvim sleep.conf
-ssh e-mural.mat.unb.br
 sudo nvim /etc/systemd/sleep.conf
 cp debian_gnome_settings_2024-08-15.ini ~/
 sudo journalctl -b -u systemd-logind
@@ -1622,7 +1614,6 @@ sudo update-grub
 sudo update-initramfs -k all -u
 systemd-inhibit --list --mode=block
 grep . /sys/class/drm/*/status
-systemctl hibernate
 cd ../logind
 vim sleep.conf
 sudo systemctl reload systemd-logind.service
@@ -1744,7 +1735,6 @@ systemctl --user enable backup_TARDIS.timer --now
 systemctl --user list-timers
 touch log_hiberna
 systemctl --user restart hibernacao.timer
-systemctl --user status hibernacao.service
 cat log_hiberna
 rm log_hiberna
 systemctl --user restart hibernacao.service
@@ -1763,7 +1753,6 @@ cd linux-6.8
 cp -v /boot/config-6.1.0-23-amd64 .config
 make menuconfig
 make oldconfig
-vim .config
 make
 rm -rf linux-6.8*
 sudo nala install kitty
@@ -1839,7 +1828,6 @@ cp -R .local/state
 ls .local/state
 cp -R .local/state ~/Documentos/
 cp -R .local ~/Documentos/
-ps aux
 ps aux | grep meld
 kill -9 333962
 kill -9 332503
@@ -1850,7 +1838,6 @@ konsave -s teste1
 konsave -s teste2
 cd .pyenv/versions
 rm -rf 3.12.5
-systemctl --user status onedrive.service
 ls *.img
 rm manjaro-kde-24.0.6-240812-linux69.iso
 vim .ssh/known_hosts
@@ -1902,7 +1889,6 @@ python -V
 which python
 manimgl -pql metodo_gaus_jordan_3x3.py
 vim xmonad/xmonad.hs
-exi
 cd picom
 yay -S trayer
 cp -R ~/GitHub/dot/Manjaro/config/Xmodmap ./
@@ -1916,7 +1902,6 @@ cp -R ~/GitHub/dot/Manjaro/bin/kernel ./
 vim .bin/wallpaper.sh
 wallpaper.sh
 vim .config/kitty/kitty.conf
-cd GitHub/dot/Manjaro/config
 cp -R alacritty ../../Manjaro-KDE/config
 ln -s ~/GitHub/dot/Manjaro-KDE/config/alacritty ./
 yay -S alacritty
@@ -1952,7 +1937,6 @@ ls User
 rm -rf *
 yay -S code
 rm -rf .vscode-oss
-cd .config
 rm -rf VSCodium
 fzf
 yay -Rns code
@@ -2036,8 +2020,6 @@ find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.
 cd /run/media/jfreitas/Tardis/Backup_Rivendel/OneDrive
 find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv \) 
 find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv \) -delete
-find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~ \)
-find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~ \) -delete
 find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname .Auto\* \)
 find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.Auto\* \)
 cd UnB
@@ -2045,15 +2027,113 @@ cd Graduacao
 cd Algebra_Linear
 cd Calculo_1
 cd Algebra_1
-find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.\* \) -delete
-cd ../
 cd OneDrive
-cd Disciplinas
-ls
 cd UnB/Disciplinas
-find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.\* \)
-cd
 sudo pacman -S dconf-editor
 vim .config/zsh/zsh_history
 cat .config/zsh/zsh_history
+sudo chattr +C /var/log\
+\
+sudo chattr +C /var/lib/docker\
+\
+sudo chattr +C /var/lib/libvirt
+systemctl --user enable onedrive.service --now
+mv Dropbox2 Dropbox
+mv Dropbox Dropbox2
+cd OneDrive/UnB
+cd Disciplinas
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~ \) -delete
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~ \)
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.\* \)
+find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.\* \) -delete
+systemctl --user status onedrive.service
+ssh e-mural.mat.unb.br
+cd
+sudo pacman -S hyprlan
+sudo pacman -S hyprland
+cd GitHub/dot/Manjaro/config
+mkdir hyprland
+cd hyprland
+mv hyprland hypr
+hyprctl
+sudo pacman -S wofi
+sudo pacman -S waybar
+sudo pacman -S ttf-font-awesome
+mkdir waybar
+vim waybar/config
+ps aux
+vim .config
+systemctl hibernate
+systemctl --user start hibernacao.timer
+systemctl --user status hibernacao.service
+systemctl --user status hibernacao.timer
+cat .config/hypr/hyprland.conf
+cd hypr
+celar
+vim hyprland.conf
+rm -rf hypr
+ln -s ~/GitHub/dot/Manjaro/config/hypr ./
+ln -s ~/GitHub/dot/Manjaro/config/waybar ./
+vim hypr/hyprland.conf
+cd .config
+rm hypr/hyprland.conf
+vim power_menu.xml
+mv style.css style-css
+eq
+q
+vim clear
+clear
+vim .config/hypr/hyprland.conf
+vim .config/waybar/config
+cat /etc/xdg/waybar/style.css
+mv style-css style.css
+vim .config/waybar/style.css
+kill -9 76394
+cp style.css style.css-1
+vim macchiato.css
+cp config config-1
+vim ../hypr/macchiato.conf
+sudo pacman -S hyprpaper
+vim ../hypr/hyprpaper.conf
+vim ../hypr/hyprland.conf
+h
+hyprctl monitors all
+ls OneDrive/Pictures/Wallpapers
+vim .config/hypr/hyprpaper.conf
+cd .config/hypr
+mkdir scripts
+vim scripts/rofi_powermenu
+chmod +x scripts/rofi_powermenu
+mkdir rofi
+cd rofi
+vim powermenu.rasi
+vim confirm.rasi
+mkdir shared
+vim shared/colors.rasi
+vim shared/fonts.rasi
+cd ../
+rm -rf rofi
+cd .config/waybar
+cp config config-2
+ps aux | grep waybar
+kill -9 88119
+cp config-1 config
+cp style.css-1 style.css-2
+rm style.css && vim style.css
+vim color.css
+rm config && vim config
+vim style.css
+cp style.css-1 style.css
+mv config-1 config
+waybar
+vim config-2
+rm config-2
+vim style.css-1
+vim style.css-2
+rm style.css-1 style.css-2
+ls
+exi
 exit
+cd .config/hypr
+ls
+rm -rf scripts
