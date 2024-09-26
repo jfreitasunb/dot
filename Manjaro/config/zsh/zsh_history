@@ -2137,3 +2137,13 @@ exit
 cd .config/hypr
 ls
 rm -rf scripts
+vim .config/waybar/config
+vim .config/waybar/style.css
+ps aux | grep waybar
+pkill -all waybar
+cd .config/waybar
+ls
+rm config && vim config
+rm style.css && vim style.css
+pkill waybar
+waybar
