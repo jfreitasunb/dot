@@ -1612,7 +1612,6 @@ cd GitHub/dot/Debian/grub
 vim grub
 sudo update-grub
 sudo update-initramfs -k all -u
-systemd-inhibit --list --mode=block
 grep . /sys/class/drm/*/status
 cd ../logind
 vim sleep.conf
@@ -1625,7 +1624,6 @@ cp wallpaper_gnome.sh hiberna.sh
 vim hiberna.sh
 vim ~/.config/autostart/ignore-lid-switch-tweak.desktop
 hiberna.sh
-cd .config/autostart
 cat ignore-lid-switch-tweak.desktop
 chmod +x instala_debian.sh
 cat hiberna.sh
@@ -1716,7 +1714,6 @@ cat /proc/acpi/button/lid/LID/state
 cat /proc/acpi/button/lid/LID/state | grep open
 cat /proc/acpi/button/lid/LID/state | grep -c open 
 cat /proc/acpi/button/lid/LID/state | grep -c close
-hibernar.sh
 chmod +x hibernar.sh
 ./hibernar.sh
 cd ../.config/systemd/user
@@ -1795,7 +1792,6 @@ cp kwinrc ~/GitHub/dot/Manjaro-KDE/config
 rm kwinrc
 ln -s ~/GitHub/dot/Manjaro-KDE/config/kwinrc ./
 cd .config/onedrive
-vim config
 ls OneDrive
 onedrive --monitor
 cat .config/systemd/user/onedrive.service
@@ -1897,7 +1893,6 @@ cd ../.bin
 vim wallpaper.sh
 yay -S feh
 yay -S picom
-cd .bin
 cp -R ~/GitHub/dot/Manjaro/bin/kernel ./
 vim .bin/wallpaper.sh
 wallpaper.sh
@@ -2048,7 +2043,6 @@ find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.
 find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.\* \) -delete
 systemctl --user status onedrive.service
 ssh e-mural.mat.unb.br
-cd
 sudo pacman -S hyprlan
 sudo pacman -S hyprland
 cd GitHub/dot/Manjaro/config
@@ -2064,9 +2058,7 @@ vim waybar/config
 ps aux
 vim .config
 systemctl hibernate
-systemctl --user start hibernacao.timer
 systemctl --user status hibernacao.service
-systemctl --user status hibernacao.timer
 cat .config/hypr/hyprland.conf
 cd hypr
 celar
@@ -2084,13 +2076,9 @@ q
 vim clear
 clear
 vim .config/hypr/hyprland.conf
-vim .config/waybar/config
 cat /etc/xdg/waybar/style.css
 mv style-css style.css
-vim .config/waybar/style.css
 kill -9 76394
-cp style.css style.css-1
-vim macchiato.css
 cp config config-1
 vim ../hypr/macchiato.conf
 sudo pacman -S hyprpaper
@@ -2100,7 +2088,6 @@ h
 hyprctl monitors all
 ls OneDrive/Pictures/Wallpapers
 vim .config/hypr/hyprpaper.conf
-cd .config/hypr
 mkdir scripts
 vim scripts/rofi_powermenu
 chmod +x scripts/rofi_powermenu
@@ -2113,37 +2100,105 @@ vim shared/colors.rasi
 vim shared/fonts.rasi
 cd ../
 rm -rf rofi
-cd .config/waybar
 cp config config-2
-ps aux | grep waybar
 kill -9 88119
 cp config-1 config
 cp style.css-1 style.css-2
-rm style.css && vim style.css
 vim color.css
-rm config && vim config
-vim style.css
 cp style.css-1 style.css
 mv config-1 config
-waybar
 vim config-2
 rm config-2
 vim style.css-1
 vim style.css-2
 rm style.css-1 style.css-2
-ls
 exi
-exit
 cd .config/hypr
-ls
 rm -rf scripts
-vim .config/waybar/config
-vim .config/waybar/style.css
 ps aux | grep waybar
 pkill -all waybar
-cd .config/waybar
-ls
 rm config && vim config
-rm style.css && vim style.css
-pkill waybar
+cat GitHub/dot/Manjaro/logind.conf/logind.conf
+cd .config/autostart
+cat msm_notifier.desktop
+systemd-inhibit --list --mode=block
+ls ../
+cd
+cp GitHub/dot/Debian/bin/hibernar.sh ./.bin
+systemctl --user stop hibernacao.timer
+systemctl --user start hibernacao.timer
+systemctl --user status hibernacao.timer
+cd .bin
+hibernar.sh
+cat hibernar.sh
+gnome-terminal
+vim .config/waybar/style.css
 waybar
+waybar$
+cat /sys/class/leds/input17::capslock/brightness
+cat /sys/class/leds/input3::capslock/brightness
+pkill waybar
+sudo systemctl start power-profiles-daemon.service 
+sudo systemctl status power-profiles-daemon.service 
+vim .config/waybar/config
+cd .config/waybar
+vim config
+vim macchiato.css
+vim style.css
+cp style.css style.css-1
+rm 
+ls
+cp style.css style.css-interessante
+rm style.css && vim style.css
+pkill waybar && waybar&
+waybar&
+exit
+systemctl --user status hibernacao.timer
+sudo nvim /etc/systemd/logind.conf
+sudo systemctl daemon-reload
+sudo systemctl reload systemd-logind.service
+cd ../
+cd GitHub/dot/Manjaro/
+mkdir gnome-tweak-tool-lid-inhibitor
+cd gnome-tweak-tool-lid-inhibitor
+chmod +x gnome-tweak-tool-lid-inhibitor
+gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'nothing'
+gsettings get org.gnome.settings-daemon.plugins.power lid-close-ac-action
+sudo nvim /etc/UPower/UPower.conf
+sudo systemctl restart upower.service
+cd .config/autostart
+ls
+ls /usr/local/bin
+sudo ln -s ~/GitHub/dot/Manjaro/gnome-tweak-tool-lid-inhibitor/gnome-tweak-tool-lid-inhibitor /usr/local/bin
+vim gnome-tweak-tool-lid-inhibitor
+vim ignore-lid-switch-tweak.desktop
+cd
+sudo vim /etc/UPower/UPower.conf
+sudo reboot
+sudo nvim /etc/systemd/sleep.conf
+sudo unlink /usr/local/bin/gnome-tweak-tool-lid-inhibitor
+cd .config/autostart
+mv ignore-lid-switch-tweak.desktop ../
+cd ..
+ls
+sudo reboot
+hibernar.sh
+sleep 5 && hibernar.sh
+sudo nvim /etc/systemd/sleep.conf
+sudo reboot
+systemctl --user status hibernacao.timer
+cd .config/systemd/user
+ls
+cat power.service
+cat hibernacao.timer
+cat hibernacao.service
+vim hibernacao.timer
+systemctl --user enable --now hibernacao.timer
+sudo reboot
+systemctl --user status hibernacao.timer
+sudo nvim /etc/systemd/sleep.conf
+sudo reboot
+vim GitHub/dot/Manjaro/grub/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+yay -Syyu
+sudo reboot
