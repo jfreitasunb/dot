@@ -89,6 +89,10 @@ ln -s ~/GitHub/dot/fonts/ ./
 
 fc-cache -f -v
 
+cd ~/.local/share/gnome-shell
+
+ln -s ~/GitHub/dot/Manjaro/gnome_extensions/extensions ./extensions
+
 cd ~
 
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
