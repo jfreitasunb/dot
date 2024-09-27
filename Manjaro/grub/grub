@@ -1,7 +1,7 @@
 # GRUB boot loader configuration
 
 GRUB_DEFAULT=saved
-GRUB_TIMEOUT=5
+GRUB_TIMEOUT=10
 GRUB_DISTRIBUTOR="Manjaro"
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=55c23b35-8c4c-4d3b-ad92-933732c0f6d2 apparmor=1 security=apparmor udev.log_priority=3"
 GRUB_CMDLINE_LINUX=""
