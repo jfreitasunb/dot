@@ -11,6 +11,7 @@
         "hyprland/mode",
     ],
     "modules-center": [
+        "clock",
         "hyprland/window"
     ],
     "modules-right": [
@@ -26,7 +27,6 @@
        // "hyprland/language",
         "battery",
        // "battery#bat2",
-        "clock",
         "tray",
         "custom/power"
     ],
