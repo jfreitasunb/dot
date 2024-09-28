@@ -1778,7 +1778,6 @@ vim .config/kwinrc
 cp kwinrc ~/GitHub/dot/Manjaro-KDE/config
 rm kwinrc
 ln -s ~/GitHub/dot/Manjaro-KDE/config/kwinrc ./
-cd .config/onedrive
 ls OneDrive
 cat .config/systemd/user/onedrive.service
 vim .config/systemd/user/onedrive.service
@@ -2128,7 +2127,6 @@ waybar&
 sudo nvim /etc/systemd/logind.conf
 sudo systemctl daemon-reload
 sudo systemctl reload systemd-logind.service
-cd GitHub/dot/Manjaro/
 mkdir gnome-tweak-tool-lid-inhibitor
 cd gnome-tweak-tool-lid-inhibitor
 chmod +x gnome-tweak-tool-lid-inhibitor
@@ -2173,15 +2171,46 @@ systemctl --user status hibernacao.timer
 systemctl --user start onedrive.service
 whereis onedrive
 systemctl --user status onedrive.service
-systemctl --user stop onedrive.service
 ps aux | grep onedrive
-onedrive --monitor
 onedrive --monitor --resync
 yay -Syyu
-cd
 cd OneDrive/Backups
-ls
 ls Debian
 ls Debian/Backup-Diario
 ls Manjaro/Backup-Diario
+cd GitHub/dot/Manjaro/
+mkdir gnome_extensions
+mkdir gnome_extensions/extensions
+yay -Rns onedrive-abraunegg
+systemctl --user stop onedrive.service
+curl -fsS https://dlang.org/install.sh | bash -s dmd\
+\
+DLANG=$(/usr/bin/ls ~/dlang/ | grep dmd | awk '{print $1}')\
+\
+source ~/dlang/$DLANG/activate\
+\
+git clone https://github.com/abraunegg/onedrive.git\
+\
+cd onedrive\
+\
+./configure ./configure --enable-notifications\
+\
+make clean; make;\
+\
+sudo make install\
+\
+deactivate\
+\
+cd ~\
+\
+rm -rf dlang\
+\
+rm -rf onedrive
+rm items.sqlite3
+mv items.sqlite3 items.sqlite3-BKP
+onedrive --monitor
+cd .config/onedrive
+ls
+mv items.sqlite3-BKP items.sqlite3
+cd
 exit
