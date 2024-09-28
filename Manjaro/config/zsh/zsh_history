@@ -790,7 +790,6 @@ kill -9 16465
 npm install flowbite
 npm install sweetalert2
 sudo nala update && sudo nala upgrade
-cd GitHub
 history | grep composer
 composer create-project laravel/laravel livewire
 cd livewire
@@ -1015,7 +1014,6 @@ pyenv python -m venv .dengue
 pyenv python3.10 -m venv .dengue
 python -m venv ~/python_venvs/dengue
 showkey --scancodes
-sudo grub-mkconfig -o /boot/grub/grub.cfg
 ps aux | grep docker
 kill -9 607118
 sudo
@@ -1054,7 +1052,6 @@ sudo systemctl disable gdm.service
 sudo systemctl enable sddm.service
 sudo systemctl status sddm.service
 sudo vim /etc/mkinitcpio.conf
-vim GitHub/dot/Manjaro/grub/grub
 sudo mkinitcpio -P
 sudo systemctl disable sddm.service
 sudo systemctl enable gdm.service
@@ -1165,7 +1162,6 @@ wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ub
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_12/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
 sudo apt-get update
 sudo apt install --no-install-recommends --no-install-suggests onedrive
-ps aux | grep onedrive
 kill -9 16919
 sudo apt remove onedrive\
 sudo add-apt-repository --remove ppa:yann1ck/onedrive
@@ -1523,13 +1519,10 @@ cat .config/gtk-4.0
 sudo nala install hibernate
 man systemd-sleep.conf
 sudo systemctl restart sleep
-gsettings get org.gnome.settings-daemon.plugins.power lid-close-ac-action
 cat /etc/UPower/UPower.conf
-sudo nvim /etc/UPower/UPower.conf
 sudo nvim /etc/gdm3/greeter.dconf-defaults
 sudo dmesg | grep error
 grep LID /proc/acpi/wakeup
-sudo nvim /etc/systemd/logind.conf
 sudo nvim /etc/systemd/sleep.conf.d/
 sudo nvim /etc/systemd/sleep.conf.d/nosuspend.conf
 sudo nvim sleep.conf.d/nosuspend.conf
@@ -1553,7 +1546,6 @@ sudo systemctl mask hibernate.target
 sudo systemctl mask suspend.target
 sudo systemctl unmask hibernate.target
 cat suspend.target
-sudo systemctl daemon-reload
 cd ..;
 sudo nvim /etc/xdg/autostart/org.gnome.SettingsDaemon.Power.desktop
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action hibernate
@@ -1566,7 +1558,6 @@ ssh inscricoes.mat.unb.br
 ssh inscricoespos.mat.unb.br
 sudo vim sleep.conf
 sudo nvim sleep.conf
-sudo nvim /etc/systemd/sleep.conf
 cp debian_gnome_settings_2024-08-15.ini ~/
 sudo journalctl -b -u systemd-logind
 sudo nvim logind.conf
@@ -1603,7 +1594,6 @@ sudo evtest
 systemd-inhibit
 sudo nala update
 sudo nala upgrade
-sudo reboot
 sudo journalctl --unit=systemd-logind --follow\
 
 sudo journalctl --unit=systemd-logind --follow
@@ -1615,7 +1605,6 @@ sudo update-initramfs -k all -u
 grep . /sys/class/drm/*/status
 cd ../logind
 vim sleep.conf
-sudo systemctl reload systemd-logind.service
 sudo journalctl --unit=systemd-logind | grep Suspending
 sudo journalctl --unit=systemd-logind
 whereis systemctl
@@ -1690,7 +1679,6 @@ sudo nala install golang
 ./dev.sh build
 gondor_lista_pacotes.sh
 cd kitty.app
-cd ..
 cp -R kitty.app ~/.bin
 sudo nala remove kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
@@ -1723,7 +1711,6 @@ ln -s ~/GitHub/dot/Debian/config/systemd ./
 systemctl --user reload
 reboot
 systemctl --user list-units
-cd .config/systemd/user
 systemctl --user enable hibernacao.service --now
 systemctl --user disable hibernacao.service --now
 systemctl --user disable hibernacao.timer --now
@@ -1793,13 +1780,9 @@ rm kwinrc
 ln -s ~/GitHub/dot/Manjaro-KDE/config/kwinrc ./
 cd .config/onedrive
 ls OneDrive
-onedrive --monitor
 cat .config/systemd/user/onedrive.service
-whereis onedrive
 vim .config/systemd/user/onedrive.service
 systemctl --user daemon-reload
-systemctl --user stop onedrive.service
-systemctl --user start onedrive.service
 yay -S libreoffice-fresh-pt-br
 yay -s vero
 yay -S vero
@@ -1971,7 +1954,6 @@ vim animando_area_abaixo_grafico.py
 manim -pql animando_area_abaixo_grafico.py
 manim -pql zoom_grafico.py
 vim zoom_grafico.py
-yay -Syyu
 cat .temporario/data_ultimo_backup_tardis
 vim .temporario/data_ultimo_backup_tardis
 backup_TARDIS.sh
@@ -2004,7 +1986,6 @@ sudo chattr +C /var/lib/docker\
 \
 sudo chattr +C /var/lib/libvirt\
 
-cd GitHub/dot/Manjaro
 ls -la logind.conf
 ls -la grub
 ls -la mkinitcpio_conf
@@ -2041,7 +2022,6 @@ find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.
 find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~ \)
 find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.\* \)
 find ./ -type f \( -iname \*.nav -o -iname \*.out -o -iname \*.aux -o -iname \*.toc -o -iname \*.log -o -iname \*.snm -o -iname \*.synctex.gz -o -iname \*.xdv -o -iname \*.xopp\~  -o -iname \.\* \) -delete
-systemctl --user status onedrive.service
 ssh e-mural.mat.unb.br
 sudo pacman -S hyprlan
 sudo pacman -S hyprland
@@ -2067,7 +2047,6 @@ rm -rf hypr
 ln -s ~/GitHub/dot/Manjaro/config/hypr ./
 ln -s ~/GitHub/dot/Manjaro/config/waybar ./
 vim hypr/hyprland.conf
-cd .config
 rm hypr/hyprland.conf
 vim power_menu.xml
 mv style.css style-css
@@ -2098,7 +2077,6 @@ vim confirm.rasi
 mkdir shared
 vim shared/colors.rasi
 vim shared/fonts.rasi
-cd ../
 rm -rf rofi
 cp config config-2
 kill -9 88119
@@ -2119,17 +2097,13 @@ ps aux | grep waybar
 pkill -all waybar
 rm config && vim config
 cat GitHub/dot/Manjaro/logind.conf/logind.conf
-cd .config/autostart
 cat msm_notifier.desktop
 systemd-inhibit --list --mode=block
 ls ../
-cd
 cp GitHub/dot/Debian/bin/hibernar.sh ./.bin
 systemctl --user stop hibernacao.timer
 systemctl --user start hibernacao.timer
-systemctl --user status hibernacao.timer
 cd .bin
-hibernar.sh
 cat hibernar.sh
 gnome-terminal
 vim .config/waybar/style.css
@@ -2147,17 +2121,13 @@ vim macchiato.css
 vim style.css
 cp style.css style.css-1
 rm 
-ls
 cp style.css style.css-interessante
 rm style.css && vim style.css
 pkill waybar && waybar&
 waybar&
-exit
-systemctl --user status hibernacao.timer
 sudo nvim /etc/systemd/logind.conf
 sudo systemctl daemon-reload
 sudo systemctl reload systemd-logind.service
-cd ../
 cd GitHub/dot/Manjaro/
 mkdir gnome-tweak-tool-lid-inhibitor
 cd gnome-tweak-tool-lid-inhibitor
@@ -2166,39 +2136,52 @@ gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'nothi
 gsettings get org.gnome.settings-daemon.plugins.power lid-close-ac-action
 sudo nvim /etc/UPower/UPower.conf
 sudo systemctl restart upower.service
-cd .config/autostart
-ls
 ls /usr/local/bin
 sudo ln -s ~/GitHub/dot/Manjaro/gnome-tweak-tool-lid-inhibitor/gnome-tweak-tool-lid-inhibitor /usr/local/bin
 vim gnome-tweak-tool-lid-inhibitor
 vim ignore-lid-switch-tweak.desktop
-cd
 sudo vim /etc/UPower/UPower.conf
-sudo reboot
-sudo nvim /etc/systemd/sleep.conf
 sudo unlink /usr/local/bin/gnome-tweak-tool-lid-inhibitor
 cd .config/autostart
 mv ignore-lid-switch-tweak.desktop ../
-cd ..
-ls
-sudo reboot
 hibernar.sh
 sleep 5 && hibernar.sh
-sudo nvim /etc/systemd/sleep.conf
-sudo reboot
-systemctl --user status hibernacao.timer
 cd .config/systemd/user
-ls
 cat power.service
 cat hibernacao.timer
 cat hibernacao.service
 vim hibernacao.timer
 systemctl --user enable --now hibernacao.timer
-sudo reboot
-systemctl --user status hibernacao.timer
 sudo nvim /etc/systemd/sleep.conf
-sudo reboot
 vim GitHub/dot/Manjaro/grub/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-yay -Syyu
 sudo reboot
+cd .config
+cd GitHub/dot/Manjaro
+cd config
+rm ignore-lid-switch-tweak.desktop
+cd ..
+rm -rf gnome-tweak-tool-lid-inhibitor
+cd ~/.local/share/gnome-shell
+ls notifications
+cd ../
+cd gnome-shell
+ln -s ~/GitHub/dot/Manjaro/gnome_extensions/extensions ./extensions
+cd GitHub
+mkdir bml
+systemctl --user status hibernacao.timer
+systemctl --user start onedrive.service
+whereis onedrive
+systemctl --user status onedrive.service
+systemctl --user stop onedrive.service
+ps aux | grep onedrive
+onedrive --monitor
+onedrive --monitor --resync
+yay -Syyu
+cd
+cd OneDrive/Backups
+ls
+ls Debian
+ls Debian/Backup-Diario
+ls Manjaro/Backup-Diario
+exit
