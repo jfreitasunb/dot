@@ -66,7 +66,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "junegunn/fzf"
-zplug "romkatv/powerlevel10k", as:theme, depth:1
+#zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # zplug - install/load new plugins when zsh is started or reloaded
 if ! zplug check --verbose; then
@@ -94,7 +94,7 @@ if [ -d "$HOME/.pyenv" ] ; then
     eval "$(pyenv init -)"
 fi
 
-source ~/.config/zsh/.p10k.zsh
+#source ~/.config/zsh/.p10k.zsh
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -103,3 +103,4 @@ export NVM_DIR="$HOME/.config/nvm"
 
 #neofetch
 
+eval "$(starship init zsh)"
