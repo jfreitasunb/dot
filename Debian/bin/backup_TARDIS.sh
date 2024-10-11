@@ -18,7 +18,7 @@ rotavidade=3
 
 if [ $diferenca -gt $rotavidade ];
 then
-
+  notify-send "Backup iniciado. Não remova o HD Tardis."
   if [ -d "$BACKUP_DESTINATION" ] ; then
 
     if [ -f $PIDFILE ]
@@ -56,4 +56,6 @@ then
   fi
 
  echo $(date '+%Y-%m-%d') > ~/.temporario/data_ultimo_backup_tardis
+
+ notify-send "Backup finalizado. Pode remover o HD Tardis."
 fi
