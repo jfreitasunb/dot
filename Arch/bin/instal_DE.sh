@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 cd ~/
 
@@ -100,6 +100,10 @@ sudo rm /etc/systemd/logind.conf
 
 sudo ln -s /home/jfreitas/GitHub/dot/Arch/logind/logind.conf /etc/systemd/
 
+sudo rm /etc/systemd/sleep.conf
+
+sudo ln -s /home/jfreitas/GitHub/dot/Arch/sleep.conf/sleep.conf /etc/systemd/
+
 sudo rm /etc/mkinitcpio.conf
 
 sudo ln -s /home/jfreitas/GitHub/dot/Arch/mkinitcpio/mkinitcpio.conf /etc/ 
@@ -116,9 +120,9 @@ sudo rm -rf /etc/libvirt
 
 sudo ln -s ~/GitHub/dot/Arch/libvirt /etc/libvirt
 
-sudo cp ~/GitHub/dot/Arch/config/systemd/gondor_root.service /etc/systemd/system/
+# sudo cp ~/GitHub/dot/Arch/config/systemd/gondor_root.service /etc/systemd/system/
 
-sudo cp ~/GitHub/dot/Arch/config/systemd/gondor_root.timer /etc/systemd/system/
+# sudo cp ~/GitHub/dot/Arch/config/systemd/gondor_root.timer /etc/systemd/system/
 
 sudo systemctl enable gondor_root.timer
 
@@ -131,6 +135,8 @@ sudo systemctl enable --now auto-cpufreq.service
 sudo usermod -aG docker jfreitas
 
 sudo chattr +C /var/log
+
+sudo chattr +C /var/cache/pacman/pkg
 
 sudo chattr +C /var/lib/docker
 
