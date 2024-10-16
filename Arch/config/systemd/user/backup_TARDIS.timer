@@ -1,5 +1,5 @@
 [Unit]
-Description=Backup do Dropbox para HD externo
+Description=Backup do HOME para HD externo
 
 [Timer]
 OnCalendar=*:0/10

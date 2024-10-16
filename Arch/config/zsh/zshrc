@@ -14,7 +14,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
 ### ---- history config -------------------------------------
-HISTFILE=~/.zsh_history
+HISTFILE=~/.config/zsh/.zsh_history
 
 # How many commands zsh will load to memory.
 HISTSIZE=10000
@@ -25,6 +25,11 @@ SAVEHIST=1000000000
 # History won't save duplicates.
 setopt HIST_SAVE_NO_DUPS
 
+
+#Keybinds
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 # History won't show duplicates on search.
 #setopt HIST_FIND_NO_DUPS
 #if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ] ; then
@@ -66,7 +71,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "junegunn/fzf"
-zplug "romkatv/powerlevel10k", as:theme, depth:1
+#zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # zplug - install/load new plugins when zsh is started or reloaded
 if ! zplug check --verbose; then
@@ -94,7 +99,7 @@ if [ -d "$HOME/.pyenv" ] ; then
     eval "$(pyenv init -)"
 fi
 
-source ~/.config/zsh/.p10k.zsh
+#source ~/.config/zsh/.p10k.zsh
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -103,3 +108,4 @@ export NVM_DIR="$HOME/.config/nvm"
 
 #neofetch
 
+eval "$(starship init zsh)"
