@@ -26,10 +26,6 @@ SAVEHIST=1000000000
 setopt HIST_SAVE_NO_DUPS
 
 
-#Keybinds
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-bindkey  "^[[3~"  delete-char
 # History won't show duplicates on search.
 #setopt HIST_FIND_NO_DUPS
 #if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ] ; then
@@ -55,6 +51,11 @@ fi
 export PATH
 
 bindkey -e
+
+#Keybinds
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 
 # Use modern completion system
 autoload -U compinit; compinit
