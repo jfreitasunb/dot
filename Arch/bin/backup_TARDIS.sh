@@ -44,6 +44,8 @@ then
       fi
     fi
 
+    notify-send "Backup iniciado. Não remova o HD Tardis."
+
     BACKUP_SOURCE="/home/jfreitas/"
 
     EXCLUDE_LIST_TARDIS="/home/jfreitas/OneDrive/Backups/Tardis/excludes/exclude-Tardis.list"
@@ -53,6 +55,8 @@ then
     umount $BACKUP_DEVICE
 
     rm $PIDFILE
+
+    notify-send "Backup finalizado. Pode remover o HD Tardis."
 
     echo $(date '+%Y-%m-%d') > ~/.temporario/data_ultimo_backup_tardis
   fi
