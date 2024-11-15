@@ -16,7 +16,7 @@
         "hyprland/window"
     ],
     "modules-right": [
-        //"mpd",
+        "custom/wallchange",
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -199,6 +199,15 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/wallchange": {
+        "format": "\ue60d",
+        "exec": "echo ; echo \ue60d switch wallpaper",
+        "on-click": "~/.bin/setwallpaper.sh",
+        //"on-click-right": "~/.bin/kill_wallpaper_loop.sh",
+        //"on-click-middle":"~/.bin/wallpaper_set.sh",
+        "interval" : 3600, // once every day
+        "tooltip": true
     },
     "custom/power": {
         "format" : "⏻ ",
