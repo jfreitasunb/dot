@@ -1,221 +1,127 @@
+@import "mocha.css"; 
+
 * {
-    border: none;
-    border-radius: 0px;
-    font-family: Roboto Mono SemiBold, Iosevka Nerd Font;
-    font-size: 18px;
-    font-style: normal;
+    font-family: "MesloLGS Nerd Font Mono Bold";
+    font-size: 16px;
     min-height: 0;
-	}
+    font-weight: bold;
+}
 
 window#waybar {
-    background: rgba(76,86,106,0.8);
-    color: #cdd6f4
-}
-
-#workspaces {
-	background: #2e3440;
-	margin: 5px 5px;
-    padding: 8px 5px;
-	border-radius: 16px;
-    border: solid 0px #cdd6f4;
-    font-weight: normal;
-    font-style: normal;
-}
-#workspaces button {
-    padding: 0px 5px;
-    margin: 0px 3px;
-    border-radius: 16px;
-    color: #d8dee9;
-    background-color: #6f7787;
-    transition: all 0.3s ease-in-out;
-}
-#workspaces button.active {
-    color: #cdd6f4;
-    background-color: #cdd6f4;
-    border-radius: 16px;
-    min-width: 50px;
-    background-size: 400% 400%;
-    transition: all 0.3s ease-in-out;
-}
-#workspaces button:hover {
-	background-color: #cdd6f4;
-	color: #cdd6f4;
-	border-radius: 16px;
-  min-width: 50px;
-  background-size: 400% 400%;
-}
-
-#clock, 
-#pulseaudio, 
-#network, 
-#custom-launcher, 
-#custom-pacmanAlt,
-#cpu,
-#memory,
-#disk,
-#cava,
-#language,
-#windows,
-
-#cava{
-    background-color: #2e3440;
-    color: #a3be8c;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;      
-}
-
-#custom-pacmanAlt{
-    background-color: #2e3440;
-    color: #a3be8c;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;      
-}
-
-#tray {
-    background: #2e3440;
-    margin: 5px 5px 5px 5px;
-    border-radius: 16px;
-    padding: 0px 12px;
-    /*border-right: solid 1px #282738;*/
-}
-
-#clock {
-    color: #cdd6f4;
-    background-color: #2e3440;
-    border-radius: 0px 0px 0px 24px;
-    padding-left: 13px;
-    padding-right: 15px;
-    margin-right: 0px;
-    margin-left: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-weight: bold;
-    /*border-left: solid 1px #282738;*/
-}
-
-#network {
-    color: #cdd6f4;
-    border-radius: 8px;
-    margin-right: 5px;
-    font-weight: bold;
-}
-
-#pulseaudio {
-    color: #5e81ac;
-    background: #2e3440;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
-}
-
-#custom-launcher {
-    color: #cdd6f4;
-    background-color: #2e3440;
-    border-radius: 0px 24px 0px 0px;
-    margin: 0px 0px 0px 0px;
-    padding: 0 20px 0 13px;
-    /*border-right: solid 1px #282738;*/
-    font-size: 20px;
-}
-
-#custom-launcher button:hover {
-    background-color: #FB4934;
-    color: transparent;
-    border-radius: 8px;
-    margin-right: -5px;
-    margin-left: 10px;
-}
-
-#custom-playerctl {
-	background: #2e3440;
-    padding: 0px 5px 0px 10px;
-	border-radius: 16px;
-    /*border-left: solid 1px #282738;*/
-    /*border-right: solid 1px #282738;*/
-    margin: 5px 7px;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 16px;
-}
-
-#custom-playerlabel {
     background: transparent;
-    padding-left: 10px;
-    padding-right: 5px;
-    border-radius: 16px;
-    /*border-left: solid 1px #282738;*/
-    /*border-right: solid 1px #282738;*/
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-weight: normal;
-    font-style: normal;
+    background-color: @crust;
+    color: @overlay0;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    border-bottom: 1px solid @overlay1;
 }
 
 #window {
-    background: #2e3440;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 16px;
-    /*border-left: solid 1px #282738;*/
-    /*border-right: solid 1px #282738;*/
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-weight: normal;
-    font-style: normal;
+    margin: 8px;
+    padding-left: 8;
+    padding-right: 8;
 }
 
-#cpu {
-    background-color: #2e3440;
-    color: #bf616a;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
 }
 
-#memory {
-    background-color: #2e3440;
-    color: #b48ead;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
+button:hover {
+    background: inherit;
+    color: @mauve;
+    border-top: 2px solid @mauve;
 }
 
-#disk {
-    background-color: #2e3440;
-    color: #d08770;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
+#workspaces button {
+    padding: 0 4px;
 }
 
-#language {
-    background-color: #2e3440;
-    color: #a3be8c;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;
+#workspaces button.focused {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @rosewater;
+    border-top: 2px solid @rosewater;
 }
 
+#workspaces button.active {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @mauve;
+    border-top: 2px solid @mauve;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#mode,
+#scratchpad {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#clock {
+    color: @maroon;
+    border-bottom: 2px solid @maroon;
+}
+
+#clock.date {
+    color: @mauve;
+    border-bottom: 2px solid @mauve;
+}
+
+#pulseaudio {
+    color: @blue;
+    border-bottom: 2px solid @blue;
+}
+
+#network {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
+}
+
+#idle_inhibitor {
+    margin-right: 12px;
+    color: #7cb342;
+}
+
+#idle_inhibitor.activated {
+    color: @red;
+}
+
+#battery {
+    color: @green;
+    border-bottom: 2px solid @green;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+#custom-vpn {
+    color: @lavender;
+    border-radius: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
