@@ -136,8 +136,8 @@
     },
     
     "custom/wallchange": {
-        "format": " Wall",
-        "exec": "echo ; echo  switch wallpaper",
+        "format": "\ue60d",
+        "exec": "echo ; echo \ue60d switch wallpaper",
         "on-click": "~/.bin/setwallpaper.sh",
         //"on-click-right": "~/.bin/kill_wallpaper_loop.sh",
         //"on-click-middle":"~/.bin/wallpaper_set.sh",

@@ -21,24 +21,12 @@ window#waybar {
 #cpu,
 #memory,
 #disk,
-#cava,
 #taskbar,
 #workspaces,
 #temperature,
 #custom-wlogout,
 #custom-wallchange,
 #window
-
-#cava{
-    background-color: #2e3440;
-    color: #a3be8c;
-    border-radius: 10px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
-    font-weight: bold;     
-}
 
 #custom-pacmanAlt{
     background-color: #2e3440;
@@ -216,6 +204,11 @@ window#waybar {
 
 #custom-wallchange {
   background-color: #2e3440;
+  border-radius: 10px;
+  margin: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 0px 16px 0px 10px;
   color: #B48EAD;
   border-radius: 10px;
 }
