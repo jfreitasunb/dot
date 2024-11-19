@@ -1,7 +1,7 @@
 {
     "position": "top",
     "layer": "top",
-    "height": 34,
+    "height": 42,
 
     "modules-left": [
         "custom/logo",
@@ -9,8 +9,9 @@
     ],
     "modules-center": ["clock"],
     "modules-right": [
+        "tray",
         "custom/wallchange",
-        "temperature",
+        //"temperature",
         "disk",
         "memory",
         "cpu",
@@ -138,12 +139,9 @@
             "active": "",
             //"default": ""
         },
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
+        "persistent-workspaces": {
+            "eDP-1": [1, 2, 3, 4, 5], 
+            "HDMI-A-1": [6, 7, 8]
         },
         "sort-by-number": true
     },
