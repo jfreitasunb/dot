@@ -212,3 +212,30 @@ window#waybar {
   color: #B48EAD;
   border-radius: 10px;
 }
+#workspaces button.active {
+  background-color: #2e3440;
+  border-radius: 10px;
+  margin: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0px 16px 0px 10px;
+  color: #1e1e2e;
+  border-radius: 10px;
+  background-color: #cdd6f4;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  border-radius: 10px;
+  margin: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #1e1e2e;
+  background-color: #cdd6f4;
+}
+
+#workspaces button.urgent {
+  background-color: #f38ba8;
+}
+
