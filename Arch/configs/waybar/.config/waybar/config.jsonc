@@ -1,7 +1,7 @@
 {
     "position": "top",
     "layer": "top",
-    "height": 42,
+    "height": 43,
 
     "modules-left": [
         "custom/logo",
@@ -16,7 +16,7 @@
         "memory",
         "cpu",
         "network",
-        "custom/pacmanAlt",
+       // "custom/pacmanAlt",
         "wireplumber",
         "custom/wlogout"
     ],
@@ -64,7 +64,7 @@
                     }
     },
     "wireplumber": {
-        "format": "{icon}",
+        "format": " {icon} ",
         "format-bluetooth": "󰂰",
         "nospacing": 1,
         "tooltip-format": "Volume : {volume}%",
@@ -73,7 +73,7 @@
             "headphone": "",
             "default": ["󰖀","󰕾",""]
         },
-        "on-click": "pamixer -t",
+        "on-click": "pavucontrol",
         "scroll-step": 1
     },
     "custom/logo": {
