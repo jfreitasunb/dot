@@ -99,7 +99,7 @@
         "path": "/"
     },
     "custom/pacmanAlt": {
-            "format": " {}",
+            "format": " {}",
             "interval": 3600,
             "exec": "checkupdates | wc -l",
             "tooltip": false        
@@ -144,15 +144,14 @@
             "3": [],
             "4": [],
             "5": [],
-    },
+        },
         "sort-by-number": true
     },
-          "custom/wlogout": {
+    "custom/wlogout": {
         "format": "  {}",
-        "on-click": "wlogout -p xdg -b 2 -T 300 -B 300 -R 800 -L 800",
+        "on-click": "wlogout",
         "tooltip": false
     },
-    
     "custom/wallchange": {
         "format": "\ue60d",
         "exec": "echo ; echo \ue60d switch wallpaper",
