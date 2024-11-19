@@ -14,9 +14,9 @@ window#waybar {
 
 
 #clock, 
-#pulseaudio, 
+#wireplumber, 
 #network, 
-#custom-launcher, 
+#custom-logo, 
 #custom-pacmanAlt,
 #cpu,
 #memory,
@@ -67,7 +67,7 @@ window#waybar {
     border-radius: 10px;
 }
 
-#pulseaudio {
+#wireplumber {
     color: #5e81ac;
     background: #2e3440;
     border-radius: 10px;
@@ -78,17 +78,17 @@ window#waybar {
     font-weight: bold;
 }
 
-#custom-launcher {
+#custom-logo {
     color: #cdd6f4;
     background-color: #2e3440;
-    border-radius: 0px 24px 0px 0px;
-    margin: 0px 0px 0px 0px;
-    padding: 0 20px 0 13px;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 0 10px 0 0px;
     /*border-right: solid 1px #282738;*/
     font-size: 20px;
 }
 
-#custom-launcher button:hover {
+#custom-logo button:hover {
     background-color: #FB4934;
     color: transparent;
     border-radius: 10px;
