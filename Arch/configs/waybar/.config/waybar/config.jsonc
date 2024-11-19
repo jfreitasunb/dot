@@ -16,7 +16,7 @@
         "cpu",
         "network",
         "custom/pacmanAlt",
-        "pulseaudio",
+        "wireplumber",
         "custom/wlogout"
     ],
     "wlr/taskbar": {
