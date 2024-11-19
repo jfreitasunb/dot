@@ -56,10 +56,10 @@
                     "on-scroll"     : 1,
                     "on-click-right": "mode",
                     "format": {
-                              "months":     "<span color='#5e81ac'><b>{}</b></span>",
-                              "days":       "<span color='#88c0d0'><b>{}</b></span>",
-                              "weekdays":   "<span color='#d08770'><b>{}</b></span>",
-                              "today":      "<span color='#bf616a'><b><u>{}</u></b></span>"
+                                  "months":     "<span color='#5e81ac'><b>{}</b></span>",
+                                  "days":       "<span color='#88c0d0'><b>{}</b></span>",
+                                  "weekdays":   "<span color='#d08770'><b>{}</b></span>",
+                                  "today":      "<span color='#bf616a'><b><u>{}</u></b></span>"
                               }
                     }
     },
@@ -163,10 +163,9 @@
     "format": "{app_id}",
     "max-length": 50,
     "rewrite": {
-       "(.*) - Mozilla Firefox": "🌎 $1",
-       "(.*) - vim": " $1",
-       "(.*) - zsh": " [$1]"
+            "(.*) - Mozilla Firefox": "🌎 $1",
+            "(.*) - vim": " $1",
+            "(.*) - zsh": " [$1]"
+       }
     }
-}
-
 }
