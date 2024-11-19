@@ -28,10 +28,10 @@
         "icon-size": 25,
         "tooltip-format": "{title}"
     },
-    "custom/launcher": {
+    "custom/logo": {
             "format": "",
-            "on-click": "nemo",
-            "tooltip": "Nemo"
+            //"on-click": "nemo",
+            //"tooltip": "Nemo"
         },
     "wlr/taskbar": {
         "format": "{icon}",
