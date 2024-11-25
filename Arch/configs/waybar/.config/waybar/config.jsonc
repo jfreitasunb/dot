@@ -16,6 +16,7 @@
         "memory",
         "cpu",
         "network",
+        "battery",
        // "custom/pacmanAlt",
         "wireplumber",
         "custom/wlogout"
@@ -104,6 +105,20 @@
             "interval": 3600,
             "exec": "checkupdates | wc -l",
             "tooltip": false        
+    },
+    "battery": {
+        "states": {
+                //"good": 95,
+                "warning": 30,
+                "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "temperature": {
         "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
