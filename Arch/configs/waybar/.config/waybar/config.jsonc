@@ -14,7 +14,7 @@
         //"temperature",
         "disk",
         "memory",
-        "cpu",
+        //"cpu",
         "network",
         "battery",
        // "custom/pacmanAlt",
