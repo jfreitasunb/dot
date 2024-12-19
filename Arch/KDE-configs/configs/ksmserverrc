@@ -1,0 +1,15 @@
+[LegacySession: saved at previous logout]
+count=0
+
+[Session: saved at previous logout]
+clientId1=10e0cddbd1000173463283400000016070004
+clientId2=10e0cddbd1000173463283800000016070005
+count=2
+program1=/usr/lib/DiscoverNotifier
+program2=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-214.4.5217/dropbox
+restartCommand1=/usr/lib/DiscoverNotifier,-session,10e0cddbd1000173463283400000016070004_1734632876_584093
+restartCommand2=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-214.4.5217/dropbox,-session,10e0cddbd1000173463283800000016070005_1734632876_584049
+restartStyleHint1=0
+restartStyleHint2=0
+userId1=jfreitas
+userId2=jfreitas
