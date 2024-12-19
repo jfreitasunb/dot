@@ -3,6 +3,7 @@ _k_friendly_name=Gerenciador de atividades
 switch-to-activity-630fe9eb-f616-4a58-99d9-34f148f5aa63=none,none,Alternar para a atividade "Padrão"
 
 [KDE Keyboard Layout Switcher]
+Switch keyboard layout to Português (Brasil, ThinkPad da IBM/Lenovo)=none,none,Mudar para o layout de teclado para Português (Brasil\\, ThinkPad da IBM/Lenovo)
 Switch to Last-Used Keyboard Layout=Meta+Alt+L,none,Mudar para o layout de teclado usado por último
 Switch to Next Keyboard Layout=Meta+Alt+K,none,Mudar para o próximo layout de teclado
 _k_friendly_name=Seletor de layouts de teclado
