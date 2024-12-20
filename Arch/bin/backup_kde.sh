@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-data_hoje=$(date +%Y-%m-%d)
+data_hoje=$(date +%d-%m-%Y)
 
 konsave -s backup_$data_hoje
 
