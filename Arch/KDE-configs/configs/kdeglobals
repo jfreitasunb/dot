@@ -135,6 +135,9 @@ ForegroundVisited=155,89,182
 [General]
 ColorSchemeHash=f13a5f93a8d2186748a87eaf56ec9fcef24073d5
 
+[Icons]
+Theme=candy-icons
+
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
@@ -148,10 +151,10 @@ Show Inline Previews=true
 Show Preview=false
 Show Speedbar=true
 Show hidden files=false
-Sort by=Name
+Sort by=Date
 Sort directories first=true
 Sort hidden files last=false
-Sort reversed=false
+Sort reversed=true
 Speedbar Width=146
 View Style=DetailTree
 
