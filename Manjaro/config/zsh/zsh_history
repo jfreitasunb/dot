@@ -1052,7 +1052,6 @@ sudo systemctl disable gdm.service
 sudo systemctl enable sddm.service
 sudo systemctl status sddm.service
 sudo vim /etc/mkinitcpio.conf
-sudo mkinitcpio -P
 sudo systemctl disable sddm.service
 sudo systemctl enable gdm.service
 cd .config/systemd
@@ -1239,7 +1238,6 @@ unlink nvim
 ln -s ~/GitHub/dot/Debian/config/astronvim-jfreitas ./nvim
 nvim .zshrc
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-source .zshrc
 sudo nala install texworks
 cd .cache/keepassxc
 vim keepassxc.ini
@@ -2102,7 +2100,6 @@ ls ../
 cp GitHub/dot/Debian/bin/hibernar.sh ./.bin
 systemctl --user stop hibernacao.timer
 systemctl --user start hibernacao.timer
-cd .bin
 cat hibernar.sh
 gnome-terminal
 vim .config/waybar/style.css
@@ -2153,7 +2150,6 @@ systemctl --user enable --now hibernacao.timer
 sudo nvim /etc/systemd/sleep.conf
 vim GitHub/dot/Manjaro/grub/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-sudo reboot
 cd .config
 cd GitHub/dot/Manjaro
 cd config
@@ -2213,4 +2209,34 @@ cd .config/onedrive
 ls
 mv items.sqlite3-BKP items.sqlite3
 cd
+yay -S zplug
+source .zshrc
+cd .bin
+./instala_manjaro.sh
+nano instala_manjaro.sh
+ls /etc/default
+sudo mkinitcpio -P
+ls /etc/
+sudo systemctl enable sshd\
+\
+sudo systemctl enable tlp\
+\
+sudo systemctl enable fstrim.timer\
+\
+sudo systemctl enable libvirtd\
+\
+sudo systemctl enable docker\
+\
+sudo usermod -aG libvirt jfreitas\
+\
+sudo usermod -aG docker jfreitas\
+\
+sudo chattr +C /var/log\
+\
+sudo chattr +C /var/lib/docker\
+\
+sudo chattr +C /var/lib/libvirt\
+\
+sudo timedatectl set-local-rtc 1
+sudo reboot
 exit

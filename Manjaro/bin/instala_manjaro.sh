@@ -2,12 +2,6 @@
 
 cd ~/
 
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-
-cd ..
-
-rm -rf yay
-
 sudo curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
@@ -35,9 +29,9 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
   texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox starship yazi github-desktop-bin spotify onedrive-abraunegg \
-  dconf-editor
+  dconf-editor konsave
 
-sudo pacman -Rns gnome-tour iagno thunderbird gnome-chess gnome-weather gnome-maps gnome-contacts gnome-characters gnome-clocks gnome-mines quadrapasse
+#sudo pacman -Rns gnome-tour iagno thunderbird gnome-chess gnome-weather gnome-maps gnome-contacts gnome-characters gnome-clocks gnome-mines quadrapasse
 
 cd ~/.config/
 
@@ -89,9 +83,9 @@ ln -s ~/GitHub/dot/fonts/ ./
 
 fc-cache -f -v
 
-cd ~/.local/share/gnome-shell
-
-ln -s ~/GitHub/dot/Manjaro/gnome_extensions/extensions ./extensions
+# cd ~/.local/share/gnome-shell
+#
+# ln -s ~/GitHub/dot/Manjaro/gnome_extensions/extensions ./extensions
 
 cd ~
 
@@ -117,6 +111,8 @@ sudo rm /etc/mkinitcpio.conf
 
 sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/mkinitcpio_conf/mkinitcpio.conf /etc/mkinitcpio.conf
 
+sudo mkinitcpio -P
+
 sudo rm /etc/systemd/logind.conf
 
 sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/logind.conf/logind.conf /etc/systemd/logind.conf
@@ -125,13 +121,13 @@ sudo rm -rf /etc/libvirt
 
 sudo ln -s ~/GitHub/dot/Manjaro/libvirt /etc/libvirt
 
-sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
-
-sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.timer /etc/systemd/system/
-
-sudo systemctl enable gondor_root.timer
-
-sudo systemctl enable gondor_root.service
+# sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
+#
+# sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.timer /etc/systemd/system/
+#
+# sudo systemctl enable gondor_root.timer
+#
+# sudo systemctl enable gondor_root.service
 
 sudo systemctl enable sshd
 
