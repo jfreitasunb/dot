@@ -2291,3 +2291,24 @@ sudo chsh -e zsh jfreitas
 whereis zsh
 chsh -s /usr/bin/zsh
 exit
+atuin import auto
+ls -la
+vim .zhistory
+cp .config/zsh/zsh_history .zhistory
+atuin import zsh
+vim .zshrc
+systemctl --user start onedrive.service
+systemctl --user status onedrive.service
+sudo systemctl restart libvirtd
+date +%d-%m-%
+date +%d-%m-%Y
+man date
+date %H
+date +%H
+date +%d-%m-%Y +%H
+date +%d-%m-%Y %H
+date +%d-%m-%Y%H
+date +%d-%m-%Y_%H
+date +%d-%m-%Y_%H:%m
+date +%d-%m-%Y_%H:%m:%s
+date +%d-%m-%Y_%H:%m:%S

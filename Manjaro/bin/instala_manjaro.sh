@@ -2,12 +2,6 @@
 
 cd ~/
 
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
-
-cd ..
-
-rm -rf yay-bin
-
 sudo curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
@@ -34,68 +28,54 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
   virt-manager iptables-nft libvirt qemu-full base-devel texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context \
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
-  texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox onedrive-abraunegg
+  texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox starship yazi github-desktop-bin spotify onedrive-abraunegg \
+  dconf-editor konsave
 
+#sudo pacman -Rns gnome-tour iagno thunderbird gnome-chess gnome-weather gnome-maps gnome-contacts gnome-characters gnome-clocks gnome-mines quadrapasse
 
 cd ~/.config/
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/kitty ./
+ln -s ~/GitHub/dot/Manjaro/config/kitty ./
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/aliases/ ./
+ln -s ~/GitHub/dot/Manjaro/config/aliases/ ./
 
-rm dolphinrc
+ln -s ~/GitHub/dot/Manjaro/config/astronvim-jfreitas ./nvim
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/dolphinrc ./
+ln -s ~/GitHub/dot/Manjaro/config/picom/ ./
 
-rm kglobalshortcutsrc
+ln -s ~/GitHub/dot/Manjaro/config/xmonad/ ./
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/kglobalshortcutsrc ./
+ln -s ~/GitHub/dot/Manjaro/config/xmobar/ ./
 
-rm krunnerrc
+ln -s ~/GitHub/dot/Manjaro/config/zathura/ ./
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/krunnerrc ./
+ln -s ~/GitHub/dot/Manjaro/config/zsh/ ./
 
-rm plasma-org.kde.plasma.desktop-appletsrc
+ln -s ~/GitHub/dot/Manjaro/config/keepassxc/ ./
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/plasma-org.kde.plasma.desktop-appletsrc ./
+ln -s ~/GitHub/dot/Manjaro/config/nemo/ ./
 
-rm powerdevilrc
+rm -rf gtk-3.0
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/powerdevilrc ./
+rm -rf autostart
 
-#ln -s ~/GitHub/dot/Manjaro-KDE/config/autorandr/ ./
+ln -s ~/GitHub/dot/Manjaro/config/gtk-3.0 ./
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/astronvim-jfreitas ./nvim
+ln -s ~/GitHub/dot/Manjaro/config/autostart ./
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/picom/ ./
+ln -s ~/GitHub/dot/Manjaro/config/systemd ./
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/xmonad/ ./
-
-ln -s ~/GitHub/dot/Manjaro-KDE/config/xmobar/ ./
-
-ln -s ~/GitHub/dot/Manjaro-KDE/config/zathura/ ./
-
-ln -s ~/GitHub/dot/Manjaro-KDE/config/zsh/ ./
-
-ln -s ~/GitHub/dot/Manjaro-KDE/config/keepassxc/ ./
-
-ln -s ~/GitHub/dot/Manjaro-KDE/config/nemo/ ./
-
-ln -s ~/GitHub/dot/Manjaro-KDE/config/gtk-3.0 ./
-
-ln -s ~/GitHub/dot/Manjaro-KDE/config/autostart ./
-
-ln -s ~/GitHub/dot/Manjaro-KDE/config/systemd ./
+ln -s ~/GitHub/dot/Manjaro/config/starship.toml ./
 
 mkdir texstudio
 
 cd texstudio
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/texstudio/texstudio.ini ./
+ln -s ~/GitHub/dot/Manjaro/config/texstudio/texstudio.ini ./
 
 cd ~
 
-ln -s ~/GitHub/dot/Manjaro-KDE/bin/ ./.bin
+ln -s ~/GitHub/dot/Manjaro/bin/ ./.bin
 
 cd .local/share/
 
@@ -103,41 +83,51 @@ ln -s ~/GitHub/dot/fonts/ ./
 
 fc-cache -f -v
 
+# cd ~/.local/share/gnome-shell
+#
+# ln -s ~/GitHub/dot/Manjaro/gnome_extensions/extensions ./extensions
+
 cd ~
-
-ln -s ~/GitHub/dot/Manjaro-KDE/locais_dolphin/user-places.xbel ~/.local/share/
-
 
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/latexmkrc ./.latexmkrc
+ln -s ~/GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/Xmodmap ./.Xmodmap
-
+ln -s ~/GitHub/dot/Manjaro/config/Xmodmap ./.Xmodmap
 
 rm .zshrc
 
-ln -s ~/GitHub/dot/Manjaro-KDE/config/zsh/zshrc ./.zshrc
+ln -s ~/GitHub/dot/Manjaro/config/zsh/zshrc ./.zshrc
 
 sudo rm /etc/pacman.conf
 
-sudo ln -s ~/GitHub/dot/Manjaro-KDE/pacman/pacman.conf /etc/pacman.conf
+sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.conf
 
 sudo rm /etc/default/grub
 
-sudo ln -s ~/GitHub/dot/Manjaro-KDE/grub/grub /etc/default/grub
+sudo ln -s ~/GitHub/dot/Manjaro/grub/grub /etc/default/grub
+
+sudo rm /etc/mkinitcpio.conf
+
+sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/mkinitcpio_conf/mkinitcpio.conf /etc/mkinitcpio.conf
+
+sudo mkinitcpio -P
+
+sudo rm /etc/systemd/logind.conf
+
+sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/logind.conf/logind.conf /etc/systemd/logind.conf
 
 sudo rm -rf /etc/libvirt
 
-sudo ln -s ~/GitHub/dot/Manjaro-KDE/libvirt /etc/libvirt
+sudo ln -s ~/GitHub/dot/Manjaro/libvirt /etc/libvirt
 
-sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/gondor_root.service /etc/systemd/system/
-
-sudo cp ~/GitHub/dot/Manjaro-KDE/config/systemd/gondor_root.timer /etc/systemd/system/
-
-sudo systemctl enable gondor_root.timer
-
-sudo systemctl enable gondor_root.service
+# sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
+#
+# sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.timer /etc/systemd/system/
+#
+# sudo systemctl enable gondor_root.timer
+#
+# sudo systemctl enable gondor_root.service
 
 sudo systemctl enable sshd
 
@@ -153,14 +143,12 @@ sudo usermod -aG libvirt jfreitas
 
 sudo usermod -aG docker jfreitas
 
-sudo timedatectl set-local-rtc 1
-
 sudo chattr +C /var/log
 
 sudo chattr +C /var/lib/docker
 
 sudo chattr +C /var/lib/libvirt
 
-printf "\e[1;32mCHANGE NECESSARY FILES BEFORE REBOOT\e[0m"
-
 sudo chsh -s /bin/zsh jfreitas
+
+sudo timedatectl set-local-rtc 1
