@@ -13,7 +13,15 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.slideshow
+
+[Containments][1][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][1][Wallpaper][org.kde.slideshow][General]
+SlideInterval=7200
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
 [Containments][2]
 activityId=
@@ -52,7 +60,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][4][Configuration][General]
-launchers=preferred://filemanager,applications:org.kde.konsole.desktop,preferred://browser,applications:org.manjaro.pamac.manager.desktop
+launchers=preferred://filemanager,applications:org.kde.konsole.desktop,applications:google-chrome.desktop
 
 [Containments][2][Applets][5]
 immutability=1
@@ -71,7 +79,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][8][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 SystrayContainmentId=9
 
 [Containments][2][General]
@@ -104,9 +112,15 @@ plugin=org.kde.plasma.cameraindicator
 immutability=1
 plugin=org.kde.plasma.clipboard
 
+[Containments][9][Applets][13][Configuration]
+PreloadWeight=55
+
 [Containments][9][Applets][14]
 immutability=1
 plugin=org.kde.plasma.devicenotifier
+
+[Containments][9][Applets][14][Configuration]
+PreloadWeight=55
 
 [Containments][9][Applets][15]
 immutability=1
@@ -153,6 +167,13 @@ plugin=org.kde.plasma.brightness
 [Containments][9][Applets][25]
 immutability=1
 plugin=org.kde.plasma.battery
+
+[Containments][9][Applets][26]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
+
+[Containments][9][Applets][26][Configuration]
+PreloadWeight=42
 
 [Containments][9][General]
 extraItems=org.kde.kdeconnect,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.volume

@@ -134,9 +134,10 @@ ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
 DirSelectDialog Size=826,584
-History Items[$e]=file:$HOME/GitHub/dot
+History Items[$e]=file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/GitHub/dot
 
 [General]
+BrowserApplication=google-chrome.desktop
 ColorSchemeHash=860ef24eb130a081b7092d6100fdc27e3f8e8451
 
 [KFileDialog Settings]
