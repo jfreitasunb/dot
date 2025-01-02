@@ -2240,3 +2240,43 @@ sudo chattr +C /var/lib/libvirt\
 sudo timedatectl set-local-rtc 1
 sudo reboot
 exit
+systemctl --user disable hibernacao.timer
+systemctl --user list-timers
+systemctl --user status onedrive.service
+systemctl --user stop hibernacao.timer
+systemctl --user status hibernacao.timer
+sudo vim /etc/systemd/logind.conf
+cd .bin
+unlink bin
+ls
+./backup_kde.sh
+cd 
+cd .config
+ln -s ~/GitHub/dot/Manjaro/config/konsave ./
+yay -S github-desktop
+yay -Syyu
+sudo pacman -Syyu
+vim /etc/pacman.conf
+yay -Syyuu
+yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont \\
+  auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git brave-bin zplug rstudio-desktop-bin \\
+  google-chrome firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \\
+  ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts \\
+  ttf-roboto tex-gyre-fonts ttf-ubuntu-font-family ttf-anonymous-pro ttf-cascadia-code ttf-fantasque-sans-mono ttf-hack ttf-inconsolata \\
+  ttf-jetbrains-mono ttf-monofur adobe-source-code-pro-fonts cantarell-fonts inter-font ttf-opensans gentium-plus-font \\
+  adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk noto-fonts-emoji rofi playerctl \\
+  scrot dunst pacman-contrib composer file-roller filezilla htop imagemagick img2pdf mousetweaks nodejs npm php \\
+  numlockx pinta qalculate-gtk trayer vim-spell-pt volumeicon wget xdotool xmobar xmonad xmonad-contrib xournalpp vifm \\
+  xorg-xinit pcmanfm keychain kitty autorandr ranger ripgrep the_silver_searcher \\
+  ttf-liberation usbutils wmctrl xorg-xauth xorg-xmodmap xorg-xrdb vlc sublime-text nasm \\
+  inetutils dnsutils bash-completion openssh tlp edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables ipset nss-mdns terminus-font \\
+  awesome-terminal-fonts bat exa bpytop meld neofetch ttf-fira-code ttf-fira-mono ttf-font-awesome zathura zathura-djvu \\
+  zathura-pdf-mupdf zathura-ps gimp gimp-help-pt_br keepassxc p7zip papirus-icon-theme pdftk python-beautifulsoup4 python-pip terminator \\
+  pavucontrol xorg-xinit fzf less flatpak cmake unzip ninja curl docker-compose yasm nemo nemo-fileroller nemo-preview \\
+  virt-manager iptables-nft libvirt qemu-full base-devel texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context \\
+  texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \\
+  texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \\
+  texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox starship yazi github-desktop-bin spotify onedrive-abraunegg \\
+  dconf-editor konsave\
+
+backup_kde.sh
