@@ -134,7 +134,7 @@ ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
 DirSelectDialog Size=826,584
-History Items[$e]=file:$HOME/GitHub/dot/Manjaro-KDE,file:$HOME/GitHub/dot/Manjaro,file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/GitHub/dot
+History Items[$e]=file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/GitHub/dot/Manjaro-KDE,file:$HOME/GitHub/dot/Manjaro,file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/GitHub/dot
 
 [General]
 BrowserApplication=google-chrome.desktop

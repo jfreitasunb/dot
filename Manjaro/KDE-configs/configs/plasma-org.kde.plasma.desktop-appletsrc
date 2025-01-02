@@ -14,7 +14,15 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.slideshow
+
+[Containments][102][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][102][Wallpaper][org.kde.slideshow][General]
+SlideInterval=7200
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
 [Containments][103]
 activityId=
@@ -29,6 +37,11 @@ wallpaperplugin=org.kde.image
 immutability=1
 plugin=org.kde.plasma.kickoff
 
+[Containments][103][Applets][104][Configuration]
+PreloadWeight=100
+popupHeight=506
+popupWidth=629
+
 [Containments][103][Applets][104][Configuration][General]
 favorites=preferred://browser,org.kde.dolphin.desktop,org.kde.elisa.desktop,org.kde.konsole.desktop,org.manjaro.pamac.manager.desktop,systemsettings.desktop
 favoritesPortedToKAstats=true
@@ -41,7 +54,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][103][Applets][105][Configuration][General]
-launchers=preferred://filemanager,applications:org.kde.konsole.desktop,preferred://browser,applications:org.manjaro.pamac.manager.desktop,applications:github-desktop.desktop
+launchers=preferred://filemanager,applications:org.kde.konsole.desktop,preferred://browser,applications:github-desktop.desktop
 
 [Containments][103][Applets][106]
 immutability=1
@@ -60,6 +73,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][103][Applets][109][Configuration]
+PreloadWeight=55
 SystrayContainmentId=110
 
 [Containments][103][Applets][122]
@@ -73,9 +87,11 @@ AppletOrder=104;105;106;107;108;109;122
 activityId=
 formfactor=2
 immutability=1
-lastScreen=-1
+lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
+popupHeight=432
+popupWidth=432
 wallpaperplugin=org.kde.image
 
 [Containments][110][Applets][111]
@@ -93,6 +109,9 @@ plugin=org.kde.plasma.cameraindicator
 [Containments][110][Applets][114]
 immutability=1
 plugin=org.kde.plasma.clipboard
+
+[Containments][110][Applets][114][Configuration]
+PreloadWeight=60
 
 [Containments][110][Applets][115]
 immutability=1
@@ -137,9 +156,16 @@ plugin=org.kde.plasma.brightness
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
+[Containments][110][Applets][125][Configuration]
+PreloadWeight=60
+
 [Containments][110][Applets][126]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
+
+[Containments][110][Applets][127]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
 
 [Containments][110][General]
 extraItems=org.kde.kdeconnect,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.volume
