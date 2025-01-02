@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# ROTATIVIDADE=10
-
 # NOME_BACKUP_PACMAN="gondor_lista_pacotes_instalados_PACMAN_"$(date +%Y-%m-%d)".lst"
 
 NOME_BACKUP_GNOME="manjaro_gnome_settings_"$(date +%Y-%m-%d)".ini"
@@ -18,9 +16,9 @@ LOCAL_BACKUP="/home/jfreitas/OneDrive/Backups/Manjaro/Backup-Diario/"
 
 pacman -Qqe | grep -v "$(pacman -Qqm)" > "$LOCAL_BACKUP""$NOME_BACKUP_PACMAN"
 
-pacman -Qqm > "$LOCAL_BACKUP""$NOME_BACKUP_PARU"
+pacman -Qqm > "$LOCAL_BACKUP""$NOME_BACKUP_YAY"
 
-sed -i '/paru/d' "$LOCAL_BACKUP""$NOME_BACKUP_PARU"
+sed -i '/yay/d' "$LOCAL_BACKUP""$NOME_BACKUP_YAY"
 
 find "$LOCAL_BACKUP" -type f -mtime +10 -delete
 
