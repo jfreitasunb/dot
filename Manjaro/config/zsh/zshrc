@@ -14,7 +14,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
 ### ---- history config -------------------------------------
-HISTFILE=~/.config/zsh/zsh_history
+HISTFILE=~/.config/zsh/.zsh_history
 
 # How many commands zsh will load to memory.
 HISTSIZE=10000
@@ -50,6 +50,11 @@ fi
 export PATH
 
 bindkey -e
+
+#Keybinds
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 
 # Use modern completion system
 autoload -U compinit; compinit
@@ -91,11 +96,11 @@ bindkey "^[[1;5D" backward-word
 
 source ~/.config/aliases/aliases
 
-if [ -d "$HOME/.pyenv" ] ; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-fi
+#if [ -d "$HOME/.pyenv" ] ; then
+#    export PYENV_ROOT="$HOME/.pyenv"
+#    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#    eval "$(pyenv init -)"
+#fi
 
 #source ~/.config/zsh/.p10k.zsh
 
@@ -107,3 +112,4 @@ export NVM_DIR="$HOME/.config/nvm"
 #neofetch
 
 eval "$(starship init zsh)"
+eval "$(atuin init zsh)"

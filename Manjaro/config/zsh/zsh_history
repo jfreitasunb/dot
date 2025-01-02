@@ -1057,7 +1057,6 @@ sudo systemctl enable gdm.service
 cd .config/systemd
 mkdir OneDrive
 mkdir OneDriveUnB
-vim .config/onedrive/config
 vim .config/onedriveunb/config
 vim
 onedrive --confdir="~/.config/onedriveunb" --synchronize --resync
@@ -1714,7 +1713,6 @@ systemctl --user disable hibernacao.service --now
 systemctl --user disable hibernacao.timer --now
 systemctl --user enable hibernacao.timer --now
 systemctl --user enable backup_TARDIS.timer --now
-systemctl --user list-timers
 touch log_hiberna
 systemctl --user restart hibernacao.timer
 cat log_hiberna
@@ -1759,7 +1757,6 @@ sudo desktop-file-install extra/linux/Alacritty.desktop\
 \
 sudo update-desktop-database
 rm -rf alacritty
-unlink bin
 cd GitHub/dot/Debian/config
 ln -s ~/GitHub/dot/Debian/config/kitty ./
 ln -s ~/GitHub/dot/Debian/nautilus-python ./
@@ -1790,7 +1787,6 @@ ls -la
 mv 
 mv krunnerrc ~/GitHub/dot/Manjaro-KDE/config/ && ln -s ~/GitHub/dot/Manjaro-KDE/config/krunnerrc ./
 vim .gitignore
-uptime
 yay -S transmission-qt
 yay -Syy
 yay -S yazi
@@ -1855,7 +1851,6 @@ pyenv install 3.12
 cd GitHub/dot/Manjaro-KDE/libvirt
 ls qemu
 cd GitHub/dot/Manjaro-KDE/libvirt/qemu
-sudo chown jfreitas:jfreitas *
 cd GitHub/dot/Manjaro-KDE/config
 ln -s ~/GitHub/dot/Manjaro-KDE/config/xmonad ./
 cd xmonad
@@ -1903,7 +1898,6 @@ yay -S discord
 yay -S vscodium-bin
 codium --enable-proposed-api Github.vscode-pull-request-github
 cd .cache
-cd 
 cd .local
 ls share
 ls VSCodium
@@ -1967,7 +1961,6 @@ touch tesstte3
 cd .config/zsh
 rm .zsh_history
 eit
-vim .zshrc
 sudo pacman -S transmission-gtk
 sudo pacman -Rns transmission-gtk
 pacman -Qqe | grep -v "$(pacman -Qqm)"
@@ -2098,7 +2091,6 @@ cat msm_notifier.desktop
 systemd-inhibit --list --mode=block
 ls ../
 cp GitHub/dot/Debian/bin/hibernar.sh ./.bin
-systemctl --user stop hibernacao.timer
 systemctl --user start hibernacao.timer
 cat hibernar.sh
 gnome-terminal
@@ -2150,7 +2142,6 @@ systemctl --user enable --now hibernacao.timer
 sudo nvim /etc/systemd/sleep.conf
 vim GitHub/dot/Manjaro/grub/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-cd .config
 cd GitHub/dot/Manjaro
 cd config
 rm ignore-lid-switch-tweak.desktop
@@ -2163,13 +2154,9 @@ cd gnome-shell
 ln -s ~/GitHub/dot/Manjaro/gnome_extensions/extensions ./extensions
 cd GitHub
 mkdir bml
-systemctl --user status hibernacao.timer
-systemctl --user start onedrive.service
 whereis onedrive
-systemctl --user status onedrive.service
 ps aux | grep onedrive
 onedrive --monitor --resync
-yay -Syyu
 cd OneDrive/Backups
 ls Debian
 ls Debian/Backup-Diario
@@ -2178,7 +2165,6 @@ cd GitHub/dot/Manjaro/
 mkdir gnome_extensions
 mkdir gnome_extensions/extensions
 yay -Rns onedrive-abraunegg
-systemctl --user stop onedrive.service
 curl -fsS https://dlang.org/install.sh | bash -s dmd\
 \
 DLANG=$(/usr/bin/ls ~/dlang/ | grep dmd | awk '{print $1}')\
@@ -2205,13 +2191,9 @@ rm -rf onedrive
 rm items.sqlite3
 mv items.sqlite3 items.sqlite3-BKP
 onedrive --monitor
-cd .config/onedrive
-ls
 mv items.sqlite3-BKP items.sqlite3
-cd
 yay -S zplug
 source .zshrc
-cd .bin
 ./instala_manjaro.sh
 nano instala_manjaro.sh
 ls /etc/default
@@ -2239,25 +2221,18 @@ sudo chattr +C /var/lib/libvirt\
 \
 sudo timedatectl set-local-rtc 1
 sudo reboot
-exit
 systemctl --user disable hibernacao.timer
 systemctl --user list-timers
-systemctl --user status onedrive.service
 systemctl --user stop hibernacao.timer
 systemctl --user status hibernacao.timer
 sudo vim /etc/systemd/logind.conf
-cd .bin
 unlink bin
-ls
-./backup_kde.sh
 cd 
-cd .config
 ln -s ~/GitHub/dot/Manjaro/config/konsave ./
 yay -S github-desktop
 yay -Syyu
 sudo pacman -Syyu
 vim /etc/pacman.conf
-yay -Syyuu
 yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont \\
   auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git brave-bin zplug rstudio-desktop-bin \\
   google-chrome firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \\
@@ -2279,4 +2254,40 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
   texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox starship yazi github-desktop-bin spotify onedrive-abraunegg \\
   dconf-editor konsave\
 
+cd .bin
+vim backup_kde.sh
+./backup_kde.sh
+cd GitHub/dot/Manjaro/KDE-configs
+cd .config
+unlink konsave
+mkdir konsave
+cd konsave
+cd profiles
+yay -Syyuu
+uptime
+vim .config/onedrive/config
+onedrive --
+cd .config/onedrive
+onedrive --synchronize --verbose
+systemctl --user stop onedrive.service
+onedrive --sync --verbose
+systemctl --user start onedrive.service
+systemctl --user status onedrive.service
+cd ~/GitHub/dot/Manjaro/libvirt
+ls
+sudo chown jfreitas:jfreitas *
 backup_kde.sh
+yay -S atuin
+atuin
+cd
+echo 'eval "$(atuin init zsh)"' >> ~/.zshrc~
+echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
+rm .zshrc\~
+vim .zshrc
+atuin login -u jfreitas
+atuin sync
+atuin import auto
+sudo chsh -e zsh jfreitas
+whereis zsh
+chsh -s /usr/bin/zsh
+exit
