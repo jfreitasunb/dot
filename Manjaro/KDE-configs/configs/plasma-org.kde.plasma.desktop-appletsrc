@@ -21,6 +21,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][102][Wallpaper][org.kde.slideshow][General]
+Image=file:///usr/share/wallpapers/MilkyWay/
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -39,7 +40,7 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][103][Applets][104][Configuration]
 PreloadWeight=100
-popupHeight=506
+popupHeight=510
 popupWidth=629
 
 [Containments][103][Applets][104][Configuration][General]
@@ -80,6 +81,11 @@ SystrayContainmentId=110
 immutability=1
 plugin=org.kde.plasma.digitalclock
 
+[Containments][103][Applets][122][Configuration]
+PreloadWeight=55
+popupHeight=450
+popupWidth=560
+
 [Containments][103][General]
 AppletOrder=104;105;106;107;108;109;122
 
@@ -111,7 +117,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][110][Applets][114][Configuration]
-PreloadWeight=60
+PreloadWeight=70
 
 [Containments][110][Applets][115]
 immutability=1
@@ -166,6 +172,9 @@ plugin=org.kde.plasma.networkmanagement
 [Containments][110][Applets][127]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
+
+[Containments][110][Applets][127][Configuration]
+PreloadWeight=34
 
 [Containments][110][General]
 extraItems=org.kde.kdeconnect,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.volume
