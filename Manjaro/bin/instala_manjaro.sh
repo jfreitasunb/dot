@@ -29,7 +29,7 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
   texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox starship yazi github-desktop-bin spotify onedrive-abraunegg \
-  dconf-editor konsave
+  dconf-editor konsave tmux atuin
 
 #sudo pacman -Rns gnome-tour iagno thunderbird gnome-chess gnome-weather gnome-maps gnome-contacts gnome-characters gnome-clocks gnome-mines quadrapasse
 
@@ -89,7 +89,7 @@ fc-cache -f -v
 
 cd ~
 
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+#curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 
 ln -s ~/GitHub/dot/Manjaro/config/latexmkrc ./.latexmkrc
 
@@ -103,19 +103,19 @@ sudo rm /etc/pacman.conf
 
 sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.conf
 
-sudo rm /etc/default/grub
+#sudo rm /etc/default/grub
 
-sudo ln -s ~/GitHub/dot/Manjaro/grub/grub /etc/default/grub
+#sudo ln -s ~/GitHub/dot/Manjaro/grub/grub /etc/default/grub
 
-sudo rm /etc/mkinitcpio.conf
+#sudo rm /etc/mkinitcpio.conf
 
-sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/mkinitcpio_conf/mkinitcpio.conf /etc/mkinitcpio.conf
+#sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/mkinitcpio_conf/mkinitcpio.conf /etc/mkinitcpio.conf
 
-sudo mkinitcpio -P
+#sudo mkinitcpio -P
 
-sudo rm /etc/systemd/logind.conf
+#sudo rm /etc/systemd/logind.conf
 
-sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/logind.conf/logind.conf /etc/systemd/logind.conf
+#sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/logind.conf/logind.conf /etc/systemd/logind.conf
 
 sudo rm -rf /etc/libvirt
 
@@ -143,11 +143,11 @@ sudo usermod -aG libvirt jfreitas
 
 sudo usermod -aG docker jfreitas
 
-sudo chattr +C /var/log
-
-sudo chattr +C /var/lib/docker
-
-sudo chattr +C /var/lib/libvirt
+# sudo chattr +C /var/log
+#
+# sudo chattr +C /var/lib/docker
+#
+# sudo chattr +C /var/lib/libvirt
 
 sudo chsh -s /bin/zsh jfreitas
 
