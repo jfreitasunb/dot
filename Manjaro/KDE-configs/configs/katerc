@@ -1,3 +1,7 @@
+[FileDialogSize]
+2 screens: Height=600
+2 screens: Width=960
+
 [General]
 Days Meta Infos=30
 Save Meta Infos=true
@@ -7,11 +11,8 @@ Show Status Bar=true
 Show Tab Bar=true
 Show Url Nav Bar=true
 
-[KTextEditor::Search]
-Search History=github-d
-
 [MainWindow]
-1920x1200 screen: Window-Maximized=true
+2 screens: Window-Maximized=true
 
 [filetree]
 editShade=183,220,246

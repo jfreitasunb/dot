@@ -132,21 +132,14 @@ ForegroundNormal=35,38,41
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
-[DirSelect Dialog]
-DirSelectDialog Size=826,584
-History Items[$e]=file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/GitHub/dot/Manjaro-KDE,file:$HOME/GitHub/dot/Manjaro,file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/GitHub/dot
-
 [General]
-BrowserApplication=google-chrome.desktop
+BrowserApplication=brave-browser.desktop
 ColorSchemeHash=860ef24eb130a081b7092d6100fdc27e3f8e8451
-
-[KDE]
-LookAndFeelPackage=org.manjaro.breath.desktop
 
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
-Breadcrumb Navigation=true
+Breadcrumb Navigation=false
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
@@ -162,9 +155,6 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=146
 View Style=DetailTree
-
-[Sounds]
-Enable=false
 
 [WM]
 activeBackground=227,229,231

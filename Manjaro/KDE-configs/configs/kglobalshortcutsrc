@@ -1,6 +1,6 @@
 [ActivityManager]
 _k_friendly_name=Gerenciador de atividades
-switch-to-activity-eef259c4-5d4d-419b-904f-446b5ef46e44=none,none,Alternar para a atividade "Padrão"
+switch-to-activity-9776dab7-5c3f-4dfb-9632-b0d1e2caa05f=none,none,Alternar para a atividade "Padrão"
 
 [KDE Keyboard Layout Switcher]
 Switch to Last-Used Keyboard Layout=Meta+Alt+L,none,Mudar para o layout de teclado usado por último
@@ -70,7 +70,7 @@ Switch Window Down=Meta+Alt+Down,Meta+Alt+Down,Mudar para a janela abaixo
 Switch Window Left=Meta+Alt+Left,Meta+Alt+Left,Mudar para a janela à esquerda
 Switch Window Right=Meta+Alt+Right,Meta+Alt+Right,Mudar para a janela à direita
 Switch Window Up=Meta+Alt+Up,Meta+Alt+Up,Mudar para a janela acima
-Switch to Desktop 1=Meta+1,Ctrl+F1,Mudar para a área de trabalho 1
+Switch to Desktop 1=Ctrl+F1,Ctrl+F1,Mudar para a área de trabalho 1
 Switch to Desktop 10=none,,Mudar para a área de trabalho 10
 Switch to Desktop 11=none,,Mudar para a área de trabalho 11
 Switch to Desktop 12=none,,Mudar para a área de trabalho 12
@@ -81,10 +81,10 @@ Switch to Desktop 16=none,,Mudar para a área de trabalho 16
 Switch to Desktop 17=none,,Mudar para a área de trabalho 17
 Switch to Desktop 18=none,,Mudar para a área de trabalho 18
 Switch to Desktop 19=none,,Mudar para a área de trabalho 19
-Switch to Desktop 2=Meta+2,Ctrl+F2,Mudar para a área de trabalho 2
+Switch to Desktop 2=Ctrl+F2,Ctrl+F2,Mudar para a área de trabalho 2
 Switch to Desktop 20=none,,Mudar para a área de trabalho 20
-Switch to Desktop 3=Meta+3,Ctrl+F3,Mudar para a área de trabalho 3
-Switch to Desktop 4=Meta+4,Ctrl+F4,Mudar para a área de trabalho 4
+Switch to Desktop 3=Ctrl+F3,Ctrl+F3,Mudar para a área de trabalho 3
+Switch to Desktop 4=Ctrl+F4,Ctrl+F4,Mudar para a área de trabalho 4
 Switch to Desktop 5=none,,Mudar para a área de trabalho 5
 Switch to Desktop 6=none,,Mudar para a área de trabalho 6
 Switch to Desktop 7=none,,Mudar para a área de trabalho 7
@@ -224,21 +224,17 @@ powerProfile=Battery\tMeta+B,Battery\tMeta+B,Trocar perfil de energia
 [plasmashell]
 _k_friendly_name=plasmashell
 activate application launcher=Meta\tAlt+F1,Meta\tAlt+F1,Ativar o lançador de aplicativos
-activate task manager entry 1=none,Meta+1,Ativar entrada 1 do gerenciador de tarefas
+activate task manager entry 1=Meta+1,Meta+1,Ativar entrada 1 do gerenciador de tarefas
 activate task manager entry 10=Meta+0,Meta+0,Ativar entrada 10 do gerenciador de tarefas
-activate task manager entry 2=none,Meta+2,Ativar entrada 2 do gerenciador de tarefas
-activate task manager entry 3=none,Meta+3,Ativar entrada 3 do gerenciador de tarefas
-activate task manager entry 4=none,Meta+4,Ativar entrada 4 do gerenciador de tarefas
+activate task manager entry 2=Meta+2,Meta+2,Ativar entrada 2 do gerenciador de tarefas
+activate task manager entry 3=Meta+3,Meta+3,Ativar entrada 3 do gerenciador de tarefas
+activate task manager entry 4=Meta+4,Meta+4,Ativar entrada 4 do gerenciador de tarefas
 activate task manager entry 5=Meta+5,Meta+5,Ativar entrada 5 do gerenciador de tarefas
 activate task manager entry 6=Meta+6,Meta+6,Ativar entrada 6 do gerenciador de tarefas
 activate task manager entry 7=Meta+7,Meta+7,Ativar entrada 7 do gerenciador de tarefas
 activate task manager entry 8=Meta+8,Meta+8,Ativar entrada 8 do gerenciador de tarefas
 activate task manager entry 9=Meta+9,Meta+9,Ativar entrada 9 do gerenciador de tarefas
-activate widget 104=none,none,Ativar o widget Lançador de aplicativos
-activate widget 29=none,none,Ativar o widget Lançador de aplicativos
 activate widget 3=none,none,Ativar o widget Lançador de aplicativos
-activate widget 54=none,none,Ativar o widget Lançador de aplicativos
-activate widget 79=none,none,Ativar o widget Lançador de aplicativos
 clear-history=none,,Limpar o Histórico da Área de Transferência
 clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Menu de Contexto das Acções Automáticas
 cycle-panels=Meta+Alt+P,Meta+Alt+P,Mover o foco do teclado entre os painéis
@@ -255,12 +251,3 @@ stop current activity=Meta+S,Meta+S,Parar a atividade atual
 switch to next activity=none,,Trocar para a próxima atividade
 switch to previous activity=none,,Trocar para a atividade anterior
 toggle do not disturb=none,,Alternar o "Não perturbe"
-
-[services][Alacritty.desktop]
-New=Meta+Return
-
-[services][github-desktop.desktop]
-_launch=Meta+Shift+G
-
-[services][org.keepassxc.KeePassXC.desktop]
-_launch=Meta+K
