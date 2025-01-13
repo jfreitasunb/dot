@@ -132,6 +132,10 @@ ForegroundNormal=35,38,41
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
+[DirSelect Dialog]
+DirSelectDialog Size=826,584
+History Items[$e]=file:$HOME/OneDrive/Pictures/Wallpapers
+
 [General]
 ColorSchemeHash=860ef24eb130a081b7092d6100fdc27e3f8e8451
 
