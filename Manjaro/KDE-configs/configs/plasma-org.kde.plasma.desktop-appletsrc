@@ -4,25 +4,6 @@ RightButton;NoModifier=org.kde.contextmenu
 [ActionPlugins][1]
 RightButton;NoModifier=org.kde.contextmenu
 
-[Containments][1]
-ItemGeometries-1920x1200=
-ItemGeometriesHorizontal=
-activityId=9776dab7-5c3f-4dfb-9632-b0d1e2caa05f
-formfactor=0
-immutability=1
-lastScreen=0
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.slideshow
-
-[Containments][1][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][1][Wallpaper][org.kde.slideshow][General]
-SlideInterval=7200
-SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
-
 [Containments][2]
 activityId=
 formfactor=2
@@ -35,6 +16,11 @@ wallpaperplugin=org.kde.image
 [Containments][2][Applets][21]
 immutability=1
 plugin=org.kde.plasma.digitalclock
+
+[Containments][2][Applets][21][Configuration]
+PreloadWeight=55
+popupHeight=450
+popupWidth=560
 
 [Containments][2][Applets][21][Configuration][Appearance]
 fontWeight=400
@@ -60,7 +46,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][4][Configuration][General]
-launchers=preferred://filemanager,applications:org.kde.konsole.desktop,preferred://browser,applications:org.manjaro.pamac.manager.desktop
+launchers=preferred://filemanager,applications:org.kde.konsole.desktop,preferred://browser
 
 [Containments][2][Applets][5]
 immutability=1
@@ -79,7 +65,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][8][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 SystrayContainmentId=9
 
 [Containments][2][General]
@@ -92,7 +78,34 @@ immutability=1
 lastScreen=1
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.slideshow
+
+[Containments][26][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][26][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0103.jpg
+SlideInterval=7200
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
+
+[Containments][29]
+activityId=9776dab7-5c3f-4dfb-9632-b0d1e2caa05f
+formfactor=0
+immutability=1
+lastScreen=0
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.slideshow
+
+[Containments][29][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][29][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/Kite.jpg
+SlideInterval=7200
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
 [Containments][9]
 activityId=
@@ -110,7 +123,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][9][Applets][10][Configuration]
-PreloadWeight=75
+PreloadWeight=85
 
 [Containments][9][Applets][11]
 immutability=1
@@ -179,6 +192,10 @@ PreloadWeight=65
 
 [Containments][9][Applets][25][Configuration][General]
 currentDetailsTab=details
+
+[Containments][9][Applets][27]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
 
 [Containments][9][General]
 extraItems=org.kde.plasma.devicenotifier,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.cameraindicator,org.kde.plasma.mediacontroller,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.kdeconnect,org.kde.plasma.brightness,org.kde.plasma.clipboard

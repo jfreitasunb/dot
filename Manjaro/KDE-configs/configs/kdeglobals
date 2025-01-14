@@ -134,7 +134,7 @@ ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
 DirSelectDialog Size=826,584
-History Items[$e]=file:$HOME/OneDrive/Pictures/Wallpapers
+History Items[$e]=file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/OneDrive/Pictures/Wallpapers
 
 [General]
 ColorSchemeHash=860ef24eb130a081b7092d6100fdc27e3f8e8451
@@ -152,10 +152,10 @@ Show Inline Previews=true
 Show Preview=false
 Show Speedbar=true
 Show hidden files=false
-Sort by=Name
+Sort by=Date
 Sort directories first=true
 Sort hidden files last=false
-Sort reversed=false
+Sort reversed=true
 Speedbar Width=146
 View Style=DetailTree
 
