@@ -12,6 +12,8 @@ Show Tab Bar=true
 Show Url Nav Bar=true
 
 [MainWindow]
+1920x1200 screen: Height=1128
+1920x1200 screen: Width=959
 2 screens: Window-Maximized=true
 
 [filetree]

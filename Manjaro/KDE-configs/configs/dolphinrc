@@ -1,3 +1,8 @@
+[ExtractDialog]
+1920x1200 screen: Height=578
+1920x1200 screen: Width=1258
+DirHistory[$e]=$HOME/Documentos/SISTEMA_EM_PRODUCAO/,$HOME/Documentos/SISTEMA_ORIGINAL/
+
 [General]
 Version=202
 ViewPropsTimestamp=2025,1,10,14,45,15.512

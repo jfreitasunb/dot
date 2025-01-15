@@ -85,7 +85,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][26][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0103.jpg
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/plasmawaves.png
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -123,7 +123,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][9][Applets][10][Configuration]
-PreloadWeight=85
+PreloadWeight=100
 
 [Containments][9][Applets][11]
 immutability=1
@@ -175,6 +175,9 @@ plugin=org.kde.plasma.clipboard
 immutability=1
 plugin=org.kde.plasma.battery
 
+[Containments][9][Applets][22][Configuration]
+PreloadWeight=55
+
 [Containments][9][Applets][23]
 immutability=1
 plugin=org.kde.plasma.brightness
@@ -188,7 +191,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][9][Applets][25][Configuration]
-PreloadWeight=65
+PreloadWeight=70
 
 [Containments][9][Applets][25][Configuration][General]
 currentDetailsTab=details
