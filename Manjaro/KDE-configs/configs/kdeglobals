@@ -133,8 +133,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=826,584
-History Items[$e]=file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/OneDrive/Pictures/Wallpapers
+DirSelectDialog Size=960,578
+History Items[$e]=file:$HOME/Download_torrents,file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/OneDrive/Pictures/Wallpapers
 
 [General]
 ColorSchemeHash=860ef24eb130a081b7092d6100fdc27e3f8e8451
