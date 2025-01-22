@@ -1,6 +1,10 @@
 [$Version]
 update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 
+[General]
+Version=202
+ViewPropsTimestamp=2025,1,21,21,34,24.367
+
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=22
