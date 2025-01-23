@@ -61,31 +61,32 @@ curl https://sh.rustup.rs -sSf | sh
 
 source "$HOME/.cargo/env"
 
-git clone https://github.com/alacritty/alacritty.git
+# git clone https://github.com/alacritty/alacritty.git
 
-cd alacritty
+# cd alacritty
 
-cargo build --release
+# cargo build --release
 
-sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+# sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 
-sudo cp target/release/alacritty /usr/local/bin
+# sudo cp target/release/alacritty /usr/local/bin
 
-sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+# sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
 
-sudo desktop-file-install extra/linux/Alacritty.desktop
+# sudo desktop-file-install extra/linux/Alacritty.desktop
 
-sudo update-desktop-database
+# sudo update-desktop-database
 
-cd ~
+# cd ~
 
-rm -rf alacritty
+# rm -rf alacritty
+
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 cd ~/.config/
 
-ln -s ~/GitHub/dot/Debian/config/alacritty ./
+# ln -s ~/GitHub/dot/Debian/config/alacritty ./
 
 rm -rf autostart
 
@@ -97,7 +98,7 @@ ln -s ~/GitHub/dot/Debian/config/autorandr/ ./
 
 ln -s ~/GitHub/dot/Debian/config/kitty ./
 
-ln -s ~/GitHub/dot/Debian/config/astronvim-jfreitas ./nvim
+# ln -s ~/GitHub/dot/Debian/config/astronvim-jfreitas ./nvim
 
 ln -s ~/GitHub/dot/Debian/config/picom/ ./
 
@@ -111,9 +112,9 @@ ln -s ~/GitHub/dot/Debian/config/zsh/ ./
 
 ln -s ~/GitHub/dot/Debian/config/systemd ./
 
-rm -rf keepassxc
+# rm -rf keepassxc
 
-ln -s ~/GitHub/dot/Debian/config/keepassxc/ ./
+# ln -s ~/GitHub/dot/Debian/config/keepassxc/ ./
 
 rm -rf gtk-3.0
 
@@ -123,7 +124,7 @@ cd ~
 
 ln -s ~/GitHub/dot/Debian/config/zsh/zshrc ./.zshrc
 
-ln -s ~/GitHub/dot/Debian/config/zsh/zsh_history ./.zsh_history
+# ln -s ~/GitHub/dot/Debian/config/zsh/.zsh_history ./.zsh_history
 
 ln -s ~/GitHub/dot/Debian/bin/ ./.bin
 
@@ -153,9 +154,9 @@ sudo apt remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music 
 
 sudo apt autoremove
 
-sudo rm /etc/systemd/logind.conf
+# sudo rm /etc/systemd/logind.conf
 
-sudo ln -s ~/GitHub/dot/Debian/logind/logind.conf /etc/systemd/logind.conf
+# sudo ln -s ~/GitHub/dot/Debian/logind/logind.conf /etc/systemd/logind.conf
 
 sudo rm /etc/default/grub
 
@@ -167,13 +168,13 @@ sudo rm -rf /etc/libvirt
 
 sudo ln -s ~/GitHub/dot/Debian/libvirt /etc/libvirt
 
-sudo cp ~/GitHub/dot/Debian/config/systemd/gondor_root.service /etc/systemd/system/
+# sudo cp ~/GitHub/dot/Debian/config/systemd/gondor_root.service /etc/systemd/system/
 
-sudo cp ~/GitHub/dot/Debian/config/systemd/gondor_root.timer /etc/systemd/system/
+# sudo cp ~/GitHub/dot/Debian/config/systemd/gondor_root.timer /etc/systemd/system/
 
-sudo systemctl enable gondor_root.timer
+# sudo systemctl enable gondor_root.timer
 
-sudo systemctl enable gondor_root.service
+# sudo systemctl enable gondor_root.service
 
 sudo systemctl enable fstrim.timer
 
