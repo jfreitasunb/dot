@@ -104,3 +104,6 @@ export NVM_DIR="$HOME/.config/nvm"
 #neofetch
 
 eval "$(starship init zsh)"
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
