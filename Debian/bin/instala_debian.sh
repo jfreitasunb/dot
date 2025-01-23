@@ -57,9 +57,23 @@ rm -rf dlang
 
 rm -rf onedrive
 
-curl https://sh.rustup.rs -sSf | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 source "$HOME/.cargo/env"
+
+rustup update
+
+git clone https://github.com/sxyazi/yazi.git
+
+cd yazi
+
+cargo build --release --locked
+
+sudo mv target/release/yazi target/release/ya /usr/local/bin/
+
+cd ~
+
+rm -rf yazi
 
 # git clone https://github.com/alacritty/alacritty.git
 
