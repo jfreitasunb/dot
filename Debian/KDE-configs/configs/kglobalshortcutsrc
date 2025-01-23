@@ -201,6 +201,17 @@ view_actual_size=Meta+0,Meta+0,Zoom para o tamanho atual
 view_zoom_in=Meta++\tMeta+=,Meta++,Ampliar
 view_zoom_out=Meta+-,Meta+-,Reduzir
 
+[mediacontrol]
+_k_friendly_name=Controlador de mídia
+mediavolumedown=,,Diminuir o volume da mídia
+mediavolumeup=,,Aumentar o volume da mídia
+nextmedia=Media Next,Media Next,Reproduzir a próxima mídia
+pausemedia=Media Pause,Media Pause,Pausar mídia
+playmedia=,,Reproduzir mídia
+playpausemedia=Media Play,Media Play,Reproduzir/Pausar a mídia
+previousmedia=Media Previous,Media Previous,Reproduzir a mídia anterior
+stopmedia=Media Stop,Media Stop,Parar a reprodução da mídia
+
 [org.kde.dolphin.desktop]
 _k_friendly_name=Dolphin
 _launch=Meta+E,Meta+E,Dolphin

@@ -1,6 +1,15 @@
+[General]
+Days Meta Infos=30
+Save Meta Infos=true
+Show Full Path in Title=false
+Show Menu Bar=true
+Show Status Bar=true
+Show Tab Bar=true
+Show Url Nav Bar=true
+
 [KFileDialog Settings]
-Recent Files[$e]=instala_debian.sh,file:$HOME/GitHub/dot/Debian/bin/instala_debian.sh
-Recent URLs[$e]=file:$HOME/GitHub/dot/Debian/bin/
+Recent Files[$e]=instala_debian.sh,file:$HOME/GitHub/dot/Debian/grub/grub,file:$HOME/GitHub/dot/Debian/bin/instala_debian.sh
+Recent URLs[$e]=file:$HOME/GitHub/dot/Debian/bin/,file:$HOME/GitHub/dot/Debian/grub/
 detailViewIconSize=16
 
 [KTextEditor Document]
@@ -119,3 +128,17 @@ Word Completion Remove Tail=true
 
 [KTextEditor::Search]
 Search History=libreo
+
+[MainWindow]
+1536x960 screen: Height=887
+1536x960 screen: Width=768
+
+[filetree]
+editShade=183,220,246
+listMode=false
+shadingEnabled=true
+showCloseButton=false
+showFullPathOnRoots=false
+showToolbar=true
+sortRole=0
+viewShade=211,190,222
