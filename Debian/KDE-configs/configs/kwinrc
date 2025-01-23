@@ -3,8 +3,16 @@ update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-
 
 [Desktops]
 Id_1=20deac4e-6280-46f4-9fca-3494b7d06521
-Number=1
-Rows=1
+Id_2=6271133a-0351-42a0-976b-d4d3009f61ad
+Id_3=fd856563-2aa5-4317-b649-1db2dd06be09
+Id_4=9a25177e-db9a-4d0b-9e28-c40727a37971
+Number=4
+Rows=2
+
+[Plugins]
+kwin4_effect_fadedesktopEnabled=true
+slideEnabled=false
+trackmouseEnabled=true
 
 [Tiling]
 padding=4
@@ -21,6 +29,7 @@ AutoRaiseInterval=350
 DelayFocusInterval=200
 FocusPolicy=FocusFollowsMouse
 NextFocusPrefersMouse=true
+RollOverDesktops=true
 
 [Xwayland]
 Scale=1.25
