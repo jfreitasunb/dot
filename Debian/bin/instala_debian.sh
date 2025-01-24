@@ -79,6 +79,8 @@ cd ~
 
 rm -rf yazi
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # git clone https://github.com/alacritty/alacritty.git
 
 # cd alacritty
