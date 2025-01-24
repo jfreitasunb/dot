@@ -37,11 +37,11 @@ mute=Volume Mute,Volume Mute,Sem áudio
 
 [ksmserver]
 Halt Without Confirmation=none,,Encerrar sem confirmação
-Lock Session=Meta+L\tScreensaver,Meta+L\tScreensaver,Lock Session
+Lock Session=Meta+L\tScreensaver,Meta+L\tScreensaver,Bloquear sessão
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Encerrar sessão
 Log Out Without Confirmation=none,,Sair sem confirmação
 Reboot Without Confirmation=none,,Reiniciar sem confirmação
-_k_friendly_name=Session Management
+_k_friendly_name=Gerenciamento de sessão
 
 [kwin]
 Activate Window Demanding Attention=Meta+Ctrl+A,Meta+Ctrl+A,Ativar janela que demanda atenção
@@ -60,7 +60,7 @@ MoveZoomDown=none,none,Mover a área ampliada para baixo
 MoveZoomLeft=none,none,Mover a área ampliada para a esquerda
 MoveZoomRight=none,none,Mover a área ampliada para a direita
 MoveZoomUp=none,none,Mover a área ampliada para cima
-Overview=ៀ?,Meta+W,Ativar visão geral
+Overview=Meta+W,Meta+W,Ativar visão geral
 Setup Window Shortcut=none,,Configurar atalhos para a janela
 Show Desktop=Meta+D,Meta+D,Espiar área de trabalho
 ShowDesktopGrid=Meta+F8,Meta+F8,Mostrar a grade de áreas de trabalho
@@ -204,11 +204,11 @@ view_zoom_out=Meta+-,Meta+-,Reduzir
 
 [mediacontrol]
 _k_friendly_name=Controlador de mídia
-mediavolumedown=,,Diminuir o volume da mídia
-mediavolumeup=,,Aumentar o volume da mídia
+mediavolumedown=none,,Diminuir o volume da mídia
+mediavolumeup=none,,Aumentar o volume da mídia
 nextmedia=Media Next,Media Next,Reproduzir a próxima mídia
 pausemedia=Media Pause,Media Pause,Pausar mídia
-playmedia=,,Reproduzir mídia
+playmedia=none,,Reproduzir mídia
 playpausemedia=Media Play,Media Play,Reproduzir/Pausar a mídia
 previousmedia=Media Previous,Media Previous,Reproduzir a mídia anterior
 stopmedia=Media Stop,Media Stop,Parar a reprodução da mídia
@@ -254,7 +254,7 @@ Turn Off Screen=none,none,Desligar a tela
 _k_friendly_name=Gerenciamento de energia
 
 [plasmashell]
-_k_friendly_name=Mudança de atividade
+_k_friendly_name=Plasma
 activate task manager entry 1=none,Meta+1,Ativar entrada 1 do gerenciador de tarefas
 activate task manager entry 10=none,Meta+0,Ativar entrada 10 do gerenciador de tarefas
 activate task manager entry 2=none,Meta+2,Ativar entrada 2 do gerenciador de tarefas

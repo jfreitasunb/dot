@@ -9,6 +9,9 @@ Id_4=9a25177e-db9a-4d0b-9e28-c40727a37971
 Number=4
 Rows=2
 
+[ModifierOnlyShortcuts]
+Meta=org.kde.kglobalaccel,/component/kwin,,invokeShortcut,Overview
+
 [Plugins]
 kwin4_effect_fadedesktopEnabled=true
 slideEnabled=false
