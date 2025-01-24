@@ -81,6 +81,10 @@ rm -rf yazi
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
 # git clone https://github.com/alacritty/alacritty.git
 
 # cd alacritty
