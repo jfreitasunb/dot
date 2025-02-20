@@ -116,15 +116,9 @@ or other application using the libvirt API.
     </controller>
     <filesystem type='mount' accessmode='passthrough'>
       <driver type='virtiofs'/>
-      <source dir='/home/jfreitas/GitHub/inscricoespos'/>
+      <source dir='/home/jfreitas/GitHub/inscricoespos-EM_PRODUCAO'/>
       <target dir='/inscricoespos'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
-    </filesystem>
-    <filesystem type='mount' accessmode='passthrough'>
-      <driver type='virtiofs'/>
-      <source dir='/home/jfreitas/GitHub/inscricoespos-EM_PRODUCAO'/>
-      <target dir='/inscricoespos-EM_PRODUCAO'/>
-      <address type='pci' domain='0x0000' bus='0x07' slot='0x00' function='0x0'/>
     </filesystem>
     <interface type='network'>
       <mac address='52:54:00:b3:91:9d'/>
