@@ -1,6 +1,9 @@
+[Activities][LastVirtualDesktop]
+95997e12-20c8-4431-9d73-d9578b9b8e2d=6bad6fb2-f779-47fd-8795-a418468d1a2d
+
 [Desktops]
-Id_1=969ef5ae-55cd-4d41-bf22-cfc438ef3920
-Id_2=c3e2c6a4-c269-4b8c-8f0d-0ea618e09acb
+Id_1=6bad6fb2-f779-47fd-8795-a418468d1a2d
+Id_2=eed58417-98c9-4755-8a76-5889f33d29be
 Number=2
 Rows=1
 
@@ -10,12 +13,20 @@ padding=4
 [Tiling][146aecdc-1552-574b-8c71-3e62a93d4971]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][4cd6aa6f-a8ef-57d5-99cd-419a9a837782]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][5b7a5ba4-43cc-5910-8e98-f358f9d54b43]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][9000b896-bd61-5e10-9411-0ca95046674a]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][b6b4e011-968a-55e3-8435-5bc84e88ae71]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
-[Windows]
-AutoRaise=true
-FocusPolicy=FocusFollowsMouse
+[Tiling][d25e5777-9477-50d9-98fb-156957876e07]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Xwayland]
+Scale=1.1

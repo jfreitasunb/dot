@@ -2,14 +2,9 @@
 count=0
 
 [Session: saved at previous logout]
-clientId1=10e0cddbd1000173463289100000040590004
-clientId2=10e0cddbd1000173469831400000015750006
-count=2
-program1=/usr/lib/DiscoverNotifier
-program2=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-214.4.5217/dropbox
-restartCommand1=/usr/lib/DiscoverNotifier,-session,10e0cddbd1000173463289100000040590004_1734698447_172200
-restartCommand2=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-214.4.5217/dropbox,-session,10e0cddbd1000173469831400000015750006_1734698447_172162
+clientId1=10e0cddbd1000174013950700000024670003
+count=1
+program1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox
+restartCommand1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox,-session,10e0cddbd1000174013950700000024670003_1740162755_790068
 restartStyleHint1=0
-restartStyleHint2=0
 userId1=jfreitas
-userId2=jfreitas

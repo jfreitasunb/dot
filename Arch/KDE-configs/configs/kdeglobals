@@ -132,11 +132,12 @@ ForegroundNormal=35,38,41
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
-[General]
-ColorSchemeHash=f13a5f93a8d2186748a87eaf56ec9fcef24073d5
+[DirSelect Dialog]
+DirSelectDialog Size=826,584
+History Items[$e]=file:$HOME/Download_torrents,file:$HOME/GitHub/dot
 
-[Icons]
-Theme=candy-icons
+[General]
+ColorSchemeHash=0be804dba87e3512aeb4be3d78ed981f59f0f2f4
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -148,13 +149,12 @@ PathCombo Completionmode=5
 Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
-Show Preview=false
 Show Speedbar=true
 Show hidden files=false
-Sort by=Date
+Sort by=Name
 Sort directories first=true
 Sort hidden files last=false
-Sort reversed=true
+Sort reversed=false
 Speedbar Width=146
 View Style=DetailTree
 
