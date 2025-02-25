@@ -134,7 +134,7 @@ ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
 DirSelectDialog Size=826,584
-History Items[$e]=file:$HOME/Download_torrents,file:$HOME/GitHub/dot
+History Items[$e]=file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/Download_torrents,file:$HOME/GitHub/dot
 
 [General]
 ColorSchemeHash=0be804dba87e3512aeb4be3d78ed981f59f0f2f4

@@ -4,7 +4,9 @@
 [Desktops]
 Id_1=6bad6fb2-f779-47fd-8795-a418468d1a2d
 Id_2=eed58417-98c9-4755-8a76-5889f33d29be
-Number=2
+Id_3=e4996d54-0c98-4cbb-9f81-5abb6fe158f7
+Id_4=ffd30048-eb7a-4568-b0bc-14ff5d9e32fd
+Number=4
 Rows=1
 
 [Tiling]
@@ -27,6 +29,12 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 
 [Tiling][d25e5777-9477-50d9-98fb-156957876e07]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Windows]
+DelayFocusInterval=500
+FocusPolicy=FocusFollowsMouse
+NextFocusPrefersMouse=true
+RollOverDesktops=true
 
 [Xwayland]
 Scale=1.1
