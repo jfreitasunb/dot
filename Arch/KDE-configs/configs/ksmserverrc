@@ -2,9 +2,9 @@
 count=0
 
 [Session: saved at previous logout]
-clientId1=10e0cddbd1000174044754800000098860003
+clientId1=10e0cddbd1000174048366600006029420003
 count=1
 program1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox
-restartCommand1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox,-session,10e0cddbd1000174044754800000098860003_1740447760_221546
+restartCommand1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox,-session,10e0cddbd1000174048366600006029420003_1740483947_254530
 restartStyleHint1=0
 userId1=jfreitas

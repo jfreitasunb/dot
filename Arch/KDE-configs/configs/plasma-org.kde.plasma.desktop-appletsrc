@@ -29,7 +29,7 @@ PreviewImage=/usr/share/wallpapers/Altai/
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/cascade.png
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/astronaut_jellyfish.jpg
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -90,7 +90,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=70
+PreloadWeight=75
 SystrayContainmentId=8
 
 [Containments][2][General]
@@ -132,7 +132,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][11][Configuration]
-PreloadWeight=65
+PreloadWeight=70
 
 [Containments][8][Applets][12]
 immutability=1
@@ -141,6 +141,9 @@ plugin=org.kde.plasma.manage-inputmethod
 [Containments][8][Applets][13]
 immutability=1
 plugin=org.kde.plasma.notifications
+
+[Containments][8][Applets][13][Configuration]
+PreloadWeight=55
 
 [Containments][8][Applets][14]
 immutability=1
@@ -174,7 +177,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=67
+PreloadWeight=59
 
 [Containments][8][Applets][23]
 immutability=1
@@ -185,14 +188,14 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][8][Applets][27]
 immutability=1
