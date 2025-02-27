@@ -29,7 +29,7 @@ GRUB_GFXMODE=1920x1080,auto
 #GRUB_GFXMODE=auto
 
 #Tema do grub
-GRUB_BACKGROUND="/boot/grub/themes/vimix/background.jpg"
+GRUB_BACKGROUND="/boot/grub/themes/vimix/background.jpeg"
 
 # Uncomment to allow the kernel use the same resolution used by grub
 GRUB_GFXPAYLOAD_LINUX=keep

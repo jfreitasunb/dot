@@ -50,7 +50,7 @@ then
 
     EXCLUDE_LIST_TARDIS="/home/jfreitas/OneDrive/Backups/Tardis/excludes/exclude-Tardis.list"
 
-    rsync -avzzc --exclude-from="$EXCLUDE_LIST_TARDIS" "$BACKUP_SOURCE" "$BACKUP_DESTINATION"
+    rsync -avzzcu --exclude-from="$EXCLUDE_LIST_TARDIS" "$BACKUP_SOURCE" "$BACKUP_DESTINATION"
 
     umount $BACKUP_DEVICE
 
