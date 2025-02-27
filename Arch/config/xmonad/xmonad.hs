@@ -508,7 +508,7 @@ myKeys c =
   ^++^ subKeys "Keyboard layouts"
   [ ("M-C-a", addName "Teclado internacional"    $ spawn "setxkbmap -layout us -variant intl")
   , ("M-C-i", addName "Teclado americano"        $ spawn "setxkbmap -layout us")
-  , ("M-C-b", addName "Teclado ABNT2"            $ spawn "setxkbmap -model abnt2 -layout br -variant abnt2")]
+  , ("M-C-b", addName "Teclado ABNT2"            $ spawn "setxkbmap -model abnt -layout br -variant thinkpad")]
 -- KB_GROUPS Send window to workspace
   ^++^ subKeys "Send window to workspace"
   [ ("M-S-1", addName "Send to workspace 1"    $ (windows $ W.shift $ myWorkspaces !! 0))
