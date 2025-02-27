@@ -120,7 +120,7 @@ myStartupHook = do
   spawnOnce "blueman-applet"
   spawnOnce "lxqt-policykit-agent"
   spawnOnce "numlockx"
-  spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Debian/config/Xmodmap"
+  -- spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Debian/config/Xmodmap"
   spawnOnce "xsetroot -cursor_name left_ptr"
   --spawnOnce "lxsession"
   spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends"
@@ -128,7 +128,7 @@ myStartupHook = do
   --spawnOnce "volumeicon"
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 2 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 28")
   --spawnOnce "nitrogen --restore &"
-  spawnOnce "/home/jfreitas/.bin/wallpaper.sh"
+  spawn "/home/jfreitas/.bin/wallpaper.sh"
   spawn "pkill ibus"
   spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
   setWMName "Jota"
@@ -504,8 +504,7 @@ myKeys c =
 
 -- KB_GROUPS Keyboard layouts
   ^++^ subKeys "Keyboard layouts"
-  [ ("M-C-a", addName "Teclado internacional"    $ spawn "setxkbmap -layout us -variant intl")
-  , ("M-C-i", addName "Teclado americano"        $ spawn "setxkbmap -layout us")
+  [ ("M-C-i", addName "Teclado Thinkpad"        $ spawn "setxkbmap -model abnt -layout br -variant thinkpad")
   , ("M-C-b", addName "Teclado ABNT2"            $ spawn "setxkbmap -model abnt2 -layout br -variant abnt2")]
 -- KB_GROUPS Send window to workspace
   ^++^ subKeys "Send window to workspace"
