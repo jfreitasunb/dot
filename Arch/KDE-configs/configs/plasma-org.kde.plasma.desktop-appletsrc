@@ -29,7 +29,7 @@ PreviewImage=/usr/share/wallpapers/Altai/
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/astronaut_jellyfish.jpg
+Image=file:///usr/share/wallpapers/SafeLanding/
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -90,7 +90,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=75
+PreloadWeight=80
 SystrayContainmentId=8
 
 [Containments][2][General]
@@ -119,8 +119,8 @@ immutability=1
 lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
-popupHeight=440
-popupWidth=440
+popupHeight=444
+popupWidth=444
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
@@ -132,7 +132,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][11][Configuration]
-PreloadWeight=70
+PreloadWeight=75
 
 [Containments][8][Applets][12]
 immutability=1
@@ -202,7 +202,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][27][Configuration]
-PreloadWeight=10
+PreloadWeight=2
 
 [Containments][8][Applets][9]
 immutability=1
