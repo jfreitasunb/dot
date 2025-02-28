@@ -101,63 +101,21 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 cd ~/.config/
 
-rm -rf autostart
-
-ln -s ~/GitHub/dot/Debian/config/autostart ./
-
-ln -s ~/GitHub/dot/Debian/config/aliases/ ./
-
-ln -s ~/GitHub/dot/Debian/config/autorandr/ ./
-
-ln -s ~/GitHub/dot/Debian/config/kitty ./
-
-ln -s ~/GitHub/dot/Debian/config/nvim ./nvim
-
-ln -s ~/GitHub/dot/Debian/config/picom/ ./
-
-ln -s ~/GitHub/dot/Debian/config/xmonad/ ./
-
-ln -s ~/GitHub/dot/Debian/config/xmobar/ ./
-
-ln -s ~/GitHub/dot/Debian/config/zathura/ ./
-
-ln -s ~/GitHub/dot/Debian/config/zsh/ ./
-
-ln -s ~/GitHub/dot/Debian/config/systemd ./
-
-ln -s ~/GitHub/dot/Debian/config/starship.toml ./
+rm -r autostart
 
 # rm -rf keepassxc
 
 # ln -s ~/GitHub/dot/Debian/config/keepassxc/ ./
 
-rm -rf gtk-3.0
+rm -r gtk-3.0
 
-ln -s ~/GitHub/dot/Debian/config/gtk-3.0 ./
+cd ~/GitHub/dot/Debian/stow_configs/
 
-cd ~
+stow -t /home/jfreitas/ *
 
-ln -s ~/GitHub/dot/Debian/config/zsh/zshrc ./.zshrc
-
-ln -s ~/GitHub/dot/Debian/bin/ ./.bin
-
-ln -s GitHub/dot/Debian/config/latexmkrc ./.latexmkrc
-
-ln -s GitHub/dot/Debian/config/Xmodmap ./.Xmodmap
-
-cd .local/share/
-
-ln -s ~/GitHub/dot/fonts/ ./
+cd .local/share/fonts/
 
 fc-cache -f -v
-
-cd ~/.local/share/gnome-shell
-
-ln -s ~/GitHub/dot/Debian/gnome_extensions/extensions ./extensions
-
-cd ~/.local/share/
-
-ln -s ~/GitHub/dot/Debian/nautilus-python ./
 
 cd ~
 
