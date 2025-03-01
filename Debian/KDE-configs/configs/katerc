@@ -8,8 +8,8 @@ Show Tab Bar=true
 Show Url Nav Bar=true
 
 [KFileDialog Settings]
-Recent Files[$e]=instala_debian.sh,file:$HOME/GitHub/dot/Debian/grub/grub,file:$HOME/GitHub/dot/Debian/bin/instala_debian.sh
-Recent URLs[$e]=file:$HOME/GitHub/dot/Debian/bin/,file:$HOME/GitHub/dot/Debian/grub/
+Recent Files[$e]=instala_debian.sh,file:$HOME/.bash_history,file:$HOME/GitHub/dot/Debian/grub/grub,file:$HOME/GitHub/dot/Debian/bin/instala_debian.sh
+Recent URLs[$e]=file:$HOME/GitHub/dot/Debian/bin/,file:$HOME/GitHub/dot/Debian/grub/,file:$HOME/
 detailViewIconSize=16
 
 [KTextEditor Document]
@@ -127,11 +127,12 @@ Word Completion Minimal Word Length=3
 Word Completion Remove Tail=true
 
 [KTextEditor::Search]
-Search History=libreo
+Search History=cabal-install,libreo
 
 [MainWindow]
 1536x960 screen: Height=887
 1536x960 screen: Width=768
+1536x960 screen: Window-Maximized=true
 
 [filetree]
 editShade=183,220,246

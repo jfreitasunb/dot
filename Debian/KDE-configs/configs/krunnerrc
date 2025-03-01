@@ -3,3 +3,17 @@ FreeFloating=true
 
 [PlasmaRunnerManager]
 migrated=true
+
+[Plugins]
+DictionaryEnabled=false
+PIM Contacts Search RunnerEnabled=false
+baloosearchEnabled=false
+bookmarksEnabled=false
+browserhistoryEnabled=false
+browsertabsEnabled=false
+calculatorEnabled=false
+katesessionsEnabled=false
+krunner_spellcheckEnabled=false
+org.kde.datetimeEnabled=false
+unitconverterEnabled=false
+webshortcutsEnabled=false

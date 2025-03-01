@@ -1,5 +1,6 @@
 [ActivityManager]
 _k_friendly_name=Gerenciador de atividades
+switch-to-activity-297663ed-b473-4c80-a15c-7b1f25de2ab5=none,none,Alternar para a atividade "Padrão"
 switch-to-activity-2f1b59ec-daca-41a3-906c-0ce69130728b=none,none,Alternar para a atividade "Padrão"
 
 [KDE Keyboard Layout Switcher]
@@ -12,9 +13,9 @@ Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Ativar e desativar o leito
 _k_friendly_name=Acessibilidade
 
 [kcm_touchpad]
-Disable Touchpad=Touchpad Off,Touchpad Off,
-Enable Touchpad=Touchpad On,Touchpad On,
-Toggle Touchpad=Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,
+Disable Touchpad=Touchpad Off,Touchpad Off,Desativar o touchpad
+Enable Touchpad=Touchpad On,Touchpad On,Ativar o touchpad
+Toggle Touchpad=Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Alternar o touchpad
 _k_friendly_name=Touchpad
 
 [kded5]
@@ -208,11 +209,11 @@ view_zoom_out=Meta+-,Meta+-,Reduzir
 
 [mediacontrol]
 _k_friendly_name=Controlador de mídia
-mediavolumedown=none,,Diminuir o volume da mídia
-mediavolumeup=none,,Aumentar o volume da mídia
+mediavolumedown=none,none,Diminuir o volume da mídia
+mediavolumeup=none,none,Aumentar o volume da mídia
 nextmedia=Media Next,Media Next,Reproduzir a próxima mídia
 pausemedia=Media Pause,Media Pause,Pausar mídia
-playmedia=none,,Reproduzir mídia
+playmedia=none,none,Reproduzir mídia
 playpausemedia=Media Play,Media Play,Reproduzir/Pausar a mídia
 previousmedia=Media Previous,Media Previous,Reproduzir a mídia anterior
 stopmedia=Media Stop,Media Stop,Parar a reprodução da mídia
@@ -228,7 +229,7 @@ _launch=Launch (1),Launch (1),KCalc
 [org.kde.krunner.desktop]
 RunClipboard=Alt+Shift+F2,Alt+Shift+F2,Executar comando no conteúdo da área de transferência
 _k_friendly_name=KRunner
-_launch=Alt+Space\tAlt+F2\tSearch,Alt+Space\tAlt+F2\tSearch,KRunner
+_launch=Search\tAlt+Space\tAlt+F2\tMeta+Space,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [org.kde.plasma.emojier.desktop]
 _k_friendly_name=Seletor de emoji

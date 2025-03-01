@@ -8,5 +8,8 @@ TapToClick=true
 [Libinput][7847][102][2.4G Mouse]
 NaturalScroll=true
 
+[Mouse]
+X11LibInputXAccelProfileFlat=false
+
 [Tmp]
 update_info=delete_cursor_old_default_size.upd:DeleteCursorOldDefaultSize

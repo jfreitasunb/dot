@@ -137,7 +137,7 @@ ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
 DirSelectDialog Size=850,598
-History Items[$e]=file:$HOME/OneDrive/Pictures/Wallpapers
+History Items[$e]=file:$HOME/GitHub/dot,file:$HOME/OneDrive/Pictures/Wallpapers,file:$HOME/OneDrive/Pictures/Wallpapers
 
 [General]
 BrowserApplication=brave-browser.desktop
