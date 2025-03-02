@@ -209,11 +209,11 @@ view_zoom_out=Meta+-,Meta+-,Reduzir
 
 [mediacontrol]
 _k_friendly_name=Controlador de mídia
-mediavolumedown=none,none,Diminuir o volume da mídia
-mediavolumeup=none,none,Aumentar o volume da mídia
+mediavolumedown=none,,Diminuir o volume da mídia
+mediavolumeup=none,,Aumentar o volume da mídia
 nextmedia=Media Next,Media Next,Reproduzir a próxima mídia
 pausemedia=Media Pause,Media Pause,Pausar mídia
-playmedia=none,none,Reproduzir mídia
+playmedia=none,,Reproduzir mídia
 playpausemedia=Media Play,Media Play,Reproduzir/Pausar a mídia
 previousmedia=Media Previous,Media Previous,Reproduzir a mídia anterior
 stopmedia=Media Stop,Media Stop,Parar a reprodução da mídia
