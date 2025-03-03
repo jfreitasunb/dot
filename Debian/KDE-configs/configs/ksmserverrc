@@ -5,9 +5,19 @@ update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_valu
 count=0
 
 [Session: saved at previous logout]
-clientId1=10e0cddbd1000174084937800000019660002
-count=1
-program1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox
-restartCommand1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox,-session,10e0cddbd1000174084937800000019660002_1740851247_587529
+clientId1=10e0cddbd1000174092507800000193480006
+clientId2=10e0cddbd1000174092507800000193480008
+clientId3=10e0cddbd1000174092508000000193480010
+count=3
+program1=/usr/lib/x86_64-linux-gnu/libexec/DiscoverNotifier
+program2=/usr/bin/kalendarac
+program3=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox
+restartCommand1=/usr/lib/x86_64-linux-gnu/libexec/DiscoverNotifier,-session,10e0cddbd1000174092507800000193480006_1740925339_339264
+restartCommand2=/usr/bin/kalendarac,-session,10e0cddbd1000174092507800000193480008_1740925339_339305
+restartCommand3=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox,-session,10e0cddbd1000174092508000000193480010_1740925339_339244
 restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
 userId1=jfreitas
+userId2=jfreitas
+userId3=jfreitas
