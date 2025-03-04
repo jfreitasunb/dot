@@ -758,3 +758,4 @@ Arch/configs/hyprland/.config/hypr/hyprpaper.conf
 Debian/config/nvim/lazy-lock.json
 Debian/stow_configs/nvim/.config/nvim/lazy-lock.json
 Debian/stow_configs/nvim/.config/nvim/lazyvim.json
+/Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/cache
