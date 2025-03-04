@@ -759,3 +759,8 @@ Debian/config/nvim/lazy-lock.json
 Debian/stow_configs/nvim/.config/nvim/lazy-lock.json
 Debian/stow_configs/nvim/.config/nvim/lazyvim.json
 /Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/cache
+/Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/.ld.so
+Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/texstudio/lastSession.txss2
+Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/texstudio/packageCache.dat
+Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/texstudio/wordCount.usage
+Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/user-dirs.dirs
