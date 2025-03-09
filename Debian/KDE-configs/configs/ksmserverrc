@@ -5,9 +5,9 @@ update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_valu
 count=0
 
 [Session: saved at previous logout]
-clientId1=10e0cddbd1000174093535700000138430002
+clientId1=10e0cddbd1000174134567300000019580002
 count=1
-program1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox
-restartCommand1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-218.4.4348/dropbox,-session,10e0cddbd1000174093535700000138430002_1741019295_607404
+program1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-219.4.4463/dropbox
+restartCommand1=/home/jfreitas/.dropbox-dist/dropbox-lnx.x86_64-219.4.4463/dropbox,-session,10e0cddbd1000174134567300000019580002_1741368610_268342
 restartStyleHint1=0
 userId1=jfreitas
