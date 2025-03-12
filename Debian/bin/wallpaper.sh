@@ -9,7 +9,7 @@ arr=(/home/jfreitas/OneDrive/Pictures/Wallpapers/*)
 INTERVALO=7200
 
 while true; do
-    if [ "$(xrandr | grep -c 'HDMI-0 connected')" -ge 1 ]; then
+    if [ "$(xrandr | grep -c 'HDMI-1 connected')" -ge 1 ]; then
         i=$(shuf -i0-${#arr[@]} -n1)
         j=$(shuf -i0-${#arr[@]} -n1)
         feh --bg-fill ${arr[$i]} ${arr[$j]}
@@ -21,3 +21,4 @@ while true; do
     # Esperar o intervalo antes de mudar novamente
     sleep "$INTERVALO"
 done
+
