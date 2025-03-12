@@ -60,6 +60,9 @@ alias ll='exa -l --binary --color=always --group-directories-first'  # long form
 alias lt='exa -aT --group-directories-first' # tree listing
 alias lr='exa --color=always --sort newest --group-directories-first' # tree listing
 alias ls='exa -la -snewest --binary --color=always --group-directories-first' # my preferred listing
+alias l="exa -l --icons --git -a"
+alias lt="exa --tree --level=2 --long --icons --git"
+alias ltree="exa --tree --level=2  --icons --git"
 
 # Navegação entre diretórios
 alias d='dirs -v'
