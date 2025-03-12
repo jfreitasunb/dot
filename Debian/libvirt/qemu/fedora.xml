@@ -18,7 +18,6 @@ or other application using the libvirt API.
   <vcpu placement='static'>16</vcpu>
   <os>
     <type arch='x86_64' machine='pc-q35-7.2'>hvm</type>
-    <boot dev='hd'/>
   </os>
   <features>
     <acpi/>
@@ -46,10 +45,12 @@ or other application using the libvirt API.
       <driver name='qemu' type='qcow2' discard='unmap'/>
       <source file='/home/jfreitas/VMs/KVM/fedora.qcow2'/>
       <target dev='vda' bus='virtio'/>
+      <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
+      <source file='/home/jfreitas/VMs/Fedora-KDE-Live-x86_64-41-1.4.iso'/>
       <target dev='sda' bus='sata'/>
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
@@ -173,6 +174,13 @@ or other application using the libvirt API.
       <model type='virtio' heads='1' primary='yes'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x0'/>
     </video>
+    <hostdev mode='subsystem' type='usb' managed='yes'>
+      <source>
+        <vendor id='0x27c6'/>
+        <product id='0x6594'/>
+      </source>
+      <address type='usb' bus='0' port='4'/>
+    </hostdev>
     <redirdev bus='usb' type='spicevmc'>
       <address type='usb' bus='0' port='2'/>
     </redirdev>
