@@ -90,7 +90,8 @@ myModMask :: KeyMask
 myModMask = mod4Mask        -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "/home/jfreitas/.local/kitty.app/bin/kitty"    -- Sets default terminal
+--myTerminal = "/home/jfreitas/.local/kitty.app/bin/kitty"    -- Sets default terminal
+myTerminal = "wezterm"    -- Sets default terminal
 
 myBrowser :: String
 myBrowser = "brave-browser"  -- Sets qutebrowser as browser
