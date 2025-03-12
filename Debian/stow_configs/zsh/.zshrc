@@ -111,3 +111,4 @@ eval "$(starship init zsh)"
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+eval "$(pyenv virtualenv-init -)"
