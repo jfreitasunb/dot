@@ -6,19 +6,23 @@ shopt -s nullglob
 arr=(/home/jfreitas/OneDrive/Pictures/Wallpapers/*)
 
 # Intervalo entre mudanças (2 horas = 7200 segundos)
-INTERVALO=7200
+INTERVALO=7207
 
-while true; do
-    if [ "$(xrandr | grep -c 'HDMI-1 connected')" -ge 1 ]; then
-        i=$(shuf -i0-${#arr[@]} -n1)
-        j=$(shuf -i0-${#arr[@]} -n1)
-        feh --bg-fill ${arr[$i]} ${arr[$j]}
-    else
-        i=$(shuf -i0-${#arr[@]} -n1)
-        feh --bg-fill ${arr[$i]}
-    fi
+# Verifica se existe um processo 'sleep 7207'
+if pgrep -f "sleep 7207" >/dev/null; then
+    exit 1
+else
+    while true; do
+        if [ "$(xrandr | grep -c 'HDMI-1 connected')" -ge 1 ]; then
+            i=$(shuf -i0-${#arr[@]} -n1)
+            j=$(shuf -i0-${#arr[@]} -n1)
+            feh --bg-fill ${arr[$i]} ${arr[$j]}
+        else
+            i=$(shuf -i0-${#arr[@]} -n1)
+            feh --bg-fill ${arr[$i]}
+        fi
 
-    # Esperar o intervalo antes de mudar novamente
-    sleep "$INTERVALO"
-done
-
+        # Esperar o intervalo antes de mudar novamente
+        sleep "$INTERVALO"
+    done
+fi
