@@ -58,7 +58,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:systemsettings.desktop,preferred://filemanager,applications:kitty.desktop,applications:brave-browser.desktop,applications:sublime_text.desktop,applications:io.github.shiftey.Desktop.desktop
+launchers=applications:systemsettings.desktop,preferred://filemanager,applications:brave-browser.desktop,applications:sublime_text.desktop,applications:io.github.shiftey.Desktop.desktop,applications:org.wezfurlong.wezterm.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -92,9 +92,18 @@ DialogHeight=887
 DialogWidth=1536
 
 [Containments][27][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/elarun.png
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0177.jpg
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
+
+[Containments][28]
+activityId=297663ed-b473-4c80-a15c-7b1f25de2ab5
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
 
 [Containments][8]
 activityId=
