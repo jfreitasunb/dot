@@ -764,3 +764,6 @@ Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/texstudio/
 Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/texstudio/packageCache.dat
 Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/texstudio/wordCount.usage
 Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/user-dirs.dirs
+/Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/texstudio/cache
+/Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/data
+Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/QtProject.conf
