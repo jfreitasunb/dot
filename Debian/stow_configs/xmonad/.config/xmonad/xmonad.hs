@@ -129,7 +129,7 @@ myStartupHook = do
   spawnOnce "volumeicon"
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 2 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 28")
   --spawnOnce "nitrogen --restore &"
-  spawn "/home/jfreitas/.bin/wallpaper.sh"
+  spawnOnce "/home/jfreitas/.bin/wallpaper.sh"
   spawn "pkill ibus"
   spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
   setWMName "Jota"
