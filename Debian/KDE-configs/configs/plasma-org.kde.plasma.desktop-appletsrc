@@ -72,6 +72,9 @@ plugin=org.kde.plasma.systemtray
 PreloadWeight=100
 SystrayContainmentId=8
 
+[Containments][2][Configuration]
+PreloadWeight=42
+
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;20;21
 
@@ -92,7 +95,7 @@ DialogHeight=887
 DialogWidth=1536
 
 [Containments][27][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0177.jpg
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0223.jpg
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
