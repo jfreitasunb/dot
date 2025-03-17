@@ -113,10 +113,11 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
-  spawn "killall trayer"  -- kill current trayer on each restart
+  spawn "killall wallpaper.sh"
+  spawn "killall trayer"
+  spawn "killall dropbox"
   --spawnOnce "setxkbmap -layout us -variant intl"
   spawnOnce "/home/jfreitas/.bin/seta_monitores_login.sh"
-  spawn "killall dropbox"
   spawnOnce "dropbox start"
   spawnOnce "blueman-applet"
   spawnOnce "lxqt-policykit-agent"
@@ -484,7 +485,7 @@ myKeys c =
   let subKeys str ks = subtitle' str : mkNamedKeymap c ks in
   subKeys "Xmonad Essentials"
   [ ("M-C-r", addName "Recompile XMonad"       $ spawn "xmonad --recompile")
-  , ("M-S-r", addName "Restart XMonad"         $ spawn "xmonad --restart")
+--  , ("M-S-r", addName "Restart XMonad"         $ spawn "xmonad --restart")
   , ("M-S-q", addName "Quit XMonad"            $ io exitSuccess)
   , ("M-S-c", addName "Kill focused window"    $ kill1)
   , ("M-S-a", addName "Kill all windows on WS" $ killAll)
