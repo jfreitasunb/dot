@@ -1,16 +1,16 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit fedora
+  virsh edit Debian-Arch
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>fedora</name>
-  <uuid>d6f297e1-5ed2-46c2-8b03-6b73f3f2e2de</uuid>
+  <name>Debian-Arch</name>
+  <uuid>b5de4753-8865-4d5c-9143-63c3d0d5ce36</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
-      <libosinfo:os id="http://fedoraproject.org/fedora/unknown"/>
+      <libosinfo:os id="http://debian.org/debian/11"/>
     </libosinfo:libosinfo>
   </metadata>
   <memory unit='KiB'>8388608</memory>
@@ -43,16 +43,16 @@ or other application using the libvirt API.
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2' discard='unmap'/>
-      <source file='/home/jfreitas/VMs/KVM/fedora.qcow2'/>
+      <source file='/home/jfreitas/VMs/KVM/Debian-Arch.qcow2'/>
       <target dev='vda' bus='virtio'/>
-      <boot order='1'/>
+      <boot order='2'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/home/jfreitas/VMs/Fedora-KDE-Live-x86_64-41-1.4.iso'/>
       <target dev='sda' bus='sata'/>
       <readonly/>
+      <boot order='1'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <controller type='usb' index='0' model='qemu-xhci' ports='15'>
@@ -136,7 +136,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
     <interface type='network'>
-      <mac address='52:54:00:4d:c3:3f'/>
+      <mac address='52:54:00:b2:a8:cf'/>
       <source network='default'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
@@ -174,13 +174,6 @@ or other application using the libvirt API.
       <model type='virtio' heads='1' primary='yes'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x0'/>
     </video>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
-      <source>
-        <vendor id='0x27c6'/>
-        <product id='0x6594'/>
-      </source>
-      <address type='usb' bus='0' port='4'/>
-    </hostdev>
     <redirdev bus='usb' type='spicevmc'>
       <address type='usb' bus='0' port='2'/>
     </redirdev>
