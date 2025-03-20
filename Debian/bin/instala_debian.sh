@@ -87,6 +87,14 @@ sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+flatpak install flathub io.github.shiftey.Desktop
+
+flatpak install flathub com.bitwarden.desktop
+
+flatpak install flathub com.spotify.Client
+
+flatpak install flathub org.texstudio.TeXstudio
+
 cd ~/.config/
 
 rm -r autostart
