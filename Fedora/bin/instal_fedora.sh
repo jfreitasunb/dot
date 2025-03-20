@@ -3,6 +3,8 @@ cd ~
 
 sudo dnf install dnf-plugins-core
 
+sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
