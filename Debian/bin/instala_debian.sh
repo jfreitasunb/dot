@@ -99,9 +99,7 @@ cd ~/.config/
 
 rm -r autostart
 
-# rm -rf keepassxc
-
-# ln -s ~/GitHub/dot/Debian/config/keepassxc/ ./
+rm -rf keepassxc
 
 rm -r gtk-3.0
 
