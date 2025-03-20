@@ -129,6 +129,10 @@ sudo ln -s ~/GitHub/dot/Debian/grub/grub /etc/default/grub
 
 sudo update-grub2
 
+sudo rm -rf /etc/systemd/sleep.conf
+
+sudo ln -s ~/GitHub/dot/Debian/systemd/sleep.conf /etc/systemd/sleep.conf
+
 sudo rm -rf /etc/libvirt
 
 sudo ln -s ~/GitHub/dot/Debian/libvirt /etc/libvirt
