@@ -767,3 +767,8 @@ Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/user-dirs.
 /Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/texstudio/cache
 /Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/data
 Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/QtProject.conf
+Debian/stow_configs/onedrive/.config/onedrive/.config.backup
+Debian/stow_configs/onedrive/.config/onedrive/.config.hash
+Debian/stow_configs/onedrive/.config/onedrive/items.sqlite3
+Debian/stow_configs/onedrive/.config/onedrive/items.sqlite3-wal
+Debian/stow_configs/onedrive/.config/onedrive/refresh_token
