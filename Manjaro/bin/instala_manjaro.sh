@@ -2,6 +2,8 @@
 
 cd ~/
 
+sudo pacman -S yay
+
 sudo curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
@@ -12,16 +14,16 @@ sleep 5
 
 yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifont \
   auto-cpufreq otf-font-awesome-5 ttf-material-design-icons-git brave-bin zplug rstudio-desktop-bin \
-  google-chrome firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \
+  firefox nitrogen lxappearance dmenu arandr arc-gtk-theme arc-icon-theme vlc \
   ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts \
   ttf-roboto tex-gyre-fonts ttf-ubuntu-font-family ttf-anonymous-pro ttf-cascadia-code ttf-fantasque-sans-mono ttf-hack ttf-inconsolata \
   ttf-jetbrains-mono ttf-monofur adobe-source-code-pro-fonts cantarell-fonts inter-font ttf-opensans gentium-plus-font \
   adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk noto-fonts-emoji rofi playerctl \
   scrot dunst pacman-contrib composer file-roller filezilla htop imagemagick img2pdf mousetweaks nodejs npm php \
   numlockx pinta qalculate-gtk trayer vim-spell-pt volumeicon wget xdotool xmobar xmonad xmonad-contrib xournalpp vifm \
-  xorg-xinit pcmanfm keychain kitty autorandr ranger ripgrep the_silver_searcher \
+  xorg-xinit pcmanfm keychain autorandr ranger ripgrep the_silver_searcher \
   ttf-liberation usbutils wmctrl xorg-xauth xorg-xmodmap xorg-xrdb vlc sublime-text nasm \
-  inetutils dnsutils bash-completion openssh tlp edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables ipset nss-mdns terminus-font \
+  inetutils dnsutils bash-completion openssh edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables ipset nss-mdns terminus-font \
   awesome-terminal-fonts bat exa bpytop meld neofetch ttf-fira-code ttf-fira-mono ttf-font-awesome zathura zathura-djvu \
   zathura-pdf-mupdf zathura-ps gimp gimp-help-pt_br keepassxc p7zip papirus-icon-theme pdftk python-beautifulsoup4 python-pip terminator \
   pavucontrol xorg-xinit fzf less flatpak cmake unzip ninja curl docker-compose yasm nemo nemo-fileroller nemo-preview \
@@ -29,7 +31,7 @@ yay -S --needed candy-icons-git picom siji-git ttf-meslo ttf-ms-fonts ttf-unifon
   texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra \
   texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex \
   texstudio tldr linux-headers gdal jq docker neovim gparted feh xorg-xsetroot dropbox starship yazi github-desktop-bin spotify onedrive-abraunegg \
-  dconf-editor konsave tmux atuin
+  dconf-editor tmux atuin wezterm fprintd libpam-fprintd bitwarden stow fd-find zoxide ripgrep luarocks xclip
 
 #sudo pacman -Rns gnome-tour iagno thunderbird gnome-chess gnome-weather gnome-maps gnome-contacts gnome-characters gnome-clocks gnome-mines quadrapasse
 
@@ -103,16 +105,6 @@ sudo rm /etc/pacman.conf
 
 sudo ln -s ~/GitHub/dot/Manjaro/pacman/pacman.conf /etc/pacman.conf
 
-#sudo rm /etc/default/grub
-
-#sudo ln -s ~/GitHub/dot/Manjaro/grub/grub /etc/default/grub
-
-#sudo rm /etc/mkinitcpio.conf
-
-#sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/mkinitcpio_conf/mkinitcpio.conf /etc/mkinitcpio.conf
-
-#sudo mkinitcpio -P
-
 #sudo rm /etc/systemd/logind.conf
 
 #sudo ln -s /home/jfreitas/GitHub/dot/Manjaro/logind.conf/logind.conf /etc/systemd/logind.conf
@@ -121,17 +113,7 @@ sudo rm -rf /etc/libvirt
 
 sudo ln -s ~/GitHub/dot/Manjaro/libvirt /etc/libvirt
 
-# sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.service /etc/systemd/system/
-#
-# sudo cp ~/GitHub/dot/Manjaro/config/systemd/gondor_root.timer /etc/systemd/system/
-#
-# sudo systemctl enable gondor_root.timer
-#
-# sudo systemctl enable gondor_root.service
-
 sudo systemctl enable sshd
-
-sudo systemctl enable tlp
 
 sudo systemctl enable fstrim.timer
 
@@ -142,12 +124,6 @@ sudo systemctl enable docker
 sudo usermod -aG libvirt jfreitas
 
 sudo usermod -aG docker jfreitas
-
-# sudo chattr +C /var/log
-#
-# sudo chattr +C /var/lib/docker
-#
-# sudo chattr +C /var/lib/libvirt
 
 sudo chsh -s /bin/zsh jfreitas
 
