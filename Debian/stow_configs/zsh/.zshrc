@@ -14,7 +14,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
 ### ---- history config -------------------------------------
-HISTFILE=~/.config/zsh/.zsh_history
+HISTFILE=~/.zsh_history
 
 # How many commands zsh will load to memory.
 HISTSIZE=10000
