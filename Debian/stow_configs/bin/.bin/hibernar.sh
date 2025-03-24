@@ -1,5 +1,7 @@
 #! /bin/bash
 
 if [ "$(cat /proc/acpi/button/lid/LID/state | grep -c close)" -ge 1 ]; then
-    systemctl suspend-then-hibernate
+    if ["$(cat /sys/class/power_supply/BAT0/status | grep -c DIscharging)" -ge 1]; then
+        systemctl hibernate
+    if
 fi
