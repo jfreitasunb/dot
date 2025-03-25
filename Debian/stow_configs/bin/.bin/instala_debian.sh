@@ -154,3 +154,5 @@ sudo usermod -aG docker jfreitas
 sudo timedatectl set-local-rtc 1
 
 sudo chsh -s /bin/zsh jfreitas
+
+sudo ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /etc/systemd/system/systemd-suspend.service
