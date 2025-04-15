@@ -538,6 +538,10 @@ myKeys c =
   ^++^ subKeys "Favorite programs"
   [ ("M-<Return>", addName "Launch terminal"              $ spawn (myTerminal))
   , ("M-b", addName "Launch web browser"                  $ spawn (myBrowser))
+  , ("M-g", addName "Launch GitHub"                       $ spawn "github-desktop" )
+  , ("M-t", addName "Launch TexStudio"                       $ spawn "texstudio" )
+  , ("M-S-b", addName "Launch Bitwarden"                       $ spawn "bitwarden" )
+  , ("M-S-s", addName "Launch Spotify"                       $ spawn "spotify" )
   , ("M-C-p", addName "Gerenciador de senhas"             $ spawn "keepassxc")
   , ("M-M1-h", addName "Launch htop"                      $ spawn (myTerminal ++ " -e htop"))
   , ("M-S-s", addName "Bloquia a tela"                    $ spawn "slock")
