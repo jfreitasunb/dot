@@ -1,4 +1,6 @@
 window{
 	font-size: 28px;
 	font-family: "Roboto Mono Medium";
+	background-color: rgba(50, 50, 50, 0.5);
+	color: white;
 }
