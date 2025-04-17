@@ -4,6 +4,10 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# Gaps internos e externos
+gaps inner 5
+gaps outer 3
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
