@@ -8,6 +8,7 @@ window{
 	font-family: "Roboto Mono Medium";
 	background-color: rgba(50, 50, 50, 0.5);
 	color: white;
+	border-bottom: 3px solid white;
 }
 
 #entry {
