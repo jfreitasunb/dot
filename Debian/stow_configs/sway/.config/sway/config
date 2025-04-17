@@ -11,6 +11,9 @@ gaps outer 3
 # Remove títulos das janelas
 default_border pixel 2
 
+# Fonte
+font pango: SourceCodePro Medium 12
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
