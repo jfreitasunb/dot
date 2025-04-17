@@ -91,6 +91,7 @@ button:hover {
 #scratchpad,
 #mpd {
     padding: 0 10px;
+    margin: 4px 2px;
     color: #ffffff;
 }
 
