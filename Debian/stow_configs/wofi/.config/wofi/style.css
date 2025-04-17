@@ -16,7 +16,7 @@ window{
 
 #entry:selected {
 	background-color: #bbccdd;
-	color: #333333;
+	background: linear-gradient(90deg, #bbccdd, #cca5dd);
 }
 
 #text:selected {
