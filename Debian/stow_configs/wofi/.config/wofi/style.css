@@ -13,3 +13,8 @@ window{
 #text:selected {
 	color: #333333;
 }
+
+#input {
+	background: rgba(50, 50, 50, 0.5);
+	color: white;
+}
