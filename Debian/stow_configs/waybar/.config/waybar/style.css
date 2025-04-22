@@ -6,6 +6,12 @@
     font-size: 13px;
 }
 
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+/*
 window#waybar {
     background-color: rgba(43, 48, 59, 0.5);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
@@ -14,6 +20,7 @@ window#waybar {
     transition-duration: .5s;
     border-radius: 0;
 }
+*/
 
 window#waybar.hidden {
     opacity: 0.2;
@@ -51,6 +58,14 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @maroon;
+  margin-left: 1rem;
+}
+
+/*
 #workspaces button {
     padding: 0 0.4em;
     background-color: transparent;
@@ -69,7 +84,7 @@ button:hover {
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
-
+*/
 #mode {
     background-color: #64727D;
     border-bottom: 3px solid #ffffff;
