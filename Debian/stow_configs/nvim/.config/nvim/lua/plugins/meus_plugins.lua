@@ -7,11 +7,14 @@ return {
       -- VimTeX configuration goes here, e.g.
       vim.g.vimtex_view_method = "zathura"
       vim.g.vimtex_quickfix_open_on_warning = 0
-      vim.g.vimtex_compiler_progname = 'nvr'
+      vim.g.vimtex_compiler_progname = "nvr"
       vim.g.vimtex_quickfix_ignore_filters = {
-        'Overfull',
-        'Underfull',
+        "Overfull",
+        "Underfull",
       }
     end,
+  },
+  {
+    "brenoprata10/nvim-highlight-colors",
   },
 }
