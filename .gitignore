@@ -788,3 +788,4 @@ Debian/stow_configs/onedrive/.config/onedrive/session_upload*
 /Debian/stow_configs/texstudio/.var
 /Debian/stow_configs/texstudio/.var
 /Debian/stow_configs/texstudio/.var
+Debian/libvirt/qemu/Fedora.xml
