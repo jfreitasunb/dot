@@ -14,7 +14,4 @@ return {
       }
     end,
   },
-  {
-    "brenoprata10/nvim-highlight-colors",
-  },
 }
