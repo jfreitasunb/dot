@@ -47,6 +47,11 @@ output eDP-1 {
    mode 1920x1200@60.002Hz
 }
 
+output HDMI-A-1 {
+   mode 1920x1090@60Hz
+   position 0,0
+}
+
 ### Idle configuration
 #
 # Example configuration:
