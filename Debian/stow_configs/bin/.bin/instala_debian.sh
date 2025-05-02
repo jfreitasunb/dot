@@ -137,7 +137,7 @@ sudo update-grub2
 
 sudo rm -rf /etc/systemd/sleep.conf
 
-sudo ln -s ~/GitHub/dot/Debian/systemd/sleep.conf /etc/systemd/sleep.conf
+sudo ln -s ~/GitHub/dot/Debian/logind/sleep.conf /etc/systemd/sleep.conf
 
 sudo rm -rf /etc/libvirt
 
@@ -159,4 +159,4 @@ sudo chsh -s /bin/zsh jfreitas
 
 sudo ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /etc/systemd/system/systemd-suspend.service
 
-sudo echo "NotShowIn=GNOME;" >> /etc/xdg/autostart/blueman.desktop
+sudo echo "NotShowIn=GNOME;" >>/etc/xdg/autostart/blueman.desktop
