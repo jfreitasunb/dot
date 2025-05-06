@@ -1,4 +1,4 @@
-alias vim='nvim'
+alias v='nvim'
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias cat='batcat'
