@@ -31,7 +31,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = guess_terminal()
-
+menu = "dmenu_run -i -p \"Run: \""
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
@@ -77,7 +77,7 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawn(menu), desc="Spawn a command using a prompt widget"),
 ]
 
 # Add key bindings to switch VTs in Wayland.
