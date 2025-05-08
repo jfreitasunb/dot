@@ -19,13 +19,15 @@
         "format": "<span size='small' font='normal Font Awesome 6 Free'>{icon}</span>",
         "on-click": "activate",
         "sort-by-number": true,
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5"
-        }
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+        },
     },
     "clock": {
         "interval": 1,
