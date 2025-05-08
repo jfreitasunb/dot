@@ -30,6 +30,7 @@ from libqtile import bar, extension, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+import colors
 
 mod = "mod4"
 terminal = "wezterm" 
@@ -122,6 +123,8 @@ for i in groups:
         ]
     )
 
+colors = colors.DoomOne
+
 layouts = [
     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     layout.Max(),
@@ -162,7 +165,12 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                widget.Clock(
+                    foreground = colors[8],
+                    padding = 8, 
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-date')},
+                    format="⧗  %H:%M %p"
+                ),
                 widget.QuickExit(),
             ],
             24,
