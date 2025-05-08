@@ -11,6 +11,7 @@
     "modules-right": [
         "tray",
         "network",
+        "battery",
         "cpu",
         "memory",
         "pulseaudio",
@@ -52,6 +53,20 @@
         "max-length": 50,
         "on-click": "~/.bin/networkmanager.sh",
         "on-click-right": "~/.bin:tooltip-format-wifi/nm-applet.sh toggle",
+    },
+   "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "cpu": {
         "interval": 30,
