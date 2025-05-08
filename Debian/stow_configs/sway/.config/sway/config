@@ -52,6 +52,8 @@ output HDMI-A-1 {
    position 0,0
 }
 
+exec /home/jfreitas/.bin/stacki3
+
 ### Idle configuration
 #
 # Example configuration:
