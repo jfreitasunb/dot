@@ -10,6 +10,7 @@
     ],
     "modules-right": [
         "tray",
+        "bluetooth",
         "network",
         "battery",
         "cpu",
@@ -40,6 +41,14 @@
     "tray": {
         "icon-size": 15,
         "spacing": 10
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": ""
     },
     "network": {
         "format": "{ifname}",
