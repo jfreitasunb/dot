@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "height": 47,
+    "height": 37,
     "reload_style_on_change": true,
     "modules-left": [
         "sway/workspaces"
@@ -16,7 +16,7 @@
         "cpu",
         "memory",
         "pulseaudio",
-        "power-profiles-daemon"
+        "custom/power"
     ],
     "sway/workspaces": {
         "format": "<span size='small' font='normal Font Awesome 6 Free'>{icon}</span>",
@@ -31,6 +31,12 @@
             "6": [],
             "7": [],
         },
+    },
+    "custom/power": {
+        "format": " ",
+        "tooltip": false,
+        // "tooltip-format": "Power Menu",
+        "on-click": "wlogout -b 3"
     },
     "clock": {
         "interval": 1,

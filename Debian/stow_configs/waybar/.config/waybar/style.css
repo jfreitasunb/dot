@@ -29,7 +29,8 @@ tooltip {
 #cpu,
 #memory,
 #pulseaudio,
-#custom-updates {
+#custom-power,
+#custom-updates, #custom-power {
     /*text-shadow: 1px 1px 2px rgb(0, 0, 0);*/
     /* text shadow, offset-x | offset-y | blur-radius | color */
     background: #292c3c; /*#15161e default*/
