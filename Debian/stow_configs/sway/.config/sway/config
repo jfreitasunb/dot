@@ -4,12 +4,46 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+include colors
+
+# Set inner/outer gaps
+gaps inner 7
+gaps outer 4
+
+# Hide titlebar on windows: 
+default_border pixel 3
+
+# disable focus follows mouse
+focus_follows_mouse no
+
+# Thin borders:
+smart_borders off
+
+# Title format for windows
+for_window [shell="xdg_shell"] title_format "%title (%app_id)"
+for_window [shell="x_wayland"] title_format "%class - %title"
+
+set $opacity 1
+
+for_window [class=".*"] opacity $opacity
+for_window [app_id=".*"] opacity $opacity
+
+#----------------#
+# set gtk+ theme #
+#----------------#
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adwaita'
+    gsettings set $gnome-schema color-scheme 'prefer-dark'
+    gsettings set $gnome-schema cursor-theme 'volantes_cursors'
+}
+
 # Gaps internos e externos
-gaps inner 5
-gaps outer 3
+#gaps inner 5
+#gaps outer 3
 
 # Remove títulos das janelas
-default_border pixel 2
+#default_border pixel 2
 
 # Fonte
 font pango: SourceCodePro Medium 12
@@ -91,6 +125,7 @@ input "type:touchpad" {
     dwt enabled
     tap enabled
     natural_scroll enabled
+    middle_emulation enabled
     middle_emulation enabled
 }
 
@@ -285,13 +320,23 @@ for_window [class="Brave-browser"] inhibit_idle fullscreen
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 420 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         timeout 600 'swaymsg "output * power on"; sleep 1; systemctl suspend' \
          before-sleep 'swaylock -f -c 000000'
 
 set $gnome-schema org.gnome.desktop.interface
 
 ## Lock Screen
 bindsym $mod+f1 exec ~/.bin/lock_screen.sh
+
+#################################################
+#                Clamshell Mode                 #
+#################################################
+
+# Clamshell Mode
+set $laptop <eDP-1>
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+exec_always ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/clamshell.sh
 
 #
 # Status Bar:
