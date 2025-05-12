@@ -6,6 +6,8 @@
 
 include colors
 
+mouse_warping container
+
 # Set inner/outer gaps
 gaps inner 7
 gaps outer 4
