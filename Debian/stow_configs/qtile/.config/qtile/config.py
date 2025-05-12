@@ -216,13 +216,13 @@ screens = [
                 widget.CPU(
                     foreground = colors[4],
                     padding = 8, 
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e htop')},
+                    mouse_callbacks = {'Button1': lambda: qtile.spawn(terminal + ' -e htop')},
                     format = '  Cpu: {load_percent}%',
                     ),
                 widget.Memory(
                     foreground = colors[8],
                     padding = 8, 
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e htop')},
+                    mouse_callbacks = {'Button1': lambda: qtile.spawn(terminal + ' -e htop')},
                     format = '{MemUsed: .0f}{mm}',
                     fmt = '🖥  Mem: {}',
                 ),
@@ -230,7 +230,7 @@ screens = [
                     update_interval = 60,
                     foreground = colors[5],
                     padding = 8, 
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-disk')},
+                    mouse_callbacks = {'Button1': lambda: qtile.spawn('notify-disk')},
                     partition = '/',
                     #format = '[{p}] {uf}{m} ({r:.0f}%)',
                     format = '{uf}{m} free',
@@ -245,7 +245,7 @@ screens = [
                     widget.Clock(
                     foreground = colors[8],
                     padding = 8, 
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-date')},
+                    mouse_callbacks = {'Button1': lambda: qtile.spawn('notify-date')},
                     ## Uncomment for date and time 
                     format = "⧗  %d %b - %H:%M",
                     ## Uncomment for time only
