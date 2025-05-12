@@ -226,6 +226,16 @@ screens = [
                     format = '{MemUsed: .0f}{mm}',
                     fmt = '🖥  Mem: {}',
                 ),
+                widget.Battery(
+                    foreground=colors[7],
+                    low_background="F28FAD",
+                    low_foreground="161320",
+                    low_percentage=0.2,
+                    format="{percent:2.0%}{char}", 
+                    full_char="-f", 
+                    discharge_char="-d", 
+                    charge_char="-c"
+                ),
                 widget.DF(
                     update_interval = 60,
                     foreground = colors[5],
