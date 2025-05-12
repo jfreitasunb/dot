@@ -94,6 +94,10 @@ tooltip {
 
 }
 
+#workspaces button.focused{
+    background: #77b5a6;
+}
+
 #workspaces button:hover {
     background: #77b5a6;
     /* hovered workspace color */
