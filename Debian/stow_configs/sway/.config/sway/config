@@ -6,8 +6,6 @@
 
 include colors
 
-mouse_warping container
-
 # Set inner/outer gaps
 gaps inner 7
 gaps outer 4
@@ -16,7 +14,8 @@ gaps outer 4
 default_border pixel 3
 
 # disable focus follows mouse
-focus_follows_mouse no
+focus_follows_mouse always
+mouse_warping container
 
 # Thin borders:
 smart_borders off
