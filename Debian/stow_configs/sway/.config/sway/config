@@ -67,11 +67,9 @@ set $menu wofi --show
 
 include /etc/sway/config-vars.d/*
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+### Iniciando alguns programas 
 exec /home/jfreitas/.bin/sway_wallpaper.sh
+exec /home/jfreitas/.bin/autostart_sway.sh
 
 #
 # Example configuration:
@@ -161,6 +159,9 @@ input "type:pointer" {
     # Reload the configuration file
     bindsym $mod+Shift+r reload
 
+    bindsym $mod+b exec brave-browser
+    bindsym $mod+n exec nautilus 
+
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
@@ -220,8 +221,6 @@ input "type:pointer" {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
