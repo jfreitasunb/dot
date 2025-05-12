@@ -125,12 +125,18 @@ for i in groups:
 
 colors = colors.DoomOne
 
+layout_theme = {"border_width": 2,
+                "margin": 12,
+                "border_focus": colors[8],
+                "border_normal": colors[0]
+                }
+
+
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.MonadTall(),
-    layout.MonadWide(),
-    layout.Tile(),
-    layout.Max(),
+    layout.MonadTall(**layout_theme),
+    layout.MonadWide(**layout_theme),
+    layout.Tile(**layout_theme),
+    layout.Max(**layout_theme),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
