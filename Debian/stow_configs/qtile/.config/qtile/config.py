@@ -161,26 +161,98 @@ screens = [
         top=bar.Bar(
             [
                 widget.Spacer(length = 8),
-                #widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
+                widget.Prompt(
+                     font = "Ubuntu Mono",
+                     fontsize=14,
+                     foreground = colors[1]
                 ),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
-                widget.Clock(
+                widget.GroupBox(
+                 fontsize = 11,
+                 margin_y = 5,
+                 margin_x = 14,
+                 padding_y = 0,
+                 padding_x = 2,
+                 borderwidth = 3,
+                 active = colors[8],
+                 inactive = colors[9],
+                 rounded = False,
+                 highlight_color = colors[0],
+                 highlight_method = "line",
+                 this_current_screen_border = colors[7],
+                 this_screen_border = colors [4],
+                 other_current_screen_border = colors[7],
+                 other_screen_border = colors[4],
+                 ),
+                widget.TextBox(
+                 text = '|',
+                 font = "Ubuntu Mono",
+                 foreground = colors[9],
+                 padding = 2,
+                 fontsize = 14
+                 ),
+                widget.CurrentLayout(
+                     foreground = colors[1],
+                     padding = 5
+                ),
+                widget.TextBox(
+                     text = '|',
+                     font = "Ubuntu Mono",
+                     foreground = colors[9],
+                    padding = 2,
+                    fontsize = 14
+                ),
+                widget.WindowName(
+                 foreground = colors[6],
+                 padding = 8,
+                 max_chars = 40
+                 ),
+                widget.GenPollText(
+                    update_interval = 300,
+                    func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
+                    foreground = colors[3],
+                    padding = 8, 
+                    fmt = '❤  {}',
+                ),
+                widget.CPU(
+                    foreground = colors[4],
+                    padding = 8, 
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e htop')},
+                    format = '  Cpu: {load_percent}%',
+                    ),
+                widget.Memory(
+                    foreground = colors[8],
+                    padding = 8, 
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e htop')},
+                    format = '{MemUsed: .0f}{mm}',
+                    fmt = '🖥  Mem: {}',
+                ),
+                widget.DF(
+                    update_interval = 60,
+                    foreground = colors[5],
+                    padding = 8, 
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-disk')},
+                    partition = '/',
+                    #format = '[{p}] {uf}{m} ({r:.0f}%)',
+                    format = '{uf}{m} free',
+                    fmt = '🖴  Disk: {}',
+                    visible_on_warn = False,
+                ),
+                widget.Volume(
+                    foreground = colors[7],
+                    padding = 8, 
+                    fmt = '🕫  Vol: {}',
+                    ),
+                    widget.Clock(
                     foreground = colors[8],
                     padding = 8, 
                     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-date')},
-                    format="⧗  %H:%M %p"
+                    ## Uncomment for date and time 
+                    # format = "⧗  %a, %b %d - %H:%M",
+                    ## Uncomment for time only
+                    format = "⧗  %I:%M %p",
                 ),
-                widget.QuickExit(),
+                widget.Systray(padding = 6),
+                widget.Spacer(length = 8),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
