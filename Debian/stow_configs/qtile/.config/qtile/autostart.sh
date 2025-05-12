@@ -16,4 +16,6 @@ dropbox start &
 
 blueman-applet &
 
+nm-applet &
+
 /home/jfreitas/.bin/wallpaper.sh &
