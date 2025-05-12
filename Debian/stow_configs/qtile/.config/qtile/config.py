@@ -242,7 +242,7 @@ screens = [
                     padding = 8, 
                     fmt = '🕫  Vol: {}',
                     ),
-                    widget.Clock(
+                widget.Clock(
                     foreground = colors[8],
                     padding = 8, 
                     mouse_callbacks = {'Button1': lambda: qtile.spawn('notify-date')},
@@ -254,7 +254,7 @@ screens = [
                 widget.Systray(padding = 6),
                 widget.Spacer(length = 8),
             ],
-            24,
+            34,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
