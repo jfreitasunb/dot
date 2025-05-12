@@ -160,6 +160,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.Spacer(length = 8),
                 #widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
