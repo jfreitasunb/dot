@@ -1,0 +1,30 @@
+{
+    "bibitems": [
+    ],
+    "bibtexfiles": [
+    ],
+    "childdocs": [
+    ],
+    "filename": "/home/jfreitas/OneDrive/UnB/Declaracoes-e-Comprovantes/declaracao-colegiado.tex",
+    "labels": [
+    ],
+    "modified": "Tue May 13 21:49:56 2025",
+    "packages": [
+        "12pt#latex-document",
+        "12pt#tex",
+        "brazil#babel",
+        "pdftex#graphicx",
+        "#amstext",
+        "#amsthm",
+        "#amsfonts",
+        "#amsmath",
+        "latin1#inputenc",
+        "#amssymb"
+    ],
+    "refs": [
+    ],
+    "toc": [
+    ],
+    "usercommands": [
+    ]
+}

@@ -1,0 +1,35 @@
+2025-05-14T23:18:30.059Z - info: [ui] [AppStore] loading 2 repositories from store
+2025-05-14T23:18:30.061Z - info: [ui] [AppStore] found account: jfreitasunb (José Antônio Oliveira de Freitas)
+2025-05-14T23:18:30.361Z - warn: [ui] Error refreshing account 'jfreitasunb'
+Error: Cannot update an account which doesn't have a token: jfreitasunb
+    at at (/home/jfreitas/webpack:/app/src/lib/fatal-error.ts:3:9)
+    at /home/jfreitas/webpack:/app/src/lib/stores/accounts-store.ts:248:12
+    at Op.tryUpdateAccount (/home/jfreitas/webpack:/app/src/lib/stores/accounts-store.ts:136:20)
+    at /home/jfreitas/webpack:/app/src/lib/stores/accounts-store.ts:116:37
+    at Array.map (<anonymous>)
+    at Op.refresh (/home/jfreitas/webpack:/app/src/lib/stores/accounts-store.ts:116:21)
+    at Op.loadInitialState (/home/jfreitas/webpack:/app/src/lib/stores/app-store.ts:2309:24)
+2025-05-14T23:18:30.591Z - info: [ui] launching: 3.4.13-linux1 (Linux 6.1.0-34-amd64)
+2025-05-14T23:18:30.591Z - info: [ui] execPath: '/app/github-desktop/github-desktop'
+2025-05-14T23:18:30.613Z - warn: [ui] Alive channel request failed: Error: Not Found
+2025-05-14T23:18:30.681Z - warn: [ui] Alive channel request failed: Error: Not Found
+2025-05-14T23:18:30.711Z - warn: [ui] Alive channel request failed: Error: Not Found
+2025-05-14T23:18:30.745Z - warn: [ui] Alive channel request failed: Error: Not Found
+2025-05-14T23:18:31.246Z - info: [ui] Stats reported.
+2025-05-14T23:19:00.860Z - info: [ui] Executing fetch: git fetch --progress --prune --recurse-submodules=on-demand origin (took 1.184s)
+2025-05-14T23:19:00.862Z - error: [ui] `git fetch --progress --prune --recurse-submodules=on-demand origin` exited with an unexpected code: 128.
+
+it@github.com: Permission denied (publickey).fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+(The error was parsed as 3: Authentication failed. Some common reasons include:
+
+- You are not logged in to your account: see File > Options.
+- You may need to log out and log back in to refresh your token.
+- You do not have permission to access this repository.
+- The repository is archived on GitHub. Check the repository settings to confirm you are still permitted to push commits.
+- If you use SSH authentication, check that your key is added to the ssh-agent and associated with your account.
+- If you use SSH authentication, ensure the host key verification passes for your repository hosting service.
+- If you used username / password authentication, you might need to use a Personal Access Token instead of your account password. Check the documentation of your repository hosting service.)

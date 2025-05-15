@@ -1,0 +1,64 @@
+{
+    "bibitems": [
+    ],
+    "bibtexfiles": [
+    ],
+    "childdocs": [
+    ],
+    "filename": "/home/jfreitas/Documentos/p3-noturno.tex",
+    "labels": [
+    ],
+    "modified": "",
+    "packages": [
+        "portuges#babel",
+        "#tikz",
+        "table#xcolor",
+        "#fancyhdr",
+        "#graphicx",
+        "#graphics",
+        "#amssymb",
+        "#amsmath",
+        "#color",
+        "#float",
+        "12pt#latex-document",
+        "12pt#tex",
+        "#epsfig",
+        "#float",
+        "#comment",
+        "#pstricks",
+        "#ifthen",
+        "#enumerate",
+        "utf8#inputenc",
+        "#psfrag"
+    ],
+    "refs": [
+    ],
+    "toc": [
+    ],
+    "usercommands": [
+        [
+            "\\centereps",
+            "\\centereps{}{}{}"
+        ],
+        [
+            "\\centereps",
+            "\\centereps{}{}{}"
+        ],
+        [
+            "\\seteps",
+            "\\seteps{}{}{}{}"
+        ],
+        [
+            "\\sen",
+            "\\sen"
+        ],
+        [
+            "\\centerepsaltura",
+            "\\centerepsaltura{}{}{}"
+        ],
+        [
+            "\\seteps",
+            "\\seteps{}{}{}{}"
+        ]
+    ]
+}

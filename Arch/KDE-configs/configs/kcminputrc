@@ -1,6 +1,0 @@
-[Libinput][7847][102][2.4G Mouse]
-PointerAcceleration=-0.400
-
-[Mouse]
-X11LibInputXAccelProfileFlat=true
-XLbInptNaturalScroll=true
