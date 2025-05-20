@@ -790,3 +790,9 @@ Debian/stow_configs/onedrive/.config/onedrive/session_upload*
 /Debian/stow_configs/texstudio/.var
 Debian/libvirt/qemu/Fedora.xml
 /Debian/stow_configs/qtile/.config/qtile/__pycache__
+Arch/configs_stow/onedrive/.config/onedrive/resume_upload
+Arch/configs_stow/onedrive/.config/onedrive/.config.backup
+Arch/configs_stow/onedrive/.config/onedrive/.config.hash
+Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3
+Arch/configs_stow/onedrive/.config/onedrive/refresh_token
+Arch/configs_stow/nvim/.config/nvim/lazy-lock.json
