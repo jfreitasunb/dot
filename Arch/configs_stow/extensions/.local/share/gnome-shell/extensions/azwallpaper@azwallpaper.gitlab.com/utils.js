@@ -1,46 +1,59 @@
-const {Gio} = imports.gi;
+import Gio from 'gi://Gio';
 
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
+import * as Config from 'resource:///org/gnome/shell/misc/config.js';
+import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import * as MessageTray from 'resource:///org/gnome/shell/ui/messageTray.js';
 
-const Gettext = imports.gettext.domain('azwallpaper');
-const _ = Gettext.gettext;
+import {domain} from 'gettext';
+const {gettext: _} = domain('azwallpaper');
 
-const {
-    main: Main,
-    messageTray: MessageTray,
-} = imports.ui;
-
-/**
- *
- * @param {string} message the message to log
- */
-function debugLog(message) {
-    if (Me.settings.get_boolean('debug-logs'))
-        log(`Wallpaper Slideshow: ${message}`);
-}
+const [ShellVersion] = Config.PACKAGE_VERSION.split('.').map(s => Number(s));
+const PROJECT_NAME = _('Wallpaper Slideshow');
 
 /**
  *
- * @param {string} msg A message
- * @param {string} details Additional information
- * @param {Label} actionLabel the label for the action
+ * @param {string} title notification title
+ * @param {string} body notification body
+ * @param {string} actionLabel the label for the action
  * @param {Function} actionCallback the callback for the action
  */
-function notify(msg, details, actionLabel = null, actionCallback = null) {
-    const source = new MessageTray.SystemNotificationSource();
+export function notify(title, body, actionLabel = null, actionCallback = null) {
+    const extension = Extension.lookupByURL(import.meta.url);
+    const gicon = Gio.icon_new_for_string(`${extension.path}/media/azwallpaper-logo.svg`);
+
+    const source = getSource(PROJECT_NAME, 'application-x-addon-symbolic');
     Main.messageTray.add(source);
-    msg = `${_('Wallpaper Slideshow')}: ${msg}`;
-    const notification = new MessageTray.Notification(source, msg, details, {
-        gicon: Gio.icon_new_for_string(`${Me.path}/media/azwallpaper-logo.svg`),
-    });
+
+    const notification = getNotification(source, title, body, gicon);
+    notification.urgency = MessageTray.Urgency.CRITICAL;
 
     if (actionLabel && actionCallback) {
-        notification.setUrgency(MessageTray.Urgency.CRITICAL);
-        notification.addAction(actionLabel, actionCallback);
+        notification.addAction(actionLabel, () => {
+            actionCallback();
+            notification.destroy();
+        });
+        notification.resident = true;
     } else {
-        notification.setTransient(true);
+        notification.isTransient = true;
     }
 
-    source.showNotification(notification);
+    if (ShellVersion >= 46)
+        source.addNotification(notification);
+    else
+        source.showNotification(notification);
+}
+
+function getNotification(source, title, body, gicon) {
+    if (ShellVersion >= 46)
+        return new MessageTray.Notification({source, title, body, gicon});
+    else
+        return new MessageTray.Notification(source, title, body, {gicon});
+}
+
+function getSource(title, iconName) {
+    if (ShellVersion >= 46)
+        return new MessageTray.Source({title, iconName});
+    else
+        return new MessageTray.Source(title, iconName);
 }

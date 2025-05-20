@@ -1,34 +1,32 @@
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-const { Adw } = imports.gi;
-const { addCombo, addSpinButton, addToggle } = Me.imports.preferences.common;
-var indicatorStyleOptions = {
-    'current-workspace-name': 'Current workspace name',
+import Adw from 'gi://Adw';
+import { addCombo, addLinkButton, addSpinButton, addTextEntry, addToggle } from './common.js';
+export const indicatorStyleOptions = {
+    'current-workspace': 'Current workspace',
     'workspaces-bar': 'Workspaces bar',
 };
-var scrollWheelOptions = {
+export const scrollWheelOptions = {
     panel: 'Over top panel',
     'workspaces-bar': 'Over indicator',
     disabled: 'Disabled',
 };
-var scrollWheelDirectionOptions = {
+export const scrollWheelDirectionOptions = {
     normal: 'Normal',
     inverted: 'Inverted',
     disabled: 'Disabled',
 };
-var positionOptions = {
+export const positionOptions = {
     left: 'Left',
     center: 'Center',
     right: 'Right',
 };
-var BehaviorPage = class BehaviorPage {
-    constructor() {
+export class BehaviorPage {
+    constructor(extensionPreferences) {
         this.page = new Adw.PreferencesPage();
-        this._settings = ExtensionUtils.getSettings(`${Me.metadata['settings-schema']}.behavior`);
+        this._settings = extensionPreferences.getSettings(`org.gnome.shell.extensions.space-bar.behavior`);
     }
     init() {
         this.page.set_title('_Behavior');
-        this.page.use_underline = true;
+        this.page.useUnderline = true;
         this.page.set_icon_name('preferences-system-symbolic');
         this._initGeneralGroup();
         this._initSmartWorkspaceNamesGroup();
@@ -43,6 +41,57 @@ var BehaviorPage = class BehaviorPage {
             key: 'indicator-style',
             title: 'Indicator style',
             options: indicatorStyleOptions,
+        }).addSubDialog({
+            window: this.window,
+            title: 'Indicator style',
+            populatePage: (page) => {
+                const group = new Adw.PreferencesGroup();
+                group.set_title('Custom label text');
+                group.set_description('Custom labels to use for workspace names in the top panel. The following placeholders will be replaced with their respective value:\n\n' +
+                    '{{name}}: The current workspace name\n' +
+                    '{{number}}: The current workspace number\n' +
+                    '{{total}}: The number of total workspaces\n' +
+                    '{{Total}}: The number of total workspaces, also counting the spare dynamic workspace');
+                page.add(group);
+                addToggle({
+                    settings: this._settings,
+                    group,
+                    key: 'enable-custom-label',
+                    title: 'Use custom label text',
+                });
+                addToggle({
+                    settings: this._settings,
+                    group,
+                    key: 'enable-custom-label-in-menu',
+                    title: 'Also use custom label text in menu',
+                }).enableIf({
+                    key: 'enable-custom-label',
+                    predicate: (value) => value.get_boolean(),
+                    page,
+                });
+                addTextEntry({
+                    settings: this._settings,
+                    group,
+                    key: 'custom-label-named',
+                    title: 'Custom label for named workspaces',
+                    window: this.window,
+                }).enableIf({
+                    key: 'enable-custom-label',
+                    predicate: (value) => value.get_boolean(),
+                    page,
+                });
+                addTextEntry({
+                    settings: this._settings,
+                    group,
+                    key: 'custom-label-unnamed',
+                    title: 'Custom label for unnamed workspaces',
+                    window: this.window,
+                }).enableIf({
+                    key: 'enable-custom-label',
+                    predicate: (value) => value.get_boolean(),
+                    page,
+                });
+            },
         });
         addCombo({
             window: this.window,
@@ -57,6 +106,12 @@ var BehaviorPage = class BehaviorPage {
             populatePage: (page) => {
                 const positionSubDialogGroup = new Adw.PreferencesGroup();
                 page.add(positionSubDialogGroup);
+                addToggle({
+                    settings: this._settings,
+                    group: positionSubDialogGroup,
+                    key: 'system-workspace-indicator',
+                    title: 'Keep system workspace indicator',
+                });
                 addSpinButton({
                     settings: this._settings,
                     group: positionSubDialogGroup,
@@ -140,7 +195,7 @@ var BehaviorPage = class BehaviorPage {
             group,
             key: 'show-empty-workspaces',
             title: 'Show empty workspaces',
-            subtitle: 'Also affects switching with scroll wheel'
+            subtitle: 'Also affects switching with scroll wheel',
         });
         addToggle({
             settings: this._settings,
@@ -160,6 +215,33 @@ var BehaviorPage = class BehaviorPage {
             group,
             key: 'smart-workspace-names',
             title: 'Enable smart workspace names',
+        }).addSubDialog({
+            window: this.window,
+            title: 'Smart Workspace Names',
+            enableIf: {
+                key: 'smart-workspace-names',
+                predicate: (value) => value.get_boolean(),
+                page: this.page,
+            },
+            iconName: 'applications-science-symbolic',
+            populatePage: (page) => {
+                const group = new Adw.PreferencesGroup();
+                page.add(group);
+                group.set_title('Re-evaluate names');
+                group.set_description('Removes workspace names when windows by which the name was assigned move away or close.\n\n' +
+                    'Please leave feedback how you like the feature using the button below.');
+                addToggle({
+                    settings: this._settings,
+                    group,
+                    key: 'reevaluate-smart-workspace-names',
+                    title: 'Re-evaluate smart workspace names',
+                });
+                addLinkButton({
+                    title: 'Leave feedback',
+                    uri: 'https://github.com/christopher-l/space-bar/issues/37',
+                    group,
+                });
+            },
         });
         this.page.add(group);
     }

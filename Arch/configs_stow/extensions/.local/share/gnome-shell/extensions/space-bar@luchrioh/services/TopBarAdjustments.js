@@ -1,7 +1,6 @@
-const Me = imports.misc.extensionUtils.getCurrentExtension();
-const { Settings } = Me.imports.services.Settings;
-const Main = imports.ui.main;
-var TopBarAdjustments = class TopBarAdjustments {
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import { Settings } from './Settings.js';
+export class TopBarAdjustments {
     constructor() {
         this._settings = Settings.getInstance();
         this._didHideActivitiesButton = false;
@@ -15,26 +14,26 @@ var TopBarAdjustments = class TopBarAdjustments {
         TopBarAdjustments._instance = null;
     }
     init() {
-        this._settings.position.subscribe((value) => {
-            if (value === 'left') {
-                this._hideActivitiesButton();
+        this._settings.systemWorkspaceIndicator.subscribe((systemWorkspaceIndicator) => {
+            if (systemWorkspaceIndicator) {
+                this._restoreSystemWorkspaceIndicator();
             }
             else {
-                this._restoreActivitiesButton();
+                this._hideSystemWorkspaceIndicator();
             }
         }, { emitCurrentValue: true });
     }
     destroy() {
-        this._restoreActivitiesButton();
+        this._restoreSystemWorkspaceIndicator();
     }
-    _hideActivitiesButton() {
+    _hideSystemWorkspaceIndicator() {
         const activitiesButton = Main.panel.statusArea['activities'];
         if (activitiesButton && !Main.sessionMode.isLocked && activitiesButton.is_visible()) {
             activitiesButton.hide();
             this._didHideActivitiesButton = true;
         }
     }
-    _restoreActivitiesButton() {
+    _restoreSystemWorkspaceIndicator() {
         const activitiesButton = Main.panel.statusArea['activities'];
         if (activitiesButton && this._didHideActivitiesButton) {
             activitiesButton.show();
