@@ -25,7 +25,6 @@ SAVEHIST=1000000000
 # History won't save duplicates.
 setopt HIST_SAVE_NO_DUPS
 
-
 # History won't show duplicates on search.
 #setopt HIST_FIND_NO_DUPS
 #if [ -d "/usr/local/texlive/2023/bin/x86_64-linux" ] ; then
@@ -56,11 +55,6 @@ export PATH
 
 bindkey -e
 
-#Keybinds
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-bindkey  "^[[3~"  delete-char
-
 # Use modern completion system
 autoload -U compinit; compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -87,8 +81,8 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
-#bindkey '^[[A' history-substring-search-up
-#bindkey '^[[B' history-substring-search-down
+#bindkey '^[[OA' history-substring-search-up
+#bindkey '^[[OB' history-substring-search-down
 
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
@@ -109,7 +103,6 @@ fi
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 #neofetch
 
