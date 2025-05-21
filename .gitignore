@@ -802,3 +802,4 @@ Arch/configs_stow/onedrive/.config/onedrive/refresh_token
 Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3
 *.sqlite3
 Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3
+Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3-journal
