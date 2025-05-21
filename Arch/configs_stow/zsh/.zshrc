@@ -107,7 +107,7 @@ export NVM_DIR="$HOME/.config/nvm"
 #neofetch
 
 eval "$(starship init zsh)"
-. "$HOME/.atuin/bin/env"
+#. "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
 eval "$(pyenv virtualenv-init -)"
