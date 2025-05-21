@@ -797,3 +797,7 @@ Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3
 Arch/configs_stow/onedrive/.config/onedrive/refresh_token
 Arch/configs_stow/nvim/.config/nvim/lazy-lock.json
 Arch/configs_stow/nvim/.config/nvim/lazy-lock.json
+Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3
+Arch/configs_stow/onedrive/.config/onedrive/refresh_token
+Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3
+*.sqlite3
