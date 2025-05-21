@@ -1,3 +1,0 @@
-<Addins host-reference="/app/lib/pinta/Pinta.dll">
-  <Directory shared="false">/app/lib/pinta</Directory>
-</Addins>
