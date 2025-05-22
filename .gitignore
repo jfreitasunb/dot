@@ -803,3 +803,5 @@ Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3
 *.sqlite3
 Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3
 Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3-journal
+Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3-shm
+Arch/configs_stow/onedrive/.config/onedrive/items.sqlite3-wal
