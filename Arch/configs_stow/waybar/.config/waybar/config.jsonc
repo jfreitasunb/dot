@@ -9,11 +9,12 @@
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/mode",
+        "hyprland/window",
         "hyprland/scratchpad",
         "custom/media"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock",
     ],
     "modules-right": [
         "mpd",
@@ -27,7 +28,6 @@
         "backlight",
         "battery",
         "battery#bat2",
-        "clock",
         "tray",
         "custom/power"
     ],
