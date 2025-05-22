@@ -9,9 +9,7 @@
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/mode",
-        "hyprland/window",
-        "hyprland/scratchpad",
-        "custom/media"
+        "hyprland/window"
     ],
     "modules-center": [
         "clock",
