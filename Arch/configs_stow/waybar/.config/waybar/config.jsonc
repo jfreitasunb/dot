@@ -22,14 +22,8 @@
         "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span>",
         "on-click": "activate",
         "sort-by-number": true,
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
+        "persistent-workspaces": {
+            "*": [ 1, 2, 3, 4, 5, 6, 7]
         },
     },
     "custom/power": {
@@ -62,7 +56,7 @@
         "format-ethernet": "  {ifname}",
         "format-disconnected": "Disconnected ⚠",
         "tooltip-format": " {ifname} via {gwaddri}",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}GHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,

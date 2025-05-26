@@ -14,7 +14,7 @@ window#waybar {
 
 tooltip {
     font-family: inherit;
-    background: @base;
+    background: @blue;
     /* tooltip background */
     border: 2px solid #c0caf5;
     /* tooltip border size and color */
