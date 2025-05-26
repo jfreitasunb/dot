@@ -84,6 +84,10 @@ zplug load
 #bindkey '^[[OA' history-substring-search-up
 #bindkey '^[[OB' history-substring-search-down
 
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
+
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
