@@ -58,7 +58,7 @@
     },
     "network": {
         "format": "{ifname}",
-        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-wifi": "  {essid} ({signalStrength}%)",
         "format-ethernet": "  {ifname}",
         "format-disconnected": "Disconnected ⚠",
         "tooltip-format": " {ifname} via {gwaddri}",
@@ -124,7 +124,7 @@
         "ignored-sinks": [
             "Easy Effects Sink"
         ],
-        "format-source": " {volume}%",
-        "format-source-muted": " {volume}%"
+        "format-source": "  {volume}%",
+        "format-source-muted": "  {volume}%"
     }
 }
