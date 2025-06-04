@@ -205,6 +205,8 @@ alias tb="nc termbin.com 9999"
 # Mocp must be launched with bash instead of Fish!
 alias mocp="bash -c mocp"
 
+alias gparted="sudo -E gparted"
+
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
 # Or install it from the Arch User Repository: shell-color-scripts

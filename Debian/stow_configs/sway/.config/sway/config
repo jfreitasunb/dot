@@ -33,11 +33,11 @@ for_window [app_id=".*"] opacity $opacity
 # set gtk+ theme #
 #----------------#
 set $gnome-schema org.gnome.desktop.interface
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'Adwaita'
+#exec_always {
+#    gsettings set $gnome-schema gtk-theme 'Adwaita'
     #gsettings set $gnome-schema color-scheme 'prefer-dark'
-    gsettings set $gnome-schema cursor-theme 'volantes_cursors'
-}
+#    gsettings set $gnome-schema cursor-theme 'volantes_cursors'
+#}
 
 # Gaps internos e externos
 #gaps inner 5
@@ -88,8 +88,6 @@ output HDMI-A-1 {
 }
 
 exec /home/jfreitas/.bin/stacki3
-
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 ### Idle configuration
 #
