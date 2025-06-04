@@ -1,0 +1,8 @@
+<b><span size="large">Version 13 (2025-05-25)</span></b>
+
+• Add pause slideshow feature to quicksettings menu.
+• Show current slide index and total slides in quicksettings menu.
+• Show a clean image filename in quicksettings menu.
+    - Example: CoolPlace-UHD.jpg will show as Cool Place.
+• Fix bug which caused the slideshow queue to not save after changes to the queue.
+• Fix bug which caused a failure to detect images in slideshow directory.
