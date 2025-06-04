@@ -209,14 +209,20 @@ alias mocp="bash -c mocp"
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
 # Or install it from the Arch User Repository: shell-color-scripts
 # The 'if' statement prevents colorscript from showing in 'fzf' previews.
+#Start pyenv
+pyenv init - fish | source
+
 if status is-interactive
+    atuin init fish | source
 end
+
+status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
 
 ### FZF ###
-# Enables the following keybindings:
+# Enables the following keybindings: 
 # CTRL-t = fzf select
 # CTRL-r = fzf history
 # ALT-c  = fzf cd
