@@ -2,7 +2,7 @@
 #Ler: https://bencane.com/2015/09/22/preventing-duplicate-cron-job-executions/
 PIDFILE=/home/jfreitas/.temporario/backup_TARDIS.pid
 
-BACKUP_DEVICE="/media/jfreitas/Tardis"
+BACKUP_DEVICE="/run/media/jfreitas/Tardis"
 
 BACKUP_DESTINATION=$BACKUP_DEVICE/"Backup_Rivendel/"
 
