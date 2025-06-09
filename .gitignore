@@ -839,3 +839,13 @@ stow_configs/config/.config/plasma-welcomerc
 stow_configs/config/.config/specialmailcollectionsrc
 stow_configs/config/.config/baloofilerc
 /stow_configs/config/.config/gtk-3.0/assets
+stow_configs/config/.config/kwalletrc
+stow_configs/config/.config/kwinoutputconfig.json
+stow_configs/config/.config/kalarmrc
+stow_configs/config/.config/ktrashrc
+/stow_configs/config/.config/dconf
+stow_configs/config/.config/kded5rc
+stow_configs/config/.config/kconf_updaterc
+stow_configs/config/.config/kiorc
+stow_configs/config/.config/ksmserverrc
+stow_configs/config/.config/mimeapps.list
