@@ -52,6 +52,9 @@ plugin=org.kde.plasma.icontasks
 DialogHeight=540
 DialogWidth=720
 
+[Containments][2][Applets][5][Configuration][General]
+launchers=applications:systemsettings.desktop,applications:org.kde.discover.desktop,preferred://filemanager,preferred://browser,applications:github-desktop.desktop
+
 [Containments][2][Applets][6]
 immutability=1
 plugin=org.kde.plasma.marginsseparator
@@ -148,14 +151,14 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=34
+PreloadWeight=26
 
 [Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=34
+PreloadWeight=26
 
 [Containments][8][Applets][26]
 immutability=1
