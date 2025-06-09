@@ -826,3 +826,12 @@ stow_configs/config/.config/nvim/lua/config/autocmds.lua
 stow_configs/config/.config/nvim/stylua.toml
 /stow_configs/config/.config/session
 /stow_configs/config/.config/Unknown Organization
+stow_configs/config/.config/emaildefaults
+stow_configs/config/.config/emailidentities
+/stow_configs/config/.config/kde.org
+/stow_configs/config/.config/KDE
+/stow_configs/config/.config/kdeconnect
+/stow_configs/config/.config/kdedefaults
+stow_configs/config/.config/QtProject.conf
+stow_configs/config/.config/Trolltech.conf
+/stow_configs/config/.config/pulse
