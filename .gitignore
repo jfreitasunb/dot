@@ -835,3 +835,7 @@ stow_configs/config/.config/emailidentities
 stow_configs/config/.config/QtProject.conf
 stow_configs/config/.config/Trolltech.conf
 /stow_configs/config/.config/pulse
+stow_configs/config/.config/plasma-welcomerc
+stow_configs/config/.config/specialmailcollectionsrc
+stow_configs/config/.config/baloofilerc
+/stow_configs/config/.config/gtk-3.0/assets
