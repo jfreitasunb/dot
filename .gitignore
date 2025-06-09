@@ -810,3 +810,19 @@ Arch/configs_stow/onedrive/.config/onedrive/session_upload.YtLIWeXn0f49ysJx
 Arch/configs_stow/nvim/.config/nvim/lazy-lock.json
 Debian/libvirt/virtlogd.conf.dpkg-new
 Arch/configs_stow/onedrive/.config/onedrive/session_upload.zPfbi9nk2XvyL1Yr
+/stow_configs/config/.config/akonadi
+stow_configs/config/.config/akonadi_maildir_resource_0rc
+stow_configs/config/.config/akonadi-firstrunrc
+stow_configs/config/.config/akonadi_contacts_resource_0rc
+stow_configs/config/.config/akonadi_ical_resource_0rc
+stow_configs/config/.config/akonadi_indexing_agentrc
+/stow_configs/config/.config/Bitwarden
+/stow_configs/config/.config/falkon
+/stow_configs/config/.config/GitHub Desktop
+/stow_configs/config/.config/libaccounts-glib
+stow_configs/config/.config/nvim/lazy-lock.json
+stow_configs/config/.config/nvim/lazyvim.json
+stow_configs/config/.config/nvim/lua/config/autocmds.lua
+stow_configs/config/.config/nvim/stylua.toml
+/stow_configs/config/.config/session
+/stow_configs/config/.config/Unknown Organization
