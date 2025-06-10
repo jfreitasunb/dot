@@ -89,6 +89,7 @@ DialogWidth=720
 positions={"1745x1091":[]}
 
 [Containments][24][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/flow.jpg
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -159,18 +160,21 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][8][Applets][26]
 immutability=1
 plugin=org.kde.plasma.bluetooth
+
+[Containments][8][Applets][26][Configuration]
+PreloadWeight=34
 
 [Containments][8][Applets][27]
 immutability=1
