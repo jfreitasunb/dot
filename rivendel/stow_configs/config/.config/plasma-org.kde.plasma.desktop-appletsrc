@@ -101,10 +101,18 @@ immutability=1
 lastScreen=1
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.slideshow
+
+[Containments][28][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][28][General]
 positions={"1829x1029":[]}
+
+[Containments][28][Wallpaper][org.kde.slideshow][General]
+SlideInterval=7200
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
 [Containments][8]
 activityId=
