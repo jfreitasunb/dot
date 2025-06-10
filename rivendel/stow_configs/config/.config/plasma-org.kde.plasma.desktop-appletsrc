@@ -54,7 +54,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:systemsettings.desktop,preferred://filemanager,applications:github-desktop.desktop
+launchers=applications:systemsettings.desktop,preferred://filemanager,applications:github-desktop.desktop,applications:org.wezfurlong.wezterm.desktop,applications:bitwarden.desktop,applications:brave-browser.desktop
 
 [Containments][2][Applets][6]
 immutability=1
