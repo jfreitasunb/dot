@@ -18,7 +18,8 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][22][Configuration]
-popupHeight=400
+PreloadWeight=60
+popupHeight=450
 popupWidth=560
 
 [Containments][2][Applets][22][Configuration][Appearance]
@@ -64,7 +65,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 SystrayContainmentId=8
 
 [Containments][2][General]
@@ -89,9 +90,21 @@ DialogWidth=720
 positions={"1745x1091":[]}
 
 [Containments][24][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/flow.jpg
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0205.jpg
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
+
+[Containments][28]
+activityId=9cda6590-22e4-4212-be8e-19e08618c2b3
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][28][General]
+positions={"1829x1029":[]}
 
 [Containments][8]
 activityId=
@@ -160,21 +173,21 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][8][Applets][26]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][26][Configuration]
-PreloadWeight=34
+PreloadWeight=26
 
 [Containments][8][Applets][27]
 immutability=1
@@ -182,6 +195,13 @@ plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][27][Configuration]
 PreloadWeight=55
+
+[Containments][8][Applets][29]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
+
+[Containments][8][Applets][29][Configuration]
+PreloadWeight=42
 
 [Containments][8][Applets][9]
 immutability=1
