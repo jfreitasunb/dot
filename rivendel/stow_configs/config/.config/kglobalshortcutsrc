@@ -20,7 +20,7 @@ Toggle Touchpad=Touchpad Toggle\tMeta+Ctrl+Touchpad Toggle\tMeta+Ctrl+Zenkaku Ha
 _k_friendly_name=Touchpad
 
 [kmix]
-_k_friendly_name=KMix
+_k_friendly_name=Volume do áudio
 decrease_microphone_volume=Microphone Volume Down,Microphone Volume Down,Diminuir volume do microfone
 decrease_volume=Volume Down,Volume Down,Diminuir volume
 decrease_volume_small=Shift+Volume Down,Shift+Volume Down,Diminui o volume em 1%
@@ -28,7 +28,7 @@ increase_microphone_volume=Microphone Volume Up,Microphone Volume Up,Aumentar vo
 increase_volume=Volume Up,Volume Up,Aumentar volume
 increase_volume_small=Shift+Volume Up,Shift+Volume Up,Aumenta o volume em 1%
 mic_mute=Microphone Mute\tMeta+Volume Mute,Microphone Mute\tMeta+Volume Mute,Microfone sem som
-mute=Volume Mute,Volume Mute,Mudo
+mute=Volume Mute,Volume Mute,Sem áudio
 
 [ksmserver]
 Halt Without Confirmation=none,,Desligar sem confirmação
