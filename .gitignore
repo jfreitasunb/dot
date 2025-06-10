@@ -870,3 +870,4 @@ rivendel/stow_configs/config/.config/onedrive/.config.backup
 rivendel/stow_configs/config/.config/onedrive/.config.hash
 rivendel/stow_configs/config/.config/onedrive/items.sqlite3-wal
 rivendel/stow_configs/config/.config/onedrive/refresh_token
+rivendel/stow_configs/config/.config/onedrive/items.sqlite3-shm
