@@ -61,7 +61,7 @@ MoveZoomDown=none,none,Mover a área ampliada para baixo
 MoveZoomLeft=none,none,Mover a área ampliada para a esquerda
 MoveZoomRight=none,none,Mover a área ampliada para a direita
 MoveZoomUp=none,none,Mover a área ampliada para cima
-Overview=Meta+W,Meta+W,Alternar para visão geral
+Overview=Meta+W\tMeta,Meta+W,Alternar para visão geral
 Setup Window Shortcut=none,,Configurar atalhos para a janela
 Show Desktop=Meta+D,Meta+D,Espiar área de trabalho
 Switch One Desktop Down=Meta+Ctrl+Down,Meta+Ctrl+Down,Mudar para a área de trabalho abaixo
@@ -230,7 +230,7 @@ powerProfile=Battery\tMeta+B,Battery\tMeta+B,Trocar perfil de energia
 
 [plasmashell]
 _k_friendly_name=plasmashell
-activate application launcher=Meta\tAlt+F1,Meta\tAlt+F1,Ativar o lançador de aplicativos
+activate application launcher=Alt+F1,Meta\tAlt+F1,Ativar o lançador de aplicativos
 activate task manager entry 1=Meta+1,Meta+1,Ativar entrada 1 do gerenciador de tarefas
 activate task manager entry 10=none,,Ativar entrada 10 do gerenciador de tarefas
 activate task manager entry 2=Meta+2,Meta+2,Ativar entrada 2 do gerenciador de tarefas
