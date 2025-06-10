@@ -865,3 +865,8 @@ stow_configs/config/.config/gtkrc
 /Rivendel/stow_configs/config/.config/GitHub Desktop
 /rivendel/stow_configs/config/.config/akonadi
 /rivendel/stow_configs/config/.config/BraveSoftware
+/rivendel/stow_configs/config/.config/go
+rivendel/stow_configs/config/.config/onedrive/.config.backup
+rivendel/stow_configs/config/.config/onedrive/.config.hash
+rivendel/stow_configs/config/.config/onedrive/items.sqlite3-wal
+rivendel/stow_configs/config/.config/onedrive/refresh_token
