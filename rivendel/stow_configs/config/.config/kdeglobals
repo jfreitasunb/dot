@@ -138,6 +138,7 @@ History Items[$e]=file:$HOME/GitHub/dot
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x92\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
+BrowserApplication=brave-browser.desktop
 ColorSchemeHash=3b0b7b7f6fa70c9f360b5a78837836d8971524f3
 
 [PreviewSettings]
