@@ -1,9 +1,0 @@
-[Unit]
-Description=Hiberna quando a tela é fechada
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash /home/jfreitas/.bin/hibernar.sh
-
-[Install]
-WantedBy=multi-user.target
