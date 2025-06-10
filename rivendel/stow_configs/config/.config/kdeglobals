@@ -141,6 +141,9 @@ Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x92\
 BrowserApplication=brave-browser.desktop
 ColorSchemeHash=3b0b7b7f6fa70c9f360b5a78837836d8971524f3
 
+[KDE]
+ShowDeleteCommand=false
+
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
