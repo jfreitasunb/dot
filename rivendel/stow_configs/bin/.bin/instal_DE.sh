@@ -66,4 +66,14 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 sudo chsh -s $(which fish) jfreitas
 
+sudo chattr +C /var/log
+
+sudo chattr +C /var/lib/docker
+
+sudo chattr +C /var/lib/libvirt	
+
+sudo chattr +C /var/lib/pacman/pkg
+
+sudo chattr +C /var/cache
+
 curl https://pyenv.run | bash
