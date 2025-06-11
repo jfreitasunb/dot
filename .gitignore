@@ -875,3 +875,9 @@ rivendel/stow_configs/config/.config/okularrc
 /rivendel/stow_configs/config/.config/sublime-text
 /rivendel/stow_configs/config/.config/vlc
 /rivendel/stow_configs/config/.config/libreoffice
+/rivendel/stow_configs/config/.config/qtile/__pycache__
+rivendel/stow_configs/config/.config/lazygit/config.yml
+rivendel/stow_configs/config/.config/yazi/keymap.toml
+rivendel/stow_configs/config/.config/yazi/keymap.toml
+rivendel/stow_configs/config/.config/yazi/keymap.toml-1749649365043113
+rivendel/stow_configs/config/.config/yazi/yazi.toml-1749649365038831
