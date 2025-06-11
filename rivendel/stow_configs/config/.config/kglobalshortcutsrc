@@ -14,9 +14,9 @@ Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Ativar e desativar o leito
 _k_friendly_name=Acessibilidade
 
 [kcm_touchpad]
-Disable Touchpad=Touchpad Off,Touchpad Off,
-Enable Touchpad=Touchpad On,Touchpad On,
-Toggle Touchpad=Touchpad Toggle\tMeta+Ctrl+Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Touchpad Toggle\tTouchpad Toggle\tMeta+Ctrl+Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,
+Disable Touchpad=Touchpad Off,Touchpad Off,Desativar o touchpad
+Enable Touchpad=Touchpad On,Touchpad On,Ativar o touchpad
+Toggle Touchpad=Touchpad Toggle\tMeta+Ctrl+Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Touchpad Toggle\tTouchpad Toggle\tMeta+Ctrl+Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Alternar o touchpad
 _k_friendly_name=Touchpad
 
 [kmix]
@@ -64,6 +64,7 @@ MoveZoomUp=none,none,Mover a área ampliada para cima
 Overview=Meta+W\tMeta,Meta+W,Alternar para visão geral
 Setup Window Shortcut=none,,Configurar atalhos para a janela
 Show Desktop=Meta+D,Meta+D,Espiar área de trabalho
+Suspend Compositing=Alt+Shift+F12,Alt+Shift+F12,Suspender composição
 Switch One Desktop Down=Meta+Ctrl+Down,Meta+Ctrl+Down,Mudar para a área de trabalho abaixo
 Switch One Desktop Up=Meta+Ctrl+Up,Meta+Ctrl+Up,Mudar para a área de trabalho acima
 Switch One Desktop to the Left=Meta+Ctrl+Left,Meta+Ctrl+Left,Mudar para a área de trabalho à esquerda

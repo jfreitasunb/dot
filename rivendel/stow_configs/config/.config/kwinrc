@@ -12,6 +12,9 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][9b08238d-5b40-5f43-bc8a-c6f085ed9bb6]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][b6b4e011-968a-55e3-8435-5bc84e88ae71]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Windows]
 FocusPolicy=FocusFollowsMouse
 NextFocusPrefersMouse=true
