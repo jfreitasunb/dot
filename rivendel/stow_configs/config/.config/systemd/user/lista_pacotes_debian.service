@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup da lista de pacotes instalados no Debian
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/jfreitas/.bin/lista_pacotes_debian.sh
+
+[Install]
+WantedBy=multi-user.target

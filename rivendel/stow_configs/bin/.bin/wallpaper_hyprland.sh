@@ -9,3 +9,6 @@ WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" 
 
 # Apply the selected wallpaper
 hyprctl hyprpaper reload "$FOCUSED_MONITOR","$WALLPAPER"
+
+echo "preload = $wallpaper" >~/.config/hypr/hyprpaper.conf
+echo "wallpaper = , $wallpaper" >>~/.config/hypr/hyprpaper.conf

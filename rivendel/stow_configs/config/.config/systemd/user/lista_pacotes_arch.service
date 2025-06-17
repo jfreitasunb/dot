@@ -1,5 +1,5 @@
 [Unit]
-Description=Backup da lista de pacotes instalados
+Description=Backup da lista de pacotes instalados no Arch
 
 [Service]
 Type=oneshot
