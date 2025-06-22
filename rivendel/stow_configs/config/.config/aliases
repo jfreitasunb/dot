@@ -38,7 +38,10 @@ alias fgrep='fgrep --color=auto'
 # confirm before overwriting something
 alias cp="cp -iv"
 alias mv='mv -iv'
-alias rm='rm -iv'
+#alias rm='rm -iv'
+alias rm='trash -v'
+
+alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
