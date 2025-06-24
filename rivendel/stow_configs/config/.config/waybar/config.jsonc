@@ -34,7 +34,7 @@
     },
     "clock": {
         "interval": 1,
-        "format": " {:%d.%m.%Y | %H:%M} <span size='small' font='Font Awesome 6 Free'> </span>",
+        "format": " {:%d/%m/%Y | %H:%M} <span size='small' font='Font Awesome 6 Free'> </span>",
         "tooltip": true,
         "tooltip-format": "<tt><small>{calendar}</small></tt>"
     },
