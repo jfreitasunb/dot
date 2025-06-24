@@ -94,7 +94,7 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-source ~/.config/aliases/aliases
+source ~/.config/aliases
 
 if [ -d "$HOME/.pyenv" ] ; then
     export PYENV_ROOT="$HOME/.pyenv"
