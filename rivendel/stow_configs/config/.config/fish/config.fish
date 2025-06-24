@@ -96,6 +96,26 @@ function copy
     end
 end
 
+function cpp --argument-names source_file destination_file
+    set -l total_size (stat -c '%s' "$source_file")
+    set -l count 0
+    set -l percent 0
+
+    strace -q -ewrite cp -- "$source_file" "$destination_file" 2>&1 | awk -v total_size="$total_size" '{
+        count += $NF;
+        if (count % 10 == 0 || count == total_size) { # Added condition for the end of file
+            percent = count / total_size * 100;
+            printf "%3d%% [", percent;
+            for (i=0; i<=percent; i++)
+                printf "=";
+            printf ">";
+            for (i=percent; i<100; i++)
+                printf " ";
+            printf "]\r";
+        }
+    } END { print "" }'
+end
+
 # Function for printing a column (splits input on whitespace)
 # ex: echo 1 2 3 | coln 3
 # output: 3
@@ -142,6 +162,8 @@ end
 ### END OF FUNCTIONS ###
 
 ### ALIASES ###
+alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+alias rm='trash -v'
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
