@@ -56,11 +56,15 @@ sudo ln -s ~/GitHub/dot/rivendel/grub/grub /etc/default/
 
 sudo rm -rf /etc/libvirt/qemu
 
+sudo rm -rf /etc/libvirt/qemu.conf
+
 sudo rm -rf /etc/libvirt/storage
 
 sudo ln -s ~/GitHub/dot/rivendel/maquinas_virtuais/qemu /etc/libvirt/
 
 sudo ln -s ~/GitHub/dot/rivendel/maquinas_virtuais/storage /etc/libvirt/
+
+sudo ln -s /home/jfreitas/GitHub/dot/rivendel/maquinas_virtuais/qemu.conf /etc/libvirt/
 
 sudo systemctl enable docker
 
