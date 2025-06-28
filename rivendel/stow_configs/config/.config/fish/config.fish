@@ -231,14 +231,16 @@ alias mocp="bash -c mocp"
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
 # Or install it from the Arch User Repository: shell-color-scripts
 # The 'if' statement prevents colorscript from showing in 'fzf' previews.
-#Start pyenv
-pyenv init - fish | source
 
-if status is-interactive
-    atuin init fish | source
-end
+# pyenv
+set -x PYENV_ROOT $HOME/.pyenv
+set -x fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
-status --is-interactive; and source (pyenv virtualenv-init -|psub)
+# Inicialização do pyenv e pyenv-virtualenv
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
+
+#status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
