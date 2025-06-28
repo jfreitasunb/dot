@@ -886,3 +886,5 @@ rivendel/stow_configs/config/.config/.gsd-keyboard.settings-ported
 /rivendel/stow_configs/config/.config/GeoGebra
 /rivendel/stow_configs/config/.config/geogebra
 /rivendel/stow_configs/config/.config/eog
+rivendel/stow_configs/config/.config/gtk-4.0/servers
+/rivendel/stow_configs/config/.config/Pinta
