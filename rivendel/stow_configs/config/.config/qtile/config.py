@@ -34,8 +34,15 @@ import colors
 
 mod = "mod4"
 terminal = "wezterm" 
-menu = "dmenu_run -i -p \"Run: \""
+# menu = "dmenu_run -i -p \"Run: \""
+menu = "rofi -show drun"
+navegador = "brave"
 keys = [
+    # Atalhos para o clipboard (com xclip)
+    Key([mod], "c", lazy.spawn("xclip -selection clipboard"), desc="Copy selection to clipboard"),
+    Key([mod], "v", lazy.spawn("xclip -selection clipboard -o | xclip -selection primary"), desc="Paste clipboard content"),
+    Key([mod, "shift"], "v", lazy.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' ; sleep 0.5; xdotool type $(xclip -o -selection clipboard)"), desc="Open clipboard history with Dmenu"),
+    # Key([mod, "shift"], "v", lazy.spawn("greenclip print | dmenu_run -i -l 10 -p 'Clipboard:' | xargs -r greenclip get"), desc="Open clipboard history with Dmenu"),
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
@@ -81,6 +88,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "space", lazy.spawn(menu), desc="Spawn a command using a prompt widget"),
+    Key([mod], "b", lazy.spawn(navegador), desc="Spawn a command using a prompt widget"),
 ]
 
 # Add key bindings to switch VTs in Wayland.
