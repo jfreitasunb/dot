@@ -19,3 +19,11 @@ blueman-applet &
 nm-applet &
 
 /home/jfreitas/.bin/wallpaper.sh &
+
+picom -b --config ~/.config/picom/picom.conf &
+
+systemctl --user start gnome-keyring-daemon.service &
+
+gnome-keyring-daemon --start --components="pkcs11,secrets,ssh" &
+
+greenclip daemon &
