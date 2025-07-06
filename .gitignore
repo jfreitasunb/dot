@@ -888,3 +888,7 @@ rivendel/stow_configs/config/.config/.gsd-keyboard.settings-ported
 /rivendel/stow_configs/config/.config/eog
 rivendel/stow_configs/config/.config/gtk-4.0/servers
 /rivendel/stow_configs/config/.config/Pinta
+rivendel/stow_configs/config/.config/atuin/atuin-receipt.json
+/rivendel/stow_configs/config/.config/enchant
+/rivendel/stow_configs/config/.config/evolution
+/rivendel/stow_configs/config/.config/ibus
