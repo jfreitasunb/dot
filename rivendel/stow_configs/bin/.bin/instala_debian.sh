@@ -25,7 +25,7 @@ curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:4/Debi
 
 sudo apt update
 
-sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 exa feh flameshot flatpak fzf git keepassxc linux-headers-$(uname -r) lxappearance lxqt-policykit p7zip p7zip-full pavucontrol pdftk picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev libnotify-dev libcurl4-openssl-dev haskell-stack libpango1.0-0 fonts-liberation libu2f-udev numlockx libx11-dev libxinerama-dev tldr docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-compose yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk gparted libclang-dev brave-browser sublime-text docker trayer ldc python3-nautilus imagemagick nautilus-image-converter flex bison libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev ffmpeg libxcb-xtest0 libegl1-mesa libgl1-mesa-glx libxcb-cursor0 ffmpegthumbnailer unar jq poppler-utils fd-find zoxide ripgrep luarocks xclip tmux stow xmonad xmobar yad suckless-tools volumeicon-alsa blueman pcmanfm htop wezterm fprintd libpam-fprintd tk-dev python3.11-venv sway wofi waybar swaylock wlogout fish
+sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 exa feh flameshot flatpak fzf git keepassxc linux-headers-$(uname -r) lxappearance lxqt-policykit p7zip p7zip-full pavucontrol pdftk picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev libnotify-dev libcurl4-openssl-dev haskell-stack libpango1.0-0 fonts-liberation libu2f-udev numlockx libx11-dev libxinerama-dev tldr docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-compose yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk gparted libclang-dev brave-browser sublime-text docker trayer ldc python3-nautilus imagemagick nautilus-image-converter flex bison libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev ffmpeg libxcb-xtest0 libegl1-mesa libgl1-mesa-glx libxcb-cursor0 ffmpegthumbnailer unar jq poppler-utils fd-find zoxide ripgrep luarocks xclip tmux stow xmonad xmobar yad suckless-tools volumeicon-alsa blueman pcmanfm htop wezterm fprintd libpam-fprintd tk-dev python3.11-venv sway wofi waybar swaylock wlogout fish libdbus-1-dev
 
 sudo apt install -t bookworm-backports -y curl libcurl4
 
@@ -111,19 +111,13 @@ flatpak install flathub org.gimp.GIMP
 
 flatpak install flathub org.libreoffice.LibreOffice
 
-cd ~/.config/
+rm -rf .config
 
-rm -r autostart
-
-rm -rf keepassxc
-
-rm -r gtk-3.0
-
-cd ~/GitHub/dot/Debian/stow_configs/
+cd ~/GitHub/dot/rivendel/stow_configs/
 
 stow -t /home/jfreitas/ *
 
-cd .local/share/fonts/
+cd ~/.local/share/fonts/
 
 fc-cache -f -v
 
@@ -141,17 +135,29 @@ sudo apt autoremove
 
 sudo rm /etc/default/grub
 
-sudo ln -s ~/GitHub/dot/Debian/grub/grub /etc/default/grub
+sudo ln -s ~/GitHub/dot/rivendel/grub/grub /etc/default/grub
 
 sudo update-grub2
 
 sudo rm -rf /etc/systemd/sleep.conf
 
-sudo ln -s ~/GitHub/dot/Debian/logind/sleep.conf /etc/systemd/sleep.conf
+sudo rm -rf /etc/systemd/logind.con
 
-sudo rm -rf /etc/libvirt
+sudo ln -s ~/GitHub/dot/rivendel/logind/sleep.conf /etc/systemd/sleep.conf
 
-sudo ln -s ~/GitHub/dot/Debian/libvirt /etc/libvirt
+sudo ln -s ~/GitHub/dot/rivendel/logind/logind.conf /etc/systemd/logind.conf
+
+sudo rm -rf /etc/libvirt/qemu
+
+sudo rm -rf /etc/libvirt/qemu.conf
+
+sudo rm -rf /etc/libvirt/storage
+
+sudo ln -s ~/GitHub/dot/rivendel/maquinas_virtuais/qemu /etc/libvirt/
+
+sudo ln -s ~/GitHub/dot/rivendel/maquinas_virtuais/storage /etc/libvirt/
+
+sudo ln -s /home/jfreitas/GitHub/dot/rivendel/maquinas_virtuais/qemu.conf /etc/libvirt/
 
 sudo systemctl enable fstrim.timer
 
@@ -165,7 +171,7 @@ sudo usermod -aG docker jfreitas
 
 sudo timedatectl set-local-rtc 1
 
-sudo chsh -s /usr/bin/fish jfreitas
+sudo chsh -s $(which fish) jfreitas
 
 sudo ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /etc/systemd/system/systemd-suspend.service
 
