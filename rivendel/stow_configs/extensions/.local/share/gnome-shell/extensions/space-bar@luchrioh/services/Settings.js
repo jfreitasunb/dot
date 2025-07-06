@@ -1,36 +1,20 @@
-import Gio from 'gi://Gio';
-export class Settings {
-    static init(extension) {
-        Settings._instance = new Settings(extension);
-        Settings._instance.init();
-    }
-    static destroy() {
-        Settings._instance?.destroy();
-        Settings._instance = null;
-    }
-    static getInstance() {
-        return Settings._instance;
-    }
-    constructor(_extension) {
-        this._extension = _extension;
-        this.state = this._extension.getSettings(`${this._extension.metadata['settings-schema']}.state`);
-        this.behaviorSettings = this._extension.getSettings(`${this._extension.metadata['settings-schema']}.behavior`);
-        this.appearanceSettings = this._extension.getSettings(`${this._extension.metadata['settings-schema']}.appearance`);
-        this.shortcutsSettings = this._extension.getSettings(`${this._extension.metadata['settings-schema']}.shortcuts`);
+const ExtensionUtils = imports.misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
+const { Gio } = imports.gi;
+var Settings = class Settings {
+    constructor() {
+        this.state = ExtensionUtils.getSettings(`${Me.metadata['settings-schema']}.state`);
+        this.behaviorSettings = ExtensionUtils.getSettings(`${Me.metadata['settings-schema']}.behavior`);
+        this.appearanceSettings = ExtensionUtils.getSettings(`${Me.metadata['settings-schema']}.appearance`);
+        this.shortcutsSettings = ExtensionUtils.getSettings(`${Me.metadata['settings-schema']}.shortcuts`);
         this.mutterSettings = new Gio.Settings({ schema: 'org.gnome.mutter' });
         this.wmPreferencesSettings = new Gio.Settings({
             schema: 'org.gnome.desktop.wm.preferences',
         });
-        this._version = SettingsSubject.createIntSubject(this.state, 'version');
         this.workspaceNamesMap = SettingsSubject.createJsonObjectSubject(this.state, 'workspace-names-map');
         this.dynamicWorkspaces = SettingsSubject.createBooleanSubject(this.mutterSettings, 'dynamic-workspaces');
         this.indicatorStyle = SettingsSubject.createStringSubject(this.behaviorSettings, 'indicator-style');
-        this.enableCustomLabel = SettingsSubject.createBooleanSubject(this.behaviorSettings, 'enable-custom-label');
-        this.enableCustomLabelInMenus = SettingsSubject.createBooleanSubject(this.behaviorSettings, 'enable-custom-label-in-menu');
-        this.customLabelNamed = SettingsSubject.createStringSubject(this.behaviorSettings, 'custom-label-named');
-        this.customLabelUnnamed = SettingsSubject.createStringSubject(this.behaviorSettings, 'custom-label-unnamed');
         this.position = SettingsSubject.createStringSubject(this.behaviorSettings, 'position');
-        this.systemWorkspaceIndicator = SettingsSubject.createBooleanSubject(this.behaviorSettings, 'system-workspace-indicator');
         this.positionIndex = SettingsSubject.createIntSubject(this.behaviorSettings, 'position-index');
         this.scrollWheel = SettingsSubject.createStringSubject(this.behaviorSettings, 'scroll-wheel');
         this.scrollWheelDebounce = SettingsSubject.createBooleanSubject(this.behaviorSettings, 'scroll-wheel-debounce');
@@ -42,9 +26,7 @@ export class Settings {
         this.showEmptyWorkspaces = SettingsSubject.createBooleanSubject(this.behaviorSettings, 'show-empty-workspaces');
         this.toggleOverview = SettingsSubject.createBooleanSubject(this.behaviorSettings, 'toggle-overview');
         this.smartWorkspaceNames = SettingsSubject.createBooleanSubject(this.behaviorSettings, 'smart-workspace-names');
-        this.reevaluateSmartWorkspaceNames = SettingsSubject.createBooleanSubject(this.behaviorSettings, 'reevaluate-smart-workspace-names');
         this.enableActivateWorkspaceShortcuts = SettingsSubject.createBooleanSubject(this.shortcutsSettings, 'enable-activate-workspace-shortcuts');
-        this.backAndForth = SettingsSubject.createBooleanSubject(this.shortcutsSettings, 'back-and-forth');
         this.enableMoveToWorkspaceShortcuts = SettingsSubject.createBooleanSubject(this.shortcutsSettings, 'enable-move-to-workspace-shortcuts');
         this.workspaceNames = SettingsSubject.createStringArraySubject(this.wmPreferencesSettings, 'workspace-names');
         this.workspacesBarPadding = SettingsSubject.createIntSubject(this.appearanceSettings, 'workspaces-bar-padding');
@@ -76,28 +58,23 @@ export class Settings {
         this.emptyWorkspaceBorderWidth = SettingsSubject.createIntSubject(this.appearanceSettings, 'empty-workspace-border-width');
         this.emptyWorkspacePaddingH = SettingsSubject.createIntSubject(this.appearanceSettings, 'empty-workspace-padding-h');
         this.emptyWorkspacePaddingV = SettingsSubject.createIntSubject(this.appearanceSettings, 'empty-workspace-padding-v');
-        this.applicationStyles = SettingsSubject.createStringSubject(this.appearanceSettings, 'application-styles');
-        this.customStylesEnabled = SettingsSubject.createBooleanSubject(this.appearanceSettings, 'custom-styles-enabled');
-        this.customStylesFailed = SettingsSubject.createBooleanSubject(this.appearanceSettings, 'custom-styles-failed');
-        this.customStyles = SettingsSubject.createStringSubject(this.appearanceSettings, 'custom-styles');
+    }
+    static init() {
+        Settings._instance = new Settings();
+        Settings._instance.init();
+    }
+    static destroy() {
+        Settings._instance?.destroy();
+        Settings._instance = null;
+    }
+    static getInstance() {
+        return Settings._instance;
     }
     init() {
         SettingsSubject.initAll();
-        this.runMigrations();
     }
     destroy() {
         SettingsSubject.destroyAll();
-    }
-    /**
-     * Migrates preferences from previous space-bar versions.
-     */
-    runMigrations() {
-        if (this._version.value < 26) {
-            if (this.indicatorStyle.value === 'current-workspace-name') {
-                this.indicatorStyle.value = 'current-workspace';
-            }
-        }
-        this._version.value = this._extension.metadata['version'];
     }
 }
 class SettingsSubject {

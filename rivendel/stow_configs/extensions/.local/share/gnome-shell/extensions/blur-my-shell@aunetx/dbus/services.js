@@ -1,19 +1,22 @@
-import Gio from 'gi://Gio';
-import GLib from 'gi://GLib';
-import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import * as LookingGlass from 'resource:///org/gnome/shell/ui/lookingGlass.js';
+'use strict';
 
+const { Gio, GLib } = imports.gi;
+const Main = imports.ui.main;
+const LookingGlass = imports.ui.lookingGlass;
 
-export const ApplicationsService = class ApplicationsService {
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+
+const load_file = path => {
+    const [, buffer] = GLib.file_get_contents(path);
+    const contents = imports.byteArray.toString(buffer);
+    GLib.free(buffer);
+    return contents;
+};
+
+const iface = load_file(Me.dir.get_path() + '/dbus/iface.xml');
+
+var ApplicationsService = class ApplicationsService {
     constructor() {
-        let decoder = new TextDecoder();
-        let path = GLib.filename_from_uri(GLib.uri_resolve_relative(
-            import.meta.url, 'iface.xml', GLib.UriFlags.NONE)
-        )[0];
-        let [, buffer] = GLib.file_get_contents(path);
-        let iface = decoder.decode(buffer);
-        GLib.free(buffer);
-
         this.DBusImpl = Gio.DBusExportedObject.wrapJSObject(iface, this);
     }
 
@@ -66,9 +69,6 @@ export const ApplicationsService = class ApplicationsService {
                 actor = target.get_parent();
 
             if (!actor.toString().includes('WindowActor'))
-                actor = actor.get_parent();
-
-            if (!actor.toString().includes('WindowActor'))
                 return send_picked_signal('window-not-found');
 
             send_picked_signal(
@@ -85,7 +85,7 @@ export const ApplicationsService = class ApplicationsService {
             Gio.DBus.session,
             '/dev/aunetx/BlurMyShell'
         );
-    };
+    }
 
     unexport() {
         this.DBusImpl.unexport();

@@ -1,13 +1,15 @@
-import Adw from 'gi://Adw';
-import { addKeyboardShortcut, addToggle } from './common.js';
-export class ShortcutsPage {
-    constructor(extensionPreferences) {
+const ExtensionUtils = imports.misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
+const { Adw } = imports.gi;
+const { addKeyboardShortcut, addToggle } = Me.imports.preferences.common;
+var ShortcutsPage = class ShortcutsPage {
+    constructor() {
         this.page = new Adw.PreferencesPage();
-        this._settings = extensionPreferences.getSettings(`org.gnome.shell.extensions.space-bar.shortcuts`);
+        this._settings = ExtensionUtils.getSettings(`${Me.metadata['settings-schema']}.shortcuts`);
     }
     init() {
         this.page.set_title('_Shortcuts');
-        this.page.useUnderline = true;
+        this.page.use_underline = true;
         this.page.set_icon_name('preferences-desktop-keyboard-shortcuts-symbolic');
         this._initGroup();
     }
@@ -21,22 +23,6 @@ export class ShortcutsPage {
             key: 'enable-activate-workspace-shortcuts',
             title: 'Switch to workspace',
             shortcutLabel: '<Super>1...0',
-        }).addSubDialog({
-            window: this.window,
-            title: 'Switch To Workspace',
-            populatePage: (page) => {
-                const group = new Adw.PreferencesGroup();
-                page.add(group);
-                group.set_title('Back and forth');
-                group.set_description('Switch to the previous workspace by activating the shortcut for the current workspace again.\n\n' +
-                    'Switch off "Toggle overview" in behavior settings to also enable this behavior when clicking the workspace using the mouse.');
-                addToggle({
-                    settings: this._settings,
-                    group,
-                    key: 'back-and-forth',
-                    title: 'Back and forth',
-                });
-            },
         });
         addToggle({
             settings: this._settings,

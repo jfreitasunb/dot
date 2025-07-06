@@ -1,8 +1,9 @@
-import Clutter from 'gi://Clutter';
-import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import { Settings } from './Settings.js';
-import { Workspaces } from './Workspaces.js';
-export class ScrollHandler {
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+const { Clutter } = imports.gi;
+const { Settings } = Me.imports.services.Settings;
+const { Workspaces } = Me.imports.services.Workspaces;
+const Main = imports.ui.main;
+var ScrollHandler = class ScrollHandler {
     constructor() {
         this._ws = Workspaces.getInstance();
         this._settings = Settings.getInstance();
@@ -60,6 +61,15 @@ export class ScrollHandler {
     }
     _handle_scroll(actor, event) {
         // Adapted from https://github.com/timbertson/gnome-shell-scroll-workspaces
+        const source = event.get_source();
+        if (source !== actor) {
+            // Actors in the status area often have their own scroll events, so we ignore events in
+            // that area that are not directly on our panel button.
+            if (Main.panel._rightBox?.contains?.(source) &&
+                !this._panelButton?.contains?.(source)) {
+                return Clutter.EVENT_PROPAGATE;
+            }
+        }
         let direction;
         let directionSetting = null;
         switch (event.get_scroll_direction()) {

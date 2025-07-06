@@ -5,12 +5,13 @@
   "name": "Dash to Dock",
   "original-author": "micxgx@gmail.com",
   "shell-version": [
-    "45",
-    "46",
-    "47",
-    "48"
+    "40",
+    "41",
+    "42",
+    "43",
+    "44"
   ],
   "url": "https://micheleg.github.io/dash-to-dock/",
   "uuid": "dash-to-dock@micxgx.gmail.com",
-  "version": 100
+  "version": 84
 }

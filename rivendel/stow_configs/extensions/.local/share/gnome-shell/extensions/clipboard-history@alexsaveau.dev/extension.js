@@ -1,26 +1,14 @@
-import Clutter from 'gi://Clutter';
-import GObject from 'gi://GObject';
-import GLib from 'gi://GLib';
-import Meta from 'gi://Meta';
-import Shell from 'gi://Shell';
-import St from 'gi://St';
+'use strict';
 
-import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import * as MessageTray from 'resource:///org/gnome/shell/ui/messageTray.js';
-import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
-import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
+const { Clutter, Meta, Shell, St, GObject } = imports.gi;
+const Mainloop = imports.mainloop;
+const MessageTray = imports.ui.messageTray;
 
-import {
-  Extension,
-  gettext as _,
-} from 'resource:///org/gnome/shell/extensions/extension.js';
+const Main = imports.ui.main;
+const PanelMenu = imports.ui.panelMenu;
+const PopupMenu = imports.ui.popupMenu;
 
-import { ensureActorVisibleInScrollView } from 'resource:///org/gnome/shell/misc/animationUtils.js';
-
-import * as Store from './store.js';
-import * as DS from './dataStructures.js';
-import { openConfirmDialog } from './confirmDialog.js';
-import SettingsFields from './settingsFields.js';
+const Gettext = imports.gettext;
 
 const Clipboard = St.Clipboard.get_default();
 const VirtualKeyboard = (() => {
@@ -45,6 +33,17 @@ const INDICATOR_ICON = 'edit-paste-symbolic';
 const PAGE_SIZE = 50;
 const MAX_VISIBLE_CHARS = 200;
 
+const Util = imports.misc.util;
+const ExtensionUtils = imports.misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
+const Store = Me.imports.store;
+const DS = Me.imports.dataStructures;
+const ConfirmDialog = Me.imports.confirmDialog;
+const Prefs = Me.imports.prefs;
+
+const IndicatorName = `${Me.metadata.name} Indicator`;
+const _ = Gettext.domain(Me.uuid).gettext;
+
 let MAX_REGISTRY_LENGTH;
 let MAX_BYTES;
 let WINDOW_WIDTH_PERCENTAGE;
@@ -60,14 +59,10 @@ let DISABLE_DOWN_ARROW;
 let STRIP_TEXT;
 let PASTE_ON_SELECTION;
 let PROCESS_PRIMARY_SELECTION;
-let IGNORE_PASSWORD_MIMES;
 
 class ClipboardIndicator extends PanelMenu.Button {
-  _init(extension) {
-    super._init(0, extension.indicatorName, false);
-
-    this.extension = extension;
-    this.settings = extension.getSettings();
+  _init() {
+    super._init(0, IndicatorName, false);
 
     this._shortcutsBindingIds = [];
 
@@ -85,7 +80,7 @@ class ClipboardIndicator extends PanelMenu.Button {
     });
     hbox.add_child(this._buttonText);
     this._downArrow = PopupMenu.arrowIcon(St.Side.BOTTOM);
-    hbox.add_child(this._downArrow);
+    hbox.add(this._downArrow);
     this.add_child(hbox);
 
     this._fetchSettings();
@@ -99,11 +94,11 @@ class ClipboardIndicator extends PanelMenu.Button {
     this._disconnectSelectionListener();
 
     if (this._searchFocusHackCallbackId) {
-      GLib.Source.source_remove(this._searchFocusHackCallbackId);
+      Mainloop.source_remove(this._searchFocusHackCallbackId);
       this._searchFocusHackCallbackId = undefined;
     }
     if (this._pasteHackCallbackId) {
-      GLib.Source.source_remove(this._pasteHackCallbackId);
+      Mainloop.source_remove(this._pasteHackCallbackId);
       this._pasteHackCallbackId = undefined;
     }
 
@@ -126,22 +121,18 @@ class ClipboardIndicator extends PanelMenu.Button {
       reactive: false,
       can_focus: false,
     });
-    entryItem.add_child(this.searchEntry);
+    entryItem.add(this.searchEntry);
     this.menu.addMenuItem(entryItem);
 
     this.menu.connect('open-state-changed', (self, open) => {
       if (open) {
         this._setMenuWidth();
         this.searchEntry.set_text('');
-        this._searchFocusHackCallbackId = GLib.timeout_add(
-          GLib.PRIORITY_DEFAULT,
-          1,
-          () => {
-            global.stage.set_key_focus(this.searchEntry);
-            this._searchFocusHackCallbackId = undefined;
-            return false;
-          },
-        );
+        this._searchFocusHackCallbackId = Mainloop.timeout_add(1, () => {
+          global.stage.set_key_focus(this.searchEntry);
+          this._searchFocusHackCallbackId = undefined;
+          return false;
+        });
       }
     });
 
@@ -154,9 +145,9 @@ class ClipboardIndicator extends PanelMenu.Button {
       style_class: 'ci-history-menu-section',
       overlay_scrollbars: true,
     });
-    favoritesScrollView.add_child(this.favoritesSection.actor);
+    favoritesScrollView.add_actor(this.favoritesSection.actor);
 
-    this.scrollViewFavoritesMenuSection.actor.add_child(favoritesScrollView);
+    this.scrollViewFavoritesMenuSection.actor.add_actor(favoritesScrollView);
     this.menu.addMenuItem(this.scrollViewFavoritesMenuSection);
     this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 
@@ -168,9 +159,9 @@ class ClipboardIndicator extends PanelMenu.Button {
       style_class: 'ci-history-menu-section',
       overlay_scrollbars: true,
     });
-    this.historyScrollView.add_child(this.historySection.actor);
+    this.historyScrollView.add_actor(this.historySection.actor);
 
-    this.scrollViewMenuSection.actor.add_child(this.historyScrollView);
+    this.scrollViewMenuSection.actor.add_actor(this.historyScrollView);
 
     this.menu.addMenuItem(this.scrollViewMenuSection);
 
@@ -182,7 +173,7 @@ class ClipboardIndicator extends PanelMenu.Button {
       vertical: false,
     });
 
-    actionsSection.actor.add_child(actionsBox);
+    actionsSection.actor.add(actionsBox);
     this.menu.addMenuItem(actionsSection);
 
     const prevPage = new PopupMenu.PopupBaseMenuItem();
@@ -193,7 +184,7 @@ class ClipboardIndicator extends PanelMenu.Button {
       }),
     );
     prevPage.connect('activate', this._navigatePrevPage.bind(this));
-    actionsBox.add_child(prevPage);
+    actionsBox.add(prevPage);
 
     const nextPage = new PopupMenu.PopupBaseMenuItem();
     nextPage.add_child(
@@ -203,9 +194,9 @@ class ClipboardIndicator extends PanelMenu.Button {
       }),
     );
     nextPage.connect('activate', this._navigateNextPage.bind(this));
-    actionsBox.add_child(nextPage);
+    actionsBox.add(nextPage);
 
-    actionsBox.add_child(new St.BoxLayout({ x_expand: true }));
+    actionsBox.add(new St.BoxLayout({ x_expand: true }));
 
     this.privateModeMenuItem = new PopupMenu.PopupSwitchMenuItem(
       _('Private mode'),
@@ -213,12 +204,12 @@ class ClipboardIndicator extends PanelMenu.Button {
       { reactive: true },
     );
     this.privateModeMenuItem.connect('toggled', () => {
-      this.settings.set_boolean(
-        SettingsFields.PRIVATE_MODE,
+      Prefs.Settings.set_boolean(
+        Prefs.Fields.PRIVATE_MODE,
         this.privateModeMenuItem.state,
       );
     });
-    actionsBox.add_child(this.privateModeMenuItem);
+    actionsBox.add(this.privateModeMenuItem);
     this._updatePrivateModeState();
 
     const clearMenuItem = new PopupMenu.PopupBaseMenuItem();
@@ -228,7 +219,7 @@ class ClipboardIndicator extends PanelMenu.Button {
         style_class: 'popup-menu-icon',
       }),
     );
-    actionsBox.add_child(clearMenuItem);
+    actionsBox.add(clearMenuItem);
 
     const settingsMenuItem = new PopupMenu.PopupBaseMenuItem();
     settingsMenuItem.add_child(
@@ -238,7 +229,7 @@ class ClipboardIndicator extends PanelMenu.Button {
       }),
     );
     settingsMenuItem.connect('activate', this._openSettings.bind(this));
-    actionsBox.add_child(settingsMenuItem);
+    actionsBox.add(settingsMenuItem);
 
     if (ENABLE_KEYBINDING) {
       this._bindShortcuts();
@@ -278,7 +269,7 @@ class ClipboardIndicator extends PanelMenu.Button {
         this._restoreFavoritedEntries();
         this._maybeRestoreMenuPages();
 
-        this._settingsChangedId = this.settings.connect(
+        this._settingsChangedId = Prefs.Settings.connect(
           'changed',
           this._onSettingsChange.bind(this),
         );
@@ -372,7 +363,6 @@ class ClipboardIndicator extends PanelMenu.Button {
     }
 
     const menuItem = new PopupMenu.PopupMenuItem('', { hover: false });
-    menuItem.setOrnament(PopupMenu.Ornament.NONE);
 
     menuItem.entry = entry;
     entry.menuItem = menuItem;
@@ -438,7 +428,7 @@ class ClipboardIndicator extends PanelMenu.Button {
     });
     menuItem.connect('key-focus-in', () => {
       if (!menuItem.entry.favorite) {
-        ensureActorVisibleInScrollView(this.historyScrollView, menuItem);
+        Util.ensureActorVisibleInScrollView(this.historyScrollView, menuItem);
       }
     });
 
@@ -537,7 +527,7 @@ class ClipboardIndicator extends PanelMenu.Button {
     const message = _('Are you sure you want to delete all clipboard items?');
     const sub_message = _('This operation cannot be undone.');
 
-    openConfirmDialog(
+    ConfirmDialog.openConfirmDialog(
       title,
       message,
       sub_message,
@@ -623,8 +613,7 @@ class ClipboardIndicator extends PanelMenu.Button {
   }
 
   _triggerPasteHack() {
-    this._pasteHackCallbackId = GLib.timeout_add(
-      GLib.PRIORITY_DEFAULT,
+    this._pasteHackCallbackId = Mainloop.timeout_add(
       1, // Just post to the end of the event loop
       () => {
         const SHIFT_L = 42;
@@ -839,28 +828,8 @@ class ClipboardIndicator extends PanelMenu.Button {
     }
   }
 
-  _shouldAbortClipboardQuery(kind) {
-    if (PRIVATE_MODE) {
-      return true;
-    }
-
-    if (
-      IGNORE_PASSWORD_MIMES &&
-      Clipboard.get_mimetypes(kind).includes(
-        // Note that we should check for the value "secret" but there don't appear to be any other
-        // values so it's not worth the trouble right now.
-        'x-kde-passwordManagerHint',
-      )
-    ) {
-      console.log(this.uuid, 'Ignoring password entry.');
-      return true;
-    }
-
-    return false;
-  }
-
   _queryClipboard() {
-    if (this._shouldAbortClipboardQuery(St.Clipboard.CLIPBOARD)) {
+    if (PRIVATE_MODE) {
       return;
     }
 
@@ -870,7 +839,7 @@ class ClipboardIndicator extends PanelMenu.Button {
   }
 
   _queryPrimaryClipboard() {
-    if (this._shouldAbortClipboardQuery(St.Clipboard.PRIMARY)) {
+    if (PRIVATE_MODE) {
       return;
     }
 
@@ -1035,10 +1004,7 @@ class ClipboardIndicator extends PanelMenu.Button {
       return;
     }
 
-    this._notifSource = new MessageTray.Source({
-      title: this.extension.indicatorName,
-      iconName: INDICATOR_ICON,
-    });
+    this._notifSource = new MessageTray.Source(Me.uuid, INDICATOR_ICON);
     this._notifSource.connect('destroy', () => {
       this._notifSource = undefined;
     });
@@ -1058,26 +1024,22 @@ class ClipboardIndicator extends PanelMenu.Button {
 
     let notification;
     if (this._notifSource.count === 0) {
-      notification = new MessageTray.Notification({
-        source: this._notifSource,
+      notification = new MessageTray.Notification(
+        this._notifSource,
         title,
-        body: message,
-        isTransient: true,
-      });
+        message,
+      );
     } else {
       notification = this._notifSource.notifications[0];
-      notification.set({
-        title,
-        body: message,
-      });
-      notification.clearActions();
+      notification.update(title, message, { clear: true });
     }
 
     if (typeof transformFn === 'function') {
       transformFn(notification);
     }
 
-    this._notifSource.addNotification(notification);
+    notification.setTransient(true);
+    this._notifSource.showNotification(notification);
   }
 
   _updatePrivateModeState() {
@@ -1100,42 +1062,39 @@ class ClipboardIndicator extends PanelMenu.Button {
   }
 
   _fetchSettings() {
-    MAX_REGISTRY_LENGTH = this.settings.get_int(SettingsFields.HISTORY_SIZE);
+    MAX_REGISTRY_LENGTH = Prefs.Settings.get_int(Prefs.Fields.HISTORY_SIZE);
     MAX_BYTES =
-      (1 << 20) * this.settings.get_int(SettingsFields.CACHE_FILE_SIZE);
-    WINDOW_WIDTH_PERCENTAGE = this.settings.get_int(
-      SettingsFields.WINDOW_WIDTH_PERCENTAGE,
+      (1 << 20) * Prefs.Settings.get_int(Prefs.Fields.CACHE_FILE_SIZE);
+    WINDOW_WIDTH_PERCENTAGE = Prefs.Settings.get_int(
+      Prefs.Fields.WINDOW_WIDTH_PERCENTAGE,
     );
-    CACHE_ONLY_FAVORITES = this.settings.get_boolean(
-      SettingsFields.CACHE_ONLY_FAVORITES,
+    CACHE_ONLY_FAVORITES = Prefs.Settings.get_boolean(
+      Prefs.Fields.CACHE_ONLY_FAVORITES,
     );
-    MOVE_ITEM_FIRST = this.settings.get_boolean(SettingsFields.MOVE_ITEM_FIRST);
-    NOTIFY_ON_COPY = this.settings.get_boolean(SettingsFields.NOTIFY_ON_COPY);
-    CONFIRM_ON_CLEAR = this.settings.get_boolean(
-      SettingsFields.CONFIRM_ON_CLEAR,
+    MOVE_ITEM_FIRST = Prefs.Settings.get_boolean(Prefs.Fields.MOVE_ITEM_FIRST);
+    NOTIFY_ON_COPY = Prefs.Settings.get_boolean(Prefs.Fields.NOTIFY_ON_COPY);
+    CONFIRM_ON_CLEAR = Prefs.Settings.get_boolean(
+      Prefs.Fields.CONFIRM_ON_CLEAR,
     );
-    ENABLE_KEYBINDING = this.settings.get_boolean(
-      SettingsFields.ENABLE_KEYBINDING,
+    ENABLE_KEYBINDING = Prefs.Settings.get_boolean(
+      Prefs.Fields.ENABLE_KEYBINDING,
     );
-    MAX_TOPBAR_LENGTH = this.settings.get_int(
-      SettingsFields.TOPBAR_PREVIEW_SIZE,
+    MAX_TOPBAR_LENGTH = Prefs.Settings.get_int(
+      Prefs.Fields.TOPBAR_PREVIEW_SIZE,
     );
-    TOPBAR_DISPLAY_MODE = this.settings.get_int(
-      SettingsFields.TOPBAR_DISPLAY_MODE_ID,
+    TOPBAR_DISPLAY_MODE = Prefs.Settings.get_int(
+      Prefs.Fields.TOPBAR_DISPLAY_MODE_ID,
     );
-    DISABLE_DOWN_ARROW = this.settings.get_boolean(
-      SettingsFields.DISABLE_DOWN_ARROW,
+    DISABLE_DOWN_ARROW = Prefs.Settings.get_boolean(
+      Prefs.Fields.DISABLE_DOWN_ARROW,
     );
-    STRIP_TEXT = this.settings.get_boolean(SettingsFields.STRIP_TEXT);
-    PRIVATE_MODE = this.settings.get_boolean(SettingsFields.PRIVATE_MODE);
-    PASTE_ON_SELECTION = this.settings.get_boolean(
-      SettingsFields.PASTE_ON_SELECTION,
+    STRIP_TEXT = Prefs.Settings.get_boolean(Prefs.Fields.STRIP_TEXT);
+    PRIVATE_MODE = Prefs.Settings.get_boolean(Prefs.Fields.PRIVATE_MODE);
+    PASTE_ON_SELECTION = Prefs.Settings.get_boolean(
+      Prefs.Fields.PASTE_ON_SELECTION,
     );
-    PROCESS_PRIMARY_SELECTION = this.settings.get_boolean(
-      SettingsFields.PROCESS_PRIMARY_SELECTION,
-    );
-    IGNORE_PASSWORD_MIMES = this.settings.get_boolean(
-      SettingsFields.IGNORE_PASSWORD_MIMES,
+    PROCESS_PRIMARY_SELECTION = Prefs.Settings.get_boolean(
+      Prefs.Fields.PROCESS_PRIMARY_SELECTION,
     );
   }
 
@@ -1220,7 +1179,7 @@ class ClipboardIndicator extends PanelMenu.Button {
 
     Main.wm.addKeybinding(
       name,
-      this.settings,
+      Prefs.Settings,
       Meta.KeyBindingFlags.NONE,
       ModeType.ALL,
       cb.bind(this),
@@ -1260,12 +1219,12 @@ class ClipboardIndicator extends PanelMenu.Button {
       return;
     }
 
-    this.settings.disconnect(this._settingsChangedId);
+    Prefs.Settings.disconnect(this._settingsChangedId);
     this._settingsChangedId = undefined;
   }
 
   _openSettings() {
-    this.extension.openPreferences();
+    ExtensionUtils.openPrefs();
     this.menu.close();
   }
 
@@ -1333,20 +1292,26 @@ class ClipboardIndicator extends PanelMenu.Button {
 
 const ClipboardIndicatorObj = GObject.registerClass(ClipboardIndicator);
 
-export default class ClipboardHistoryExtension extends Extension {
-  enable() {
-    this.indicatorName = `${this.metadata.name} Indicator`;
+function init() {
+  ExtensionUtils.initTranslations(Me.uuid);
+}
 
-    Store.init(this.uuid);
+let clipboardIndicator;
 
-    this.clipboardIndicator = new ClipboardIndicatorObj(this);
-    Main.panel.addToStatusArea(this.indicatorName, this.clipboardIndicator, 1);
+function enable() {
+  if (clipboardIndicator) {
+    return;
   }
 
-  disable() {
-    this.clipboardIndicator.destroy();
-    this.clipboardIndicator = undefined;
+  Store.init();
 
-    Store.destroy();
-  }
+  clipboardIndicator = new ClipboardIndicatorObj();
+  Main.panel.addToStatusArea(IndicatorName, clipboardIndicator, 1);
+}
+
+function disable() {
+  clipboardIndicator.destroy();
+  clipboardIndicator = undefined;
+
+  Store.destroy();
 }

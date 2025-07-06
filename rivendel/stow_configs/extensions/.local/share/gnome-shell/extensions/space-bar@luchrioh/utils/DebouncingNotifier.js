@@ -1,8 +1,9 @@
-import GLib from 'gi://GLib';
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+const { GLib } = imports.gi;
 /**
  * A subscribe/notify mechanism that debounces multiple subsequent notify calls.
  */
-export class DebouncingNotifier {
+var DebouncingNotifier = class DebouncingNotifier {
     constructor(_delayMs = 0) {
         this._delayMs = _delayMs;
         this._subscribers = [];

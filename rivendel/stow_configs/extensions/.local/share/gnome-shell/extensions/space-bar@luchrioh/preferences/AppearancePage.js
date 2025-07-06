@@ -1,7 +1,8 @@
-import Adw from 'gi://Adw';
-import { addColorButton, addCombo, addSpinButton } from './common.js';
-import { addCustomCssDialogButton } from './custom-styles.js';
-export const fontWeightOptions = {
+const ExtensionUtils = imports.misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
+const { Adw } = imports.gi;
+const { addColorButton, addCombo, addSpinButton } = Me.imports.preferences.common;
+var fontWeightOptions = {
     '100': 'Thin',
     '200': 'Extra Light',
     '300': 'Light',
@@ -12,25 +13,23 @@ export const fontWeightOptions = {
     '800': 'Extra Bold',
     '900': 'Black',
 };
-export class AppearancePage {
-    constructor(_extensionPreferences) {
-        this._extensionPreferences = _extensionPreferences;
+var AppearancePage = class AppearancePage {
+    constructor() {
         this.page = new Adw.PreferencesPage();
-        this._settings = _extensionPreferences.getSettings(`org.gnome.shell.extensions.space-bar.appearance`);
+        this._settings = ExtensionUtils.getSettings(`${Me.metadata['settings-schema']}.appearance`);
     }
     init() {
         this.page.set_title('_Appearance');
-        this.page.useUnderline = true;
+        this.page.use_underline = true;
         this.page.set_icon_name('applications-graphics-symbolic');
         this._connectEnabledConditions();
         this._initGeneralGroup();
         this._initActiveWorkspaceGroup();
         this._initInactiveWorkspaceGroup();
         this._initEmptyWorkspaceGroup();
-        this._initCustomStylesGroup();
     }
     _connectEnabledConditions() {
-        const behaviorSettings = this._extensionPreferences.getSettings(`org.gnome.shell.extensions.space-bar.behavior`);
+        const behaviorSettings = ExtensionUtils.getSettings(`${Me.metadata['settings-schema']}.behavior`);
         const disabledNoticeGroup = new Adw.PreferencesGroup({
             description: 'Appearance preferences currently support the indicator style "Workspaces bar" only.',
         });
@@ -47,8 +46,8 @@ export class AppearancePage {
             }
         };
         updateEnabled();
-        const changed = behaviorSettings.connect(`changed::indicator-style`, updateEnabled);
-        this.page.connect('unmap', () => behaviorSettings.disconnect(changed));
+        behaviorSettings.connect(`changed::indicator-style`, updateEnabled);
+        this.page.connect('unmap', () => behaviorSettings.disconnect(updateEnabled));
     }
     _initGeneralGroup() {
         const group = new Adw.PreferencesGroup();
@@ -326,16 +325,6 @@ export class AppearancePage {
         }).linkValue({
             window: this.window,
             linkedKey: 'inactive-workspace-padding-v',
-        });
-        this.page.add(group);
-    }
-    _initCustomStylesGroup() {
-        const group = new Adw.PreferencesGroup();
-        group.set_title('Custom Styles');
-        addCustomCssDialogButton({
-            window: this.window,
-            group,
-            settings: this._settings,
         });
         this.page.add(group);
     }

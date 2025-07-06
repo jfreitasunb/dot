@@ -1,34 +1,27 @@
-import Clutter from 'gi://Clutter';
-import GObject from 'gi://GObject';
-import St from 'gi://St';
-import * as DND from 'resource:///org/gnome/shell/ui/dnd.js';
-import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
-import { WindowPreview } from 'resource:///org/gnome/shell/ui/windowPreview.js';
-import { Settings } from '../services/Settings.js';
-import { Styles } from '../services/Styles.js';
-import { Workspaces } from '../services/Workspaces.js';
-import { Subject } from '../utils/Subject.js';
-import { Timeout } from '../utils/Timeout.js';
-import { WorkspacesBarMenu } from './WorkspacesBarMenu.js';
+const ExtensionUtils = imports.misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
+const Main = imports.ui.main;
+const { Clutter, GObject, St } = imports.gi;
+const { Settings } = Me.imports.services.Settings;
+const { Styles } = Me.imports.services.Styles;
+const { Workspaces } = Me.imports.services.Workspaces;
+const { WorkspacesBarMenu } = Me.imports.ui.WorkspacesBarMenu;
+const { Subject } = Me.imports.utils.Subject;
+const PanelMenu = imports.ui.panelMenu;
+const DND = imports.ui.dnd;
+const { WindowPreview } = imports.ui.windowPreview;
 /**
  * Maximum number of milliseconds between button press and button release to be recognized as click.
  */
 const MAX_CLICK_TIME_DELTA = 300;
-/**
- * Time in milliseconds until a touch event is recognized as long press.
- */
-const LONG_PRESS_DURATION = 500;
-export class WorkspacesBar {
-    constructor(_extension) {
-        this._extension = _extension;
-        this._name = `${this._extension.metadata.name}`;
+var WorkspacesBar = class WorkspacesBar {
+    constructor() {
+        this._name = `${Me.metadata.name}`;
         this._settings = Settings.getInstance();
         this._styles = Styles.getInstance();
         this._ws = Workspaces.getInstance();
         this._buttonSubject = new Subject(null);
         this._dragHandler = new WorkspacesBarDragHandler(() => this._updateWorkspaces());
-        this._touchTimeout = new Timeout();
     }
     init() {
         this._initButton();
@@ -37,9 +30,6 @@ export class WorkspacesBar {
         this._styles.onWorkspacesBarChanged(() => this._refreshTopBarConfiguration());
         this._styles.onWorkspaceLabelsChanged(() => this._updateWorkspaces());
         this._settings.alwaysShowNumbers.subscribe(() => this._updateWorkspaces());
-        this._settings.enableCustomLabel.subscribe(() => this._updateWorkspaces());
-        this._settings.customLabelNamed.subscribe(() => this._updateWorkspaces());
-        this._settings.customLabelUnnamed.subscribe(() => this._updateWorkspaces());
         this._settings.indicatorStyle.subscribe(() => this._refreshTopBarConfiguration());
         this._settings.position.subscribe(() => this._refreshTopBarConfiguration());
         this._settings.positionIndex.subscribe(() => this._refreshTopBarConfiguration());
@@ -49,7 +39,6 @@ export class WorkspacesBar {
         this._menu.destroy();
         this._dragHandler.destroy();
         this._buttonSubject.complete();
-        this._touchTimeout.destroy();
     }
     observeWidget() {
         return this._buttonSubject;
@@ -63,9 +52,9 @@ export class WorkspacesBar {
     _initButton() {
         this._button = new WorkspacesButton(0.5, this._name);
         this._buttonSubject.next(this._button);
-        this._button.styleClass = 'panel-button space-bar';
+        this._button.style_class = 'panel-button space-bar';
         switch (this._settings.indicatorStyle.value) {
-            case 'current-workspace':
+            case 'current-workspace-name':
                 this._initWorkspaceLabel();
                 break;
             case 'workspaces-bar':
@@ -76,13 +65,13 @@ export class WorkspacesBar {
         this._updateWorkspaces();
     }
     _initMenu() {
-        this._menu = new WorkspacesBarMenu(this._extension, this._button.menu);
+        this._menu = new WorkspacesBarMenu(this._button.menu);
         this._menu.init();
     }
     _initWorkspaceLabel() {
-        this._button.styleClass += ' workspace-label';
+        this._button.style_class += ' workspace-label';
         this._wsLabel = new St.Label({
-            yAlign: Clutter.ActorAlign.CENTER,
+            y_align: Clutter.ActorAlign.CENTER,
         });
         this._button.add_child(this._wsLabel);
         this._button.connect('button-press-event', (actor, event) => {
@@ -104,13 +93,14 @@ export class WorkspacesBar {
     }
     _initWorkspacesBar() {
         this._button._delegate = this._dragHandler;
-        this._button.trackHover = false;
+        this._button.track_hover = false;
+        this._button.set_style(this._styles.getWorkspacesBarStyle());
         this._wsBar = new St.BoxLayout({});
         this._button.add_child(this._wsBar);
     }
     _updateWorkspaces() {
         switch (this._settings.indicatorStyle.value) {
-            case 'current-workspace':
+            case 'current-workspace-name':
                 this._updateWorkspaceLabel();
                 break;
             case 'workspaces-bar':
@@ -140,9 +130,9 @@ export class WorkspacesBar {
         const wsBox = new St.Bin({
             visible: true,
             reactive: true,
-            canFocus: true,
-            trackHover: true,
-            styleClass: `workspace-box workspace-box-${workspace.index + 1}`,
+            can_focus: true,
+            track_hover: true,
+            style_class: 'workspace-box',
         });
         wsBox._delegate = new WorkspaceBoxDragHandler(workspace);
         const label = this._createLabel(workspace);
@@ -168,7 +158,7 @@ export class WorkspacesBar {
                     if (lastButton1PressEvent) {
                         const timeDelta = event.get_time() - lastButton1PressEvent.get_time();
                         if (timeDelta <= MAX_CLICK_TIME_DELTA) {
-                            this._ws.switchTo(workspace.index, 'click-on-label');
+                            this._ws.activate(workspace.index);
                         }
                         lastButton1PressEvent = null;
                     }
@@ -176,58 +166,34 @@ export class WorkspacesBar {
             }
             return Clutter.EVENT_PROPAGATE;
         });
-        let lastTouchBeginEvent;
-        wsBox.connect('touch-event', (actor, event) => {
-            switch (event.type()) {
-                case Clutter.EventType.TOUCH_BEGIN:
-                    lastTouchBeginEvent = event;
-                    this._touchTimeout
-                        .once(LONG_PRESS_DURATION)
-                        .then(() => this._button.menu.toggle());
-                    break;
-                case Clutter.EventType.TOUCH_END:
-                    if (lastTouchBeginEvent) {
-                        const timeDelta = event.get_time() - lastTouchBeginEvent.get_time();
-                        if (timeDelta <= MAX_CLICK_TIME_DELTA) {
-                            this._ws.switchTo(workspace.index, 'click-on-label');
-                        }
-                        lastTouchBeginEvent = null;
-                    }
-                    this._touchTimeout.clearTimeout();
-                    break;
-                case Clutter.EventType.TOUCH_CANCEL:
-                    this._touchTimeout.clearTimeout();
-                    break;
-            }
-            return Clutter.EVENT_PROPAGATE;
-        });
-        this._dragHandler.setupDnd(wsBox, workspace, {
-            onDragStart: () => this._touchTimeout.clearTimeout(),
-        });
+        this._dragHandler.setupDnd(wsBox, workspace);
         return wsBox;
     }
     _createLabel(workspace) {
         const label = new St.Label({
-            yAlign: Clutter.ActorAlign.CENTER,
-            styleClass: 'space-bar-workspace-label',
+            y_align: Clutter.ActorAlign.CENTER,
+            style_class: 'space-bar-workspace-label',
         });
         if (workspace.index == this._ws.currentIndex) {
-            label.styleClass += ' active';
+            label.style_class += ' active';
+            label.set_style(this._styles.getActiveWorkspaceStyle());
         }
         else {
-            label.styleClass += ' inactive';
+            label.style_class += ' inactive';
+            if (workspace.hasWindows) {
+                label.set_style(this._styles.getInactiveWorkspaceStyle());
+            }
+            else {
+                label.set_style(this._styles.getEmptyWorkspaceStyle());
+            }
         }
         if (workspace.hasWindows) {
-            label.styleClass += ' nonempty';
+            label.style_class += ' nonempty';
         }
         else {
-            label.styleClass += ' empty';
+            label.style_class += ' empty';
         }
-        const text = this._ws.getDisplayName(workspace);
-        label.set_text(text);
-        if (text.trim() === '') {
-            label.styleClass += ' no-text';
-        }
+        label.set_text(this._ws.getDisplayName(workspace));
         return label;
     }
 }
@@ -248,11 +214,10 @@ class WorkspacesBarDragHandler {
     destroy() {
         this._setDragMonitor(false);
     }
-    setupDnd(wsBox, workspace, hooks) {
+    setupDnd(wsBox, workspace) {
         const draggable = DND.makeDraggable(wsBox, {});
         draggable.connect('drag-begin', () => {
             this._onDragStart(wsBox, workspace);
-            hooks.onDragStart();
         });
         draggable.connect('drag-cancelled', () => {
             this._updateDragPlaceholder(this._initialDropPosition);

@@ -1,8 +1,9 @@
+const Me = imports.misc.extensionUtils.getCurrentExtension();
 let _destroyFunctions = [];
 /**
  * Calls `callback` when the given upstream function gets called.
  */
-export function hook(classObject, functionName, pos, callback) {
+function hook(classObject, functionName, pos, callback) {
     const _originalFunction = classObject.prototype[functionName];
     if (pos === 'before') {
         classObject.prototype[functionName] = function (...args) {
@@ -20,7 +21,7 @@ export function hook(classObject, functionName, pos, callback) {
         classObject.prototype[functionName] = _originalFunction;
     });
 }
-export function destroyAllHooks() {
+function destroyAllHooks() {
     for (const f of _destroyFunctions) {
         f();
     }

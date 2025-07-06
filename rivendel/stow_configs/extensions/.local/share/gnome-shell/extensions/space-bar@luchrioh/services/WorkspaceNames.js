@@ -1,5 +1,6 @@
-import { Settings } from './Settings.js';
-export class WorkspaceNames {
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+const { Settings } = Me.imports.services.Settings;
+var WorkspaceNames = class WorkspaceNames {
     static init(workspaces) {
         this._instance = new WorkspaceNames(workspaces);
         return this._instance;
@@ -57,9 +58,7 @@ export class WorkspaceNames {
     restoreSmartWorkspaceName(index) {
         const windowNames = this._getWindowNames(index);
         const workspacesNamesMap = this._settings.workspaceNamesMap.value;
-        // Loop through windows on the workspace.
         for (const windowName of windowNames) {
-            // Find the first associated name that is not already in use.
             if (workspacesNamesMap[windowName]?.length > 0) {
                 const newName = workspacesNamesMap[windowName].find((name) => !this._getEnabledWorkspaceNames().includes(name));
                 if (newName) {
@@ -73,16 +72,6 @@ export class WorkspaceNames {
                 }
             }
         }
-    }
-    workspaceNameIsSupportedByWindows(workspace) {
-        const windowNames = this._getWindowNames(workspace.index);
-        const workspacesNamesMap = this._settings.workspaceNamesMap.value;
-        for (const windowName of windowNames) {
-            if (workspacesNamesMap[windowName]?.some((name) => name === workspace.name)) {
-                return true;
-            }
-        }
-        return false;
     }
     /**
      * Associates windows on a workspace with a new workspace name.
@@ -106,9 +95,7 @@ export class WorkspaceNames {
         const workspace = global.workspace_manager.get_workspace_by_index(workspaceIndex);
         let windows = workspace.list_windows();
         windows = windows.filter((window) => !window.is_on_all_workspaces());
-        return windows
-            .map((window) => window.get_wm_class())
-            .filter((wmClass) => wmClass !== null);
+        return windows.map((window) => window.get_wm_class()).filter((wmClass) => wmClass !== null);
     }
     _getNames() {
         return [...this._settings.workspaceNames.value];

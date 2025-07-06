@@ -1,4 +1,5 @@
-export class Subject {
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+var Subject = class Subject {
     get value() {
         return this._value;
     }

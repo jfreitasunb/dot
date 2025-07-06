@@ -1,25 +1,24 @@
-import { KeyBindings } from './services/KeyBindings.js';
-import { ScrollHandler } from './services/ScrollHandler.js';
-import { Settings } from './services/Settings.js';
-import { Styles } from './services/Styles.js';
-import { TopBarAdjustments } from './services/TopBarAdjustments.js';
-import { Workspaces } from './services/Workspaces.js';
-import { WorkspacesBar } from './ui/WorkspacesBar.js';
-import { destroyAllHooks } from './utils/hook.js';
-import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
-export default class SpaceBarExtension extends Extension {
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+const { KeyBindings } = Me.imports.services.KeyBindings;
+const { ScrollHandler } = Me.imports.services.ScrollHandler;
+const { Settings } = Me.imports.services.Settings;
+const { Styles } = Me.imports.services.Styles;
+const { TopBarAdjustments } = Me.imports.services.TopBarAdjustments;
+const { Workspaces } = Me.imports.services.Workspaces;
+const { WorkspacesBar } = Me.imports.ui.WorkspacesBar;
+const { destroyAllHooks } = Me.imports.utils.hook;
+class Extension {
     constructor() {
-        super(...arguments);
         this.workspacesBar = null;
         this.scrollHandler = null;
     }
     enable() {
-        Settings.init(this);
+        Settings.init();
         TopBarAdjustments.init();
         Workspaces.init();
         KeyBindings.init();
         Styles.init();
-        this.workspacesBar = new WorkspacesBar(this);
+        this.workspacesBar = new WorkspacesBar();
         this.workspacesBar.init();
         this.scrollHandler = new ScrollHandler();
         this.scrollHandler.init(this.workspacesBar.observeWidget());
@@ -36,4 +35,7 @@ export default class SpaceBarExtension extends Extension {
         this.workspacesBar?.destroy();
         this.workspacesBar = null;
     }
+}
+function init() {
+    return new Extension();
 }

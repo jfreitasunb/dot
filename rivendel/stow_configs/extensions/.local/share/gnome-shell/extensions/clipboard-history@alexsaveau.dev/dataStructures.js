@@ -1,7 +1,7 @@
 // Derived from
 // https://github.com/wooorm/linked-list/blob/d2390fe1cab9f780cfd34fa31c8fa8ede4ad674d/index.js
 
-export const TYPE_TEXT = 'text';
+var TYPE_TEXT = 'text';
 
 // Creates a new `Iterator` for looping over the `List`.
 class Iterator {
@@ -21,7 +21,7 @@ class Iterator {
 // Creates a new `Item`:
 // An item is a bit like DOM node: It knows only about its "parent" (`list`),
 // the item before it (`prev`), and the item after it (`next`).
-export class LLNode {
+var LLNode = class Item {
   // Prepends the given item *before* the item operated on.
   prepend(item) {
     const list = this.list;
@@ -225,7 +225,7 @@ export class LLNode {
       return null;
     }
   }
-}
+};
 
 LLNode.prototype.next = LLNode.prototype.prev = LLNode.prototype.list = null;
 
@@ -234,7 +234,7 @@ LLNode.prototype.next = LLNode.prototype.prev = LLNode.prototype.list = null;
 // last (`tail`) items.
 // Each item (e.g. `head`, `tail`, &c.) knows which item comes before or after
 // it (its more like the implementation of the DOM in JavaScript).
-export class LinkedList {
+var LinkedList = class List {
   // Creates a new list from the arguments (each a list item) passed in.
   static of(...items) {
     return appendAll(new this(), items);
@@ -359,13 +359,13 @@ export class LinkedList {
   [Symbol.iterator]() {
     return new Iterator(this.head);
   }
-}
+};
 
 LinkedList.prototype.length = 0;
 LinkedList.prototype.tail = LinkedList.prototype.head = null;
 
 // Creates a new list from the items passed in.
-export function appendAll(list, items) {
+function appendAll(list, items) {
   let index;
   let item;
   let iterator;

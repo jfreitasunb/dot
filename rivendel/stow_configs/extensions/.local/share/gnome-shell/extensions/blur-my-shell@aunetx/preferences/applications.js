@@ -1,9 +1,10 @@
-import Adw from 'gi://Adw';
-import GLib from 'gi://GLib';
-import GObject from 'gi://GObject';
-import Gio from 'gi://Gio';
+'use strict';
 
-import { ApplicationRow } from './applications_management/application_row.js';
+const { Adw, GLib, GObject, Gio } = imports.gi;
+const ExtensionUtils = imports.misc.extensionUtils;
+
+const Me = ExtensionUtils.getCurrentExtension();
+const { WindowRow } = Me.imports.preferences.window_row;
 
 
 const make_array = prefs_group => {
@@ -25,15 +26,13 @@ const make_array = prefs_group => {
 };
 
 
-export const Applications = GObject.registerClass({
+var Applications = GObject.registerClass({
     GTypeName: 'Applications',
-    Template: GLib.uri_resolve_relative(import.meta.url, '../ui/applications.ui', GLib.UriFlags.NONE),
+    Template: `file://${GLib.build_filenamev([Me.path, 'ui', 'applications.ui'])}`,
     InternalChildren: [
         'blur',
-        'sigma',
-        'brightness',
+        'customize',
         'opacity',
-        'dynamic_opacity',
         'blur_on_overview',
         'enable_all',
         'whitelist',
@@ -49,7 +48,7 @@ export const Applications = GObject.registerClass({
         this.preferences = preferences;
 
         this.preferences.applications.settings.bind(
-            'blur', this._blur, 'active',
+            'blur', this._blur, 'state',
             Gio.SettingsBindFlags.DEFAULT
         );
         this.preferences.applications.settings.bind(
@@ -57,25 +56,15 @@ export const Applications = GObject.registerClass({
             Gio.SettingsBindFlags.DEFAULT
         );
         this.preferences.applications.settings.bind(
-            'dynamic-opacity', this._dynamic_opacity, 'active',
+            'blur-on-overview', this._blur_on_overview, 'state',
             Gio.SettingsBindFlags.DEFAULT
         );
         this.preferences.applications.settings.bind(
-            'blur-on-overview', this._blur_on_overview, 'active',
+            'enable-all', this._enable_all, 'state',
             Gio.SettingsBindFlags.DEFAULT
         );
-        this.preferences.applications.settings.bind(
-            'enable-all', this._enable_all, 'active',
-            Gio.SettingsBindFlags.DEFAULT
-        );
-        this.preferences.applications.settings.bind(
-            'sigma', this._sigma, 'value',
-            Gio.SettingsBindFlags.DEFAULT
-        );
-        this.preferences.applications.settings.bind(
-            'brightness', this._brightness, 'value',
-            Gio.SettingsBindFlags.DEFAULT
-        );
+
+        this._customize.connect_to(this.preferences.applications, false);
 
         // connect 'enable all' button to whitelist/blacklist visibility
         this._enable_all.bind_property(
@@ -94,16 +83,16 @@ export const Applications = GObject.registerClass({
 
         // listen to app row addition
         this._add_window_whitelist.connect('clicked',
-            () => this.add_to_whitelist()
+            _ => this.add_to_whitelist()
         );
         this._add_window_blacklist.connect('clicked',
-            () => this.add_to_blacklist()
+            _ => this.add_to_blacklist()
         );
 
         // add initial applications
         this.add_widgets_from_lists();
 
-        this.preferences.connect('reset', () => {
+        this.preferences.connect('reset', _ => {
             this.remove_all_widgets();
             this.add_widgets_from_lists();
         });
@@ -149,12 +138,12 @@ export const Applications = GObject.registerClass({
     }
 
     add_to_whitelist(app_name = null) {
-        let window_row = new ApplicationRow('whitelist', this, app_name);
+        let window_row = new WindowRow('whitelist', this, app_name);
         this._whitelist.add(window_row);
     }
 
     add_to_blacklist(app_name = null) {
-        let window_row = new ApplicationRow('blacklist', this, app_name);
+        let window_row = new WindowRow('blacklist', this, app_name);
         this._blacklist.add(window_row);
     }
 

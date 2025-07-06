@@ -14,187 +14,249 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import BluetoothController from "./bluetooth.js";
-import Settings from "./settings.js";
-import { PopupBluetoothDeviceMenuItem } from "./ui.js";
-import { Logger } from "./utils.js";
-import GLib from "gi://GLib";
-import { Extension } from "resource:///org/gnome/shell/extensions/extension.js";
-import * as Main from "resource:///org/gnome/shell/ui/main.js";
-import * as PopupMenu from "resource:///org/gnome/shell/ui/popupMenu.js";
-class BluetoothQuickConnect extends Extension {
-  _settings;
-  _logger;
-  _controller;
-  _menu;
-  _proxy;
-  _items = {};
-  _signals = [];
-  _idleMonitorId = null;
-  enable() {
-    this._settings = new Settings(this);
-    this._logger = new Logger(this._settings);
-    this._controller = new BluetoothController();
-    this._logger.log("Enabling extension");
-    this._queueModify();
-    this._menu = new PopupMenu.PopupMenuSection();
-    this._items = {};
-    this._controller.enable();
-    this._refresh();
-    this._connectControllerSignals();
-    this._connectIdleMonitor();
-    this._connectMenuSignals();
-  }
-  disable() {
-    this._logger.log("Disabling extension");
-    this._removeDevicesFromMenu();
-    this._disconnectIdleMonitor();
-    this._settings = null;
-    this._logger = null;
-    this._controller?.destroy();
-    this._controller = null;
-    this._menu = null;
-    this._disconnectSignals();
-  }
-  _queueModify() {
-    GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
-      if (!Main.panel.statusArea.quickSettings._bluetooth) {
-        return GLib.SOURCE_CONTINUE;
-      }
-      const btIndicator = Main.panel.statusArea.quickSettings._bluetooth;
-      const bluetoothToggle = btIndicator.quickSettingsItems[0];
-      bluetoothToggle._updateDeviceVisibility = () => {
-        bluetoothToggle._deviceSection.actor.visible = false;
-        bluetoothToggle._placeholderItem.actor.visible = false;
-      };
-      bluetoothToggle._updateDeviceVisibility();
-      this._proxy = bluetoothToggle._client._proxy;
-      bluetoothToggle.menu.addMenuItem(this._menu, 0);
-      return GLib.SOURCE_REMOVE;
-    });
-  }
-  _connectMenuSignals() {
-    this._connectSignal(this._menu, "open-state-changed", (_menu, isOpen) => {
-      this._logger.log(`Menu toggled: ${isOpen}`);
-      if (isOpen) {
-        this._disconnectIdleMonitor();
-      } else {
-        this._connectIdleMonitor();
-      }
-      if (isOpen && this._settings.isAutoPowerOnEnabled() && this._proxy.BluetoothAirplaneMode) {
-        this._logger.log("Disabling airplane mode");
-        this._proxy.BluetoothAirplaneMode = false;
-      }
-    });
-  }
-  _connectControllerSignals() {
-    this._logger.log("Connecting bluetooth controller signals");
-    this._connectSignal(this._controller, "default-adapter-changed", (_ctrl) => {
-      this._logger.log("Default adapter changed event");
-      this._refresh();
-    });
-    this._connectSignal(this._controller, "device-inserted", (_ctrl, device) => {
-      this._logger.log(`Device inserted event: ${device.alias || device.name}`);
-      if (device.paired) {
-        this._addMenuItem(device);
-      } else {
-        this._logger.log(`Device ${device.alias || device.name} not paired, ignoring`);
-      }
-    });
-    this._connectSignal(this._controller, "device-changed", (_ctrl, device) => {
-      this._logger.log(`Device changed event: ${device.alias || device.name}`);
-      if (device.paired) this._syncMenuItem(device);
-      else
-        this._logger.log(
-          `Skipping change event for unpaired device ${device.alias || device.name}`
-        );
-    });
-    this._connectSignal(this._controller, "device-deleted", (_ctrl, skipDevicePath) => {
-      this._logger.log("Device deleted event");
-      this._refresh(skipDevicePath);
-    });
-  }
-  _syncMenuItem(device) {
-    this._logger.log(`Synchronizing device menu item: ${device.alias || device.name}`);
-    const item = this._items[device.address || ""] || this._addMenuItem(device);
-    item.sync(device);
-  }
-  _addMenuItem(device) {
-    this._logger.log(`Adding device menu item: ${device.alias || device.name} ${device.address}`);
-    const menuItem = new PopupBluetoothDeviceMenuItem(
-      this._controller._client,
-      device,
-      this._logger,
-      {
-        showRefreshButton: this._settings.isShowRefreshButtonEnabled(),
-        closeMenuOnAction: !this._settings.isKeepMenuOnToggleEnabled(),
-        showBatteryValue: this._settings.isShowBatteryValueEnabled(),
-        showBatteryIcon: this._settings.isShowBatteryIconEnabled()
-      }
-    );
-    this._items[device.address || ""] = menuItem;
-    this._menu.addMenuItem(menuItem);
-    return menuItem;
-  }
-  _connectIdleMonitor() {
-    if (this._idleMonitorId) return;
-    this._logger.log("Connecting idle monitor");
-    this._idleMonitorId = GLib.timeout_add(
-      GLib.PRIORITY_DEFAULT,
-      this._settings.autoPowerOffCheckingInterval() * 1e3,
-      () => {
-        if (this._settings.isAutoPowerOffEnabled() && this._controller.getConnectedDevices().length === 0) {
-          this._proxy.BluetoothAirplaneMode = true;
+const Main = imports.ui.main;
+const GLib = imports.gi.GLib;
+
+const ExtensionUtils = imports.misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
+const UiExtension = Me.imports.ui;
+
+const Gettext = imports.gettext.domain(Me.metadata['gettext-domain']);
+const _ = Gettext.gettext;
+
+const Bluetooth = imports.gi.GnomeBluetooth.Client.prototype.get_devices === undefined ?
+    Me.imports.bluetooth_legacy :
+    Me.imports.bluetooth;
+
+const Utils = Me.imports.utils;
+const Settings = Me.imports.settings.Settings;
+const BatteryProvider = Me.imports.power.UPowerBatteryProvider;
+
+
+class BluetoothQuickConnect {
+    constructor(quickSettings, bluetooth, settings) {
+        this._logger = new Utils.Logger(settings);
+        this._logger.info('Initializing extension');
+        if (quickSettings) {
+            let btIndicator = quickSettings._bluetooth;
+            let oldItem = btIndicator.quickSettingsItems[0];
+            let newItem = new Me.imports.quickSettings.BluetoothToggleMenu(oldItem);
+
+            btIndicator.quickSettingsItems = [newItem];
+            quickSettings.menu.addItem(newItem);
+            quickSettings.menu._grid.set_child_below_sibling(newItem, oldItem);
+            quickSettings.menu._grid.remove_child(oldItem);
+            this._proxy = oldItem._client._proxy;
+            this._menu = newItem.itemsSection;
+        } else {
+            this._menu = bluetooth._item.menu;
+            this._proxy = bluetooth._proxy;
         }
-        return true;
-      }
-    );
-  }
-  _disconnectIdleMonitor() {
-    if (!this._idleMonitorId) return;
-    this._logger.log("Disconnecting idle monitor");
-    GLib.Source.remove(this._idleMonitorId);
-    this._idleMonitorId = null;
-  }
-  _connectSignal(subject, signal_name, method) {
-    if (!this._signals) this._signals = [];
-    const signal_id = subject.connect(signal_name, method);
-    this._signals.push({
-      subject,
-      signal_id
-    });
-  }
-  _disconnectSignals() {
-    if (!this._signals) return;
-    for (const signal of this._signals) {
-      signal.subject.disconnect(signal.signal_id);
+        this._controller = new Bluetooth.BluetoothController();
+        this._settings = settings;
+        this._battery_provider = new BatteryProvider(this._logger);
+
+        this._items = {};
     }
-    this._signals = [];
-  }
-  _refresh(skipDevice = null) {
-    this._removeDevicesFromMenu();
-    this._addDevicesToMenu(skipDevice);
-    this._logger.log("Refreshing devices list");
-  }
-  _addDevicesToMenu(skipDevice = null) {
-    for (const device of this._controller.getDevices().sort((a, b) => {
-      if (!a.name) return 0;
-      return a.name.localeCompare(b.name || "");
-    })) {
-      if (device.paired && device.get_object_path() !== skipDevice) {
-        this._addMenuItem(device);
-      } else {
-        this._logger.log(`skipping adding device ${device.alias || device.name}`);
-      }
+
+    enable() {
+        this._logger.info('Enabling extension');
+        this._controller.enable();
+        this._refresh();
+        this._connectControllerSignals();
+        this._connectIdleMonitor();
+        this._connectMenuSignals();
     }
-  }
-  _removeDevicesFromMenu() {
-    for (const item of Object.values(this._items)) {
-      item.destroy();
+
+    _connectMenuSignals() {
+        this._connectSignal(this._menu, 'open-state-changed', (menu, isOpen) => {
+            this._logger.info(`Menu toggled: ${isOpen}`);
+            if (isOpen)
+                this._disconnectIdleMonitor();
+            else
+                this._connectIdleMonitor();
+
+            if (isOpen && this._settings.isAutoPowerOnEnabled() && this._proxy.BluetoothAirplaneMode) {
+                this._logger.info('Disabling airplane mode');
+                this._proxy.BluetoothAirplaneMode = false;
+            }
+        });
     }
-    this._items = {};
-  }
+
+    disable() {
+        this._logger.info('Disabling extension');
+        this._destroy();
+    }
+
+    test() {
+        try {
+            this._logger.info('Testing bluetoothctl');
+            GLib.spawn_command_line_sync("bluetoothctl --version");
+            this._logger.info('Test succeeded');
+        } catch (error) {
+            Main.notifyError(_("Bluetooth Quick Connect"), _("Error trying to execute \"bluetoothctl\""));
+            this._logger.info('Test failed');
+        }
+    }
+
+    _connectControllerSignals() {
+        this._logger.info('Connecting bluetooth controller signals');
+
+        this._connectSignal(this._controller, 'default-adapter-changed', (ctrl) => {
+            this._logger.info('Default adapter changed event');
+            this._refresh();
+        });
+
+        this._connectSignal(this._controller, 'device-inserted', (ctrl, device) => {
+            this._logger.info(`Device inserted event: ${device.name}`);
+            if (device.isPaired) {
+                this._addMenuItem(device);
+            } else {
+                this._logger.info(`Device ${device.name} not paired, ignoring`);
+            }
+        });
+
+        this._connectSignal(this._controller, 'device-changed', (ctrl, device) => {
+            this._logger.info(`Device changed event: ${device.name}`);
+            if (device.isPaired)
+                this._syncMenuItem(device);
+            else
+                this._logger.info(`Skipping change event for unpaired device ${device.name}`);
+        });
+
+        this._connectSignal(this._controller, 'device-deleted', () => {
+            this._logger.info(`Device deleted event`);
+            this._refresh();
+        });
+
+        this._connectSignal(Main.sessionMode, 'updated', () => {
+            this._refresh();
+        });
+    }
+
+    _syncMenuItem(device) {
+        this._logger.info(`Synchronizing device menu item: ${device.name}`);
+        let item = this._items[device.mac] || this._addMenuItem(device);
+
+        item.sync(device);
+    }
+
+    _addMenuItem(device) {
+        this._logger.info(`Adding device menu item: ${device.name} ${device.mac}`);
+
+        let menuItem = new UiExtension.PopupBluetoothDeviceMenuItem(
+            device,
+            this._battery_provider,
+            this._logger,
+            {
+                showRefreshButton: this._settings.isShowRefreshButtonEnabled(),
+                closeMenuOnAction: !this._settings.isKeepMenuOnToggleEnabled(),
+                showBatteryValue: this._settings.isShowBatteryValueEnabled(),
+                showBatteryIcon: this._settings.isShowBatteryIconEnabled()
+            }
+        );
+
+        this._items[device.mac] = menuItem;
+        this._menu.addMenuItem(menuItem);
+
+        return menuItem;
+    }
+
+    _connectIdleMonitor() {
+        if (this._idleMonitorId) return;
+
+        this._logger.info('Connecting idle monitor');
+
+        this._idleMonitorId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, this._settings.autoPowerOffCheckingInterval() * 1000, () => {
+            if (this._settings.isAutoPowerOffEnabled() && this._controller.getConnectedDevices().length === 0)
+                this._proxy.BluetoothAirplaneMode = true;
+
+            return true;
+        });
+    }
+
+    _disconnectIdleMonitor() {
+        if (!this._idleMonitorId) return;
+
+        this._logger.info('Disconnecting idle monitor');
+
+        GLib.Source.remove(this._idleMonitorId);
+        this._idleMonitorId = null;
+    }
+
+    _connectSignal(subject, signal_name, method) {
+        let signal_id = subject.connect(signal_name, method);
+        this._signals.push({
+            subject: subject,
+            signal_id: signal_id
+        });
+    }
+
+    _refresh() {
+        this._removeDevicesFromMenu();
+        this._addDevicesToMenu();
+
+        this._logger.info('Refreshing devices list');
+    }
+
+    _addDevicesToMenu() {
+        this._controller.getDevices().sort((a, b) => {
+            return a.name.localeCompare(b.name);
+        }).forEach((device) => {
+            if (device.isPaired) {
+                let item = this._addMenuItem(device);
+            } else {
+                this._logger.info(`skipping adding device ${device.name}`);
+            }
+        });
+    }
+
+    _removeDevicesFromMenu() {
+        Object.values(this._items).forEach((item) => {
+            item.disconnectSignals();
+            item.destroy();
+        });
+
+        this._items = {};
+    }
+
+    _destroy() {
+        this._disconnectSignals();
+        this._removeDevicesFromMenu();
+        this._disconnectIdleMonitor();
+        if (this._controller)
+            this._controller.destroy();
+    }
 }
-export {
-  BluetoothQuickConnect as default
-};
+
+Utils.addSignalsHelperMethods(BluetoothQuickConnect.prototype);
+
+let bluetoothQuickConnect = null;
+
+function init() {
+    ExtensionUtils.initTranslations(Me.metadata['gettext-domain']);
+}
+
+function enable() {
+    if (Main.panel.statusArea.quickSettings) {
+        bluetoothQuickConnect = new BluetoothQuickConnect(
+            Main.panel.statusArea.quickSettings,
+            null,
+            new Settings()
+        );
+    } else {
+        bluetoothQuickConnect = new BluetoothQuickConnect(
+            null,
+            Main.panel.statusArea.aggregateMenu._bluetooth,
+            new Settings()
+        );
+    }
+
+    bluetoothQuickConnect.test();
+    bluetoothQuickConnect.enable();
+}
+
+function disable() {
+    bluetoothQuickConnect.disable();
+    bluetoothQuickConnect = null;
+}

@@ -1,25 +1,18 @@
-import Shell from 'gi://Shell';
-import Clutter from 'gi://Clutter';
-import Cogl from 'gi://Cogl';
-import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import { adjustAnimationTime } from 'resource:///org/gnome/shell/misc/animationUtils.js';
+'use strict';
 
-import { PaintSignals } from '../conveniences/paint_signals.js';
-// TODO drop Tweener in favour of Clutter's `ease` (will need to extend the blur effect for it)
+const { Shell, GLib, Clutter } = imports.gi;
+const Main = imports.ui.main;
+
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+const { PaintSignals } = Me.imports.effects.paint_signals;
 const Tweener = imports.tweener.tweener;
 
-// TODO: Drop GNOME 46 backwards compatibility
-const transparent = Clutter.Color ?
-    Clutter.Color.from_pixel(0x00000000) :
-    new Cogl.Color({
-        red: 0,
-        green: 0,
-        blue: 0,
-        alpha: 0
-    });
+const transparent = Clutter.Color.from_pixel(0x00000000);
 const FOLDER_DIALOG_ANIMATION_TIME = 200;
+const FRAME_UPDATE_PERIOD = 16;
 
 const DIALOGS_STYLES = [
+    "",
     "appfolder-dialogs-transparent",
     "appfolder-dialogs-light",
     "appfolder-dialogs-dark"
@@ -48,13 +41,13 @@ let _zoomAndFadeIn = function () {
 
     let blur_effect = this.get_effect("appfolder-blur");
 
-    blur_effect.radius = 0;
+    blur_effect.sigma = 0;
     blur_effect.brightness = 1.0;
     Tweener.addTween(blur_effect,
         {
-            radius: sigma * 2,
+            sigma: sigma,
             brightness: brightness,
-            time: adjustAnimationTime(FOLDER_DIALOG_ANIMATION_TIME / 1000),
+            time: FOLDER_DIALOG_ANIMATION_TIME / 1000,
             transition: 'easeOutQuad'
         }
     );
@@ -96,9 +89,9 @@ let _zoomAndFadeOut = function () {
     let blur_effect = this.get_effect("appfolder-blur");
     Tweener.addTween(blur_effect,
         {
-            radius: 0,
+            sigma: 0,
             brightness: 1.0,
-            time: adjustAnimationTime(FOLDER_DIALOG_ANIMATION_TIME / 1000),
+            time: FOLDER_DIALOG_ANIMATION_TIME / 1000,
             transition: 'easeInQuad'
         }
     );
@@ -130,20 +123,22 @@ let _zoomAndFadeOut = function () {
 };
 
 
-export const AppFoldersBlur = class AppFoldersBlur {
-    // we do not use the effects manager and dummy pipelines here because we
-    // really want to manage our sigma value ourself during the transition
-    constructor(connections, settings, _) {
+var AppFoldersBlur = class AppFoldersBlur {
+    constructor(connections, prefs) {
         this.connections = connections;
         this.paint_signals = new PaintSignals(connections);
-        this.settings = settings;
+        this.prefs = prefs;
     }
 
     enable() {
         this._log("blurring appfolders");
 
-        brightness = this.settings.appfolder.BRIGHTNESS;
-        sigma = this.settings.appfolder.SIGMA;
+        brightness = this.prefs.appfolder.CUSTOMIZE
+            ? this.prefs.appfolder.BRIGHTNESS
+            : this.prefs.BRIGHTNESS;
+        sigma = this.prefs.appfolder.CUSTOMIZE
+            ? this.prefs.appfolder.SIGMA
+            : this.prefs.SIGMA;
 
         let appDisplay = Main.overview._overview.controls._appDisplay;
 
@@ -152,15 +147,15 @@ export const AppFoldersBlur = class AppFoldersBlur {
         }
 
         this.connections.connect(
-            appDisplay, 'view-loaded', _ => this.blur_appfolders()
+            appDisplay, 'view-loaded', this.blur_appfolders.bind(this)
         );
     }
 
     blur_appfolders() {
         let appDisplay = Main.overview._overview.controls._appDisplay;
 
-        if (this.settings.HACKS_LEVEL === 1)
-            this._log("appfolders hack level 1");
+        if (this.prefs.HACKS_LEVEL === 1 || this.prefs.HACKS_LEVEL === 2)
+            this._log(`appfolders hack level ${this.prefs.HACKS_LEVEL}`);
 
         appDisplay._folderIcons.forEach(icon => {
             icon._ensureFolderDialog();
@@ -174,7 +169,7 @@ export const AppFoldersBlur = class AppFoldersBlur {
 
             let blur_effect = new Shell.BlurEffect({
                 name: "appfolder-blur",
-                radius: sigma * 2,
+                sigma: sigma,
                 brightness: brightness,
                 mode: Shell.BlurMode.BACKGROUND
             });
@@ -186,12 +181,12 @@ export const AppFoldersBlur = class AppFoldersBlur {
                 style => icon._dialog._viewBox.remove_style_class_name(style)
             );
 
-            if (this.settings.appfolder.STYLE_DIALOGS > 0)
-                icon._dialog._viewBox.add_style_class_name(
-                    DIALOGS_STYLES[this.settings.appfolder.STYLE_DIALOGS - 1]
-                );
+            icon._dialog._viewBox.add_style_class_name(
+                DIALOGS_STYLES[this.prefs.appfolder.STYLE_DIALOGS]
+            );
 
             // finally override the builtin functions
+
             icon._dialog._zoomAndFadeIn = _zoomAndFadeIn;
             icon._dialog._zoomAndFadeOut = _zoomAndFadeOut;
 
@@ -206,7 +201,7 @@ export const AppFoldersBlur = class AppFoldersBlur {
             //
             // [1]: https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/2857
 
-            if (this.settings.HACKS_LEVEL === 1) {
+            if (this.prefs.HACKS_LEVEL === 1 || this.prefs.HACKS_LEVEL === 2) {
                 this.paint_signals.disconnect_all_for_actor(icon._dialog);
                 this.paint_signals.connect(icon._dialog, blur_effect);
             } else {
@@ -217,15 +212,20 @@ export const AppFoldersBlur = class AppFoldersBlur {
 
     set_sigma(s) {
         sigma = s;
-        if (this.settings.appfolder.BLUR)
+        if (this.prefs.appfolder.BLUR)
             this.blur_appfolders();
     }
 
     set_brightness(b) {
         brightness = b;
-        if (this.settings.appfolder.BLUR)
+        if (this.prefs.appfolder.BLUR)
             this.blur_appfolders();
     }
+
+    // not implemented for dynamic blur
+    set_color(c) { }
+    set_noise_amount(n) { }
+    set_noise_lightness(l) { }
 
     disable() {
         this._log("removing blur from appfolders");
@@ -259,7 +259,7 @@ export const AppFoldersBlur = class AppFoldersBlur {
     }
 
     _log(str) {
-        if (this.settings.DEBUG)
-            console.log(`[Blur my Shell > appfolders]   ${str}`);
+        if (this.prefs.DEBUG)
+            log(`[Blur my Shell > appfolders]   ${str}`);
     }
 };

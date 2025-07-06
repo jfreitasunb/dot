@@ -1,10 +1,9 @@
-import Gio from 'gi://Gio';
-import Meta from 'gi://Meta';
-import Shell from 'gi://Shell';
-import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import { Settings } from './Settings.js';
-import { Workspaces } from './Workspaces.js';
-export class KeyBindings {
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+const { Gio, Meta, Shell } = imports.gi;
+const { Settings } = Me.imports.services.Settings;
+const { Workspaces } = Me.imports.services.Workspaces;
+const Main = imports.ui.main;
+var KeyBindings = class KeyBindings {
     constructor() {
         this._settings = Settings.getInstance();
         this._ws = Workspaces.getInstance();
@@ -59,7 +58,7 @@ export class KeyBindings {
                 const name = `activate-${i + 1}-key`;
                 if (value) {
                     this.addKeyBinding(name, () => {
-                        this._ws.switchTo(i, 'keyboard-shortcut');
+                        this._ws.activate(i, { focusWindowIfCurrentWorkspace: true });
                     });
                 }
                 else {
