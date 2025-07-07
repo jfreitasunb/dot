@@ -36,7 +36,7 @@ mod = "mod4"
 terminal = "wezterm" 
 # menu = "dmenu_run -i -p \"Run: \""
 menu = "rofi -show drun"
-navegador = "brave"
+navegador = "brave-browser"
 keys = [
     # Atalhos para o clipboard (com xclip)
     Key([mod], "c", lazy.spawn("xclip -selection clipboard"), desc="Copy selection to clipboard"),
