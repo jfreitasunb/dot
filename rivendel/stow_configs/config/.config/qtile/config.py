@@ -89,6 +89,7 @@ keys = [
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "space", lazy.spawn(menu), desc="Spawn a command using a prompt widget"),
     Key([mod], "b", lazy.spawn(navegador), desc="Spawn a command using a prompt widget"),
+    Key([mod], "h", lazy.spawn("systemctl hibernate"), desc="Entra em hibernação"),
 ]
 
 # Add key bindings to switch VTs in Wayland.
