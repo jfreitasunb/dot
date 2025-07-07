@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Qtile
+Comment=Lightweight tiling window manager
+Exec=/home/jfreitas/.local/bin/qtile start
+Type=XSession
+Keywords=wm;tiling
