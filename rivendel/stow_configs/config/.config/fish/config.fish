@@ -174,7 +174,7 @@ end
 
 ### ALIASES ###
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
-alias rm='trash -v'
+alias rm='gio trash'
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -250,6 +250,8 @@ set -x fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 # Inicialização do pyenv e pyenv-virtualenv
 status --is-interactive; and pyenv init - | source
 status --is-interactive; and pyenv virtualenv-init - | source
+
+atuin init fish | source
 
 #status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
