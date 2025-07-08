@@ -7,6 +7,7 @@
     ],
     "modules-center": [
         "clock",
+        "custom/clipboard",
     ],
     "modules-right": [
         "tray",
@@ -33,6 +34,15 @@
             "7": ["eDP-1"]
         },
     },
+    "custom/clipboard": {
+    "format": "📋", // Ou use um ícone de Nerd Font como 
+    "tooltip": true,
+    "tooltip-format": "{} Itens no Histórico",
+    "exec": "echo $(wmcliphist list | wc -l)", // Conta os itens no histórico
+    "interval": 5, // Atualiza a contagem a cada 5 segundos
+    "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy",
+    "on-click-right": "cliphist wipe" // BÔNUS: Limpa o histórico com o botão direito
+},
     "custom/power": {
         "format": "<span size='small' font='Font Awesome 6 Free'> </span>",
         "tooltip": false,
