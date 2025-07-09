@@ -315,7 +315,7 @@ screens = [
                 ),
                 widget.Sep(**sep_config),
                 widget.Clock(
-                    format="󰥔 %I:%M",
+                    format="󰥔  %d/%m/%y %H:%M",
                     decorations=[
                         RectDecoration(
                             colour=colors["background"],
