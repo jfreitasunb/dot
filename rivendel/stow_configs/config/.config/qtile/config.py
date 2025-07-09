@@ -13,7 +13,7 @@ from colors import colors
 # pylint: disable=invalid-name
 
 mod = "mod4"
-terminal = "kitty"
+terminal = "wezterm"
 widget_radius = 18
 
 
