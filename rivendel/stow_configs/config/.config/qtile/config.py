@@ -301,18 +301,18 @@ screens = [
                     foreground=colors["color2"],
                 ),
                 widget.Sep(**sep_config),
-                widget.Backlight(
-                    fmt="󰃚 {}",
-                    backlight_name=get_backlight_device(),
-                    decorations=[
-                        RectDecoration(
-                            colour=colors["background"],
-                            radius=widget_radius,
-                            filled=True,
-                        )
-                    ],
-                    foreground=colors["color3"],
-                ),
+                #widget.Backlight(
+                #    fmt="󰃚 {}",
+                #    backlight_name=get_backlight_device(),
+                #    decorations=[
+                #        RectDecoration(
+                #            colour=colors["background"],
+                #            radius=widget_radius,
+                #            filled=True,
+                #        )
+                #    ],
+                #    foreground=colors["color3"],
+                #),
                 widget.Sep(**sep_config),
                 widget.Clock(
                     format="󰥔  %d/%m/%y %H:%M",
