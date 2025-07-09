@@ -101,7 +101,7 @@ keys = [
     Key([mod], "s", lazy.spawn(os.path.expanduser("~/.bin/powermenu"))),
     Key([mod], "l", lazy.spawn(os.path.expanduser("~/.bin/lock"))),
     Key(
-        [mod, "mod1"],
+        [mod],
         "c",
         lazy.spawn(
             "rofi -modi 'clipboard:greenclip print' -theme  ~/.config/rofi/clipboard.rasi "
@@ -109,7 +109,7 @@ keys = [
         ),
     ),
     Key(
-        [mod, "mod1"],
+        [mod],
         "n",
         lazy.spawn("networkmanager_dmenu -theme ~/.config/rofi/networkmenu.rasi"),
     ),
