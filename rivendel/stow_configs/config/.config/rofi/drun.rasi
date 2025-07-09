@@ -12,7 +12,7 @@ configuration {
 
 window {
   width: 800px;
-  location: northwest;
+  location: center;
   y-offset: 60;
   x-offset: 10;
 }
