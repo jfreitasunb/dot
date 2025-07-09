@@ -88,7 +88,7 @@ keys = [
     ),
     Key([mod], "k", lazy.spawn(os.path.expanduser("~/.bin/seta_keyboard_login.sh"))),
     Key([mod], "m", lazy.spawn(os.path.expanduser("~/.bin/seta_monitores_login.sh"))),
-    Key([mod, "shift"], "n", lazy.spawn("nemo")),
+    Key([mod], "n", lazy.spawn("nautilus")),
     Key([mod, "shift"], "h", lazy.spawn("systemctl hibernate")),
     Key([mod, "shift"], "r", lazy.spawn(f"{terminal} -e ranger"), desc="Open ranger"),
     Key(
