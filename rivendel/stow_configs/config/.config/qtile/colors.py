@@ -151,3 +151,4 @@ shadow = {
     "color15": "#E8EBF0",
 }
 
+colors = shadow
