@@ -14,7 +14,7 @@ from colors import colors
 
 mod = "mod4"
 terminal = "wezterm"
-widget_radius = 18
+widget_radius = 8
 
 
 @lazy.function
