@@ -350,7 +350,7 @@ screens = [
                     foreground=colors["background"],
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
-                            os.path.expanduser("~/.local/bin/powermenu")
+                            os.path.expanduser("~/.bin/powermenu")
                         )
                     },
                     decorations=[
