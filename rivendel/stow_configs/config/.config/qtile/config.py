@@ -84,7 +84,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key(
-        [mod], "r", lazy.spawn("rofi -show drun -p '' -theme ~/.config/rofi/drun.rasi")
+        [mod], "space", lazy.spawn("rofi -show drun -p '' -theme ~/.config/rofi/drun.rasi")
     ),
     Key([mod, "shift"], "n", lazy.spawn("nemo")),
     Key([mod, "shift"], "r", lazy.spawn(f"{terminal} -e ranger"), desc="Open ranger"),
@@ -413,9 +413,7 @@ wl_xcursor_size = 32
 
 @hook.subscribe.startup_once
 def autostart():
-    """Execute autostart script on Qtile startup."""
-    script = os.path.expanduser("~/.config/qtile/autostart.sh")
-    subprocess.run([script], check=True)
-
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
 
 wmname = "LG3D"
