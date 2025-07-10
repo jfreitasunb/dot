@@ -68,7 +68,7 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 5%-")),
     Key([], "Print", lazy.spawn("flameshot gui")),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
     Key(
         [mod],
         "f",
@@ -92,7 +92,7 @@ keys = [
     Key([mod, "shift"], "h", lazy.spawn("systemctl hibernate")),
     Key([mod, "shift"], "r", lazy.spawn(f"{terminal} -e ranger"), desc="Open ranger"),
     Key(
-        [mod, "shift"],
+        [mod, "control"],
         "c",
         center_floating_window,
         desc="Center floating window",
