@@ -98,7 +98,7 @@ keys = [
         desc="Center floating window",
     ),
     Key([mod], "b", lazy.spawn("brave-browser")),
-    Key([mod], "f", lazy.spawn("firefox")),
+    Key([mod, "shift"], "f", lazy.spawn("firefox")),
     Key([mod], "s", lazy.spawn(os.path.expanduser("~/.bin/powermenu"))),
     Key([mod], "l", lazy.spawn(os.path.expanduser("~/.bin/lock"))),
     Key(
