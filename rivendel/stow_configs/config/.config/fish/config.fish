@@ -167,7 +167,7 @@ function y
     if test -n "$cwd"; and test "$cwd" != "$PWD"
         cd "$cwd"
     end
-    rm -- "$tmp"
+    /usr/bin/rm -- "$tmp"
 end
 
 ### END OF FUNCTIONS ###
