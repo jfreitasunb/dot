@@ -1,2 +1,2 @@
 # dot
-Arquivos de Configuração do Arch Linux
+Arquivos de Configuração do para Linux
