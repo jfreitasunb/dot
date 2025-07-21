@@ -53,7 +53,7 @@ keys = [
     ),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     Key(
         [mod, "shift"],
         "Return",
@@ -88,7 +88,7 @@ keys = [
     ),
     Key([mod], "k", lazy.spawn(os.path.expanduser("~/.bin/seta_keyboard_login.sh"))),
     Key([mod], "m", lazy.spawn(os.path.expanduser("~/.bin/seta_monitores_login.sh"))),
-    Key([mod, "shift"], "n", lazy.spawn("nautilus")),
+    Key([mod], "n", lazy.spawn("nautilus")),
     Key([mod, "shift"], "h", lazy.spawn("systemctl hibernate")),
     Key([mod, "shift"], "r", lazy.spawn(f"{terminal} -e ranger"), desc="Open ranger"),
     Key(
@@ -110,7 +110,7 @@ keys = [
         ),
     ),
     Key(
-        [mod],
+        [mod, "shift"],
         "n",
         lazy.spawn("networkmanager_dmenu -theme ~/.config/rofi/networkmenu.rasi"),
     ),
