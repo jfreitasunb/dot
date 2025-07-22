@@ -57,7 +57,7 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi show -p '' -theme ~/.config/rofi/drun.rasi 
+bindsym $mod+d exec --no-startup-id "rofi show -p '' -theme ~/.config/rofi/drun.rasi" 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -193,3 +193,5 @@ bar {
 
 #exec_always --no-startup-id "setxkbmap -model abnt -layout br -variant thinkpad"
 exec_always --no-startup-id ~/.config/qtile/autostart.sh 
+
+exec_always --no-startup-id ~/.bin/stacki3
