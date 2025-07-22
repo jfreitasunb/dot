@@ -192,4 +192,4 @@ bar {
 }
 
 #exec_always --no-startup-id "setxkbmap -model abnt -layout br -variant thinkpad"
-#exec_always --no-startup-id ~/.config/qtile/autostart.sh 
+exec_always --no-startup-id ~/.config/qtile/autostart.sh 
