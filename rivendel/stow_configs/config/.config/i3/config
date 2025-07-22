@@ -57,7 +57,7 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id "rofi -show drun -p '' -theme ~/.config/rofi/drun.rasi" 
+bindsym $mod+space exec --no-startup-id "rofi -show drun -p '' -theme ~/.config/rofi/drun.rasi" 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -106,7 +106,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Control+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
