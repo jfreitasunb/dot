@@ -7,7 +7,7 @@
 
 configuration {
   icon-theme: "Everforest-Dark";
-  font: "CaskaydiaCove Nerd Font Bold 16";
+  font: "FiraCode Nerd Font 16";
 }
 
 window {

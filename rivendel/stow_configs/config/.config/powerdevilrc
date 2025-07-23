@@ -1,8 +1,0 @@
-[AC][SuspendAndShutdown]
-AutoSuspendAction=0
-AutoSuspendIdleTimeoutSec=600
-SleepMode=3
-
-[Battery][SuspendAndShutdown]
-AutoSuspendAction=0
-SleepMode=3

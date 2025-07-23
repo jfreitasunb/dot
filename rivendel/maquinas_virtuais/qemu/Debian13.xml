@@ -1,24 +1,23 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit debian12
+  virsh edit Debian
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>debian12</name>
-  <uuid>77d8784d-da59-4039-b97a-706c6d145fce</uuid>
+  <name>Debian</name>
+  <uuid>82cce439-684e-4b49-b80c-bbfd7f1329e4</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
-      <libosinfo:os id="http://debian.org/debian/12"/>
+      <libosinfo:os id="http://debian.org/debian/11"/>
     </libosinfo:libosinfo>
   </metadata>
   <memory unit='KiB'>8388608</memory>
   <currentMemory unit='KiB'>8388608</currentMemory>
   <vcpu placement='static'>16</vcpu>
   <os>
-    <type arch='x86_64' machine='pc-q35-10.0'>hvm</type>
-    <boot dev='hd'/>
+    <type arch='x86_64' machine='pc-q35-7.2'>hvm</type>
   </os>
   <features>
     <acpi/>
@@ -26,7 +25,7 @@ or other application using the libvirt API.
     <vmport state='off'/>
   </features>
   <cpu mode='host-passthrough' check='none' migratable='on'>
-    <topology sockets='1' dies='1' clusters='1' cores='8' threads='2'/>
+    <topology sockets='1' dies='1' cores='8' threads='2'/>
   </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
@@ -44,14 +43,17 @@ or other application using the libvirt API.
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2' discard='unmap'/>
-      <source file='/home/jfreitas/VMs/KVM/debian12.qcow2'/>
+      <source file='/home/jfreitas/VMs/KVM/Debian.qcow2'/>
       <target dev='vda' bus='virtio'/>
+      <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
+      <source file='/home/jfreitas/Downloads/debian-12.11.0-amd64-netinst.iso'/>
       <target dev='sda' bus='sata'/>
       <readonly/>
+      <boot order='2'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <controller type='usb' index='0' model='qemu-xhci' ports='15'>
@@ -135,7 +137,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
     <interface type='network'>
-      <mac address='52:54:00:b0:f7:3f'/>
+      <mac address='52:54:00:38:e2:03'/>
       <source network='default'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
@@ -179,7 +181,6 @@ or other application using the libvirt API.
     <redirdev bus='usb' type='spicevmc'>
       <address type='usb' bus='0' port='3'/>
     </redirdev>
-    <watchdog model='itco' action='reset'/>
     <memballoon model='virtio'>
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
     </memballoon>
