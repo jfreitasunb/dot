@@ -4,7 +4,7 @@ declare -A commands=(
     ["⏻ Shutdown"]="systemctl poweroff"
     ["󰜉 Restart"]="systemctl reboot"
     ["󰗽 Logout"]="i3 exit"
-    [" Lock"]="i3lock"
+    [" Lock"]="betterlockscreen -l"
     ["⏾ Suspend"]="systemctl suspend"
 )
 
