@@ -1,12 +1,12 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit Debian
+  virsh edit Debian_Testing
 or other application using the libvirt API.
 -->
 
 <domain type='kvm'>
-  <name>Debian</name>
+  <name>Debian_Testing</name>
   <uuid>82cce439-684e-4b49-b80c-bbfd7f1329e4</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
@@ -43,17 +43,16 @@ or other application using the libvirt API.
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2' discard='unmap'/>
-      <source file='/home/jfreitas/VMs/KVM/Debian.qcow2'/>
+      <source file='/home/jfreitas/VMs/KVM/Debian-testing.qcow2'/>
       <target dev='vda' bus='virtio'/>
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/home/jfreitas/Downloads/debian-12.11.0-amd64-netinst.iso'/>
+      <source file='/home/jfreitas/Downloads/debian-testing-amd64-netinst.iso'/>
       <target dev='sda' bus='sata'/>
       <readonly/>
-      <boot order='2'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <controller type='usb' index='0' model='qemu-xhci' ports='15'>
