@@ -231,3 +231,9 @@ workspace "10" output HDMI-1
 
 # add HDMI monitor when connected
 bindsym $mod+m exec --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal
+
+exec xinput set-prop "ELAN0676:00 04F3:3195 Touchpad" "libinput Tapping Enabled" 1
+
+exec xinput set-prop "ELAN0676:00 04F3:3195 Touchpad" "libinput Natural Scrolling Enabled" 1
+
+exec xinput set-prop "Logitech Wireless Receiver Mouse" "libinput Natural Scrolling Enabled" 1
