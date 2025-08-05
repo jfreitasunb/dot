@@ -913,3 +913,5 @@ rivendel/stow_configs/config/.config/volumeicon/volumeicon
 /rivendel/stow_configs/config/.config/qtile/__pycache__
 /rivendel/stow_configs/config/.config/GIMP
 rivendel/stow_configs/config/.config/nautilus/search-metadata
+rivendel/stow_configs/config/.config/pavucontrol.ini
+/rivendel/stow_configs/config/.config/totem
