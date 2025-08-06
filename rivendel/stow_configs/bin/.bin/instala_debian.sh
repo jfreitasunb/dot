@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ~
 
-sudo apt install curl ninja-build gettext cmake unzip build-essential python3-pip git python3-apt python3-debian pandoc wget php-cli php-mbstring unzip libffi-dev libgmp-dev libx11-dev libxrandr-dev libxinerama-dev libxss-dev pkg-config libxft-dev xorg-dev libxrandr-dev libpango1.0-dev libasound2-dev libxpm-dev libmpd-dev cabal-install
+sudo apt install curl ninja-build gettext cmake unzip build-essential python3-pip git python3-apt python3-debian pandoc wget php-cli php-mbstring unzip libffi-dev libgmp-dev libx11-dev libxrandr-dev libxinerama-dev libxss-dev pkg-config libxft-dev xorg-dev libxrandr-dev libpango1.0-dev libasound2-dev libxpm-dev libmpd-dev cabal-install meson libwayland-dev wayland-protocols scdoc swayidle
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
@@ -98,6 +98,22 @@ cd ~
 rm -rf i3lock-color
 
 wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/main/install.sh -O - -q | sudo bash -s system
+
+cd ~
+
+git clone https://github.com/mortie/swaylock-effects.git
+
+cd swaylock-effects/
+
+meson build
+
+ninja -C build
+
+sudo ninja -C build install
+
+cd ~
+
+rm -rf swaylock-effects
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
