@@ -342,6 +342,16 @@ bindsym $mod+r mode "resize"
 #for_window [app_id="Chromium"] inhibit_idle fullscreen
 for_window [class="Brave-browser"] inhibit_idle fullscreen
 
+#Controle de volume
+# Aumenta o volume em 5%
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+# Diminui o volume em 5%
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+# Alterna entre mudo e ativo
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
 ### Idle configuration
 exec swayidle -w \
          timeout 1200 'swaylock -f -c 000000' \
