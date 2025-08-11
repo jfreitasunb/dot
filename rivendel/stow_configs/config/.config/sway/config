@@ -90,8 +90,8 @@ output HDMI-A-1 {
 exec /home/jfreitas/.bin/stacki3
 
 exec swayidle -w \
-    timeout 300 'swaylock -f' \
-    timeout 600 'swaymsg "output * dpms off"' \
+    timeout 1200 'swaylock -f' \
+    timeout 1320 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f'
 
@@ -351,12 +351,6 @@ bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
 # Alterna entre mudo e ativo
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-
-### Idle configuration
-exec swayidle -w \
-         timeout 1200 'swaylock -f -c 000000' \
-         timeout 1320 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
 
 set $gnome-schema org.gnome.desktop.interface
 
