@@ -170,6 +170,9 @@ function y
     /usr/bin/rm -- "$tmp"
 end
 
+#Zoxide
+zoxide init fish | source
+
 ### END OF FUNCTIONS ###
 
 ### ALIASES ###
