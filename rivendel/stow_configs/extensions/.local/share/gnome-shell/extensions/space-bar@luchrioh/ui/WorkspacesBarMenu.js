@@ -1,13 +1,14 @@
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-const { Clutter, GObject, St } = imports.gi;
-const { KeyBindings } = Me.imports.services.KeyBindings;
-const { Settings } = Me.imports.services.Settings;
-const { WorkspaceNames } = Me.imports.services.WorkspaceNames;
-const { Workspaces } = Me.imports.services.Workspaces;
-const PopupMenu = imports.ui.popupMenu;
-var WorkspacesBarMenu = class WorkspacesBarMenu {
-    constructor(_menu) {
+import Clutter from 'gi://Clutter';
+import GObject from 'gi://GObject';
+import St from 'gi://St';
+import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
+import { KeyBindings } from '../services/KeyBindings.js';
+import { Settings } from '../services/Settings.js';
+import { WorkspaceNames } from '../services/WorkspaceNames.js';
+import { Workspaces } from '../services/Workspaces.js';
+export class WorkspacesBarMenu {
+    constructor(_extension, _menu) {
+        this._extension = _extension;
         this._menu = _menu;
         this._keyBindings = KeyBindings.getInstance();
         this._settings = Settings.getInstance();
@@ -83,10 +84,10 @@ var WorkspacesBarMenu = class WorkspacesBarMenu {
     _initExtensionSettingsButton() {
         const separator = new PopupMenu.PopupSeparatorMenuItem();
         this._menu.addMenuItem(separator);
-        const button = new PopupMenu.PopupMenuItem(`${Me.metadata.name} settings`);
+        const button = new PopupMenu.PopupMenuItem(`${this._extension.metadata.name} settings`);
         button.connect('activate', () => {
             this._menu.close();
-            ExtensionUtils.openPrefs();
+            this._extension.openPreferences();
         });
         this._menu.addMenuItem(button);
     }
@@ -94,7 +95,7 @@ var WorkspacesBarMenu = class WorkspacesBarMenu {
         this._hiddenWorkspacesSection.box.destroy_all_children();
         let hiddenWorkspaces;
         switch (this._settings.indicatorStyle.value) {
-            case 'current-workspace-name':
+            case 'current-workspace':
                 hiddenWorkspaces = this._ws.workspaces.filter((workspace) => workspace.isEnabled &&
                     workspace.index !== this._ws.currentIndex &&
                     !this._ws.isExtraDynamicWorkspace(workspace));
@@ -112,7 +113,14 @@ var WorkspacesBarMenu = class WorkspacesBarMenu {
         if (hiddenWorkspaces.length > 0) {
             this._addSectionHeading('Other workspaces', this._hiddenWorkspacesSection);
             hiddenWorkspaces.forEach((workspace) => {
-                const button = new PopupMenu.PopupMenuItem(this._ws.getDisplayName(workspace));
+                let label;
+                if (this._settings.enableCustomLabelInMenus.value) {
+                    label = this._ws.getDisplayName(workspace);
+                }
+                else {
+                    label = this._ws.getDefaultDisplayName(workspace);
+                }
+                const button = new PopupMenu.PopupMenuItem(label);
                 button.connect('activate', () => {
                     this._menu.close();
                     this._ws.activate(workspace.index);
@@ -125,7 +133,7 @@ var WorkspacesBarMenu = class WorkspacesBarMenu {
         this._manageWorkspaceSection.box.destroy_all_children();
         if (!this._settings.dynamicWorkspaces.value ||
             !this._settings.showEmptyWorkspaces.value ||
-            this._settings.indicatorStyle.value === 'current-workspace-name') {
+            this._settings.indicatorStyle.value === 'current-workspace') {
             const newWorkspaceButton = new PopupMenu.PopupMenuItem('Add new workspace');
             newWorkspaceButton.connect('activate', () => {
                 this._menu.close();
@@ -144,7 +152,7 @@ const PopupMenuItemEntry = GObject.registerClass(class PopupMenuItem extends Pop
     _init(params) {
         super._init(params);
         this.entry = new St.Entry({
-            x_expand: true,
+            xExpand: true,
         });
         this.entry.connect('button-press-event', () => {
             return Clutter.EVENT_STOP;

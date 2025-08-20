@@ -2,15 +2,36 @@
  * Manager Library
  *
  * @author     Javad Rahmatzadeh <j.rahmatzadeh@gmail.com>
- * @copyright  2020-2023
+ * @copyright  2020-2025
  * @license    GPL-3.0-only
  */
 
 /**
  * Apply settings to the GNOME Shell
  */
-var Manager = class
+export class Manager
 {
+    /**
+     * Current shell version
+     *
+     * @type {number|null}
+     */
+    #shellVersion = null;
+
+    /**
+     * Instance of API
+     *
+     * @type {API|null}
+     */
+    #api = null;
+
+    /**
+     * Instance of Gio.Settings
+     *
+     * @type {Settings|null}
+     */
+    #settings = null;
+
     /**
      * Class Constructor
      *
@@ -21,10 +42,10 @@ var Manager = class
      */
     constructor(dependencies, shellVersion)
     {
-        this._api = dependencies['API'] || null;
-        this._settings = dependencies['Settings'] || null;
+        this.#api = dependencies['API'] || null;
+        this.#settings = dependencies['Settings'] || null;
 
-        this._shellVersion = shellVersion;
+        this.#shellVersion = shellVersion;
     }
 
     /**
@@ -34,268 +55,272 @@ var Manager = class
      */
     registerSettingsSignals()
     {
-        this._settings.connect('changed::panel', () => {
-            this._applyPanel(false);
+        this.#settings.connect('changed::panel', () => {
+            this.#applyPanel(false);
         });
 
-        this._settings.connect('changed::panel-in-overview', () => {
-            this._applyPanel(false);
+        this.#settings.connect('changed::panel-in-overview', () => {
+            this.#applyPanel(false);
         });
 
-        this._settings.connect('changed::search', () => {
-            this._applySearch(false);
+        this.#settings.connect('changed::search', () => {
+            this.#applySearch(false);
         });
 
-        this._settings.connect('changed::dash', () => {
-            this._applyDash(false);
+        this.#settings.connect('changed::dash', () => {
+            this.#applyDash(false);
         });
 
-        this._settings.connect('changed::osd', () => {
-            this._applyOSD(false);
+        this.#settings.connect('changed::osd', () => {
+            this.#applyOSD(false);
         });
 
-        this._settings.connect('changed::workspace-popup', () => {
-            this._applyWorkspacePopup(false);
+        this.#settings.connect('changed::workspace-popup', () => {
+            this.#applyWorkspacePopup(false);
         });
 
-        this._settings.connect('changed::workspace', () => {
-            this._applyWorkspace(false);
+        this.#settings.connect('changed::workspace', () => {
+            this.#applyWorkspace(false);
         });
 
-        this._settings.connect('changed::background-menu', () => {
-            this._applyBackgroundMenu(false);
+        this.#settings.connect('changed::background-menu', () => {
+            this.#applyBackgroundMenu(false);
         });
 
-        this._settings.connect('changed::theme', () => {
-            this._applyTheme(false);
+        this.#settings.connect('changed::theme', () => {
+            this.#applyTheme(false);
         });
 
-        this._settings.connect('changed::activities-button', () => {
-            this._applyActivitiesButton(false);
+        this.#settings.connect('changed::activities-button', () => {
+            this.#applyActivitiesButton(false);
         });
 
-        this._settings.connect('changed::app-menu', () => {
-            this._applyAppMenu(false);
+        this.#settings.connect('changed::clock-menu', () => {
+            this.#applyClockMenu(false);
         });
 
-        this._settings.connect('changed::clock-menu', () => {
-            this._applyClockMenu(false);
+        this.#settings.connect('changed::keyboard-layout', () => {
+            this.#applyKeyboardLayout(false);
         });
 
-        this._settings.connect('changed::keyboard-layout', () => {
-            this._applyKeyboardLayout(false);
+        this.#settings.connect('changed::accessibility-menu', () => {
+            this.#applyAccessibilityMenu(false);
         });
 
-        this._settings.connect('changed::accessibility-menu', () => {
-            this._applyAccessibilityMenu(false);
+        this.#settings.connect('changed::quick-settings', () => {
+            this.#applyQuickSettings(false);
         });
 
-        this._settings.connect('changed::aggregate-menu', () => {
-            this._applyAggregateMenu(false);
+        this.#settings.connect('changed::quick-settings-dark-mode', () => {
+            this.#applyQuickSettingsDarkMode(false);
         });
 
-        this._settings.connect('changed::quick-settings', () => {
-            this._applyQuickSettings(false);
+        this.#settings.connect('changed::quick-settings-night-light', () => {
+            this.#applyQuickSettingsNightLight(false);
         });
 
-        this._settings.connect('changed::window-picker-icon', () => {
-            this._applyWindowPickerIcon(false);
+        this.#settings.connect('changed::quick-settings-airplane-mode', () => {
+            this.#applyQuickSettingsAirplaneMode(false);
         });
 
-        this._settings.connect('changed::type-to-search', () => {
-            this._applyTypeToSearch(false);
+        this.#settings.connect('changed::window-picker-icon', () => {
+            this.#applyWindowPickerIcon(false);
         });
 
-        this._settings.connect('changed::workspace-switcher-size', () => {
-            this._applyWorkspaceSwitcherSize(false);
+        this.#settings.connect('changed::type-to-search', () => {
+            this.#applyTypeToSearch(false);
         });
 
-        this._settings.connect('changed::power-icon', () => {
-            this._applyPowerIcon(false);
+        this.#settings.connect('changed::workspace-switcher-size', () => {
+            this.#applyWorkspaceSwitcherSize(false);
         });
 
-        this._settings.connect('changed::top-panel-position', () => {
-            this._applyTopPanelPosition(false);
+        this.#settings.connect('changed::power-icon', () => {
+            this.#applyPowerIcon(false);
         });
 
-        this._settings.connect('changed::panel-notification-icon', () => {
-            this._applyPanelNotificationIcon(false);
+        this.#settings.connect('changed::top-panel-position', () => {
+            this.#applyTopPanelPosition(false);
         });
 
-        this._settings.connect('changed::app-menu-icon', () => {
-            this._applyAppMenuIcon(false);
+        this.#settings.connect('changed::panel-notification-icon', () => {
+            this.#applyPanelNotificationIcon(false);
         });
 
-        this._settings.connect('changed::app-menu-label', () => {
-            this._applyAppMenuLabel(false);
+        this.#settings.connect('changed::clock-menu-position', () => {
+            this.#applyClockMenuPosition(false);
         });
 
-        this._settings.connect('changed::clock-menu-position', () => {
-            this._applyClockMenuPosition(false);
+        this.#settings.connect('changed::clock-menu-position-offset', () => {
+            this.#applyClockMenuPosition(false);
         });
 
-        this._settings.connect('changed::clock-menu-position-offset', () => {
-            this._applyClockMenuPosition(false);
+        this.#settings.connect('changed::show-apps-button', () => {
+            this.#applyShowAppsButton(false);
         });
 
-        this._settings.connect('changed::show-apps-button', () => {
-            this._applyShowAppsButton(false);
+        this.#settings.connect('changed::animation', () => {
+            this.#applyAnimation(false);
         });
 
-        this._settings.connect('changed::animation', () => {
-            this._applyAnimation(false);
+        this.#settings.connect('changed::window-demands-attention-focus', () => {
+            this.#applyWindowDemandsAttentionFocus(false);
         });
 
-        this._settings.connect('changed::activities-button-icon-path', () => {
-            this._applyActivitiesButtonIcon(false);
+        this.#settings.connect('changed::window-maximized-on-create', () => {
+            this.#applyWindowMaximizedOnCreate(false);
         });
 
-        this._settings.connect('changed::activities-button-icon-monochrome', () => {
-            this._applyActivitiesButtonIcon(false);
+        this.#settings.connect('changed::dash-icon-size', () => {
+            this.#applyDashIconSize(false);
         });
 
-        this._settings.connect('changed::activities-button-label', () => {
-            this._applyActivitiesButtonIcon(false);
+        this.#settings.connect('changed::startup-status', () => {
+            this.#applyStartupStatus(false);
         });
 
-        this._settings.connect('changed::window-demands-attention-focus', () => {
-            this._applyWindowDemandsAttentionFocus(false);
+        this.#settings.connect('changed::workspaces-in-app-grid', () => {
+            this.#applyWorkspacesInAppGrid(false);
         });
 
-        this._settings.connect('changed::dash-icon-size', () => {
-            this._applyDashIconSize(false);
+        this.#settings.connect('changed::notification-banner-position', () => {
+            this.#applyNotificationBannerPosition(false);
         });
 
-        this._settings.connect('changed::startup-status', () => {
-            this._applyStartupStatus(false);
+        this.#settings.connect('changed::workspace-switcher-should-show', () => {
+            this.#applyWorkspaceSwitcherShouldShow(false);
         });
 
-        this._settings.connect('changed::workspaces-in-app-grid', () => {
-            this._applyWorkspacesInAppGrid(false);
+        this.#settings.connect('changed::panel-size', () => {
+            this.#applyPanelSize(false);
         });
 
-        this._settings.connect('changed::notification-banner-position', () => {
-            this._applyNotificationBannerPosition(false);
+        this.#settings.connect('changed::panel-button-padding-size', () => {
+            this.#applyPanelButtonPaddingSize(false);
         });
 
-        this._settings.connect('changed::workspace-switcher-should-show', () => {
-            this._applyWorkspaceSwitcherShouldShow(false);
+        this.#settings.connect('changed::panel-indicator-padding-size', () => {
+            this.#applyPanelIndicatorPaddingSize(false);
         });
 
-        this._settings.connect('changed::panel-size', () => {
-            this._applyPanelSize(false);
+        this.#settings.connect('changed::window-preview-caption', () => {
+            this.#applyWindowPreviewCaption(false);
         });
 
-        this._settings.connect('changed::panel-button-padding-size', () => {
-            this._applyPanelButtonPaddingSize(false);
+        this.#settings.connect('changed::window-preview-close-button', () => {
+            this.#applyWindowPreviewCloseButton(false);
         });
 
-        this._settings.connect('changed::panel-indicator-padding-size', () => {
-            this._applyPanelIndicatorPaddingSize(false);
+        this.#settings.connect('changed::workspace-background-corner-size', () => {
+            this.#applyWorkspaceBackgroundCornerSize(false);
         });
 
-        this._settings.connect('changed::window-preview-caption', () => {
-            this._applyWindowPreviewCaption(false);
+        this.#settings.connect('changed::workspace-wrap-around', () => {
+            this.#applyWorkspaceWrapAround(false);
         });
 
-        this._settings.connect('changed::window-preview-close-button', () => {
-            this._applyWindowPreviewCloseButton(false);
+        this.#settings.connect('changed::ripple-box', () => {
+            this.#applyRippleBox(false);
         });
 
-        this._settings.connect('changed::workspace-background-corner-size', () => {
-            this._applyWorkspaceBackgroundCornerSize(false);
+        this.#settings.connect('changed::overlay-key', () => {
+            this.#applyOverlayKey(false);
         });
 
-        this._settings.connect('changed::workspace-wrap-around', () => {
-            this._applyWorkspaceWrapAround(false);
+        this.#settings.connect('changed::double-super-to-appgrid', () => {
+            this.#applyOverlayKey(false);
         });
 
-        this._settings.connect('changed::ripple-box', () => {
-            this._applyRippleBox(false);
+        this.#settings.connect('changed::switcher-popup-delay', () => {
+            this.#applySwitcherPopupDelay(false);
         });
 
-        this._settings.connect('changed::overlay-key', () => {
-            this._applyOverlayKey(false);
+        this.#settings.connect('changed::world-clock', () => {
+            this.#applyWorldClock(false);
         });
 
-        this._settings.connect('changed::double-super-to-appgrid', () => {
-            this._applyOverlayKey(false);
+        this.#settings.connect('changed::weather', () => {
+            this.#applyWeather(false);
         });
 
-        this._settings.connect('changed::switcher-popup-delay', () => {
-            this._applySwitcherPopupDelay(false);
+        this.#settings.connect('changed::calendar', () => {
+            this.#applyCalendar(false);
         });
 
-        this._settings.connect('changed::world-clock', () => {
-            this._applyWorldClock(false);
+        this.#settings.connect('changed::events-button', () => {
+            this.#applyEventsButton(false);
         });
 
-        this._settings.connect('changed::weather', () => {
-            this._applyWeather(false);
+        this.#settings.connect('changed::panel-icon-size', () => {
+            this.#applyPanelIconSize(false);
         });
 
-        this._settings.connect('changed::calendar', () => {
-            this._applyCalendar(false);
+        this.#settings.connect('changed::dash-separator', () => {
+            this.#applyDashSeparator(false);
         });
 
-        this._settings.connect('changed::events-button', () => {
-            this._applyEventsButton(false);
+        this.#settings.connect('changed::looking-glass-width', () => {
+            this.#applyLookingGlassSize(false);
         });
 
-        this._settings.connect('changed::panel-icon-size', () => {
-            this._applyPanelIconSize(false);
+        this.#settings.connect('changed::looking-glass-height', () => {
+            this.#applyLookingGlassSize(false);
         });
 
-        this._settings.connect('changed::dash-separator', () => {
-            this._applyDashSeparator(false);
+        this.#settings.connect('changed::osd-position', () => {
+            this.#applyOSDPosition(false);
         });
 
-        this._settings.connect('changed::looking-glass-width', () => {
-            this._applyLookingGlassSize(false);
+        this.#settings.connect('changed::window-menu-take-screenshot-button', () => {
+            this.#applyWindowMenuTakeScreenshotButton(false);
         });
 
-        this._settings.connect('changed::looking-glass-height', () => {
-            this._applyLookingGlassSize(false);
+        this.#settings.connect('changed::alt-tab-window-preview-size', () => {
+            this.#applyAltTabWindowPreviewSize(false);
         });
 
-        this._settings.connect('changed::osd-position', () => {
-            this._applyOSDPosition(false);
+        this.#settings.connect('changed::alt-tab-small-icon-size', () => {
+            this.#applyAltTabSmallIconSize(false);
         });
 
-        this._settings.connect('changed::window-menu-take-screenshot-button', () => {
-            this._applyWindowMenuTakeScreenshotButton(false);
+        this.#settings.connect('changed::alt-tab-icon-size', () => {
+            this.#applyAltTabIconSize(false);
         });
 
-        this._settings.connect('changed::alt-tab-window-preview-size', () => {
-            this._applyAltTabWindowPreviewSize(false);
-        });
-
-        this._settings.connect('changed::alt-tab-small-icon-size', () => {
-            this._applyAltTabSmallIconSize(false);
-        });
-
-        this._settings.connect('changed::alt-tab-icon-size', () => {
-            this._applyAltTabIconSize(false);
-        });
-
-        this._settings.connect('changed::screen-sharing-indicator', () => {
-            this._applyScreenSharingIndicator(false);
+        this.#settings.connect('changed::screen-sharing-indicator', () => {
+            this.#applyScreenSharingIndicator(false);
         });
         
-        this._settings.connect('changed::screen-recording-indicator', () => {
-            this._applyScreenRecordingIndicator(false);
+        this.#settings.connect('changed::screen-recording-indicator', () => {
+            this.#applyScreenRecordingIndicator(false);
         });
 
-        this._settings.connect('changed::controls-manager-spacing-size', () => {
-            this._applyControlsManagerSpacingSize(false);
+        this.#settings.connect('changed::controls-manager-spacing-size', () => {
+            this.#applyControlsManagerSpacingSize(false);
         });
 
-        this._settings.connect('changed::workspace-peek', () => {
-            this._applyWorkspacePeek(false);
+        this.#settings.connect('changed::workspace-peek', () => {
+            this.#applyWorkspacePeek(false);
         });
 
-        this._settings.connect('changed::dash-app-running', () => {
-            this._applyDashAppRunning(true);
+        this.#settings.connect('changed::dash-app-running', () => {
+            this.#applyDashAppRunning(false);
+        });
+
+        this.#settings.connect('changed::max-displayed-search-results', () => {
+            this.#applyMaxDisplayedSearchResults(false);
+        });
+
+        this.#settings.connect('changed::accent-color-icon', () => {
+            this.#applyAccentColorIcon(false);
+        });
+
+        this.#settings.connect('changed::workspace-thumbnail-to-main-view', () => {
+            this.#applyWorkspaceThumbnailToMainView(false);
+        });
+
+        this.#settings.connect('changed::invert-calendar-column-items', () => {
+            this.#applyInvertCalendarColumnItems(false);
         });
     }
 
@@ -306,66 +331,69 @@ var Manager = class
      */
     applyAll()
     {
-        this._applyTheme(false);
-        this._applyPanel(false);
-        this._applySearch(false);
-        this._applyDash(false);
-        this._applyOSD(false);
-        this._applyWorkspacePopup(false);
-        this._applyWorkspace(false);
-        this._applyBackgroundMenu(false);
-        this._applyActivitiesButton(false);
-        this._applyAppMenu(false);
-        this._applyClockMenu(false);
-        this._applyKeyboardLayout(false);
-        this._applyAccessibilityMenu(false);
-        this._applyAggregateMenu(false);
-        this._applyQuickSettings(false);
-        this._applyWindowPickerIcon(false);
-        this._applyTypeToSearch(false);
-        this._applyWorkspaceSwitcherSize(false);
-        this._applyPowerIcon(false);
-        this._applyTopPanelPosition(false);
-        this._applyPanelNotificationIcon(false);
-        this._applyAppMenuIcon(false);
-        this._applyAppMenuLabel(false);
-        this._applyClockMenuPosition(false);
-        this._applyShowAppsButton(false);
-        this._applyAnimation(false);
-        this._applyActivitiesButtonIcon(false);
-        this._applyWindowDemandsAttentionFocus(false);
-        this._applyDashIconSize(false);
-        this._applyStartupStatus(false);
-        this._applyWorkspacesInAppGrid(false);
-        this._applyNotificationBannerPosition(false);
-        this._applyWorkspaceSwitcherShouldShow(false);
-        this._applyPanelSize(false);
-        this._applyPanelButtonPaddingSize(false);
-        this._applyPanelIndicatorPaddingSize(false);
-        this._applyWindowPreviewCaption(false);
-        this._applyWindowPreviewCloseButton(false);
-        this._applyWorkspaceBackgroundCornerSize(false);
-        this._applyWorkspaceWrapAround(false);
-        this._applyRippleBox(false);
-        this._applyOverlayKey(false);
-        this._applySwitcherPopupDelay(false);
-        this._applyWorldClock(false);
-        this._applyWeather(false);
-        this._applyPanelIconSize(false);
-        this._applyEventsButton(false);
-        this._applyCalendar(false);
-        this._applyDashSeparator(false);
-        this._applyLookingGlassSize(false);
-        this._applyOSDPosition(false);
-        this._applyWindowMenuTakeScreenshotButton(false);
-        this._applyAltTabWindowPreviewSize(false);
-        this._applyAltTabSmallIconSize(false);
-        this._applyAltTabIconSize(false);
-        this._applyScreenSharingIndicator(false);
-        this._applyScreenRecordingIndicator(false);
-        this._applyControlsManagerSpacingSize(false);
-        this._applyWorkspacePeek(false);
-        this._applyDashAppRunning(false);
+        this.#applyTheme(false);
+        this.#applyPanel(false);
+        this.#applySearch(false);
+        this.#applyDash(false);
+        this.#applyOSD(false);
+        this.#applyWorkspacePopup(false);
+        this.#applyWorkspace(false);
+        this.#applyBackgroundMenu(false);
+        this.#applyActivitiesButton(false);
+        this.#applyClockMenu(false);
+        this.#applyKeyboardLayout(false);
+        this.#applyAccessibilityMenu(false);
+        this.#applyQuickSettings(false);
+        this.#applyQuickSettingsDarkMode(false);
+        this.#applyQuickSettingsNightLight(false);
+        this.#applyQuickSettingsAirplaneMode(false);
+        this.#applyWindowPickerIcon(false);
+        this.#applyTypeToSearch(false);
+        this.#applyWorkspaceSwitcherSize(false);
+        this.#applyPowerIcon(false);
+        this.#applyTopPanelPosition(false);
+        this.#applyPanelNotificationIcon(false);
+        this.#applyClockMenuPosition(false);
+        this.#applyShowAppsButton(false);
+        this.#applyAnimation(false);
+        this.#applyWindowDemandsAttentionFocus(false);
+        this.#applyWindowMaximizedOnCreate(false);
+        this.#applyDashIconSize(false);
+        this.#applyStartupStatus(false);
+        this.#applyWorkspacesInAppGrid(false);
+        this.#applyNotificationBannerPosition(false);
+        this.#applyWorkspaceSwitcherShouldShow(false);
+        this.#applyPanelSize(false);
+        this.#applyPanelButtonPaddingSize(false);
+        this.#applyPanelIndicatorPaddingSize(false);
+        this.#applyWindowPreviewCaption(false);
+        this.#applyWindowPreviewCloseButton(false);
+        this.#applyWorkspaceBackgroundCornerSize(false);
+        this.#applyWorkspaceWrapAround(false);
+        this.#applyRippleBox(false);
+        this.#applyOverlayKey(false);
+        this.#applySwitcherPopupDelay(false);
+        this.#applyWorldClock(false);
+        this.#applyWeather(false);
+        this.#applyPanelIconSize(false);
+        this.#applyEventsButton(false);
+        this.#applyCalendar(false);
+        this.#applyDashSeparator(false);
+        this.#applyLookingGlassSize(false);
+        this.#applyOSDPosition(false);
+        this.#applyWindowMenuTakeScreenshotButton(false);
+        this.#applyAltTabWindowPreviewSize(false);
+        this.#applyAltTabSmallIconSize(false);
+        this.#applyAltTabIconSize(false);
+        this.#applyScreenSharingIndicator(false);
+        this.#applyScreenRecordingIndicator(false);
+        this.#applyControlsManagerSpacingSize(false);
+        this.#applyWorkspacePeek(false);
+        this.#applyDashAppRunning(false);
+        this.#applyMaxDisplayedSearchResults(false);
+        this.#applyAccentColorIcon(false);
+        this.#applyWorkspaceThumbnailToMainView(false);
+        this.#applyInvertCalendarColumnItems(false);
     }
 
     /**
@@ -375,66 +403,69 @@ var Manager = class
      */
     revertAll()
     {
-        this._applyTheme(true);
-        this._applyPanel(true);
-        this._applySearch(true);
-        this._applyDash(true);
-        this._applyOSD(true);
-        this._applyWorkspace(true);
-        this._applyWorkspacePopup(true);
-        this._applyBackgroundMenu(true);
-        this._applyActivitiesButton(true);
-        this._applyAppMenu(true);
-        this._applyClockMenu(true);
-        this._applyKeyboardLayout(true);
-        this._applyAccessibilityMenu(true);
-        this._applyAggregateMenu(true);
-        this._applyQuickSettings(true);
-        this._applyWindowPickerIcon(true);
-        this._applyTypeToSearch(true);
-        this._applyWorkspaceSwitcherSize(true);
-        this._applyPowerIcon(true);
-        this._applyTopPanelPosition(true);
-        this._applyPanelNotificationIcon(true);
-        this._applyAppMenuIcon(true);
-        this._applyAppMenuLabel(true);
-        this._applyClockMenuPosition(true);
-        this._applyShowAppsButton(true);
-        this._applyAnimation(true);
-        this._applyActivitiesButtonIcon(true);
-        this._applyWindowDemandsAttentionFocus(true);
-        this._applyDashIconSize(true);
-        this._applyStartupStatus(true);
-        this._applyWorkspacesInAppGrid(true);
-        this._applyNotificationBannerPosition(true);
-        this._applyWorkspaceSwitcherShouldShow(true);
-        this._applyPanelSize(true);
-        this._applyPanelButtonPaddingSize(true);
-        this._applyPanelIndicatorPaddingSize(true);
-        this._applyWindowPreviewCaption(true);
-        this._applyWindowPreviewCloseButton(true);
-        this._applyWorkspaceBackgroundCornerSize(true);
-        this._applyWorkspaceWrapAround(true);
-        this._applyRippleBox(true);
-        this._applyOverlayKey(true);
-        this._applySwitcherPopupDelay(true);
-        this._applyWorldClock(true);
-        this._applyWeather(true);
-        this._applyPanelIconSize(true);
-        this._applyEventsButton(true);
-        this._applyCalendar(true);
-        this._applyDashSeparator(true);
-        this._applyLookingGlassSize(true);
-        this._applyOSDPosition(true);
-        this._applyWindowMenuTakeScreenshotButton(true);
-        this._applyAltTabWindowPreviewSize(true);
-        this._applyAltTabSmallIconSize(true);
-        this._applyAltTabIconSize(true);
-        this._applyScreenSharingIndicator(true);
-        this._applyScreenRecordingIndicator(true);
-        this._applyControlsManagerSpacingSize(true);
-        this._applyWorkspacePeek(true);
-        this._applyDashAppRunning(true);
+        this.#applyTheme(true);
+        this.#applyPanel(true);
+        this.#applySearch(true);
+        this.#applyDash(true);
+        this.#applyOSD(true);
+        this.#applyWorkspace(true);
+        this.#applyWorkspacePopup(true);
+        this.#applyBackgroundMenu(true);
+        this.#applyActivitiesButton(true);
+        this.#applyClockMenu(true);
+        this.#applyKeyboardLayout(true);
+        this.#applyAccessibilityMenu(true);
+        this.#applyQuickSettings(true);
+        this.#applyQuickSettingsDarkMode(true);
+        this.#applyQuickSettingsNightLight(true);
+        this.#applyQuickSettingsAirplaneMode(true);
+        this.#applyWindowPickerIcon(true);
+        this.#applyTypeToSearch(true);
+        this.#applyWorkspaceSwitcherSize(true);
+        this.#applyPowerIcon(true);
+        this.#applyTopPanelPosition(true);
+        this.#applyPanelNotificationIcon(true);
+        this.#applyClockMenuPosition(true);
+        this.#applyShowAppsButton(true);
+        this.#applyAnimation(true);
+        this.#applyWindowDemandsAttentionFocus(true);
+        this.#applyWindowMaximizedOnCreate(true);
+        this.#applyDashIconSize(true);
+        this.#applyStartupStatus(true);
+        this.#applyWorkspacesInAppGrid(true);
+        this.#applyNotificationBannerPosition(true);
+        this.#applyWorkspaceSwitcherShouldShow(true);
+        this.#applyPanelSize(true);
+        this.#applyPanelButtonPaddingSize(true);
+        this.#applyPanelIndicatorPaddingSize(true);
+        this.#applyWindowPreviewCaption(true);
+        this.#applyWindowPreviewCloseButton(true);
+        this.#applyWorkspaceBackgroundCornerSize(true);
+        this.#applyWorkspaceWrapAround(true);
+        this.#applyRippleBox(true);
+        this.#applyOverlayKey(true);
+        this.#applySwitcherPopupDelay(true);
+        this.#applyWorldClock(true);
+        this.#applyWeather(true);
+        this.#applyPanelIconSize(true);
+        this.#applyEventsButton(true);
+        this.#applyCalendar(true);
+        this.#applyDashSeparator(true);
+        this.#applyLookingGlassSize(true);
+        this.#applyOSDPosition(true);
+        this.#applyWindowMenuTakeScreenshotButton(true);
+        this.#applyAltTabWindowPreviewSize(true);
+        this.#applyAltTabSmallIconSize(true);
+        this.#applyAltTabIconSize(true);
+        this.#applyScreenSharingIndicator(true);
+        this.#applyScreenRecordingIndicator(true);
+        this.#applyControlsManagerSpacingSize(true);
+        this.#applyWorkspacePeek(true);
+        this.#applyDashAppRunning(true);
+        this.#applyMaxDisplayedSearchResults(true);
+        this.#applyAccentColorIcon(true);
+        this.#applyWorkspaceThumbnailToMainView(true);
+        this.#applyInvertCalendarColumnItems(true);
     }
 
     /**
@@ -444,16 +475,16 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyPanel(forceOriginal)
+    #applyPanel(forceOriginal)
     {
-        let panel = this._settings.get_boolean('panel');
-        let panelInOverview = this._settings.get_boolean('panel-in-overview');
+        let panel = this.#settings.get_boolean('panel');
+        let panelInOverview = this.#settings.get_boolean('panel-in-overview');
 
         if (forceOriginal || panel) {
-            this._api.panelShow();
+            this.#api.panelShow();
         } else {
             let mode = (panelInOverview) ? 1 : 0;
-            this._api.panelHide(mode);
+            this.#api.panelHide(mode);
         }
     }
 
@@ -464,12 +495,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applySearch(forceOriginal)
+    #applySearch(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('search')) {
-            this._api.searchEntryShow(false);
+        if (forceOriginal || this.#settings.get_boolean('search')) {
+            this.#api.searchEntryShow(false);
         } else {
-            this._api.searchEntryHide(false);
+            this.#api.searchEntryHide(false);
         }
     }
 
@@ -480,12 +511,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyTypeToSearch(forceOriginal)
+    #applyTypeToSearch(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('type-to-search')) {
-            this._api.startSearchEnable();
+        if (forceOriginal || this.#settings.get_boolean('type-to-search')) {
+            this.#api.startSearchEnable();
         } else {
-            this._api.startSearchDisable();
+            this.#api.startSearchDisable();
         }
     }
 
@@ -496,12 +527,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyDash(forceOriginal)
+    #applyDash(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('dash')) {
-            this._api.dashShow();
+        if (forceOriginal || this.#settings.get_boolean('dash')) {
+            this.#api.dashShow();
         } else {
-            this._api.dashHide();
+            this.#api.dashHide();
         }
     }
 
@@ -512,12 +543,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyOSD(forceOriginal)
+    #applyOSD(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('osd')) {
-            this._api.OSDEnable();
+        if (forceOriginal || this.#settings.get_boolean('osd')) {
+            this.#api.OSDEnable();
         } else {
-            this._api.OSDDisable();
+            this.#api.OSDDisable();
         }
     }
 
@@ -528,12 +559,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWorkspacePopup(forceOriginal)
+    #applyWorkspacePopup(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('workspace-popup')) {
-            this._api.workspacePopupEnable();
+        if (forceOriginal || this.#settings.get_boolean('workspace-popup')) {
+            this.#api.workspacePopupEnable();
         } else {
-            this._api.workspacePopupDisable();
+            this.#api.workspacePopupDisable();
         }
     }
 
@@ -544,12 +575,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWorkspace(forceOriginal)
+    #applyWorkspace(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('workspace')) {
-            this._api.workspaceSwitcherShow();
+        if (forceOriginal || this.#settings.get_boolean('workspace')) {
+            this.#api.workspaceSwitcherShow();
         } else {
-            this._api.workspaceSwitcherHide();
+            this.#api.workspaceSwitcherHide();
         }
     }
 
@@ -560,12 +591,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyBackgroundMenu(forceOriginal)
+    #applyBackgroundMenu(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('background-menu')) {
-            this._api.backgroundMenuEnable();
+        if (forceOriginal || this.#settings.get_boolean('background-menu')) {
+            this.#api.backgroundMenuEnable();
         } else {
-            this._api.backgroundMenuDisable();
+            this.#api.backgroundMenuDisable();
         }
     }
 
@@ -576,14 +607,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyTheme(forceOriginal)
+    #applyTheme(forceOriginal)
     {
         let className = 'just-perfection';
 
-        if (forceOriginal || !this._settings.get_boolean('theme')) {
-            this._api.UIStyleClassRemove(className);
+        if (forceOriginal || !this.#settings.get_boolean('theme')) {
+            this.#api.UIStyleClassRemove(className);
         } else {
-            this._api.UIStyleClassAdd(className);
+            this.#api.UIStyleClassAdd(className);
         }
     }
 
@@ -594,28 +625,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyActivitiesButton(forceOriginal)
+    #applyActivitiesButton(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('activities-button')) {
-            this._api.activitiesButtonShow();
+        if (forceOriginal || this.#settings.get_boolean('activities-button')) {
+            this.#api.activitiesButtonShow();
         } else {
-            this._api.activitiesButtonHide();
-        }
-    }
-
-    /**
-     * apply app menu settings
-     *
-     * @param {boolean} forceOriginal force original shell setting
-     *
-     * @returns {void}
-     */
-    _applyAppMenu(forceOriginal)
-    {
-        if (forceOriginal || this._settings.get_boolean('app-menu')) {
-            this._api.appMenuShow();
-        } else {
-            this._api.appMenuHide();
+            this.#api.activitiesButtonHide();
         }
     }
 
@@ -626,12 +641,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyClockMenu(forceOriginal)
+    #applyClockMenu(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('clock-menu')) {
-            this._api.dateMenuShow();
+        if (forceOriginal || this.#settings.get_boolean('clock-menu')) {
+            this.#api.dateMenuShow();
         } else {
-            this._api.dateMenuHide();
+            this.#api.dateMenuHide();
         }
     }
 
@@ -642,12 +657,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyKeyboardLayout(forceOriginal)
+    #applyKeyboardLayout(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('keyboard-layout')) {
-            this._api.keyboardLayoutShow();
+        if (forceOriginal || this.#settings.get_boolean('keyboard-layout')) {
+            this.#api.keyboardLayoutShow();
         } else {
-            this._api.keyboardLayoutHide();
+            this.#api.keyboardLayoutHide();
         }
     }
 
@@ -658,28 +673,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyAccessibilityMenu(forceOriginal)
+    #applyAccessibilityMenu(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('accessibility-menu')) {
-            this._api.accessibilityMenuShow();
+        if (forceOriginal || this.#settings.get_boolean('accessibility-menu')) {
+            this.#api.accessibilityMenuShow();
         } else {
-            this._api.accessibilityMenuHide();
-        }
-    }
-
-    /**
-     * apply aggregate menu settings
-     *
-     * @param {boolean} forceOriginal force original shell setting
-     *
-     * @returns {void}
-     */
-    _applyAggregateMenu(forceOriginal)
-    {
-        if (forceOriginal || this._settings.get_boolean('aggregate-menu')) {
-            this._api.aggregateMenuShow();
-        } else {
-            this._api.aggregateMenuHide();
+            this.#api.accessibilityMenuHide();
         }
     }
 
@@ -690,12 +689,60 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyQuickSettings(forceOriginal)
+    #applyQuickSettings(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('quick-settings')) {
-            this._api.quickSettingsMenuShow();
+        if (forceOriginal || this.#settings.get_boolean('quick-settings')) {
+            this.#api.quickSettingsMenuShow();
         } else {
-            this._api.quickSettingsMenuHide();
+            this.#api.quickSettingsMenuHide();
+        }
+    }
+
+    /**
+     * apply quick settings dark mode
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    #applyQuickSettingsDarkMode(forceOriginal)
+    {
+        if (forceOriginal || this.#settings.get_boolean('quick-settings-dark-mode')) {
+            this.#api.quickSettingsDarkStyleToggleShow();
+        } else {
+            this.#api.quickSettingsDarkStyleToggleHide();
+        }
+    }
+
+    /**
+     * apply quick settings night light
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    #applyQuickSettingsNightLight(forceOriginal)
+    {
+        if (forceOriginal || this.#settings.get_boolean('quick-settings-night-light')) {
+            this.#api.quickSettingsNightLightToggleShow();
+        } else {
+            this.#api.quickSettingsNightLightToggleHide();
+        }
+    }
+
+    /**
+     * apply quick settings airplane mode
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    #applyQuickSettingsAirplaneMode(forceOriginal)
+    {
+        if (forceOriginal || this.#settings.get_boolean('quick-settings-airplane-mode')) {
+            this.#api.quickSettingsAirplaneModeToggleShow();
+        } else {
+            this.#api.quickSettingsAirplaneModeToggleHide();
         }
     }
 
@@ -706,12 +753,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWindowPickerIcon(forceOriginal)
+    #applyWindowPickerIcon(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('window-picker-icon')) {
-            this._api.windowPickerIconEnable();
+        if (forceOriginal || this.#settings.get_boolean('window-picker-icon')) {
+            this.#api.windowPickerIconEnable();
         } else {
-            this._api.windowPickerIconDisable();
+            this.#api.windowPickerIconDisable();
         }
     }
 
@@ -722,14 +769,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWorkspaceSwitcherSize(forceOriginal)
+    #applyWorkspaceSwitcherSize(forceOriginal)
     {
-        let size = this._settings.get_int('workspace-switcher-size');
+        let size = this.#settings.get_int('workspace-switcher-size');
 
         if (forceOriginal || size === 0) {
-            this._api.workspaceSwitcherSetDefaultSize();
+            this.#api.workspaceSwitcherSetDefaultSize();
         } else {
-            this._api.workspaceSwitcherSetSize(size / 100);
+            this.#api.workspaceSwitcherSetSize(size / 100);
         }
     }
 
@@ -740,12 +787,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyPowerIcon(forceOriginal)
+    #applyPowerIcon(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('power-icon')) {
-            this._api.powerIconShow();
+        if (forceOriginal || this.#settings.get_boolean('power-icon')) {
+            this.#api.powerIconShow();
         } else {
-            this._api.powerIconHide();
+            this.#api.powerIconHide();
         }
     }
 
@@ -756,12 +803,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyTopPanelPosition(forceOriginal)
+    #applyTopPanelPosition(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_int('top-panel-position') === 0) {
-            this._api.panelSetPosition(0);
+        if (forceOriginal || this.#settings.get_int('top-panel-position') === 0) {
+            this.#api.panelSetPosition(0);
         } else {
-            this._api.panelSetPosition(1);
+            this.#api.panelSetPosition(1);
         }
     }
 
@@ -772,44 +819,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyPanelNotificationIcon(forceOriginal)
+    #applyPanelNotificationIcon(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('panel-notification-icon')) {
-            this._api.panelNotificationIconEnable();
+        if (forceOriginal || this.#settings.get_boolean('panel-notification-icon')) {
+            this.#api.panelNotificationIconEnable();
         } else {
-            this._api.panelNotificationIconDisable();
-        }
-    }
-
-    /**
-     * apply app menu icon settings
-     *
-     * @param {boolean} forceOriginal force original shell setting
-     *
-     * @returns {void}
-     */
-    _applyAppMenuIcon(forceOriginal)
-    {
-        if (forceOriginal || this._settings.get_boolean('app-menu-icon')) {
-            this._api.appMenuIconEnable();
-        } else {
-            this._api.appMenuIconDisable();
-        }
-    }
-
-    /**
-     * apply app menu label settings
-     *
-     * @param {boolean} forceOriginal force original shell setting
-     *
-     * @returns {void}
-     */
-    _applyAppMenuLabel(forceOriginal)
-    {
-        if (forceOriginal || this._settings.get_boolean('app-menu-label')) {
-            this._api.appMenuLabelEnable();
-        } else {
-            this._api.appMenuLabelDisable();
+            this.#api.panelNotificationIconDisable();
         }
     }
 
@@ -820,14 +835,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyClockMenuPosition(forceOriginal)
+    #applyClockMenuPosition(forceOriginal)
     {
         if (forceOriginal) {
-            this._api.clockMenuPositionSetDefault();
+            this.#api.clockMenuPositionSetDefault();
         } else {
-            let pos = this._settings.get_int('clock-menu-position');
-            let offset = this._settings.get_int('clock-menu-position-offset');
-            this._api.clockMenuPositionSet(pos, offset);
+            let pos = this.#settings.get_int('clock-menu-position');
+            let offset = this.#settings.get_int('clock-menu-position-offset');
+            this.#api.clockMenuPositionSet(pos, offset);
         }
     }
 
@@ -838,12 +853,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyShowAppsButton(forceOriginal)
+    #applyShowAppsButton(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('show-apps-button')) {
-            this._api.showAppsButtonEnable();
+        if (forceOriginal || this.#settings.get_boolean('show-apps-button')) {
+            this.#api.showAppsButtonEnable();
         } else {
-            this._api.showAppsButtonDisable();
+            this.#api.showAppsButtonDisable();
         }
     }
 
@@ -854,11 +869,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyAnimation(forceOriginal)
+    #applyAnimation(forceOriginal)
     {
-        let animation = this._settings.get_int('animation');
+        let animation = this.#settings.get_int('animation');
 
         let factors = [
+            0.01, // almost none
             0.2, // fastest
             0.6, // faster
             0.8, // fast
@@ -868,40 +884,20 @@ var Manager = class
         ];
 
         if (forceOriginal) {
-            this._api.animationSpeedSetDefault();
-            this._api.enableAnimationsSetDefault();
+            this.#api.animationSpeedSetDefault();
+            this.#api.enableAnimationsSetDefault();
         } else if (animation === 0) {
             // disabled
-            this._api.animationSpeedSetDefault();
-            this._api.enableAnimationsSet(false);
+            this.#api.animationSpeedSetDefault();
+            this.#api.enableAnimationsSet(false);
         } else if (animation === 1) {
             // default speed
-            this._api.animationSpeedSetDefault();
-            this._api.enableAnimationsSet(true);
+            this.#api.animationSpeedSetDefault();
+            this.#api.enableAnimationsSet(true);
         } else if (factors[animation - 2] !== undefined) {
             // custom speed
-            this._api.animationSpeedSet(factors[animation - 2]);
-            this._api.enableAnimationsSet(true);
-        }
-    }
-
-    /**
-     * apply show apps button settings
-     *
-     * @param {boolean} forceOriginal force original shell setting
-     *
-     * @returns {void}
-     */
-    _applyActivitiesButtonIcon(forceOriginal)
-    {
-        let iconPath = this._settings.get_string('activities-button-icon-path');
-        let monochrome = this._settings.get_boolean('activities-button-icon-monochrome');
-        let label = this._settings.get_boolean('activities-button-label');
-
-        if (forceOriginal) {
-            this._api.activitiesButtonRemoveIcon();
-        } else {
-            this._api.activitiesButtonAddIcon(1, iconPath, monochrome, label);
+            this.#api.animationSpeedSet(factors[animation - 2]);
+            this.#api.enableAnimationsSet(true);
         }
     }
 
@@ -912,14 +908,32 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWindowDemandsAttentionFocus(forceOriginal)
+    #applyWindowDemandsAttentionFocus(forceOriginal)
     {
-        let focus = this._settings.get_boolean('window-demands-attention-focus');
+        let focus = this.#settings.get_boolean('window-demands-attention-focus');
 
         if (forceOriginal || !focus) {
-            this._api.windowDemandsAttentionFocusDisable();
+            this.#api.windowDemandsAttentionFocusDisable();
         } else {
-            this._api.windowDemandsAttentionFocusEnable();
+            this.#api.windowDemandsAttentionFocusEnable();
+        }
+    }
+
+    /**
+     * apply window maximized on create settings
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    #applyWindowMaximizedOnCreate(forceOriginal)
+    {
+        let maximize = this.#settings.get_boolean('window-maximized-on-create');
+
+        if (forceOriginal || !maximize) {
+            this.#api.windowMaximizedOnCreateDisable();
+        } else {
+            this.#api.windowMaximizedOnCreateEnable();
         }
     }
 
@@ -930,14 +944,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyDashIconSize(forceOriginal)
+    #applyDashIconSize(forceOriginal)
     {
-        let size = this._settings.get_int('dash-icon-size');
+        let size = this.#settings.get_int('dash-icon-size');
 
         if (forceOriginal || size === 0) {
-            this._api.dashIconSizeSetDefault();
+            this.#api.dashIconSizeSetDefault();
         } else {
-            this._api.dashIconSizeSet(size);
+            this.#api.dashIconSizeSet(size);
         }
     }
 
@@ -948,14 +962,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyStartupStatus(forceOriginal)
+    #applyStartupStatus(forceOriginal)
     {
-        let status = this._settings.get_int('startup-status');
+        let status = this.#settings.get_int('startup-status');
 
         if (forceOriginal) {
-            this._api.startupStatusSetDefault();
+            this.#api.startupStatusSetDefault();
         } else {
-            this._api.startupStatusSet(status);
+            this.#api.startupStatusSet(status);
         }
     }
 
@@ -966,14 +980,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWorkspacesInAppGrid(forceOriginal)
+    #applyWorkspacesInAppGrid(forceOriginal)
     {
-        let status = this._settings.get_boolean('workspaces-in-app-grid');
+        let status = this.#settings.get_boolean('workspaces-in-app-grid');
 
         if (forceOriginal || status) {
-            this._api.workspacesInAppGridEnable();
+            this.#api.workspacesInAppGridEnable();
         } else {
-            this._api.workspacesInAppGridDisable();
+            this.#api.workspacesInAppGridDisable();
         }
     }
 
@@ -984,14 +998,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyNotificationBannerPosition(forceOriginal)
+    #applyNotificationBannerPosition(forceOriginal)
     {
-        let pos = this._settings.get_int('notification-banner-position');
+        let pos = this.#settings.get_int('notification-banner-position');
 
         if (forceOriginal) {
-            this._api.notificationBannerPositionSetDefault();
+            this.#api.notificationBannerPositionSetDefault();
         } else {
-            this._api.notificationBannerPositionSet(pos);
+            this.#api.notificationBannerPositionSet(pos);
         }
     }
 
@@ -1002,14 +1016,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWorkspaceSwitcherShouldShow(forceOriginal)
+    #applyWorkspaceSwitcherShouldShow(forceOriginal)
     {
-        let shouldShow = this._settings.get_boolean('workspace-switcher-should-show');
+        let shouldShow = this.#settings.get_boolean('workspace-switcher-should-show');
 
         if (forceOriginal || !shouldShow) {
-            this._api.workspaceSwitcherShouldShowSetDefault();
+            this.#api.workspaceSwitcherShouldShowSetDefault();
         } else {
-            this._api.workspaceSwitcherShouldShow(true);
+            this.#api.workspaceSwitcherShouldShow(true);
         }
     }
 
@@ -1020,14 +1034,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyPanelSize(forceOriginal)
+    #applyPanelSize(forceOriginal)
     {
-        let size = this._settings.get_int('panel-size');
+        let size = this.#settings.get_int('panel-size');
 
         if (forceOriginal || size === 0) {
-            this._api.panelSetDefaultSize();
+            this.#api.panelSetDefaultSize();
         } else {
-            this._api.panelSetSize(size, false);
+            this.#api.panelSetSize(size, false);
         }
     }
 
@@ -1038,14 +1052,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyPanelButtonPaddingSize(forceOriginal)
+    #applyPanelButtonPaddingSize(forceOriginal)
     {
-        let size = this._settings.get_int('panel-button-padding-size');
+        let size = this.#settings.get_int('panel-button-padding-size');
 
         if (forceOriginal || size === 0) {
-            this._api.panelButtonHpaddingSetDefault();
+            this.#api.panelButtonHpaddingSetDefault();
         } else {
-            this._api.panelButtonHpaddingSizeSet(size - 1);
+            this.#api.panelButtonHpaddingSizeSet(size - 1);
         }
     }
 
@@ -1056,14 +1070,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyPanelIndicatorPaddingSize(forceOriginal)
+    #applyPanelIndicatorPaddingSize(forceOriginal)
     {
-        let size = this._settings.get_int('panel-indicator-padding-size');
+        let size = this.#settings.get_int('panel-indicator-padding-size');
 
         if (forceOriginal || size === 0) {
-            this._api.panelIndicatorPaddingSetDefault();
+            this.#api.panelIndicatorPaddingSetDefault();
         } else {
-            this._api.panelIndicatorPaddingSizeSet(size - 1);
+            this.#api.panelIndicatorPaddingSizeSet(size - 1);
         }
     }
 
@@ -1074,14 +1088,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWindowPreviewCaption(forceOriginal)
+    #applyWindowPreviewCaption(forceOriginal)
     {
-        let status = this._settings.get_boolean('window-preview-caption');
+        let status = this.#settings.get_boolean('window-preview-caption');
 
         if (forceOriginal || status) {
-            this._api.windowPreviewCaptionEnable();
+            this.#api.windowPreviewCaptionEnable();
         } else {
-            this._api.windowPreviewCaptionDisable();
+            this.#api.windowPreviewCaptionDisable();
         }
     }
 
@@ -1092,14 +1106,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWindowPreviewCloseButton(forceOriginal)
+    #applyWindowPreviewCloseButton(forceOriginal)
     {
-        let status = this._settings.get_boolean('window-preview-close-button');
+        let status = this.#settings.get_boolean('window-preview-close-button');
 
         if (forceOriginal || status) {
-            this._api.windowPreviewCloseButtonEnable();
+            this.#api.windowPreviewCloseButtonEnable();
         } else {
-            this._api.windowPreviewCloseButtonDisable();
+            this.#api.windowPreviewCloseButtonDisable();
         }
     }
 
@@ -1110,14 +1124,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWorkspaceBackgroundCornerSize(forceOriginal)
+    #applyWorkspaceBackgroundCornerSize(forceOriginal)
     {
-        let size = this._settings.get_int('workspace-background-corner-size');
+        let size = this.#settings.get_int('workspace-background-corner-size');
 
         if (forceOriginal || size === 0) {
-            this._api.workspaceBackgroundRadiusSetDefault();
+            this.#api.workspaceBackgroundRadiusSetDefault();
         } else {
-            this._api.workspaceBackgroundRadiusSet(size - 1);
+            this.#api.workspaceBackgroundRadiusSet(size - 1);
         }
     }
 
@@ -1128,14 +1142,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWorkspaceWrapAround(forceOriginal)
+    #applyWorkspaceWrapAround(forceOriginal)
     {
-        let status = this._settings.get_boolean('workspace-wrap-around');
+        let status = this.#settings.get_boolean('workspace-wrap-around');
 
         if (forceOriginal || !status) {
-            this._api.workspaceWraparoundDisable();
+            this.#api.workspaceWraparoundDisable();
         } else {
-            this._api.workspaceWraparoundEnable();
+            this.#api.workspaceWraparoundEnable();
         }
     }
     
@@ -1146,14 +1160,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyRippleBox(forceOriginal)
+    #applyRippleBox(forceOriginal)
     {
-        let status = this._settings.get_boolean('ripple-box');
+        let status = this.#settings.get_boolean('ripple-box');
 
         if (forceOriginal || status) {
-            this._api.rippleBoxEnable();
+            this.#api.rippleBoxEnable();
         } else {
-            this._api.rippleBoxDisable();
+            this.#api.rippleBoxDisable();
         }
     }
 
@@ -1164,23 +1178,23 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyOverlayKey(forceOriginal)
+    #applyOverlayKey(forceOriginal)
     {
-        let overlayKey = this._settings.get_boolean('overlay-key');
-        let doubleSuper = this._settings.get_boolean('double-super-to-appgrid');
+        let overlayKey = this.#settings.get_boolean('overlay-key');
+        let doubleSuper = this.#settings.get_boolean('double-super-to-appgrid');
 
         if (forceOriginal) {
-            this._api.doubleSuperToAppGridEnable();
-            this._api.unblockOverlayKey();
+            this.#api.doubleSuperToAppGridEnable();
+            this.#api.unblockOverlayKey();
         } else if (!overlayKey) {
-            this._api.doubleSuperToAppGridEnable();
-            this._api.blockOverlayKey();
+            this.#api.doubleSuperToAppGridEnable();
+            this.#api.blockOverlayKey();
         } else {
-            this._api.unblockOverlayKey();
+            this.#api.unblockOverlayKey();
             if (doubleSuper) {
-                this._api.doubleSuperToAppGridEnable();
+                this.#api.doubleSuperToAppGridEnable();
             } else {
-                this._api.doubleSuperToAppGridDisable();
+                this.#api.doubleSuperToAppGridDisable();
             }
         }
     }
@@ -1192,14 +1206,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applySwitcherPopupDelay(forceOriginal)
+    #applySwitcherPopupDelay(forceOriginal)
     {
-        let status = this._settings.get_boolean('switcher-popup-delay');
+        let status = this.#settings.get_boolean('switcher-popup-delay');
 
         if (forceOriginal || status) {
-            this._api.switcherPopupDelaySetDefault();
+            this.#api.switcherPopupDelaySetDefault();
         } else {
-            this._api.removeSwitcherPopupDelay();
+            this.#api.removeSwitcherPopupDelay();
         }
     }
 
@@ -1210,14 +1224,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWorldClock(forceOriginal)
+    #applyWorldClock(forceOriginal)
     {
-        let status = this._settings.get_boolean('world-clock');
+        let status = this.#settings.get_boolean('world-clock');
 
         if (forceOriginal || status) {
-            this._api.worldClocksShow();
+            this.#api.worldClocksShow();
         } else {
-            this._api.worldClocksHide();
+            this.#api.worldClocksHide();
         }
     }
 
@@ -1228,14 +1242,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWeather(forceOriginal)
+    #applyWeather(forceOriginal)
     {
-        let status = this._settings.get_boolean('weather');
+        let status = this.#settings.get_boolean('weather');
 
         if (forceOriginal || status) {
-            this._api.weatherShow();
+            this.#api.weatherShow();
         } else {
-            this._api.weatherHide();
+            this.#api.weatherHide();
         }
     }
 
@@ -1246,14 +1260,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyCalendar(forceOriginal)
+    #applyCalendar(forceOriginal)
     {
-        let status = this._settings.get_boolean('calendar');
+        let status = this.#settings.get_boolean('calendar');
 
         if (forceOriginal || status) {
-            this._api.calendarShow();
+            this.#api.calendarShow();
         } else {
-            this._api.calendarHide();
+            this.#api.calendarHide();
         }
     }
 
@@ -1264,14 +1278,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyEventsButton(forceOriginal)
+    #applyEventsButton(forceOriginal)
     {
-        let status = this._settings.get_boolean('events-button');
+        let status = this.#settings.get_boolean('events-button');
 
         if (forceOriginal || status) {
-            this._api.eventsButtonShow();
+            this.#api.eventsButtonShow();
         } else {
-            this._api.eventsButtonHide();
+            this.#api.eventsButtonHide();
         }
     }
 
@@ -1282,14 +1296,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyPanelIconSize(forceOriginal)
+    #applyPanelIconSize(forceOriginal)
     {
-        let size = this._settings.get_int('panel-icon-size');
+        let size = this.#settings.get_int('panel-icon-size');
 
         if (forceOriginal || size === 0) {
-            this._api.panelIconSetDefaultSize();
+            this.#api.panelIconSetDefaultSize();
         } else {
-            this._api.panelIconSetSize(size);
+            this.#api.panelIconSetSize(size);
         }
     }
 
@@ -1300,14 +1314,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyDashSeparator(forceOriginal)
+    #applyDashSeparator(forceOriginal)
     {
-        let status = this._settings.get_boolean('dash-separator');
+        let status = this.#settings.get_boolean('dash-separator');
 
         if (forceOriginal || status) {
-            this._api.dashSeparatorShow();
+            this.#api.dashSeparatorShow();
         } else {
-            this._api.dashSeparatorHide();
+            this.#api.dashSeparatorHide();
         }
     }
 
@@ -1318,17 +1332,17 @@ var Manager = class
      * 
      * @returns {void}
      */
-    _applyLookingGlassSize(forceOriginal)
+    #applyLookingGlassSize(forceOriginal)
     {
-        let widthSize = this._settings.get_int('looking-glass-width');
-        let heightSize = this._settings.get_int('looking-glass-height');
+        let widthSize = this.#settings.get_int('looking-glass-width');
+        let heightSize = this.#settings.get_int('looking-glass-height');
 
         if (forceOriginal) {
-            this._api.lookingGlassSetDefaultSize();
+            this.#api.lookingGlassSetDefaultSize();
         } else {
             let width = (widthSize !== 0) ? widthSize / 10 : null;
             let height = (heightSize !== 0) ? heightSize / 10 : null;
-            this._api.lookingGlassSetSize(width, height);
+            this.#api.lookingGlassSetSize(width, height);
         }
     }
 
@@ -1339,14 +1353,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyOSDPosition(forceOriginal)
+    #applyOSDPosition(forceOriginal)
     {
-        let pos = this._settings.get_int('osd-position');
+        let pos = this.#settings.get_int('osd-position');
 
         if (forceOriginal || pos === 0) {
-            this._api.osdPositionSetDefault();
+            this.#api.osdPositionSetDefault();
         } else {
-            this._api.osdPositionSet(pos - 1);
+            this.#api.osdPositionSet(pos - 1);
         }
     }
     
@@ -1357,14 +1371,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWindowMenuTakeScreenshotButton(forceOriginal)
+    #applyWindowMenuTakeScreenshotButton(forceOriginal)
     {
-        let status = this._settings.get_boolean('window-menu-take-screenshot-button');
+        let status = this.#settings.get_boolean('window-menu-take-screenshot-button');
 
         if (forceOriginal || status) {
-            this._api.screenshotInWindowMenuShow();
+            this.#api.screenshotInWindowMenuShow();
         } else {
-            this._api.screenshotInWindowMenuHide();
+            this.#api.screenshotInWindowMenuHide();
         }
     }
 
@@ -1375,14 +1389,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyAltTabWindowPreviewSize(forceOriginal)
+    #applyAltTabWindowPreviewSize(forceOriginal)
     {
-        let size = this._settings.get_int('alt-tab-window-preview-size');
+        let size = this.#settings.get_int('alt-tab-window-preview-size');
 
         if (forceOriginal || size === 0) {
-            this._api.altTabWindowPreviewSetDefaultSize();
+            this.#api.altTabWindowPreviewSetDefaultSize();
         } else {
-            this._api.altTabWindowPreviewSetSize(size);
+            this.#api.altTabWindowPreviewSetSize(size);
         }
     }
 
@@ -1393,14 +1407,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyAltTabSmallIconSize(forceOriginal)
+    #applyAltTabSmallIconSize(forceOriginal)
     {
-        let size = this._settings.get_int('alt-tab-small-icon-size');
+        let size = this.#settings.get_int('alt-tab-small-icon-size');
 
         if (forceOriginal || size === 0) {
-            this._api.altTabSmallIconSetDefaultSize();
+            this.#api.altTabSmallIconSetDefaultSize();
         } else {
-            this._api.altTabSmallIconSetSize(size);
+            this.#api.altTabSmallIconSetSize(size);
         }
     }
 
@@ -1411,14 +1425,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyAltTabIconSize(forceOriginal)
+    #applyAltTabIconSize(forceOriginal)
     {
-        let size = this._settings.get_int('alt-tab-icon-size');
+        let size = this.#settings.get_int('alt-tab-icon-size');
 
         if (forceOriginal || size === 0) {
-            this._api.altTabIconSetDefaultSize();
+            this.#api.altTabIconSetDefaultSize();
         } else {
-            this._api.altTabIconSetSize(size);
+            this.#api.altTabIconSetSize(size);
         }
     }
 
@@ -1429,14 +1443,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyScreenSharingIndicator(forceOriginal)
+    #applyScreenSharingIndicator(forceOriginal)
     {
-        let status = this._settings.get_boolean('screen-sharing-indicator');
+        let status = this.#settings.get_boolean('screen-sharing-indicator');
 
         if (forceOriginal || status) {
-            this._api.screenSharingIndicatorEnable();
+            this.#api.screenSharingIndicatorEnable();
         } else {
-            this._api.screenSharingIndicatorDisable();
+            this.#api.screenSharingIndicatorDisable();
         }
     }
 
@@ -1447,14 +1461,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyScreenRecordingIndicator(forceOriginal)
+    #applyScreenRecordingIndicator(forceOriginal)
     {
-        let status = this._settings.get_boolean('screen-recording-indicator');
+        let status = this.#settings.get_boolean('screen-recording-indicator');
 
         if (forceOriginal || status) {
-            this._api.screenRecordingIndicatorEnable();
+            this.#api.screenRecordingIndicatorEnable();
         } else {
-            this._api.screenRecordingIndicatorDisable();
+            this.#api.screenRecordingIndicatorDisable();
         }
     }
 
@@ -1465,14 +1479,14 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyControlsManagerSpacingSize(forceOriginal)
+    #applyControlsManagerSpacingSize(forceOriginal)
     {
-        let size = this._settings.get_int('controls-manager-spacing-size');
+        let size = this.#settings.get_int('controls-manager-spacing-size');
 
         if (forceOriginal || size === 0) {
-            this._api.controlsManagerSpacingSetDefault();
+            this.#api.controlsManagerSpacingSetDefault();
         } else {
-            this._api.controlsManagerSpacingSizeSet(size);
+            this.#api.controlsManagerSpacingSizeSet(size);
         }
     }
 
@@ -1483,12 +1497,12 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyWorkspacePeek(forceOriginal)
+    #applyWorkspacePeek(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('workspace-peek')) {
-            this._api.workspacesViewSpacingSetDefault();
+        if (forceOriginal || this.#settings.get_boolean('workspace-peek')) {
+            this.#api.workspacesViewSpacingSetDefault();
         } else {
-            this._api.workspacesViewSpacingSizeSet(400);
+            this.#api.workspacesViewSpacingSizeSet(400);
         }
     }
     
@@ -1499,12 +1513,78 @@ var Manager = class
      *
      * @returns {void}
      */
-    _applyDashAppRunning(forceOriginal)
+    #applyDashAppRunning(forceOriginal)
     {
-        if (forceOriginal || this._settings.get_boolean('dash-app-running')) {
-            this._api.dashAppRunningDotShow();
+        if (forceOriginal || this.#settings.get_boolean('dash-app-running')) {
+            this.#api.dashAppRunningDotShow();
         } else {
-            this._api.dashAppRunningDotHide();
+            this.#api.dashAppRunningDotHide();
+        }
+    }
+
+    /**
+     * apply max displayed search results
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    #applyMaxDisplayedSearchResults(forceOriginal)
+    {
+        let items = this.#settings.get_int('max-displayed-search-results');
+
+        if (forceOriginal || items === 0) {
+            this.#api.setMaxDisplayedSearchResultToDefault();
+        } else {
+            this.#api.setMaxDisplayedSearchResult(items);
+        }
+    }
+
+    /**
+     * apply accent color icon
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    #applyAccentColorIcon(forceOriginal)
+    {
+        if (forceOriginal || !this.#settings.get_boolean('accent-color-icon')) {
+            this.#api.accentColorIconDisable();
+        } else {
+            this.#api.accentColorIconEnable();
+        }
+    }
+
+    /**
+     * apply workspace thumbnail to main view
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    #applyWorkspaceThumbnailToMainView(forceOriginal)
+    {
+        if (forceOriginal || !this.#settings.get_boolean('workspace-thumbnail-to-main-view')) {
+            this.#api.workspaceThumbnailClickToDefault();
+        } else {
+            this.#api.workspaceThumbnailClickToMainView();
+        }
+    }
+
+    /**
+     * apply invert calendar column items
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    #applyInvertCalendarColumnItems(forceOriginal)
+    {
+        if (forceOriginal || !this.#settings.get_boolean('invert-calendar-column-items')) {
+            this.#api.revertCalendarColumnItemsToDefault();
+        } else {
+            this.#api.invertCalendarColumnItems();
         }
     }
 }
