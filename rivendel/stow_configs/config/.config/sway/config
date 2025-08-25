@@ -70,7 +70,10 @@ include /etc/sway/config-vars.d/*
 ### Iniciando alguns programas 
 exec /home/jfreitas/.bin/sway_wallpaper.sh
 exec /home/jfreitas/.bin/autostart_sway.sh
-exec wl-paste --watch cliphist store
+
+exec env QT_QPA_PLATFORM=wayland copyq
+
+#exec wl-paste --watch cliphist store
 #
 # Example configuration:
 #
@@ -156,7 +159,10 @@ input "type:pointer" {
     bindsym $mod+Space exec $menu
 
     # Atalho para mostrar o histórico do clipboard com wofi
-    bindsym $mod+v exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
+    #bindsym $mod+v exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
+
+    bindsym $mod+c exec "copyq menu"
+
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
