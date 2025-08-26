@@ -12,16 +12,16 @@ LOCAL_BACKUP="/home/jfreitas/OneDrive/Backups/Arch/Backup-Diario/"
 
 # dpkg-query -f '${binary:Package}\n' -W > $LOCAL_BACKUP$NOME_BACKUP
 
-pacman -Qqe | grep -v "$(pacman -Qqm)" >"$LOCAL_BACKUP""$NOME_BACKUP_PACMAN"
+pacman -Qqe | grep -v "$(pacman -Qqm)" > "$LOCAL_BACKUP""$NOME_BACKUP_PACMAN"
 
-pacman -Qqm >"$LOCAL_BACKUP""$NOME_BACKUP_YAY"
+pacman -Qqm > "$LOCAL_BACKUP""$NOME_BACKUP_YAY"
 
 sed -i '/yay/d' "$LOCAL_BACKUP""$NOME_BACKUP_YAY"
 
 find "$LOCAL_BACKUP" -type f -mtime +10 -delete
 
 #salva configuraçoes do gnome
-dconf dump / >"$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
+dconf dump / > "$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
 
 #importa as configuraçoes do gnome
 #dconf load / < dconf-settings.ini
