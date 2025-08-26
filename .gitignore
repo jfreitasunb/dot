@@ -919,3 +919,5 @@ rivendel/stow_configs/config/.config/pavucontrol.ini
 /rivendel/stow_configs/config/.config/freerdp/server
 rivendel/stow_configs/config/.config/onedrive/session_upload.f46Q1yNbkpZ20OjP
 rivendel/stow_configs/config/.config/onedrive/session_upload.*
+rivendel/stow_configs/config/.config/arkrc
+rivendel/stow_configs/config/.config/filetypesrc

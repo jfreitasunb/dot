@@ -113,9 +113,6 @@ export NVM_DIR="$HOME/.config/nvm"
 eval "$(starship init zsh)"
 #. "$HOME/.atuin/bin/env"
 
-eval "$(atuin init zsh)"
-eval "$(pyenv virtualenv-init -)"
-
 #Configuração para o Yazi.
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
