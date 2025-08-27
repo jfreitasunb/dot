@@ -254,6 +254,8 @@ set -x fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 status --is-interactive; and pyenv init - | source
 status --is-interactive; and pyenv virtualenv-init - | source
 
+atuin init fish | source
+
 #status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
 ### SETTING THE STARSHIP PROMPT ###

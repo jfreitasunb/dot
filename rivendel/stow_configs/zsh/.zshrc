@@ -111,7 +111,9 @@ export NVM_DIR="$HOME/.config/nvm"
 #neofetch
 
 eval "$(starship init zsh)"
-#. "$HOME/.atuin/bin/env"
+
+echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
+
 
 #Configuração para o Yazi.
 function y() {
@@ -122,3 +124,5 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+eval "$(atuin init zsh)"
