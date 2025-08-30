@@ -160,6 +160,9 @@ Sort reversed=true
 Speedbar Width=146
 View Style=DetailTree
 
+[Sounds]
+Enable=false
+
 [WM]
 activeBackground=227,229,231
 activeBlend=227,229,231
