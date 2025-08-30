@@ -90,6 +90,26 @@ SystrayContainmentId=8
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;21;22
 
+[Containments][28]
+activityId=c7f57b6a-fe60-456a-b081-5110d6c3f17d
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.slideshow
+
+[Containments][28][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][28][General]
+positions={"1829x1029":[]}
+
+[Containments][28][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/copper_mountain.jpg
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
+
 [Containments][8]
 activityId=
 formfactor=2
@@ -106,7 +126,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][10][Configuration]
-PreloadWeight=55
+PreloadWeight=65
 
 [Containments][8][Applets][11]
 immutability=1
@@ -172,6 +192,9 @@ showPercentage=true
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
+[Containments][8][Applets][25][Configuration]
+PreloadWeight=55
+
 [Containments][8][Applets][26]
 immutability=1
 plugin=org.kde.plasma.bluetooth
@@ -181,7 +204,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][27][Configuration]
-PreloadWeight=42
+PreloadWeight=34
 
 [Containments][8][Applets][9]
 immutability=1
