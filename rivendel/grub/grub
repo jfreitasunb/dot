@@ -5,7 +5,7 @@ GRUB_SAVEDEFAULT=true
 #GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="Debian"
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 resume=UUID=b00887c5-b4ea-4a08-a5ad-f7abf4c2cb7c"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 resume=UUID=29d7a5e0-750a-4470-9f9f-ef56c311bf59"
 GRUB_CMDLINE_LINUX=""
 
 # Preload both GPT and MBR modules so that they are not missed
