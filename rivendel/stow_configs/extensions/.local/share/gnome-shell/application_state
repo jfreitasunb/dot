@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="org.gnome.Shell.Extensions.desktop" score="4" last-seen="1756731448"/>
+    <application id="org.gnome.Tour.desktop" score="1" last-seen="1756726790"/>
+    <application id="org.gnome.Settings.desktop" score="7" last-seen="1756731259"/>
+    <application id="org.gnome.tweaks.desktop" score="5" last-seen="1756731081"/>
+    <application id="org.gnome.Nautilus.desktop" score="39" last-seen="1756731554"/>
+    <application id="gparted.desktop" score="1" last-seen="1756728988"/>
+    <application id="org.gnome.Software.desktop" score="0" last-seen="1756730053"/>
+    <application id="org.wezfurlong.wezterm.desktop" score="93" last-seen="1756731026"/>
+    <application id="firefox-esr.desktop" score="47" last-seen="1756728980"/>
+    <application id="LinuxToys.desktop" score="17" last-seen="1756727745"/>
+    <application id="org.gnome.Terminal.desktop" score="228" last-seen="1756731550"/>
+    <application id="org.gnome.TextEditor.desktop" score="48" last-seen="1756729685"/>
+    <application id="brave-browser.desktop" score="46" last-seen="1756731485"/>
+    <application id="org.gnome.Extensions.desktop" score="1" last-seen="1756731486"/>
+  </context>
+</application-state>
