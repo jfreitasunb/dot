@@ -924,3 +924,4 @@ rivendel/stow_configs/config/.config/filetypesrc
 rivendel/stow_configs/config/.config/konsolesshconfig
 rivendel/stow_configs/config/.config/PlasmaDiscoverUpdates
 rivendel/stow_configs/config/.config/atuin/atuin-receipt.json
+rivendel/maquinas_virtuais/qemu/VoidLinux.xml
