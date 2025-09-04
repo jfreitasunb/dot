@@ -1,4 +1,5 @@
 #!/bin/bash
+
 cd ~
 
 sudo apt install curl ninja-build gettext cmake unzip build-essential python3-pip git python3-apt python3-debian pandoc wget php-cli php-mbstring unzip libffi-dev libgmp-dev libx11-dev libxrandr-dev libxinerama-dev libxss-dev pkg-config libxft-dev xorg-dev libxrandr-dev libpango1.0-dev libasound2-dev libxpm-dev libmpd-dev cabal-install meson libwayland-dev wayland-protocols scdoc
@@ -23,9 +24,11 @@ echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/4/Deb
 
 curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:4/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_4.gpg >/dev/null
 
+sudo apt modernize-sources
+
 sudo apt update
 
-sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 eza feh flameshot flatpak fzf git keepassxc lxappearance lxqt-policykit p7zip p7zip-full pavucontrol pdftk picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev libnotify-dev libcurl4-openssl-dev haskell-stack fonts-liberation libu2f-udev numlockx libx11-dev libxinerama-dev yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk gparted libclang-dev brave-browser sublime-text trayer ldc python3-nautilus imagemagick flex bison libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev ffmpeg libxcb-xtest0 libxcb-cursor0 ffmpegthumbnailer unar jq poppler-utils fd-find zoxide ripgrep luarocks xclip tmux stow xmonad xmobar yad suckless-tools volumeicon-alsa blueman pcmanfm htop wezterm fprintd libpam-fprintd tk-dev sway wofi waybar swaylock wlogout fish libdbus-1-dev python3-pip python3-venv python3-v-sim python-dbus-dev libpangocairo-1.0-0 python3-cairocffi python3-xcffib libxkbcommon-dev libxkbcommon-x11-dev sxhkd i3 polybar bc libfont-freetype-perl autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libgif-dev virtiofsd swayidle
+sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 eza feh flameshot flatpak fzf git keepassxc lxappearance lxqt-policykit p7zip p7zip-full pavucontrol pdftk picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev libnotify-dev libcurl4-openssl-dev haskell-stack fonts-liberation libu2f-udev numlockx libx11-dev libxinerama-dev yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk gparted libclang-dev brave-browser sublime-text trayer ldc python3-nautilus imagemagick flex bison libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev ffmpeg libxcb-xtest0 libxcb-cursor0 ffmpegthumbnailer unar jq poppler-utils fd-find zoxide ripgrep luarocks xclip tmux stow xmonad xmobar yad suckless-tools volumeicon-alsa blueman pcmanfm htop wezterm fprintd libpam-fprintd tk-dev sway wofi waybar swaylock wlogout fish libdbus-1-dev python3-pip python3-venv python3-v-sim python-dbus-dev libpangocairo-1.0-0 python3-cairocffi python3-xcffib libxkbcommon-dev libxkbcommon-x11-dev sxhkd i3 polybar bc libfont-freetype-perl autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libgif-dev virtiofsd swayidle gnome-shell-extensions rofi network-manager-applet copyq
 
 sudo apt install -t bookworm-backports -y curl libcurl4
 
@@ -141,7 +144,9 @@ flatpak install flathub org.libreoffice.LibreOffice
 
 flatpak install flathub com.github.xournalpp.xournalpp
 
-rm -rf .config
+rm -rf ~/.config
+
+rm -rf ~/.local/share/gnome-shell
 
 cd ~/GitHub/dot/rivendel/stow_configs/
 
