@@ -125,14 +125,16 @@ myStartupHook = do
   -- spawnOnce "xmodmap /home/jfreitas/GitHub/dot/Debian/config/Xmodmap"
   spawnOnce "xsetroot -cursor_name left_ptr"
   --spawnOnce "lxsession"
-  spawnOnce "picom -b --config ~/.config/picom/picom.conf --experimental-backends"
+  spawnOnce "picom -b --config ~/.config/picom/picom.conf"
   spawnOnce "nm-applet"
   spawnOnce "volumeicon"
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 2 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 " ++ colorTrayer ++ " --height 28")
-  --spawnOnce "nitrogen --restore &"
+  spawn "copyq"
   spawnOnce "/home/jfreitas/.bin/wallpaper.sh"
   spawn "pkill ibus"
   spawnOnce "/home/jfreitas/.bin/seta_keyboard_login.sh"
+  spawn "systemctl --user start gnome-keyring-daemon.service"
+  spawn "gnome-keyring-daemon --start --components='pkcs11,secrets,ssh'"
   setWMName "Jota"
 
 myNavigation :: TwoD a (Maybe a)
@@ -489,7 +491,8 @@ myKeys c =
   , ("M-S-q", addName "Quit XMonad"            $ io exitSuccess)
   , ("M-S-c", addName "Kill focused window"    $ kill1)
   , ("M-S-a", addName "Kill all windows on WS" $ killAll)
-  , ("M-S-<Return>", addName "Run prompt"      $ spawn "dmenu_run -i -p \"Run: \"")
+  , ("M-<Space>", addName "Run prompt"      $ spawn "rofi -show drun -p '' -theme ~/.config/rofi/drun.rasi")
+  , ("M-c", addName "Clipboard"      $ spawn "copyq toggle")
   , ("M-/", addName "DTOS Help"                $ spawn "~/.bin/xmonad_keys.sh")]
 
 -- KB_GROUPS Switch to workspace
@@ -560,7 +563,7 @@ myKeys c =
   -- KB_GROUPS Switch layouts
   ^++^ subKeys "Switch layouts"
   [ ("M-<Tab>", addName "Switch to next layout"   $ sendMessage NextLayout)
-  , ("M-<Space>", addName "Toggle noborders/full" $ sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts)]
+  , ("M-S-<Space>", addName "Toggle noborders/full" $ sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts)]
 
   -- KB_GROUPS Window resizing
   ^++^ subKeys "Window resizing"
