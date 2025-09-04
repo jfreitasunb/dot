@@ -925,3 +925,7 @@ rivendel/stow_configs/config/.config/konsolesshconfig
 rivendel/stow_configs/config/.config/PlasmaDiscoverUpdates
 rivendel/stow_configs/config/.config/atuin/atuin-receipt.json
 rivendel/maquinas_virtuais/qemu/VoidLinux.xml
+rivendel/stow_configs/config/.config/gnome-initial-setup-done
+rivendel/stow_configs/config/.config/org.gnome.Ptyxis/session.gvariant
+rivendel/maquinas_virtuais/qemu/Debian.xml
+/rivendel/stow_configs/config/.config/evince
