@@ -25,6 +25,11 @@ return {
 			action = wezterm.action.ToggleFullScreen,
 		},
 		{
+			key = "V",
+			mods = "CTRL",
+			action = wezterm.action.PasteFrom("Clipboard"),
+		},
+		{
 			key = "'",
 			mods = "CTRL",
 			action = wezterm.action.ClearScrollback("ScrollbackAndViewport"),
