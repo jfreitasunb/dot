@@ -893,3 +893,10 @@ rivendel/stow_configs/config/.config/yazi/keymap.toml
 rivendel/stow_configs/config/.config/yazi/keymap.toml-1749649365043113
 rivendel/stow_configs/config/.config/yazi/yazi.toml-1749649365038831
 stow_configs/config/.config/gtkrc
+/rivendel/stow_configs/config/.config/fastfetch
+/rivendel/stow_configs/config/.config/balenaEtcher
+rivendel/stow_configs/config/.config/onedrive/resume_download.*
+/rivendel/stow_configs/config/.config/xournalpp/metadata
+rivendel/stow_configs/config/.config/autostart/dropbox.desktop
+rivendel/stow_configs/config/.config/htop/htoprc
+rivendel/stow_configs/config/.config/hypr/hyprpaper.conf
