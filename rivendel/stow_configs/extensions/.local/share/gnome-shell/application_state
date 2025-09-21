@@ -1,28 +1,20 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="gparted.desktop" score="1" last-seen="1756767925"/>
-    <application id="org.gnome.tweaks.desktop" score="3" last-seen="1756770801"/>
-    <application id="org.wezfurlong.wezterm.desktop" score="135" last-seen="1757005989"/>
-    <application id="org.gnome.Software.desktop" score="4" last-seen="1756771006"/>
-    <application id="org.gnome.Shell.Extensions.desktop" score="3" last-seen="1756770978"/>
-    <application id="com.bitwarden.desktop.desktop" score="13" last-seen="1756771381"/>
-    <application id="LinuxToys.desktop" score="3" last-seen="1756773132"/>
-    <application id="org.libreoffice.LibreOffice.desktop" score="0" last-seen="1756995015"/>
-    <application id="brave-browser.desktop" score="1112" last-seen="1757006148"/>
-    <application id="org.libreoffice.LibreOffice.writer.desktop" score="79" last-seen="1756994309"/>
-    <application id="virt-manager.desktop" score="124" last-seen="1757003755"/>
-    <application id="org.pwmt.zathura.desktop" score="0" last-seen="1756995023"/>
-    <application id="org.gnome.Nautilus.desktop" score="56" last-seen="1757003426"/>
-    <application id="io.github.shiftey.Desktop.desktop" score="4" last-seen="1756771712"/>
-    <application id="org.gnome.TextEditor.desktop" score="44" last-seen="1756770413"/>
-    <application id="org.gnome.Terminal.desktop" score="343" last-seen="1757004561"/>
-    <application id="sublime_text.desktop" score="7" last-seen="1757004807"/>
-    <application id="dropbox.desktop" score="0" last-seen="1756991899"/>
-    <application id="vlc.desktop" score="448" last-seen="1757003416"/>
-    <application id="org.gnome.Loupe.desktop" score="0" last-seen="1756995036"/>
-    <application id="org.gnome.Extensions.desktop" score="4" last-seen="1757006153"/>
-    <application id="firefox-esr.desktop" score="21" last-seen="1757005941"/>
-    <application id="org.gnome.Settings.desktop" score="6" last-seen="1756771045"/>
+    <application id="org.gnome.FileRoller.desktop" score="1" last-seen="1758052436"/>
+    <application id="org.gnome.Software.desktop" score="4" last-seen="1757967404"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="2" last-seen="1758053078"/>
+    <application id="org.wezfurlong.wezterm.desktop" score="56" last-seen="1758065173"/>
+    <application id="com.bitwarden.desktop.desktop" score="42" last-seen="1758063476"/>
+    <application id="virt-manager.desktop" score="0" last-seen="1758053217"/>
+    <application id="brave-browser.desktop" score="475" last-seen="1758120030"/>
+    <application id="org.gnome.SystemMonitor.desktop" score="1" last-seen="1757975128"/>
+    <application id="libreoffice-calc.desktop" score="822" last-seen="1758052158"/>
+    <application id="libreoffice-startcenter.desktop" score="0" last-seen="1758051484"/>
+    <application id="org.gnome.Console.desktop" score="187" last-seen="1758120310"/>
+    <application id="org.gnome.Nautilus.desktop" score="226" last-seen="1758053703"/>
+    <application id="org.gnome.TextEditor.desktop" score="212" last-seen="1758119335"/>
+    <application id="org.gnome.Extensions.desktop" score="2" last-seen="1758053083"/>
+    <application id="org.gnome.Settings.desktop" score="9" last-seen="1758041779"/>
   </context>
 </application-state>
