@@ -18,7 +18,7 @@ reflector -c Brazil -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 
 pacman -Syyy
 
-pacman -S acpi acpi_call acpid alsa-utils awesome-terminal-fonts base-devel bash-completion bat bpytop bridge-utils cmake curl dialog dnsmasq dnsutils dosfstools ebtables edk2-ovmf efibootmgr grub gvfs inetutils ipset iptables-nft less libvirt linux-lts-headers mtools network-manager-applet networkmanager nfs-utils nss-mdns ntfs-3g openbsd-netcat openssh os-prober pacman-contrib p7zip pipewire pipewire-alsa pipewire-jack pipewire-pulse python-beautifulsoup4 python-pip qemu-full terminus-font tlp ttf-fira-code ttf-fira-mono ttf-font-awesome unzip vde2 virt-manager wget wpa_supplicant xdg-user-dirs xdg-utils xorg-xinit zsh bluez bluez-utils grub-btrfs ttf-cascadia-code-nerd ttf-iosevka-nerd
+pacman -S --needed acpi acpi_call acpid alsa-utils awesome-terminal-fonts base-devel bash-completion bat bpytop bridge-utils cmake curl dialog dnsmasq dnsutils dosfstools ebtables edk2-ovmf efibootmgr grub gvfs inetutils ipset iptables-nft less libvirt linux-lts-headers mtools network-manager-applet networkmanager nfs-utils nss-mdns ntfs-3g openbsd-netcat openssh os-prober pacman-contrib p7zip pipewire pipewire-alsa pipewire-jack pipewire-pulse python-beautifulsoup4 python-pip qemu-full terminus-font tlp ttf-fira-code ttf-fira-mono ttf-font-awesome unzip vde2 virt-manager wget wpa_supplicant xdg-user-dirs xdg-utils xorg-xinit zsh bluez bluez-utils ttf-cascadia-code-nerd ttf-iosevka-nerd
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 
