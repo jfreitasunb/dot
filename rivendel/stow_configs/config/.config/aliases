@@ -3,7 +3,6 @@ alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias cat='bat'
 alias jn='jupyter notebook'
-alias z='zoxide'
 
 #### Docker ####
 alias dcd='docker-compose down --rmi all --volumes'

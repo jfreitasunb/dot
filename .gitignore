@@ -900,3 +900,20 @@ rivendel/stow_configs/config/.config/onedrive/resume_download.*
 rivendel/stow_configs/config/.config/autostart/dropbox.desktop
 rivendel/stow_configs/config/.config/htop/htoprc
 rivendel/stow_configs/config/.config/hypr/hyprpaper.conf
+/rivendel/stow_configs/config/.config/rstudio/Cache
+/rivendel/stow_configs/config/.config/rstudio/Code Cache
+rivendel/stow_configs/config/.config/rstudio/Cookies
+rivendel/stow_configs/config/.config/rstudio/Cookies-journal
+rivendel/stow_configs/config/.config/rstudio/crash-handler.conf
+/rivendel/stow_configs/config/.config/rstudio/Crashpad
+/rivendel/stow_configs/config/.config/rstudio/DawnGraphiteCache
+/rivendel/stow_configs/config/.config/rstudio/DawnWebGPUCache
+rivendel/stow_configs/config/.config/rstudio/Dictionaries/pt-BR-3-0.bdic
+/rivendel/stow_configs/config/.config/rstudio/GPUCache
+/rivendel/stow_configs/config/.config/rstudio/Local Storage
+rivendel/stow_configs/config/.config/rstudio/Network Persistent State
+/rivendel/stow_configs/config/.config/rstudio/Session Storage
+/rivendel/stow_configs/config/.config/rstudio/Shared Dictionary
+rivendel/stow_configs/config/.config/rstudio/SharedStorage
+rivendel/stow_configs/config/.config/rstudio/Trust Tokens
+rivendel/stow_configs/config/.config/rstudio/Trust Tokens-journal

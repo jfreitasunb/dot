@@ -1,0 +1,46 @@
+{
+    "jobs_tab_visibility": "shown",
+    "initial_working_directory": "~",
+    "pdf_previewer": "none",
+    "posix_terminal_shell": "bash",
+    "text_rendering": "geometricPrecision",
+    "editor_theme": "Material",
+    "remove_history_duplicates": true,
+    "auto_detect_indentation": true,
+    "margin_column": 100,
+    "reformat_on_save": true,
+    "auto_append_newline": true,
+    "strip_trailing_whitespace": true,
+    "default_encoding": "UTF-8",
+    "panes": {
+        "quadrants": [
+            "Source",
+            "Console",
+            "TabSet1",
+            "TabSet2"
+        ],
+        "tabSet1": [
+            "Environment",
+            "History",
+            "Build",
+            "VCS",
+            "Presentation"
+        ],
+        "tabSet2": [
+            "Files",
+            "Plots",
+            "Presentations"
+        ],
+        "hiddenTabSet": [
+            "Connections",
+            "Packages",
+            "Help",
+            "Tutorial",
+            "Viewer",
+            "Presentations"
+        ],
+        "console_left_on_top": false,
+        "console_right_on_top": true,
+        "additional_source_columns": 0
+    }
+}
