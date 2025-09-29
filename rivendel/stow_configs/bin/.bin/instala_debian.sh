@@ -52,8 +52,6 @@ cd onedrive
 
 make clean
 
-make
-
 sudo make install
 
 deactivate
