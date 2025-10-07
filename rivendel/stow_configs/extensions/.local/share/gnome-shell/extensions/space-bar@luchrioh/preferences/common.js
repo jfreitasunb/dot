@@ -162,7 +162,7 @@ class PreferencesRow {
     }
 }
 export function addToggle({ group, key, title, subtitle = null, settings, shortcutLabel, }) {
-    const row = new Adw.ActionRow({ title, subtitle });
+    const row = new Adw.ActionRow({ title, subtitle: subtitle });
     group.add(row);
     if (shortcutLabel) {
         const gtkShortcutLabel = new Gtk.ShortcutLabel({
@@ -181,7 +181,7 @@ export function addToggle({ group, key, title, subtitle = null, settings, shortc
     return new PreferencesRow(settings, row, key, (enabled) => toggle.set_sensitive(enabled));
 }
 export function addLinkButton({ group, title, subtitle = null, uri, }) {
-    const row = new Adw.ActionRow({ title, subtitle });
+    const row = new Adw.ActionRow({ title, subtitle: subtitle });
     group.add(row);
     const icon = new Gtk.Image({ iconName: 'adw-external-link-symbolic' });
     row.set_activatable(true);
@@ -189,7 +189,7 @@ export function addLinkButton({ group, title, subtitle = null, uri, }) {
     row.add_suffix(icon);
 }
 export function addTextEntry({ group, key, title, subtitle = null, settings, window, shortcutLabel, }) {
-    const row = new Adw.ActionRow({ title, subtitle });
+    const row = new Adw.ActionRow({ title, subtitle: subtitle });
     group.add(row);
     if (shortcutLabel) {
         const gtkShortcutLabel = new Gtk.ShortcutLabel({
@@ -222,7 +222,7 @@ export function addCombo({ group, key, title, subtitle = null, options, settings
     }
     const row = new Adw.ComboRow({
         title,
-        subtitle,
+        subtitle: subtitle,
         model,
         expression: Gtk.PropertyExpression.new(DropDownChoice, null, 'title'),
     });
@@ -251,7 +251,7 @@ export function addCombo({ group, key, title, subtitle = null, options, settings
     });
 }
 export function addSpinButton({ group, key, title, subtitle = null, settings, lower, upper, step = 1, }) {
-    const row = new Adw.ActionRow({ title, subtitle });
+    const row = new Adw.ActionRow({ title, subtitle: subtitle });
     group.add(row);
     const spinner = new Gtk.SpinButton({
         adjustment: new Gtk.Adjustment({
@@ -271,7 +271,7 @@ export function addSpinButton({ group, key, title, subtitle = null, settings, lo
     });
 }
 export function addColorButton({ group, key, title, subtitle = null, settings, window, }) {
-    const row = new Adw.ActionRow({ title, subtitle });
+    const row = new Adw.ActionRow({ title, subtitle: subtitle });
     group.add(row);
     const colorButton = new Gtk.ColorButton({
         valign: Gtk.Align.CENTER,
@@ -296,7 +296,7 @@ export function addColorButton({ group, key, title, subtitle = null, settings, w
 export function addKeyboardShortcut({ window, group, key, title, subtitle = null, settings, }) {
     const row = new Adw.ActionRow({
         title,
-        subtitle,
+        subtitle: subtitle,
         activatable: true,
     });
     group.add(row);

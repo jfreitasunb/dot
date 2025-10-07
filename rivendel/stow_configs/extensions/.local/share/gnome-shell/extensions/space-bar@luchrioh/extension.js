@@ -1,3 +1,4 @@
+import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 import { KeyBindings } from './services/KeyBindings.js';
 import { ScrollHandler } from './services/ScrollHandler.js';
 import { Settings } from './services/Settings.js';
@@ -6,7 +7,6 @@ import { TopBarAdjustments } from './services/TopBarAdjustments.js';
 import { Workspaces } from './services/Workspaces.js';
 import { WorkspacesBar } from './ui/WorkspacesBar.js';
 import { destroyAllHooks } from './utils/hook.js';
-import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 export default class SpaceBarExtension extends Extension {
     constructor() {
         super(...arguments);

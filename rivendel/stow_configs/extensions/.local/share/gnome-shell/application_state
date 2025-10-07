@@ -1,20 +1,18 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="org.gnome.FileRoller.desktop" score="1" last-seen="1758052436"/>
-    <application id="org.gnome.Software.desktop" score="4" last-seen="1757967404"/>
-    <application id="org.gnome.Shell.Extensions.desktop" score="2" last-seen="1758053078"/>
-    <application id="org.wezfurlong.wezterm.desktop" score="56" last-seen="1758065173"/>
-    <application id="com.bitwarden.desktop.desktop" score="42" last-seen="1758063476"/>
-    <application id="virt-manager.desktop" score="0" last-seen="1758053217"/>
-    <application id="brave-browser.desktop" score="475" last-seen="1758120030"/>
-    <application id="org.gnome.SystemMonitor.desktop" score="1" last-seen="1757975128"/>
-    <application id="libreoffice-calc.desktop" score="822" last-seen="1758052158"/>
-    <application id="libreoffice-startcenter.desktop" score="0" last-seen="1758051484"/>
-    <application id="org.gnome.Console.desktop" score="187" last-seen="1758120310"/>
-    <application id="org.gnome.Nautilus.desktop" score="226" last-seen="1758053703"/>
-    <application id="org.gnome.TextEditor.desktop" score="212" last-seen="1758119335"/>
-    <application id="org.gnome.Extensions.desktop" score="2" last-seen="1758053083"/>
-    <application id="org.gnome.Settings.desktop" score="9" last-seen="1758041779"/>
+    <application id="gparted.desktop" score="59" last-seen="1759789200"/>
+    <application id="org.gnome.Terminal.Preferences.desktop" score="10" last-seen="1759788732"/>
+    <application id="org.gnome.Nautilus.desktop" score="1091" last-seen="1759789538"/>
+    <application id="org.gnome.Evolution.desktop" score="0" last-seen="1759273553"/>
+    <application id="org.pwmt.zathura.desktop" score="1" last-seen="1759769501"/>
+    <application id="org.gnome.Terminal.desktop" score="1621" last-seen="1759789489"/>
+    <application id="firefox-esr.desktop" score="18" last-seen="1759273554"/>
+    <application id="org.wezfurlong.wezterm.desktop" score="0" last-seen="1759788650"/>
+    <application id="virt-manager.desktop" score="9" last-seen="1759261513"/>
+    <application id="brave-browser.desktop" score="1787" last-seen="1759789578"/>
+    <application id="org.gnome.TextEditor.desktop" score="8" last-seen="1759273607"/>
+    <application id="org.gnome.Settings.desktop" score="6" last-seen="1759271264"/>
+    <application id="sublime_text.desktop" score="0" last-seen="1759769790"/>
   </context>
 </application-state>

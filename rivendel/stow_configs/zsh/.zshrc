@@ -65,7 +65,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 _comp_options+=(globdots) # With hidden files
 
 # zplug - manage plugins
-source /usr/share/zsh/scripts/zplug/init.zsh
+source /usr/share/zplug/init.zsh #para Debian
+#source /usr/share/zsh/scripts/zplug/init.zsh #para Arch
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
@@ -130,3 +131,7 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+if [ -d "$HOME/local/share/../bin/env" ] ; then
+	. "$HOME/.local/share/../bin/env"
+fi

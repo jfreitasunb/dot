@@ -6,9 +6,10 @@
   "shell-version": [
     "46",
     "47",
-    "48"
+    "48",
+    "49"
   ],
   "url": "https://github.com/christopher-l/space-bar",
   "uuid": "space-bar@luchrioh",
-  "version": 33
+  "version": 34
 }
