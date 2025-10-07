@@ -2,7 +2,7 @@
 
 cd ~
 
-sudo apt install curl ninja-build gettext cmake unzip build-essential python3-pip git python3-apt python3-debian pandoc wget php-cli php-mbstring unzip libffi-dev libgmp-dev libx11-dev libxrandr-dev libxinerama-dev libxss-dev pkg-config libxft-dev xorg-dev libxrandr-dev libpango1.0-dev libasound2-dev libxpm-dev libmpd-dev cabal-install meson libwayland-dev wayland-protocols scdoc
+sudo apt install curl ninja-build gettext cmake unzip build-essential python3-pip git python3-apt python3-debian pandoc wget unzip libffi-dev libgmp-dev libx11-dev libxrandr-dev libxinerama-dev libxss-dev pkg-config libxft-dev xorg-dev libxrandr-dev libpango1.0-dev libasound2-dev libxpm-dev libmpd-dev cabal-install meson libwayland-dev wayland-protocols scdoc
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
@@ -20,7 +20,7 @@ sudo apt modernize-sources
 
 sudo apt update
 
-sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 eza feh flameshot flatpak fzf git keepassxc lxappearance p7zip p7zip-full pavucontrol pdftk picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev libnotify-dev libcurl4-openssl-dev haskell-stack fonts-liberation libu2f-udev numlockx libx11-dev libxinerama-dev yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk gparted libclang-dev brave-browser sublime-text trayer ldc python3-nautilus imagemagick flex bison libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev ffmpeg libxcb-xtest0 libxcb-cursor0 ffmpegthumbnailer unar jq poppler-utils fd-find zoxide ripgrep luarocks xclip tmux stow xmonad xmobar yad suckless-tools volumeicon-alsa blueman pcmanfm htop wezterm fprintd libpam-fprintd tk-dev sway wofi waybar swaylock wlogout libdbus-1-dev python3-pip python3-venv python3-v-sim python-dbus-dev libpangocairo-1.0-0 python3-cairocffi python3-xcffib libxkbcommon-dev libxkbcommon-x11-dev sxhkd bc libfont-freetype-perl autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libgif-dev virtiofsd swayidle gnome-shell-extensions rofi network-manager-applet copyq
+sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 eza feh flameshot flatpak fzf git keepassxc lxappearance p7zip p7zip-full pavucontrol pdftk picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev gnome-software-plugin-flatpak build-essential libcurl4-openssl-dev libsqlite3-dev libnotify-dev libcurl4-openssl-dev haskell-stack fonts-liberation numlockx libx11-dev libxinerama-dev yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk gparted libclang-dev brave-browser sublime-text trayer ldc python3-nautilus imagemagick flex bison libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev ffmpeg libxcb-xtest0 libxcb-cursor0 ffmpegthumbnailer unar jq poppler-utils fd-find zoxide ripgrep luarocks xclip tmux stow xmonad xmobar yad suckless-tools volumeicon-alsa blueman pcmanfm htop wezterm fprintd libpam-fprintd tk-dev sway wofi waybar swaylock wlogout libdbus-1-dev python3-pip python3-venv python3-v-sim python-dbus-dev libpangocairo-1.0-0 python3-cairocffi python3-xcffib libxkbcommon-dev libxkbcommon-x11-dev sxhkd bc libfont-freetype-perl autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libgif-dev virtiofsd swayidle gnome-shell-extensions rofi network-manager-applet copyq clang
 
 #sudo apt install -t bookworm-backports -y curl libcurl4
 
@@ -52,6 +52,8 @@ cd onedrive
 
 make clean
 
+make
+
 sudo make install
 
 deactivate
@@ -80,15 +82,15 @@ cd ~
 
 rm -rf yazi
 
-#git clone https://github.com/Raymo111/i3lock-color.git
+git clone https://github.com/Raymo111/i3lock-color.git
 
-#cd i3lock-color
+cd i3lock-color
 
-#./install-i3lock-color.sh
+./install-i3lock-color.sh
 
-#cd ~
+cd ~
 
-#rm -rf i3lock-color
+rm -rf i3lock-color
 
 wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/main/install.sh -O - -q | sudo bash -s system
 
@@ -110,27 +112,17 @@ rm -rf swaylock-effects
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-#curl -sS https://getcomposer.org/installer -o composer-setup.php
-
-#sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-rm ~/composer-setup.php
+flatpak install flathub com.bitwarden.desktop
 
 flatpak install flathub io.github.shiftey.Desktop
-
-flatpak install flathub com.bitwarden.desktop
 
 flatpak install flathub com.spotify.Client
 
 flatpak install flathub org.texstudio.TeXstudio
 
-flatpak install flathub com.discordapp.Discord
-
 flatpak install flathub org.gimp.GIMP
-
-#flatpak install flathub org.libreoffice.LibreOffice
 
 flatpak install flathub com.github.xournalpp.xournalpp
 
@@ -148,25 +140,13 @@ fc-cache -f -v
 
 cd ~
 
-curl https://pyenv.run | bash
+#curl https://pyenv.run | bash
 
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 
 curl -sS https://starship.rs/install.sh | sh
 
-#python3 -m venv ~/.local/src/venv/
-
-#git clone https://github.com/qtile/qtile.git .local/src/venv/qtile
-
-#~/.local/src/venv/bin/pip install /home/jfreitas/.local/src/venv/qtile/.
-
-#~/.local/src/venv/bin/pip install psutil
-
-#mkdir ~/.local/bin
-
-#ln -sf /home/jfreitas/.local/src/venv/bin/qtile /home/jfreitas/.local/bin/
-
-sudo apt remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd --purge
+sudo apt remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd php-cli php-mbstring --purge
 
 sudo apt autoremove
 
@@ -202,8 +182,6 @@ sudo systemctl enable libvirtd
 
 sudo usermod -aG libvirt jfreitas
 
-#sudo timedatectl set-local-rtc 1
-
 sudo chsh -s $(which zsh) jfreitas
 
 sudo ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /etc/systemd/system/systemd-suspend.service
@@ -219,7 +197,3 @@ echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
 sudo systemctl disable ModemManager.service
 
 sudo systemctl disable avahi-daemon.service
-
-sudo systemctl disable geoclue.service
-
-#sudo cp /home/jfreitas/GitHub/dot/rivendel/xsessions/qtile.desktop /usr/share/xsessions/
