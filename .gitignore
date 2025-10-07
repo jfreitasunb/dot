@@ -917,3 +917,14 @@ rivendel/stow_configs/config/.config/rstudio/Network Persistent State
 rivendel/stow_configs/config/.config/rstudio/SharedStorage
 rivendel/stow_configs/config/.config/rstudio/Trust Tokens
 rivendel/stow_configs/config/.config/rstudio/Trust Tokens-journal
+/rivendel/stow_configs/config/.config/winboat/Cache
+rivendel/stow_configs/config/.config/fish/conf.d/uv.env.fish
+rivendel/stow_configs/config/.config/monitors.xml~
+/rivendel/stow_configs/config/.config/winboat/Code Cache
+/rivendel/stow_configs/config/.config/winboat/Crashpad
+/rivendel/stow_configs/config/.config/winboat/DawnGraphiteCache
+/rivendel/stow_configs/config/.config/winboat/DawnWebGPUCache
+/rivendel/stow_configs/config/.config/winboat/GPUCache
+/rivendel/stow_configs/config/.config/winboat/Local Storage
+/rivendel/stow_configs/config/.config/winboat/Session Storage
+/rivendel/stow_configs/config/.config/winboat/Shared Dictionary
