@@ -1,7 +1,8 @@
 alias v='nvim --listen /tmp/nvim.pipe'
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
-alias cat='bat'
+alias cat='batcat' #para Debian
+#alias cat='bat' #para Arch
 alias jn='jupyter notebook'
 
 #### Docker ####
