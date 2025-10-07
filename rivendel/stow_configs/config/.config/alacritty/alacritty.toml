@@ -31,9 +31,9 @@ decorations_theme_variant = "Light" # "Dark"
 [font]
 
 normal.family = "FiraCode Nerd Font"
-bold.family = "Source Code Pro"
-italic.family = "Source Code Pro"
-bold_italic.family = "Source Code Pro"
+bold.family = "FiraCode Nerd Font"
+italic.family = "FiraCode Nerd Font"
+bold_italic.family = "FiraCode Nerd Font"
 
 size = 11.0
 
