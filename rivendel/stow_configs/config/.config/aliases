@@ -1,4 +1,4 @@
-alias v='nvim --listen /tmp/nvim.pipe'
+alias v='nvim'
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias cat='batcat' #para Debian
