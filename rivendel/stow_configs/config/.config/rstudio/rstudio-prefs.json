@@ -1,5 +1,5 @@
 {
-    "jobs_tab_visibility": "shown",
+    "jobs_tab_visibility": "closed",
     "initial_working_directory": "~",
     "pdf_previewer": "none",
     "posix_terminal_shell": "bash",
@@ -24,6 +24,7 @@
             "History",
             "Build",
             "VCS",
+            "Viewer",
             "Presentation"
         ],
         "tabSet2": [
@@ -36,11 +37,11 @@
             "Packages",
             "Help",
             "Tutorial",
-            "Viewer",
             "Presentations"
         ],
         "console_left_on_top": false,
         "console_right_on_top": true,
         "additional_source_columns": 0
-    }
+    },
+    "show_terminal_tab": false
 }

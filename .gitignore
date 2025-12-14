@@ -928,3 +928,12 @@ rivendel/stow_configs/config/.config/monitors.xml~
 /rivendel/stow_configs/config/.config/winboat/Local Storage
 /rivendel/stow_configs/config/.config/winboat/Session Storage
 /rivendel/stow_configs/config/.config/winboat/Shared Dictionary
+rivendel/stow_configs/config/.config/rstudio/DIPS
+rivendel/stow_configs/config/.config/rstudio/rstudio-prefs.json
+rivendel/stow_configs/config/.config/uv/uv-receipt.json
+rivendel/maquinas_virtuais/qemu/CachyOS.xml
+rivendel/maquinas_virtuais/qemu/CachyOS.xml
+rivendel/maquinas_virtuais/qemu/Fedora.xml
+rivendel/maquinas_virtuais/qemu/NixOS.xml
+rivendel/maquinas_virtuais/qemu/CachyOS.xml
+rivendel/stow_configs/config/.config/btop/btop.log

@@ -1,46 +1,31 @@
+-- Pull in the wezterm API
 local wezterm = require("wezterm")
-return {
-	adjust_window_size_when_changing_font_size = false,
-	-- color_scheme = 'termnial.sexy',
-	color_scheme = "zenbones_dark",
-	enable_tab_bar = false,
-	font_size = 12.0,
-	font = wezterm.font("JetBrains Mono"),
-	-- macos_window_background_blur = 40,
 
-	-- window_background_image = '/Users/omerhamerman/Downloads/3840x1080-Wallpaper-041.jpg',
-	-- window_background_image_hsb = {
-	-- 	brightness = 0.01,
-	-- 	hue = 1.0,
-	-- 	saturation = 0.5,
-	-- },
-	window_background_opacity = 0.9,
-	-- window_background_opacity = 0.78,
-	-- window_background_opacity = 0.20,
-	--	window_decorations = "RESIZE",
-	keys = {
-		{
-			key = "q",
-			mods = "CTRL",
-			action = wezterm.action.ToggleFullScreen,
-		},
-		{
-			key = "V",
-			mods = "CTRL",
-			action = wezterm.action.PasteFrom("Clipboard"),
-		},
-		{
-			key = "'",
-			mods = "CTRL",
-			action = wezterm.action.ClearScrollback("ScrollbackAndViewport"),
-		},
-	},
-	mouse_bindings = {
-		-- Ctrl-click will open the link under the mouse cursor
-		{
-			event = { Up = { streak = 1, button = "Left" } },
-			mods = "CTRL",
-			action = wezterm.action.OpenLinkAtMouseCursor,
-		},
-	},
+-- This will hold the configuration.
+local config = wezterm.config_builder()
+
+-- This is where you actually apply your config choices.
+
+-- For example, changing the initial geometry for new windows:
+config.initial_cols = 120
+config.initial_rows = 28
+
+-- or, changing the font size and color scheme.
+config.font_size = 12
+config.color_scheme = "Tokyo Night"
+
+config.default_cursor_style = "BlinkingBlock"
+
+-- config.window_decorations = "RESIZE"
+config.enable_tab_bar = false
+
+-- Sets the font for the window frame (tab bar)
+config.window_frame = {
+	-- Berkeley Mono for me again, though an idea could be to try a
+	-- serif font here instead of monospace for a nicer look?
+	font = wezterm.font({ family = "JetBrains Mono", weight = "Bold" }),
+	font_size = 11,
 }
+
+-- Finally, return the configuration to wezterm:
+return config
