@@ -1,8 +1,6 @@
-<b><span size="large">Version 13.3</span></b>  (2025-09-12)
+<b><span size="large">v14.0</span></b>
 
-- Add GNOME 49 Support
-
-<b><span size="large">Version 13.2</span></b>  (2025-08-13)
-
-- Resolve issue causing duplicate wallpapers in the slideshow queue.
-- Fix extension crash triggered by special characters in image filenames.
+- Slideshow: implement a GLib.idle_add() when changing wallpaper image.
+    - Resolves lag issues when changing wallpapers with large file sizes.
+- Fix an issue where inserting new images into the queue while paused caused the current wallpaper to change unexpectedly on resume.
+- Slideshow directory monitor: file event handling improvements for reliability across all file operations.

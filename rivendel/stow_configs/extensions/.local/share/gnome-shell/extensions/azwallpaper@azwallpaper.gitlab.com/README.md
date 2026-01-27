@@ -45,7 +45,8 @@ Wallpaper Slideshow is provided free of charge. If you enjoy using this extensio
 | **German** | **@[daPhipz](https://gitlab.com/daPhipz)** |
 | **Occitan** | **@[Quentin](https://gitlab.com/quenty_occitania)** |
 | **Portuguese** | **@[gustavocsfreitas](https://gitlab.com/gustavocsfreitas)** |
-| **Russian** | **@[kve1989](https://gitlab.com/kve1989)** |
+| **Russian** | **@[kve1989](https://gitlab.com/kve1989), @[7up4](https://gitlab.com/7up4)** |
+| **Simplified Chinese** | **@[Yesionio](https://gitlab.com/Yesionio)** |
 | **Spanish** | **@[Fer](https://gitlab.com/Imparator)** |
 
 -----

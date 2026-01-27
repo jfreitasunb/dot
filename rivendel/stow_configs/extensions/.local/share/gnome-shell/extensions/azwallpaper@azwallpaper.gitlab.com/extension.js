@@ -211,8 +211,10 @@ export class Logger {
     }
 
     static log(msg) {
-        if (Logger.settings?.get_boolean('debug-logs'))
-            console.log(`Wallpaper Slideshow: ${msg}`);
+        if (!Logger.settings?.get_boolean('debug-logs'))
+            return;
+
+        console.log(`Wallpaper Slideshow: ${msg}`);
     }
 
     destroy() {

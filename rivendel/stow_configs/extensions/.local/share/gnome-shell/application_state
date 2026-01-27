@@ -1,14 +1,8 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="gparted.desktop" score="2" last-seen="1765651606"/>
-    <application id="org.gnome.Nautilus.desktop" score="44" last-seen="1765735398"/>
-    <application id="org.gnome.Extensions.desktop" score="0" last-seen="1765651563"/>
-    <application id="org.gnome.Terminal.desktop" score="0" last-seen="1765734719"/>
-    <application id="org.wezfurlong.wezterm.desktop" score="11643" last-seen="1765735284"/>
-    <application id="virt-manager.desktop" score="13" last-seen="1765652055"/>
-    <application id="brave-browser.desktop" score="250" last-seen="1765735349"/>
-    <application id="sublime_text.desktop" score="3" last-seen="1765735226"/>
-    <application id="org.gnome.DiskUtility.desktop" score="8" last-seen="1765735390"/>
+    <application id="brave-browser.desktop" score="906.890625" last-seen="1769513236"/>
+    <application id="org.wezfurlong.wezterm.desktop" score="19018.1875" last-seen="1769513239"/>
+    <application id="com.spotify.Client.desktop" score="0" last-seen="1769513063"/>
   </context>
 </application-state>

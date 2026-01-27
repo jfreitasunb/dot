@@ -1,5 +1,5 @@
 {
-    "jobs_tab_visibility": "closed",
+    "jobs_tab_visibility": "shown",
     "initial_working_directory": "~",
     "pdf_previewer": "none",
     "posix_terminal_shell": "bash",
@@ -43,5 +43,6 @@
         "console_right_on_top": true,
         "additional_source_columns": 0
     },
-    "show_terminal_tab": false
+    "show_terminal_tab": false,
+    "shiny_viewer_type": "browser"
 }
