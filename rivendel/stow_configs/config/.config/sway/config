@@ -1,9 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 include colors
 
 # Set inner/outer gaps
@@ -15,7 +9,7 @@ default_border pixel 3
 
 # disable focus follows mouse
 focus_follows_mouse always
-mouse_warping container
+mouse_warping none 
 
 # Thin borders:
 smart_borders off
@@ -33,36 +27,24 @@ for_window [app_id=".*"] opacity $opacity
 # set gtk+ theme #
 #----------------#
 set $gnome-schema org.gnome.desktop.interface
-#exec_always {
-#    gsettings set $gnome-schema gtk-theme 'Adwaita'
-    #gsettings set $gnome-schema color-scheme 'prefer-dark'
-#    gsettings set $gnome-schema cursor-theme 'volantes_cursors'
-#}
-
-# Gaps internos e externos
-#gaps inner 5
-#gaps outer 3
-
-# Remove títulos das janelas
-#default_border pixel 2
 
 # Fonte
 font pango: SourceCodePro Medium 12
 
 ### Variables
-#
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term wezterm 
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
+
+
 set $menu wofi --show
 
 include /etc/sway/config-vars.d/*
@@ -73,14 +55,6 @@ exec /home/jfreitas/.bin/autostart_sway.sh
 
 exec env QT_QPA_PLATFORM=wayland copyq
 
-#exec wl-paste --watch cliphist store
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
 output eDP-1 {
    mode 1920x1200@60.002Hz
 }
@@ -90,41 +64,13 @@ output HDMI-A-1 {
    position 0,0
 }
 
-exec /home/jfreitas/.bin/stacki3
+#exec /home/jfreitas/.bin/stacki3
 
 exec swayidle -w \
     timeout 1200 'swaylock -f' \
     timeout 1320 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f'
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
-# or input <identifier>
 
 input "type:keyboard" {
     xkb_layout br
@@ -158,17 +104,8 @@ input "type:pointer" {
     # Start your launcher
     bindsym $mod+Space exec $menu
 
-    # Atalho para mostrar o histórico do clipboard com wofi
-    #bindsym $mod+v exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
+    bindsym $mod+v exec "copyq menu"
 
-    bindsym $mod+c exec "copyq menu"
-
-
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
     floating_modifier $mod normal
 
     # Reload the configuration file
@@ -178,8 +115,7 @@ input "type:pointer" {
     bindsym $mod+n exec nautilus 
 
     # Exit sway (logs you out of your Wayland session)
-    #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Shift+e exec wlogout
+    bindsym $mod+Shift+q exec wlogout
 #
 # Moving around:
 #
@@ -284,10 +220,6 @@ input "type:pointer" {
 # Resizing containers:
 #
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
@@ -309,44 +241,8 @@ bindsym $mod+r mode "resize"
 #                   FLOATING                    #
 #################################################
 
-
-# set floating (nontiling)for apps needing it:
-#for_window [class="Yad" instance="yad"] floating enable
-#for_window [app_id="yad"] floating enable
-#for_window [app_id="blueman-manager"] floating enable,  resize set width 40 ppt height 40 ppt
-#for_window [app_id="file-roller"] floating enable
-
-# set floating (nontiling) for special apps:
-#for_window [class="Xsane" instance="xsane"] floating enable
-#for_window [app_id="pavucontrol" ] floating enable, resize set width 30 ppt height 40 ppt
-#for_window [class="qt5ct" instance="qt5ct"] floating enable, resize set width 60 ppt height 50 ppt
-#for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
-#for_window [app_id="pamac-manager"] floating enable, resize set width 80 ppt height 70 ppt
-#for_window [class="Lxappearance"] floating enable, resize set width 60 ppt height 50 ppt
-
-# set floating for window roles
 for_window [app_id="soffice"] floating enable, resize set 500px 500px
-#for_window [window_role="pop-up"] floating enable, resize set 500px 300px
-#for_window [window_role="bubble"] floating enable, resize set 500px 300px
-#for_window [window_role="task_dialog"] floating enable, resize set 500px 300px
-#for_window [window_role="Preferences"] floating enable, resize set 500px 300px
-#for_window [window_type="dialog"] floating enable, resize set 500px 300px
-#for_window [window_type="menu"] floating enable, resize set 500px 300px
-#for_window [window_role="About"] floating enable, resize set 500px 300px
-#for_window [title="File Operation Progress"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
-#for_window [app_id="firedragon" title="Library"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
-#for_window [app_id="floating_shell_portrait"] floating enable, border pixel 1, sticky enable, resize set width 30 ppt height 40 ppt
-#for_window [title="nmtui"] floating enable,  resize set width 50 ppt height 70 ppt
-#for_window [title="htop"] floating enable, resize set width 50 ppt height 70 ppt
-#for_window [app_id="xsensors"] floating enable
-#for_window [title="Save File"] floating enable
-#for_window [app_id="firedragon" title="firedragon — Sharing Indicator"] kill
-#for_window [title="Floating Window - Show Me The Key"] floating enable, sticky enable
-#for_window [title="Picture in picture"] floating enable, sticky enable, resize set width 350 px height 197 px, move position 1530 px 800 px
 
-# Inhibit idle
-#for_window [app_id="firedragon"] inhibit_idle fullscreen
-#for_window [app_id="Chromium"] inhibit_idle fullscreen
 for_window [class="Brave-browser"] inhibit_idle fullscreen
 
 #Controle de volume
@@ -375,10 +271,6 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 exec_always ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/clamshell.sh
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
 bar {
 	swaybar_command waybar
 }
