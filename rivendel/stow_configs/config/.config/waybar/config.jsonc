@@ -22,24 +22,25 @@
             "pulseaudio",
             "custom/power"
         ],
-//        "sway/workspaces": {//Sway
+        //"sway/workspaces": {//Sway
         "hyprland/workspaces": {//Hyprland
+            "warp-on-scroll": false,
             "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span>",
             "on-click": "activate",
             "sort-by-number": true,
             "all-outputs": true,
-            //"persistent-workspaces": {
-            //    "1": ["eDP-1"],
-            //    "2": ["eDP-1"],
-            //    "3": ["eDP-1"],
-            //    "4": ["eDP-1"],
-            //    "5": ["eDP-1"],
-            //    "6": ["HDMI-A-1"],
-            //    "7": ["HDMI-A-1"],
-            //    "8": ["HDMI-A-1"],
-            //    "9": ["HDMI-A-1"],
-            //    "10": ["HDMI-A-1"],
-            //},
+            // "persistent-workspaces": {
+            //     "1": ["eDP-1"],
+            //     "2": ["eDP-1"],
+            //     "3": ["eDP-1"],
+            //     "4": ["eDP-1"],
+            //     "5": ["eDP-1"],
+            //     "6": ["HDMI-A-1"],
+            //     "7": ["HDMI-A-1"],
+            //     "8": ["HDMI-A-1"],
+            //     "9": ["HDMI-A-1"],
+            //     "10": ["HDMI-A-1"],
+            // },
             "persistent-workspaces": {//Hyprland
                 "eDP-1": [1, 2, 3, 4, 5],
                 "HDMI-A-1": [6, 7, 8, 9, 10]
@@ -165,8 +166,8 @@
                 "7": ["HDMI-A-1"],
                 "8": ["HDMI-A-1"],
                 "9": ["HDMI-A-1"],
-                "10": ["HDMI-A-1"],
-            },
-        },
+                "10": ["HDMI-A-1"]
+            }
+        }
     }
 ]
