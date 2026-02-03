@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup de FOTOS para HD externo
+
+[Timer]
+OnCalendar=*:0/10
+Persistent=true
+
+[Install]
+WantedBy=basic.target
