@@ -135,3 +135,4 @@ function y() {
 if [ -d "$HOME/local/share/../bin/env" ] ; then
 	. "$HOME/.local/share/../bin/env"
 fi
+eval "$(uv generate-shell-completion zsh)"
