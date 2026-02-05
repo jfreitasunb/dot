@@ -1,20 +1,13 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="brave-browser.desktop" score="35" last-seen="1769710376"/>
-    <application id="org.gnome.Nautilus.desktop" score="444" last-seen="1769638900"/>
-    <application id="org.gnome.Settings.desktop" score="10" last-seen="1769624383"/>
-    <application id="org.gnome.tweaks.desktop" score="8" last-seen="1769624451"/>
-    <application id="org.pwmt.zathura.desktop" score="1" last-seen="1769630638"/>
-    <application id="org.gnome.Terminal.desktop" score="1430" last-seen="1769623334"/>
-    <application id="org.wezfurlong.wezterm.desktop" score="1894" last-seen="1769638896"/>
-    <application id="org.gnome.Calculator.desktop" score="1" last-seen="1769610246"/>
-    <application id="gparted.desktop" score="41" last-seen="1769623840"/>
-    <application id="org.gnome.SystemMonitor.desktop" score="1" last-seen="1769634070"/>
-    <application id="org.gnome.baobab.desktop" score="0" last-seen="1769623386"/>
-    <application id="firefox-esr.desktop" score="1235" last-seen="1769624288"/>
-    <application id="org.gnome.TextEditor.desktop" score="111" last-seen="1769638901"/>
-    <application id="com.brave.Browser.desktop" score="0" last-seen="0"/>
-    <application id="org.gnome.DiskUtility.desktop" score="16" last-seen="1769623521"/>
+    <application id="org.gnome.Nautilus.desktop" score="18" last-seen="1770233579"/>
+    <application id="org.gnome.Settings.desktop" score="20" last-seen="1770231315"/>
+    <application id="org.gnome.Meld.desktop" score="29" last-seen="1770235247"/>
+    <application id="org.gnome.tweaks.desktop" score="2" last-seen="1770231169"/>
+    <application id="org.gnome.Terminal.desktop" score="2220" last-seen="1770237332"/>
+    <application id="firefox-esr.desktop" score="29" last-seen="1770231624"/>
+    <application id="brave-browser.desktop" score="30" last-seen="1770235218"/>
+    <application id="org.gnome.TextEditor.desktop" score="208" last-seen="1770233972"/>
   </context>
 </application-state>
