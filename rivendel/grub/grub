@@ -1,11 +1,9 @@
 # GRUB boot loader configuration
 
-GRUB_DEFAULT=saved
-GRUB_SAVEDEFAULT=true
 #GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="Debian"
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 resume=UUID=ea8f2676-ed89-45c3-a2b1-16c15edeb146"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 resume=UUID=86caac30-ed1b-4845-bcf2-823315a373b6"
 GRUB_CMDLINE_LINUX=""
 
 # Preload both GPT and MBR modules so that they are not missed
