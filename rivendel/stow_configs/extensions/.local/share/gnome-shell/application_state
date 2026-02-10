@@ -1,13 +1,24 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="org.gnome.Nautilus.desktop" score="18" last-seen="1770233579"/>
-    <application id="org.gnome.Settings.desktop" score="20" last-seen="1770231315"/>
-    <application id="org.gnome.Meld.desktop" score="29" last-seen="1770235247"/>
-    <application id="org.gnome.tweaks.desktop" score="2" last-seen="1770231169"/>
-    <application id="org.gnome.Terminal.desktop" score="2220" last-seen="1770237332"/>
-    <application id="firefox-esr.desktop" score="29" last-seen="1770231624"/>
-    <application id="brave-browser.desktop" score="30" last-seen="1770235218"/>
-    <application id="org.gnome.TextEditor.desktop" score="208" last-seen="1770233972"/>
+    <application id="gparted.desktop" score="2" last-seen="1770679977"/>
+    <application id="kitty.desktop" score="119" last-seen="1770747621"/>
+    <application id="org.gnome.tweaks.desktop" score="0" last-seen="1770679822"/>
+    <application id="org.gnome.TextEditor.desktop" score="50" last-seen="1770746972"/>
+    <application id="org.wezfurlong.wezterm.desktop" score="8191" last-seen="1770747767"/>
+    <application id="org.gnome.Software.desktop" score="3" last-seen="1770744112"/>
+    <application id="com.bitwarden.desktop.desktop" score="10" last-seen="1770726535"/>
+    <application id="virt-manager.desktop" score="191" last-seen="1770747763"/>
+    <application id="brave-browser.desktop" score="225" last-seen="1770747377"/>
+    <application id="org.pwmt.zathura.desktop" score="0" last-seen="1770729064"/>
+    <application id="org.gnome.Nautilus.desktop" score="57" last-seen="1770747762"/>
+    <application id="org.gnome.FileRoller.desktop" score="1" last-seen="1770744491"/>
+    <application id="org.gnome.Terminal.desktop" score="268" last-seen="1770682112"/>
+    <application id="org.texstudio.TeXstudio.desktop" score="46" last-seen="1770729580"/>
+    <application id="xdg-desktop-portal-gtk.desktop" score="0" last-seen="1770747342"/>
+    <application id="org.gnome.Meld.desktop" score="7" last-seen="1770747742"/>
+    <application id="org.gnome.Extensions.desktop" score="0" last-seen="1770726329"/>
+    <application id="org.gnome.Settings.desktop" score="6" last-seen="1770728991"/>
+    <application id="firefox-esr.desktop" score="2" last-seen="1770679975"/>
   </context>
 </application-state>
