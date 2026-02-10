@@ -53,7 +53,8 @@ include /etc/sway/config-vars.d/*
 exec /home/jfreitas/.bin/sway_wallpaper.sh
 exec /home/jfreitas/.bin/autostart_sway.sh
 
-exec env QT_QPA_PLATFORM=wayland copyq
+#exec env QT_QPA_PLATFORM=wayland copyq
+exec wl-paste --watch cliphist store # Stores only text data
 
 output eDP-1 {
    mode 1920x1200@60.002Hz
@@ -64,7 +65,7 @@ output HDMI-A-1 {
    position 0,0
 }
 
-#exec /home/jfreitas/.bin/stacki3
+exec /home/jfreitas/.bin/stacki3
 
 exec swayidle -w \
     timeout 1200 'swaylock -f' \
@@ -104,7 +105,9 @@ input "type:pointer" {
     # Start your launcher
     bindsym $mod+Space exec $menu
 
-    bindsym $mod+v exec "copyq menu"
+    #bindsym $mod+v exec "copyq menu"
+
+    bindsym $mod+v exec cliphist list | wofi --dmenu --pre-display-cmd "echo '%s' | cut -f 2" | cliphist decode | wl-copy
 
     floating_modifier $mod normal
 
@@ -144,6 +147,7 @@ input "type:pointer" {
 # Workspaces:
 #
     # Mapeia workspaces para o primeiro monitor
+    # Workspace bindings and rules:
     workspace "1" output eDP-1
     workspace "2" output eDP-1
     workspace "3" output eDP-1
@@ -271,8 +275,8 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 exec_always ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/clamshell.sh
 
-bar {
-	swaybar_command waybar
-}
+#bar {
+#	swaybar_command waybar -c /home/jfreitas/.config/waybar/config_sway.jsonc
+#}
 
 include /etc/sway/config.d/*
