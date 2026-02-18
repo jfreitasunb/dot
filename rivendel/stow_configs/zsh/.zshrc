@@ -65,8 +65,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 _comp_options+=(globdots) # With hidden files
 
 # zplug - manage plugins
-source /usr/share/zplug/init.zsh #para Debian
-#source /usr/share/zsh/scripts/zplug/init.zsh #para Arch
+#source /usr/share/zplug/init.zsh #para Debian
+source /usr/share/zsh/scripts/zplug/init.zsh #para Arch
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
@@ -117,7 +117,7 @@ export NVM_DIR="$HOME/.config/nvm"
 
 eval "$(starship init zsh)"
 
-. "$HOME/.atuin/bin/env" 
+#. "$HOME/.atuin/bin/env" 
 eval "$(atuin init zsh)" 
 
 eval "$(zoxide init zsh)"
