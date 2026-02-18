@@ -22,7 +22,7 @@ yay -Syy
 
 sleep 5
 
-yay -S --needed arandr brave-bin candy-icons-git cantarell-fonts dconf-editor dropbox exa feh file-roller filezilla firefox flatpak fzf gdal gentium-plus-font gimp gimp-help-pt_br gnu-free-fonts gparted htop imagemagick img2pdf inter-font jq keepassxc keychain libreoffice-fresh libreoffice-fresh-pt-br man meld mousetweaks noto-fonts noto-fonts-cjk noto-fonts-emoji nss-mdns openbsd-netcat otf-font-awesome papirus-icon-theme pavucontrol pcmanfm pdftk pinta ranger ripgrep scrot sof-firmware sublime-text terminus-font tex-gyre-fonts texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex the_silver_searcher tldr unzip usbutils vifm vim-spell-pt vlc wget wmctrl xdotool xournalpp yasm zathura zathura-djvu zathura-pdf-mupdf zathura-ps zplug yazi transmissin-gtk hyprland xdg-desktop-portal-hyprland waybar wofi hyprpaper hyprcursor hyprutils hyprwayland-scanner grim slurp hyprpicker xdg-desktop-portal-wlr hyprshot hyprlock hypridle fd luarocks tmux grub-theme-vimix fwupd wezterm-git lazygit wlogout starship dmd stow sbctl blueman strace trash tk cliphist biber rofi greenclip xclip copyq dunst picom dmenu xorg xmonad xmonad-contrib xmonad-extras xmonad-utils xmobar betterlockscreen onedrive-abraunegg vlc-plugins-all alacritty kitty grub-theme-vimix r r-studio-bin zoxide npm
+yay -S --needed arandr brave-bin candy-icons-git cantarell-fonts dconf-editor dropbox exa feh file-roller filezilla firefox flatpak fzf gdal gentium-plus-font gimp gimp-help-pt_br gnu-free-fonts gparted htop imagemagick img2pdf inter-font jq keepassxc keychain libreoffice-fresh libreoffice-fresh-pt-br man meld mousetweaks noto-fonts noto-fonts-cjk noto-fonts-emoji nss-mdns openbsd-netcat otf-font-awesome papirus-icon-theme pavucontrol pcmanfm pdftk pinta ranger ripgrep scrot sof-firmware sublime-text terminus-font tex-gyre-fonts texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-context texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-formatsextra texlive-langportuguese texlive-latex texlive-latexextra texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta texlive-metapost texlive-pictures texlive-pstricks texlive-xetex the_silver_searcher tldr unzip usbutils vifm vim-spell-pt vlc wget wmctrl xdotool xournalpp yasm zathura zathura-djvu zathura-pdf-mupdf zathura-ps zplug yazi transmissin-gtk hyprland xdg-desktop-portal-hyprland waybar wofi hyprpaper hyprcursor hyprutils hyprwayland-scanner grim slurp hyprpicker xdg-desktop-portal-wlr hyprshot hyprlock hypridle fd luarocks tmux grub-theme-vimix fwupd wezterm-git lazygit wlogout starship dmd stow sbctl blueman strace trash tk cliphist biber rofi greenclip xclip copyq dunst picom dmenu xorg xmonad xmonad-contrib xmonad-extras xmonad-utils xmobar betterlockscreen onedrive-abraunegg vlc-plugins-all alacritty kitty grub-theme-vimix r r-studio-bin zoxide npm atuin
 
 git clone https://github.com/neovim/neovim
 
@@ -58,7 +58,7 @@ sudo ln -s ~/GitHub/dot/rivendel/pacman/pacman.conf /etc/
 
 sudo rm /etc/default/grub
 
-sudo ln -s ~/GitHub/dot/rivendel/grub/grub-ARCH /etc/default/
+sudo ln -s ~/GitHub/dot/rivendel/grub/grub-ARCH /etc/default/grub
 
 sudo rm -rf /etc/libvirt/qemu
 
@@ -82,19 +82,21 @@ sudo mkinitcpio -P
 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-#sudo systemctl enable libvirtd
+sudo systemctl enable libvirtd
 
 sudo chsh -s $(which zsh) jfreitas
 
-#sudo chattr +C /var/log
+sudo chattr +C /var/log
 
-#sudo chattr +C /var/lib/docker
+sudo chattr +C /var/lib/docker
 
-#sudo chattr +C /var/lib/libvirt
+sudo chattr +C /var/lib/libvirt
 
-#sudo chattr +C /var/lib/pacman/pkg
+sudo chattr +C /var/lib/pacman/pkg
 
-#sudo chattr +C /var/cache
+sudo chattr +C /var/cache
+
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak install flathub io.github.shiftey.Desktop
 
@@ -106,11 +108,13 @@ flatpak install flathub org.texstudio.TeXstudio
 
 flatpak install flathub com.discordapp.Discord
 
+flatpak install flathub org.gimp.GIMP
+
 sudo ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /etc/systemd/system/systemd-suspend.service
 
 echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
 
-#sudo usermod -aG libvirt jfreitas
+sudo usermod -aG libvirt jfreitas
 
 rm -rf ~/.config
 
@@ -128,4 +132,6 @@ cd ~
 
 curl https://pyenv.run | bash
 
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+#curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+sudo timedatectl set-local-rtc 1
