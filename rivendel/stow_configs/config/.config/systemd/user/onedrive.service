@@ -20,7 +20,7 @@ ProtectControlGroups=true
 RestrictRealtime=true
 #Para Debian
 #ExecStart=/usr/local/bin/onedrive --monitor --confdir="/home/jfreitas/.config/onedrive"
-#Para Arch
+#Para Arch ou quando instalado pelo gerenciador de pacotes
 ExecStart=/usr/bin/onedrive --monitor --confdir="/home/jfreitas/.config/onedrive"
 Restart=on-failure
 RestartSec=3
