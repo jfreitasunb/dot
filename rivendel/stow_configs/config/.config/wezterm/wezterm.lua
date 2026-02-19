@@ -26,6 +26,6 @@ config.window_frame = {
 	font = wezterm.font({ family = "JetBrains Mono", weight = "Bold" }),
 	font_size = 11,
 }
-
+config.swap_backspace_and_delete = true,
 -- Finally, return the configuration to wezterm:
 return config
