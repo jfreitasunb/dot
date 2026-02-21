@@ -1,0 +1,20 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+ "http://standards.freedesktop.org/menu-spec/menu-1.0.dtd">
+<Menu>
+    <Name>Applications</Name>
+    <MergeFile type="parent">/etc/xdg/menus/applications.menu</MergeFile>
+    <Menu>
+        <Name>spyder-6 spyder</Name>
+        <Directory>spyder-6-spyder.directory</Directory>
+        <Include>
+            <Category>spyder-6 spyder</Category>
+        </Include>
+    </Menu>
+    <Menu>
+        <Name>spyder-6 spyder uninstaller</Name>
+        <Directory>spyder-6-spyder-uninstaller.directory</Directory>
+        <Include>
+            <Category>spyder-6 spyder uninstaller</Category>
+        </Include>
+    </Menu>
+</Menu>
