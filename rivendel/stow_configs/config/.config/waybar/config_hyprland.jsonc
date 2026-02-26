@@ -28,7 +28,7 @@
             "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span>",
             "on-click": "activate",
             "sort-by-number": true,
-            "all-outputs": true,
+            "all-outputs": false,
             // "persistent-workspaces": {
             //     "1": ["eDP-1"],
             //     "2": ["eDP-1"],
@@ -155,18 +155,14 @@
     {
         "output": "HDMI-A-1",
         "layer": "top",
-        "modules-left": ["sway/workspaces"],
-        "sway/workspaces": {
+        "modules-left": ["hyprland/workspaces"],
+        "hyprland/workspaces": {
             "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span>",
             "on-click": "activate",
             "sort-by-number": true,
             //No Arch mudar para "persistent-workspaces"
-            "persistent_workspaces": {
-                "6": ["HDMI-A-1"],
-                "7": ["HDMI-A-1"],
-                "8": ["HDMI-A-1"],
-                "9": ["HDMI-A-1"],
-                "10": ["HDMI-A-1"]
+            "persistent-workspaces": {
+                "HDMI-A-1": [6, 7, 8, 9, 10]
             }
         }
     }
