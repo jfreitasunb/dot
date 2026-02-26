@@ -25,8 +25,14 @@ while true; do
     hyprctl hyprpaper preload $wall1
     hyprctl hyprpaper wallpaper ,$wall1
 
-    echo "preload = $wall1" >~/.config/hypr/hyprpaper.conf
-    echo "wallpaper = , $wall1" >>~/.config/hypr/hyprpaper.conf
+    echo "preload = eDP-1,$wall1" >~/.config/hypr/hyprpaper.conf
+    echo "wallpaper = eDP-1, $wall1" >>~/.config/hypr/hyprpaper.conf
+
+    hyprctl hyprpaper preload $wall2
+    hyprctl hyprpaper wallpaper ,$wall2
+
+    echo "preload = HDMI-A-1,$wall2" >>~/.config/hypr/hyprpaper.conf
+    echo "wallpaper = HDMI-A-1, $wall2" >>~/.config/hypr/hyprpaper.conf
 
     #    echo "wallpaper {
     # monitor = eDP-1
