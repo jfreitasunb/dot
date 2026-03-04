@@ -13,7 +13,7 @@ flock -n 200 || {
 }
 
 while true; do
-    hyprctl hyprpaper unload all
+    #    hyprctl hyprpaper unload all
 
     wallpapers=($(ls -d $HOME/OneDrive/Pictures/Wallpapers/*))
     #wallpapers+=($(ls -d /usr/share/hyprland/wall*))
@@ -22,31 +22,31 @@ while true; do
 
     wall2=${wallpapers[$RANDOM % ${#wallpapers[@]}]}
 
-    hyprctl hyprpaper preload $wall1
-    hyprctl hyprpaper wallpaper ,$wall1
+    #hyprctl hyprpaper preload $wall1
+    #hyprctl hyprpaper preload $wall2
 
-    echo "preload = eDP-1,$wall1" >~/.config/hypr/hyprpaper.conf
-    echo "wallpaper = eDP-1, $wall1" >>~/.config/hypr/hyprpaper.conf
+    #echo "preload = $wall1" >~/.config/hypr/hyprpaper.conf
 
-    hyprctl hyprpaper preload $wall2
-    hyprctl hyprpaper wallpaper ,$wall2
+    #echo "preload = $wall2" >>~/.config/hypr/hyprpaper.conf
 
-    echo "preload = HDMI-A-1,$wall2" >>~/.config/hypr/hyprpaper.conf
-    echo "wallpaper = HDMI-A-1, $wall2" >>~/.config/hypr/hyprpaper.conf
+    #echo "wallpaper = ,$wall1" >>~/.config/hypr/hyprpaper.conf
 
-    #    echo "wallpaper {
-    # monitor = eDP-1
-    # path = $wall1
-    # fit_mode = cover
-    #    }" >~/.config/hypr/hyprpaper.conf
-    #
-    #    echo "wallpaper {
-    # monitor = HDMI-A-1
-    # path = $wall2
-    # fit_mode = cover
-    #    }" >>~/.config/hypr/hyprpaper.conf
-    #
-    #    hyprpaper
+    #echo "wallpaper = HDMI-A-1,$wall2" >>~/.config/hypr/hyprpaper.conf
+    echo "splash = false" >~/.config/hypr/hyprpaper.conf
+
+    echo "wallpaper {
+         monitor = eDP-1
+         path = $wall1
+         fit_mode = cover
+    }" >>~/.config/hypr/hyprpaper.conf
+
+    echo "wallpaper {
+         monitor = HDMI-A-1
+         path = $wall2
+         fit_mode = cover
+    }" >>~/.config/hypr/hyprpaper.conf
+
+    hyprpaper
 
     sleep 120m
 
