@@ -120,7 +120,7 @@ eval "$(starship init zsh)"
 . "$HOME/.atuin/bin/env" 
 eval "$(atuin init zsh)" 
 
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 #Configuração para o Yazi.
 function y() {
