@@ -1,18 +1,11 @@
 <?xml version="1.0"?>
 <application-state>
   <context id="">
-    <application id="org.gnome.Terminal.desktop" score="1258" last-seen="1771539458"/>
-    <application id="org.gnome.Nautilus.desktop" score="9" last-seen="1771541397"/>
-    <application id="org.gnome.Settings.desktop" score="19" last-seen="1771541238"/>
-    <application id="org.gnome.tweaks.desktop" score="2" last-seen="1771540131"/>
-    <application id="gparted.desktop" score="3" last-seen="1771539362"/>
-    <application id="org.gnome.Software.desktop" score="0" last-seen="1771539933"/>
-    <application id="org.wezfurlong.wezterm.desktop" score="47" last-seen="1771541242"/>
-    <application id="firefox-esr.desktop" score="116" last-seen="1771539138"/>
-    <application id="com.bitwarden.desktop.desktop" score="9" last-seen="1771540950"/>
-    <application id="brave-browser.desktop" score="89" last-seen="1771541357"/>
-    <application id="org.gnome.TextEditor.desktop" score="241" last-seen="1771541390"/>
-    <application id="org.gnome.Extensions.desktop" score="5" last-seen="1771541331"/>
-    <application id="org.gnome.Shell.Extensions.desktop" score="4" last-seen="1771541308"/>
+    <application id="sublime_text.desktop" score="8" last-seen="1772281263"/>
+    <application id="Alacritty.desktop" score="169" last-seen="1772282744"/>
+    <application id="brave-browser.desktop" score="19" last-seen="1772218166"/>
+    <application id="org.gnome.Settings.desktop" score="7" last-seen="1772217985"/>
+    <application id="org.wezfurlong.wezterm.desktop" score="238" last-seen="1772282729"/>
+    <application id="firefox-esr.desktop" score="128" last-seen="1772282743"/>
   </context>
 </application-state>
