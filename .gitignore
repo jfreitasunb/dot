@@ -942,3 +942,4 @@ rivendel/maquinas_virtuais/qemu/debian13.xml
 rivendel/maquinas_virtuais/qemu/manjaro.xml
 /rivendel/stow_configs/config/.config/mozilla
 rivendel/stow_configs/config/.config/hypr/hyprpaper.conf
+rivendel/stow_configs/config/.config/.mono/keypairs
