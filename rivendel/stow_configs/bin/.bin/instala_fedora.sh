@@ -1,46 +1,185 @@
 #!/bin/bash
+VERSION=43
+#Instala atualizações sem confirmação
 
-cd ~
+sudo dnf update -y
 
-sudo dnf install dnf-plugins-core
+#Para atualizar a versão do Fedora
+
+sudo dnf upgrade --refresh
+
+sudo dnf system-upgrade download --releasever=$VERSION --allowerasing -y
+
+sudo dnf system-upgrade reboot
+
+#Instalando pacotes
 
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
+sudo dnf install nvim zsh texlive-scheme-medium cargo meld onedrive brave-browser stow bat fzf keepassxc vlc gparted alacritty -y
+
 sudo dnf copr enable wezfurlong/wezterm-nightly
 
+sudo dnf install wezterm
+
+sudo dnf update wezterm
+
+
+#Instalando o Eza
+cd ~
+
+git clone https://github.com/eza-community/eza.git
+
+cd eza
+
+cargo install --path .
+
+cd ~
+
+cd ~/.cargo/bin
+
+mv eza exa
+
+cd ~
+
+rm -rf eza
+
+#Instalando o wezterm
+
+curl https://sh.rustup.rs -sSf | sh -s
+
+git clone --depth=1 --branch=main --recursive https://github.com/wezterm/wezterm.git
+
+cd wezterm
+
+git submodule update --init --recursive
+
+./get-deps
+
+cargo build --release
+
+cd assets
+
+sudo cp wezterm.desktop /usr/share/applications/
+
+sudo cp icon/terminal.png /usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+
+cd ../
+
+cd target/release/
+
+sudo cp wezterm wezterm-gui wezterm-mux-server /usr/bin/
+
+cd ~
+
+rm -rf wezterm
+
+#Instalando o yazi
 sudo dnf copr enable lihaohong/yazi
 
-sudo dnf copr enable eddsalkield/swaylock-effects
+sudo dnf install yazi -y
 
+#Virtualização
+sudo dnf install @virtualization -y
+
+sudo systemctl enable libvirtd
+
+sudo usermod -a -G libvirt jfreitas
+
+#Instalando fontes windows
+
+sudo dnf install mscore-fonts-all -y
+
+#Instalando o R
+
+sudo dnf install R
+
+#Instalando zoxide
+
+sudo dnf install zoxide -y
+
+#Instalando o zplug
+cd ~
+git clone https://github.com/zplug/zplug ~/.local/share/zplug
+
+#Instalando o Zathura(leitor de PDF)
+sudo dnf install zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps -y
+
+#Instalando Sublime text
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 
 sudo dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 
-sudo dnf install brave-browser wezterm yazi onedrive neovim sublime-text mscore-fonts-all fontconfig bat arandr feh flameshot fzf keepassxc p7zip pavucontrol pdftk-java picom r root-r-tools ranger rsync virt-manager vlc zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh nemo nemo-fileroller meld dconf-editor ImageMagick yasm texlive-scheme-full latexmk sublime-text zoxide ripgrep luarocks xclip tmux stow xmonad xmobar yad blueman htop sway wofi waybar wlogout swayidle rofi network-manager-applet copyq gnome-extensions-app virt-manager qemu make automake gcc gcc-c++ kernel-devel meson swaylock-effects
+sudo dnf install sublime-text -y
 
-git clone https://github.com/Raymo111/i3lock-color.git
 
-cd i3lock-color
+#Instalando docker
 
-./install-i3lock-color.sh
+sudo dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+sudo systemctl enable docker
+
+sudo usermod -aG docker jfreitas
+
+#Instalando Flatpaks
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub com.bitwarden.desktop -y
+
+flatpak install flathub org.gimp.GIMP -y
+
+flatpak install flathub io.github.shiftey.Desktop -y
+
+flatpak install flathub com.github.PintaProject.Pinta -y
+
+flatpak install flathub com.spotify.Client -y
+
+flatpak install flathub com.github.xournalpp.xournalpp -y
+
+flatpak install flathub org.geogebra.GeoGebra -y
+
+
+#Arquivos de configuração
 
 cd ~
 
-rm -rf i3lock-color
+rm -rf ~/.config
 
-flatpak install flathub io.github.shiftey.Desktop
+cd ~/GitHub/dot/rivendel/stow_configs/
 
-flatpak install flathub com.bitwarden.desktop
+stow -t /home/jfreitas/ *
 
-flatpak install flathub com.spotify.Client
+cd ~/.local/share/fonts/
 
-flatpak install flathub org.texstudio.TeXstudio
+fc-cache -f -v
 
-flatpak install flathub com.discordapp.Discord
+cd ~
 
-flatpak install flathub com.github.xournalpp.xournalpp
+#Instalando atuin
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 
-sudo dnf remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd
+#Instalando starship
+curl -sS https://starship.rs/install.sh | sh
+
+#TMUX
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#Mudando o shell para ZSH
+sudo chsh -s $(which zsh) jfreitas
+
+#Instalando Sway e dependências
+
+sudo dnf install sway wofi waybar swaylock wlogout network-manager-applet dunst -y
+
+#Ativando configurações personalizadas
+sudo rm /etc/default/grub
+
+sudo ln -s ~/GitHub/dot/rivendel/grub/grub /etc/default/grub
+
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
 sudo rm -rf /etc/systemd/sleep.conf
 
@@ -63,39 +202,3 @@ sudo ln -s ~/GitHub/dot/rivendel/maquinas_virtuais/storage /etc/libvirt/
 sudo ln -s /home/jfreitas/GitHub/dot/rivendel/maquinas_virtuais/qemu.conf /etc/libvirt/
 
 sudo systemctl enable fstrim.timer
-
-sudo systemctl enable libvirtd
-
-sudo usermod -aG libvirt jfreitas
-
-sudo chsh -s $(which zsh) jfreitas
-
-echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
-
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-
-cd ~
-
-rm .zshrc
-
-rm .zsh_history
-
-rm -rf ~/.config
-
-rm -rf ~/.local/share/gnome-shell
-
-cd ~/GitHub/dot/rivendel/stow_configs/
-
-stow -t /home/jfreitas/ *
-
-cd ~/.local/share/fonts/
-
-fc-cache -f -v
-
-cd ~
-
-curl https://pyenv.run | bash
-
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-
-curl -sS https://starship.rs/install.sh | sh
