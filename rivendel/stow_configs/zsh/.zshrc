@@ -1,5 +1,7 @@
 ZDOTDIR=$HOME/.config/zsh
 
+ZPLUG_HOME=$HOME/.local/share/zplug
+
 if [ -d "$HOME/.cargo/env" ] ; then
     . "$HOME/.cargo/env"
 fi
@@ -35,6 +37,10 @@ if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
 fi
 
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
@@ -65,7 +71,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 _comp_options+=(globdots) # With hidden files
 
 # zplug - manage plugins
-source /usr/share/zplug/init.zsh #para Debian
+source $ZPLUG_HOME/init.zsh #para Debian
 #source /usr/share/zsh/scripts/zplug/init.zsh #para Arch
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
@@ -137,9 +143,9 @@ if [ -d "$HOME/local/share/../bin/env" ] ; then
 fi
 #eval "$(uv generate-shell-completion zsh)"
 
-. "$HOME/.local/bin/env"
+#. "$HOME/.local/bin/env"
 
 # >>> Added by Spyder >>>
-alias spyder=/home/jfreitas/.local/spyder-6/envs/spyder-runtime/bin/spyder
-alias uninstall-spyder=/home/jfreitas/.local/spyder-6/uninstall-spyder.sh
+#alias spyder=/home/jfreitas/.local/spyder-6/envs/spyder-runtime/bin/spyder
+#alias uninstall-spyder=/home/jfreitas/.local/spyder-6/uninstall-spyder.sh
 # <<< Added by Spyder <<<
