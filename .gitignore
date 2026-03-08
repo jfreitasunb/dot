@@ -943,3 +943,4 @@ rivendel/maquinas_virtuais/qemu/manjaro.xml
 /rivendel/stow_configs/config/.config/mozilla
 rivendel/stow_configs/config/.config/hypr/hyprpaper.conf
 rivendel/stow_configs/config/.config/.mono/keypairs
+/rivendel/stow_configs/texstudio/.var/app/io.github.shiftey.Desktop
