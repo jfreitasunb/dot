@@ -189,6 +189,8 @@ sudo ln -s ~/GitHub/dot/rivendel/logind/sleep.conf /etc/systemd/sleep.conf
 
 sudo ln -s ~/GitHub/dot/rivendel/logind/logind.conf /etc/systemd/logind.conf
 
+sudo ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /etc/systemd/system/systemd-suspend.service
+
 sudo rm -rf /etc/libvirt/qemu
 
 sudo rm -rf /etc/libvirt/qemu.conf
