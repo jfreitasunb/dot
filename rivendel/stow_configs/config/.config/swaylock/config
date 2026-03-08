@@ -1,6 +1,5 @@
 image=/home/jfreitas/OneDrive/Pictures/Wallpapers/0188.jpg
 show-failed-attempts
-clock
 indicator
 indicator-radius=100
 indicator-thickness=7
