@@ -945,3 +945,6 @@ rivendel/stow_configs/config/.config/hypr/hyprpaper.conf
 rivendel/stow_configs/config/.config/.mono/keypairs
 /rivendel/stow_configs/texstudio/.var/app/io.github.shiftey.Desktop
 rivendel/stow_configs/extensions/.local/share/gnome-shell/session-active-history.json
+/rivendel/stow_configs/config/.config/google-chrome
+rivendel/stow_configs/config/.config/texstudio/packageCache.dat
+rivendel/stow_configs/config/.config/uv/uv-receipt.json
