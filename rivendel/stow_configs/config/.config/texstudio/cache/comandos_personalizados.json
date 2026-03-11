@@ -1,0 +1,116 @@
+{
+    "bibitems": [
+    ],
+    "bibtexfiles": [
+    ],
+    "childdocs": [
+    ],
+    "filename": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Calculo_1/2025-1/Avaliacoes/Testes_semanais/configuracoes_testes/comandos_personalizados.tex",
+    "labels": [
+    ],
+    "modified": "Tue Jun 3 16:32:17 2025",
+    "packages": [
+    ],
+    "refs": [
+    ],
+    "toc": [
+    ],
+    "usercommands": [
+        [
+            "\\cp",
+            "\\cp{}"
+        ],
+        [
+            "\\sin",
+            "\\sin"
+        ],
+        [
+            "\\sub",
+            "\\sub"
+        ],
+        [
+            "\\disciplina",
+            "\\disciplina"
+        ],
+        [
+            "\\z",
+            "\\z"
+        ],
+        [
+            "\\ano",
+            "\\ano"
+        ],
+        [
+            "\\comp",
+            "\\comp"
+        ],
+        [
+            "\\real",
+            "\\real"
+        ],
+        [
+            "\\im",
+            "\\im"
+        ],
+        [
+            "\\csc",
+            "\\csc"
+        ],
+        [
+            "\\compcent",
+            "\\compcent{}"
+        ],
+        [
+            "\\dlim",
+            "\\dlim{}{}"
+        ],
+        [
+            "\\complex",
+            "\\complex"
+        ],
+        [
+            "\\n",
+            "\\n"
+        ],
+        [
+            "\\ninf",
+            "\\ninf"
+        ],
+        [
+            "\\sinh",
+            "\\sinh"
+        ],
+        [
+            "\\tan",
+            "\\tan"
+        ],
+        [
+            "\\minf",
+            "\\minf"
+        ],
+        [
+            "\\nomeabreviado",
+            "\\nomeabreviado"
+        ],
+        [
+            "\\vesp",
+            "\\vesp{}"
+        ],
+        [
+            "\\semestre",
+            "\\semestre"
+        ],
+        [
+            "\\turma",
+            "\\turma"
+        ],
+        [
+            "\\rac",
+            "\\rac"
+        ],
+        [
+            "\\cot",
+            "\\cot"
+        ]
+    ]
+}

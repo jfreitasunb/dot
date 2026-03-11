@@ -1,0 +1,49 @@
+{
+    "bibitems": [
+    ],
+    "bibtexfiles": [
+    ],
+    "childdocs": [
+        "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Calculo_1/2025-1/Avaliacoes/Testes_semanais/configuracoes_testes/ambientes.tex",
+        "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Calculo_1/2025-1/Avaliacoes/Testes_semanais/configuracoes_testes/pacotes.tex",
+        "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Calculo_1/2025-1/Avaliacoes/Testes_semanais/configuracoes_testes/comandos_personalizados.tex"
+    ],
+    "filename": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Calculo_1/2025-1/Avaliacoes/Testes_semanais/modulo_2/Teste_1.tex",
+    "labels": [
+    ],
+    "modified": "Wed Jun 4 16:48:09 2025",
+    "packages": [
+        "12pt#class-exam",
+        "12pt#latex-document",
+        "12pt#tex"
+    ],
+    "refs": [
+    ],
+    "toc": [
+        "-1#../configuracoes_testes/pacotes#9",
+        "-1#../configuracoes_testes/comandos_personalizados#10",
+        "-1#../configuracoes_testes/ambientes#11"
+    ],
+    "usercommands": [
+        [
+            "\\dataavaliacao",
+            "\\dataavaliacao"
+        ],
+        [
+            "\\numeroteste",
+            "\\numeroteste"
+        ],
+        [
+            "",
+            "\\mathcal{E}"
+        ],
+        [
+            "\\modulo",
+            "\\modulo"
+        ],
+        [
+            "",
+            "\\mathcal{E}"
+        ]
+    ]
+}

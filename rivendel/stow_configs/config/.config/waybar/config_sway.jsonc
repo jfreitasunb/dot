@@ -1,0 +1,166 @@
+[
+    {
+        "output": "eDP-1",
+        "layer": "top",
+        "height": 42,
+        "reload_style_on_change": true,
+        "modules-left": [
+            "sway/workspaces"
+        ],
+        "modules-center": [
+            "clock"
+            //"custom/clipboard",
+        ],
+        "modules-right": [
+            "tray",
+            "bluetooth",
+            "network",
+            "battery",
+            "cpu",
+            "memory",
+            "pulseaudio",
+            "custom/power"
+        ],
+        "sway/workspaces": {
+            "warp-on-scroll": false,
+            "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span>",
+            "on-click": "activate",
+            "sort-by-number": true,
+            "all-outputs": false,
+            "persistent-workspaces": {
+                 "1": ["eDP-1"],
+                 "2": ["eDP-1"],
+                 "3": ["eDP-1"],
+                 "4": ["eDP-1"],
+                 "5": ["eDP-1"],
+                 "6": ["HDMI-A-1"],
+                 "7": ["HDMI-A-1"],
+                 "8": ["HDMI-A-1"],
+                 "9": ["HDMI-A-1"],
+                 "10": ["HDMI-A-1"],
+            },
+        },
+        "custom/clipboard": {
+        "format": "📋", // Ou use um ícone de Nerd Font como 
+        "tooltip": true,
+        "tooltip-format": "{} Itens no Histórico",
+        "exec": "echo $(wmcliphist list | wc -l)", // Conta os itens no histórico
+        "interval": 5, // Atualiza a contagem a cada 5 segundos
+        "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy",
+        "on-click-right": "cliphist wipe" // BÔNUS: Limpa o histórico com o botão direito
+        },
+        "custom/power": {
+            "format": "<span size='small' font='Font Awesome 6 Free'> </span>",
+            "tooltip": false,
+            // "tooltip-format": "Power Menu",
+            "on-click": "wlogout -b 3"
+        },
+        "clock": {
+            "interval": 1,
+            "format": " {:%d/%m/%Y | %H:%M} <span size='small' font='Font Awesome 6 Free'> </span>",
+            "tooltip": true,
+            "tooltip-format": "<tt><small>{calendar}</small></tt>"
+        },
+        "tray": {
+            "icon-size": 15,
+            "spacing": 10
+        },
+        "bluetooth": {
+            "format": "<span size='small' font='Font Awesome 6 Free'> </span>{status}",
+            "format-disabled": "",
+            "format-off": "",
+            "interval": 30,
+            "on-click": "blueman-manager",
+            "format-no-controller": ""
+        },
+        "network": {
+            "format": "{ifname}",
+            "format-wifi": "<span size='small' font='Font Awesome 6 Free'></span> {essid} ({signalStrength}%)",
+            "format-ethernet": "  {ifname}",
+            "format-disconnected": "Disconnected ⚠",
+            "tooltip-format": " {ifname} via {gwaddri}",
+            "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}GHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+            "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+            "tooltip-format-disconnected": "Disconnected",
+            "max-length": 50,
+            "on-click": "~/.bin/networkmanager.sh",
+            "on-click-right": "~/.bin:tooltip-format-wifi/nm-applet.sh toggle",
+        },
+       "battery": {
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span> {capacity}%",
+            "format-charging": "  {capacity}%",
+            "format-plugged": "  {capacity}%",
+            "format-alt": "{icon}  {time}",
+            // "format-good": "", // An empty format will hide the module
+            // "format-full": "",
+            "format-icons": [" ", " ", " ", " ", " "]
+        },
+        "cpu": {
+            "interval": 30,
+            "format": "<span size='small' font='Font Awesome 6 Free'> </span> {load}%",
+            "max-length": 10
+        },
+        "memory": {
+            "interval": 30,
+            "format": "<span size='small' font='Font Awesome 6 Free'> </span> {used:0.1f} GB"
+        },
+        "power-profiles-daemon": {
+          "format": "{icon}",
+          "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+          "tooltip": true,
+          "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+          }
+        },
+        "pulseaudio": {
+            "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span> {volume}% {format_source}",
+            "format-bluetooth": "{volume}% {icon}",
+            "format-muted": "󰖁 0% {format_source}",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "󰂑",
+                "headset": "󰂑",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": [
+                    "",
+                    ""
+                ]
+            },
+            "scroll-step": 5,
+            "on-click": "pavucontrol",
+            "ignored-sinks": [
+                "Easy Effects Sink"
+            ],
+            "format-source": " {volume}%",
+            "format-source-muted": " {volume}%"
+        }
+    },
+    // Configuração da barra para o segundo monitor (HDMI-A-1)
+    {
+        "output": "HDMI-A-1",
+        "layer": "top",
+        "modules-left": ["sway/workspaces"],
+        "sway/workspaces": {
+            "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span>",
+            "on-click": "activate",
+            "sort-by-number": true,
+            "persistent-workspaces": {
+                "6": ["HDMI-A-1"],
+                "7": ["HDMI-A-1"],
+                "8": ["HDMI-A-1"],
+                "9": ["HDMI-A-1"],
+                "10": ["HDMI-A-1"]
+            }
+        }
+    }
+]
