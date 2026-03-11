@@ -1,5 +1,0 @@
-#!/bin/bash
-
-if [[ $(wmctrl -m | grep "Name: bspwm") ]]; then
-    startup
-fi
