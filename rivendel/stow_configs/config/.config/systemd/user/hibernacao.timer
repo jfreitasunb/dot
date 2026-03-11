@@ -1,9 +1,0 @@
-[Unit]
-Description=Hiberna quando a tela é fechada
-
-[Timer]
-OnCalendar=*:*:0/5
-Persistent=true
-
-[Install]
-WantedBy=basic.target

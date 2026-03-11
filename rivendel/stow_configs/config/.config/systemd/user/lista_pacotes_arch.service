@@ -1,9 +1,0 @@
-[Unit]
-Description=Backup da lista de pacotes instalados no Arch
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash /home/jfreitas/.bin/lista_pacotes_arch.sh
-
-[Install]
-WantedBy=multi-user.target
