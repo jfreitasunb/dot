@@ -948,3 +948,12 @@ rivendel/stow_configs/extensions/.local/share/gnome-shell/session-active-history
 /rivendel/stow_configs/config/.config/google-chrome
 rivendel/stow_configs/config/.config/texstudio/packageCache.dat
 rivendel/stow_configs/config/.config/uv/uv-receipt.json
+/rivendel/configuracoes_usando_stow/config/.config/.mono
+rivendel/configuracoes_usando_stow/config/.config/atuin/atuin-receipt.json
+/rivendel/configuracoes_usando_stow/config/.config/gtk-3.0/assets
+rivendel/configuracoes_usando_stow/config/.config/nvim/lazy-lock.json
+rivendel/configuracoes_usando_stow/config/.config/onedrive/items.sqlite3-shm
+rivendel/configuracoes_usando_stow/config/.config/onedrive/items.sqlite3-wal
+rivendel/configuracoes_usando_stow/config/.config/onedrive/refresh_token
+rivendel/configuracoes_usando_stow/config/.config/picom/README.md
+rivendel/configuracoes_usando_stow/zsh_history/.zsh_history
