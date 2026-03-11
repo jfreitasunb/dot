@@ -2,24 +2,46 @@
 
 cd ~
 
-sudo apt install curl ninja-build gettext cmake unzip build-essential python3-pip git python3-apt python3-debian pandoc wget unzip libffi-dev libgmp-dev libx11-dev libxrandr-dev libxinerama-dev libxss-dev pkg-config libxft-dev xorg-dev libxrandr-dev libpango1.0-dev libasound2-dev libxpm-dev libmpd-dev cabal-install meson libwayland-dev wayland-protocols scdoc
+#Instala o curl, git, npm, nodejs
+
+sudo apt install curl git nodejs npm build-essential automake python3.13-venv -y
+
+#Instala o Brave
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
+sudo apt update
+
+sudo apt install brave-browser -y
+
+#Instala o sublime text
+
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg >/dev/null
 
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+sudo apt update
+
+sudo apt install sublime-text -y
+
+#Instala o weztem
 
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
 
 echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
 
+sudo apt update
+
+sudo apt install wezterm -y
+
+#Instala o docker
+
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-# Add the repository to Apt sources:
 sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
 Types: deb
 URIs: https://download.docker.com/linux/debian
@@ -28,14 +50,17 @@ Components: stable
 Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
-
-sudo apt modernize-sources
-
 sudo apt update
 
-sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev qml-module-qtquick-controls qml-module-qtquick-controls2 libxrandr-dev libxss-dev pkgconf libxft-dev adwaita-icon-theme arandr automake autorandr bat bzip2 eza feh flameshot flatpak fzf git lxappearance p7zip p7zip-full pavucontrol pdftk picom qemu-utils qemu-system-x86 qemu-system-gui r-base ranger rsync virt-manager vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps zsh zplug nemo nemo-fileroller meld dconf-editor gnome-sushi python3-tk imagemagick libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev build-essential libcurl4-openssl-dev libsqlite3-dev libnotify-dev libcurl4-openssl-dev haskell-stack fonts-liberation numlockx libx11-dev libxinerama-dev yasm libtool libc6 libc6-dev libnuma1 libnuma-dev libx265-dev nasm libx264-dev libvpx-dev libfdk-aac-dev libopus-dev libaom-dev libass-dev libmp3lame-dev libvorbis-dev libvpx-dev lua5.4 libcairo2-dev libpango1.0-dev texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk gparted libclang-dev brave-browser sublime-text ldc python3-nautilus imagemagick flex bison libfreetype6-dev libxcb-xfixes0-dev libxkbcommon-dev ffmpeg libxcb-xtest0 libxcb-cursor0 ffmpegthumbnailer unar jq poppler-utils fd-find zoxide ripgrep luarocks xclip tmux stow xmonad xmobar yad suckless-tools volumeicon-alsa blueman pcmanfm htop fprintd libpam-fprintd tk-dev sway wofi waybar swaylock wlogout libdbus-1-dev python3-pip python3-venv python3-v-sim python-dbus-dev libpangocairo-1.0-0 python3-cairocffi python3-xcffib libxkbcommon-dev libxkbcommon-x11-dev sxhkd bc libfont-freetype-perl autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libgif-dev virtiofsd swayidle gnome-shell-extensions network-manager-applet copyq clang pulseaudio-utils nodejs npm latex-cjk-all ddcutil gawk wezterm kitty wl-clipboard cliphist dunst freerdp3-x11 fd-find chafa resvg 7zip-standalone ueberzug docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin hyprland hyprland-protocols hyprpicker hyprland-qtutils hyprcursor-util hyprpaper hypridle neovim onedrive hyprlock
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
-#sudo apt install -t bookworm-backports -y curl libcurl4
+sudo systemctl enable docker
+
+sudo usermod -aG docker jfreitas
+
+#Instalação do neovim
+
+sudo apt install ninja-build gettext cmake build-essential -y
 
 git clone https://github.com/neovim/neovim
 
@@ -50,6 +75,10 @@ sudo make install
 cd ~
 
 rm -rf neovim
+
+#Instalação do onedrive
+
+sudo apt install build-essential libcurl4-openssl-dev libsqlite3-dev pkg-config systemd-dev libdbus-1-dev -y
 
 curl -fsS https://dlang.org/install.sh | bash -s dmd
 
@@ -77,111 +106,21 @@ rm -rf dlang
 
 rm -rf onedrive
 
-#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#Fontes
 
-#source "$HOME/.cargo/env"
+sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev -y
 
-#rustup update
+#Pacotes de propósito geral
 
-#git clone https://github.com/sxyazi/yazi.git
+sudo apt install bat bzip2 eza feh flameshot flatpak fzf p7zip p7zip-full pdftk ranger rsync vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps meld imagemagick xz-utils fd-find zoxide ripgrep luarocks xclip ffmpeg ffmpegthumbnailer htop autoconf gcc make pkg-config poppler-utils -y
 
-#cd yazi
+#Virtualização
 
-#cargo build --release --locked
+sudo apt install qemu-utils qemu-system-x86 qemu-system-gui virt-manager virtiofsd -y
 
-#sudo mv target/release/yazi target/release/ya /usr/local/bin/
+sudo systemctl enable libvirtd
 
-#cd ~
-
-#rm -rf yazi
-
-git clone https://github.com/Raymo111/i3lock-color.git
-
-cd i3lock-color
-
-./install-i3lock-color.sh
-
-cd ~
-
-rm -rf i3lock-color
-
-wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/main/install.sh -O - -q | sudo bash -s system
-
-cd ~
-
-git clone https://github.com/mortie/swaylock-effects.git
-
-cd swaylock-effects/
-
-meson build
-
-ninja -C build
-
-sudo ninja -C build install
-
-cd ~
-
-rm -rf swaylock-effects
-
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-flatpak install flathub com.bitwarden.desktop
-
-flatpak install flathub org.gimp.GIMP
-
-flatpak install flathub io.github.shiftey.Desktop
-
-flatpak install flathub com.github.PintaProject.Pinta
-
-flatpak install flathub com.spotify.Client
-
-flatpak install flathub org.texstudio.TeXstudio
-
-flatpak install flathub com.github.xournalpp.xournalpp
-
-flatpak install flathub org.geogebra.GeoGebra
-
-flatpak install flathub org.keepassxc.KeePassXC
-
-rm -rf ~/.config
-
-rm -rf ~/.local/share/gnome-shell
-
-cd ~/GitHub/dot/rivendel/stow_configs/
-
-stow -t /home/jfreitas/ *
-
-cd ~/.local/share/fonts/
-
-fc-cache -f -v
-
-cd ~
-
-#curl https://pyenv.run | bash
-
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-
-curl -sS https://starship.rs/install.sh | sh
-
-sudo apt remove gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd php-cli php-mbstring --purge
-
-sudo apt autoremove
-
-sudo rm /etc/default/grub
-
-sudo ln -s ~/GitHub/dot/rivendel/grub/grub /etc/default/grub
-
-sudo update-grub2
-
-sudo rm -rf /etc/systemd/sleep.conf
-
-sudo rm -rf /etc/systemd/logind.conf
-
-sudo ln -s ~/GitHub/dot/rivendel/logind/sleep.conf /etc/systemd/sleep.conf
-
-sudo ln -s ~/GitHub/dot/rivendel/logind/logind.conf /etc/systemd/logind.conf
+sudo usermod -aG libvirt jfreitas
 
 sudo rm -rf /etc/libvirt/qemu
 
@@ -195,19 +134,39 @@ sudo ln -s ~/GitHub/dot/rivendel/maquinas_virtuais/storage /etc/libvirt/
 
 sudo ln -s /home/jfreitas/GitHub/dot/rivendel/maquinas_virtuais/qemu.conf /etc/libvirt/
 
-sudo systemctl enable fstrim.timer
+#R
 
-sudo systemctl enable libvirtd
+sudo apt install lib32gcc-s1 lib32stdc++6 libc6-i386 libclang-19-dev libclang-common-19-dev libclang-dev libclang-rt-19-dev libclang1-19 libobjc-14-dev libobjc4 r-base -y
 
-sudo usermod -aG libvirt jfreitas
+#ZSH e terminal
+
+sudo apt install zsh alacritty kitty -y
 
 sudo chsh -s $(which zsh) jfreitas
 
-sudo systemctl enable docker
+cd ~
 
-sudo usermod -aG docker jfreitas
+git clone https://github.com/zplug/zplug ~/.local/share/zplug
 
-sudo ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /etc/systemd/system/systemd-suspend.service
+#Pacotes para Gnome
+
+sudo apt install dconf-editor gnome-sushi libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
+
+echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
+
+#LaTeX
+
+sudo apt install texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk latex-cjk-all texstudio -y
+
+#TMUX
+
+sudo apt install tmux -y
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#Sway
+
+sudo apt install sway wofi waybar swaylock wlogout cliphist swayidle network-manager-applet wl-clipboard dunst blueman -y
 
 python3 -m venv ~/.local/src/venv/
 
@@ -217,7 +176,91 @@ cd ~/.local/src/venv/bin/
 
 cd ~
 
-echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
+#Hyprland
+
+sudo apt install hyprland hyprland-protocols hyprpicker hyprland-qtutils hyprcursor-util hyprpaper hypridle hyprlock -y
+
+#Xmonad
+
+sudo apt install xmonad xmobar yad suckless-tools volumeicon-alsa pcmanfm lxappearance pavucontrol picom adwaita-icon-theme arandr autorandr nemo nemo-fileroller -y
+
+#FSTRIM
+
+sudo systemctl enable fstrim.timer
+
+#Atualizando o GRUB
+
+sudo rm /etc/default/grub
+
+sudo ln -s ~/GitHub/dot/rivendel/grub/grub /etc/default/grub
+
+sudo update-grub2
+
+#Hibernação
+
+sudo rm -rf /etc/systemd/sleep.conf
+
+sudo rm -rf /etc/systemd/logind.conf
+
+sudo ln -s ~/GitHub/dot/rivendel/logind/sleep.conf /etc/systemd/sleep.conf
+
+sudo ln -s ~/GitHub/dot/rivendel/logind/logind.conf /etc/systemd/logind.conf
+
+sudo ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /etc/systemd/system/systemd-suspend.service
+
+#Stow
+
+sudo apt install stow -y
+
+rm -rf ~/.config
+
+#rm -rf ~/.local/share/gnome-shell
+
+cd ~/GitHub/dot/rivendel/configuracoes_usando_stow/
+
+stow -t /home/jfreitas/ *
+
+cd ~/.local/share/fonts/
+
+fc-cache -f -v
+
+cd ~
+
+#Flatpaks
+
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub com.bitwarden.desktop -y
+
+flatpak install flathub org.gimp.GIMP -y
+
+flatpak install flathub io.github.shiftey.Desktop -y
+
+flatpak install flathub com.github.PintaProject.Pinta -y
+
+flatpak install flathub com.spotify.Client -y
+
+flatpak install flathub com.github.xournalpp.xournalpp -y
+
+flatpak install flathub org.geogebra.GeoGebra -y
+
+flatpak install flathub org.keepassxc.KeePassXC -y
+
+flatpak install flathub org.texstudio.TeXstudio -y
+
+#Atuin, starship e uv
+
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+curl -sS https://starship.rs/install.sh | sh
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+#Removendo programas e desativando serviçoes
+
+sudo apt remove -y gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd php-cli php-mbstring --purge
+
+sudo apt autoremove -y
 
 sudo systemctl disable ModemManager.service
 
