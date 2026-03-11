@@ -968,3 +968,7 @@ rivendel/configuracoes_usando_stow/config/.config/gnome-xdg-terminals.list
 /rivendel/configuracoes_usando_stow/config/.config/evolution
 /rivendel/configuracoes_usando_stow/config/.config/enchant
 /rivendel/configuracoes_usando_stow/config/.config/dconf
+/rivendel/configuracoes_usando_stow/config/.config/texstudio/completion
+rivendel/configuracoes_usando_stow/config/.config/texstudio/lastSession.txss2
+rivendel/configuracoes_usando_stow/config/.config/texstudio/packageCache.dat
+rivendel/configuracoes_usando_stow/config/.config/texstudio/wordCount.usage
