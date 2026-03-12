@@ -1,10 +1,7 @@
 image=/home/jfreitas/OneDrive/Pictures/Wallpapers/0188.jpg
 show-failed-attempts
-indicator
 indicator-radius=100
 indicator-thickness=7
-effect-blur=5x5
-effect-vignette=0.5:0.5
 color=24273a
 bs-hl-color=f4dbd6
 caps-lock-bs-hl-color=f4dbd6
@@ -35,10 +32,4 @@ text-caps-lock-color=f5a97f
 text-ver-color=8aadf4
 text-wrong-color=ee99a0
 bs-hl-color=8BE9FD
-grace=0.4
-grace-no-mouse
-grace-no-touch
-datestr=%a, %e %B
-timestr=%H:%M %p
-fade-in=0.4
 ignore-empty-password
