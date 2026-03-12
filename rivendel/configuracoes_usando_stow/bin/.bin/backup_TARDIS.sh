@@ -8,7 +8,7 @@ LOCKFILE="/tmp/backup_TARDIS.lock"
 # Tenta obter o bloqueio do arquivo. O '-n' faz com que o comando falhe
 # imediatamente se o bloqueio não puder ser obtido.
 
-BACKUP_DEVICE="/run/media/jfreitas/Tardis"
+BACKUP_DEVICE="/media/jfreitas/Tardis"
 
 BACKUP_DESTINATION=$BACKUP_DEVICE/"Backup_Rivendel/"
 
