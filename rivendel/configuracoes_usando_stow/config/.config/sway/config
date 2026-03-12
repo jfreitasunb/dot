@@ -67,6 +67,8 @@ output HDMI-A-1 {
 
 exec /home/jfreitas/.bin/stacki3
 
+exec dunst -conf ~/.config/dunst/dunstrc.conf
+
 exec swayidle -w \
     timeout 1200 'swaylock -f' \
     timeout 1320 'swaymsg "output * dpms off"' \
@@ -245,7 +247,10 @@ bindsym $mod+r mode "resize"
 #                   FLOATING                    #
 #################################################
 
-for_window [app_id="soffice"] floating enable, resize set 500px 500px
+#for_window [app_id="soffice"] floating enable, resize set 500px 500px
+for_window [app_id="soffice"] fullscreen enable
+
+for_window [app_id='transmission-gtk'] fullscreen enable
 
 for_window [class="Brave-browser"] inhibit_idle fullscreen
 
