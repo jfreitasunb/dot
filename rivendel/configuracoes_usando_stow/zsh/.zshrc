@@ -146,6 +146,6 @@ fi
 #. "$HOME/.local/bin/env"
 
 # >>> Added by Spyder >>>
-#alias spyder=/home/jfreitas/.local/spyder-6/envs/spyder-runtime/bin/spyder
-#alias uninstall-spyder=/home/jfreitas/.local/spyder-6/uninstall-spyder.sh
+alias spyder=/home/jfreitas/.local/spyder-6/envs/spyder-runtime/bin/spyder
+alias uninstall-spyder=/home/jfreitas/.local/spyder-6/uninstall-spyder.sh
 # <<< Added by Spyder <<<
