@@ -1,0 +1,1672 @@
+#+title: Doom Emacs Config
+#+author: Michael Neuper
+#+startup: content
+
+This is my literate doom emacs config.
+[[#basic][Basic]] sets up some basic emacs and doom configurations.
+[[#doom-modules][Doom Modules]] contains the configuration all packages and tries to mirror the structure
+of doom's =init.el=.
+
+- Each top-level heading under [[#doom-modules][doom modules]] corresponds to a Doom module category
+  (e.g., [[#lang][:lang]], [[#ui][:ui]]), as declared in the =doom!= macro in =init.el=.
+- Each second-level heading  corresponds to an individual module within that category
+  (e.g., [[#org][org]], [[#modeline][modeline]]).
+- Each third-level heading represents any flags applied to that module
+  (e.g., [[#+pretty][+pretty]], [[#+roam2][+roam2]]), which alter the module’s behavior or dependencies.
+- Subsequent headings:
+  + Core packages enabled by those flags (e.g., [[#org-modern][org-modern]])
+  + Manually installed packages related to that module (e.g., org-modern-indent)
+  + Configuration snippets or tweaks logically grouped by package or functionality
+
+* Contents :toc:
+- [[#basic][Basic]]
+  - [[#defaults][Defaults]]
+  - [[#visual-enchancements][Visual Enchancements]]
+- [[#doom-modules][Doom Modules]]
+  - [[#completion][:completion]]
+  - [[#ui][:ui]]
+  - [[#editor][:editor]]
+  - [[#emacs][:emacs]]
+  - [[#term][:term]]
+  - [[#tools][:tools]]
+  - [[#lang][:lang]]
+  - [[#app][:app]]
+
+* Basic
+** Defaults
+*** Speed
+Make this file run slightly faster (see [[https://nullprogram.com/blog/2016/12/22/][this blog post]]).
+#+begin_src emacs-lisp
+;;; config.el -*- lexical-binding: t; -*-
+#+end_src
+
+#+begin_src emacs-lisp :tangle packages.el
+;; -*- no-byte-compile: t; -*-
+;;; $DOOMDIR/packages.el
+#+end_src
+
+Make emacs faster.
+#+begin_src emacs-lisp
+(use-package! gcmh
+  :init
+  (setq gcmh-idle-delay 5
+        gcmh-high-cons-threshold (* 256 1024 1024))  ; 256MB during idle
+  :config
+  (gcmh-mode 1))
+
+(setq gc-cons-threshold 200000000) ; previous 33554432
+#+end_src
+*** Basic
+#+begin_src emacs-lisp
+;; credentials
+(setq user-full-name "Michael Neuper"
+      user-mail-address "michael@michaelneuper.com")
+
+;; autosave and backup
+(setq auto-save-default t
+      make-backup-files t)
+
+;; kill emacs without confiming
+(setq confirm-kill-emacs nil)
+
+;; remap <localleader> from SPC m to SPC l
+(setq doom-localleader-key "SPC l"
+      doom-localleader-alt-key "M-SPC l")
+#+end_src
+
+Some =which-key= adjustments.
+#+begin_src emacs-lisp
+(use-package! which-key
+  :init
+  (setq which-key-idle-delay 0.5
+        which-key-allow-multiple-replacements t)
+  :config
+  (which-key-mode 1)
+
+  ;; modified from https://tecosaur.github.io/emacs-config/config.html#which-key
+  (pushnew!
+   which-key-replacement-alist
+   '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
+   '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))
+   '(("" . "\\`+?magit[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "\\1"))))
+#+end_src
+*** macOS
+Some macOS specific settings.
+
+- For thinner fonts on macOS run ~defaults write org.gnu.Emacs AppleFontSmoothing -int 0~
+- To revert run ~defaults delete org.gnu.Emacs AppleFontSmoothing~
+#+begin_src emacs-lisp
+(if (featurep :system 'macos)
+    (setq mac-command-modifier 'meta
+          mac-option-modifier 'none
+          mac-right-option-modifier 'super
+          ns-use-proxy-icon nil ; disable file icon in titlebar
+          ns-use-native-fullscreen t)
+
+  (map! :nvi "M-v" #'yank))
+#+end_src
+** Visual Enchancements
+*** Theme & Fonts
+Use the gruvbox theme and set some fonts.
+The fonts need to be installed on your machine and make sure to run ~M-x nerd-icons-install-fonts~.
+#+ATTR_ORG: :width 500
+[[file:images/gruvbox-colorscheme.png]]
+#+begin_src emacs-lisp
+(setq doom-theme 'doom-gruvbox
+      doom-gruvbox-dark-variant "medium"
+      doom-gruvbox-padded-modeline t)
+
+(if (featurep :system 'macos)
+    (progn
+      (defconst my/serif-font "New York")
+      (defconst my/sans-serif-font "SF Pro")
+      (defconst my/mono-font "SF Mono"))
+  (progn
+    (defconst my/serif-font "Latin Modern Roman")
+    (defconst my/sans-serif-font "Inter")
+    (defconst my/mono-font "JetBrainsMono Nerd Font")))
+
+(setq doom-font (font-spec :family my/mono-font :size 15)
+      doom-variable-pitch-font (font-spec :family my/serif-font)
+      doom-emoji-font (font-spec :family "Apple Color Emoji"))
+#+end_src
+
+Add some missing file icons to =nerd-fonts=.
+#+begin_src emacs-lisp
+(after! nerd-icons
+  (dolist (entry
+           '(("s"     nerd-icons-sucicon "nf-seti-asm"         :face nerd-icons-blue)
+             ("o"     nerd-icons-codicon "nf-cod-file_binary"  :face nerd-icons-orange)
+             ("class" nerd-icons-codicon "nf-cod-file_binary"  :face nerd-icons-orange)
+             ("vim"   nerd-icons-devicon "nf-dev-vim"          :face default)
+             ("ms"    nerd-icons-mdicon  "nf-md-file_document" :face nerd-icons-silver)
+             ("1"     nerd-icons-mdicon  "nf-md-file_document" :face nerd-icons-silver)
+             ("ps"    nerd-icons-mdicon  "nf-md-vector_curve"  :face nerd-icons-dred)
+             ("typ"   nerd-icons-flicon  "nf-linux-typst"      :face nerd-icons-dblue)))
+    (add-to-list 'nerd-icons-extension-icon-alist entry)))
+#+end_src
+
+Make escape characters like =\n= orange when the =gruvbox= theme is used like in neovim.
+#+begin_src emacs-lisp
+(custom-theme-set-faces! 'doom-gruvbox
+  `(font-lock-escape-face :foreground ,(doom-color 'orange)))
+
+(custom-set-faces!
+  `(font-lock-doc-face
+    :foreground ,(face-attribute 'font-lock-comment-face :foreground))
+  `(hexl-address-region :font ,my/mono-font)
+  `(hexl-ascii-region
+    :background ,(doom-color 'bg-alt)
+    :foreground ,(doom-color 'fg-alt)))
+#+end_src
+*** Lines
+Enable relative line numbers and make their slant normal (not italic).
+#+begin_src emacs-lisp
+;; (setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 'visual)
+
+(add-hook! 'display-line-numbers-mode-hook
+  (custom-set-faces!
+    '((line-number line-number-current-line)
+      :slant normal)
+    `(line-number-current-line
+      :background ,(face-attribute 'line-number :background)
+      :foreground ,(doom-color 'fg))))
+#+end_src
+
+Only highlight the current line in programming modes and =dired=.
+#+begin_src emacs-lisp
+(setq global-hl-line-modes '(prog-mode dired-mode))
+#+end_src
+*** Window
+Start emacs in a 100x40 window.
+#+begin_src emacs-lisp
+(add-to-list 'default-frame-alist '(width . 100))
+(add-to-list 'default-frame-alist '(height . 40))
+#+end_src
+
+Format the title.
+#+begin_src emacs-lisp
+;; copied from https://hieuphay.com/doom-emacs-config/#some-good-defaults
+;; (setq frame-title-format
+;;       '(""
+;;         (:eval
+;;          (if (s-contains-p org-roam-directory (or buffer-file-name ""))
+;;              (replace-regexp-in-string
+;;               ".*/[0-9]*-?" "☰ "
+;;               (subst-char-in-string ?_ ?  buffer-file-name))
+;;            "%b"))
+;;         (:eval
+;;          (let ((project-name (projectile-project-name)))
+;;            (unless (string= "-" project-name)
+;;              (format (if (buffer-modified-p)  " ◉ %s" " ● %s") project-name))))))
+
+;; (setq frame-title-format '("" (:eval buffer-name) "%b"))
+(setq frame-title-format "GNU Emacs")
+#+end_src
+* Doom Modules
+** :completion
+*** corfu
+Disable corfu's auto-popups and preselect the first candidate.
+#+begin_src emacs-lisp
+(after! corfu
+  (setq corfu-auto nil
+        corfu-preselect 'first
+        corfu-preview-current nil
+        +corfu-want-tab-prefer-expand-snippets t))
+#+end_src
+** :ui
+*** deft
+Quickly search and filter through [[+roam2]] notes.
+#+begin_src emacs-lisp
+(use-package! deft
+  :after org-roam
+  :config
+  (setq deft-recursive t
+        deft-use-filter-string-for-filename t
+        deft-default-extension "org"
+        deft-directory org-roam-directory)
+
+  (map! :leader :desc "Search with deft" "r s" #'deft))
+#+end_src
+*** doom-dashboard
+#+ATTR_ORG: :width 350
+[[file:images/dashboard.png]]
+
+Remove the shortmenu and footer from the dashboard.
+#+begin_src emacs-lisp
+(remove-hook! '+doom-dashboard-functions
+  #'doom-dashboard-widget-shortmenu
+  #'doom-dashboard-widget-footer)
+#+end_src
+
+Add a random custom message along with the emacs icon in the footer like the [[https://github.com/emacs-dashboard/emacs-dashboard][dashboard]] package.
+Also disable [[modeline]] and cursor.
+#+begin_src emacs-lisp
+;; copied from https://github.com/emacs-dashboard/emacs-dashboard/blob/master/dashboard-widgets.el
+(defcustom my/dashboard-footer-messages
+  '("The one true editor, Emacs!"
+    "Who the hell uses VIM anyway? Go Evil!"
+    "Free as free speech, free as free Beer"
+    "Happy coding!"
+    "Vi Vi Vi, the editor of the beast"
+    "Welcome to the church of Emacs"
+    "While any text editor can save your files, only Emacs can save your soul"
+    "I showed you my source code, pls respond")
+  "A list of messages, one of which dashboard chooses to display.")
+
+(add-hook! '+doom-dashboard-functions :append
+  (let* ((icon (propertize
+                #(" " 0 1 (display (height 1.5)))
+                'face `(:foreground ,(doom-color 'magenta))))
+         (msg  (nth (random (length my/dashboard-footer-messages))
+                    my/dashboard-footer-messages))
+         (line (concat icon msg)))
+    (insert "\n" (+doom-dashboard--center +doom-dashboard--width line) "\n"))
+
+      (setq mode-line-format nil))
+
+(setq-hook! '+doom-dashboard-mode-hook
+   evil-normal-state-cursor (list nil))
+#+end_src
+
+Set a custom ascii banner for when emacs is used in the terminal, and a splash image for GUI mode.
+#+begin_src emacs-lisp
+;; modified from https://discourse.doomemacs.org/t/how-to-change-your-splash-screen/57
+(defun my-weebery-is-always-greater ()
+  (let* ((banner '("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀"
+                   "⢸⠉⣹⠋⠉⢉⡟⢩⢋⠋⣽⡻⠭⢽⢉⠯⠭⠭⠭⢽⡍⢹⡍⠙⣯⠉⠉⠉⠉⠉⣿⢫⠉⠉⠉⢉⡟⠉⢿⢹⠉⢉⣉⢿⡝⡉⢩⢿⣻⢍⠉⠉⠩⢹⣟⡏⠉⠹⡉⢻⡍⡇"
+                   "⢸⢠⢹⠀⠀⢸⠁⣼⠀⣼⡝⠀⠀⢸⠘⠀⠀⠀⠀⠈⢿⠀⡟⡄⠹⣣⠀⠀⠐⠀⢸⡘⡄⣤⠀⡼⠁⠀⢺⡘⠉⠀⠀⠀⠫⣪⣌⡌⢳⡻⣦⠀⠀⢃⡽⡼⡀⠀⢣⢸⠸⡇"
+                   "⢸⡸⢸⠀⠀⣿⠀⣇⢠⡿⠀⠀⠀⠸⡇⠀⠀⠀⠀⠀⠘⢇⠸⠘⡀⠻⣇⠀⠀⠄⠀⡇⢣⢛⠀⡇⠀⠀⣸⠇⠀⠀⠀⠀⠀⠘⠄⢻⡀⠻⣻⣧⠀⠀⠃⢧⡇⠀⢸⢸⡇⡇"
+                   "⢸⡇⢸⣠⠀⣿⢠⣿⡾⠁⠀⢀⡀⠤⢇⣀⣐⣀⠀⠤⢀⠈⠢⡡⡈⢦⡙⣷⡀⠀⠀⢿⠈⢻⣡⠁⠀⢀⠏⠀⠀⠀⢀⠀⠄⣀⣐⣀⣙⠢⡌⣻⣷⡀⢹⢸⡅⠀⢸⠸⡇⡇"
+                   "⢸⡇⢸⣟⠀⢿⢸⡿⠀⣀⣶⣷⣾⡿⠿⣿⣿⣿⣿⣿⣶⣬⡀⠐⠰⣄⠙⠪⣻⣦⡀⠘⣧⠀⠙⠄⠀⠀⠀⠀⠀⣨⣴⣾⣿⠿⣿⣿⣿⣿⣿⣶⣯⣿⣼⢼⡇⠀⢸⡇⡇⠇"
+                   "⢸⢧⠀⣿⡅⢸⣼⡷⣾⣿⡟⠋⣿⠓⢲⣿⣿⣿⡟⠙⣿⠛⢯⡳⡀⠈⠓⠄⡈⠚⠿⣧⣌⢧⠀⠀⠀⠀⠀⣠⣺⠟⢫⡿⠓⢺⣿⣿⣿⠏⠙⣏⠛⣿⣿⣾⡇⢀⡿⢠⠀⡇"
+                   "⢸⢸⠀⢹⣷⡀⢿⡁⠀⠻⣇⠀⣇⠀⠘⣿⣿⡿⠁⠐⣉⡀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⠳⠄⠀⠀⠀⠀⠋⠀⠘⡇⠀⠸⣿⣿⠟⠀⢈⣉⢠⡿⠁⣼⠁⣼⠃⣼⠀⡇"
+                   "⢸⠸⣀⠈⣯⢳⡘⣇⠀⠀⠈⡂⣜⣆⡀⠀⠀⢀⣀⡴⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢽⣆⣀⠀⠀⠀⣀⣜⠕⡊⠀⣸⠇⣼⡟⢠⠏⠀⡇"
+                   "⢸⠀⡟⠀⢸⡆⢹⡜⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠋⣾⡏⡇⡎⡇⠀⡇"
+                   "⢸⠀⢃⡆⠀⢿⡄⠑⢽⣄⠀⠀⠀⢀⠂⠠⢁⠈⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠄⡐⢀⠂⠀⠀⣠⣮⡟⢹⣯⣸⣱⠁⠀⡇"
+                   "⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁"))
+         (longest-line (apply #'max (mapcar #'length banner))))
+    (put-text-property
+     (point)
+     (dolist (line banner (point))
+       (insert (+doom-dashboard--center
+                +doom-dashboard--width
+                (concat line (make-string (max 0 (- longest-line (length line))) 32)))
+               "\n"))
+     'face 'doom-dashboard-banner)))
+
+(setq +doom-dashboard-ascii-banner-fn #'my-weebery-is-always-greater
+      fancy-splash-image (file-name-concat doom-private-dir "images/logo.svg"))
+#+end_src
+*** indent-guides
+#+begin_src emacs-lisp
+(after! indent-bars
+  (setq indent-bars-display-on-blank-lines nil))
+#+end_src
+*** modeline
+Make the modeline look a bit nicer.
+#+begin_src emacs-lisp
+(remove-hook 'doom-modeline-mode-hook #'size-indication-mode)
+
+(after! doom-modeline
+  ;; see https://github.com/seagle0128/doom-modeline?tab=readme-ov-file#customize
+  (setq doom-modeline-buffer-file-name-style 'auto
+        doom-modeline-always-show-macro-register t
+        doom-modeline-enable-word-count nil
+        doom-modeline-buffer-encoding t
+        doom-modeline-major-mode-icon t
+        doom-modeline-buffer-modification-icon nil
+        doom-modeline-bar-width 0
+        doom-modeline-height 30
+        doom-modeline-modal nil
+        doom-modeline-spc-face-overrides `(:family ,my/mono-font))
+
+  (setq mode-line-right-align-edge 'right-fringe)
+
+  ;; see https://discourse.doomemacs.org/t/how-to-switch-customize-or-write-themes/37#tweak-the-current-theme-3
+  (custom-set-faces!
+    `(doom-modeline-buffer-file
+      :foreground ,(doom-color 'fg-alt)
+      :family ,my/sans-serif-font)
+    `(mode-line
+      :background ,(doom-color 'bg)
+      :foreground ,(doom-color 'fg-alt)
+      :overline ,(doom-color 'base4)
+      :family ,my/sans-serif-font)
+    `(mode-line-inactive
+      :overline ,(doom-color 'base4)
+      :family ,my/sans-serif-font
+      :box nil)
+    `(mode-line-active
+      :foreground ,(doom-color 'fg-alt)
+      :box nil)
+    '(header-line
+      :overline nil))
+
+  ;; make modeline look like vim in terminal
+  (unless (display-graphic-p)
+    (setq doom-modeline-icon nil)
+
+    (custom-set-faces!
+    `(mode-line
+      :background ,(doom-color 'bg-alt2)
+      :foreground ,(doom-color 'fg))
+    '(doom-modeline-buffer-file
+      :weight normal)))
+
+  (map! :leader :desc "Mode line" "t m" #'global-hide-mode-line-mode))
+#+end_src
+
+We expect the file encoding to be =LF UTF-8= so, only display it in modeline when it's something else.
+#+begin_src emacs-lisp
+;; copied from https://tecosaur.github.io/emacs-config/config.html#file-encoding
+(defun doom-modeline-conditional-buffer-encoding ()
+  "We expect the encoding to be LF UTF-8, so only show the modeline when this is not the case"
+  (setq-local doom-modeline-buffer-encoding
+              (unless (and (memq (plist-get (coding-system-plist buffer-file-coding-system) :category)
+                                 '(coding-category-undecided coding-category-utf-8))
+                           (not (memq (coding-system-eol-type buffer-file-coding-system) '(1 2))))
+                t)))
+
+(add-hook 'after-change-major-mode-hook #'doom-modeline-conditional-buffer-encoding)
+#+end_src
+
+Change the filename showed in the modline in an =org-roam= buffer to be =(<date>) <name>.org=.
+Only relevant if you have [[+roam2]].
+#+begin_src emacs-lisp :tangle no
+;; TODO show the name of the note instead of the name of the file
+;; modified from https://tecosaur.github.io/emacs-config/config.html#modeline-file-name
+;; (defadvice! doom-modeline--buffer-file-name-roam-aware-a (orig-fun)
+;;   :around #'doom-modeline-buffer-file-name ; takes no args
+;;   (if (string-match-p (regexp-quote org-roam-directory) (or buffer-file-name ""))
+;;       (replace-regexp-in-string
+;;        "\\(?:^\\|.*/\\)\\([0-9]\\{4\\}\\)\\([0-9]\\{2\\}\\)\\([0-9]\\{2\\}\\)[0-9]*-"
+;;        "(\\1-\\2-\\3) "
+;;        (subst-char-in-string ?_ ?  buffer-file-name))
+;;     (funcall orig-fun)))
+#+end_src
+*** tabs
+Disable tabs by default and make them toggleable.
+#+begin_src emacs-lisp
+(use-package! centaur-tabs
+  :init
+  (remove-hook 'doom-first-file-hook #'centaur-tabs-mode)
+  (when (daemonp)
+    (remove-hook 'server-after-make-frame-hook #'centaur-tabs-mode))
+
+  (map! :leader
+        :prefix "t"
+        :desc "Tabs"       "t" #'centaur-tabs-mode
+        :desc "Local tabs" "T" #'centaur-tabs-local-mode)
+  :config
+  (centaur-tabs-change-fonts my/sans-serif-font 140)
+  :bind
+  (:map evil-normal-state-map
+        ("g t" . centaur-tabs-forward)
+        ("g T" . centaur-tabs-backward)))
+#+end_src
+*** unicode
+#+begin_src emacs-lisp
+(after! unicode
+  (if (featurep :system 'macos)
+      (setq doom-symbol-font (font-spec :family "Symbola"))))
+#+end_src
+*** zen
+Use =doom-variable-pitch-font= in the following modes:
+- =org-mode=
+- =org-roam-mode= (only relevant if you have [[+roam2]])
+- =doom-docs-org-mode=
+#+begin_src emacs-lisp
+;; modified from https://discourse.doomemacs.org/t/cant-size-doom-variable-pitch-font/4572/2
+(use-package! mixed-pitch
+  :hook ((org-mode           . mixed-pitch-mode)
+         (org-roam-mode      . mixed-pitch-mode)
+         (doom-docs-org-mode . mixed-pitch-mode))
+  :config
+  (setq mixed-pitch-set-height t
+        variable-pitch-serif-font doom-variable-pitch-font)
+
+  (pushnew! mixed-pitch-fixed-pitch-faces
+            'warning
+            'org-drawer 'org-cite-key 'org-list-dt 'org-hide
+            'corfu-default 'font-latex-math-face)
+
+  (set-face-attribute 'variable-pitch nil :height 1.1)
+
+  (map! :leader :desc "Mixed pitch" "t M" #'mixed-pitch-mode))
+#+end_src
+
+Reduce text indent in =org= buffers caused by =mixed-pitch-mode=.
+#+begin_src emacs-lisp
+;; copied from https://tecosaur.github.io/emacs-config/config.html#reduced-text-indent
+(defadvice! +org-indent--reduced-text-prefixes ()
+  :after #'org-indent--compute-prefixes
+  (setq org-indent--text-line-prefixes
+        (make-vector org-indent--deepest-level nil))
+  (when (> org-indent-indentation-per-level 0)
+    (dotimes (n org-indent--deepest-level)
+      (aset org-indent--text-line-prefixes
+            n
+            (org-add-props
+                (concat (make-string (* n (1- org-indent-indentation-per-level))
+                                     ?\s)
+                        (if (> n 0)
+                             (char-to-string org-indent-boundary-char)
+                          "\u200b"))
+                nil 'face 'org-indent)))))
+#+end_src
+*** workspaces
+#+begin_src emacs-lisp
+;; TODO use unicode symbols for [1], [2], ...
+(after! persp-mode
+  (custom-set-faces!
+    `(+workspace-tab-face
+      :family ,my/sans-serif-font)
+    `(+workspace-tab-selected-face
+      :box (:color ,(doom-color 'fg-alt)
+            :line-width 1
+            :style nil)
+      :background ,(doom-color 'fg-alt)
+      :foreground ,(doom-color 'bg-alt)
+      :family ,my/sans-serif-font
+      :weight bold)))
+#+end_src
+*** other
+**** solaire-mode
+This is a package built in to doom to distinguish between code buffers and popup buffers
+by giving popups a darker background.
+I'm not a fan, so I disable it.
+#+begin_src emacs-lisp :tangle packages.el
+(package! solaire-mode :disable t)
+#+end_src
+**** spacious-padding
+Add padding to emacs frames and windows with [[https://github.com/protesilaos/spacious-padding][spacious-padding]].
+#+begin_src emacs-lisp :tangle packages.el
+(package! spacious-padding)
+#+end_src
+
+#+begin_src emacs-lisp
+;; https://protesilaos.com/emacs/spacious-padding
+(use-package! spacious-padding
+  :ensure t
+  :config
+  (setq spacious-padding-widths
+        '( :internal-border-width 20
+           :header-line-width 8
+           :mode-line-width 8
+           :tab-width 4 ;; ?
+           :right-divider-width 15
+           :left-fringe-width 8))
+  (spacious-padding-mode 1))
+#+end_src
+**** rainbow-delimiters
+#+begin_src emacs-lisp :tangle packages.el
+(package! rainbow-delimiters)
+#+end_src
+
+Make rainbow delimiters toggleable.
+#+begin_src emacs-lisp
+(add-hook! '(emacs-lisp-mode-hook
+             c-mode-hook c-ts-mode-hook
+             java-mode-hook java-ts-mode-hook)
+           #'rainbow-delimiters-mode)
+
+;; https://github.com/orgs/doomemacs/projects/5/views/1?pane=issue&itemId=117610828
+(map! :leader :desc "Rainbow delimiters" "t (" #'rainbow-delimiters-mode)
+#+end_src
+**** breadcrumb
+Enable breadcrumbs.
+#+begin_src emacs-lisp :tangle packages.el
+(package! breadcrumb)
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package! breadcrumb
+;;  :hook (prog-mode . breadcrumb-mode)
+  :config
+  (setq breadcrumb-imenu-crumb-separator " › ")
+
+  (custom-set-faces!
+    `((breadcrumb-face breadcrumb-project-leaf-face)
+      :family ,my/mono-font)
+    `((breadcrumb-project-base-face breadcrumb-project-leaf-face breadcrumb-project-crumbs-face)
+      :foreground ,(face-attribute 'font-lock-comment-face :foreground)
+      :family ,my/mono-font))
+
+  (map! :leader :desc "Breadcrumbs" "t ." #'breadcrumb-local-mode))
+#+end_src
+#+begin_src emacs-lisp :tangle packages.el
+#+end_src
+** :editor
+*** evil
+Set some =evil= variables and define some keybindings.
+#+begin_src emacs-lisp
+(after! evil
+  (setq evil-move-cursor-back nil     ; don't move the block cursor when toggling insert mode
+        evil-kill-on-visual-paste nil ; don't put overwritten text in the kill ring
+        evil-want-fine-undo t
+        evil-move-beyond-eol t
+        ;; evil-want-minibuffer t
+        +evil-want-o/O-to-continue-comments nil)
+
+  (when (eq doom-theme 'doom-gruvbox)
+          (defconst my/gruvbox-blue "#83a598") ; (doom-color 'blue)
+
+          (setq evil-normal-state-cursor  `(box    ,my/gruvbox-blue)
+                evil-insert-state-cursor  `(bar    ,my/gruvbox-blue)
+                evil-visual-state-cursor  `(hollow ,my/gruvbox-blue)
+                evil-replace-state-cursor `(hbar   ,my/gruvbox-blue)))
+
+  (custom-theme-set-faces! 'doom-gruvbox
+    `(region :background ,(doom-blend (doom-color 'blue) (doom-color 'bg) 0.2)))
+
+  (map! :nv "~" #'repeat
+        :prefix "g"
+        :nv "y" #'evilnc-copy-and-comment-operator
+        :nv "Y" #'+evil:yank-unindented))
+#+end_src
+*** format
+#+begin_src emacs-lisp
+(map! :map apheleia-mode-map
+      :leader
+      "fs" #'+format/save-buffer
+      "bs" #'+format/save-buffer-no-reformat)
+#+end_src
+*** lispy
+Add a toggle for =lispy-mode=.
+#+begin_src emacs-lisp
+(defun my/toggle-lispy ()
+  "Toggle lispy-mode: enable if off, disable lispy & lispyville if on. Echo the new state in the minibuffer."
+  (interactive)
+  (if lispy-mode
+      (progn
+        (lispy-mode -1)
+        (when (bound-and-true-p lispyville-mode)
+          (lispyville-mode -1))
+        (message "Lispy mode disabled"))
+    (lispy-mode 1)
+    (message "Lispy mode enabled")))
+
+(map! :leader :desc "Lispy" "t L" #'my/toggle-lispy)
+#+end_src
+*** whitespace
+#+begin_src emacs-lisp :tangle packages.el
+(package! whitespace4r :recipe
+  (:host github
+   :repo "twlz0ne/whitespace4r.el"
+   :files ("whitespace4r.el")))
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package! whitespace4r
+  :hook (prog-mode . whitespace4r-mode)
+  :config
+  (custom-set-faces!
+    `((whitespace4r-tab whitespace4r-space whitespace4r-hspace)
+      :background ,(face-attribute 'region :background)
+      :foreground ,(face-attribute 'font-lock-comment-face :foreground))))
+#+end_src
+** :emacs
+*** dired
+Define a custom function to quickly find files in favourite directories.
+#+begin_src emacs-lisp
+(defvar my/favorite-dirs
+  '(("h" "~/" "Home")
+    ("c" "~/Developer/" "Code")
+    ("d" "~/Downloads/" "Downloads")
+    ("g" "~/GitHub/" "GitHub")
+    ("t" "~/.Trash/" "Trash")
+    ("o" "~/OneDrive - Stellenbosch University/" "OneDrive")
+    ("u" "/scpx:ubuntu-vm:" "Ubuntu VM")
+    ("n" "/scpx:narga-general:" "NARGA"))
+  "List of favorite directories in the form (KEY PATH LABEL).")
+
+(defun my/open-favorite-dir ()
+  "Prompt with a single key to jump to a favourite directory."
+  (interactive)
+  (let* ((max-label-width
+          (apply #'max
+                 (mapcar (lambda (entry)
+                           (string-width (nth 2 entry)))
+                         my/favorite-dirs)))
+         (prompt
+          (concat
+           (propertize "Select directory:\n" 'face 'bold)
+           (mapconcat
+            (lambda (entry)
+              (let* ((key (car entry))
+                     (label (nth 2 entry))
+                     (path (nth 1 entry))
+                     ;; pad the label to max width
+                     (padded-label (format (format "%%-%ds" max-label-width) label)))
+                (format
+                 "%s %s  %s"
+                 (propertize key 'face 'success)
+                 (propertize padded-label 'face 'default)
+                 (propertize path 'face 'shadow))))
+            my/favorite-dirs
+            "\n")
+           "\n> "))
+         (key (char-to-string
+               (read-char-choice
+                prompt
+                (mapcar #'string-to-char (mapcar #'car my/favorite-dirs)))))
+         (dir (cadr (assoc key my/favorite-dirs))))
+    (doom-project-browse dir)))
+
+(map! :leader
+      :prefix "f"
+      :desc "Quick Access" "q" #'my/open-favorite-dir
+                           "d" #'consult-dir)
+#+end_src
+
+Set =quick-access-entries= for =dirvish=.
+Ensure [[https://github.com/alexluigit/dirvish/blob/main/docs/CUSTOMIZING.org#install-dependencies-for-an-enhanced-preview-experience][these]] programs are installed to enable file previews.
+#+begin_src emacs-lisp
+(setq dired-mouse-drag-files t
+      mouse-drag-and-drop-region-cross-program t)
+
+(after! dired-x
+  ;; hide "dotfiles"
+  (setq dired-omit-files
+        (concat dired-omit-files "\\|^\\..*$")))
+
+(after! dirvish
+  (setq dirvish-attributes
+        (append
+         '(vc-state subtree-state nerd-icons collapse)
+         '(git-msg file-size)))
+
+  (setq! dirvish-quick-access-entries my/favorite-dirs))
+
+(map! :leader :desc "Dirvish Quick Access" "o q" #'dirvish-quick-access)
+#+end_src
+*** vc
+#+begin_src emacs-lisp
+(use-package! blamer
+  :init
+  (map! :leader
+        :desc "Git blame"   "t B" #'blamer-mode
+        :desc "Commit info" "g i" (lambda () (interactive)
+                                    (funcall (if (display-graphic-p)
+                                                #'blamer-show-posframe-commit-info
+                                              #'blamer-show-commit-info))))
+  :config
+  (defun blamer-callback-show-commit-diff (commit-info)
+    (interactive)
+    (let ((commit-hash (plist-get commit-info :commit-hash)))
+      (when commit-hash
+        (magit-show-commit commit-hash))))
+
+  (setq blamer-author-formatter "  %s"
+        blamer-datetime-formatter ", %s"
+        blamer-commit-formatter ""
+        blamer-avatar-folder (file-name-concat doom-cache-dir "blamer/avatars/")
+        blamer-bindings '(("<mouse-1>" . blamer-callback-show-commit-diff))
+        blamer-min-offset 10)
+
+  (custom-set-faces!
+    `(blamer-face
+      :height 0.85
+      :foreground ,(face-attribute 'font-lock-comment-face :foreground)
+      :slant normal)))
+#+end_src
+** :term
+*** eshell
+Customise eshell:
+- Set custom aliases
+- Set custom prompt
+- Add icons to =eshell/ls= and make links clickable
+- Add an =fzf=-like =C-r= keybinding
+#+begin_src emacs-lisp
+(after! eshell
+  ;; ALIASES
+  (set-eshell-alias!
+   "ll" "ls -lAh $*"
+   "cd" "z $*"
+   "home" "cd ~"
+   "v" "emacs $*"
+
+   ;; git
+   "gs" "git-st"
+   "ga" "git add $1"
+   "gb" "git branch $1"
+   "gbd" "git branch -D $1"
+   "gcb" "git checkout -b $1"
+   "gch" "git checkout $1"
+   "gc" "git commit -m $1"
+   "gp" "git pull"
+   "gpu" "git push"
+
+   ;; homebrew
+   "bs" "brew search $1"
+   "bi" "brew install $*"
+   "bic" "brew install --cask $*"
+   "bu" "brew update && brew upgrade")
+
+  ;; PROMPT
+  (custom-set-faces!
+    `(+eshell-prompt-pwd
+      :foreground ,(doom-color 'teal)
+      :weight bold)
+    `(+eshell-prompt-git-branch
+      :foreground ,(doom-color 'violet)))
+
+  ;; modified from https://github.com/doomemacs/doomemacs/blob/master/modules/term/eshell/autoload/prompts.el
+  (defun my/+eshell--current-git-branch ()
+    "Return current Git branch prefixed by remote icon, or \"\" if none.
+Formats as: propertized \" at <icon> on  <branch-name>\""
+    (let* (;; probe remote URL
+           (remote-res    (doom-call-process "git" "ls-remote" "--get-url"))
+           (remote-status (car remote-res))
+           (remote-url    (cdr remote-res))
+
+           ;; pick remote icon
+           (icon
+            (cond
+             ((and (zerop remote-status)
+                   (string-match-p "github"    remote-url)) "")
+             ((and (zerop remote-status)
+                   (string-match-p "gitlab"    remote-url)) "")
+             ((and (zerop remote-status)
+                   (string-match-p "bitbucket" remote-url)) "")
+             ((and (zerop remote-status)
+                   (string-match-p "git"       remote-url)) "")
+             (t                                               "")))
+
+           ;; get branch
+           (branch
+            (cl-destructuring-bind (status . output)
+                (doom-call-process "git" "symbolic-ref" "-q" "--short" "HEAD")
+              (if (zerop status)
+                  output
+                (cl-destructuring-bind (s . o)
+                    (doom-call-process "git" "describe" "--all" "--always" "HEAD")
+                  (if (zerop s) o "")))))
+
+           ;; final formatted output
+           (p-branch
+            (when (and branch (not (string-empty-p branch)))
+              (concat
+               (propertize (format " at %s on " icon)
+                           'face 'default)
+               (propertize (format " %s" branch)
+                           'face '+eshell-prompt-git-branch)))))
+      (or p-branch "")))
+
+  (defun my/eshell-default-prompt-fn ()
+    (concat (if (bobp) "" "\n")
+            (let ((pwd (eshell/pwd)))
+              (propertize (if (equal pwd "~")
+                              pwd (abbreviate-file-name (shrink-path-file pwd)))
+                          'face '+eshell-prompt-pwd))
+            (my/+eshell--current-git-branch)
+            (propertize "\nλ" 'face (if (zerop eshell-last-command-status) 'success 'error))
+            " "))
+
+  (setq eshell-prompt-function #'my/eshell-default-prompt-fn)
+
+  ;; ICONS
+  ;; modified from https://www.reddit.com/r/emacs/comments/xboh0y/how_to_put_icons_into_eshell_ls/
+  (defun lem-eshell-prettify (file)
+    "Add features to listings in `eshell/ls' output.
+The features are:
+1. Add decoration like 'ls -F':
+   - Mark directories with a `/'
+   - Mark executables with a `*'
+2. Make each listing into a clickable link to open the
+   corresponding file or directory.
+3. Add icons (requires `nerd-icons')
+This function is meant to be used as advice around
+`eshell-ls-annotate', where FILE is the cons describing the file."
+    (let* ((name (car file))
+           (icon (if (eq (cadr file) t)
+                     (propertize (nerd-icons-icon-for-dir name) 'face 'eshell-ls-directory)
+                   (nerd-icons-icon-for-file name)))
+           (suffix
+            (cond
+             ;; Directory
+             ((eq (cadr file) t) "/")
+             ;; Executable
+             ((and (/= (user-uid) 0) ; root can execute anything
+                   (eshell-ls-applicable (cdr file) 3 #'file-executable-p (car file)))
+              "*"))))
+      (cons
+       (concat icon " "
+               (propertize name
+                           'keymap eshell-ls-file-keymap
+                           'mouse-face 'highlight
+                           'file-name (expand-file-name (substring-no-properties (car file)) default-directory))
+               (when (and suffix (not (string-suffix-p suffix name)))
+                 (propertize suffix 'face 'shadow)))
+       (cdr file))))
+
+  (defun eshell-ls-file-at-point ()
+    "Get the full path of the Eshell listing at point."
+    (get-text-property (point) 'file-name))
+
+  (defun eshell-ls-find-file ()
+    "Open the Eshell listing at point."
+    (interactive)
+    (find-file (eshell-ls-file-at-point)))
+
+  (defun eshell-ls-delete-file ()
+    "Delete the Eshell listing at point."
+    (interactive)
+    (let ((file (eshell-ls-file-at-point)))
+      (when (yes-or-no-p (format "Delete file %s?" file))
+        (delete-file file 'trash))))
+
+  (defvar eshell-ls-file-keymap
+    (let ((map (make-sparse-keymap)))
+      (define-key map (kbd "RET") #'eshell-ls-find-file)
+      (define-key map (kbd "<return>") #'eshell-ls-find-file)
+      (define-key map [mouse-1] #'eshell-ls-find-file)
+      (define-key map (kbd "D") #'eshell-ls-delete-file)
+      map)
+    "Keys in effect when point is over a file from `eshell/ls'.")
+
+  (advice-add #'eshell-ls-annotate :filter-return #'lem-eshell-prettify)
+
+  (map! :map eshell-mode-map
+        :ni "C-r" #'+eshell/search-history))
+#+end_src
+*** vterm
+Some settings in my =.zshrc= cause issues in vterm,
+so I use this environment variable to disable them when running inside vterm.
+#+begin_src emacs-lisp
+(after! vterm
+  (setq vterm-environment '("VTERM=1"))
+
+  (map! :map vterm-mode-map
+        :ni "C-j" #'vterm-send-down
+        :ni "C-k" #'vterm-send-up
+        :i  "C-b" #'backward-char
+        :i  "C-f" #'forward-char))
+#+end_src
+** :tools
+*** debugger
+#+begin_src emacs-lisp
+(after! dape
+  (setq dape-breakpoint-margin-string "●") ;; or use •
+
+  (custom-set-faces!
+    `(dape-inlay-hint-face :inherit dape-inlay-hint-highlight-face
+      :background ,(face-attribute 'hl-line :background))))
+#+end_src
+*** eval
+#+begin_src emacs-lisp
+(setq eros-eval-result-prefix "⇒ ") ;; or use ⟹
+#+end_src
+*** llm
+Set up =gptel= to use copilot.
+#+begin_src emacs-lisp
+(after! gptel
+  (setq gptel-model 'gpt-4.1
+        gptel-backend (gptel-make-gh-copilot "Copilot")
+        gptel-default-mode 'org-mode)
+
+  (custom-set-faces!
+    `(gptel-context-highlight-face
+      :background ,(doom-color 'bg-alt))
+    `(gptel-context-deletion-face
+      :inherit diff-removed))
+
+  (map! :map gptel-mode-map
+        :leader
+        :prefix "o l"
+        :desc "Remove all context" "R" #'gptel-context-remove-all))
+#+end_src
+
+Install some tools from the =llm-tool-collection= package.
+#+begin_src emacs-lisp :tangle packages.el
+(package! llm-tool-collection
+  :recipe (:host github :repo "skissue/llm-tool-collection"))
+#+end_src
+
+#+begin_src emacs-lisp
+(after! gptel
+  ;; see https://github.com/karthink/gptel/wiki/Tools-collection
+  (gptel-make-tool
+   :function (lambda (command &optional working_dir)
+               (with-temp-message (format "Executing command: `%s`" command)
+                 (let ((default-directory (if (and working_dir (not (string= working_dir "")))
+                                              (expand-file-name working_dir)
+                                            default-directory)))
+                   (shell-command-to-string command))))
+   :name "run_command"
+   :description "Executes a shell command and returns the output as a string. IMPORTANT: This tool allows execution of arbitrary code; user confirmation will be required before any command is run."
+   :args (list
+          '(:name "command"
+            :type string
+            :description "The complete shell command to execute.")
+          '(:name "working_dir"
+            :type string
+            :description "Optional: The directory in which to run the command. Defaults to the current directory if not specified."))
+   :category "command"
+   :confirm t
+   :include t)
+
+  (mapcar (apply-partially #'apply #'gptel-make-tool)
+          (llm-tool-collection-get-all)))
+#+end_src
+*** lsp +eglot
+By default =eglot-code-action-indicator= is set to a lightbulb emoji (💡) which
+annoyingly causes the line height to increase when hovering over certain things on macOS,
+let's change this to a nerd font light bulb instead.
+#+begin_src emacs-lisp
+(after! eglot
+  (setq eglot-code-action-indicator "")
+
+  (custom-set-faces!
+    `(eglot-inlay-hint-face
+      :foreground ,(doom-color 'base5)
+      :height 0.9))
+  ;; :family ,my/sans-serif-font))
+
+  (map! :map eglot-mode-map
+        :leader
+        :desc "Toggle inlay hints" "t h" #'eglot-inlay-hints-mode))
+#+end_src
+*** magit
+Add icons to =magit= and make the commit summary bold.
+#+begin_src emacs-lisp
+(after! magit
+  (setopt magit-format-file-function #'magit-format-file-nerd-icons)
+
+  (custom-set-faces!
+    '(git-commit-summary :weight bold)))
+#+end_src
+*** pdf
+Automatically enable dark mode in pdfs.
+#+begin_src emacs-lisp
+;; TODO add continuous scroll
+(add-hook 'pdf-view-mode-hook #'pdf-view-midnight-minor-mode)
+#+end_src
+
+The default resize factor of =1.25= is  a bit too much.
+#+begin_src emacs-lisp
+(after! pdf-view
+  (setq pdf-view-resize-factor 1.1))
+#+end_src
+
+Open pdf links in =org= with =pdf-tools=.
+#+begin_src emacs-lisp
+(after! org
+  (setq org-file-apps
+        (append (remove '("\\.pdf\\'" . default) org-file-apps)
+                '(("\\.pdf\\'" . emacs)))))
+#+end_src
+
+Create some keybindings for commonly used commands.
+#+begin_src emacs-lisp
+(map! :map pdf-view-mode-map
+      :localleader
+      (:prefix ("h" . "history")
+       :desc "Go forward in history"  "f" #'pdf-history-forward
+       :desc "Go backward in history" "b" #'pdf-history-backward)
+
+      (:prefix ("a" . "annotations")
+       :desc "Text"      "t" #'pdf-annot-add-text-annotation
+       :desc "Markup"    "m" #'pdf-annot-add-markup-annotation
+       :desc "Highlight" "h" #'pdf-annot-add-highlight-markup-annotation
+       :desc "Strikeout" "s" #'pdf-annot-add-strikeout-markup-annotation))
+#+end_src
+*** tree-sitter
+#+begin_src emacs-lisp
+(after! treesit
+  (setq treesit-font-lock-level 3
+        treesit-auto-install-grammar 'always))
+#+end_src
+** :lang
+*** cc
+Configure =cc-mode=.
+#+begin_src emacs-lisp
+(after! cc-mode
+  (setf (alist-get 'c-mode c-default-style) "k&r")
+  (setq c-basic-offset 4
+        c-doc-comment-style '((c-mode    . doxygen)
+                              (c-ts-mode . doxygen))
+        whitespace-style '(face trailing lines-tail empty))
+        indent-tabs-mode t)
+
+(add-hook! '(c-mode-common-hook c-ts-mode-hook)
+  (c-setup-doc-comment-style))
+
+(add-hook! '(c-mode-hook c-ts-mode-hook)
+  (unless (or (file-exists-p "makefile")
+              (file-exists-p "Makefile"))
+    (setq-local compile-command "cc -Wall -o main main.c")))
+#+end_src
+
+Make =#ifdef 0= blocks appear as comments.
+#+begin_src emacs-lisp
+(add-hook! '(c-mode-hook c-ts-mode-hook)
+  (defun +c-hideifdef-init ()
+    "Enable hide-ifdef-mode with shadowing, auto-hiding, and hidden directive lines."
+    (hide-ifdef-mode 1)
+    (setq-local hide-ifdef-shadow t
+                hide-ifdef-initially t
+                hide-ifdef-lines t)
+    (hide-ifdefs)))
+#+end_src
+
+Fix issue where two new lines are inserted after ={=.
+#+begin_src emacs-lisp
+(after! eglot
+  (add-hook! 'eglot-managed-mode-hook :append
+    (defun +eglot--rm-eglot--post-self-insert-hook ()
+      ;; remove eglot’s post-self-insert-hook in current buffer
+      (remove-hook 'post-self-insert-hook #'eglot--post-self-insert-hook t))))
+#+end_src
+*** java
+Set indentation level for =java-mode= to 2.
+#+begin_src emacs-lisp
+(after! java-mode
+  (setq c-basic-offset 2))
+#+end_src
+*** python +lsp
+Requires [[lsp +eglot]] and requires =pyright= to be installed on your machine.
+Install with ~npm install -g pyright~.
+#+begin_src emacs-lisp
+(after! eglot
+  (add-to-list 'eglot-server-programs '(python-mode . ("pyright-langserver" "--stdio"))))
+
+(add-hook! 'python-mode-hook
+  (setq python-shell-interpreter "python3.11"
+        doom-modeline-env-python-executable "python3.11"))
+#+end_src
+*** latex +cdlatex
+Enable auomatic insertion of braces after sub/superscript in =LaTeX-math-mode=.
+This used to the default behaviour in doom but was changed in commit [[https://github.com/doomemacs/doomemacs/commit/57fcd95e7dd61fcfc235293d7909e7b008466113][57fcd95]].
+#+begin_src emacs-lisp
+(setq TeX-electric-sub-and-superscript t)
+#+end_src
+
+My CDLaTeX templates.
+#+begin_src emacs-lisp
+(after! cdlatex
+  (setq cdlatex-math-symbol-alist ;; expand when prefixed with `
+        ;; TODO change prefix key to something like ;
+        '((?' ("`"))
+          (?e ("\\varepsilon" "\\epsilon"))
+          (?f ("\\varphi" "\\phi"))
+          (?0 ("\\varnothing" "\\emptyset"))
+          (?> ("\\to" "\\implies"))
+          (?= ("\\iff" "\\equiv"))
+          (?| ("\\mid" "\\vert"))
+          (?: ("\\coloneqq")))
+        cdlatex-math-modify-alist ;; modify text with '
+        '((?b "\\mathbb" nil t nil nil)
+          (?c "\\mathcal" nil t nil nil)
+          (?f "\\mathbf" nil t nil nil)
+          (?m "\\mathrm" nil t nil nil)
+          (?r "\\mathrel" nil t nil nil)
+          (?s "\\mathsf" nil t nil nil)
+          (?o "\\operatorname" nil t nil nil))
+        cdlatex-command-alist ;; expand with <TAB>
+        '(("eqn" "Insert an EQUATION* environment template" "" cdlatex-environment ("equation*") t nil)
+          ("aln" "Insert an ALIGN* environment template" "" cdlatex-environment ("align*") t nil)
+          ("sum" "Insert \\sum\\limits_{}^{}" "\\sum\\limits_{?}^{}" cdlatex-position-cursor nil nil t)
+          ("prod" "Insert \\prod\\limits_{}^{}" "\\prod\\limits_{?}^{}" cdlatex-position-cursor nil nil t)
+          ("bun" "Insert \\bigcup\\limits_{}^{}" "\\bigcup\\limits_{?}^{}" cdlatex-position-cursor nil nil t)
+          ("bin" "Insert \\bigcap\\limits_{}^{}" "\\bigcap\\limits_{?}^{}" cdlatex-position-cursor nil nil t)
+          ("lim" "Insert \\lim_\\limits{{} \\to {}}" "\\lim_\\limits{{?} \\to {}}" cdlatex-position-cursor nil nil t)
+          ("sr" "Insert {}^2" "{?}^2" cdlatex-position-cursor nil nil t)
+          ("cb" "Insert {}^3" "{?}^3" cdlatex-position-cursor nil nil t)
+          ("op" "Insert \\operatorname{}()" "\\operatorname{?}()" cdlatex-position-cursor nil nil t)))
+
+  (map! :map cdlatex-mode-map
+        :i "TAB" #'cdlatex-tab))
+#+end_src
+*** org
+Use tecosaur's fork of =org-mode=, this is necessary for [[#org-latex][org-latex]].
+#+begin_src emacs-lisp :tangle packages.el
+(package! org :recipe
+  (:host nil
+   :repo "https://git.tecosaur.net/mirrors/org-mode.git"
+   :remote "mirror"
+   :fork (:host nil
+          :repo "https://git.tecosaur.net/tec/org-mode.git"
+          :branch "dev"
+          :remote "tecosaur")
+   :files (:defaults "etc")
+   :build t
+   :pre-build
+   (with-temp-file "org-version.el"
+     (require 'lisp-mnt)
+     (let ((version (with-temp-buffer
+                      (insert-file-contents "lisp/org.el")
+                      (lm-header "version")))
+           (git-version
+            (string-trim
+             (with-temp-buffer
+               (call-process "git" nil t nil "rev-parse" "--short" "HEAD")
+               (buffer-string)))))
+       (insert
+        (format "(defun org-release () \"The release version of Org.\" %S)\n" version)
+        (format "(defun org-git-version () \"The truncate git commit hash of Org mode.\" %S)\n" git-version)
+        "(provide 'org-version)\n"))))
+  :pin nil)
+
+(unpin! org)
+#+end_src
+**** org-mode
+Set some =org= variables.
+#+begin_src emacs-lisp
+(setq org-directory "~/Documents/Org"
+      org-use-property-inheritance t ; fix weird issue with src blocks
+      org-startup-with-inline-images t
+      org-edit-src-content-indentation 0)
+
+;; FIXME blurry previews when using #+attr_org: :width
+;; this only seems to be an issue when using emacs-plus
+;; (setq org-image-actual-width (/ (display-pixel-width) 3)) ; set images to a third of the width of the screen
+      ;; org-image-actual-width (min (/ (display-pixel-width) 3) 800)
+#+end_src
+
+Scale headings in =org-mode=.
+#+begin_src emacs-lisp
+(after! org
+  (custom-set-faces!
+    `(org-document-title :foreground ,(doom-color 'fg) :height 1.3 :weight bold)
+    `(org-level-1 :inherit 'outline-1 :weight medium   :height 1.1)
+    `(org-level-2 :inherit 'outline-2 :weight medium)
+    `(org-level-3 :inherit 'outline-3 :weight medium)
+    `(org-level-4 :inherit 'outline-4 :weight medium)
+    `(org-level-5 :inherit 'outline-5 :weight medium)))
+#+end_src
+
+By default, all =org= links are the same colour, lets change that.
+#+begin_src emacs-lisp
+(defconst my/org-link-colors
+  '(("http"  . blue)
+    ("https" . blue)
+    ("file"  . orange)
+    ("pdf"   . orange)
+    ("id"    . violet))
+  "Alist of Org link prefixes and their Doom theme colours.")
+
+(defun my/org-apply-link-colors ()
+  "Register custom faces for Org link schemes based on `my/org-link-colors'."
+  (dolist (entry my/org-link-colors)
+    (let ((scheme (car entry))
+          (color  (cdr entry)))
+      (org-link-set-parameters
+       scheme
+       :face       `(:foreground ,(doom-color color))
+       :mouse-face `(:foreground ,(doom-color 'bg)
+                     :background ,(doom-color color))))))
+
+(after! org
+  (my/org-apply-link-colors)
+
+  (custom-set-faces!
+    `((org-link)
+      :weight normal
+      :underline nil)))
+#+end_src
+
+I incorrectly tagged a bunch of org files, so this function fixes that.
+#+begin_src emacs-lisp
+(defun my/org-fix-filetags ()
+  "Rewrite every `#+filetags:' directive in the current buffer so it uses the
+canonical colon syntax, e.g.
+  #+filetags: tag1 tag2  ->  #+filetags: :tag1:tag2:"
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "^#\\+filetags:\\s-*\\(.*?\\)\\s-*$" nil t)
+      (let* ((line-beg (match-beginning 0))
+             (line-end (match-end 0))
+             (raw      (match-string-no-properties 1))
+             (tags     (split-string raw "[: \t]+" t))
+             (clean    (concat "#+filetags: :"
+                               (string-join tags ":")
+                               ":"
+                               "\n")))
+        (unless (equal (buffer-substring-no-properties line-beg line-end) clean)
+          (goto-char line-beg)
+          (delete-region line-beg line-end)
+          (insert clean))
+        (forward-line 1)))))
+#+end_src
+**** org-latex
+Use native highlighting for =LaTeX=  related syntax in =org= buffers.
+By using native highlighting the =org-face= gets added which we want to avoid.
+#+begin_src emacs-lisp
+(setq org-highlight-latex-and-related '(native script))
+
+(after! org-src
+  (add-to-list 'org-src-block-faces
+               `("latex" (:background ,(doom-color 'bg)
+                          :extend t))))
+#+end_src
+
+Enable =evil-tex-mode= in LaTeX source blocks.
+Requires [[latex]] and [[evil]] to be enabled.
+#+begin_src emacs-lisp
+(add-hook! 'org-src-mode-hook
+  (when (string= major-mode "latex-mode")
+    (evil-tex-mode 1)))
+#+end_src
+
+Set up =LaTeX= previews in =org= buffers.
+#+begin_src emacs-lisp
+;; TODO enable latex previews in org-roam and latex buffers (use xenops)
+
+;; modified from https://abode.karthinks.com/org-latex-preview/
+(use-package! org-latex-preview
+  :after org
+  :hook (org-mode . org-latex-preview-mode)
+  :init
+  (setq org-startup-with-latex-preview t)
+
+  (after! org
+    (dolist (pkg '("amsmath" "amssymb" "mathtools" "mathrsfs"))
+      (add-to-list 'org-latex-packages-alist `("" ,pkg t))))
+
+  :config
+  (plist-put org-latex-preview-appearance-options
+             ;; :page-width 0.8)
+             :page-width 1.0)
+
+  (setq org-latex-preview-mode-ignored-commands
+        '(next-line previous-line mwheel-scroll ultra-scroll
+          scroll-up-command scroll-down-command
+          evil-scroll-up evil-scroll-down evil-scroll-line-up evil-scroll-line-down)
+        org-latex-preview-numbered t
+        org-latex-preview-mode-display-live t
+        org-latex-preview-mode-update-delay 0.25)
+        ;; org-latex-preview-cache 'temp) ;; HACK fix `org-persist' issue: https://discord.com/channels/406534637242810369/1056621127188881439/1392466785168785540
+
+  ;; code for centering LaTeX previews -- a terrible idea
+  (defun my/org-latex-preview-uncenter (ov)
+    (overlay-put ov 'before-string nil))
+  (defun my/org-latex-preview-recenter (ov)
+    (overlay-put ov 'before-string (overlay-get ov 'justify)))
+  (defun my/org-latex-preview-center (ov)
+    (save-excursion
+      (goto-char (overlay-start ov))
+      (when-let* ((elem (org-element-context))
+                  ((or (eq (org-element-type elem) 'latex-environment)
+                       (string-match-p "^\\\\\\[" (org-element-property :value elem))))
+                  (img (overlay-get ov 'display))
+                  (prop `(space :align-to (- center (0.55 . ,img))))
+                  (justify (propertize " " 'display prop 'face 'default)))
+        (overlay-put ov 'justify justify)
+        (overlay-put ov 'before-string (overlay-get ov 'justify)))))
+  (define-minor-mode org-latex-preview-center-mode
+    "Center equations previewed with `org-latex-preview'."
+    :global nil
+    (if org-latex-preview-center-mode
+        (progn
+          (add-hook 'org-latex-preview-overlay-open-functions
+                    #'my/org-latex-preview-uncenter nil :local)
+          (add-hook 'org-latex-preview-overlay-close-functions
+                    #'my/org-latex-preview-recenter nil :local)
+          (add-hook 'org-latex-preview-overlay-update-functions
+                    #'my/org-latex-preview-center nil :local))
+      (remove-hook 'org-latex-preview-overlay-close-functions
+                   #'my/org-latex-preview-recenter)
+      (remove-hook 'org-latex-preview-overlay-update-functions
+                   #'my/org-latex-preview-center)
+      (remove-hook 'org-latex-preview-overlay-open-functions
+                   #'my/org-latex-preview-uncenter))))
+#+end_src
+**** +pretty
+***** org-modern
+Some eye candy in =org= buffers provided.
+#+begin_src emacs-lisp
+;; modified from https://sophiebos.io/posts/beautifying-emacs-org-mode/
+(after! org-modern
+  (setq org-auto-align-tags t
+        org-tags-column 0
+        org-fold-catch-invisible-edits 'show-and-error
+        org-special-ctrl-a/e t
+        org-insert-heading-respect-content t
+
+        org-modern-table nil ;; use a different package in `other' for pretty tables
+        org-modern-todo nil
+        org-modern-priority nil
+        org-modern-progress 6
+
+        ;; agenda
+        org-agenda-tags-column 0
+        org-agenda-block-separator ?─
+        org-agenda-time-grid
+        '((daily today require-timed)
+          (800 1000 1200 1400 1600 1800 2000)
+          " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+        org-agenda-current-time-string
+        "⭠ now ─────────────────────────────────────────────────"
+
+        ;; text replacements
+        org-modern-fold-stars
+        `(("◉" . "○" )
+          ("◈" . "◇" )
+          ("◉" . "○" )
+          ("◈" . "◇" )
+          ("◉" . "○" ))
+        org-modern-checkbox
+        ;; requires nerd font
+        '((88 . "󰄵")
+          (45 . "󰡖")
+          (32 . "󰄱"))
+        org-modern-list
+        '((43 . "•")
+          (45 . "–")
+          (42 . "↪")))
+
+  (custom-set-faces!
+    `(org-modern-tag
+      :background ,(doom-color 'fg-alt)
+      :foreground ,(doom-color 'bg-alt)
+      :family ,my/sans-serif-font
+      :height 0.7)))
+#+end_src
+***** org-appear
+#+begin_src emacs-lisp
+(after! org-appear
+  (setq org-hide-emphasis-markers t
+        org-pretty-entities nil
+        ;; org-appear-autoentities t
+        org-appear-autosubmarkers t
+        org-appear-inside-latex t
+        org-appear-autolinks 'just-brackets))
+#+end_src
+***** other
+Modern block styling from [[https://github.com/jdtsmith/org-modern-indent][org-modern-indent]].
+#+begin_src emacs-lisp :tangle packages.el
+(package! org-modern-indent :recipe
+  (:host github
+   :repo "jdtsmith/org-modern-indent"))
+#+end_src
+
+#+begin_src emacs-lisp :tangle no
+;; (use-package! org-modern-indent
+;;   :hook (org-mode . org-modern-indent-mode)
+;;   :config
+;;   (custom-set-faces!
+;;     `((org-block-begin-line)
+;;       :inherit default
+;;       :background nil)
+;;     `((org-block-end-line)
+;;       :inherit org-block-begin-line
+;;       :background nil))
+
+;;   (setq org-modern-block-name
+;;         '((t . t)
+;;           ("src" "──»" "──«")
+;;           ("example" "─»»" "─««")
+;;           ("quote" "─ ❝" "─ ❞")
+;;           ("export" "⏩" "⏪"))))
+#+end_src
+
+Align tables with images and hidden markup correctly with [[https://github.com/casouri/valign][valign]].
+*NOTE*: Can be slow, especially with large =org= files.
+#+begin_src emacs-lisp :tangle packages.el
+(package! valign)
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package! valign
+  :hook (org-mode . valign-mode)
+  :config (setq valign-fancy-bar t))
+#+end_src
+**** +dragndrop
+Customise drag-and-drop support for images and files, insert them into the =images/= directory.
+#+begin_src emacs-lisp
+(use-package! org-download
+  :defer t
+  :init
+  (setq-default org-download-image-dir "images")
+  (map! :map org-mode-map
+        :localleader
+        :desc "Rename image at point" "a C" #'org-download-rename-at-point)
+  :config
+  (setq org-download-method 'directory
+        org-download-link-format "[[file:images/%s]]\n"
+        org-download-heading-lvl nil))
+
+#+end_src
+**** +roam2
+Set up =org-roam= along with keybindings that have the [[kbd:][<leader> r]] prefix.
+#+begin_src emacs-lisp
+(use-package! org-roam
+  :defer t
+  :config
+  ;; variables
+  (setq org-roam-directory (file-truename "~/Notes")
+        org-roam-db-location (file-truename "~/Notes/org-roam.db")
+        org-attach-id-dir "assets/")
+
+  (org-roam-db-autosync-enable)
+
+  ;; custom `org-roam' functions
+  (defun my/org-roam--after-point ()
+    "If in Evil normal state and not at EOL, move one char forward."
+    (when (and (bound-and-true-p evil-mode)
+               (evil-normal-state-p)
+               (not (eolp)))
+      (forward-char)))
+
+  (defun my/current-buffer-has-module-tag ()
+    "Return non-nil when this buffer’s #+filetags line contains :module:."
+    (save-excursion
+      (goto-char (point-min))
+      (re-search-forward "^#\\+filetags:.*:module:" nil t)))
+
+  (defun my/org-roam-insert-lowercase ()
+    "Insert an org-roam link after point.
+   Lower-case the link text unless the current buffer is tagged :module:."
+    (interactive)
+    (let* ((module-context-p (my/current-buffer-has-module-tag))
+           (org-roam-node-formatter
+            (lambda (node)
+              (let ((title (org-roam-node-title node)))
+                (if module-context-p title (downcase title))))))
+      (my/org-roam--after-point)
+      (call-interactively #'org-roam-node-insert)))
+
+  (defun my/org-roam-insert-custom-title ()
+    "Pick a node, then prompt for a verbatim link description."
+    (interactive)
+    (my/org-roam--after-point)
+    (let* ((node (org-roam-node-read))
+           (desc (read-string "Description: "))
+           (link (org-link-make-string
+                  (concat "id:" (org-roam-node-id node))
+                  desc)))
+      (insert link)
+      (org-roam-link-replace-at-point link)
+      (run-hooks 'org-roam-insert-node-hook)
+      (forward-char)))
+
+  ;; copied from https://hieuphay.com/doom-emacs-config/#customizing-main-interface
+  (defun my/org-roam-node-find-by-mtime ()
+    "Find a node by last modified date."
+    (interactive)
+    (find-file
+     (org-roam-node-file
+      (org-roam-node-read nil nil #'org-roam-node-read-sort-by-file-mtime))))
+
+  ;; keybindings
+  (map! :map org-roam-mode-map
+        :leader
+        (:prefix ("r" . "roam")
+         :desc "Add alias"          "a" #'org-roam-alias-add
+         :desc "Remove alias"       "A" #'org-roam-alias-remove
+         :desc "Toggle roam buffer" "b" #'org-roam-buffer-toggle
+         :desc "Find node"          "f" #'my/org-roam-node-find-by-mtime
+         :desc "Insert node"        "i" #'my/org-roam-insert-lowercase
+         :desc "Insert title"       "I" #'my/org-roam-insert-custom-title
+         :desc "Add tag"            "t" #'org-roam-tag-add
+         :desc "Remove tag"         "T" #'org-roam-tag-remove
+         :desc "Visit node"         "v" #'org-roam-node-visit)))
+#+end_src
+
+=org-roam-ui= provides a pretty graph.
+#+begin_src emacs-lisp :tangle packages.el
+(package! org-roam-ui)
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package! websocket :after org-roam)
+
+(use-package! org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t
+        org-roam-mode-sections
+        (list #'org-roam-backlinks-section
+              #'org-roam-reflinks-section
+              #'org-roam-unlinked-references-section))
+
+  (map! :map org-roam-mode-map
+        :leader
+        (:prefix ("r" . "roam")
+         :desc "Open ORUI" "u" #'org-roam-ui-open)))
+#+end_src
+*** other
+**** arduino
+#+begin_src emacs-lisp :tangle packages.el
+(package! arduino-mode)
+#+end_src
+
+#+begin_src emacs-lisp
+;; TODO add arduino support https://www.reddit.com/r/emacs/comments/17n4ti6/how_to_configure_arduino_lsp/
+;; (after! arduino-mode
+;;   (add-to-list 'eglot-server-programs
+;;                '(arduino-mode . ("arduino-language-server"
+;;                                  "-clangd" "/usr/bin/clangd"
+;;                                  "-cli" "/opt/homebrew/bin/arduino-cli"
+;;                                  "-cli-config" "~/Library/Arduino15/arduino-cli.yaml"
+;;                                  "-fqbn" "arduino:avr:uno"))))
+#+end_src
+**** asm
+#+begin_src emacs-lisp :tangle packages.el
+(package! nasm-mode)
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package! nasm-mode
+  :hook (asm-mode . nasm-mode)
+  :config
+  (setq nasm-after-mnemonic-whitespace :space)
+  (custom-set-faces!
+    ;; `(nasm-instructions :foreground ,(doom-color 'cyan))
+    ;; `(nasm-registers    :foreground ,(doom-color 'violet))
+    ;; `(nasm-local-labels :foreground ,(doom-color 'yellow))
+    ))
+#+end_src
+** :app
+*** calendar
+Use my forks of =calfw=, which is required for some of the configs here.
+#+begin_src emacs-lisp :tangle packages.el
+(unpin! calfw)
+
+(package! calfw :recipe
+  (:host github
+   :repo "kiwanami/emacs-calfw"
+   :fork (:repo "haji-ali/emacs-calfw"
+          :fork (:repo "michaelneuper/emacs-calfw"
+                 ;; FIXME fix branch not being checked out
+                 :branch "fix"))))
+
+(package! calfw-blocks :recipe
+  (:host github
+   :repo "haji-ali/calfw-blocks"
+   :fork (:repo "michaelneuper/calfw-blocks"
+          :branch "fix-dispatch-and-colors")))
+
+(package! maccalfw :recipe
+  (:host github
+   :repo "haji-ali/maccalfw"
+   :files ("maccalfw.el"
+           "ical-form.el"
+           ("src" . "src")))
+  :ignore (not (featurep :system 'macos)))
+#+end_src
+
+=calfw= displays holidays by default, let's turn that off.
+#+begin_src emacs-lisp
+(use-package! calfw
+  :init
+  (map! :leader
+        :prefix "o"
+        (:prefix ("c" . "calendar")
+         :desc "Default calendar" "d" #'cfw:open-calendar-buffer))
+  :config
+  (setq cfw:display-calendar-holidays nil)
+
+  (custom-set-faces!
+    `(cfw:face-toolbar :background ,(doom-color 'bg))))
+
+(use-package! calfw-blocks :after calfw)
+#+end_src
+
+Integrate with the mac calendar, requires using my forks of =calfw=.
+#+begin_src emacs-lisp
+(use-package! maccalfw
+  :if (featurep :system 'macos)
+  :after calfw-blocks
+  :commands (maccalfw-open
+             my/maccalfw-open-selective
+             my/maccalfw-open-assessments)
+  :init
+  ;; custom functions
+  (defun my/maccalfw-open-selective ()
+    "Open calfw with selected calendars."
+    (interactive)
+    (require 'maccalfw)
+    (maccalfw--load-module)
+    (let* ((all-calendars (maccalfw-get-calendars))
+           (calendar-names (mapcar
+                            (lambda (cal)
+                              (plist-get cal :title))
+                            all-calendars))
+           (selected-names (completing-read-multiple
+                            "Select calendars: "
+                            calendar-names))
+           (selected-calendars (seq-filter
+                                (lambda (cal)
+                                  (member (plist-get cal :title)
+                                          selected-names))
+                                all-calendars)))
+      (maccalfw-open
+       selected-calendars)))
+
+  (defun my/maccalfw-open-assessments ()
+    "Open calfw with the Assessments calendar in monthly view."
+    (interactive)
+    (require 'maccalfw)
+    (maccalfw--load-module)
+    (let* ((all-calendars (maccalfw-get-calendars))
+           (assessments-calendar (seq-find
+                                  (lambda (cal)
+                                    (string=
+                                     (plist-get cal :title)
+                                     "Assessments"))
+                                  all-calendars)))
+      (cfw:open-calendar-buffer
+       :view 'month
+       :contents-sources
+       (list (maccalfw--create-source
+              (plist-get assessments-calendar :title)
+              (plist-get assessments-calendar :id)
+              (doom-color 'red)))
+       :sorter (or (and (fboundp #'calfw-blocks-default-sorter)
+                        #'calfw-blocks-default-sorter)
+                   #'string-lessp))))
+  ;; keybindings
+  (map! :leader
+        :prefix "oc"
+        :desc "Assessment calendar" "a" #'my/maccalfw-open-assessments
+        :desc "Select calendar"     "s" #'my/maccalfw-open-selective
+        :desc "Mac calendar"        "m" #'maccalfw-open))
+#+end_src
