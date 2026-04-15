@@ -251,7 +251,9 @@ bindsym $mod+r mode "resize"
 #for_window [app_id="soffice"] floating enable, resize set 500px 500px
 for_window [app_id="soffice"] fullscreen enable
 
-for_window [app_id='transmission-gtk'] fullscreen enable
+#for_window [app_id='transmission-gtk'] fullscreen enable
+
+for_window [app_id="com.transmissionbt.transmission"] inhibit_idle enable
 
 for_window [class="Brave-browser"] inhibit_idle fullscreen
 
