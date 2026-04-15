@@ -1,17 +1,7 @@
+
 [Default Applications]
 text/html=brave-browser.desktop
 x-scheme-handler/http=brave-browser.desktop
 x-scheme-handler/https=brave-browser.desktop
 x-scheme-handler/about=brave-browser.desktop
 x-scheme-handler/unknown=brave-browser.desktop
-x-scheme-handler/mailto=brave-browser.desktop
-application/pdf=org.gnome.Evince.desktop
-image/jpeg=org.gnome.Loupe.desktop
-text/x-python=spyder-6-spyder_spyder-6.desktop
-image/png=org.gnome.Loupe.desktop
-
-[Added Associations]
-application/pdf=org.gnome.Evince.desktop;
-image/jpeg=org.gnome.Loupe.desktop;
-text/x-python=spyder-6-spyder_spyder-6.desktop
-image/png=org.gnome.Loupe.desktop;
