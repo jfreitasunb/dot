@@ -981,3 +981,20 @@ rivendel/configuracoes_usando_stow/config/.config/emacs/
 rivendel/configuracoes_usando_stow/config/.config/menus
 rivendel/configuracoes_usando_stow/config/.config/htop/htoprc
 rivendel/configuracoes_usando_stow/config/.config/menus/applications.menu
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Cache
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Code Cache
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Cookies
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Cookies-journal
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Crashpad
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/DawnGraphiteCache
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/DawnWebGPUCache
+rivendel/configuracoes_usando_stow/config/.config/rstudio/DIPS
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/GPUCache
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Local Storage
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Network Persistent State
+rivendel/configuracoes_usando_stow/config/.config/org.gnome.Ptyxis/session.gvariant
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Session Storage
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Shared Dictionary
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Trust Tokens
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Trust Tokens-journal
+/rivendel/configuracoes_usando_stow/config/.config/doom
