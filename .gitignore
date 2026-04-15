@@ -1004,3 +1004,7 @@ rivendel/configuracoes_usando_stow/config/.config/nvim/.stylua.toml
 rivendel/configuracoes_usando_stow/config/.config/nvim/neovim.yml
 rivendel/configuracoes_usando_stow/config/.config/nvim/README.md
 rivendel/configuracoes_usando_stow/config/.config/nvim/selene.toml
+rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell/.firstlaunch
+rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell/.changelog-1.4
+rivendel/configuracoes_usando_stow/config/.config/fish/conf.d/atuin.env.fish
+rivendel/configuracoes_usando_stow/config/.config/fish/conf.d/uv.env.fish
