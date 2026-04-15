@@ -998,3 +998,9 @@ rivendel/configuracoes_usando_stow/config/.config/org.gnome.Ptyxis/session.gvari
 rivendel/configuracoes_usando_stow/config/.config/rstudio/Trust Tokens
 rivendel/configuracoes_usando_stow/config/.config/rstudio/Trust Tokens-journal
 /rivendel/configuracoes_usando_stow/config/.config/doom
+rivendel/configuracoes_usando_stow/config/.config/nvim/.luarc.json
+rivendel/configuracoes_usando_stow/config/.config/nvim/.neoconf.json
+rivendel/configuracoes_usando_stow/config/.config/nvim/.stylua.toml
+rivendel/configuracoes_usando_stow/config/.config/nvim/neovim.yml
+rivendel/configuracoes_usando_stow/config/.config/nvim/README.md
+rivendel/configuracoes_usando_stow/config/.config/nvim/selene.toml
