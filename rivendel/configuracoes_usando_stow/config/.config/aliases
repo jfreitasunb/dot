@@ -1,8 +1,8 @@
 alias v='nvim'
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
-alias cat='batcat' #para Debian
-#alias cat='bat' #para Arch
+#alias cat='batcat' #para Debian
+alias cat='bat' #para Fedora
 alias jn='jupyter notebook'
 
 #### Docker ####
