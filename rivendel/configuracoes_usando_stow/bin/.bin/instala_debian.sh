@@ -4,7 +4,7 @@ cd ~
 
 #Instala o curl, git, npm, nodejs
 
-sudo apt install curl git nodejs npm build-essential automake python3.13-venv -y
+sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall -y
 
 #Instala o Brave
 
@@ -72,6 +72,8 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 
 cd build && cpack -G DEB
 
+sudo dpkg -i nvim-linux-x86_64.deb
+
 cd ~
 
 rm -rf neovim
@@ -112,7 +114,7 @@ sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev -y
 
 #Pacotes de propósito geral
 
-sudo apt install bat bzip2 eza feh flameshot flatpak fzf p7zip p7zip-full pdftk ranger rsync vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps meld imagemagick xz-utils fd-find zoxide ripgrep luarocks xclip ffmpeg ffmpegthumbnailer htop autoconf gcc make pkg-config poppler-utils -y
+sudo apt install bat bzip2 eza feh flameshot flatpak fzf p7zip p7zip-full pdftk ranger rsync vlc transmission-gtk zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps meld imagemagick xz-utils fd-find zoxide ripgrep luarocks xclip ffmpeg ffmpegthumbnailer htop autoconf gcc make pkg-config poppler-utils img2pdf -y
 
 #Virtualização
 
@@ -152,11 +154,9 @@ git clone https://github.com/zplug/zplug ~/.local/share/zplug
 
 sudo apt install dconf-editor gnome-sushi libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
 
-echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
-
 #LaTeX
 
-sudo apt install texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk latex-cjk-all -y
+sudo apt install texlive texlive-base texlive-bibtex-extra texlive-binaries texlive-extra-utils texlive-fonts-extra texlive-fonts-recommended texlive-font-utils texlive-formats-extra texlive-lang-portuguese texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-luatex texlive-pictures texlive-plain-generic texlive-pstricks texlive-science texlive-xetex latexmk latex-cjk-all texstudio -y
 
 #TMUX
 
@@ -167,6 +167,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #Sway
 
 sudo apt install sway wofi waybar swaylock wlogout cliphist swayidle network-manager-applet wl-clipboard dunst blueman -y
+
+echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
 
 python3 -m venv ~/.local/src/venv/
 
@@ -214,8 +216,6 @@ sudo apt install stow -y
 
 rm -rf ~/.config
 
-#rm -rf ~/.local/share/gnome-shell
-
 cd ~/GitHub/dot/rivendel/configuracoes_usando_stow/
 
 stow -t /home/jfreitas/ *
@@ -246,7 +246,7 @@ flatpak install flathub org.geogebra.GeoGebra -y
 
 flatpak install flathub org.keepassxc.KeePassXC -y
 
-flatpak install flathub org.texstudio.TeXstudio -y
+#flatpak install flathub org.texstudio.TeXstudio -y
 
 #Atuin, starship e uv
 
