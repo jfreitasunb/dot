@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 NOME_BACKUP_GNOME="debian_gnome_settings_"$(date +%Y-%m-%d)".ini"
 
@@ -23,7 +23,7 @@ cd $LOCAL_BACKUP_GIT
 
 git add $NOME_BACKUP_GNOME_GIT
 
-git commit -am "Configurações do Gnome salvas no dia $(date +%Y-%m-%d)"
+git commit -am "Configurações do Gnome salvas no dia $(date +%d-%m-%Y)"
 
 #importa as configuraçoes do gnome
 #dconf load / < dconf-settings.ini
