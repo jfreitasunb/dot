@@ -19,6 +19,12 @@ dconf dump / >"$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
 
 dconf dump / >"$LOCAL_BACKUP_GIT""$NOME_BACKUP_GNOME_GIT"
 
+cd $LOCAL_BACKUP_GIT
+
+git add $NOME_BACKUP_GNOME_GIT
+
+git commit -am "Configurações do Gnome salvas no dia $(date +%Y-%m-%d)"
+
 #importa as configuraçoes do gnome
 #dconf load / < dconf-settings.ini
 
