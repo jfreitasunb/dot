@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 NOME_BACKUP_GNOME="debian_gnome_settings_"$(date +%Y-%m-%d)".ini"
 
@@ -15,15 +15,15 @@ dpkg-query -f '${binary:Package}\n' -W >"$LOCAL_BACKUP""$NOME_BACKUP"
 find "$LOCAL_BACKUP" -type f -mtime +10 -delete
 
 #salva configuraçoes do gnome
-dconf dump / > "$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
+dconf dump / >"$LOCAL_BACKUP""$NOME_BACKUP_GNOME"
 
-dconf dump / > "$LOCAL_BACKUP_GIT""$NOME_BACKUP_GNOME_GIT"
+dconf dump / >"$LOCAL_BACKUP_GIT""$NOME_BACKUP_GNOME_GIT"
 
 cd $LOCAL_BACKUP_GIT
 
 git add $NOME_BACKUP_GNOME_GIT
 
-git commit -am "Configurações do Gnome salvas no dia $(date +%d-%m-%Y)"
+git commit -m "Configurações do Gnome salvas no dia $(date +%d-%m-%Y)"
 
 #importa as configuraçoes do gnome
 #dconf load / < dconf-settings.ini
