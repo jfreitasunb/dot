@@ -4,12 +4,6 @@ Id_2=24a2d530-4e85-4d0a-b028-688d1a4054ad
 Number=2
 Rows=1
 
-[TabBox]
-DesktopMode=2
-
-[TabBoxAlternative]
-DesktopMode=2
-
 [Tiling][24a2d530-4e85-4d0a-b028-688d1a4054ad][0bf1b516-abba-4e6a-b257-fe19173bd7d2]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
