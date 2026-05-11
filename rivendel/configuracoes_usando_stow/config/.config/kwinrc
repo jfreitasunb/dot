@@ -1,9 +1,30 @@
 [Desktops]
 Id_1=958b7cf0-ce10-47b2-81ea-87ca6bf7d6b7
-Number=1
+Id_2=24a2d530-4e85-4d0a-b028-688d1a4054ad
+Number=2
 Rows=1
 
+[Tiling][24a2d530-4e85-4d0a-b028-688d1a4054ad][0bf1b516-abba-4e6a-b257-fe19173bd7d2]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][24a2d530-4e85-4d0a-b028-688d1a4054ad][b750c7c6-de66-4d58-ba09-f9e2b83d1a74]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][24a2d530-4e85-4d0a-b028-688d1a4054ad][e454a6a8-2a47-4de6-80a8-04cf065b3772]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][958b7cf0-ce10-47b2-81ea-87ca6bf7d6b7][0bf1b516-abba-4e6a-b257-fe19173bd7d2]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][958b7cf0-ce10-47b2-81ea-87ca6bf7d6b7][b750c7c6-de66-4d58-ba09-f9e2b83d1a74]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][958b7cf0-ce10-47b2-81ea-87ca6bf7d6b7][e454a6a8-2a47-4de6-80a8-04cf065b3772]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 

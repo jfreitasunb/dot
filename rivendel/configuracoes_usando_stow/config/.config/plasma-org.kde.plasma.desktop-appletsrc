@@ -44,7 +44,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
-popupHeight=511
+popupHeight=539
 popupWidth=629
 
 [Containments][2][Applets][3][Configuration][General]
@@ -125,6 +125,9 @@ plugin=org.kde.plasma.devicenotifier
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
+[Containments][2][Applets][7][Applets][21][Configuration][General]
+currentDetailsTab=details
+
 [Containments][2][Applets][7][Applets][24]
 immutability=1
 plugin=org.kde.plasma.bluetooth
@@ -136,6 +139,10 @@ plugin=org.kde.plasma.brightness
 [Containments][2][Applets][7][Applets][26]
 immutability=1
 plugin=org.kde.plasma.battery
+
+[Containments][2][Applets][7][Applets][28]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
 
 [Containments][2][Applets][7][Applets][8]
 immutability=1
@@ -152,6 +159,15 @@ knownItems=org.kde.plasma.vault,org.kde.kdeconnect,org.kde.plasma.printmanager,o
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;22;23
 
+[Containments][27]
+activityId=305eae51-b969-4a43-8ee5-dd4bbe013784
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/Imagens,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Músicas,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Vídeos,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Área de trabalho,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Modelos,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/GitHub,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Downloads,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Documentos,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Público,0,305eae51-b969-4a43-8ee5-dd4bbe013784
+screenMapping=desktop:/Dropbox (Old),0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/ESA-UNICEF_DengueForecastProject-BKP,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/VMs,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Desktop,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/TB-sem-missing-smote,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Pictures,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/TB,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/R,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Imagens,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/OneDrive,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Músicas,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Dropbox,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/ESA-UNICEF_DengueForecastProject,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Área de trabalho,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Vídeos,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Semana Universitaria 2023,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Modelos,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Zotero,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Download_torrents,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/GitHub,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Prediction-of-Gestational-Weight-Gain-for-Pregnancy,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Downloads,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Documentos,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/Público,0,305eae51-b969-4a43-8ee5-dd4bbe013784,desktop:/DengueForecastProject,0,305eae51-b969-4a43-8ee5-dd4bbe013784
