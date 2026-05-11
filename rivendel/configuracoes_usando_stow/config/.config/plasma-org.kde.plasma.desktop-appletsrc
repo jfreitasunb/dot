@@ -166,7 +166,7 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.desktopcontainment
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.slideshow
 
 [Containments][29][ConfigDialog]
 DialogHeight=630
@@ -174,6 +174,10 @@ DialogWidth=810
 
 [Containments][29][Wallpaper][org.kde.image][General]
 SlidePaths=/usr/share/wallpapers/
+
+[Containments][29][Wallpaper][org.kde.slideshow][General]
+SlideInterval=7200
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
 [ScreenMapping]
 itemsOnDisabledScreens=0,305eae51-b969-4a43-8ee5-dd4bbe013784,25,desktop:/ESA-UNICEF_DengueForecastProject-BKP,desktop:/Público,desktop:/GitHub,desktop:/DengueForecastProject,desktop:/Download_torrents,desktop:/Dropbox,desktop:/Zotero,desktop:/R,desktop:/Prediction-of-Gestational-Weight-Gain-for-Pregnancy,desktop:/Downloads,desktop:/Dropbox (Old),desktop:/Semana Universitaria 2023,desktop:/ESA-UNICEF_DengueForecastProject,desktop:/Vídeos,desktop:/VMs,desktop:/TB-sem-missing-smote,desktop:/Modelos,desktop:/OneDrive,desktop:/TB,desktop:/Imagens,desktop:/Desktop,desktop:/Pictures,desktop:/Músicas,desktop:/Área de trabalho,desktop:/Documentos
