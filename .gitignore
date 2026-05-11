@@ -1041,3 +1041,5 @@ rivendel/configuracoes_usando_stow/config/.config/knfsshare
 rivendel/configuracoes_usando_stow/config/.config/partitionmanagerrc
 rivendel/configuracoes_usando_stow/config/.config/plasmanotifyrc
 /rivendel/configuracoes_usando_stow/config/.config/session
+rivendel/configuracoes_usando_stow/config/.config/kwriterc
+rivendel/maquinas_virtuais/qemu/freebsd15.0.xml
