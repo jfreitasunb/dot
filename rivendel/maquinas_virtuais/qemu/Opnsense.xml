@@ -48,7 +48,7 @@ or other application using the libvirt API.
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/home/jfreitas/VMs/OPNsense-25.7-dvd-amd64.iso'/>
+      <source file='/home/jfreitas/VMs/OPNsense-26.1.2-dvd-amd64.iso'/>
       <target dev='sda' bus='sata'/>
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
