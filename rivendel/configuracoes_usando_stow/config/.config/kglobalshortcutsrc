@@ -264,3 +264,6 @@ show-on-mouse-pos=Meta+V,Meta+V,Mostrar itens da área de transferência na posi
 switch to next activity=,,Trocar para a próxima atividade
 switch to previous activity=,,Trocar para a atividade anterior
 toggle do not disturb=,,Alternar o "Não perturbe"
+
+[services][org.kde.krunner.desktop]
+_launch=Alt+Space\tMeta+Space\tSearch\tAlt+F2
