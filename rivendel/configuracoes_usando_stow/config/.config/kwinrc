@@ -1,7 +1,8 @@
 [Desktops]
 Id_1=958b7cf0-ce10-47b2-81ea-87ca6bf7d6b7
 Id_2=24a2d530-4e85-4d0a-b028-688d1a4054ad
-Number=2
+Id_3=cbf83f3b-6fda-48f8-b60b-49a65e3156f1
+Number=3
 Rows=1
 
 [Tiling][24a2d530-4e85-4d0a-b028-688d1a4054ad][0bf1b516-abba-4e6a-b257-fe19173bd7d2]
@@ -33,6 +34,10 @@ padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][958b7cf0-ce10-47b2-81ea-87ca6bf7d6b7][e454a6a8-2a47-4de6-80a8-04cf065b3772]
+padding=4
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][cbf83f3b-6fda-48f8-b60b-49a65e3156f1][0bf1b516-abba-4e6a-b257-fe19173bd7d2]
 padding=4
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
