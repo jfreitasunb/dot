@@ -1043,3 +1043,17 @@ rivendel/configuracoes_usando_stow/config/.config/plasmanotifyrc
 /rivendel/configuracoes_usando_stow/config/.config/session
 rivendel/configuracoes_usando_stow/config/.config/kwriterc
 rivendel/maquinas_virtuais/qemu/freebsd15.0.xml
+/rivendel/configuracoes_usando_stow/config/.config/akonadi
+rivendel/configuracoes_usando_stow/config/.config/baloofileinformationrc
+rivendel/configuracoes_usando_stow/config/.config/gtkrc
+rivendel/configuracoes_usando_stow/config/.config/gwenviewrc
+rivendel/configuracoes_usando_stow/config/.config/kmail2rc
+rivendel/configuracoes_usando_stow/config/.config/kmailsearchindexingrc
+rivendel/configuracoes_usando_stow/config/.config/kwinoutputconfig.json
+rivendel/configuracoes_usando_stow/config/.config/okularpartrc
+rivendel/configuracoes_usando_stow/config/.config/okularrc
+rivendel/configuracoes_usando_stow/config/.config/onedrive/resume_download.d6cNBhs1O5Tma2WU
+rivendel/configuracoes_usando_stow/config/.config/phishingurlrc
+rivendel/configuracoes_usando_stow/config/.config/rstudio/whats-new-state.json
+rivendel/configuracoes_usando_stow/config/.config/spectaclerc
+rivendel/configuracoes_usando_stow/config/.config/vlcrc
