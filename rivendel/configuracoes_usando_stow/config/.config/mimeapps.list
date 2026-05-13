@@ -1,10 +1,12 @@
+[Added Associations]
+application/pdf=org.gnome.Evince.desktop;
+text/x-tex=texstudio.desktop;sublime_text.desktop;rstudio.desktop;org.kde.kwrite.desktop;okularApplication_txt.desktop;libreoffice-writer.desktop;nvim.desktop;
+
 [Default Applications]
 application/pdf=org.gnome.Evince.desktop
 text/html=brave-browser.desktop
+text/x-tex=texstudio.desktop;
+x-scheme-handler/about=brave-browser.desktop
 x-scheme-handler/http=brave-browser.desktop
 x-scheme-handler/https=brave-browser.desktop
-x-scheme-handler/about=brave-browser.desktop
 x-scheme-handler/unknown=brave-browser.desktop
-
-[Added Associations]
-application/pdf=org.gnome.Evince.desktop;
