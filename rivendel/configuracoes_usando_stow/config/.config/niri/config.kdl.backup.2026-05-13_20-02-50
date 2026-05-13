@@ -5,13 +5,6 @@
 config-notification {
     disable-failed
 }
-// Outputs from existing configuration
-/-output "eDP-2" {
-    mode "2560x1600@239.998993"
-    position x=2560 y=0
-    variable-refresh-rate
-}
-
 
 gestures {
     hot-corners {
@@ -23,13 +16,15 @@ gestures {
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
+    focus-follows-mouse
     keyboard {
         xkb {
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
 
             // For example:
-            // layout "us,ru"
+            layout "br"
+            variant "thinkpad"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
 
             // If this section is empty, niri will fetch xkb settings
@@ -90,7 +85,11 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-
+/-output "eDP-2" {
+    mode "2560x1600@239.998993"
+    position x=2560 y=0
+    variable-refresh-rate
+}
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -160,6 +159,7 @@ overview {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
+
 // This line starts waybar, a commonly used bar for Wayland compositors.
 environment {
   XDG_CURRENT_DESKTOP "niri"
@@ -168,7 +168,7 @@ hotkey-overlay {
     skip-at-startup
 }
 prefer-no-csd
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Imagens/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
 animations {
     workspace-switch {
         spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
@@ -227,7 +227,6 @@ window-rule {
     open-floating false
 }
 window-rule {
-    match app-id=r#"^org\.gnome\.Calculator$"#
     match app-id=r#"^gnome-calculator$"#
     match app-id=r#"^galculator$"#
     match app-id=r#"^blueman-manager$"#
@@ -280,3 +279,5 @@ include "dms/alttab.kdl"
 include "dms/binds.kdl"
 include "dms/outputs.kdl"
 include "dms/cursor.kdl"
+
+spawn-at-startup "pkill" "waybar"
