@@ -197,7 +197,7 @@ Window to Screen 4=,,Mover janela para a tela 4
 Window to Screen 5=,,Mover janela para a tela 5
 Window to Screen 6=,,Mover janela para a tela 6
 Window to Screen 7=,,Mover janela para a tela 7
-_k_friendly_name=Configurações do sistema
+_k_friendly_name=KWin
 disableInputCapture=Meta+Shift+Esc,Meta+Shift+Esc,Desativar captura de entrada ativa
 view_actual_size=Meta+0,Meta+0,Zoom para o tamanho atual
 view_zoom_in=Meta++\tMeta+=,Meta++\tMeta+=,Ampliar
@@ -265,5 +265,12 @@ switch to next activity=,,Trocar para a próxima atividade
 switch to previous activity=,,Trocar para a atividade anterior
 toggle do not disturb=,,Alternar o "Não perturbe"
 
+[services][net.local.systemctl.desktop]
+_launch=F8
+
 [services][org.kde.krunner.desktop]
 _launch=Alt+Space\tMeta+Space\tSearch\tAlt+F2
+
+[services][org.kde.spectacle.desktop]
+CurrentMonitorScreenShot=
+OpenWithoutScreenshot=
