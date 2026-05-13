@@ -18,7 +18,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][22][Configuration]
-popupHeight=400
+popupHeight=451
 popupWidth=560
 
 [Containments][2][Applets][22][Configuration][Appearance]
@@ -132,6 +132,9 @@ plugin=org.kde.plasma.brightness
 immutability=1
 plugin=org.kde.plasma.battery
 
+[Containments][2][Applets][7][Applets][26][Configuration][General]
+showPercentage=true
+
 [Containments][2][Applets][7][Applets][28]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
@@ -150,15 +153,6 @@ knownItems=org.kde.plasma.vault,org.kde.kdeconnect,org.kde.plasma.printmanager,o
 
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;22;23
-
-[Containments][27]
-activityId=305eae51-b969-4a43-8ee5-dd4bbe013784
-formfactor=0
-immutability=1
-lastScreen=1
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
 
 [Containments][29]
 ItemGeometries-1920x1200=
@@ -179,9 +173,28 @@ DialogWidth=810
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][29][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0105.jpg
+SlideInterval=7200
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
+
+[Containments][30]
+activityId=305eae51-b969-4a43-8ee5-dd4bbe013784
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.desktopcontainment
+wallpaperplugin=org.kde.slideshow
+
+[Containments][30][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
+[Containments][30][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/celebration-winter-nights.jpg
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
 [ScreenMapping]
-itemsOnDisabledScreens=0,305eae51-b969-4a43-8ee5-dd4bbe013784,25,desktop:/ESA-UNICEF_DengueForecastProject-BKP,desktop:/Público,desktop:/GitHub,desktop:/DengueForecastProject,desktop:/Download_torrents,desktop:/Dropbox,desktop:/Zotero,desktop:/R,desktop:/Prediction-of-Gestational-Weight-Gain-for-Pregnancy,desktop:/Downloads,desktop:/Dropbox (Old),desktop:/Semana Universitaria 2023,desktop:/ESA-UNICEF_DengueForecastProject,desktop:/Vídeos,desktop:/VMs,desktop:/TB-sem-missing-smote,desktop:/Modelos,desktop:/OneDrive,desktop:/TB,desktop:/Imagens,desktop:/Desktop,desktop:/Pictures,desktop:/Músicas,desktop:/Área de trabalho,desktop:/Documentos
+itemsOnDisabledScreens=0,305eae51-b969-4a43-8ee5-dd4bbe013784,25,desktop:/Download_torrents,desktop:/Público,desktop:/R,desktop:/Desktop,desktop:/Modelos,desktop:/Vídeos,desktop:/Downloads,desktop:/Prediction-of-Gestational-Weight-Gain-for-Pregnancy,desktop:/OneDrive,desktop:/ESA-UNICEF_DengueForecastProject,desktop:/Músicas,desktop:/TB-sem-missing-smote,desktop:/Documentos,desktop:/Área de trabalho,desktop:/ESA-UNICEF_DengueForecastProject-BKP,desktop:/VMs,desktop:/Dropbox (Old),desktop:/TB,desktop:/GitHub,desktop:/Imagens,desktop:/Zotero,desktop:/Dropbox,desktop:/DengueForecastProject,desktop:/Pictures,desktop:/Semana Universitaria 2023
 screenMapping=
