@@ -24,6 +24,14 @@ sudo dnf install wezterm
 
 sudo dnf update wezterm
 
+#Dependências para o Manim
+
+sudo dnf install pango-devel
+
+#Instalando sensores
+
+sudo dnf install sensors
+
 #Instala codecs
 
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
