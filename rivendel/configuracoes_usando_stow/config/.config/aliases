@@ -1,8 +1,8 @@
 alias v='nvim'
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
-#alias cat='batcat' #para Debian
-alias cat='bat' #para Fedora
+alias cat='batcat' #para Debian
+#alias cat='bat' #para Fedora
 alias jn='jupyter notebook'
 alias virtual='sudo systemctl enable --now virtqemud.socket && sudo systemctl enable --now virtnetworkd.socket && sudo systemctl enable --now virtstoraged.socket && sudo systemctl restart libvirtd'
 
@@ -41,7 +41,7 @@ alias fgrep='fgrep --color=auto'
 alias cp="cp -iv"
 alias mv='mv -iv'
 #alias rm='rm -iv'
-#alias rm='gio trash'
+alias rm='gio trash'
 
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
 

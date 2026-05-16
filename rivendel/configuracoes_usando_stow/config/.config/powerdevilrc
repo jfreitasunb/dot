@@ -1,9 +1,0 @@
-[AC][SuspendAndShutdown]
-AutoSuspendAction=0
-SleepMode=3
-
-[Battery][Display]
-TurnOffDisplayIdleTimeoutSec=1800
-
-[Battery][SuspendAndShutdown]
-AutoSuspendIdleTimeoutSec=1800
