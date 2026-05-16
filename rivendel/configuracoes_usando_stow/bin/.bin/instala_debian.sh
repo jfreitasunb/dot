@@ -4,7 +4,7 @@ cd ~
 
 #Instala o curl, git, npm, nodejs
 
-sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall -y
+sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall lm-sensors -y
 
 #Instala o Brave
 
@@ -231,8 +231,6 @@ cd ~
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak install flathub com.bitwarden.desktop -y
-
-flatpak install flathub org.gimp.GIMP -y
 
 flatpak install flathub io.github.shiftey.Desktop -y
 
