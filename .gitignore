@@ -1058,3 +1058,4 @@ rivendel/configuracoes_usando_stow/config/.config/rstudio/whats-new-state.json
 rivendel/configuracoes_usando_stow/config/.config/spectaclerc
 rivendel/configuracoes_usando_stow/config/.config/vlcrc
 rivendel/configuracoes_usando_stow/config/.config/kiorc
+rivendel/configuracoes_usando_stow/config/.config/nvim/lua/plugins/indent.log
