@@ -102,11 +102,13 @@ sudo checkinstall --install=no
 
 deactivate
 
+sudo dpkg -i onedrive*.deb
+
 cd ~
 
 rm -rf dlang
 
-rm -rf onedrive
+sudo rm -rf onedrive
 
 #Fontes
 
@@ -152,7 +154,7 @@ git clone https://github.com/zplug/zplug ~/.local/share/zplug
 
 #Pacotes para Gnome
 
-sudo apt install dconf-editor gnome-sushi libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
+sudo apt install dconf-editor libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
 
 #LaTeX
 
@@ -257,6 +259,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 #Removendo programas e desativando serviçoes
 
 sudo apt remove -y gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd php-cli php-mbstring --purge
+
+sudo apt install -t trixie-backports linux-image-amd64 firmware-linux firmware-linux-nonfree -y
 
 sudo apt autoremove -y
 
