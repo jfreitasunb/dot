@@ -6,6 +6,8 @@ cd ~
 
 sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall lm-sensors -y
 
+sudo npm install -g tree-sitter-cli
+
 #Instala o Brave
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
