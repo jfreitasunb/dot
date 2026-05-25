@@ -23,13 +23,15 @@ gestures {
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
+    focus-follows-mouse
     keyboard {
         xkb {
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
 
             // For example:
-            // layout "us,ru"
+            layout "br"
+            variant "thinkpad"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
 
             // If this section is empty, niri will fetch xkb settings
@@ -168,7 +170,7 @@ hotkey-overlay {
     skip-at-startup
 }
 prefer-no-csd
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Imagens/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
 animations {
     workspace-switch {
         spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
