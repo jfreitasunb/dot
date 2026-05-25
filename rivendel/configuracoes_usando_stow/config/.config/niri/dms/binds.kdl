@@ -128,6 +128,7 @@ binds {
     Mod+Shift+E { quit; }
     F8 { spawn "systemctl" "hibernate"; }
     Super+B { spawn "brave-browser"; }
+    Super+E { spawn "evince"; }
     Super+N { spawn "nautilus"; }
     Super+Return hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
     Mod+D repeat=false { toggle-overview; }
