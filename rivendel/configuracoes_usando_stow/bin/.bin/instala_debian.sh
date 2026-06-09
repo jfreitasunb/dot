@@ -168,6 +168,10 @@ sudo apt install tmux -y
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+#Dependências para o Manim
+
+sudo apt install -y python3-dev libpango1.0-dev libcairo2-dev pkg-config
+
 #Sway
 
 sudo apt install sway wofi waybar swaylock wlogout cliphist swayidle network-manager-applet wl-clipboard dunst blueman -y
