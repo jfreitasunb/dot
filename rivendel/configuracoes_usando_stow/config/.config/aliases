@@ -4,6 +4,7 @@ alias poweroff='sudo /sbin/poweroff'
 alias cat='batcat' #para Debian
 #alias cat='bat' #para Fedora
 alias jn='jupyter notebook'
+alias virtual='sudo systemctl enable --now virtqemud.socket && sudo systemctl enable --now virtnetworkd.socket && sudo systemctl enable --now virtstoraged.socket && sudo systemctl restart libvirtd'
 
 #### Docker ####
 alias dcd='docker-compose down --rmi all --volumes'

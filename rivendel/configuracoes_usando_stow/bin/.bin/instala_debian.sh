@@ -4,7 +4,9 @@ cd ~
 
 #Instala o curl, git, npm, nodejs
 
-sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall -y
+sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall lm-sensors -y
+
+sudo npm install -g tree-sitter-cli
 
 #Instala o Brave
 
@@ -102,11 +104,13 @@ sudo checkinstall --install=no
 
 deactivate
 
+sudo dpkg -i onedrive*.deb
+
 cd ~
 
 rm -rf dlang
 
-rm -rf onedrive
+sudo rm -rf onedrive
 
 #Fontes
 
@@ -152,7 +156,7 @@ git clone https://github.com/zplug/zplug ~/.local/share/zplug
 
 #Pacotes para Gnome
 
-sudo apt install dconf-editor gnome-sushi libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
+sudo apt install dconf-editor libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
 
 #LaTeX
 
@@ -163,6 +167,10 @@ sudo apt install texlive texlive-base texlive-bibtex-extra texlive-binaries texl
 sudo apt install tmux -y
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#Dependências para o Manim
+
+sudo apt install -y python3-dev libpango1.0-dev libcairo2-dev pkg-config
 
 #Sway
 
@@ -232,8 +240,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 flatpak install flathub com.bitwarden.desktop -y
 
-flatpak install flathub org.gimp.GIMP -y
-
 flatpak install flathub io.github.shiftey.Desktop -y
 
 flatpak install flathub com.github.PintaProject.Pinta -y
@@ -259,6 +265,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 #Removendo programas e desativando serviçoes
 
 sudo apt remove -y gnome-games gnome-contacts gnome-weather gnome-maps gnome-music rhythmbox gnome-characters gnome-clocks cups cups-common apache2-bin gnome-user-share libapache2-mod-dnssd php-cli php-mbstring --purge
+
+sudo apt install -t trixie-backports linux-image-amd64 firmware-linux firmware-linux-nonfree -y
 
 sudo apt autoremove -y
 

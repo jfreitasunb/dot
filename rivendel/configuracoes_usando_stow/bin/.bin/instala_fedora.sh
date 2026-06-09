@@ -16,7 +16,7 @@ sudo dnf system-upgrade reboot
 
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
-sudo dnf install nvim zsh texlive-scheme-full texstudio cargo meld onedrive brave-browser stow bat fzf keepassxc vlc gparted alacritty stow gnome-tweaks gnome-extensions-app -y
+sudo dnf install nvim zsh texlive-scheme-full texstudio cargo meld onedrive brave-browser stow bat fzf keepassxc vlc alacritty stow transmission-qt -y
 
 sudo dnf copr enable wezfurlong/wezterm-nightly
 
@@ -24,6 +24,19 @@ sudo dnf install wezterm
 
 sudo dnf update wezterm
 
+#Dependências para o Manim
+
+sudo dnf install pango-devel
+
+#Instalando sensores
+
+sudo dnf install sensors
+
+#Instala codecs
+
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+
+sudo dnf install libavcodec-freeworld
 
 #Instalando o Eza
 cd ~
