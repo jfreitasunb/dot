@@ -75,17 +75,21 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.desktopcontainment
-wallpaperplugin=org.kde.image
+wallpaperplugin=org.kde.slideshow
 
 [Containments][27][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
+DialogHeight=1020
+DialogWidth=1745
 
 [Containments][27][General]
 positions={"1745x1091":[]}
 
 [Containments][27][Wallpaper][org.kde.image][General]
 SlidePaths=/usr/share/wallpapers/
+
+[Containments][27][Wallpaper][org.kde.slideshow][General]
+SlideInterval=7200
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
 [Containments][8]
 activityId=
