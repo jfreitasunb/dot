@@ -49,7 +49,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:systemsettings.desktop,preferred://filemanager,preferred://browser
+launchers=applications:systemsettings.desktop,preferred://filemanager,applications:brave-browser.desktop,applications:io.github.shiftey.Desktop.desktop,applications:Alacritty.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -155,6 +155,9 @@ plugin=org.kde.plasma.printmanager
 [Containments][8][Applets][23]
 immutability=1
 plugin=org.kde.plasma.battery
+
+[Containments][8][Applets][23][Configuration][General]
+showPercentage=true
 
 [Containments][8][Applets][24]
 immutability=1
