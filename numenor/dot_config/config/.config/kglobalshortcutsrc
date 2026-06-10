@@ -61,7 +61,7 @@ MoveZoomRight=none,none,Mover a área ampliada para a direita
 MoveZoomUp=none,none,Mover a área ampliada para cima
 Overview=Meta+W,Meta+W,Alternar para visão geral
 Setup Window Shortcut=none,,Configurar atalhos para a janela
-Show Desktop=Meta+D,Meta+D,Espiar área de trabalho
+Show Desktop=none,Meta+D,Espiar área de trabalho
 Switch One Desktop Down=Meta+Ctrl+Down,Meta+Ctrl+Down,Mudar para a área de trabalho abaixo
 Switch One Desktop Up=Meta+Ctrl+Up,Meta+Ctrl+Up,Mudar para a área de trabalho acima
 Switch One Desktop to the Left=Meta+Ctrl+Left,Meta+Ctrl+Left,Mudar para a área de trabalho à esquerda
@@ -127,7 +127,7 @@ Window Fullscreen=none,,Janela em tela inteira
 Window Grow Horizontal=none,,Expandir janela horizontalmente
 Window Grow Vertical=none,,Expandir janela verticalmente
 Window Lower=none,,Diminuir Janela
-Window Maximize=Meta+PgUp,Meta+PgUp,Maximizar janela
+Window Maximize=Meta+PgUp\tMeta+Up,Meta+PgUp,Maximizar janela
 Window Maximize Horizontal=none,,Maximizar janela horizontalmente
 Window Maximize Vertical=none,,Maximizar janela verticalmente
 Window Minimize=Meta+PgDown,Meta+PgDown,Minimizar janela
@@ -153,7 +153,7 @@ Window Quick Tile Bottom Left=none,,Colocar a janela lado a lado na parte inferi
 Window Quick Tile Bottom Right=none,,Colocar a janela lado a lado na parte inferior à direita
 Window Quick Tile Left=Meta+Left,Meta+Left,Colocar a janela lado a lado à esquerda
 Window Quick Tile Right=Meta+Right,Meta+Right,Colocar a janela lado a lado à direita
-Window Quick Tile Top=Meta+Up,Meta+Up,Colocar a janela lado a lado parte superior
+Window Quick Tile Top=none,Meta+Up,Colocar a janela lado a lado parte superior
 Window Quick Tile Top Left=none,,Colocar a janela lado a lado parte superior à esquerda
 Window Quick Tile Top Right=none,,Colocar a janela lado a lado na parte de cima à direita
 Window Raise=none,,Elevar janela
@@ -224,7 +224,7 @@ Sleep=Sleep,Sleep,Suspender
 Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Alternar a iluminação do teclado
 Turn Off Screen=none,none,Desligar a tela
 _k_friendly_name=Gerenciamento de energia
-powerProfile=Battery\tMeta+B,Battery\tMeta+B,Trocar perfil de energia
+powerProfile=Battery,Battery\tMeta+B,Trocar perfil de energia
 
 [plasmashell]
 _k_friendly_name=plasmashell
@@ -245,8 +245,8 @@ cycle-panels=Meta+Alt+P,Meta+Alt+P,Mover o foco do teclado entre os painéis
 cycleNextAction=none,,Próximo item do histórico
 cyclePrevAction=none,,Item anterior do histórico
 manage activities=Meta+Q,Meta+Q,Mostrar seletor de atividade
-next activity=Meta+A,none,Percorrer as atividades
-previous activity=Meta+Shift+A,none,Percorrer as atividades (inverso)
+next activity=none,none,Percorrer as atividades
+previous activity=none,none,Percorrer as atividades (inverso)
 repeat_action=none,,Invocar ação manualmente sobre a área de transferência atual
 show dashboard=Ctrl+F12,Ctrl+F12,Mostrar a Área de Trabalho
 show-barcode=none,,Mostrar código de barras…
@@ -256,5 +256,17 @@ switch to next activity=none,,Trocar para a próxima atividade
 switch to previous activity=none,,Trocar para a atividade anterior
 toggle do not disturb=none,,Alternar o "Não perturbe"
 
+[services][Alacritty.desktop]
+_launch=Meta+Return
+
+[services][brave-browser.desktop]
+_launch=Meta+B
+
+[services][org.kde.dolphin.desktop]
+_launch=Meta+D
+
 [services][org.kde.krunner.desktop]
-_launch=Search\tAlt+F2\tMeta+Space
+_launch=Search\tAlt+Space\tAlt+F2
+
+[services][org.kde.okular.desktop]
+_launch=Meta+E
