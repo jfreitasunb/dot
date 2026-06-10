@@ -49,7 +49,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:systemsettings.desktop,preferred://filemanager,applications:brave-browser.desktop,applications:io.github.shiftey.Desktop.desktop,applications:Alacritty.desktop
+launchers=applications:systemsettings.desktop,preferred://filemanager,applications:brave-browser.desktop,applications:io.github.shiftey.Desktop.desktop,applications:Alacritty.desktop,applications:texstudio.desktop
 
 [Containments][2][Applets][6]
 immutability=1
