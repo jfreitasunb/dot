@@ -10,6 +10,12 @@ Id_5=1ed1b4c5-5426-4589-9c28-5384450ebfb7
 Number=5
 Rows=1
 
+[NightColor]
+Active=true
+LatitudeFixed=-19.41904292654111
+LongitudeFixed=-49.61634181368305
+Mode=Location
+
 [Tiling]
 padding=4
 

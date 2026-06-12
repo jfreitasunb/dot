@@ -18,7 +18,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][21][Configuration]
-PreloadWeight=65
+PreloadWeight=70
 popupHeight=450
 popupWidth=560
 
@@ -89,6 +89,7 @@ positions={"1745x1091":[]}
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][27][Wallpaper][org.kde.slideshow][General]
+Image=file:///usr/share/wallpapers/Next/
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -118,6 +119,9 @@ wallpaperplugin=org.kde.image
 [Containments][8][Applets][10]
 immutability=1
 plugin=org.kde.plasma.notifications
+
+[Containments][8][Applets][10][Configuration]
+PreloadWeight=55
 
 [Containments][8][Applets][11]
 immutability=1
@@ -169,12 +173,18 @@ plugin=org.kde.plasma.printmanager
 immutability=1
 plugin=org.kde.plasma.battery
 
+[Containments][8][Applets][23][Configuration]
+PreloadWeight=42
+
 [Containments][8][Applets][23][Configuration][General]
 showPercentage=true
 
 [Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.brightness
+
+[Containments][8][Applets][24][Configuration]
+PreloadWeight=47
 
 [Containments][8][Applets][25]
 immutability=1
@@ -189,7 +199,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][27][Configuration]
-PreloadWeight=34
+PreloadWeight=18
 
 [Containments][8][Applets][9]
 immutability=1
