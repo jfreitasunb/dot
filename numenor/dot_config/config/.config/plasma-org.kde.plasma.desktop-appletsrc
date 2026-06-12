@@ -91,6 +91,18 @@ SlidePaths=/usr/share/wallpapers/
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
+[Containments][28]
+activityId=f80582af-4697-4223-91d8-de11df7bee29
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][28][General]
+positions={"1024x768":[]}
+
 [Containments][8]
 activityId=
 formfactor=2
@@ -187,5 +199,5 @@ extraItems=org.kde.plasma.keyboardindicator,org.kde.plasma.brightness,org.kde.pl
 knownItems=org.kde.plasma.keyboardindicator,org.kde.plasma.brightness,org.kde.plasma.notifications,org.kde.plasma.cameraindicator,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.keyboardlayout,org.kde.plasma.volume,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.kupapplet,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.kdeconnect,org.kde.plasma.printmanager
 
 [ScreenMapping]
-itemsOnDisabledScreens=0,f80582af-4697-4223-91d8-de11df7bee29,24,desktop:/Pictures,desktop:/ESA-UNICEF_DengueForecastProject-BKP,desktop:/TB-sem-missing-smote,desktop:/Dropbox,desktop:/TB,desktop:/Semana Universitaria 2023,desktop:/Público,desktop:/Vídeos,desktop:/Prediction-of-Gestational-Weight-Gain-for-Pregnancy,desktop:/Modelos,desktop:/Zotero,desktop:/GitHub,desktop:/Imagens,desktop:/Downloads,desktop:/Área de trabalho,desktop:/ESA-UNICEF_DengueForecastProject,desktop:/Download_torrents,desktop:/R,desktop:/Documentos,desktop:/Músicas,desktop:/Desktop,desktop:/OneDrive,desktop:/DengueForecastProject,desktop:/VMs
+itemsOnDisabledScreens=0,f80582af-4697-4223-91d8-de11df7bee29,24,desktop:/Pictures,desktop:/ESA-UNICEF_DengueForecastProject-BKP,desktop:/TB-sem-missing-smote,desktop:/Dropbox,desktop:/TB,desktop:/Semana Universitaria 2023,desktop:/Público,desktop:/Vídeos,desktop:/Modelos,desktop:/Prediction-of-Gestational-Weight-Gain-for-Pregnancy,desktop:/Zotero,desktop:/GitHub,desktop:/Imagens,desktop:/Downloads,desktop:/ESA-UNICEF_DengueForecastProject,desktop:/Área de trabalho,desktop:/Download_torrents,desktop:/R,desktop:/Documentos,desktop:/Músicas,desktop:/Desktop,desktop:/OneDrive,desktop:/DengueForecastProject,desktop:/VMs
 screenMapping=

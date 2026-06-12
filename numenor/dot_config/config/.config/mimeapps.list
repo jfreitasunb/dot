@@ -1,0 +1,5 @@
+[Added Associations]
+application/zip=org.geogebra.GeoGebra.desktop;org.kde.ark.desktop;org.pwmt.zathura-cb.desktop;
+
+[Default Applications]
+application/zip=org.geogebra.GeoGebra.desktop;

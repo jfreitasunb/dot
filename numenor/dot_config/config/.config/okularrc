@@ -1,0 +1,13 @@
+[Desktop Entry]
+FullScreen=false
+
+[General]
+LockSidebar=true
+ShowSidebar=true
+
+[Notification Messages]
+presentationInfo=false
+
+[Recent Files]
+File1[$e]=$HOME/GitHub/geometria_analitica/apresentacoes/modulo-03/01-reta-e-plano-espaco.pdf
+Name1[$e]=01-reta-e-plano-espaco.pdf

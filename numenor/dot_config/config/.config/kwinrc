@@ -1,12 +1,22 @@
+[Activities][LastVirtualDesktop]
+f80582af-4697-4223-91d8-de11df7bee29=7817909c-911f-4f57-9c10-3e04e76d7f2f
+
 [Desktops]
 Id_1=7817909c-911f-4f57-9c10-3e04e76d7f2f
-Number=1
+Id_2=7b87ffc7-2851-45d5-a0fd-f94afedeb835
+Id_3=8d6670f4-c72a-43c1-8213-531c65749294
+Id_4=01d9ac17-01cd-4bce-9f44-35dd7c1719c8
+Id_5=1ed1b4c5-5426-4589-9c28-5384450ebfb7
+Number=5
 Rows=1
 
 [Tiling]
 padding=4
 
 [Tiling][4cd6aa6f-a8ef-57d5-99cd-419a9a837782]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][eab9d04f-8583-5836-b5dc-15c8b8e6607c]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Xwayland]

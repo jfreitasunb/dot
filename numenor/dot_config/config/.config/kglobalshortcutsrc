@@ -266,7 +266,7 @@ _launch=Meta+B
 _launch=Meta+D
 
 [services][org.kde.krunner.desktop]
-_launch=Search\tAlt+Space\tAlt+F2
+_launch=Search\tAlt+Space\tAlt+F2\tMeta+Space
 
 [services][org.kde.okular.desktop]
 _launch=Meta+E

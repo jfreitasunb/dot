@@ -1,0 +1,14 @@
+[General]
+LastUsedVersion=210800
+
+[MainWindow]
+MenuBar=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/GitHub/geometria_analitica/notas_de_aula/geogebra/plano-y=0.png
+File2[$e]=$HOME/GitHub/geometria_analitica/notas_de_aula/geogebra/plano-z=0.png
+Name1[$e]=plano-y=0.png
+Name2[$e]=plano-z=0.png
+
+[SideBar]
+InformationSplitterSizes=211,244
