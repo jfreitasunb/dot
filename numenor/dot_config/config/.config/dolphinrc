@@ -1,9 +1,18 @@
+MenuBar=Disabled
+
+[ContextMenu]
+ShowCopyLocation=false
+ShowCopyToOtherSplitView=false
+ShowMoveToOtherSplitView=false
+ShowSortBy=false
+
 [General]
 EditableUrl=true
 FilterBar=true
 RememberOpenedTabs=false
 ShowFullPath=true
 ShowFullPathInTitlebar=true
+ShowStatusBar=FullWidth
 Version=202
 ViewPropsTimestamp=2026,6,10,18,44,56.747
 
