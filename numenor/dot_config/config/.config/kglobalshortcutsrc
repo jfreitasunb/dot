@@ -262,6 +262,9 @@ _launch=Meta+Return
 [services][brave-browser.desktop]
 _launch=Meta+B
 
+[services][net.local.systemctl.desktop]
+_launch=F8
+
 [services][org.kde.dolphin.desktop]
 _launch=Meta+D
 
