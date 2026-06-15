@@ -89,21 +89,30 @@ positions={"1745x1091":[]}
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][27][Wallpaper][org.kde.slideshow][General]
-Image=file:///usr/share/wallpapers/Next/
+Image=file:///usr/share/desktop-base/ceratopsian-theme/wallpaper/
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
-[Containments][28]
+[Containments][29]
 activityId=f80582af-4697-4223-91d8-de11df7bee29
 formfactor=0
 immutability=1
 lastScreen=1
 location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
+plugin=org.kde.desktopcontainment
+wallpaperplugin=org.kde.slideshow
 
-[Containments][28][General]
-positions={"1024x768":[]}
+[Containments][29][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][29][General]
+positions={"1024x768":[],"1829x1029":[]}
+
+[Containments][29][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0072.jpg
+SlideInterval=7200
+SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
 [Containments][8]
 activityId=
@@ -210,5 +219,5 @@ extraItems=org.kde.plasma.keyboardindicator,org.kde.plasma.brightness,org.kde.pl
 knownItems=org.kde.plasma.keyboardindicator,org.kde.plasma.brightness,org.kde.plasma.notifications,org.kde.plasma.cameraindicator,org.kde.plasma.vault,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.keyboardlayout,org.kde.plasma.volume,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.kupapplet,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.kdeconnect,org.kde.plasma.printmanager
 
 [ScreenMapping]
-itemsOnDisabledScreens=0,f80582af-4697-4223-91d8-de11df7bee29,24,desktop:/Pictures,desktop:/ESA-UNICEF_DengueForecastProject-BKP,desktop:/TB-sem-missing-smote,desktop:/Dropbox,desktop:/TB,desktop:/Semana Universitaria 2023,desktop:/Público,desktop:/Vídeos,desktop:/Modelos,desktop:/Prediction-of-Gestational-Weight-Gain-for-Pregnancy,desktop:/Zotero,desktop:/GitHub,desktop:/Imagens,desktop:/Downloads,desktop:/ESA-UNICEF_DengueForecastProject,desktop:/Área de trabalho,desktop:/Download_torrents,desktop:/R,desktop:/Documentos,desktop:/Músicas,desktop:/Desktop,desktop:/OneDrive,desktop:/DengueForecastProject,desktop:/VMs
+itemsOnDisabledScreens=0,f80582af-4697-4223-91d8-de11df7bee29,24,desktop:/ESA-UNICEF_DengueForecastProject,desktop:/Área de trabalho,desktop:/GitHub,desktop:/Imagens,desktop:/Downloads,desktop:/R,desktop:/Download_torrents,desktop:/Documentos,desktop:/Músicas,desktop:/Desktop,desktop:/VMs,desktop:/OneDrive,desktop:/DengueForecastProject,desktop:/ESA-UNICEF_DengueForecastProject-BKP,desktop:/TB-sem-missing-smote,desktop:/Pictures,desktop:/Dropbox,desktop:/Modelos,desktop:/Prediction-of-Gestational-Weight-Gain-for-Pregnancy,desktop:/Vídeos,desktop:/Semana Universitaria 2023,desktop:/TB,desktop:/Público,desktop:/Zotero
 screenMapping=

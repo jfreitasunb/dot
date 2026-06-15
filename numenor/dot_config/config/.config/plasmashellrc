@@ -1,3 +1,10 @@
+[FileDialogSize]
+2 screens: Height=584
+2 screens: Width=818
+
+[PlasmaTransientsConfig]
+PreloadWeight=42
+
 [PlasmaViews][Panel 2]
 floating=1
 panelVisibility=1
