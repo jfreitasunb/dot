@@ -1,2 +1,3 @@
 # dot
-Arquivos de Configuração do para Linux
+
+Arquivos de configuração do Linux
