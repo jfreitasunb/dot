@@ -1,6 +1,10 @@
 [Desktop Entry]
 FullScreen=false
 
+[FileDialogSize]
+2 screens: Height=540
+2 screens: Width=915
+
 [General]
 LockSidebar=true
 ShowSidebar=true
@@ -9,7 +13,13 @@ ShowSidebar=true
 presentationInfo=false
 
 [Recent Files]
-File1[$e]=$HOME/GitHub/geometria_analitica/apresentacoes/modulo-03/01-reta-e-plano-espaco.pdf
-File2[$e]=$HOME/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-1/Avaliacoes/notas_GA-1_20261.pdf
-Name1[$e]=01-reta-e-plano-espaco.pdf
-Name2[$e]=notas_GA-1_20261.pdf
+File1[$e]=$HOME/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-1/Avaliacoes/notas_GA-1_20261.pdf
+File2[$e]=$HOME/GitHub/geometria_analitica/apresentacoes/modulo-03/02-quadricas.pdf
+File3[$e]=$HOME/Documentos/geometria_analitica.pdf
+File4[$e]=$HOME/GitHub/geometria_analitica/apresentacoes/modulo-03/01-reta-e-plano-espaco.pdf
+File5[$e]=$HOME/Documentos/01-retas-e-planos-16062026.pdf
+Name1[$e]=notas_GA-1_20261.pdf
+Name2[$e]=02-quadricas.pdf
+Name3[$e]=geometria_analitica.pdf
+Name4[$e]=01-reta-e-plano-espaco.pdf
+Name5[$e]=01-retas-e-planos-16062026.pdf
