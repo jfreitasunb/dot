@@ -82,7 +82,7 @@
                 "brightness": 1,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
-                "connectorName": "DP-3",
+                "connectorName": "DP-1",
                 "edidHash": "bb444a0ae9e57da47f799365870ab100",
                 "edidIdentifier": "LTM 11266 16843009 1 2011 0",
                 "highDynamicRange": false,

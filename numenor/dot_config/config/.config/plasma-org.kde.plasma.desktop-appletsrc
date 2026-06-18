@@ -110,7 +110,7 @@ DialogWidth=720
 positions={"1024x768":[],"1829x1029":[]}
 
 [Containments][29][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/Ocean_by_Shu_Le.jpg
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0230.jpg
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -208,7 +208,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][27][Configuration]
-PreloadWeight=10
+PreloadWeight=2
 
 [Containments][8][Applets][9]
 immutability=1
