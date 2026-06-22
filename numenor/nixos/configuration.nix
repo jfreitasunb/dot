@@ -101,11 +101,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  #Qemu e virtmanager
+  virtualisation.libvirtd.enable = true;
+
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."jfreitas" = {
     isNormalUser = true;
     description = "José Antônio";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
@@ -121,8 +125,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    wget
+    libvirt
+    virt-manager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
