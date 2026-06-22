@@ -15,6 +15,22 @@
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
 
+  swapDevices = [{device = "/dev/disk/by-uuid/4c016036-fbc4-42bd-81f1-cb30039ea069";}];
+  boot.kernelParams = [ "mem_sleep_default=deep" "resume=4c016036-fbc4-42bd-81f1-cb30039ea069" ];
+
+  services.power-profiles-daemon.enable = true;
+  # Suspend first then hibernate when closing the lid
+  services.logind.settings.Login.LidSwitch = "suspend-then-hibernate";
+  # Hibernate on power button pressed
+  services.logind.settings.Login.PowerKey = "hibernate";
+  services.logind.settings.Login.PowerKeyLongPress = "poweroff";
+
+  # Define time delay for hibernation
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "240m";
+    SuspendState = "mem";
+  };
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
