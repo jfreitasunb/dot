@@ -1,3 +1,8 @@
+[ExtractDialog]
+2 screens: Height=546
+2 screens: Width=1163
+DirHistory[$e]=$HOME/Documentos/temp_bd/
+
 [General]
 LockSidebar=true
 ShowSidebar=true

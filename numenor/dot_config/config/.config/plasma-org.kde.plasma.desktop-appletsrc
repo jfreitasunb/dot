@@ -18,7 +18,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][21][Configuration]
-PreloadWeight=75
+PreloadWeight=85
 popupHeight=450
 popupWidth=560
 
@@ -61,7 +61,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 SystrayContainmentId=8
 
 [Containments][2][General]
@@ -110,7 +110,7 @@ DialogWidth=720
 positions={"1024x768":[],"1829x1029":[]}
 
 [Containments][29][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0230.jpg
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0309.jpg
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
@@ -130,7 +130,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][10][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][8][Applets][11]
 immutability=1
@@ -164,7 +164,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][17][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 
 [Containments][8][Applets][18]
 immutability=1
