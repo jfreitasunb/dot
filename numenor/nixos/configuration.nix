@@ -14,9 +14,13 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
+  boot.loader.grub.default = "saved";
+  boot.loader.grub.extraConfig = ''
+   GRUB_SAVEDEFAULT=true
+  '';
 
   swapDevices = [{device = "/dev/disk/by-uuid/4c016036-fbc4-42bd-81f1-cb30039ea069";}];
-  boot.kernelParams = [ "mem_sleep_default=deep" "resume=4c016036-fbc4-42bd-81f1-cb30039ea069" ];
+  boot.kernelParams = [ "mem_sleep_default=deep" "resume=UUID=4c016036-fbc4-42bd-81f1-cb30039ea069" ];
 
   services.power-profiles-daemon.enable = true;
   # Suspend first then hibernate when closing the lid
