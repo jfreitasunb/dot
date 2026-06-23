@@ -130,7 +130,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ll = "ls -l";
+      ls = "eza -la";
       edit = "sudo -e";
       update = "sudo nixos-rebuild switch";
     };
@@ -152,6 +152,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    eza
     wget
     libvirt
     virt-manager
