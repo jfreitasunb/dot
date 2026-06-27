@@ -126,6 +126,37 @@
     meld
     texliveMedium
     texworks
+    onedrive
+    zsh
+    cargo
+    npm
+    stow
+    bat
+    fzf
+    eza
+    keepassxc
+    vlc
+    zoxide
+    zathura
+    zathura-cb
+    zathura-djvu
+    zathura-pdf-poppler
+    zathura-ps
+    sublime4
+    gimp
+    pinta
+    xournalpp
+    corefonts
+    R
+    rstudio
+    dropbox
+    pango
+    starship
+    tmux
+    github-desktop
+    bitwarden-desktop
+    geogebra6
+    spotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
