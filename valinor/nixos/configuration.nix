@@ -16,6 +16,19 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  services.power-profiles-daemon.enable = true;
+  # Suspend first then hibernate when closing the lid
+  services.logind.settings.Login.LidSwitch = "suspend-then-hibernate";
+  # Hibernate on power button pressed
+  services.logind.settings.Login.PowerKey = "hibernate";
+  services.logind.settings.Login.PowerKeyLongPress = "poweroff";
+
+  # Define time delay for hibernation
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "240m";
+    SuspendState = "mem";
+  };
+
   networking.hostName = "valinor"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
