@@ -116,6 +116,11 @@
   programs.virt-manager.enable = true;
   #virtualisation.docker.enable = true;
 
+  #Permitindo pacotes inseguros
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"#Necessário para o sublime4
+  ];
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -126,10 +131,10 @@
     meld
     texliveMedium
     texworks
-    onedrive
     zsh
     cargo
-    npm
+    onedrive
+    nodejs
     stow
     bat
     fzf
@@ -138,10 +143,10 @@
     vlc
     zoxide
     zathura
-    zathura-cb
-    zathura-djvu
-    zathura-pdf-poppler
-    zathura-ps
+    zathuraPkgs.zathura_cb
+    zathuraPkgs.zathura_djvu
+    zathuraPkgs.zathura_pdf_poppler
+    zathuraPkgs.zathura_ps
     sublime4
     gimp
     pinta
@@ -153,10 +158,8 @@
     pango
     starship
     tmux
+    brave
     github-desktop
-    bitwarden-desktop
-    geogebra6
-    spotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
