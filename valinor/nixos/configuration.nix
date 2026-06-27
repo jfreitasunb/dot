@@ -91,7 +91,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jfreitas= {
     isNormalUser = true;
-    description = "Jose Antonio";
+    description = "José Antônio";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       tree
@@ -107,6 +107,7 @@
     neovim
     git
     wget
+    meld
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
