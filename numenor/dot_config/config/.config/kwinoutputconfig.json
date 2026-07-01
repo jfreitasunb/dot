@@ -2,152 +2,103 @@
     {
         "data": [
             {
+                "abmLevel": 0,
+                "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": false,
+                "autoBrightnessCurve": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
                 "autoRotation": "InTabletMode",
-                "brightness": 0.69,
+                "automaticBrightness": false,
+                "brightness": 1,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "eDP-1",
+                "customModes": [
+                ],
+                "detectedDdcCi": false,
                 "edidHash": "5ff2676aeec7aaafa8c3ae4c3d116419",
                 "edidIdentifier": "BOE 2613 0 20 2021 0",
+                "edrPolicy": "always",
+                "hdrColorProfileSource": "EDID",
+                "hdrIccProfilePath": "",
                 "highDynamicRange": false,
                 "iccProfilePath": "",
+                "maxBitsPerColor": 0,
                 "mode": {
+                    "flags": 1,
                     "height": 1200,
                     "refreshRate": 60002,
                     "width": 1920
                 },
                 "overscan": 0,
                 "rgbRange": "Automatic",
-                "scale": 1.1,
-                "sdrBrightness": 200,
-                "sdrGamutWideness": 0,
-                "transform": "Normal",
-                "vrrPolicy": "Never",
-                "wideColorGamut": false
-            },
-            {
-                "allowSdrSoftwareBrightness": true,
-                "autoRotation": "InTabletMode",
-                "brightness": 1,
-                "colorPowerTradeoff": "PreferEfficiency",
-                "colorProfileSource": "sRGB",
-                "connectorName": "DP-3",
-                "edidHash": "bdd5595eb1a6d42a68f3af6e40456a09",
-                "edidIdentifier": "SEC 41236 16843009 18 2008 0",
-                "highDynamicRange": false,
-                "iccProfilePath": "",
-                "mode": {
-                    "height": 768,
-                    "refreshRate": 70069,
-                    "width": 1024
-                },
-                "overscan": 0,
-                "rgbRange": "Automatic",
                 "scale": 1,
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
+                "sharpness": 0,
                 "transform": "Normal",
+                "uuid": "9b2351d2-a0b0-494d-9433-b7136ed8cbf9",
                 "vrrPolicy": "Never",
                 "wideColorGamut": false
             },
             {
-                "allowSdrSoftwareBrightness": true,
+                "abmLevel": 0,
+                "allowDdcCi": true,
+                "allowSdrSoftwareBrightness": false,
+                "autoBrightnessCurve": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
                 "autoRotation": "InTabletMode",
+                "automaticBrightness": false,
                 "brightness": 1,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "HDMI-A-1",
+                "customModes": [
+                ],
+                "detectedDdcCi": true,
                 "edidHash": "707317d9ed5102833af1c54cf57babb0",
                 "edidIdentifier": "GSM 23547 400646 4 2025 0",
+                "edrPolicy": "always",
+                "hdrColorProfileSource": "EDID",
+                "hdrIccProfilePath": "",
                 "highDynamicRange": false,
                 "iccProfilePath": "",
                 "mode": {
+                    "flags": 0,
                     "height": 1080,
                     "refreshRate": 74973,
                     "width": 1920
                 },
                 "overscan": 0,
                 "rgbRange": "Automatic",
-                "scale": 1.05,
-                "sdrBrightness": 200,
-                "sdrGamutWideness": 0,
-                "transform": "Normal",
-                "vrrPolicy": "Never",
-                "wideColorGamut": false
-            },
-            {
-                "allowSdrSoftwareBrightness": true,
-                "autoRotation": "InTabletMode",
-                "brightness": 1,
-                "colorPowerTradeoff": "PreferEfficiency",
-                "colorProfileSource": "sRGB",
-                "connectorName": "DP-1",
-                "edidHash": "bb444a0ae9e57da47f799365870ab100",
-                "edidIdentifier": "LTM 11266 16843009 1 2011 0",
-                "highDynamicRange": false,
-                "iccProfilePath": "",
-                "mode": {
-                    "height": 1080,
-                    "refreshRate": 60000,
-                    "width": 1920
-                },
-                "overscan": 0,
-                "rgbRange": "Automatic",
-                "scale": 1.1,
-                "sdrBrightness": 200,
-                "sdrGamutWideness": 0,
-                "transform": "Normal",
-                "vrrPolicy": "Never",
-                "wideColorGamut": false
-            },
-            {
-                "allowSdrSoftwareBrightness": true,
-                "autoRotation": "InTabletMode",
-                "brightness": 1,
-                "colorPowerTradeoff": "PreferEfficiency",
-                "colorProfileSource": "sRGB",
-                "connectorName": "HDMI-A-1",
-                "edidHash": "2cb026fa9b71f4944f2036c976396c17",
-                "edidIdentifier": "HJW 37521 190530 1 2019 0",
-                "highDynamicRange": false,
-                "iccProfilePath": "",
-                "mode": {
-                    "height": 720,
-                    "refreshRate": 60000,
-                    "width": 1280
-                },
-                "overscan": 0,
-                "rgbRange": "Automatic",
                 "scale": 1,
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
+                "sharpness": 0,
                 "transform": "Normal",
-                "vrrPolicy": "Never",
-                "wideColorGamut": false
-            },
-            {
-                "allowSdrSoftwareBrightness": true,
-                "autoRotation": "InTabletMode",
-                "brightness": 1,
-                "colorPowerTradeoff": "PreferAccuracy",
-                "colorProfileSource": "sRGB",
-                "connectorName": "DP-1",
-                "edidHash": "bcd59ce78e42be2914b1c4c8b2c59c81",
-                "edidIdentifier": "GWD 320 291766793 3 2026 0",
-                "highDynamicRange": false,
-                "iccProfilePath": "",
-                "mode": {
-                    "height": 1080,
-                    "refreshRate": 60000,
-                    "width": 1920
-                },
-                "overscan": 0,
-                "rgbRange": "Automatic",
-                "scale": 1,
-                "sdrBrightness": 417,
-                "sdrGamutWideness": 0,
-                "transform": "Normal",
+                "uuid": "46eb4554-ab4f-4375-b2a3-462aa3f72855",
                 "vrrPolicy": "Never",
                 "wideColorGamut": false
             }
@@ -166,44 +117,18 @@
                             "x": 0,
                             "y": 0
                         },
-                        "priority": 0
-                    }
-                ]
-            },
-            {
-                "lidClosed": true,
-                "outputs": [
-                    {
-                        "enabled": true,
-                        "outputIndex": 0,
-                        "position": {
-                            "x": 0,
-                            "y": 0
-                        },
-                        "priority": 0
-                    }
-                ]
-            },
-            {
-                "lidClosed": false,
-                "outputs": [
-                    {
-                        "enabled": true,
-                        "outputIndex": 0,
-                        "position": {
-                            "x": 0,
-                            "y": 0
-                        },
-                        "priority": 0
+                        "priority": 1,
+                        "replicationSource": ""
                     },
                     {
                         "enabled": true,
                         "outputIndex": 1,
                         "position": {
-                            "x": 1746,
+                            "x": 1920,
                             "y": 0
                         },
-                        "priority": 1
+                        "priority": 2,
+                        "replicationSource": ""
                     }
                 ]
             },
@@ -217,16 +142,8 @@
                             "x": 0,
                             "y": 0
                         },
-                        "priority": 0
-                    },
-                    {
-                        "enabled": true,
-                        "outputIndex": 2,
-                        "position": {
-                            "x": 1746,
-                            "y": 0
-                        },
-                        "priority": 1
+                        "priority": 1,
+                        "replicationSource": ""
                     }
                 ]
             },
@@ -234,91 +151,14 @@
                 "lidClosed": true,
                 "outputs": [
                     {
-                        "enabled": false,
-                        "outputIndex": 0,
-                        "position": {
-                            "x": 0,
-                            "y": 0
-                        },
-                        "priority": -1
-                    },
-                    {
-                        "enabled": true,
-                        "outputIndex": 2,
-                        "position": {
-                            "x": 1746,
-                            "y": 0
-                        },
-                        "priority": 0
-                    }
-                ]
-            },
-            {
-                "lidClosed": false,
-                "outputs": [
-                    {
                         "enabled": true,
                         "outputIndex": 0,
                         "position": {
                             "x": 0,
                             "y": 0
                         },
-                        "priority": 0
-                    },
-                    {
-                        "enabled": true,
-                        "outputIndex": 3,
-                        "position": {
-                            "x": 0,
-                            "y": 0
-                        },
-                        "priority": 1
-                    }
-                ]
-            },
-            {
-                "lidClosed": false,
-                "outputs": [
-                    {
-                        "enabled": true,
-                        "outputIndex": 0,
-                        "position": {
-                            "x": 1280,
-                            "y": 0
-                        },
-                        "priority": 0
-                    },
-                    {
-                        "enabled": true,
-                        "outputIndex": 4,
-                        "position": {
-                            "x": 0,
-                            "y": 0
-                        },
-                        "priority": 1
-                    }
-                ]
-            },
-            {
-                "lidClosed": false,
-                "outputs": [
-                    {
-                        "enabled": true,
-                        "outputIndex": 0,
-                        "position": {
-                            "x": 1920,
-                            "y": 0
-                        },
-                        "priority": 0
-                    },
-                    {
-                        "enabled": true,
-                        "outputIndex": 5,
-                        "position": {
-                            "x": 0,
-                            "y": 0
-                        },
-                        "priority": 1
+                        "priority": 0,
+                        "replicationSource": ""
                     }
                 ]
             }
