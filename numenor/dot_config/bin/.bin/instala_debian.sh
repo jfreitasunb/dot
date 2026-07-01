@@ -146,7 +146,7 @@ sudo apt install -y python3-dev libpango1.0-dev libcairo2-dev pkg-config
 
 sudo apt install sway wofi waybar swaylock wlogout cliphist swayidle network-manager-applet wl-clipboard dunst blueman -y
 
-echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
+echo 'NotShowIn=KDE;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
 
 python3 -m venv ~/.local/src/venv/
 
