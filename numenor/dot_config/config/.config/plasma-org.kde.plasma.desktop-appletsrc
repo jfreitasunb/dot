@@ -175,7 +175,7 @@ positions={"1745x1091":[]}
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][27][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0082.jpg
+Image=file:///usr/share/wallpapers/ColorfulCups/
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 

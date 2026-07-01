@@ -1,10 +1,6 @@
 [Desktop Entry]
 FullScreen=false
 
-[FileDialogSize]
-2 screens: Height=540
-2 screens: Width=915
-
 [General]
 LockSidebar=true
 ShowSidebar=true
@@ -19,9 +15,11 @@ File3[$e]=$HOME/GitHub/geometria_analitica/apresentacoes/modulo-03/01-reta-e-pla
 File4[$e]=$HOME/Documentos/01-retas-e-planos-16062026.pdf
 File5[$e]=$HOME/GitHub/geometria_analitica/apresentacoes/modulo-03/02-quadricas.pdf
 File6[$e]=$HOME/GitHub/geometria_analitica/listas/modulo-3/lista_2.pdf
+File7[$e]=$HOME/Downloads/VII_SIP_Programacao.pdf
 Name1[$e]=notas_GA-1_20261.pdf
 Name2[$e]=geometria_analitica.pdf
 Name3[$e]=01-reta-e-plano-espaco.pdf
 Name4[$e]=01-retas-e-planos-16062026.pdf
 Name5[$e]=02-quadricas.pdf
 Name6[$e]=lista_2.pdf
+Name7[$e]=VII_SIP_Programacao.pdf

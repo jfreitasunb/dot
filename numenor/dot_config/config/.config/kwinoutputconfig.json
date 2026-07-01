@@ -20,7 +20,7 @@
                 ],
                 "autoRotation": "InTabletMode",
                 "automaticBrightness": false,
-                "brightness": 1,
+                "brightness": 0.3253403465346535,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "eDP-1",
@@ -36,7 +36,7 @@
                 "iccProfilePath": "",
                 "maxBitsPerColor": 0,
                 "mode": {
-                    "flags": 1,
+                    "flags": 0,
                     "height": 1200,
                     "refreshRate": 60002,
                     "width": 1920
@@ -48,57 +48,7 @@
                 "sdrGamutWideness": 0,
                 "sharpness": 0,
                 "transform": "Normal",
-                "uuid": "9b2351d2-a0b0-494d-9433-b7136ed8cbf9",
-                "vrrPolicy": "Never",
-                "wideColorGamut": false
-            },
-            {
-                "abmLevel": 0,
-                "allowDdcCi": true,
-                "allowSdrSoftwareBrightness": false,
-                "autoBrightnessCurve": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                "autoRotation": "InTabletMode",
-                "automaticBrightness": false,
-                "brightness": 1,
-                "colorPowerTradeoff": "PreferEfficiency",
-                "colorProfileSource": "sRGB",
-                "connectorName": "HDMI-A-1",
-                "customModes": [
-                ],
-                "detectedDdcCi": true,
-                "edidHash": "707317d9ed5102833af1c54cf57babb0",
-                "edidIdentifier": "GSM 23547 400646 4 2025 0",
-                "edrPolicy": "always",
-                "hdrColorProfileSource": "EDID",
-                "hdrIccProfilePath": "",
-                "highDynamicRange": false,
-                "iccProfilePath": "",
-                "mode": {
-                    "flags": 0,
-                    "height": 1080,
-                    "refreshRate": 74973,
-                    "width": 1920
-                },
-                "overscan": 0,
-                "rgbRange": "Automatic",
-                "scale": 1,
-                "sdrBrightness": 200,
-                "sdrGamutWideness": 0,
-                "sharpness": 0,
-                "transform": "Normal",
-                "uuid": "46eb4554-ab4f-4375-b2a3-462aa3f72855",
+                "uuid": "0e10a69f-715b-4ebb-b68d-fe83a6588d92",
                 "vrrPolicy": "Never",
                 "wideColorGamut": false
             }
@@ -107,31 +57,6 @@
     },
     {
         "data": [
-            {
-                "lidClosed": false,
-                "outputs": [
-                    {
-                        "enabled": true,
-                        "outputIndex": 0,
-                        "position": {
-                            "x": 0,
-                            "y": 0
-                        },
-                        "priority": 1,
-                        "replicationSource": ""
-                    },
-                    {
-                        "enabled": true,
-                        "outputIndex": 1,
-                        "position": {
-                            "x": 1920,
-                            "y": 0
-                        },
-                        "priority": 2,
-                        "replicationSource": ""
-                    }
-                ]
-            },
             {
                 "lidClosed": false,
                 "outputs": [
@@ -157,7 +82,7 @@
                             "x": 0,
                             "y": 0
                         },
-                        "priority": 0,
+                        "priority": 1,
                         "replicationSource": ""
                     }
                 ]

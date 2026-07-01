@@ -7,8 +7,10 @@ MenuBar=Disabled
 [Recent Files]
 File1[$e]=$HOME/GitHub/geometria_analitica/notas_de_aula/geogebra/plano-y=0.png
 File2[$e]=$HOME/GitHub/geometria_analitica/notas_de_aula/geogebra/plano-z=0.png
+File3[$e]=$HOME/Documentos/vii_sip.jpg-1.jpg
 Name1[$e]=plano-y=0.png
 Name2[$e]=plano-z=0.png
+Name3[$e]=vii_sip.jpg-1.jpg
 
 [SideBar]
 InformationSplitterSizes=211,244

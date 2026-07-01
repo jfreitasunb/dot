@@ -12,6 +12,11 @@ sudo dnf system-upgrade download --releasever=$VERSION --allowerasing -y
 
 sudo dnf system-upgrade reboot
 
+#Removendo ZRAM
+sudo dnf remove zram-generator-defaults
+
+sudo systemctl mask systemd-zram-setup@zram0.service
+
 #RPM Fusion e Codecs
 
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
