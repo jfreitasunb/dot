@@ -198,6 +198,10 @@ cd ~/GitHub/dot/shire/dot_config/
 
 stow -t /home/jfreitas/ *
 
+cd ~/.local/share
+
+ln -s ~/GitHub/dot/fonts ./
+
 cd ~/.local/share/fonts/
 
 fc-cache -f -v
