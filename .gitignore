@@ -1170,3 +1170,5 @@ shire/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
 shire/dot_config/config/.config/bluedevilglobalrc
 /shire/dot_config/config/.config/pulse
 /shire/dot_config/config/.config/session
+/shire/dot_config/config/.config/libreoffice
+shire/dot_config/config/.config/trashrc
