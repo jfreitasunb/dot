@@ -102,11 +102,11 @@ sudo rm -rf /etc/libvirt/qemu.conf
 
 sudo rm -rf /etc/libvirt/storage
 
-sudo ln -s ~/GitHub/dot/numenor/maquinas_virtuais/qemu /etc/libvirt/
+sudo ln -s ~/GitHub/dot/shire/maquinas_virtuais/qemu /etc/libvirt/
 
-sudo ln -s ~/GitHub/dot/numenor/maquinas_virtuais/storage /etc/libvirt/
+sudo ln -s ~/GitHub/dot/shire/maquinas_virtuais/storage /etc/libvirt/
 
-sudo ln -s /home/jfreitas/GitHub/dot/numenor/maquinas_virtuais/qemu.conf /etc/libvirt/
+sudo ln -s /home/jfreitas/GitHub/dot/shire/maquinas_virtuais/qemu.conf /etc/libvirt/
 
 #R
 
@@ -172,7 +172,7 @@ sudo systemctl enable fstrim.timer
 
 sudo rm /etc/default/grub
 
-sudo ln -s ~/GitHub/dot/numenor/grub/grub /etc/default/grub
+sudo ln -s ~/GitHub/dot/shire/grub/grub /etc/default/grub
 
 sudo update-grub2
 
@@ -182,9 +182,9 @@ sudo rm -rf /etc/systemd/sleep.conf
 
 sudo rm -rf /etc/systemd/logind.conf
 
-sudo ln -s ~/GitHub/dot/numenor/logind/sleep.conf /etc/systemd/sleep.conf
+sudo ln -s ~/GitHub/dot/shire/logind/sleep.conf /etc/systemd/sleep.conf
 
-sudo ln -s ~/GitHub/dot/numenor/logind/logind.conf /etc/systemd/logind.conf
+sudo ln -s ~/GitHub/dot/shire/logind/logind.conf /etc/systemd/logind.conf
 
 sudo ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /etc/systemd/system/systemd-suspend.service
 
@@ -194,7 +194,7 @@ sudo apt install stow -y
 
 rm -rf ~/.config
 
-cd ~/GitHub/dot/numenor/dot_config/
+cd ~/GitHub/dot/shire/dot_config/
 
 stow -t /home/jfreitas/ *
 
