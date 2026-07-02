@@ -1172,3 +1172,4 @@ shire/dot_config/config/.config/bluedevilglobalrc
 /shire/dot_config/config/.config/session
 /shire/dot_config/config/.config/libreoffice
 shire/dot_config/config/.config/trashrc
+shire/dot_config/config/.config/texstudio/packageCache.dat
