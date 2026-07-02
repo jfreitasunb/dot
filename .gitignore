@@ -1173,3 +1173,6 @@ shire/dot_config/config/.config/bluedevilglobalrc
 /shire/dot_config/config/.config/libreoffice
 shire/dot_config/config/.config/trashrc
 shire/dot_config/config/.config/texstudio/packageCache.dat
+/shire/dot_config/config/.config/texstudio/cache
+shire/dot_config/config/.config/texstudio/lastSession.txss2
+shire/dot_config/config/.config/texstudio/wordCount.usage
