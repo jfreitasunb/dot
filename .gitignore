@@ -1181,3 +1181,5 @@ shire/dot_config/config/.config/katevirc
 shire/dot_config/config/.config/kwalletrc
 shire/dot_config/config/.config/kwinoutputconfig.json
 shire/dot_config/config/.config/kwriterc
+shire/dot_config/config/.config/konsolesshconfig
+shire/dot_config/config/.config/QtProject.conf
