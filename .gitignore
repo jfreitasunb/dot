@@ -1167,3 +1167,6 @@ shire/dot_config/config/.config/onedrive/.config.backup
 shire/dot_config/config/.config/onedrive/.config.hash
 shire/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
 /shire/dot_config/config/.config/BraveSoftware
+shire/dot_config/config/.config/bluedevilglobalrc
+/shire/dot_config/config/.config/pulse
+/shire/dot_config/config/.config/session
