@@ -9,6 +9,12 @@ DialogWidth=810
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
+[Containments][2][Applets][5][Configuration][General]
+launchers=applications:systemsettings.desktop,preferred://filemanager,preferred://browser,applications:brave-browser.desktop
+
+[Containments][2][Applets][7][Applets][25][Configuration][General]
+showPercentage=true
+
 [Containments][27]
 activityId=c58f1d80-f439-4452-87eb-ae49471d04fd
 formfactor=0
