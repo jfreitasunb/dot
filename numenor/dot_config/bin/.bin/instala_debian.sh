@@ -114,7 +114,7 @@ sudo apt install lib32gcc-s1 lib32stdc++6 libc6-i386 libclang-19-dev libclang-co
 
 #ZSH e terminal
 
-sudo apt install zsh alacritty kitty -y
+sudo apt install zsh alacritty -y
 
 sudo chsh -s $(which zsh) jfreitas
 
