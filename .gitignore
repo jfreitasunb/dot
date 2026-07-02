@@ -1165,3 +1165,5 @@ numenor/dot_config/config/.config/akonadi-firstrunrc
 /numenor/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
 shire/dot_config/config/.config/onedrive/.config.backup
 shire/dot_config/config/.config/onedrive/.config.hash
+shire/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
+/shire/dot_config/config/.config/BraveSoftware
