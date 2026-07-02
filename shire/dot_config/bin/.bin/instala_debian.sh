@@ -234,7 +234,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 #Instando kernel atual
 
-sudo apt install -t trixie-backports linux-image-amd64 firmware-linux firmware-linux-nonfree -y
+#sudo apt install -t trixie-backports linux-image-amd64 firmware-linux firmware-linux-nonfree -y
 
 #Removendo programas e desativando serviçoes
 
