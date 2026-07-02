@@ -1184,3 +1184,8 @@ shire/dot_config/config/.config/kwriterc
 shire/dot_config/config/.config/konsolesshconfig
 shire/dot_config/config/.config/QtProject.conf
 shire/dot_config/config/.config/kwinrc
+shire/dot_config/config/.config/onedrive/items.sqlite3-wal
+shire/dot_config/config/.config/onedrive/refresh_token
+/shire/dot_config/config/.config/dconf
+shire/dot_config/config/.config/sublime-text/Local/Session.sublime_session
+shire/maquinas_virtuais/qemu/OpenSUSE.xml
