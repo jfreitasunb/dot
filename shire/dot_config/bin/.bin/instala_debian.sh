@@ -86,7 +86,7 @@ sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev -y
 
 #Pacotes de propósito geral
 
-sudo apt install bat bzip2 eza feh flameshot flatpak fzf p7zip p7zip-full pdftk ranger rsync vlc transmission-qt zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps meld imagemagick xz-utils fd-find zoxide ripgrep luarocks xclip ffmpeg ffmpegthumbnailer htop autoconf gcc make pkg-config poppler-utils img2pdf libnotify-dev lazygit -y
+sudo apt install bat bzip2 eza feh flatpak fzf p7zip p7zip-full pdftk ranger rsync vlc transmission-qt zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps meld imagemagick xz-utils fd-find zoxide ripgrep luarocks xclip ffmpeg ffmpegthumbnailer htop autoconf gcc make pkg-config poppler-utils img2pdf libnotify-dev lazygit -y
 
 #Virtualização
 
