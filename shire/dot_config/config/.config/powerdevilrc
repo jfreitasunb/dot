@@ -1,0 +1,17 @@
+[AC][SuspendAndShutdown]
+AutoSuspendAction=0
+AutoSuspendIdleTimeoutSec=120
+SleepMode=2
+
+[Battery][Display]
+DimDisplayIdleTimeoutSec=-1
+DimDisplayWhenIdle=false
+TurnOffDisplayIdleTimeoutSec=-1
+TurnOffDisplayWhenIdle=false
+
+[Battery][RunScript]
+RunScriptIdleTimeoutSec=60
+
+[Battery][SuspendAndShutdown]
+InhibitLidActionWhenExternalMonitorPresent=false
+SleepMode=3

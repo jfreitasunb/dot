@@ -1,6 +1,8 @@
 [ActivityManager]
 _k_friendly_name=Gerenciador de atividades
+switch-to-activity-68be2391-975d-4a61-a1e4-52fc93284802=none,none,Alternar para a atividade "Padrão"
 switch-to-activity-c58f1d80-f439-4452-87eb-ae49471d04fd=none,none,Alternar para a atividade "Padrão"
+switch-to-activity-d50bb162-9c2c-4ea5-b579-77a429fea53b=none,none,Alternar para a atividade "Padrão"
 
 [KDE Keyboard Layout Switcher]
 Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Alternar para o layout de teclado usado por último
@@ -31,7 +33,7 @@ LogOut=,,Encerrar sessão
 Reboot=,,Reiniciar
 Reboot Without Confirmation=,,Reiniciar sem confirmação
 Shut Down=,,Desligar
-_k_friendly_name=Gerenciamento de sessão
+_k_friendly_name=Gerenciamento de sessões
 
 [kwin]
 Activate Window Demanding Attention=Meta+Ctrl+A,Meta+Ctrl+A,Ativar janela que demanda atenção
@@ -39,6 +41,10 @@ Cycle Overview=none,none,Alternar entre visão geral e visualização em grade
 Cycle Overview Opposite=none,none,Alternar entre visualização em grade e visão geral
 Decrease Opacity=,,Diminuir a opacidade da janela ativa em 5%
 Edit Tiles=Meta+T,Meta+T,Alternar Editor de Blocos
+Expose=Meta+F9\tCtrl+F9,Meta+F9\tCtrl+F9,Alternar as janelas presentes (área de trabalho atual)
+ExposeAll=Meta+F10\tLaunch (C)\tCtrl+F10,Meta+F10\tLaunch (C)\tCtrl+F10,Alternar janelas atuais (todas as áreas de trabalho)
+ExposeClass=Meta+F7\tCtrl+F7,Meta+F7\tCtrl+F7,Alternar as janelas presentes (classe de janelas)
+ExposeClassCurrentDesktop=none,none,Alternar Apresentar Janelas (Classe de janela na área de trabalho atual)
 Grid View=Meta+G,Meta+G,Alternar para Visualização em Grade
 Increase Opacity=,,Aumentar a opacidade da janela ativa em 5%
 Kill Window=Meta+Ctrl+Esc,Meta+Ctrl+Esc,Matar janela
@@ -250,6 +256,8 @@ cycleNextAction=,,Próximo item do histórico
 cyclePrevAction=,,Item anterior do histórico
 edit_clipboard=,,Editar conteúdo…
 manage activities=Meta+Q,Meta+Q,Mostrar seletor de atividade
+next activity=Meta+A,none,Percorrer as atividades
+previous activity=Meta+Shift+A,none,Percorrer as atividades (inverso)
 repeat_action=,,Invocar ação manualmente sobre a área de transferência atual
 show dashboard=Ctrl+F12,Ctrl+F12,Mostrar a Área de Trabalho
 show-barcode=,,Mostrar código de barras…
