@@ -4,7 +4,7 @@ cd ~
 
 #Instala o curl, git, npm, nodejs
 
-sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall lm-sensors -y
+sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall lm-sensors gir1.2-gtk-4.0 -y
 
 sudo npm install -g tree-sitter-cli
 
