@@ -1,6 +1,30 @@
 #!/bin/bash
 
+#Para btrfs, olhar também https://medium.com/@inatagan/installing-debian-with-btrfs-snapper-backups-and-grub-btrfs-27212644175f
+
+sudo apt install gawk inotify-tools
+
+sudo apt install timeshift
+
+git clone https://github.com/Antynea/grub-btrfs
+
+cd grub-btrfs
+
+sudo make install
+
 cd ~
+
+sudo rm grub-btrfs
+
+git clone https://github.com/wmutschl/timeshift-autosnap-apt.git
+
+cd timeshift-autosnap-apt
+
+sudo make install
+
+cd ~
+
+sudo rm timeshift-autosnap
 
 #Instala o curl, git, npm, nodejs
 
