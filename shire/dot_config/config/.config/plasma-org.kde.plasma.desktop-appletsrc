@@ -33,7 +33,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][31][Applets][34][Configuration][General]
-launchers=applications:systemsettings.desktop,applications:org.kde.discover.desktop,preferred://filemanager,applications:sublime_text.desktop,applications:texstudio.desktop,applications:io.github.shiftey.Desktop.desktop,applications:brave-browser.desktop
+launchers=applications:systemsettings.desktop,preferred://filemanager,applications:sublime_text.desktop,applications:texstudio.desktop,applications:io.github.shiftey.Desktop.desktop,applications:brave-browser.desktop
 
 [Containments][31][Applets][35]
 immutability=1
@@ -116,6 +116,9 @@ plugin=org.kde.plasma.mediacontroller
 [Containments][31][Applets][36][Applets][54]
 immutability=1
 plugin=org.kde.plasma.battery
+
+[Containments][31][Applets][36][Applets][54][Configuration][General]
+showPercentage=true
 
 [Containments][31][Applets][36][Applets][55]
 immutability=1
