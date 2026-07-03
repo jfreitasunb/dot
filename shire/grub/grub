@@ -3,12 +3,10 @@
 # For full documentation of the options in these files, see:
 #   info -f grub -n 'Simple configuration'
 
-#GRUB_DEFAULT=0
-GRUB_DEFAULT=saved
-GRUB_SAVEDEFAULT=true
+GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR=`( . /etc/os-release && echo ${NAME} )`
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 resume=UUID=b7e55bab-480d-4338-84af-04a4533e2eb3"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 resume=UUID=ffcb6d82-9743-4047-a92c-86a81e38a241"
 GRUB_CMDLINE_LINUX=""
 
 # If your computer has multiple operating systems installed, then you
