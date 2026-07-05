@@ -1211,3 +1211,20 @@ shire/dot_config/config/.config/org.gnome.Ptyxis/session.gvariant
 shire/dot_config/config/.config/.gsd-keyboard.settings-ported
 shire/dot_config/config/.config/autostart/dropbox.desktop
 /shire/dot_config/config/.config/texstudio/completion
+/shire/dot_config/config/.config/rstudio/Cache
+/shire/dot_config/config/.config/rstudio/Code Cache
+shire/dot_config/config/.config/rstudio/Cookies
+shire/dot_config/config/.config/rstudio/Cookies-journal
+/shire/dot_config/config/.config/rstudio/Crashpad
+/shire/dot_config/config/.config/rstudio/DawnGraphiteCache
+/shire/dot_config/config/.config/rstudio/DawnWebGPUCache
+shire/dot_config/config/.config/rstudio/DIPS
+/shire/dot_config/config/.config/rstudio/GPUCache
+/shire/dot_config/config/.config/rstudio/Dictionaries
+/shire/dot_config/config/.config/rstudio/Local Storage
+shire/dot_config/config/.config/rstudio/Network Persistent State
+/shire/dot_config/config/.config/rstudio/Session Storage
+/shire/dot_config/config/.config/rstudio/Shared Dictionary
+shire/dot_config/config/.config/rstudio/Trust Tokens
+shire/dot_config/config/.config/rstudio/Trust Tokens-journal
+shire/dot_config/config/.config/rstudio/whats-new-state.json
