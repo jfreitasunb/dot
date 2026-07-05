@@ -1202,3 +1202,11 @@ shire/dot_config/config/.config/gtkrc-2.0
 shire/dot_config/config/.config/gtkrc
 shire/dot_config/config/.config/uv/uv-receipt.json
 shire/dot_config/config/.config/atuin/atuin-receipt.json
+shire/dot_config/config/.config/drkonqirc
+/shire/dot_config/config/.config/evolution
+shire/dot_config/config/.config/fish/conf.d/atuin.env.fish
+shire/dot_config/config/.config/fish/conf.d/uv.env.fish
+/shire/dot_config/config/.config/ibus
+shire/dot_config/config/.config/org.gnome.Ptyxis/session.gvariant
+shire/dot_config/config/.config/.gsd-keyboard.settings-ported
+shire/dot_config/config/.config/autostart/dropbox.desktop
