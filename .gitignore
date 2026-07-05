@@ -1210,3 +1210,4 @@ shire/dot_config/config/.config/fish/conf.d/uv.env.fish
 shire/dot_config/config/.config/org.gnome.Ptyxis/session.gvariant
 shire/dot_config/config/.config/.gsd-keyboard.settings-ported
 shire/dot_config/config/.config/autostart/dropbox.desktop
+/shire/dot_config/config/.config/texstudio/completion
