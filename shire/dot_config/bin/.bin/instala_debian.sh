@@ -2,9 +2,7 @@
 
 #Para btrfs, olhar também https://medium.com/@inatagan/installing-debian-with-btrfs-snapper-backups-and-grub-btrfs-27212644175f
 
-sudo apt install gawk inotify-tools
-
-sudo apt install timeshift
+sudo apt install snapper gawk inotify-tools
 
 git clone https://github.com/Antynea/grub-btrfs
 
@@ -15,16 +13,6 @@ sudo make install
 cd ~
 
 sudo rm grub-btrfs
-
-git clone https://github.com/wmutschl/timeshift-autosnap-apt.git
-
-cd timeshift-autosnap-apt
-
-sudo make install
-
-cd ~
-
-sudo rm timeshift-autosnap
 
 #Instala o curl, git, npm, nodejs
 
@@ -116,8 +104,6 @@ sudo apt install bat bzip2 eza feh flatpak fzf p7zip p7zip-full pdftk ranger rsy
 
 sudo apt install qemu-utils qemu-system-x86 qemu-system-gui virt-manager virtiofsd -y
 
-sudo systemctl enable libvirtd
-
 sudo usermod -aG libvirt jfreitas
 
 sudo rm -rf /etc/libvirt/qemu
@@ -131,6 +117,8 @@ sudo ln -s ~/GitHub/dot/shire/maquinas_virtuais/qemu /etc/libvirt/
 sudo ln -s ~/GitHub/dot/shire/maquinas_virtuais/storage /etc/libvirt/
 
 sudo ln -s /home/jfreitas/GitHub/dot/shire/maquinas_virtuais/qemu.conf /etc/libvirt/
+
+sudo systemctl enable libvirtd --now
 
 #R
 
@@ -148,7 +136,7 @@ git clone https://github.com/zplug/zplug ~/.local/share/zplug
 
 #Pacotes para Gnome
 
-#sudo apt install dconf-editor libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
+sudo apt install dconf-editor libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
 
 #LaTeX
 
