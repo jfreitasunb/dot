@@ -1228,3 +1228,6 @@ shire/dot_config/config/.config/rstudio/Network Persistent State
 shire/dot_config/config/.config/rstudio/Trust Tokens
 shire/dot_config/config/.config/rstudio/Trust Tokens-journal
 shire/dot_config/config/.config/rstudio/whats-new-state.json
+shire/dot_config/config/.config/hypr/hyprpaper.conf
+shire/dot_config/config/.config/nvim/lazy-lock.json
+shire/dot_config/config/.config/monitors.xml~
