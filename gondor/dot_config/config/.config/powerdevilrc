@@ -1,0 +1,5 @@
+[AC][SuspendAndShutdown]
+SleepMode=2
+
+[Battery][SuspendAndShutdown]
+SleepMode=2
