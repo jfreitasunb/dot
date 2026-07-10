@@ -1288,3 +1288,5 @@ gondor/dot_config/config/.config/plasma-localerc
 gondor/dot_config/config/.config/plasma-welcomerc
 gondor/dot_config/config/.config/gtkrc
 gondor/dot_config/config/.config/gtkrc-2.0
+gondor/dot_config/config/.config/sublime-text/Local/Session.sublime_session
+gondor/dot_config/config/.config/xsettingsd/xsettingsd.conf
