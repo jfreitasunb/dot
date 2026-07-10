@@ -94,7 +94,7 @@
                 },
                 "overscan": 0,
                 "rgbRange": "Automatic",
-                "scale": 1.35,
+                "scale": 1,
                 "sdrBrightness": 417,
                 "sdrGamutWideness": 0,
                 "sharpness": 0,
@@ -130,7 +130,7 @@
                         "enabled": true,
                         "outputIndex": 0,
                         "position": {
-                            "x": 1423,
+                            "x": 1920,
                             "y": 0
                         },
                         "priority": 1,
