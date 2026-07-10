@@ -151,3 +151,4 @@ alias uninstall-spyder=/home/jfreitas/.local/spyder-6/uninstall-spyder.sh
 # <<< Added by Spyder <<<
 
 . "$HOME/.atuin/bin/env"
+export LIBVIRT_DEFAULT_URI="qemu:///system"
