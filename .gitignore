@@ -1286,3 +1286,5 @@ gondor/dot_config/config/.config/kwalletrc
 gondor/dot_config/config/.config/kwriterc
 gondor/dot_config/config/.config/plasma-localerc
 gondor/dot_config/config/.config/plasma-welcomerc
+gondor/dot_config/config/.config/gtkrc
+gondor/dot_config/config/.config/gtkrc-2.0
