@@ -3,8 +3,8 @@ _k_friendly_name=Gerenciador de atividades
 switch-to-activity-677a42b6-44b6-4b65-98df-954313bbc12b=none,none,Alternar para a atividade "Padrão"
 
 [KDE Keyboard Layout Switcher]
-Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,
-Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,
+Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Alternar para o layout de teclado usado por último
+Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Alternar para o próximo layout de teclado
 _k_friendly_name=Seletor de layouts de teclado
 
 [kaccess]
@@ -123,10 +123,10 @@ Window Fullscreen=none,none,Janela em tela cheia
 Window Grow Horizontal=none,none,Expandir janela horizontalmente
 Window Grow Vertical=none,none,Expandir janela verticalmente
 Window Lower=none,none,Diminuir Janela
-Window Maximize=Meta+PgUp,Meta+PgUp,Maximizar janela
+Window Maximize=Meta+Up,Meta+PgUp,Maximizar janela
 Window Maximize Horizontal=none,none,Maximizar janela horizontalmente
 Window Maximize Vertical=none,none,Maximizar janela verticalmente
-Window Minimize=Meta+PgDown,Meta+PgDown,Minimizar janela
+Window Minimize=Meta+Down,Meta+PgDown,Minimizar janela
 Window Move=none,none,Mover janela
 Window Move Center=none,none,Mover janela para o centro
 Window No Border=none,none,Alternar barra de título da janela e moldura
@@ -144,12 +144,12 @@ Window Pack Down=none,none,Mover janela para baixo
 Window Pack Left=none,none,Mover janela para a esquerda
 Window Pack Right=none,none,Mover janela para a direita
 Window Pack Up=none,none,Mover janela para cima
-Window Quick Tile Bottom=Meta+Down,Meta+Down,Colocar a janela lado a lado na parte inferior
+Window Quick Tile Bottom=none,Meta+Down,Colocar a janela lado a lado na parte inferior
 Window Quick Tile Bottom Left=none,none,Colocar a janela lado a lado na parte inferior à esquerda
 Window Quick Tile Bottom Right=none,none,Colocar a janela lado a lado na parte inferior à direita
 Window Quick Tile Left=Meta+Left,Meta+Left,Colocar a janela lado a lado à esquerda
 Window Quick Tile Right=Meta+Right,Meta+Right,Colocar a janela lado a lado à direita
-Window Quick Tile Top=Meta+Up,Meta+Up,Colocar a janela lado a lado parte superior
+Window Quick Tile Top=none,Meta+Up,Colocar a janela lado a lado parte superior
 Window Quick Tile Top Left=none,none,Colocar a janela lado a lado parte superior à esquerda
 Window Quick Tile Top Right=none,none,Colocar a janela lado a lado na parte de cima à direita
 Window Raise=none,none,Elevar janela
