@@ -183,6 +183,12 @@ sudo chsh -s $(which zsh) jfreitas
 
 #Ativando configurações personalizadas
 
+sudo rm /etc/default/grub
+
+sudo ln -s ~/GitHub/dot/gondor/grub/grub /etc/default/grub
+
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+
 sudo rm -rf /etc/systemd/sleep.conf
 
 sudo rm -rf /etc/systemd/logind.conf
