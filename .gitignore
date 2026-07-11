@@ -1293,3 +1293,4 @@ gondor/dot_config/config/.config/xsettingsd/xsettingsd.conf
 /gondor/dot_config/config/.config/session
 gondor/dot_config/config/.config/session/dolphin_dolphin_dolphin
 gondor/dot_config/config/.config/plasma-org.kde.plasma.desktop-appletsrc
+gondor/dot_config/config/.config/KDE/UserFeedback.conf
