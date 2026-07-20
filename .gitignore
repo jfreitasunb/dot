@@ -1294,3 +1294,11 @@ gondor/dot_config/config/.config/xsettingsd/xsettingsd.conf
 gondor/dot_config/config/.config/session/dolphin_dolphin_dolphin
 gondor/dot_config/config/.config/plasma-org.kde.plasma.desktop-appletsrc
 gondor/dot_config/config/.config/KDE/UserFeedback.conf
+gondor/dot_config/config/.config/fragments/bandwidth-groups.json
+gondor/dot_config/config/.config/fragments/connections.conf
+gondor/dot_config/config/.config/fragments/dht.dat
+gondor/dot_config/config/.config/fragments/queue.json
+gondor/dot_config/config/.config/fragments/stats.json
+gondor/dot_config/config/.config/kde.org/dragonplayer.conf
+gondor/dot_config/config/.config/plasmanotifyrc
+gondor/dot_config/config/.config/discoverrc
