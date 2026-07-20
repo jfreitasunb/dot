@@ -6,9 +6,9 @@
 # For explanations of all config options below see docs/usage.md or the man page.
 #
 sync_dir = "~/OneDrive"
-skip_file = "~*|.~*|*.tmp"
+skip_file = "~*|.~*|~*.tmp|*.partial|*.crdownload|*.swp|*.DS_Store|thumbs.db|ehthumbs.db|Desktop.ini|*.kate-swp|*.swx|*.swpx|*.tilda|*.vfs*|*.backup|~*.doc|~*.docx|~*.xls|~*.xlsx|~*.ppt|~*.pptx"
 monitor_interval = "300"
-# skip_dir = ""
+skip_dir = ".venv"
 # log_dir = "/var/log/onedrive/"
 # drive_id = ""
 # upload_only = "false"
