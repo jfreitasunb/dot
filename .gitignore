@@ -1302,3 +1302,5 @@ gondor/dot_config/config/.config/fragments/stats.json
 gondor/dot_config/config/.config/kde.org/dragonplayer.conf
 gondor/dot_config/config/.config/plasmanotifyrc
 gondor/dot_config/config/.config/discoverrc
+/gondor/dot_config/config/.config/fragments/resume
+/gondor/dot_config/config/.config/fragments/torrents
