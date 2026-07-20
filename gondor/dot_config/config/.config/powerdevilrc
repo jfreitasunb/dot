@@ -1,5 +1,8 @@
 [AC][SuspendAndShutdown]
+AutoSuspendAction=0
+InhibitLidActionWhenExternalMonitorPresent=false
 SleepMode=2
 
 [Battery][SuspendAndShutdown]
+InhibitLidActionWhenExternalMonitorPresent=false
 SleepMode=2
