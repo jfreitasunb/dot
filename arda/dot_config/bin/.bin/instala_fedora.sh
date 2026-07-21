@@ -42,7 +42,7 @@ sudo fwupdmgr update
 
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
-sudo dnf install nvim zsh texlive-scheme-full texstudio cargo meld onedrive brave-browser stow bat fzf keepassxc vlc alacritty stow fragments gparted dconf-editor bash-completion -y
+sudo dnf install nvim zsh texlive-scheme-full texstudio cargo meld onedrive brave-browser stow bat fzf keepassxc vlc alacritty stow fragments gparted dconf-editor gnome-tweaks bash-completion -y
 
 #Dependências para o Manim
 
