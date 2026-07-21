@@ -1,0 +1,31 @@
+INFO:  latexindent version 3.24.4, 2024-07-18, a script to indent .tex files
+       latexindent lives here: /usr/share/texlive/texmf-dist/scripts/latexindent/
+       Tue May 19 19:58:39 2026
+       Reading input from STDIN
+INFO:  Processing switches:
+       -y|--yaml: YAML settings specified via command line
+       -m|--modifylinebreaks: modify line breaks
+INFO:  Directory for backup files and log file indent.log:
+       .
+INFO:  YAML settings read: defaultSettings.yaml
+       Reading defaultSettings.yaml from /usr/share/texlive/texmf-dist/scripts/latexindent/defaultSettings.yaml
+INFO:  YAML reading settings
+       The config file in "/home/jfreitas/.indentconfig.yaml" will be read
+WARN:  The paths field cannot be read from /home/jfreitas/.indentconfig.yaml; this means it is either empty or contains invalid YAML
+       See https://latexindentpl.readthedocs.io/en/latest/sec-indent-config-and-settings.html for an example
+INFO:  YAML settings read: -y switch
+       YAML setting: defaultIndent:"    "
+       quote found in -y switch
+       key: defaultIndent:
+       value:     
+       double-quoted string found in -y switch: "    ", substitute to     
+       Updating mainSettings with defaultIndent:     
+INFO:  Phase 1: searching for objects
+INFO:  Phase 2: finding surrounding indentation
+INFO:  Phase 3: indenting objects
+INFO:  Phase 4: final indentation check
+INFO:  Output routine:
+       Not outputting to file; see -w and -o switches for more options.
+       --------------
+INFO:  Please direct all communication/issues to:
+        https://github.com/cmhughes/latexindent.pl
