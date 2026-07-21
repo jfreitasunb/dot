@@ -1331,3 +1331,21 @@ arda/dot_config/config/.config/uv/uv-receipt.json
 gondor/dot_config/config/.config/rclone/rclone.conf
 gondor/dot_config/config/.config/okularrc
 /arda/dot_config/config/.config/BraveSoftware
+/arda/dot_config/config/.config/rstudio/Cache
+/arda/dot_config/config/.config/rstudio/Code Cache
+arda/dot_config/config/.config/rstudio/Cookies
+arda/dot_config/config/.config/rstudio/Cookies-journal
+/arda/dot_config/config/.config/rstudio/Crashpad
+/arda/dot_config/config/.config/rstudio/DawnGraphiteCache
+/arda/dot_config/config/.config/rstudio/DawnWebGPUCache
+arda/dot_config/config/.config/rstudio/Dictionaries/pt-BR-3-0.bdic
+arda/dot_config/config/.config/rstudio/DIPS
+/arda/dot_config/config/.config/rstudio/GPUCache
+arda/dot_config/config/.config/rstudio/Local State
+/arda/dot_config/config/.config/rstudio/Local Storage
+arda/dot_config/config/.config/rstudio/Network Persistent State
+/arda/dot_config/config/.config/rstudio/Session Storage
+/arda/dot_config/config/.config/rstudio/Shared Dictionary
+arda/dot_config/config/.config/rstudio/Trust Tokens
+arda/dot_config/config/.config/rstudio/Trust Tokens-journal
+arda/dot_config/config/.config/rstudio/whats-new-state.json
