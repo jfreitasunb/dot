@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup das configurações do Gnome no Fedora
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/jfreitas/.bin/backup_gnome_fedora.sh
+
+[Install]
+WantedBy=multi-user.target
