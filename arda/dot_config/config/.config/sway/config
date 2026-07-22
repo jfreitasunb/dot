@@ -49,6 +49,12 @@ set $menu wofi --show
 
 include /etc/sway/config-vars.d/*
 
+# Inicializa os componentes do GNOME Keyring
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+
+# Exporta as variáveis necessárias para o ambiente do Sway
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+
 ### Iniciando alguns programas 
 exec /home/jfreitas/.bin/sway_wallpaper.sh
 exec /home/jfreitas/.bin/autostart_sway.sh

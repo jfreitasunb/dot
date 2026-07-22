@@ -113,6 +113,26 @@ sudo dnf install sublime-text -y
 
 sudo dnf install sway wofi waybar swaylock wlogout network-manager-applet dunst -y
 
+#Instalação do swaylock-effects
+
+cd ~
+
+sudo dnf install cmake wayland-devel libxkbcommon-devel cairo-devel gdk-pixbuf2-devel pam-devel fish
+
+git clone https://github.com/mortie/swaylock-effects.git
+
+cd swaylock-effects
+
+meson build
+
+ninja -C build
+
+sudo ninja -C build install
+
+cd ~
+
+rm swaylock-effects
+
 #Instalando docker
 
 #sudo dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
