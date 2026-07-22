@@ -1349,3 +1349,22 @@ arda/dot_config/config/.config/rstudio/Network Persistent State
 arda/dot_config/config/.config/rstudio/Trust Tokens
 arda/dot_config/config/.config/rstudio/Trust Tokens-journal
 arda/dot_config/config/.config/rstudio/whats-new-state.json
+/arda/dot_config/config/.config/libreoffice
+arda/dot_config/config/.config/fragments/bandwidth-groups.json
+arda/dot_config/config/.config/fragments/connections.conf
+arda/dot_config/config/.config/fragments/stats.json
+/valinor/dot_config/config/.config/BraveSoftware
+valinor/dot_config/config/.config/dconf/user
+valinor/dot_config/config/.config/gnome-xdg-terminals.list
+valinor/dot_config/config/.config/fish/conf.d/uv.env.fish
+valinor/dot_config/config/.config/fish/conf.d/atuin.env.fish
+/valinor/dot_config/config/.config/evolution
+/valinor/dot_config/config/.config/ibus
+valinor/dot_config/config/.config/user-dirs.locale
+valinor/dot_config/config/.config/uv/uv-receipt.json
+valinor/dot_config/config/.config/xdg-terminals.list
+valinor/dot_config/config/.config/.gsd-keyboard.settings-ported
+valinor/dot_config/config/.config/atuin/atuin-receipt.json
+valinor/dot_config/config/.config/onedrive/items.sqlite3-shm
+valinor/dot_config/config/.config/onedrive/items.sqlite3-wal
+/valinor/dot_config/config/.config/sublime-text/Local
