@@ -29,7 +29,7 @@ sudo npm install -g tree-sitter-cli
 
 #Alguns pacotes do Gnome
 
-sudo apt install gnome-text-editor dconf-editor libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
+sudo apt install evince eog gnome-text-editor dconf-editor libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
 
 #Instala o Brave
 
