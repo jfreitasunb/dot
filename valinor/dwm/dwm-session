@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Iniciar polkit para permissões (opcional, dependendo do sistema)
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Iniciar compositor para transparência/sombras (opcional)
+picom -b --vsync &
+
+# Iniciar status bar (exemplo com slstatus, dwmblocks ou dmenu)
+slstatus &
+
+# Executar o DWM substituindo a sessão atual
+exec dwm
