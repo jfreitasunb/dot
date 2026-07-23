@@ -179,6 +179,27 @@ sudo apt install hyprland hyprland-protocols hyprpicker hyprland-qtutils hyprcur
 
 echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
 
+#Instalação do DWM
+
+cd ~
+
+sudo apt install rofi libxinerama-dev -y
+
+git clone https://git.suckless.org/dwm
+
+cd dwm
+
+rm config.def.h
+
+ln -s ~/GitHub/dot/valinor/dwm/config.h ./
+
+sudo make clean install
+
+sudo ln -s ~/GitHub/dot/valinor/dwm/dwm.desktop /usr/share/xsessions/
+
+sudo ln -s ~/GitHub/dot/valinor/dwm/dwm-session /usr/local/bin/
+
+
 #Xmonad
 
 #sudo apt install xmonad xmobar yad suckless-tools volumeicon-alsa pcmanfm lxappearance pavucontrol picom adwaita-icon-theme arandr autorandr nemo nemo-fileroller -y
