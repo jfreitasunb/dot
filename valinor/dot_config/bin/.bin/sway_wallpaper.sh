@@ -7,13 +7,17 @@ LOCKFILE="/tmp/wallpaper_sway.lock"
 # imediatamente se o bloqueio não puder ser obtido.
 # O 'exec 200>$LOCKFILE' abre o arquivo de bloqueio no descritor de arquivo 200.
 exec 200>"$LOCKFILE"
-flock -n 200 || { echo "Outra instância do script já está em execução."; exit 1; }
+flock -n 200 || {
+    echo "Outra instância do script já está em execução."
+    exit 1
+}
 
 while true; do
 
     PIC=($(find ~/OneDrive/Pictures/Wallpapers -type f | shuf -n 2 --random-source=/dev/random))
 
     swaymsg output "eDP-1" bg "${PIC[0]}" fill >/dev/null
+    swaymsg output "DP-1" bg "${PIC[1]}" fill >/dev/null
     swaymsg output "HDMI-A-1" bg "${PIC[1]}" fill >/dev/null
 
     sleep 120m
