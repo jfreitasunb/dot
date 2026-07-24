@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=DWM
-Comment=Dynamic window manager
-Exec=dwm-session
-Type=XSession
