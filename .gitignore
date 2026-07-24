@@ -1371,3 +1371,5 @@ valinor/dot_config/config/.config/onedrive/items.sqlite3-wal
 valinor/dot_config/config/.config/monitors.xml~
 valinor/dot_config/config/.config/BraveSoftware/Brave-Browser/BrowserMetrics-spare.pma
 valinor/dot_config/config/.config/BraveSoftware/Brave-Browser/BrowserMetrics-spare.pma
+valinor/dot_config/config/.config/vlc/vlcrc
+valinor/dot_config/config/.config/vlc/vlc-qt-interface.conf
