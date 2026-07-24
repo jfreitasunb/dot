@@ -1,6 +1,6 @@
 [
     {
-        "output": "eDP-1",
+        "output": ["eDP-1", "DP-1", "HDMI-A-1"],
         "layer": "top",
         "height": 42,
         "reload_style_on_change": true,
@@ -33,11 +33,11 @@
                  "3": ["eDP-1"],
                  "4": ["eDP-1"],
                  "5": ["eDP-1"],
-                 "6": ["HDMI-A-1"],
-                 "7": ["HDMI-A-1"],
-                 "8": ["HDMI-A-1"],
-                 "9": ["HDMI-A-1"],
-                 "10": ["HDMI-A-1"],
+                 "6": ["DP-1", "HDMI-A-1"],
+                 "7": ["DP-1", "HDMI-A-1"],
+                 "8": ["DP-1", "HDMI-A-1"],
+                 "9": ["DP-1", "HDMI-A-1"],
+                 "10": ["DP-1", "HDMI-A-1"]
             },
         },
         "custom/clipboard": {
