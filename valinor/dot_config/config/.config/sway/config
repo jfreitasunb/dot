@@ -62,17 +62,26 @@ exec /home/jfreitas/.bin/autostart_sway.sh
 #exec env QT_QPA_PLATFORM=wayland copyq
 exec wl-paste --watch cliphist store # Stores only text data
 
+# Monitor Principal (Sempre ativo)
 output eDP-1 {
    mode 1920x1200@60.002Hz
-   position 0,0
-}
-
-output HDMI-A-1 {
-   mode 1920x1080@60Hz
    position 1920,0
 }
 
-exec /home/jfreitas/.bin/stacki3
+# Monitor Esquerdo (Quando conectado)
+output DP-1 {
+   mode 1920x1080@60Hz
+   position 0,0
+}
+
+# Monitor Direito (Quando conectado)
+output HDMI-A-1 {
+   mode 1920x1080@60Hz
+   position 3840,0
+}
+
+
+#exec /home/jfreitas/.bin/stacki3
 
 exec dunst -conf ~/.config/dunst/dunstrc.conf
 
@@ -169,6 +178,14 @@ input "type:pointer" {
     workspace "8" output HDMI-A-1
     workspace "9" output HDMI-A-1
     workspace "10" output HDMI-A-1
+
+# Mapeia workspaces para o segundo monitor
+    workspace "6" output DP-1
+    workspace "7" output DP-1
+    workspace "8" output DP-1
+    workspace "9" output DP-1
+    workspace "10" output DP-1
+
 
     # Switch to workspace
     bindsym $mod+1 workspace number 1
