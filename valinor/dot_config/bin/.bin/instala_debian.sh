@@ -29,7 +29,7 @@ sudo npm install -g tree-sitter-cli
 
 #Alguns pacotes do Gnome
 
-sudo apt install evince eog gnome-tweaks gnome-text-editor dconf-editor libnotify-dev gparted python3-nautilus gnome-shell-extensions -y
+sudo apt install evince eog gnome-tweaks gnome-text-editor dconf-editor libnotify-dev gparted python3-nautilus gnome-shell-extensions fragments -y
 
 #Instala o Brave
 
@@ -178,7 +178,6 @@ cd ~
 sudo apt install hyprland hyprland-protocols hyprpicker hyprland-qtutils hyprcursor-util hyprpaper hypridle hyprlock wofi waybar wlogout cliphist network-manager-applet wl-clipboard dunst blueman sway-notification-center -y
 
 echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
-
 
 #Xmonad
 
