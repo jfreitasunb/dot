@@ -1373,3 +1373,27 @@ valinor/dot_config/config/.config/BraveSoftware/Brave-Browser/BrowserMetrics-spa
 valinor/dot_config/config/.config/BraveSoftware/Brave-Browser/BrowserMetrics-spare.pma
 valinor/dot_config/config/.config/vlc/vlcrc
 valinor/dot_config/config/.config/vlc/vlc-qt-interface.conf
+/valinor/dot_config/config/.config/VSCodium/Backups
+/valinor/dot_config/config/.config/VSCodium/Cache
+/valinor/dot_config/config/.config/VSCodium/CachedData
+/valinor/dot_config/config/.config/VSCodium/CachedProfilesData
+/valinor/dot_config/config/.config/VSCodium/Code Cache
+/valinor/dot_config/config/.config/VSCodium/DawnGraphiteCache
+/valinor/dot_config/config/.config/VSCodium/DawnWebGPUCache
+/valinor/dot_config/config/.config/VSCodium/GPUCache
+/valinor/dot_config/config/.config/VSCodium/Local Storage
+valinor/dot_config/config/.config/VSCodium/Network Persistent State
+valinor/dot_config/config/.config/VSCodium/machineid
+valinor/dot_config/config/.config/VSCodium/Local State
+valinor/dot_config/config/.config/VSCodium/DIPS
+/valinor/dot_config/config/.config/VSCodium/Dictionaries
+/valinor/dot_config/config/.config/VSCodium/Crashpad
+/valinor/dot_config/config/.config/VSCodium/Service Worker
+/valinor/dot_config/config/.config/VSCodium/Session Storage
+/valinor/dot_config/config/.config/VSCodium/Shared Dictionary
+valinor/dot_config/config/.config/VSCodium/TransportSecurity
+valinor/dot_config/config/.config/VSCodium/SharedStorage
+valinor/dot_config/config/.config/VSCodium/Trust Tokens
+valinor/dot_config/config/.config/VSCodium/Trust Tokens-journal
+/valinor/dot_config/config/.config/VSCodium/User
+/valinor/dot_config/config/.config/VSCodium/WebStorage
