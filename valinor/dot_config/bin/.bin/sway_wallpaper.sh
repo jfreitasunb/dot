@@ -20,6 +20,6 @@ while true; do
     swaymsg output "DP-1" bg "${PIC[1]}" fill >/dev/null
     swaymsg output "HDMI-A-1" bg "${PIC[1]}" fill >/dev/null
 
-    sleep 120m
+    sleep 2h
 
 done
