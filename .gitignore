@@ -1397,3 +1397,7 @@ valinor/dot_config/config/.config/VSCodium/Trust Tokens
 valinor/dot_config/config/.config/VSCodium/Trust Tokens-journal
 /valinor/dot_config/config/.config/VSCodium/User
 /valinor/dot_config/config/.config/VSCodium/WebStorage
+valinor/dot_config/config/.config/fragments/bandwidth-groups.json
+valinor/dot_config/config/.config/fragments/connections.conf
+valinor/dot_config/config/.config/fragments/queue.json
+valinor/dot_config/config/.config/fragments/stats.json
