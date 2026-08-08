@@ -17,7 +17,7 @@
     "cache-size-mb": 4,
     "default-trackers": "",
     "dht-enabled": true,
-    "download-dir": "/home/jfreitas/Download_torrents",
+    "download-dir": "/home/jfreitas/Downloads",
     "download-queue-enabled": true,
     "download-queue-size": 5,
     "encryption": 1,
