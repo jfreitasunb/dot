@@ -1401,3 +1401,4 @@ valinor/dot_config/config/.config/fragments/bandwidth-groups.json
 valinor/dot_config/config/.config/fragments/connections.conf
 valinor/dot_config/config/.config/fragments/queue.json
 valinor/dot_config/config/.config/fragments/stats.json
+valinor/dot_config/config/.config/fragments/dht.dat
