@@ -245,6 +245,8 @@ flatpak install flathub org.geogebra.GeoGebra -y
 
 flatpak install flathub org.keepassxc.KeePassXC -y
 
+flatpak install flathub org.libreoffice.LibreOffice -y
+
 #flatpak install flathub org.texstudio.TeXstudio -y
 
 #Atuin, starship e uv
@@ -261,7 +263,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 #Firefox e Libreoffice
 
-sudo apt install firefox-esr libreoffice libreoffice-l10n-pt-br -y
+sudo apt install firefox-esr libreoffice libreoffice-l10n-pt-br libreoffice-gtk3 -y
 
 #Removendo programas e desativando serviços
 
