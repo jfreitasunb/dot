@@ -277,6 +277,9 @@ bindsym $mod+r mode "resize"
 #                   FLOATING                    #
 #################################################
 
+# Ajusta o tamanho e centraliza qualquer janela de seleção/download de arquivo emitida pelo xdg-desktop-portal-gtk
+for_window [app_id="xdg-desktop-portal-gtk"] floating enable, resize set 900 600, center
+
 #Controle de volume
 # Aumenta o volume em 5%
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
