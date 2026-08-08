@@ -140,6 +140,9 @@ input "type:pointer" {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+q exec wlogout
+    
+    #Tecla de atalho para hibernar
+    bindsym $mod+F8 exec systemctl hibernate
 #
 # Moving around:
 #
@@ -274,15 +277,6 @@ bindsym $mod+r mode "resize"
 #                   FLOATING                    #
 #################################################
 
-#for_window [app_id="soffice"] floating enable, resize set 500px 500px
-for_window [app_id="soffice"] fullscreen enable
-
-#for_window [app_id='transmission-gtk'] fullscreen enable
-
-for_window [app_id="com.transmissionbt.transmission"] inhibit_idle enable
-
-for_window [class="Brave-browser"] inhibit_idle fullscreen
-
 #Controle de volume
 # Aumenta o volume em 5%
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
@@ -297,6 +291,7 @@ set $gnome-schema org.gnome.desktop.interface
 
 ## Lock Screen
 bindsym $mod+f1 exec ~/.bin/lock_screen.sh
+
 
 #################################################
 #                Clamshell Mode                 #
