@@ -1,0 +1,17 @@
+[Print Settings]
+evince-print-setting-page-autorotate=true
+printer=Imprimir para arquivo
+evince-print-setting-page-scale=2
+output-file-format=pdf
+evince-print-setting-page-size=false
+
+[Page Setup]
+PPDName=A4
+DisplayName=A4
+Width=210
+Height=297
+MarginTop=6.3499999999999996
+MarginBottom=14.224
+MarginLeft=6.3499999999999996
+MarginRight=6.3499999999999996
+Orientation=portrait
