@@ -137,6 +137,7 @@ input "type:pointer" {
 
     bindsym $mod+b exec brave-browser
     bindsym $mod+n exec nautilus 
+    bindsym $mod+e exec evince 
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+q exec wlogout
@@ -227,7 +228,7 @@ input "type:pointer" {
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+Shift+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
