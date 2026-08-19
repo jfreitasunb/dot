@@ -1,0 +1,20 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# systemd generates mount units based on this file, see systemd.mount(5).
+# Please run 'systemctl daemon-reload' after making changes here.
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/nvme0n1p7 during installation
+UUID=e083312c-2cad-49d1-a6b2-9f9f8e61106e /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/nvme0n1p1 during installation
+UUID=DCDC-6A51  /boot/efi       vfat    umask=0077      0       1
+# /home was on /dev/nvme0n1p5 during installation
+UUID=11dbe91f-3a83-46eb-9212-927956247e4d /home           ext4    defaults        0       2
+# swap was on /dev/nvme0n1p6 during installation
+UUID=cde814e6-96f9-4ed3-b53c-ef129bc4b62a none            swap    sw              0       0
+UUID=4072DCA372DC9ECA	 /windows	 ntfs-3g   defaults	0	2
+/dev/disk/by-id/usb-SAMSUNG_MZVL4512HBLU-00B_012345678944-0:0-part1 /media/jfreitas/Fotos ntfs-3g nosuid,nodev,nofail,noauto,x-gvfs-show 0 0
