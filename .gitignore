@@ -1402,3 +1402,4 @@ valinor/dot_config/config/.config/fragments/connections.conf
 valinor/dot_config/config/.config/fragments/queue.json
 valinor/dot_config/config/.config/fragments/stats.json
 valinor/dot_config/config/.config/fragments/dht.dat
+valinor/dot_config/config/.config/texstudio/wordCount.usage
