@@ -145,6 +145,13 @@ input "type:pointer" {
     
     #Tecla de atalho para hibernar
     bindsym $mod+F8 exec systemctl hibernate
+
+    #Spotify
+
+    bindsym $mod+m exec flatpak run com.spotify.Client
+    bindsym $mod+p exec playerctl --player=spotify play-pause
+    bindsym $mod+Shift+n exec playerctl --player=spotify next 
+
 #
 # Moving around:
 #
