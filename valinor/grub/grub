@@ -8,7 +8,7 @@ GRUB_DEFAULT=saved
 GRUB_SAVEDEFAULT=true
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR=`( . /etc/os-release && echo ${NAME} )`
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 resume=UUID=cde814e6-96f9-4ed3-b53c-ef129bc4b62a"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 resume=UUID=30d827aa-8196-4d5b-bc06-a72fb6feb9c5"
 GRUB_CMDLINE_LINUX=""
 
 # If your computer has multiple operating systems installed, then you
