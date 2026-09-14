@@ -1,21 +1,37 @@
 {
     "InternalPDFViewer": {
         "Embedded": true,
-        "File": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/geometria_analitica.pdf"
+        "File": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/revisao/revisao_para_prova_1.pdf"
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/01_vetores-no-plano.tex",
+        "CurrentFile": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/revisao/revisao_para_prova_1.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 11,
+                "Col": 1,
                 "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/01_vetores-no-plano.tex",
-                "FirstLine": 301,
+                "FileName": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/revisao/revisao_para_prova_1.tex",
+                "FirstLine": 12,
                 "FoldedLines": "",
-                "Line": 332
+                "Line": 33
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_1.tex",
+                "FirstLine": 216,
+                "FoldedLines": "",
+                "Line": 183
+            },
+            {
+                "Col": 124,
+                "EditorGroup": 0,
+                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_2.tex",
+                "FirstLine": 224,
+                "FoldedLines": "",
+                "Line": 249
             }
         ],
         "MasterFile": "",

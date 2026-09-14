@@ -1404,3 +1404,9 @@ valinor/dot_config/config/.config/fragments/stats.json
 valinor/dot_config/config/.config/fragments/dht.dat
 valinor/dot_config/config/.config/texstudio/wordCount.usage
 valinor/maquinas_virtuais/qemu/Debian.xml
+valinor/dot_config/config/.config/transmission/stats.json
+valinor/dot_config/config/.config/transmission/queue.json
+valinor/dot_config/config/.config/transmission/dht.dat
+valinor/dot_config/config/.config/transmission/bandwidth-groups.json
+valinor/dot_config/config/.config/totem/state.ini
+valinor/dot_config/config/.config/texstudio/lastSession.txss2
