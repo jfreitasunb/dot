@@ -1,10 +1,12 @@
-#!/usr/bin/bash
+#!/usr/bin/bash -x
 
 killall dropbox
 
 dropbox start &
 
 nm-applet &
+
+~/.bin/notificar_musica.sh &
 
 #systemctl --user start gnome-keyring-daemon.service &
 
