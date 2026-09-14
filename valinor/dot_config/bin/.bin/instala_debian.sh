@@ -23,7 +23,7 @@ sudo fwupdmgr update
 
 #Instala o curl, git, npm, nodejs
 
-sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall lm-sensors gir1.2-gtk-4.0 bc kmod cpio flex libncurses-dev libelf-dev libssl-dev dwarves bison libdw-dev debhelper-compat gnome-text-editor -y
+sudo apt install curl git nodejs npm build-essential automake python3.13-venv checkinstall lm-sensors gir1.2-gtk-4.0 bc kmod cpio flex libncurses-dev libelf-dev libssl-dev dwarves bison libdw-dev debhelper-compat gnome-text-editor smartmontools nvme-cli -y
 
 sudo npm install -g tree-sitter-cli
 
@@ -109,7 +109,7 @@ sudo apt install ttf-mscorefonts-installer fontconfig libfontconfig1-dev -y
 
 #Pacotes de propósito geral
 
-sudo apt install bat bzip2 eza feh flatpak fzf p7zip p7zip-full pdftk ranger rsync vlc zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps meld imagemagick xz-utils fd-find zoxide ripgrep luarocks xclip ffmpeg ffmpegthumbnailer htop autoconf gcc make pkg-config poppler-utils img2pdf lazygit -y
+sudo apt install bat bzip2 eza feh flatpak fzf p7zip p7zip-full pdftk ranger rsync vlc zathura zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps meld imagemagick xz-utils fd-find zoxide ripgrep luarocks xclip ffmpeg ffmpegthumbnailer htop autoconf gcc make pkg-config poppler-utils img2pdf lazygit fastfetch playerctl -y
 
 #Virtualização
 
@@ -245,7 +245,7 @@ flatpak install flathub org.geogebra.GeoGebra -y
 
 flatpak install flathub org.keepassxc.KeePassXC -y
 
-flatpak install flathub org.libreoffice.LibreOffice -y
+#flatpak install flathub org.libreoffice.LibreOffice -y
 
 #flatpak install flathub org.texstudio.TeXstudio -y
 
@@ -259,11 +259,11 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 #Instando kernel atual
 
-#sudo apt install -t trixie-backports linux-image-amd64 firmware-linux firmware-linux-nonfree -y
+sudo apt install -t trixie-backports linux-image-amd64 firmware-linux firmware-linux-nonfree -y
 
 #Firefox e Libreoffice
 
-sudo apt install firefox-esr libreoffice libreoffice-l10n-pt-br libreoffice-gtk3 -y
+#sudo apt install firefox-esr libreoffice libreoffice-l10n-pt-br libreoffice-gtk3 -y
 
 #Removendo programas e desativando serviços
 
