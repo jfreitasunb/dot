@@ -183,6 +183,49 @@ echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
 
 #sudo apt install xmonad xmobar yad suckless-tools volumeicon-alsa pcmanfm lxappearance pavucontrol picom adwaita-icon-theme arandr autorandr nemo nemo-fileroller -y
 
+#Instalando o MangWM
+
+sudo apt install libegl1-mesa-dev libgbm-dev libgles2-mesa-dev libvulkan-dev glslang-tools liblcms2-dev libudev-dev libseat-dev hwdata libdisplay-info-dev libliftoff-dev libinput-dev libxcb-dri3-dev libxcb-composite0-dev libcairo2-dev libxcb-util-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev libxcb-render-util0-dev libxcb-res0-dev libxcb-xinput-dev libxcb-errors-dev -y
+
+git clone -b 0.19 https://gitlab.freedesktop.org/wlroots/wlroots.git
+
+cd wlroots/
+
+meson build  -Dprefix=/usr
+
+sudo ninja -C build install
+
+git clone -b 0.4 https://github.com/wlrfx/scenefx.git
+
+cd ~/
+
+rm -rf wlroots
+
+cd scenefx/
+
+meson build -Dprefix=/usr
+
+sudo ninja -C build install
+
+cd ~/
+
+rm -rf scenefx
+
+
+git clone -b 0.14.4 https://github.com/mangowm/mango.git
+
+cd mango
+
+meson build -Dprefix=/usr
+
+sudo ninja -C build install
+
+cd ~/
+
+rm -rf mango
+
+sudo apt install quickshell -y
+
 #FSTRIM
 
 sudo systemctl enable fstrim.timer
