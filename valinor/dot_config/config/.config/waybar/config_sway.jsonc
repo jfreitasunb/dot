@@ -22,7 +22,8 @@
             "custom/power"
         ],
         "sway/workspaces": {
-            "warp-on-scroll": false,
+            "disable-scroll": true,
+            "warp_on_scroll": false,
             "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span>",
             "on-click": "activate",
             "sort-by-number": true,
