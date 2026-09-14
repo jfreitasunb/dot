@@ -17,8 +17,11 @@ sudo rm grub-btrfs
 #Atualizando firmware
 
 sudo fwupdmgr refresh --force
+
 sudo fwupdmgr get-devices
+
 sudo fwupdmgr get-updates
+
 sudo fwupdmgr update
 
 #Instala o curl, git, npm, nodejs
