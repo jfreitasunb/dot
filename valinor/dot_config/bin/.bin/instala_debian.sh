@@ -188,7 +188,7 @@ echo 'NotShowIn=GNOME;' | sudo tee -a /etc/xdg/autostart/blueman.desktop
 
 #Instalando o MangWM
 
-sudo apt install libegl1-mesa-dev libgbm-dev libgles2-mesa-dev libvulkan-dev glslang-tools liblcms2-dev libudev-dev libseat-dev hwdata libdisplay-info-dev libliftoff-dev libinput-dev libxcb-dri3-dev libxcb-composite0-dev libcairo2-dev libxcb-util-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev libxcb-render-util0-dev libxcb-res0-dev libxcb-xinput-dev libxcb-errors-dev -y
+sudo apt install meson ninja-build libcjson-dev libwayland-dev libdrm-dev libwayland-dev libxkbcommon-dev libpixman-1-dev wayland-protocols libxcb-present-dev libxcb-ewmh-dev libxcb-render-util0-dev libxcb-res0-dev libxcb-xinput-dev libxcb-errors-dev libegl1-mesa-dev libgbm-dev libgles2-mesa-dev libvulkan-dev glslang-tools liblcms2-dev libudev-dev libseat-dev hwdata libdisplay-info-dev libliftoff-dev libinput-dev libxcb-dri3-dev libxcb-composite0-dev libcairo2-dev libxcb-util-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev libxcb-render-util0-dev libxcb-res0-dev libxcb-xinput-dev libxcb-errors-dev -y
 
 git clone -b 0.19 https://gitlab.freedesktop.org/wlroots/wlroots.git
 
@@ -198,11 +198,11 @@ meson build  -Dprefix=/usr
 
 sudo ninja -C build install
 
-git clone -b 0.4 https://github.com/wlrfx/scenefx.git
-
 cd ~/
 
 rm -rf wlroots
+
+git clone -b 0.4.1 https://github.com/wlrfx/scenefx.git
 
 cd scenefx/
 
