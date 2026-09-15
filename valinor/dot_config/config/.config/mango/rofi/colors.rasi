@@ -1,0 +1,16 @@
+/* Generated from wallpaper: wallhaven-4.png */
+
+* {
+    bg:          #191b2a;
+    fg:          #d2c9bc;
+    accent:      #e6cda8;
+    accent-2:    #949dd1;
+    border:      #e6cda8;
+    urgent:      #cf8681;
+    selected-fg: #d2c9bc;
+    entry-fg:    #949dd1;
+    prompt-fg:   #e6cda8;
+    header:      #949dd1;
+
+    background-color: @bg;
+}
