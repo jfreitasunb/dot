@@ -324,3 +324,8 @@ sudo systemctl disable avahi-daemon.service
 sudo systemctl disable avahi-daemon.socket
 
 sudo timedatectl set-local-rtc 1
+
+
+#Para ajustar o ícone do Dropbox no Quickshell
+mkdir -p ~/.local/share/icons/hicolor/16x16/status/
+cp ~/.dropbox-dist/dropbox-lnx.x86_64-268.4.4124/images/hicolor/16x16/status/* ~/.local/share/icons/hicolor/16x16/status/
