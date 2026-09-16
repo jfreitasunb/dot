@@ -88,76 +88,7 @@ BarModule {
     // end-timestamp + minutes in a plain state file so a running timer
     // (and the duration preference) survives bar restarts; watched, so
     // `echo "0 25" > ~/.config/suckless/pomodoro` stops it from a shell
-    function persistPomo() {
-        Quickshell.execDetached(["sh", "-c",
-            "printf '%s %s\\n' " + Math.round(pomoEndMs) + " " + pomoMinutes +
-            " > '" + Theme.configDir + "/pomodoro'"])
-    }
-
-    FileView {
-        path: Theme.configDir + "/pomodoro"
-        watchChanges: true
-        onFileChanged: reload()
-        onLoaded: {
-            const parts = text().trim().split(/\s+/)
-            const end = parseFloat(parts[0]) || 0
-            const mins = parseInt(parts[1]) || 0
-            if (mins >= 5 && mins <= 90)
-                root.pomoMinutes = mins
-            if (end > Date.now()) {
-                root.pomoEndMs = end
-                root.pomoLeft = Math.round((end - Date.now()) / 1000)
-            } else if (end === 0) {
-                root.pomoEndMs = 0
-            }
-            // end in the past: expired while the bar was down — stay idle
-        }
-    }
-
-    function fmtPomo(s) {
-        return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0")
-    }
-    function togglePomodoro() {
-        pomoDone = false
-        if (pomoRunning) {
-            pomoEndMs = 0
-        } else {
-            pomoEndMs = Date.now() + pomoTotal * 1000
-            pomoLeft = pomoTotal
-        }
-        persistPomo()
-    }
-    function cyclePomoPreset() {
-        if (pomoRunning) return
-        pomoMinutes = pomoPresets[(pomoPresets.indexOf(pomoMinutes) + 1)
-                                  % pomoPresets.length]
-        persistPomo()
-    }
-    function nudgePomo(dir) {
-        if (pomoRunning) return
-        pomoMinutes = Math.min(90, Math.max(5, pomoMinutes + dir * 5))
-        persistPomo()
-    }
-
-    Timer {
-        interval: 1000
-        repeat: true
-        running: root.pomoRunning
-        onTriggered: {
-            root.pomoLeft = Math.max(0, Math.round((root.pomoEndMs - Date.now()) / 1000))
-            if (root.pomoLeft <= 0) {
-                root.pomoEndMs = 0
-                root.pomoDone = true
-                root.persistPomo()
-                // chime plays regardless of DND — it's an alarm; the
-                // notification lands in dunst history if DND holds it
-                Quickshell.execDetached(["paplay", "--volume=40000",
-                    "/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"])
-                Quickshell.execDetached(["notify-send", "-u", "critical",
-                    "Pomodoro", "Time's up — take a break"])
-            }
-        }
-    }
+    
 
     component CommandRow: Rectangle {
         id: rowRect
