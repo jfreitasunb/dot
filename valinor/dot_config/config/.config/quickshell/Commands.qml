@@ -94,25 +94,6 @@ BarModule {
             " > '" + Theme.configDir + "/pomodoro'"])
     }
 
-    FileView {
-        path: Theme.configDir + "/pomodoro"
-        watchChanges: true
-        onFileChanged: reload()
-        onLoaded: {
-            const parts = text().trim().split(/\s+/)
-            const end = parseFloat(parts[0]) || 0
-            const mins = parseInt(parts[1]) || 0
-            if (mins >= 5 && mins <= 90)
-                root.pomoMinutes = mins
-            if (end > Date.now()) {
-                root.pomoEndMs = end
-                root.pomoLeft = Math.round((end - Date.now()) / 1000)
-            } else if (end === 0) {
-                root.pomoEndMs = 0
-            }
-            // end in the past: expired while the bar was down — stay idle
-        }
-    }
 
     function fmtPomo(s) {
         return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0")

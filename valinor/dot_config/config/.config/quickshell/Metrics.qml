@@ -81,6 +81,13 @@ BarModule {
             value: Math.round(Sys.disk) + "%"
             valueColor: Sys.disk > 90 ? Theme.red : Theme.fg
         }
+        Sep {}
+        Seg {
+            tag: "/home"
+            tagColor: Theme.yellow
+            value: Math.round(Sys.disk) + "%"
+            valueColor: Sys.disk > 90 ? Theme.red : Theme.fg
+        }
         Sep { visible: Sys.hasBattery }
         Seg {
             visible: Sys.hasBattery

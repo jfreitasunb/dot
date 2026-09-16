@@ -10,7 +10,7 @@ BarModule {
         precision: SystemClock.Minutes
     }
 
-    label: Qt.formatDateTime(clock.date, "ddd MMM d") + "  " + Qt.formatDateTime(clock.date, "h:mm AP")
+    label: Qt.formatDateTime(clock.date, "dd/MM/yyyy") + "  " + Qt.formatDateTime(clock.date, "hh:mm")
 
     onClicked: calendar.visible = !calendar.visible
 

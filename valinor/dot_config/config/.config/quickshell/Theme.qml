@@ -86,32 +86,6 @@ Singleton {
     readonly property int effectiveBarHeight: Math.max(barHeight, moduleHeight + edgeInset + 8)
 
     FileView {
-        path: root.configDir + "/bar-height"
-        watchChanges: true
-        onFileChanged: reload()
-        onLoadFailed: root._barStateLoads++
-        onLoaded: {
-            root._barStateLoads++
-            const v = parseInt(text())
-            if (!isNaN(v))
-                root.barHeight = Math.min(Math.max(v, 32), 80)
-        }
-    }
-
-    FileView {
-        path: root.configDir + "/bar-scale"
-        watchChanges: true
-        onFileChanged: reload()
-        onLoadFailed: root._barStateLoads++
-        onLoaded: {
-            root._barStateLoads++
-            const v = parseFloat(text())
-            if (!isNaN(v))
-                root.barUserScale = Math.min(Math.max(v, 0.7), 2.0)
-        }
-    }
-
-    FileView {
         path: root.configDir + "/polybar/colors.ini"
         watchChanges: true
         onFileChanged: reload()
