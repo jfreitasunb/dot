@@ -1,15 +1,18 @@
 @import "colors.rasi"
 
+* {
+    font: "JetBrainsMono Nerd Font 12";
+}
+
 configuration {
     show-icons: true;
     icon-theme: "Papirus";
     location: 0;
-    font: "JetBrainsMono Nerd Font 12";
     display-drun: "Launch:";
 }
 
 window {
-    width: 45%;
+    width: 20%;
     transparency: "real";
     orientation: vertical;
     border-color: @accent;
@@ -24,12 +27,13 @@ mainbox {
 // -----------------------------------
 
 element {
-    padding: 4 12;
-    text-color: @bg;
+    padding: 4 8;
+    text-color: @fg;
+    background-color: @bg;
     border-radius: 5px;
 }
 
-element selected {
+element.selected {
     text-color: @fg;
     background-color: @accent;
 }
@@ -82,8 +86,8 @@ element.normal.urgent {
 }
 
 listview {
-    columns: 2;
-    lines: 9;
+    columns: 1;
+    lines: 8;
     padding: 8 0;
     fixed-height: true;
     fixed-columns: true;
@@ -91,18 +95,15 @@ listview {
     border: 0 10 6 10;
 }
 
-// INPUT BAR
-//------------------------------------------------
+inputbar {
+    padding: 10 0 0;
+    margin: 0 0 0 0;
+}
 
 entry {
     text-color: @entry-fg;
     padding: 10 10 0 0;
     margin: 0 -2 0 0;
-}
-
-inputbar {
-    padding: 10 0 0;
-    margin: 0 0 0 0;
 }
 
 prompt {

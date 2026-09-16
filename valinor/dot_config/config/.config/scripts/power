@@ -1,10 +1,11 @@
 #!/bin/bash
-ROFI_THEME="$HOME/.config/mango/rofi/power.rasi"
-chosen=$(printf '%s\n' "[Cancel]" "Logout" "Shutdown" "Reboot" | \
+ROFI_THEME="$HOME/.config/rofi/power.rasi"
+chosen=$(printf '%s\n' "[Cancel]" "Logout" "Shutdown" "Reboot" "Hibernate" | \
     rofi -dmenu -i -p "Power Menu" -line-padding 4 -hide-scrollbar -theme "$ROFI_THEME")
 case "$chosen" in
-    "Logout") "$HOME/.config/mango/scripts/mango-ipc" dispatch quit ;;
+    "Logout") "$HOME/.bin/mango-ipc" dispatch quit ;;
     "Shutdown") systemctl poweroff ;;
     "Reboot") systemctl reboot ;;
+    "Hibernate") systemctl hibernate ;;
     *) exit 0 ;;
 esac
