@@ -1,37 +1,45 @@
 {
     "InternalPDFViewer": {
-        "Embedded": true,
-        "File": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/revisao/revisao_para_prova_1.pdf"
+        "Embedded": false,
+        "File": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_2.pdf"
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/revisao/revisao_para_prova_1.tex",
+        "CurrentFile": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_2.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 1,
+                "Col": 23,
                 "EditorGroup": 0,
-                "FileName": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/revisao/revisao_para_prova_1.tex",
-                "FirstLine": 12,
+                "FileName": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/Avaliacoes/prova_1-substitutiva-GA.tex",
+                "FirstLine": 0,
                 "FoldedLines": "",
-                "Line": 33
+                "Line": 0
             },
             {
-                "Col": 0,
+                "Col": 17,
+                "EditorGroup": 0,
+                "FileName": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/Avaliacoes/prova_3-GA.tex",
+                "FirstLine": 129,
+                "FoldedLines": "",
+                "Line": 152
+            },
+            {
+                "Col": 113,
                 "EditorGroup": 0,
                 "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_1.tex",
-                "FirstLine": 216,
+                "FirstLine": 323,
                 "FoldedLines": "",
-                "Line": 183
+                "Line": 353
             },
             {
-                "Col": 124,
+                "Col": 120,
                 "EditorGroup": 0,
                 "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_2.tex",
-                "FirstLine": 224,
+                "FirstLine": 147,
                 "FoldedLines": "",
-                "Line": 249
+                "Line": 179
             }
         ],
         "MasterFile": "",
