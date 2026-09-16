@@ -1415,3 +1415,6 @@ valinor/dot_config/config/.config/htop/htoprc
 /valinor/dot_config/config/.config/mango/wallpaper
 valinor/dot_config/config/.config/sublime-text/Installed Packages/0_package_control_loader.sublime-package
 valinor/dot_config/config/.config/sublime-text/Installed Packages/Package Control.sublime-package
+valinor/dot_config/config/.config/sublime-text/Lib/python33/package_control.py
+valinor/dot_config/config/.config/sublime-text/Lib/python38/package_control.py
+valinor/dot_config/config/.config/sublime-text/Packages/User/Package Control.user-ca-bundle

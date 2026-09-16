@@ -119,6 +119,7 @@ input "type:pointer" {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    assign [app_id="Alacritty"] workspace 2
 
     # Kill focused window
     bindsym $mod+Shift+c kill
@@ -136,9 +137,17 @@ input "type:pointer" {
     bindsym $mod+Shift+r reload
 
     bindsym $mod+b exec brave-origin
+    assign [app_id="brave-origi"] workspace 1
+    
     bindsym $mod+n exec nautilus 
-    bindsym $mod+e exec evince 
+    
+    bindsym $mod+e exec evince
+    
     #bindsym $mod+e exec flatpak run org.gnome.Papers 
+
+    bindsym $mod+Alt+f exec firefox
+
+    assign [app_id="firefox-esr"] workspace 3
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+q exec wlogout
@@ -146,11 +155,18 @@ input "type:pointer" {
     #Tecla de atalho para hibernar
     bindsym $mod+F8 exec systemctl hibernate
 
+    # Screenshot (full screen)
+    bindsym $mod+s exec ~/.bin/screenshot full
+    # Screenshot (select region)
+    bindsym $mod+Shift+s exec ~/.bin/screenshot region
+
+
     #Spotify
 
     bindsym $mod+m exec flatpak run com.spotify.Client
     bindsym $mod+p exec playerctl --player=spotify play-pause
-    bindsym $mod+Shift+n exec playerctl --player=spotify next 
+    bindsym $mod+Shift+n exec playerctl --player=spotify next
+    assign [app_id="spotify"] workspace 5
 
 #
 # Moving around:
@@ -234,7 +250,7 @@ input "type:pointer" {
     # respectively.
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    bindsym $mod+Alt+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+Shift+e layout toggle split
 
