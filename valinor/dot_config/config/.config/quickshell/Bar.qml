@@ -56,7 +56,7 @@ PanelWindow {
 
             Launcher {}
             Tags {}
-            LayoutButton { id: layoutBtn }
+            //LayoutButton { id: layoutBtn }
         }
 
         // Title lives in the gap between the clusters: screen-centered when
@@ -80,13 +80,13 @@ PanelWindow {
             spacing: 4
 
             Media {}
-            Weather {}
+            //Weather {}
             Metrics {}
             Volume {}
             Network {}
             Updates {}
             Tray {}
-            Bell {}
+            //Bell {}
             Clock {}
             MicMute {}
             CapsLock {}

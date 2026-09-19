@@ -1,6 +1,6 @@
 #!/bin/sh
 # screenshot [region|full] — grim (+ slurp for a region), saved to ~/Screenshots.
-DIR="$HOME/Screenshots"
+DIR="$HOME/Imagens/Screenshots"
 mkdir -p "$DIR"
 OUT="$DIR/screenshot-$(date +%Y%m%d-%H%M%S).png"
 case "${1:-region}" in
