@@ -119,7 +119,7 @@ input "type:pointer" {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-    assign [app_id="Alacritty"] workspace 2
+    #assign [app_id="Alacritty"] workspace 2
 
     # Kill focused window
     bindsym $mod+Shift+c kill

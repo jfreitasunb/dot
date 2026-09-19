@@ -1,45 +1,45 @@
 {
     "InternalPDFViewer": {
         "Embedded": false,
-        "File": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_2.pdf"
+        "File": ""
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_2.tex",
+        "CurrentFile": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/Avaliacoes/prova_1-GA.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 23,
+                "Col": 72,
                 "EditorGroup": 0,
-                "FileName": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/Avaliacoes/prova_1-substitutiva-GA.tex",
-                "FirstLine": 0,
+                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_2.tex",
+                "FirstLine": 219,
                 "FoldedLines": "",
-                "Line": 0
-            },
-            {
-                "Col": 17,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/Avaliacoes/prova_3-GA.tex",
-                "FirstLine": 129,
-                "FoldedLines": "",
-                "Line": 152
-            },
-            {
-                "Col": 113,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_1.tex",
-                "FirstLine": 323,
-                "FoldedLines": "",
-                "Line": 353
+                "Line": 227
             },
             {
                 "Col": 120,
                 "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_2.tex",
-                "FirstLine": 147,
+                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_1.tex",
+                "FirstLine": 262,
                 "FoldedLines": "",
-                "Line": 179
+                "Line": 290
+            },
+            {
+                "Col": 56,
+                "EditorGroup": 0,
+                "FileName": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/01_vetores-no-plano.tex",
+                "FirstLine": 432,
+                "FoldedLines": "",
+                "Line": 457
+            },
+            {
+                "Col": 73,
+                "EditorGroup": 0,
+                "FileName": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/Avaliacoes/prova_1-GA.tex",
+                "FirstLine": 99,
+                "FoldedLines": "",
+                "Line": 132
             }
         ],
         "MasterFile": "",
