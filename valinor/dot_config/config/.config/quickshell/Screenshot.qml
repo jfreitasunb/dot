@@ -6,6 +6,6 @@ import Quickshell
 BarModule {
     icon: "󰻛"
     iconColor: Theme.magenta
-    onClicked: mouse => Quickshell.execDetached([Theme.configDir + "/scripts/screenshot",
+    onClicked: mouse => Quickshell.execDetached(["/home/jfreitas/.bin/screenshot",
         mouse.button === Qt.RightButton ? "full" : "region"])
 }
