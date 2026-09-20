@@ -311,7 +311,7 @@ BarModule {
                     { icon: "󰌢", label: "Screen off",
                       run: () => Quickshell.execDetached([Theme.configDir + "/scripts/screen-off"]) },
                     { icon: "󰐥", label: "Power menu",
-                      run: () => Quickshell.execDetached([Theme.configDir + "/scripts/power"]) }
+                      run: () => Quickshell.execDetached(["wlogout"]) }
                 ]
                 CommandRow {}
             }
