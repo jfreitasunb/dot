@@ -56,7 +56,7 @@ PanelWindow {
 
             Launcher {}
             Tags {}
-            //LayoutButton { id: layoutBtn }
+            LayoutButton { id: layoutBtn }
         }
 
         // Title lives in the gap between the clusters: screen-centered when
