@@ -240,41 +240,41 @@ BarModule {
                           label: root.profile,
                           active: root.profile !== "balanced",
                           run: () => root.cycleProfile() },
-                        { icon: "󰅶", label: "Keep awake",
-                          active: root.caffeine,
-                          run: () => {
-                              root.caffeine = !root.caffeine
-                              Quickshell.execDetached(["sh", "-c", root.caffeine
-                                  ? "systemd-inhibit --what=idle --who=quickshell --why=quickshell-caffeine sleep infinity >/dev/null 2>&1 &"
-                                  : "pkill -f '[w]hy=quickshell-caffeine'"])
-                          } },
+                        // { icon: "󰅶", label: "Keep awake",
+                        //   active: root.caffeine,
+                        //   run: () => {
+                        //       root.caffeine = !root.caffeine
+                        //       Quickshell.execDetached(["sh", "-c", root.caffeine
+                        //           ? "systemd-inhibit --what=idle --who=quickshell --why=quickshell-caffeine sleep infinity >/dev/null 2>&1 &"
+                        //           : "pkill -f '[w]hy=quickshell-caffeine'"])
+                        //   } },
                         { icon: Sys.micMuted ? "󰍭" : "󰍬",
                           label: Sys.micMuted ? "Muted" : "Mic",
                           active: Sys.micMuted, alert: Sys.micMuted,
                           alt: ["pavucontrol", "-t", "4"],
                           run: () => Sys.toggleMicMute() },
-                        { icon: "󱩌", label: "Night light",
-                          active: root.nightLight,
-                          run: () => {
-                              root.nightLight = !root.nightLight
-                              Quickshell.execDetached(["sh", "-c", root.nightLight
-                                  ? "command -v wlsunset >/dev/null && (wlsunset -t 4500 -T 6500 >/dev/null 2>&1 &) || notify-send -a quickshell 'Night light' 'Install wlsunset: sudo apt install wlsunset'"
-                                  : "pkill -x wlsunset"])
-                          } },
-                        { icon: Sys.dndOn ? "󰂛" : "󰂚",
-                          label: "DND",
-                          active: Sys.dndOn, alert: Sys.dndOn,
-                          altFn: () => {
-                              menu.visible = false
-                              notifHistory.visible = true
-                          },
-                          run: () => Sys.toggleDnd() },
-                        { icon: "󰔟",
-                          label: root.pomoRunning ? "Stop" : root.pomoMinutes + " min",
-                          active: root.pomoRunning,
-                          altFn: () => root.cyclePomoPreset(),
-                          onScroll: dir => root.nudgePomo(dir),
-                          run: () => root.togglePomodoro() }
+                        // { icon: "󱩌", label: "Night light",
+                        //   active: root.nightLight,
+                        //   run: () => {
+                        //       root.nightLight = !root.nightLight
+                        //       Quickshell.execDetached(["sh", "-c", root.nightLight
+                        //           ? "command -v wlsunset >/dev/null && (wlsunset -t 4500 -T 6500 >/dev/null 2>&1 &) || notify-send -a quickshell 'Night light' 'Install wlsunset: sudo apt install wlsunset'"
+                        //           : "pkill -x wlsunset"])
+                        //   } },
+                        // { icon: Sys.dndOn ? "󰂛" : "󰂚",
+                        //   label: "DND",
+                        //   active: Sys.dndOn, alert: Sys.dndOn,
+                        //   altFn: () => {
+                        //       menu.visible = false
+                        //       notifHistory.visible = true
+                        //   },
+                        //   run: () => Sys.toggleDnd() },
+                        // { icon: "󰔟",
+                        //   label: root.pomoRunning ? "Stop" : root.pomoMinutes + " min",
+                        //   active: root.pomoRunning,
+                        //   altFn: () => root.cyclePomoPreset(),
+                        //   onScroll: dir => root.nudgePomo(dir),
+                        //   run: () => root.togglePomodoro() }
                     ]
                     TogglePill { closeFn: () => menu.visible = false }
                 }
