@@ -54,7 +54,7 @@ PanelWindow {
 
             Launcher {}
             Tags {}
-            LayoutButton { id: layoutBtn }
+            //LayoutButton { id: layoutBtn }
         }
 
         Title {
