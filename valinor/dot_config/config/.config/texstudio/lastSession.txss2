@@ -1,45 +1,21 @@
 {
     "InternalPDFViewer": {
-        "Embedded": false,
-        "File": ""
+        "Embedded": true,
+        "File": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/figuras-latex/conicas/elipse/elipse-com-focos-fora-dos-eixos.pdf"
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/Avaliacoes/prova_1-GA.tex",
+        "CurrentFile": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/figuras-latex/conicas/elipse/elipse-com-focos-fora-dos-eixos.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 72,
+                "Col": 25,
                 "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_2.tex",
-                "FirstLine": 219,
+                "FileName": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/figuras-latex/conicas/elipse/elipse-com-focos-fora-dos-eixos.tex",
+                "FirstLine": 0,
                 "FoldedLines": "",
-                "Line": 227
-            },
-            {
-                "Col": 120,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-1/lista_1.tex",
-                "FirstLine": 262,
-                "FoldedLines": "",
-                "Line": 290
-            },
-            {
-                "Col": 56,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/01_vetores-no-plano.tex",
-                "FirstLine": 432,
-                "FoldedLines": "",
-                "Line": 457
-            },
-            {
-                "Col": 73,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/OneDrive/UnB/Disciplinas/Graduacao/Geometria_Analitica/2026-2/Avaliacoes/prova_1-GA.tex",
-                "FirstLine": 99,
-                "FoldedLines": "",
-                "Line": 132
+                "Line": 23
             }
         ],
         "MasterFile": "",
