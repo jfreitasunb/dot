@@ -10,6 +10,7 @@ image/png=org.gnome.Loupe.desktop
 video/x-matroska=vlc.desktop
 image/jpeg=org.gnome.eog.desktop
 text/plain=org.gnome.TextEditor.desktop
+application/json=sublime_text.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
@@ -17,3 +18,4 @@ image/png=org.gnome.Loupe.desktop;
 video/x-matroska=vlc.desktop;
 image/jpeg=org.gnome.eog.desktop;
 text/plain=org.gnome.TextEditor.desktop;
+application/json=sublime_text.desktop;
