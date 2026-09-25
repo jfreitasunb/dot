@@ -6,6 +6,8 @@ if [ -d "$HOME/.cargo/env" ] ; then
     . "$HOME/.cargo/env"
 fi
 
+export GS_OPTIONS="-dALLOWPSTRANSPARENCY"
+
 export EDITOR="nvim"
 export VISUAL="nvim"
 
