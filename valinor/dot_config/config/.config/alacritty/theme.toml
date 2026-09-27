@@ -1,0 +1,33 @@
+# Gerado dinamicamente a partir de 0095.jpg
+
+[colors.primary]
+background = "#15181e"
+foreground = "#d2cbbc"
+
+[colors.cursor]
+text = "#15181e"
+cursor = "#d2cbbc"
+
+[colors.selection]
+text = "#d2cbbc"
+background = "#22272f"
+
+[colors.normal]
+black   = "#22272f"
+red     = "#cb8a86"
+green   = "#86cb86"
+yellow  = "#cbc586"
+blue    = "#8694cb"
+magenta = "#cb86cb"
+cyan    = "#86a6cb"
+white   = "#c2bcad"
+
+[colors.bright]
+black   = "#575f6b"
+red     = "#d9a5a1"
+green   = "#a1d9a1"
+yellow  = "#d9d4a1"
+blue    = "#a1add9"
+magenta = "#d9a1d9"
+cyan    = "#a1bbd9"
+white   = "#e2ded5"

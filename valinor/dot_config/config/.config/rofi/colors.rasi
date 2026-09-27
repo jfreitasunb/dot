@@ -1,16 +1,15 @@
-/* Generated from wallpaper: tuxanaut.png */
-
+/* Gerado dinamicamente por wallpaper-theme */
 * {
-    bg:          #0f151f;
-    fg:          #d2ccbc;
-    accent:      #1359d3;
-    accent-2:    #eed086;
-    border:      #1359d3;
+    bg:          #15181e;
+    fg:          #d2cbbc;
+    accent:      #aee0cb;
+    accent-2:    #94a0d1;
+    border:      #aee0cb;
     urgent:      #cb8a86;
-    selected-fg: #d2ccbc;
-    entry-fg:    #eed086;
-    prompt-fg:   #1359d3;
-    header:      #eed086;
+    selected-fg: #d2cbbc;
+    entry-fg:    #94a0d1;
+    prompt-fg:   #aee0cb;
+    header:      #94a0d1;
 
     background-color: @bg;
 }

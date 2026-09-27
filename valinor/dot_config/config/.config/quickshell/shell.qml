@@ -1,19 +1,30 @@
 //@ pragma UseQApplication
+import QtQuick
 import Quickshell
 import Quickshell.Io
 
 ShellRoot {
+    // Cria uma barra para cada monitor conectado
     Variants {
         model: Quickshell.screens
-        Bar {}
+
+        delegate: Bar {
+            required property var modelData
+            screen: modelData
+        }
     }
 
-    // scripts/mango-reload: reload_config resets setoption values, so the
-    // script asks the bar to push its gaps (inner + scaled outer) back
+    // Handler IPC para controle da barra e do compositor via atalhos/scripts
+    // Exemplo de chamada: qs -p ~/.config/sway/quickshell ipc call wm reload
     IpcHandler {
         target: "wm"
-        function applyGaps(): void { Wm.applyGaps(Wm.gaps) }
-        function applyEffects(): void { Wm.applyEffects() }
+
+        function reload(): void {
+            Quickshell.execDetached(["swaymsg", "reload"])
+        }
+
+        function applyGaps(innerGaps: int): void {
+            Quickshell.execDetached(["swaymsg", "gaps", "inner", "all", "set", String(innerGaps)])
+        }
     }
 }
-

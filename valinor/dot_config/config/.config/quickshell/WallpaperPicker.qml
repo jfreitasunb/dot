@@ -3,8 +3,8 @@ import Quickshell
 import Quickshell.Io
 
 // Wallpaper picker popup adaptado para Sway:
-// Thumbnail grid de wallpapers com extração de paleta via Canvas.
-// Envia a imagem e as cores ANSI/paleta para scripts/wallpaper-theme.
+// Grade de miniaturas com extração de paleta via Canvas.
+// Envia a imagem e as cores ANSI/paleta para ~/.bin/wallpaper-theme.
 Popout {
     id: root
 
@@ -14,6 +14,12 @@ Popout {
     property var wallpapers: []
     property string applyingPath: ""
     property bool randomPending: false
+
+    // Resolução segura do diretório home do usuário
+    readonly property string homeDir: {
+        const home = Quickshell.env("HOME")
+        return home && home.trim().length > 0 ? home : ("/home/" + (Quickshell.env("USER") || ""))
+    }
 
     // Reescaneia o diretório sempre que o popup abrir
     onVisibleChanged: {
@@ -32,7 +38,7 @@ Popout {
     function apply(path) {
         applyingPath = path
         if (!visible)
-            visible = true // Canvas só renderiza em superfície visível
+            visible = true
         canvas.loadImage("file://" + path)
     }
 
@@ -48,16 +54,11 @@ Popout {
     property var _found: []
     Process {
         id: lister
+        // no SVGs: Qt's loader chokes on ones with external references
         command: ["sh", "-c",
-            "WALLDIR=\"$HOME/OneDrive/Pictures/Wallpapers\"; " +
-            "if [ -d \"$WALLDIR\" ]; then " +
-            "  find \"$WALLDIR\" -maxdepth 1 -type f \\(-iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \\) | sort; " +
-            "fi"]
+            "find ~/OneDrive/Pictures/Wallpapers -maxdepth 1 -type f -iname *.png -o -iname *.jpg -o -iname *.jpeg | sort"]
         stdout: SplitParser {
-            onRead: line => { 
-                const trimmed = line.trim()
-                if (trimmed !== "") root._found.push(trimmed) 
-            }
+            onRead: line => { if (line.trim() !== "") root._found.push(line.trim()) }
         }
         onRunningChanged: {
             if (running) {
@@ -66,10 +67,9 @@ Popout {
                 root.wallpapers = root._found
                 if (root.randomPending) {
                     root.randomPending = false
-                    if (root.wallpapers.length > 0) {
-                        const rndIdx = Math.floor(Math.random() * root.wallpapers.length)
-                        root.apply(root.wallpapers[rndIdx])
-                    }
+                    if (root.wallpapers.length > 0)
+                        root.apply(root.wallpapers[
+                            Math.floor(Math.random() * root.wallpapers.length)])
                 }
             }
         }
@@ -84,6 +84,7 @@ Popout {
             x: 0; y: 0
             width: 96
             height: 54
+            visible: false
 
             onImageLoaded: {
                 const url = "file://" + root.applyingPath
@@ -99,11 +100,13 @@ Popout {
                 const url = "file://" + root.applyingPath
                 if (!isImageLoaded(url))
                     return
+
                 const ctx = getContext("2d")
                 ctx.clearRect(0, 0, width, height)
                 ctx.drawImage(url, 0, 0, width, height)
                 const data = ctx.getImageData(0, 0, width, height).data
-                unloadImage(url) // Libera o bitmap decodificado da memória
+
+                unloadImage(url) // Libera o bitmap da memória de vídeo
                 root.finish(data)
             }
         }
@@ -372,10 +375,18 @@ Popout {
             ansi[i + 9] = legible(t.h, art ? s : 0.42, Math.min(l + 0.08, 0.78), bg, 4.0)
         }
 
+        // Executa o script explicitamente a partir de ~/.bin/wallpaper-theme
         Quickshell.execDetached(
-            [Theme.configDir + "/scripts/wallpaper-theme", root.applyingPath]
-                .concat(palette).concat(ansi))
+            [root.homeDir + "/.bin/wallpaper-theme", root.applyingPath]
+                .concat(palette).concat(ansi)
+        )
+
+        // Limpa o estado 'busy' para desarmar imediatamente a animação do delegate
         root.applyingPath = ""
-        root.visible = false
+
+        // Adia o fechamento da janela para o próximo ciclo de eventos
+        Qt.callLater(() => {
+            root.visible = false
+        })
     }
 }

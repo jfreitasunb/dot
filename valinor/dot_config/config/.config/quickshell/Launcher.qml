@@ -9,9 +9,14 @@ BarModule {
     iconFont: "FiraCode Nerd Font"
     iconColor: Theme.accent
 
-    // Ajuste para o lançador de sua preferência no Sway:
-    // Exemplos: ["fuzzel"], ["rofi", "-show", "drun"], ["wofi", "--show", "drun"]
-    readonly property var launcherCmd: ["fuzzel"]
+    // Executa o wofi alternando (se já estiver aberto, fecha; senão, abre)
+    readonly property var launcherCmd: [
+        "sh", "-c",
+        "pkill -x wofi || wofi --show drun --allow-images --prompt 'Buscar...'"
+    ]
+
+    // Se preferir a chamada direta simples sem toggle:
+    // readonly property var launcherCmd: ["wofi", "--show", "drun", "--allow-images"]
 
     onClicked: mouse => {
         if (mouse.button === Qt.RightButton) {

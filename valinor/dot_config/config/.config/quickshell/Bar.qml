@@ -2,12 +2,9 @@ import QtQuick
 import Quickshell
 import Quickshell.Wayland
 
-// The bar window adaptada para Sway via wlr-layer-shell
+// Barra adaptada para Sway via wlr-layer-shell
 PanelWindow {
     id: root
-
-    property var modelData
-    screen: modelData
 
     // Integração com o compositor Sway (wlr-layer-shell)
     WlrLayershell.namespace: "sway-bar"
@@ -19,6 +16,7 @@ PanelWindow {
         left: true
         right: true
     }
+
     implicitHeight: Theme.effectiveBarHeight
     color: "transparent"
     visible: Theme.barStateReady
@@ -29,7 +27,7 @@ PanelWindow {
         anchors.topMargin: Theme.edgeInset
         anchors.leftMargin: Theme.edgeInset
         anchors.rightMargin: Theme.edgeInset
-        anchors.bottomMargin: 0
+        anchors.bottomMargin: Theme.edgeInset
 
         radius: Theme.barRadius
         color: Qt.alpha(Theme.bg, 0.94)
@@ -39,10 +37,23 @@ PanelWindow {
         Behavior on color { ColorAnimation { duration: 400 } }
         Behavior on border.color { ColorAnimation { duration: 400 } }
 
+        // Botão direito no vazio da barra abre o menu de ajustes/layouts
         MouseArea {
             anchors.fill: parent
             acceptedButtons: Qt.RightButton
-            onClicked: layoutBtn.pickerVisible = !layoutBtn.pickerVisible
+            onClicked: {
+                if (typeof layoutBtn !== "undefined" && layoutBtn) {
+                    layoutBtn.pickerVisible = !layoutBtn.pickerVisible
+                } else {
+                    pickerFallback.visible = !pickerFallback.visible
+                }
+            }
+        }
+
+        // Popup fallback caso o LayoutButton esteja desativado no cluster
+        LayoutPicker {
+            id: pickerFallback
+            anchorItem: panel
         }
 
         Row {
@@ -53,7 +64,7 @@ PanelWindow {
             spacing: 8
 
             Launcher {}
-            Tags {}
+            Workspaces {} // Módulo adaptado para eDP-1 e DP-1/HDMI-A-1
             //LayoutButton { id: layoutBtn }
         }
 
