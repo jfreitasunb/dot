@@ -56,7 +56,9 @@ exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ss
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 
 ### Iniciando alguns programas 
-exec /home/jfreitas/.bin/sway_wallpaper.sh
+#exec /home/jfreitas/.bin/sway_wallpaper.sh
+exec qs -p /home/jfreitas/.config/quickshell
+
 exec /home/jfreitas/.bin/autostart_sway.sh
 
 #exec env QT_QPA_PLATFORM=wayland copyq

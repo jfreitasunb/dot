@@ -12,7 +12,7 @@
 }
 {
     "label" : "logout",
-    "action" : "/usr/bin/rm /tmp/wallpaper_sway.lock && swaymsg exit",
+    "action" : "swaymsg exit",
     "text" : "Logout",
     "keybind" : "e"
 }

@@ -1,15 +1,15 @@
 /* Gerado dinamicamente por wallpaper-theme */
 * {
-    bg:          #15181e;
-    fg:          #d2cbbc;
-    accent:      #aee0cb;
-    accent-2:    #94a0d1;
-    border:      #aee0cb;
-    urgent:      #cb8a86;
-    selected-fg: #d2cbbc;
-    entry-fg:    #94a0d1;
-    prompt-fg:   #aee0cb;
-    header:      #94a0d1;
+    bg:          #171717;
+    fg:          #d2c7bc;
+    accent:      #ec7d13;
+    accent-2:    #dee495;
+    border:      #ec7d13;
+    urgent:      #ea4544;
+    selected-fg: #d2c7bc;
+    entry-fg:    #dee495;
+    prompt-fg:   #ec7d13;
+    header:      #dee495;
 
     background-color: @bg;
 }

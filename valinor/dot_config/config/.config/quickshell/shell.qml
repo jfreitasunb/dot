@@ -14,6 +14,11 @@ ShellRoot {
         }
     }
 
+    // Gerenciador de wallpapers (inicializa o Timer de 2h e o IPC target "wallpapers")
+    Wallpapers {
+        id: wallpapers
+    }
+
     // Handler IPC para controle da barra e do compositor via atalhos/scripts
     // Exemplo de chamada: qs -p ~/.config/sway/quickshell ipc call wm reload
     IpcHandler {
