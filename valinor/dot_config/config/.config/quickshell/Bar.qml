@@ -2,7 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Wayland
 
-// Barra adaptada para Sway via wlr-layer-shell
+// The bar window adaptada para Sway via wlr-layer-shell
 PanelWindow {
     id: root
 
@@ -24,6 +24,7 @@ PanelWindow {
     Rectangle {
         id: panel
         anchors.fill: parent
+        // Margens simétricas em todas as extremidades para preservar o aspeto flutuante
         anchors.topMargin: Theme.edgeInset
         anchors.leftMargin: Theme.edgeInset
         anchors.rightMargin: Theme.edgeInset
@@ -37,23 +38,15 @@ PanelWindow {
         Behavior on color { ColorAnimation { duration: 400 } }
         Behavior on border.color { ColorAnimation { duration: 400 } }
 
-        // Botão direito no vazio da barra abre o menu de ajustes/layouts
+        // Botão direito no fundo abre as opções de layout/ajustes
         MouseArea {
             anchors.fill: parent
             acceptedButtons: Qt.RightButton
             onClicked: {
                 if (typeof layoutBtn !== "undefined" && layoutBtn) {
                     layoutBtn.pickerVisible = !layoutBtn.pickerVisible
-                } else {
-                    pickerFallback.visible = !pickerFallback.visible
                 }
             }
-        }
-
-        // Popup fallback caso o LayoutButton esteja desativado no cluster
-        LayoutPicker {
-            id: pickerFallback
-            anchorItem: panel
         }
 
         Row {
@@ -64,8 +57,13 @@ PanelWindow {
             spacing: 8
 
             Launcher {}
-            Workspaces {} // Módulo adaptado para eDP-1 e DP-1/HDMI-A-1
-            //LayoutButton { id: layoutBtn }
+
+            // Passa o ecrã atual para exibir apenas os workspaces deste monitor
+            Workspaces {
+                targetScreen: root.screen
+            }
+
+            // LayoutButton { id: layoutBtn }
         }
 
         Title {
@@ -89,7 +87,7 @@ PanelWindow {
             Metrics {}
             Volume {}
             Network {}
-            //Updates {}
+            Updates {}
             Tray {}
             Bell {}
             Clock {}

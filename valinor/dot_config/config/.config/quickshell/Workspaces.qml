@@ -5,19 +5,26 @@ import Quickshell.Io
 Item {
     id: root
 
-    implicitWidth: wsRow.implicitWidth
-    implicitHeight: wsRow.implicitHeight
+    // Monitor associado a esta instância da barra
+    property var targetScreen: null
 
-    // Identifica o nome do monitor onde esta barra está renderizada
+    // Adota a altura padrão dos restantes módulos da barra
+    readonly property real wsHeight: (typeof Theme.moduleHeight !== "undefined") ? Theme.moduleHeight : 28
+
+    implicitWidth: wsRow.implicitWidth
+    implicitHeight: wsHeight
+    height: wsHeight
+
+    // Identificação do ecrã atual (eDP-1, DP-1, HDMI-A-1, etc.)
     readonly property string screenName: {
+        if (targetScreen && targetScreen.name)
+            return targetScreen.name
         const win = root.QsWindow.window
         return (win && win.screen) ? win.screen.name : ""
     }
 
-    // Identifica se a instância atual está em uma saída externa
     readonly property bool isExternalScreen: screenName === "DP-1" || screenName === "HDMI-A-1"
 
-    // Verifica se qualquer monitor externo compatível está conectado no momento
     readonly property bool hasExternalConnected: {
         const screens = Quickshell.screens || []
         for (let i = 0; i < screens.length; i++) {
@@ -28,12 +35,12 @@ Item {
     }
 
     // Intervalo de workspaces:
-    // - Se for a tela externa (DP-1 ou HDMI-A-1): 6 a 10
-    // - Se for a tela embutida (eDP-1): 1 a 5 se houver tela externa, ou 1 a 10 se estiver sozinho
+    // - Ecrã externo (DP-1 / HDMI-A-1): 6 a 10
+    // - Ecrã interno (eDP-1): 1 a 5 (ou 1 a 10 caso não haja ecrã externo ligado)
     readonly property int minWs: isExternalScreen ? 6 : 1
     readonly property int maxWs: isExternalScreen ? 10 : (hasExternalConnected ? 5 : 10)
 
-    // Lista de workspaces monitorada via IPC do Sway
+    // Dados obtidos via IPC do Sway
     property var swayWorkspaces: []
 
     Process {
@@ -60,13 +67,22 @@ Item {
         }
     }
 
-    // Gera o intervalo numérico para a tela atual
-    readonly property var currentRange: {
+    // Lista de índices para este ecrã
+    readonly property var currentWorkspaces: {
         const list = []
         for (let i = minWs; i <= maxWs; i++) {
             list.push(i)
         }
-        return list
+
+        // Adiciona workspaces ativos fora do intervalo mas vinculados a esta saída
+        for (let j = 0; j < swayWorkspaces.length; j++) {
+            const ws = swayWorkspaces[j]
+            if (ws.output === screenName && list.indexOf(ws.num) === -1) {
+                list.push(ws.num)
+            }
+        }
+
+        return list.sort((a, b) => a - b)
     }
 
     Row {
@@ -75,7 +91,7 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
 
         Repeater {
-            model: root.currentRange
+            model: root.currentWorkspaces
 
             Rectangle {
                 id: wsButton
@@ -94,9 +110,10 @@ Item {
                 readonly property bool isUrgent: wsInfo ? wsInfo.urgent : false
                 readonly property bool hasWindows: wsInfo !== null
 
-                width: 24
-                height: 24
-                radius: 6
+                // Dimensões quadradas iguais à altura dos módulos da barra
+                width: root.wsHeight
+                height: root.wsHeight
+                radius: (typeof Theme.moduleRadius !== "undefined") ? Theme.moduleRadius : 6
 
                 color: isFocused ? Theme.accent
                      : isUrgent  ? Theme.alert
@@ -113,10 +130,16 @@ Item {
                 Behavior on color { ColorAnimation { duration: 120 } }
 
                 Text {
-                    anchors.centerIn: parent
+                    anchors.fill: parent
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+
+                    // Compensa a linha de base tipográfica e centraliza o número no botão
+                    topPadding: 2
+
                     text: wsButton.modelData
                     font.family: Theme.fontFamily
-                    font.pixelSize: 12
+                    font.pixelSize: (typeof Theme.fontSize !== "undefined") ? Theme.fontSize : 13
                     font.bold: wsButton.isFocused
                     color: wsButton.isFocused ? Theme.selfg
                          : wsButton.isUrgent ? Theme.selfg
