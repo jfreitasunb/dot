@@ -12,4 +12,6 @@ nm-applet &
 
 #gnome-keyring-daemon --start --components="pkcs11,secrets,ssh" &
 
-waybar -c /home/jfreitas/.config/waybar/config_sway.jsonc &
+awww-daemon
+
+#waybar -c /home/jfreitas/.config/waybar/config_sway.jsonc &
