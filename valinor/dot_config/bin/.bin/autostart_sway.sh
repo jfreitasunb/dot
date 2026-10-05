@@ -4,6 +4,8 @@ killall dropbox
 
 dropbox start &
 
+insync start --no-daemon&
+
 nm-applet &
 
 #~/.bin/notificar_musica.sh &
