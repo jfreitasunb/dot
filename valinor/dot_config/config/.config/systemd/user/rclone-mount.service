@@ -1,0 +1,25 @@
+[Unit]
+Description=Montagem Continua Rclone Google Drive
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/rclone mount Google_Drive: %h/GoogleDrive \
+    --vfs-cache-mode full \
+    --vfs-cache-max-size 10G \
+    --vfs-cache-max-age 24h \
+    --vfs-read-chunk-size 32M \
+    --vfs-read-chunk-size-limit 2G \
+    --buffer-size 64M \
+    --dir-cache-time 72h \
+    --log-level NOTICE \
+    --umask 022
+
+# Desmonta com seguranca ao parar o servico
+ExecStop=/usr/bin/fusermount -u %h/GoogleDrive
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=default.target

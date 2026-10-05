@@ -1,21 +1,21 @@
 {
     "InternalPDFViewer": {
         "Embedded": true,
-        "File": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/figuras-latex/conicas/elipse/elipse-com-focos-fora-dos-eixos.pdf"
+        "File": "/home/jfreitas/Downloads/crit_rios_para_sele_o_matem_tica.pdf"
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/figuras-latex/conicas/elipse/elipse-com-focos-fora-dos-eixos.tex",
+        "CurrentFile": "/home/jfreitas/Downloads/crit_rios_para_sele_o_matem_tica.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 25,
+                "Col": 22,
                 "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/figuras-latex/conicas/elipse/elipse-com-focos-fora-dos-eixos.tex",
+                "FileName": "/home/jfreitas/Downloads/crit_rios_para_sele_o_matem_tica.tex",
                 "FirstLine": 0,
                 "FoldedLines": "",
-                "Line": 23
+                "Line": 4
             }
         ],
         "MasterFile": "",

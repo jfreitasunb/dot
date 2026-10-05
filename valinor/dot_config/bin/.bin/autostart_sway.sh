@@ -6,7 +6,7 @@ dropbox start &
 
 nm-applet &
 
-~/.bin/notificar_musica.sh &
+#~/.bin/notificar_musica.sh &
 
 #systemctl --user start gnome-keyring-daemon.service &
 

@@ -87,7 +87,7 @@ PanelWindow {
             Metrics {}
             Volume {}
             Network {}
-            Updates {}
+           // Updates {}
             Tray {}
             Bell {}
             Clock {}
