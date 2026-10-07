@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Escuta eventos de saída (outputs) e workspaces do Sway
+swaymsg -t subscribe -m '["output"]' | while read -r line; do
+    # Verifica se há monitor externo ativo
+    EXTERNAL_ACTIVE=$(swaymsg -t get_outputs | grep -E '"name":\s*"(DP-1|HDMI-A-1)"' | grep -v 'false')
+
+    if [ -z "$EXTERNAL_ACTIVE" ]; then
+        # Monitor externo desconectado: realoca janelas dos workspaces 6-10 para 1-5
+        for i in 6 7 8 9 10; do
+            TARGET=$((i - 5))
+            # Move todos os containers do workspace $i para o workspace $TARGET
+            swaymsg "[workspace=$i] move container to workspace $TARGET" >/dev/null 2>&1
+        done
+        # Garante foco em um workspace da faixa 1-5
+        CURRENT=$(swaymsg -t get_workspaces | awk '/"focused": true/ {print last} {last=$0}' | grep -o '[0-9]\+')
+        if [ -n "$CURRENT" ] && [ "$CURRENT" -gt 5 ]; then
+            swaymsg workspace number 1 >/dev/null 2>&1
+        fi
+    fi
+done
