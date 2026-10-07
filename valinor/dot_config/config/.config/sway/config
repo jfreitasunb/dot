@@ -42,7 +42,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term alacritty 
+set $term wezterm
 
 
 set $menu wofi --show
@@ -85,8 +85,9 @@ output HDMI-A-1 {
    scale 1
 }
 
+exec_always ~/.bin/sway-workspace-watcher
 
-#exec /home/jfreitas/.bin/stacki3
+exec /home/jfreitas/.bin/stacki3
 
 exec dunst -conf ~/.config/dunst/dunstrc
 

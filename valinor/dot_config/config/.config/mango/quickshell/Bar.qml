@@ -10,6 +10,9 @@ PanelWindow {
     property var modelData
     screen: modelData
 
+    // Verifica explicitamente se o nome da tela é eDP-1
+    readonly property bool isPrimary: root.screen && root.screen.name === "eDP-1"
+
     anchors {
         top: true
         left: true
@@ -55,7 +58,15 @@ PanelWindow {
             spacing: 8
 
             Launcher {}
-            Tags {}
+            
+            // Instancia as Tags passando a divisão correta de monitores baseada no nome
+            Tags {
+                // eDP-1 mostra da tag 1 a 5 (offset 0)
+                // Monitores externos (DP-1, HDMI-A-1) mostram da tag 6 a 10 (offset 5)
+                startIndex: root.isPrimary ? 0 : 5
+                numTags: 5
+            }
+            
             LayoutButton { id: layoutBtn }
         }
 

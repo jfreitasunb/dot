@@ -1,8 +1,11 @@
 import QtQuick
 
-// 12 bspwm desktops: focused = wide accent pill, occupied = numbered cell,
-// empty = small dot. Widths and colors animate on every report line.
+// Split desktops: displays a subset of tags based on startIndex and numTags.
+// Widths and colors animate on every report line.
 Item {
+    property int startIndex: 0
+    property int numTags: 5
+
     implicitWidth: tagRow.implicitWidth
     implicitHeight: Math.round(22 * Theme.barScale)
 
@@ -16,16 +19,20 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
 
         Repeater {
-            model: Wm.tagCount
+            model: numTags
 
             Rectangle {
                 id: tag
                 required property int index
-                readonly property bool selected: (Wm.seltags & (1 << index)) !== 0
-                readonly property bool occupied: (Wm.occtags & (1 << index)) !== 0
-                readonly property bool urgent: (Wm.urgtags & (1 << index)) !== 0
+                
+                // Mapeia o índice local do Repeater (0 a 4) para o índice real do Wm (ex: 0 a 4 ou 5 a 9)
+                readonly property int realIndex: index + startIndex
+                
+                readonly property bool selected: (Wm.seltags & (1 << realIndex)) !== 0
+                readonly property bool occupied: (Wm.occtags & (1 << realIndex)) !== 0
+                readonly property bool urgent: (Wm.urgtags & (1 << realIndex)) !== 0
 
-                width: Math.round((selected ? 30 : occupied ? 22 : 12) * Theme.barScale)
+                width: Math.round((selected ? 30 : 22) * Theme.barScale)
                 height: Math.round(22 * Theme.barScale)
                 radius: Math.round(7 * Theme.barScale)
                 anchors.verticalCenter: parent.verticalCenter
@@ -47,24 +54,16 @@ Item {
 
                 Text {
                     anchors.centerIn: parent
-                    visible: tag.occupied || tag.selected
-                    text: tag.index + 1
+                    // O texto exibe o índice real da tag + 1 (ex: 1 a 5 ou 6 a 10)
+                    text: tag.realIndex + 1
                     color: tag.urgent ? Theme.bg
                          : tag.selected ? Theme.selfg
-                         : Qt.alpha(Theme.fg, 0.85)
+                         : tag.occupied ? Qt.alpha(Theme.fg, 0.85)
+                         : Qt.alpha(Theme.fg, 0.4)
                     font.family: Theme.fontFamily
                     font.pixelSize: Math.round(12 * Theme.barScale)
                     font.bold: tag.selected
                     Behavior on color { ColorAnimation { duration: 180 } }
-                }
-
-                Rectangle {
-                    visible: !tag.occupied && !tag.selected
-                    anchors.centerIn: parent
-                    width: Math.round(5 * Theme.barScale)
-                    height: width
-                    radius: width / 2
-                    color: Qt.alpha(Theme.fg, 0.25)
                 }
 
                 MouseArea {
@@ -72,9 +71,9 @@ Item {
                     acceptedButtons: Qt.LeftButton | Qt.MiddleButton
                     onClicked: m => {
                         if (m.button === Qt.MiddleButton)
-                            Wm.sendToTag(tag.index)
+                            Wm.sendToTag(tag.realIndex)
                         else
-                            Wm.viewTag(tag.index)
+                            Wm.viewTag(tag.realIndex)
                     }
                 }
             }

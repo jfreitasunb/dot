@@ -39,7 +39,10 @@ PanelWindow {
 
     onVisibleChanged: {
         if (visible && anchorItem) {
-            const p = anchorItem.mapToGlobal(0, 0)
+            // CORREÇÃO: Utiliza mapToItem em vez de mapToGlobal para que os cálculos
+            // de coordenadas se mantenham relativos à tela local ao invés do layout
+            // completo do compositor Wayland.
+            const p = anchorItem.mapToItem(null, 0, 0)
             ax = p.x
             ay = p.y
             inner.forceActiveFocus()

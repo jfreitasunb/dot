@@ -1,16 +1,16 @@
-/* Generated from wallpaper: 0002.jpg */
+/* Generated from wallpaper: 0007.jpg */
 
 * {
-    bg:          #1a1919;
-    fg:          #d2c9bc;
-    accent:      #69a4d3;
-    accent-2:    #d1c794;
-    border:      #69a4d3;
+    bg:          #161f14;
+    fg:          #d2cbbc;
+    accent:      #a8cee6;
+    accent-2:    #b5d194;
+    border:      #a8cee6;
     urgent:      #cb8a86;
-    selected-fg: #d2c9bc;
-    entry-fg:    #d1c794;
-    prompt-fg:   #69a4d3;
-    header:      #d1c794;
+    selected-fg: #d2cbbc;
+    entry-fg:    #b5d194;
+    prompt-fg:   #a8cee6;
+    header:      #b5d194;
 
     background-color: @bg;
 }

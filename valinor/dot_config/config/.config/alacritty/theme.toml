@@ -1,33 +1,33 @@
-# Gerado dinamicamente a partir de Debian_Wallpaper.png
+# Gerado dinamicamente a partir de 0229.jpg
 
 [colors.primary]
-background = "#171717"
-foreground = "#d2c7bc"
+background = "#202d37"
+foreground = "#d2cbbc"
 
 [colors.cursor]
-text = "#171717"
-cursor = "#d2c7bc"
+text = "#202d37"
+cursor = "#d2cbbc"
 
 [colors.selection]
-text = "#d2c7bc"
-background = "#262626"
+text = "#d2cbbc"
+background = "#2b3d4a"
 
 [colors.normal]
-black   = "#262626"
-red     = "#e72929"
-green   = "#6ecf6e"
-yellow  = "#cfc66e"
-blue    = "#6e86cf"
-magenta = "#cf6ecf"
-cyan    = "#6ecfcf"
-white   = "#c2b7ad"
+black   = "#2b3d4a"
+red     = "#cb8a86"
+green   = "#86cb86"
+yellow  = "#cbc586"
+blue    = "#86a6cb"
+magenta = "#cb86cb"
+cyan    = "#86c0cb"
+white   = "#c2bcad"
 
 [colors.bright]
-black   = "#6b5a57"
-red     = "#eb4e4d"
-green   = "#8cd98c"
-yellow  = "#d9d28c"
-blue    = "#8c9fd9"
-magenta = "#d98cd9"
-cyan    = "#8cd9d9"
-white   = "#e2dbd5"
+black   = "#57626b"
+red     = "#d9a5a1"
+green   = "#a1d9a1"
+yellow  = "#d9d4a1"
+blue    = "#a1bbd9"
+magenta = "#d9a1d9"
+cyan    = "#a1d0d9"
+white   = "#e2ded5"
