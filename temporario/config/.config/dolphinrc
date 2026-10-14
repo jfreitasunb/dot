@@ -8,6 +8,7 @@ ShowSortBy=false
 
 [General]
 RememberOpenedTabs=false
+ShowStatusBar=FullWidth
 Version=202
 ViewPropsTimestamp=2026,10,5,16,12,0.084
 
