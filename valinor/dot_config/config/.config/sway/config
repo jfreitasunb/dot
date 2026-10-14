@@ -87,7 +87,7 @@ output HDMI-A-1 {
 
 exec_always ~/.bin/sway-workspace-watcher
 
-exec /home/jfreitas/.bin/stacki3
+#exec /home/jfreitas/.bin/stacki3
 
 exec dunst -conf ~/.config/dunst/dunstrc
 
