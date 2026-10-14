@@ -60,6 +60,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
+PreloadWeight=55
 SystrayContainmentId=8
 
 [Containments][2][General]
@@ -98,6 +99,9 @@ plugin=org.kde.plasma.keyboardlayout
 [Containments][8][Applets][11]
 immutability=1
 plugin=org.kde.plasma.volume
+
+[Containments][8][Applets][11][Configuration]
+PreloadWeight=55
 
 [Containments][8][Applets][11][Configuration][General]
 migrated=true
