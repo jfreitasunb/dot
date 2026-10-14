@@ -3,6 +3,9 @@ Id_1=cb06735c-9fda-44f5-b90c-a975c7535d2a
 Number=1
 Rows=1
 
+[Plugins]
+blurEnabled=true
+
 [Tiling]
 padding=4
 
