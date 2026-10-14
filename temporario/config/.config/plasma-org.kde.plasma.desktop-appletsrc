@@ -67,6 +67,7 @@ AppletOrder=3;4;5;6;7;21;22
 
 [Containments][23]
 ItemGeometries-1280x800=
+ItemGeometries-1920x1200=
 ItemGeometriesHorizontal=
 activityId=bed9e763-3baf-4953-a87b-92f45a2c6cc9
 formfactor=0
