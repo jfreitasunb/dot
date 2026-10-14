@@ -1,4 +1,5 @@
 [General]
+RememberOpenedTabs=false
 Version=202
 ViewPropsTimestamp=2026,10,5,16,12,0.084
 
@@ -8,3 +9,6 @@ Places Icons Static Size=22
 
 [MainWindow]
 MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=fontthumbnail,exrthumbnail,ffmpegthumbs,webarchivethumbnail,imagethumbnail,opendocumentthumbnail,rawthumbnail,audiothumbnail,djvuthumbnail,windowsexethumbnail,cursorthumbnail,svgthumbnail,jpegthumbnail,comicbookthumbnail,blenderthumbnail,ebookthumbnail,gsthumbnail,directorythumbnail,mobithumbnail,appimagethumbnail,kraorathumbnail,windowsimagethumbnail,gdk-pixbuf-thumbnailer,gsf-office
