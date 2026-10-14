@@ -28,6 +28,17 @@ fontWeight=400
 immutability=1
 plugin=org.kde.plasma.showdesktop
 
+[Containments][2][Applets][29]
+immutability=1
+plugin=com.himdek.kde.plasma.overview
+
+[Containments][2][Applets][29][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][2][Applets][29][Shortcuts]
+global=Meta
+
 [Containments][2][Applets][3]
 immutability=1
 plugin=org.kde.plasma.kickoff
@@ -39,6 +50,17 @@ popupWidth=629
 
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
+
+[Containments][2][Applets][30]
+immutability=1
+plugin=org.kde.plasma.quicklaunch
+
+[Containments][2][Applets][30][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][2][Applets][30][Configuration][General]
+launcherUrls=file:///usr/share/applications/org.kde.spectacle.desktop
 
 [Containments][2][Applets][4]
 immutability=1
