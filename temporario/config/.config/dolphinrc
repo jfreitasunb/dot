@@ -1,3 +1,11 @@
+MenuBar=Disabled
+
+[ContextMenu]
+ShowCopyLocation=false
+ShowCopyToOtherSplitView=false
+ShowMoveToOtherSplitView=false
+ShowSortBy=false
+
 [General]
 RememberOpenedTabs=false
 Version=202
