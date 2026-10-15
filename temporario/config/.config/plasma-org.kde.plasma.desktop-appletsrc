@@ -28,17 +28,6 @@ fontWeight=400
 immutability=1
 plugin=org.kde.plasma.showdesktop
 
-[Containments][2][Applets][29]
-immutability=1
-plugin=com.himdek.kde.plasma.overview
-
-[Containments][2][Applets][29][Configuration][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][2][Applets][29][Shortcuts]
-global=Meta
-
 [Containments][2][Applets][3]
 immutability=1
 plugin=org.kde.plasma.kickoff
@@ -48,8 +37,14 @@ PreloadWeight=100
 popupHeight=508
 popupWidth=629
 
+[Containments][2][Applets][3][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
+icon=emblem-debian
+systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
 [Containments][2][Applets][30]
 immutability=1
@@ -62,6 +57,17 @@ DialogWidth=720
 [Containments][2][Applets][30][Configuration][General]
 launcherUrls=file:///usr/share/applications/org.kde.spectacle.desktop
 
+[Containments][2][Applets][32]
+immutability=1
+plugin=com.himdek.kde.plasma.overview
+
+[Containments][2][Applets][32][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][2][Applets][32][Shortcuts]
+global=Meta
+
 [Containments][2][Applets][4]
 immutability=1
 plugin=org.kde.plasma.pager
@@ -69,6 +75,10 @@ plugin=org.kde.plasma.pager
 [Containments][2][Applets][5]
 immutability=1
 plugin=org.kde.plasma.icontasks
+
+[Containments][2][Applets][5][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][2][Applets][5][Configuration][General]
 launchers=applications:systemsettings.desktop,preferred://filemanager
@@ -86,13 +96,12 @@ PreloadWeight=55
 SystrayContainmentId=8
 
 [Containments][2][General]
-AppletOrder=3;4;5;6;7;21;22
+AppletOrder=3;32;30;4;5;6;7;21;22
 
-[Containments][23]
-ItemGeometries-1280x800=
+[Containments][31]
 ItemGeometries-1920x1200=
 ItemGeometriesHorizontal=
-activityId=bed9e763-3baf-4953-a87b-92f45a2c6cc9
+activityId=1c7edd7a-2d15-4c5f-b72c-e3376c0dff60
 formfactor=0
 immutability=1
 lastScreen=0
@@ -100,8 +109,8 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
-[Containments][23][General]
-positions={"1280x800":[]}
+[Containments][31][General]
+positions={"1920x1200":[]}
 
 [Containments][8]
 activityId=

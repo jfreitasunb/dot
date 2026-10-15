@@ -1,5 +1,6 @@
 [ActivityManager]
 _k_friendly_name=Gerenciador de atividades
+switch-to-activity-1c7edd7a-2d15-4c5f-b72c-e3376c0dff60=none,none,Alternar para a atividade "Padrão"
 switch-to-activity-bed9e763-3baf-4953-a87b-92f45a2c6cc9=none,none,Alternar para a atividade "Padrão"
 switch-to-activity-f279663e-e92a-4c78-bbdc-6d01632b1dbb=none,none,Alternar para a atividade "Padrão"
 
@@ -31,14 +32,14 @@ mute=Volume Mute,Volume Mute,Sem áudio
 
 [ksmserver]
 Halt Without Confirmation=none,,Desligar sem confirmação
-Lock Session=Meta+L\tScreensaver,Meta+L\tScreensaver,Lock Session
+Lock Session=Meta+L\tScreensaver,Meta+L\tScreensaver,Bloquear sessão
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Mostrar tela para encerrar sessão
 Log Out Without Confirmation=none,,Encerrar sessão sem confirmação
 LogOut=none,,Encerrar sessão
 Reboot=none,,Reiniciar
 Reboot Without Confirmation=none,,Reiniciar sem confirmação
 Shut Down=none,,Desligar
-_k_friendly_name=Session Management
+_k_friendly_name=Gerenciamento de sessões
 
 [kwin]
 Activate Window Demanding Attention=Meta+Ctrl+A,Meta+Ctrl+A,Ativar janela que demanda atenção
@@ -46,10 +47,6 @@ Cycle Overview=none,none,Alternar entre visão geral e visualização em grade
 Cycle Overview Opposite=none,none,Alternar entre visualização em grade e visão geral
 Decrease Opacity=none,,Diminuir a opacidade da janela ativa em 5%
 Edit Tiles=Meta+T,Meta+T,Alternar Editor de Blocos
-Expose=Ctrl+F9,Ctrl+F9,Alternar as janelas presentes (área de trabalho atual)
-ExposeAll=Ctrl+F10\tLaunch (C),Ctrl+F10\tLaunch (C),Alternar janelas atuais (todas as áreas de trabalho)
-ExposeClass=Ctrl+F7,Ctrl+F7,Alternar as janelas presentes (classe de janelas)
-ExposeClassCurrentDesktop=none,none,Alternar Apresentar Janelas (Classe de janela na área de trabalho atual)
 Grid View=Meta+G,Meta+G,Alternar para Visualização em Grade
 Increase Opacity=none,,Aumentar a opacidade da janela ativa em 5%
 Kill Window=Meta+Ctrl+Esc,Meta+Ctrl+Esc,Matar janela
@@ -230,7 +227,7 @@ powerProfile=Battery\tMeta+B,Battery\tMeta+B,Trocar perfil de energia
 
 [plasmashell]
 _k_friendly_name=plasmashell
-activate application launcher=\tAlt+F1,Meta\tAlt+F1,Ativar o lançador de aplicativos
+activate application launcher=Alt+F1,Meta\tAlt+F1,Ativar o lançador de aplicativos
 activate task manager entry 1=Meta+1,Meta+1,Ativar entrada 1 do gerenciador de tarefas
 activate task manager entry 10=none,,Ativar entrada 10 do gerenciador de tarefas
 activate task manager entry 2=Meta+2,Meta+2,Ativar entrada 2 do gerenciador de tarefas
@@ -241,15 +238,13 @@ activate task manager entry 6=Meta+6,Meta+6,Ativar entrada 6 do gerenciador de t
 activate task manager entry 7=Meta+7,Meta+7,Ativar entrada 7 do gerenciador de tarefas
 activate task manager entry 8=Meta+8,Meta+8,Ativar entrada 8 do gerenciador de tarefas
 activate task manager entry 9=Meta+9,Meta+9,Ativar entrada 9 do gerenciador de tarefas
-activate widget 29=Meta,none,Ativar o widget Overview
+activate widget 32=Meta,none,Ativar o widget Overview
 clear-history=none,,Limpar histórico da área de transferência
 clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Menu de contexto de ação automática
 cycle-panels=Meta+Alt+P,Meta+Alt+P,Mover o foco do teclado entre os painéis
 cycleNextAction=none,,Próximo item do histórico
 cyclePrevAction=none,,Item anterior do histórico
 manage activities=Meta+Q,Meta+Q,Mostrar seletor de atividade
-next activity=Meta+A,none,Percorrer as atividades
-previous activity=Meta+Shift+A,none,Percorrer as atividades (inverso)
 repeat_action=none,,Invocar ação manualmente sobre a área de transferência atual
 show dashboard=Ctrl+F12,Ctrl+F12,Mostrar a Área de Trabalho
 show-barcode=none,,Mostrar código de barras…
