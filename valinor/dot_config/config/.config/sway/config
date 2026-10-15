@@ -1,7 +1,7 @@
 include colors
 
 # Set inner/outer gaps
-gaps inner 7
+gaps inner 4
 gaps outer 4
 
 # Hide titlebar on windows: 
@@ -48,6 +48,10 @@ set $term wezterm
 set $menu wofi --show
 
 include /etc/sway/config-vars.d/*
+
+# Inicia os componentes do KDE Keyring
+#exec /usr/lib/pam_kwallet_init
+#exec kwalletd6
 
 # Inicializa os componentes do GNOME Keyring
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
