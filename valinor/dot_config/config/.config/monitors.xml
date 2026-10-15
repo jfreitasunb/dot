@@ -141,4 +141,44 @@
       </monitor>
     </logicalmonitor>
   </configuration>
+  <configuration>
+    <layoutmode>logical</layoutmode>
+    <logicalmonitor>
+      <x>0</x>
+      <y>0</y>
+      <scale>1</scale>
+      <primary>yes</primary>
+      <monitor>
+        <monitorspec>
+          <connector>eDP-1</connector>
+          <vendor>BOE</vendor>
+          <product>0x0a35</product>
+          <serial>0x00000000</serial>
+        </monitorspec>
+        <mode>
+          <width>1920</width>
+          <height>1200</height>
+          <rate>60.002</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+    <logicalmonitor>
+      <x>1920</x>
+      <y>0</y>
+      <scale>1</scale>
+      <monitor>
+        <monitorspec>
+          <connector>HDMI-1</connector>
+          <vendor>HJW</vendor>
+          <product>MACROSILICON</product>
+          <serial>0x0002e842</serial>
+        </monitorspec>
+        <mode>
+          <width>1280</width>
+          <height>768</height>
+          <rate>59.870</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+  </configuration>
 </monitors>
