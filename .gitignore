@@ -1449,3 +1449,12 @@ temporario/config/.config/ktrashrc
 temporario/config/.config/session/dolphin_dolphin_dolphin
 
 temporario/config/.config/libaccounts-glib
+/valinor/dot_config/config/.config/gtk-3.0
+/valinor/dot_config/config/.config/gtk-4.0
+valinor/dot_config/config/.config/gtkrc
+valinor/dot_config/config/.config/gtkrc-2.0
+/valinor/dot_config/config/.config/kde.org
+valinor/dot_config/config/.config/KDE/UserFeedback.org.kde.plasma-welcome.conf
+/valinor/dot_config/config/.config/libaccounts-glib
+valinor/dot_config/config/.config/Trolltech.conf
+/valinor/dot_config/config/.config/xsettingsd
