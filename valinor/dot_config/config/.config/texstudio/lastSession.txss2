@@ -1,61 +1,21 @@
 {
     "InternalPDFViewer": {
-        "Embedded": false,
-        "File": ""
+        "Embedded": true,
+        "File": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/geometria_analitica.pdf"
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-2/lista_2.tex",
+        "CurrentFile": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/03_circunferencias-e-conicas.tex",
         "FileVersion": 1,
         "Files": [
             {
                 "Col": 0,
                 "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/configuracoes_listas/pacotes.tex",
-                "FirstLine": 0,
+                "FileName": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/03_circunferencias-e-conicas.tex",
+                "FirstLine": 1483,
                 "FoldedLines": "",
-                "Line": 21
-            },
-            {
-                "Col": 0,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/configuracoes_listas/variaveis_listas.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 0
-            },
-            {
-                "Col": 0,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/configuracoes_listas/comandos_personalizados.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 0
-            },
-            {
-                "Col": 0,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/configuracoes_listas/configuracoes_paginas.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 47
-            },
-            {
-                "Col": 0,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/configuracoes_listas/cabecalho_listas.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 0
-            },
-            {
-                "Col": 0,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/listas/modulo-2/lista_2.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 0
+                "Line": 1506
             }
         ],
         "MasterFile": "",

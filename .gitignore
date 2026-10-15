@@ -1458,3 +1458,13 @@ valinor/dot_config/config/.config/KDE/UserFeedback.org.kde.plasma-welcome.conf
 /valinor/dot_config/config/.config/libaccounts-glib
 valinor/dot_config/config/.config/Trolltech.conf
 /valinor/dot_config/config/.config/xsettingsd
+valinor/dot_config/config/.config/PlasmaDiscoverUpdates
+valinor/dot_config/config/.config/plasma-welcomerc
+valinor/dot_config/config/.config/kactivitymanagerd-statsrc
+valinor/dot_config/config/.config/kactivitymanagerdrc
+valinor/dot_config/config/.config/kconf_updaterc
+valinor/dot_config/config/.config/kded5rc
+/valinor/dot_config/config/.config/kdedefaults
+valinor/dot_config/config/.config/ktimezonedrc
+valinor/dot_config/config/.config/kwinoutputconfig.json
+valinor/dot_config/config/.config/QtProject.conf
