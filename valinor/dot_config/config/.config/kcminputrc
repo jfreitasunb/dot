@@ -1,0 +1,7 @@
+[Libinput][1267][12693][ELAN0676:00 04F3:3195 Mouse]
+NaturalScroll=true
+PointerAcceleration=0.400
+
+[Libinput][1267][12693][ELAN0676:00 04F3:3195 Touchpad]
+NaturalScroll=true
+PointerAcceleration=0.400
