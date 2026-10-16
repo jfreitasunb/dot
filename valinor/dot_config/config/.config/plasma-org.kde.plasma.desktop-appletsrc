@@ -5,6 +5,7 @@ RightButton;NoModifier=org.kde.contextmenu
 RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
+ItemGeometries-1745x1091=
 ItemGeometriesHorizontal=
 activityId=86b25e86-7c27-4df6-be56-b9ead8ebe0b4
 formfactor=0
@@ -75,11 +76,23 @@ SystrayContainmentId=8
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;21;22
 
+[Containments][27]
+activityId=86b25e86-7c27-4df6-be56-b9ead8ebe0b4
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][27][General]
+positions={"1422x800":[]}
+
 [Containments][8]
 activityId=
 formfactor=2
 immutability=1
-lastScreen=-1
+lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
 popupHeight=432
@@ -148,6 +161,10 @@ plugin=org.kde.plasma.networkmanagement
 [Containments][8][Applets][26]
 immutability=1
 plugin=org.kde.plasma.bluetooth
+
+[Containments][8][Applets][28]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
 
 [Containments][8][Applets][9]
 immutability=1
