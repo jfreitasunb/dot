@@ -2,6 +2,9 @@
 2 screens: Height=584
 2 screens: Width=826
 
+[PlasmaTransientsConfig]
+PreloadWeight=92
+
 [PlasmaViews][Panel 2]
 floating=1
 
