@@ -59,8 +59,14 @@ PreloadWeight=100
 popupHeight=508
 popupWidth=629
 
+[Containments][2][Applets][3][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
+icon=emblem-debian
+systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
 [Containments][2][Applets][4]
 immutability=1
@@ -104,6 +110,7 @@ DialogWidth=720
 positions={"1422x800":[]}
 
 [Containments][27][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/flyingkonqui.png
 SlideInterval=7200
 SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
