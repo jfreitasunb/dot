@@ -62,6 +62,9 @@ plugin=org.kde.plasma.pager
 immutability=1
 plugin=org.kde.plasma.icontasks
 
+[Containments][2][Applets][5][Configuration][General]
+launchers=applications:systemsettings.desktop,preferred://filemanager,preferred://browser
+
 [Containments][2][Applets][6]
 immutability=1
 plugin=org.kde.plasma.marginsseparator
