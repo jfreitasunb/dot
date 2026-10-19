@@ -1469,3 +1469,8 @@ valinor/dot_config/config/.config/ktimezonedrc
 valinor/dot_config/config/.config/kwinoutputconfig.json
 valinor/dot_config/config/.config/QtProject.conf
 valinor/dot_config/config/.config/konsolesshconfig
+valinor/dot_config/config/.config/device_automounter_kcmrc
+valinor/dot_config/config/.config/partitionmanagerrc
+valinor/dot_config/config/.config/vlcrc
+valinor/dot_config/config/.config/trashrc
+valinor/dot_config/config/.config/KDE
