@@ -9,7 +9,7 @@
    <GroupState-RemovableDevices-IsHidden>false</GroupState-RemovableDevices-IsHidden>
    <GroupState-Tags-IsHidden>false</GroupState-Tags-IsHidden>
    <withRecentlyUsed>true</withRecentlyUsed>
-   <GroupState-RecentlySaved-IsHidden>false</GroupState-RecentlySaved-IsHidden>
+   <GroupState-RecentlySaved-IsHidden>true</GroupState-RecentlySaved-IsHidden>
    <withBaloo>true</withBaloo>
    <GroupState-SearchFor-IsHidden>false</GroupState-SearchFor-IsHidden>
   </metadata>
@@ -98,6 +98,17 @@
    </metadata>
   </info>
  </bookmark>
+ <bookmark href="file:///windows/Users/jfreitas">
+  <title>jfreitas</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="inode-directory"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1792184908/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
  <bookmark href="remote:/">
   <title>Network</title>
   <info>
@@ -146,4 +157,34 @@
    </metadata>
   </info>
  </bookmark>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/nvme0n1p8</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>9eaca246-54ff-41b5-aa9f-82d61af6b209</uuid>
+    <IsHidden>true</IsHidden>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/nvme0n1p7</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>9b5c3858-15f1-4536-8e08-f6d141fa36ec</uuid>
+    <IsHidden>true</IsHidden>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/nvme0n1p3</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>8e90d54190d53107</uuid>
+    <IsHidden>true</IsHidden>
+   </metadata>
+  </info>
+ </separator>
 </xbel>
