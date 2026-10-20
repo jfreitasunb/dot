@@ -6,3 +6,9 @@
 [user]
 	email = 65927652+jfreitasunb@users.noreply.github.com
 	name = José Antônio Oliveira de Freitas
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
