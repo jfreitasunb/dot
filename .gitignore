@@ -1480,3 +1480,81 @@ valinor/dot_config/config/.config/QtProject.conf
 valinor/dot_config/config/.config/kiorc
 valinor/dot_config/config/.config/gh/hosts.yml
 valinor/dot_config/config/.config/gh/config.yml
+/imlandris/dot_config/config/.config/BraveSoftware
+/imlandris/dot_config/config/.config/evolution
+imlandris/dot_config/config/.config/fragments/dht.dat
+imlandris/dot_config/config/.config/fragments/queue.json
+imlandris/dot_config/config/.config/fragments/connections.conf
+imlandris/dot_config/config/.config/fragments/stats.json
+/imlandris/dot_config/config/.config/gh
+/imlandris/dot_config/config/.config/ibus
+/imlandris/dot_config/config/.config/Insync/data
+/imlandris/dot_config/config/.config/Insync/live
+imlandris/dot_config/config/.config/Insync/logs.db
+imlandris/dot_config/config/.config/Insync/out.txt
+imlandris/dot_config/config/.config/Insync/settings.db
+imlandris/dot_config/config/.config/Insync/settings.db-wal
+/imlandris/dot_config/config/.config/libreoffice
+/imlandris/dot_config/config/.config/rstudio/Cache
+/imlandris/dot_config/config/.config/rstudio/Code Cache
+/imlandris/dot_config/config/.config/texstudio/cache
+/imlandris/dot_config/config/.config/vlc
+imlandris/dot_config/config/.config/vlcrc
+/imlandris/dot_config/config/.config/VSCodium/Cache
+/imlandris/dot_config/config/.config/VSCodium/CachedData
+/imlandris/dot_config/config/.config/VSCodium/CachedProfilesData
+/imlandris/dot_config/config/.config/VSCodium/Code Cache
+/imlandris/dot_config/config/.config/VSCodium/Crashpad
+/imlandris/dot_config/config/.config/VSCodium/DawnGraphiteCache
+/imlandris/dot_config/config/.config/VSCodium/DawnWebGPUCache
+imlandris/dot_config/config/.config/VSCodium/DIPS
+/imlandris/dot_config/config/.config/VSCodium/GPUCache
+imlandris/dot_config/config/.config/VSCodium/Local State
+/imlandris/dot_config/config/.config/VSCodium/Local Storage
+imlandris/dot_config/config/.config/VSCodium/Network Persistent State
+imlandris/dot_config/config/.config/VSCodium/machineid
+/imlandris/dot_config/config/.config/VSCodium/Service Worker
+/imlandris/dot_config/config/.config/VSCodium/Session Storage
+/imlandris/dot_config/config/.config/VSCodium/Shared Dictionary
+imlandris/dot_config/config/.config/VSCodium/Trust Tokens
+imlandris/dot_config/config/.config/VSCodium/TransportSecurity
+imlandris/dot_config/config/.config/VSCodium/SharedStorage
+/imlandris/dot_config/config/.config/VSCodium/User
+/imlandris/dot_config/config/.config/VSCodium/WebStorage
+/imlandris/dot_config/config/.config/texstudio/completion
+imlandris/dot_config/config/.config/texstudio/lastSession.txss2
+imlandris/dot_config/config/.config/texstudio/packageCache.dat
+imlandris/dot_config/config/.config/texstudio/wordCount.usage
+imlandris/dot_config/config/.config/VSCodium/Trust Tokens-journal
+imlandris/dot_config/config/.config/.gsd-keyboard.settings-ported
+imlandris/dot_config/config/.config/atuin/atuin-receipt.json
+imlandris/dot_config/config/.config/atuin/config.toml
+imlandris/dot_config/config/.config/dconf/user
+imlandris/dot_config/config/.config/fragments/bandwidth-groups.json
+imlandris/dot_config/config/.config/gnome-mosaic/config.json
+imlandris/dot_config/config/.config/fragments/settings.json
+imlandris/dot_config/config/.config/monitors.xml~
+imlandris/dot_config/config/.config/nvim/lazy-lock.json
+imlandris/dot_config/config/.config/onedrive/.config.backup
+imlandris/dot_config/config/.config/onedrive/.config.hash
+imlandris/dot_config/config/.config/onedrive/refresh_token
+/imlandris/dot_config/config/.config/pulse
+imlandris/dot_config/config/.config/rofi/config.rasi-BKP
+/imlandris/dot_config/config/.config/rstudio/DawnGraphiteCache
+/imlandris/dot_config/config/.config/rstudio/DawnWebGPUCache
+imlandris/dot_config/config/.config/rstudio/DIPS
+/imlandris/dot_config/config/.config/rstudio/GPUCache
+imlandris/dot_config/config/.config/rstudio/Local State
+/imlandris/dot_config/config/.config/rstudio/Local Storage
+imlandris/dot_config/config/.config/rstudio/Network Persistent State
+imlandris/dot_config/config/.config/rstudio/rstudio-prefs.json
+/imlandris/dot_config/config/.config/rstudio/Session Storage
+/imlandris/dot_config/config/.config/rstudio/Shared Dictionary
+imlandris/dot_config/config/.config/rstudio/Trust Tokens
+imlandris/dot_config/config/.config/rstudio/Trust Tokens-journal
+imlandris/dot_config/config/.config/rstudio/whats-new-state.json
+/imlandris/dot_config/config/.config/sublime-text/Installed Packages
+/imlandris/dot_config/config/.config/sublime-text/Lib
+imlandris/dot_config/config/.config/sublime-text/Packages/User/Package Control.user-ca-bundle
+imlandris/dot_config/config/.config/sublime-text/Local/Session.sublime_session
+imlandris/dot_config/config/.config/VSCodium/Dictionaries/pt-BR-3-0.bdic
