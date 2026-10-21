@@ -1,0 +1,19 @@
+#!/usr/bin/bash -x
+
+killall dropbox
+
+dropbox start &
+
+insync start --no-daemon&
+
+nm-applet &
+
+#~/.bin/notificar_musica.sh &
+
+#systemctl --user start gnome-keyring-daemon.service &
+
+#gnome-keyring-daemon --start --components="pkcs11,secrets,ssh" &
+
+awww-daemon
+
+#waybar -c /home/jfreitas/.config/waybar/config_sway.jsonc &

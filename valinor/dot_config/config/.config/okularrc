@@ -5,8 +5,13 @@ FullScreen=false
 LockSidebar=true
 ShowSidebar=true
 
+[Notification Messages]
+presentationInfo=false
+
 [Recent Files]
 File1[$e]=$HOME/GitHub/SI/modules/seminario/SI.pdf
 File2[$e]=$HOME/GitHub/SI/modules/seminario/fluxograma_secretaria.pdf
+File3[$e]=$HOME/GitHub/geometria_analitica/apresentacoes/modulo-02/01-circunferencias-e-conicas.pdf
 Name1[$e]=SI.pdf
 Name2[$e]=fluxograma_secretaria.pdf
+Name3[$e]=01-circunferencias-e-conicas.pdf

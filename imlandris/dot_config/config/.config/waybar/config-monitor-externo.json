@@ -1,0 +1,15 @@
+// Configuração da barra para o segundo monitor (HDMI-A-1)
+    {
+        "output": "HDMI-A-1",
+        "layer": "top",
+        "modules-left": ["hyprland/workspaces"],
+        "hyprland/workspaces": {
+            "format": "<span size='small' font='Font Awesome 6 Free'>{icon}</span>",
+            "on-click": "activate",
+            "sort-by-number": true,
+            //No Arch mudar para "persistent-workspaces"
+            "persistent-workspaces": {
+                "HDMI-A-1": [6, 7, 8, 9, 10],
+            }
+        },
+    }

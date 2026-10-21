@@ -53,7 +53,7 @@ include /etc/sway/config-vars.d/*
 #exec kwalletd6
 
 # Inicializa os componentes do GNOME Keyring
-#exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 
 # Exporta as variáveis necessárias para o ambiente do Sway
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP

@@ -1,0 +1,15 @@
+/* Gerado dinamicamente por wallpaper-theme */
+* {
+    bg:          #202d37;
+    fg:          #d2cbbc;
+    accent:      #e0d8ae;
+    accent-2:    #94b7d1;
+    border:      #e0d8ae;
+    urgent:      #cb8a86;
+    selected-fg: #d2cbbc;
+    entry-fg:    #94b7d1;
+    prompt-fg:   #e0d8ae;
+    header:      #94b7d1;
+
+    background-color: @bg;
+}

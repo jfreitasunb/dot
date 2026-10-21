@@ -1,0 +1,16 @@
+/* Generated from wallpaper: 0007.jpg */
+
+* {
+    bg:          #161f14;
+    fg:          #d2cbbc;
+    accent:      #a8cee6;
+    accent-2:    #b5d194;
+    border:      #a8cee6;
+    urgent:      #cb8a86;
+    selected-fg: #d2cbbc;
+    entry-fg:    #b5d194;
+    prompt-fg:   #a8cee6;
+    header:      #b5d194;
+
+    background-color: @bg;
+}

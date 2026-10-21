@@ -5,7 +5,6 @@ RightButton;NoModifier=org.kde.contextmenu
 RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
-ItemGeometries-1745x1091=
 ItemGeometriesHorizontal=
 activityId=86b25e86-7c27-4df6-be56-b9ead8ebe0b4
 formfactor=0
@@ -13,20 +12,10 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.slideshow
-
-[Containments][1][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
+wallpaperplugin=org.kde.image
 
 [Containments][1][General]
 positions={"1745x1091":[]}
-
-[Containments][1][Wallpaper][org.kde.slideshow][General]
-FillMode=0
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/Beach_by_Samuel_Scrimshaw.jpg
-SlideInterval=7200
-SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
 
 [Containments][2]
 activityId=
@@ -61,14 +50,8 @@ PreloadWeight=100
 popupHeight=508
 popupWidth=629
 
-[Containments][2][Applets][3][Configuration][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
-icon=emblem-debian
-systemFavorites=suspend\\,hibernate\\,reboot\\,shutdown
 
 [Containments][2][Applets][4]
 immutability=1
@@ -77,9 +60,6 @@ plugin=org.kde.plasma.pager
 [Containments][2][Applets][5]
 immutability=1
 plugin=org.kde.plasma.icontasks
-
-[Containments][2][Applets][5][Configuration][General]
-launchers=applications:systemsettings.desktop,preferred://filemanager,applications:brave-browser.desktop,applications:sublime_text.desktop,applications:texstudio.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -90,39 +70,16 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=75
 SystrayContainmentId=8
 
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;21;22
 
-[Containments][27]
-activityId=86b25e86-7c27-4df6-be56-b9ead8ebe0b4
-formfactor=0
-immutability=1
-lastScreen=1
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.slideshow
-
-[Containments][27][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][27][General]
-positions={"1422x800":[],"1477x831":[]}
-
-[Containments][27][Wallpaper][org.kde.slideshow][General]
-FillMode=1
-Image=file:///home/jfreitas/OneDrive/Pictures/Wallpapers/0002.jpg
-SlideInterval=7200
-SlidePaths=/usr/share/wallpapers/,/home/jfreitas/OneDrive/Pictures/Wallpapers/
-
 [Containments][8]
 activityId=
 formfactor=2
 immutability=1
-lastScreen=0
+lastScreen=-1
 location=4
 plugin=org.kde.plasma.private.systemtray
 popupHeight=432
@@ -145,9 +102,6 @@ plugin=org.kde.plasma.vault
 immutability=1
 plugin=org.kde.plasma.devicenotifier
 
-[Containments][8][Applets][13][Configuration]
-PreloadWeight=100
-
 [Containments][8][Applets][14]
 immutability=1
 plugin=org.kde.plasma.manage-inputmethod
@@ -168,9 +122,6 @@ plugin=org.kde.plasma.keyboardindicator
 immutability=1
 plugin=org.kde.plasma.notifications
 
-[Containments][8][Applets][18][Configuration]
-PreloadWeight=60
-
 [Containments][8][Applets][19]
 immutability=1
 plugin=org.kde.plasma.volume
@@ -184,17 +135,11 @@ plugin=org.kde.plasma.keyboardlayout
 
 [Containments][8][Applets][23]
 immutability=1
-plugin=org.kde.plasma.brightness
-
-[Containments][8][Applets][23][Configuration]
-PreloadWeight=18
+plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24]
 immutability=1
-plugin=org.kde.plasma.battery
-
-[Containments][8][Applets][24][Configuration]
-PreloadWeight=18
+plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][25]
 immutability=1
@@ -204,22 +149,16 @@ plugin=org.kde.plasma.networkmanagement
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
-[Containments][8][Applets][26][Configuration]
-PreloadWeight=18
-
-[Containments][8][Applets][28]
+[Containments][8][Applets][27]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
-[Containments][8][Applets][28][Configuration]
-PreloadWeight=34
+[Containments][8][Applets][27][Configuration]
+PreloadWeight=42
 
 [Containments][8][Applets][9]
 immutability=1
 plugin=org.kde.plasma.clipboard
-
-[Containments][8][Applets][9][Configuration]
-PreloadWeight=55
 
 [Containments][8][General]
 extraItems=org.kde.plasma.clipboard,org.kde.plasma.printmanager,org.kde.plasma.battery,org.kde.kscreen,org.kde.plasma.vault,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.networkmanagement,org.kde.kdeconnect,org.kde.plasma.cameraindicator,org.kde.plasma.keyboardindicator,org.kde.plasma.notifications,org.kde.kupapplet,org.kde.plasma.volume,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.keyboardlayout

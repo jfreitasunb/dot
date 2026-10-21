@@ -1,0 +1,245 @@
+#!/bin/sh
+
+# wallpaper-theme — aplica wallpaper e paleta derivada sob ~/.config/
+# Configurado para: Sway + Alacritty + wlogout + Quickshell
+#
+# Uso: wallpaper-theme <image> <8 semantic colors> <16 ansi colors>
+
+set -u
+
+[ $# -eq 25 ] || { echo "Uso: wallpaper-theme <image> <8 cores semanticas> <16 cores ansi>" >&2; exit 1; }
+
+# Raiz padrão dos arquivos de configuração
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+IMG="$1" BG="$2" ALTBG="$3" FG="$4" BORDER="$5"
+PRIMARY="$6" SECONDARY="$7" ALERT="$8" DISABLED="$9"
+shift 9  # $1..$16 tornam-se as 16 cores ANSI
+
+[ -f "$IMG" ] || { echo "Wallpaper não encontrado: $IMG" >&2; exit 1; }
+
+# Serialização com trava para prevenir execuções concorrentes
+exec 9>"${XDG_RUNTIME_DIR:-/tmp}/wallpaper-theme.lock"
+flock -w 60 9 || echo "wallpaper-theme: timeout de lock, prosseguindo sem trava" >&2
+
+# ---------------------------------------------------------
+# 1. Quickshell: ~/.config/sway/colors.ini (Theme.qml)
+# ---------------------------------------------------------
+mkdir -p "$CONFIG_DIR/sway"
+cat > "$CONFIG_DIR/sway/colors.ini" <<EOF
+[colors]
+background = $BG
+background-alt = $ALTBG
+foreground = $FG
+primary = $PRIMARY
+secondary = $SECONDARY
+alert = $ALERT
+disabled = $DISABLED
+border = $BORDER
+EOF
+
+# ---------------------------------------------------------
+# 2. Sway: ~/.config/sway/theme.conf (Bordas e Acentos)
+#    (No ~/.config/sway/config adicione: include theme.conf)
+# ---------------------------------------------------------
+cat > "$CONFIG_DIR/sway/theme.conf" <<EOF
+# Gerado dinamicamente por wallpaper-theme
+# class                 border    bground   text      indicator child_border
+client.focused          $PRIMARY  $PRIMARY  $BG       $SECONDARY $PRIMARY
+client.focused_inactive $BORDER   $BG       $FG       $BORDER   $BORDER
+client.unfocused        $BORDER   $BG       $DISABLED $BORDER   $BORDER
+client.urgent           $ALERT    $ALERT    $FG       $ALERT    $ALERT
+EOF
+
+# ---------------------------------------------------------
+# 3. Alacritty: ~/.config/alacritty/theme.toml (TOML)
+#    (No ~/.config/alacritty/alacritty.toml adicione:
+#     [general]
+#     import = ["~/.config/alacritty/theme.toml"])
+# ---------------------------------------------------------
+mkdir -p "$CONFIG_DIR/alacritty"
+cat > "$CONFIG_DIR/alacritty/theme.toml" <<EOF
+# Gerado dinamicamente a partir de $(basename "$IMG")
+
+[colors.primary]
+background = "$BG"
+foreground = "$FG"
+
+[colors.cursor]
+text = "$BG"
+cursor = "$FG"
+
+[colors.selection]
+text = "$FG"
+background = "$ALTBG"
+
+[colors.normal]
+black   = "$1"
+red     = "$2"
+green   = "$3"
+yellow  = "$4"
+blue    = "$5"
+magenta = "$6"
+cyan    = "$7"
+white   = "$8"
+
+[colors.bright]
+black   = "$9"
+red     = "${10}"
+green   = "${11}"
+yellow  = "${12}"
+blue    = "${13}"
+magenta = "${14}"
+cyan    = "${15}"
+white   = "${16}"
+EOF
+
+# ---------------------------------------------------------
+# 4. wlogout: ~/.config/wlogout/colors.css
+#    (No ~/.config/wlogout/style.css adicione: @import "colors.css";)
+# ---------------------------------------------------------
+mkdir -p "$CONFIG_DIR/wlogout"
+cat > "$CONFIG_DIR/wlogout/colors.css" <<EOF
+/* Gerado dinamicamente por wallpaper-theme */
+@define-color bg $BG;
+@define-color altbg $ALTBG;
+@define-color fg $FG;
+@define-color primary $PRIMARY;
+@define-color secondary $SECONDARY;
+@define-color alert $ALERT;
+@define-color border $BORDER;
+EOF
+
+# ---------------------------------------------------------
+# 5. Rofi: ~/.config/rofi/colors.rasi
+# ---------------------------------------------------------
+mkdir -p "$CONFIG_DIR/rofi"
+cat > "$CONFIG_DIR/rofi/colors.rasi" <<EOF
+/* Gerado dinamicamente por wallpaper-theme */
+* {
+    bg:          $BG;
+    fg:          $FG;
+    accent:      $PRIMARY;
+    accent-2:    $SECONDARY;
+    border:      $PRIMARY;
+    urgent:      $ALERT;
+    selected-fg: $FG;
+    entry-fg:    $SECONDARY;
+    prompt-fg:   $PRIMARY;
+    header:      $SECONDARY;
+
+    background-color: @bg;
+}
+EOF
+
+# ---------------------------------------------------------
+# 6. Dunst: ~/.config/dunst/dunstrc
+# ---------------------------------------------------------
+DUNSTRC="$CONFIG_DIR/dunst/dunstrc"
+if [ -f "$DUNSTRC" ]; then
+    set_dunst() { sed -i "/# THEME: dunst_$1\$/s/\"#[0-9a-fA-F]*\"/\"$2\"/" "$DUNSTRC"; }
+    set_dunst frame_global       "$PRIMARY"
+    set_dunst bg_low             "$BG"
+    set_dunst fg_low             "$DISABLED"
+    set_dunst frame_low          "$PRIMARY"
+    set_dunst highlight_low      "$SECONDARY"
+    set_dunst bg_normal          "$BG"
+    set_dunst fg_normal          "$FG"
+    set_dunst frame_normal       "$PRIMARY"
+    set_dunst highlight_normal   "$PRIMARY"
+    set_dunst bg_critical        "$BG"
+    set_dunst fg_critical        "$FG"
+    set_dunst frame_critical     "$ALERT"
+    set_dunst highlight_critical "$ALERT"
+
+    pkill -x dunst 2>/dev/null || true
+    dunst -config "$DUNSTRC" >/dev/null 2>&1 9>&- &
+fi
+
+# ---------------------------------------------------------
+# 7. Neovim: ~/.cache/wallpaper-theme/nvim-palette.lua
+# ---------------------------------------------------------
+if mkdir -p "$HOME/.cache/wallpaper-theme"; then
+    cat > "$HOME/.cache/wallpaper-theme/nvim-palette.lua" <<EOF
+-- Gerado por wallpaper-theme ($(basename "$IMG"))
+return {
+    bg = "$BG", altbg = "$ALTBG", fg = "$FG", border = "$BORDER",
+    primary = "$PRIMARY", secondary = "$SECONDARY",
+    alert = "$ALERT", disabled = "$DISABLED",
+    ansi = { "$1", "$2", "$3", "$4", "$5", "$6", "$7", "$8",
+             "$9", "${10}", "${11}", "${12}", "${13}", "${14}", "${15}", "${16}" },
+}
+EOF
+fi
+
+# ---------------------------------------------------------
+# 8. Aplicação de Wallpaper no Sway
+# ---------------------------------------------------------
+mkdir -p "$HOME/.cache/sway"
+echo "$IMG" > "$HOME/.cache/sway/current_wallpaper"
+
+if command -v awww >/dev/null 2>&1; then
+    pgrep -x awww-daemon >/dev/null 2>&1 || { awww-daemon >/dev/null 2>&1 9>&- & sleep 0.5; }
+    awww img "$IMG" --resize crop --transition-type wipe --transition-angle 30 \
+        --transition-fps 60 --transition-duration 1 >/dev/null 2>&1 || true
+elif command -v swww >/dev/null 2>&1; then
+    swww query >/dev/null 2>&1 || { swww-daemon >/dev/null 2>&1 9>&- & sleep 0.5; }
+    swww img "$IMG" --transition-type wipe --transition-angle 30 --transition-fps 60
+else
+    pkill -x swaybg 2>/dev/null || true
+    swaybg -i "$IMG" -m fill >/dev/null 2>&1 9>&- &
+fi
+
+# ---------------------------------------------------------
+# 9. GTK (Orchis-Dark-Nord recolor)
+# ---------------------------------------------------------
+GTK_SRC="$HOME/.themes/Orchis-Dark-Nord"
+GTK3_CONF="$CONFIG_DIR/gtk-3.0/settings.ini"
+
+if [ -d "$GTK_SRC" ] && grep -qi '#242932' "$GTK_SRC/gtk-3.0/gtk.css" 2>/dev/null; then
+    rgb() { h=${1#\#}; printf '%d, %d, %d' \
+        "0x$(printf %s "$h" | cut -c1-2)" \
+        "0x$(printf %s "$h" | cut -c3-4)" \
+        "0x$(printf %s "$h" | cut -c5-6)"; }
+
+    cur=$(sed -n 's/^gtk-theme-name=//p' "$GTK3_CONF" 2>/dev/null)
+    [ "$cur" = "Orchis-Wallpaper" ] && NEW="Orchis-Wallpaper-B" || NEW="Orchis-Wallpaper"
+    DST="$HOME/.themes/$NEW"
+    rm -rf "$DST"
+    cp -r "$GTK_SRC" "$DST"
+    sed -i "s/^Name=.*/Name=$NEW/" "$DST/index.theme"
+
+    find "$DST/gtk-3.0" "$DST/gtk-4.0" \( -name '*.css' -o -name '*.svg' \) \
+        -exec sed -i \
+        -e "s/#89a3c2/$PRIMARY/gI"  -e "s/rgba(137, 163, 194/rgba($(rgb "$PRIMARY")/g" \
+        -e "s/#242932/$BG/gI"       -e "s/rgba(28, 31, 38/rgba($(rgb "$BG")/g" \
+        -e "s/#1c1f26/$BG/gI"       -e "s/rgba(22, 24, 29/rgba($(rgb "$BG")/g" \
+        -e "s/#1e222a/$BG/gI" \
+        -e "s/#333a47/$ALTBG/gI" \
+        -e "s/#363c49/$BORDER/gI" \
+        -e "s/#d4878f/$ALERT/gI"    -e "s/rgba(212, 135, 143/rgba($(rgb "$ALERT")/g" \
+        -e "s/#8bd9b4/$3/gI" \
+        -e "s/#eac985/$4/gI" \
+        -e "s/#c89dbf/$6/gI" \
+        {} +
+
+    mkdir -p "$CONFIG_DIR/gtk-3.0"
+    sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$NEW/" "$GTK3_CONF" 2>/dev/null || true
+
+    if command -v gsettings >/dev/null 2>&1; then
+        gsettings set org.gnome.desktop.interface gtk-theme "$NEW" 2>/dev/null || true
+        gsettings set org.gnome.desktop.interface color-scheme prefer-dark 2>/dev/null || true
+    fi
+
+    mkdir -p "$CONFIG_DIR/gtk-4.0"
+    for f in assets gtk.css gtk-dark.css; do
+        ln -sfn "$DST/gtk-4.0/$f" "$CONFIG_DIR/gtk-4.0/$f"
+    done
+fi
+
+# ---------------------------------------------------------
+# 10. Recarregar Sway (borda e cores)
+# ---------------------------------------------------------
+swaymsg reload >/dev/null 2>&1 || true
+
+sleep 0.3
+notify-send -a "Wallpaper" -t 2500 "Wallpaper theme" "Paleta gerada a partir de $(basename "$IMG")"

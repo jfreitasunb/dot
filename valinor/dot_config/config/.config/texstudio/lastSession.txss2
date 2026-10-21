@@ -1,22 +1,14 @@
 {
     "InternalPDFViewer": {
-        "Embedded": true,
-        "File": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/geometria_analitica.pdf"
+        "Embedded": false,
+        "File": ""
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/03_circunferencias-e-conicas.tex",
+        "CurrentFile": "",
         "FileVersion": 1,
         "Files": [
-            {
-                "Col": 66,
-                "EditorGroup": 0,
-                "FileName": "/home/jfreitas/GitHub/geometria_analitica/notas_de_aula/03_circunferencias-e-conicas.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 15
-            }
         ],
         "MasterFile": "",
         "VerticalSplit": false

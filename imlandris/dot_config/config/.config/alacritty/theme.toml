@@ -1,0 +1,33 @@
+# Gerado dinamicamente a partir de 0229.jpg
+
+[colors.primary]
+background = "#202d37"
+foreground = "#d2cbbc"
+
+[colors.cursor]
+text = "#202d37"
+cursor = "#d2cbbc"
+
+[colors.selection]
+text = "#d2cbbc"
+background = "#2b3d4a"
+
+[colors.normal]
+black   = "#2b3d4a"
+red     = "#cb8a86"
+green   = "#86cb86"
+yellow  = "#cbc586"
+blue    = "#86a6cb"
+magenta = "#cb86cb"
+cyan    = "#86c0cb"
+white   = "#c2bcad"
+
+[colors.bright]
+black   = "#57626b"
+red     = "#d9a5a1"
+green   = "#a1d9a1"
+yellow  = "#d9d4a1"
+blue    = "#a1bbd9"
+magenta = "#d9a1d9"
+cyan    = "#a1d0d9"
+white   = "#e2ded5"
