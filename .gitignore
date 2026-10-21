@@ -1,3 +1,4 @@
+
 *.1ko8IF4zJpH6Z2Nd
 *.sqlite3
 /Debian/stow_configs/qtile/.config/qtile/__pycache__
@@ -7,6 +8,135 @@
 /Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/config/texstudio/cache
 /Debian/stow_configs/texstudio/.var/app/org.texstudio.TeXstudio/data
 /Rivendel/stow_configs/config/.config/GitHub Desktop
+/arda/dot_config/config/.config/BraveSoftware
+/arda/dot_config/config/.config/evolution
+/arda/dot_config/config/.config/ibus
+/arda/dot_config/config/.config/libreoffice
+/arda/dot_config/config/.config/mozilla
+/arda/dot_config/config/.config/org.gnome.Ptyxis
+/arda/dot_config/config/.config/pulse
+/arda/dot_config/config/.config/rstudio/Cache
+/arda/dot_config/config/.config/rstudio/Code Cache
+/arda/dot_config/config/.config/rstudio/Crashpad
+/arda/dot_config/config/.config/rstudio/DawnGraphiteCache
+/arda/dot_config/config/.config/rstudio/DawnWebGPUCache
+/arda/dot_config/config/.config/rstudio/GPUCache
+/arda/dot_config/config/.config/rstudio/Local Storage
+/arda/dot_config/config/.config/rstudio/Session Storage
+/arda/dot_config/config/.config/rstudio/Shared Dictionary
+/arda/dot_config/config/.config/sublime-text/Local
+/arda/dot_config/config/.config/texstudio/cache
+/arda/dot_config/config/.config/texstudio/completion
+/arda/dot_config/config/.config/texstudio/dictionaries
+/gondor/dot_config/config/.config/BraveSoftware/Brave-Browser
+/gondor/dot_config/config/.config/akonadi
+/gondor/dot_config/config/.config/fragments/resume
+/gondor/dot_config/config/.config/fragments/torrents
+/gondor/dot_config/config/.config/gtk-3.0
+/gondor/dot_config/config/.config/gtk-4.0
+/gondor/dot_config/config/.config/libaccounts-glib
+/gondor/dot_config/config/.config/libreoffice
+/gondor/dot_config/config/.config/mozilla
+/gondor/dot_config/config/.config/pulse
+/gondor/dot_config/config/.config/session
+/gondor/dot_config/config/.config/texstudio/cache
+/gondor/dot_config/config/.config/texstudio/completion
+/imlandris/dot_config/config/.config/BraveSoftware
+/imlandris/dot_config/config/.config/Insync/data
+/imlandris/dot_config/config/.config/Insync/live
+/imlandris/dot_config/config/.config/VSCodium/Cache
+/imlandris/dot_config/config/.config/VSCodium/CachedData
+/imlandris/dot_config/config/.config/VSCodium/CachedProfilesData
+/imlandris/dot_config/config/.config/VSCodium/Code Cache
+/imlandris/dot_config/config/.config/VSCodium/Crashpad
+/imlandris/dot_config/config/.config/VSCodium/DawnGraphiteCache
+/imlandris/dot_config/config/.config/VSCodium/DawnWebGPUCache
+/imlandris/dot_config/config/.config/VSCodium/GPUCache
+/imlandris/dot_config/config/.config/VSCodium/Local Storage
+/imlandris/dot_config/config/.config/VSCodium/Service Worker
+/imlandris/dot_config/config/.config/VSCodium/Session Storage
+/imlandris/dot_config/config/.config/VSCodium/Shared Dictionary
+/imlandris/dot_config/config/.config/VSCodium/User
+/imlandris/dot_config/config/.config/VSCodium/WebStorage
+/imlandris/dot_config/config/.config/evolution
+/imlandris/dot_config/config/.config/gh
+/imlandris/dot_config/config/.config/ibus
+/imlandris/dot_config/config/.config/libreoffice
+/imlandris/dot_config/config/.config/pulse
+/imlandris/dot_config/config/.config/rstudio/Cache
+/imlandris/dot_config/config/.config/rstudio/Code Cache
+/imlandris/dot_config/config/.config/rstudio/DawnGraphiteCache
+/imlandris/dot_config/config/.config/rstudio/DawnWebGPUCache
+/imlandris/dot_config/config/.config/rstudio/GPUCache
+/imlandris/dot_config/config/.config/rstudio/Local Storage
+/imlandris/dot_config/config/.config/rstudio/Session Storage
+/imlandris/dot_config/config/.config/rstudio/Shared Dictionary
+/imlandris/dot_config/config/.config/sublime-text/Installed Packages
+/imlandris/dot_config/config/.config/sublime-text/Lib
+/imlandris/dot_config/config/.config/texstudio/cache
+/imlandris/dot_config/config/.config/texstudio/completion
+/imlandris/dot_config/config/.config/vlc
+/numenor/dot_config/bin/.bin/.instala_fedora.sh.kate-swp
+/numenor/dot_config/config/.config/BraveSoftware
+/numenor/dot_config/config/.config/KDE
+/numenor/dot_config/config/.config/akonadi
+/numenor/dot_config/config/.config/akonadi_ical_resource_0rc
+/numenor/dot_config/config/.config/akonadi_indexing_agentrc
+/numenor/dot_config/config/.config/akonadi_maildir_resource_0rc
+/numenor/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
+/numenor/dot_config/config/.config/baloofilerc
+/numenor/dot_config/config/.config/emaildefaults
+/numenor/dot_config/config/.config/emailidentities
+/numenor/dot_config/config/.config/gtk-3.0
+/numenor/dot_config/config/.config/kate
+/numenor/dot_config/config/.config/kde.org
+/numenor/dot_config/config/.config/libaccounts-glib
+/numenor/dot_config/config/.config/libreoffice/4/cache
+/numenor/dot_config/config/.config/libreoffice/4/user
+/numenor/dot_config/config/.config/mozilla
+/numenor/dot_config/config/.config/pulse
+/numenor/dot_config/config/.config/rstudio/Cache
+/numenor/dot_config/config/.config/rstudio/Code Cache
+/numenor/dot_config/config/.config/rstudio/Crashpad
+/numenor/dot_config/config/.config/rstudio/DawnGraphiteCache
+/numenor/dot_config/config/.config/rstudio/DawnWebGPUCache
+/numenor/dot_config/config/.config/rstudio/GPUCache
+/numenor/dot_config/config/.config/rstudio/Local Storage
+/numenor/dot_config/config/.config/rstudio/Session Storage
+/numenor/dot_config/config/.config/rstudio/Shared Dictionary
+/numenor/dot_config/config/.config/texstudio/cache
+/numenor/dot_config/config/.config/texstudio/completion
+/numenor/dot_config/config/.config/vlc
+/rivendel/configuracoes_usando_stow/config/.config/.mono
+/rivendel/configuracoes_usando_stow/config/.config/Bitwarden
+/rivendel/configuracoes_usando_stow/config/.config/BraveSoftware
+/rivendel/configuracoes_usando_stow/config/.config/GitHub Desktop
+/rivendel/configuracoes_usando_stow/config/.config/akonadi
+/rivendel/configuracoes_usando_stow/config/.config/dconf
+/rivendel/configuracoes_usando_stow/config/.config/doom
+/rivendel/configuracoes_usando_stow/config/.config/enchant
+/rivendel/configuracoes_usando_stow/config/.config/evolution
+/rivendel/configuracoes_usando_stow/config/.config/fragments
+/rivendel/configuracoes_usando_stow/config/.config/go
+/rivendel/configuracoes_usando_stow/config/.config/gtk-3.0/assets
+/rivendel/configuracoes_usando_stow/config/.config/ibus
+/rivendel/configuracoes_usando_stow/config/.config/libreoffice
+/rivendel/configuracoes_usando_stow/config/.config/nvm
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Cache
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Code Cache
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Crashpad
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/DawnGraphiteCache
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/DawnWebGPUCache
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/GPUCache
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Local Storage
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Session Storage
+/rivendel/configuracoes_usando_stow/config/.config/rstudio/Shared Dictionary
+/rivendel/configuracoes_usando_stow/config/.config/session
+/rivendel/configuracoes_usando_stow/config/.config/spyder-py3
+/rivendel/configuracoes_usando_stow/config/.config/sublime-text
+/rivendel/configuracoes_usando_stow/config/.config/texstudio/completion
+/rivendel/configuracoes_usando_stow/config/.config/transmission
+/rivendel/configuracoes_usando_stow/config/.config/xm1
 /rivendel/stow_configs/config/.config/Bitwarden
 /rivendel/stow_configs/config/.config/BraveSoftware
 /rivendel/stow_configs/config/.config/GIMP
@@ -16,6 +146,8 @@
 /rivendel/stow_configs/config/.config/Pinta
 /rivendel/stow_configs/config/.config/Unknown Organization
 /rivendel/stow_configs/config/.config/akonadi
+/rivendel/stow_configs/config/.config/balenaEtcher
+/rivendel/stow_configs/config/.config/clipse
 /rivendel/stow_configs/config/.config/copyq
 /rivendel/stow_configs/config/.config/dconf
 /rivendel/stow_configs/config/.config/enchant
@@ -23,10 +155,12 @@
 /rivendel/stow_configs/config/.config/evince
 /rivendel/stow_configs/config/.config/evolution
 /rivendel/stow_configs/config/.config/falkon
+/rivendel/stow_configs/config/.config/fastfetch
 /rivendel/stow_configs/config/.config/fragments
 /rivendel/stow_configs/config/.config/freerdp/server
 /rivendel/stow_configs/config/.config/geogebra
 /rivendel/stow_configs/config/.config/go
+/rivendel/stow_configs/config/.config/google-chrome
 /rivendel/stow_configs/config/.config/gtk-3.0/assets
 /rivendel/stow_configs/config/.config/ibus
 /rivendel/stow_configs/config/.config/kate
@@ -36,13 +170,108 @@
 /rivendel/stow_configs/config/.config/libaccounts-glib
 /rivendel/stow_configs/config/.config/libreoffice
 /rivendel/stow_configs/config/.config/lxqt
+/rivendel/stow_configs/config/.config/mozilla
 /rivendel/stow_configs/config/.config/pulse
 /rivendel/stow_configs/config/.config/qtile/__pycache__
+/rivendel/stow_configs/config/.config/rstudio/Cache
+/rivendel/stow_configs/config/.config/rstudio/Code Cache
+/rivendel/stow_configs/config/.config/rstudio/Crashpad
+/rivendel/stow_configs/config/.config/rstudio/DawnGraphiteCache
+/rivendel/stow_configs/config/.config/rstudio/DawnWebGPUCache
+/rivendel/stow_configs/config/.config/rstudio/GPUCache
+/rivendel/stow_configs/config/.config/rstudio/Local Storage
+/rivendel/stow_configs/config/.config/rstudio/Session Storage
+/rivendel/stow_configs/config/.config/rstudio/Shared Dictionary
 /rivendel/stow_configs/config/.config/session
 /rivendel/stow_configs/config/.config/sublime-text
 /rivendel/stow_configs/config/.config/totem
 /rivendel/stow_configs/config/.config/transmission
 /rivendel/stow_configs/config/.config/vlc
+/rivendel/stow_configs/config/.config/winboat/Cache
+/rivendel/stow_configs/config/.config/winboat/Code Cache
+/rivendel/stow_configs/config/.config/winboat/Crashpad
+/rivendel/stow_configs/config/.config/winboat/DawnGraphiteCache
+/rivendel/stow_configs/config/.config/winboat/DawnWebGPUCache
+/rivendel/stow_configs/config/.config/winboat/GPUCache
+/rivendel/stow_configs/config/.config/winboat/Local Storage
+/rivendel/stow_configs/config/.config/winboat/Session Storage
+/rivendel/stow_configs/config/.config/winboat/Shared Dictionary
+/rivendel/stow_configs/config/.config/xournalpp/metadata
+/rivendel/stow_configs/texstudio/.var/app/io.github.shiftey.Desktop
+/shire/dot_config/config/.config/BraveSoftware
+/shire/dot_config/config/.config/dconf
+/shire/dot_config/config/.config/evolution
+/shire/dot_config/config/.config/gtk-3.0/assets
+/shire/dot_config/config/.config/ibus
+/shire/dot_config/config/.config/kdeconnect
+/shire/dot_config/config/.config/libreoffice
+/shire/dot_config/config/.config/pulse
+/shire/dot_config/config/.config/rstudio/Cache
+/shire/dot_config/config/.config/rstudio/Code Cache
+/shire/dot_config/config/.config/rstudio/Crashpad
+/shire/dot_config/config/.config/rstudio/DawnGraphiteCache
+/shire/dot_config/config/.config/rstudio/DawnWebGPUCache
+/shire/dot_config/config/.config/rstudio/Dictionaries
+/shire/dot_config/config/.config/rstudio/GPUCache
+/shire/dot_config/config/.config/rstudio/Local Storage
+/shire/dot_config/config/.config/rstudio/Session Storage
+/shire/dot_config/config/.config/rstudio/Shared Dictionary
+/shire/dot_config/config/.config/session
+/shire/dot_config/config/.config/texstudio/cache
+/shire/dot_config/config/.config/texstudio/completion
+/shire/dot_config/config/.config/transmission
+/tirith/configuracoes_usando_stow/config/.config/BraveSoftware
+/tirith/configuracoes_usando_stow/config/.config/browsh
+/tirith/configuracoes_usando_stow/config/.config/ibus
+/tirith/configuracoes_usando_stow/config/.config/pulse
+/tirith/configuracoes_usando_stow/config/.config/sublime-text
+/tirith/configuracoes_usando_stow/config/.config/texstudio/completion
+/valinor/dot_config/config/.config/BraveSoftware
+/valinor/dot_config/config/.config/Insync
+/valinor/dot_config/config/.config/VSCodium/Backups
+/valinor/dot_config/config/.config/VSCodium/Cache
+/valinor/dot_config/config/.config/VSCodium/CachedData
+/valinor/dot_config/config/.config/VSCodium/CachedProfilesData
+/valinor/dot_config/config/.config/VSCodium/Code Cache
+/valinor/dot_config/config/.config/VSCodium/Crashpad
+/valinor/dot_config/config/.config/VSCodium/DawnGraphiteCache
+/valinor/dot_config/config/.config/VSCodium/DawnWebGPUCache
+/valinor/dot_config/config/.config/VSCodium/Dictionaries
+/valinor/dot_config/config/.config/VSCodium/GPUCache
+/valinor/dot_config/config/.config/VSCodium/Local Storage
+/valinor/dot_config/config/.config/VSCodium/Service Worker
+/valinor/dot_config/config/.config/VSCodium/Session Storage
+/valinor/dot_config/config/.config/VSCodium/Shared Dictionary
+/valinor/dot_config/config/.config/VSCodium/User
+/valinor/dot_config/config/.config/VSCodium/WebStorage
+/valinor/dot_config/config/.config/evolution
+/valinor/dot_config/config/.config/gtk-3.0
+/valinor/dot_config/config/.config/gtk-4.0
+/valinor/dot_config/config/.config/ibus
+/valinor/dot_config/config/.config/kde.org
+/valinor/dot_config/config/.config/kdeconnect
+/valinor/dot_config/config/.config/kdedefaults
+/valinor/dot_config/config/.config/libaccounts-glib
+/valinor/dot_config/config/.config/libreoffice/4
+/valinor/dot_config/config/.config/mango/wallpaper
+/valinor/dot_config/config/.config/onedrive/.config.backup
+/valinor/dot_config/config/.config/onedrive/.config.hash
+/valinor/dot_config/config/.config/onedrive/refresh_token
+/valinor/dot_config/config/.config/pulse
+/valinor/dot_config/config/.config/rstudio
+/valinor/dot_config/config/.config/rstudio/Cache
+/valinor/dot_config/config/.config/rstudio/Code Cache
+/valinor/dot_config/config/.config/rstudio/DawnGraphiteCache
+/valinor/dot_config/config/.config/rstudio/DawnWebGPUCache
+/valinor/dot_config/config/.config/rstudio/GPUCache
+/valinor/dot_config/config/.config/rstudio/Local Storage
+/valinor/dot_config/config/.config/rstudio/Session Storage
+/valinor/dot_config/config/.config/rstudio/Shared Dictionary
+/valinor/dot_config/config/.config/session
+/valinor/dot_config/config/.config/sublime-text/Local
+/valinor/dot_config/config/.config/texstudio/cache
+/valinor/dot_config/config/.config/texstudio/completion
+/valinor/dot_config/config/.config/xsettingsd
 Arch/config/zsh/.zcompdump
 Arch/configs/hyprland/.config/hypr/hyprpaper.conf
 Arch/configs_stow/nvim/.config/nvim/lazy-lock.json
@@ -824,9 +1053,266 @@ Manjaro/config/R/Rhistory
 Manjaro/config/astronvim-jfreitas/lazy-lock.json
 Manjaro/config/zsh/.zcompdump
 NixOS/nixos-switch.log
+arda/dot_config/config/.config/.gsd-keyboard.settings-ported
+arda/dot_config/config/.config/atuin/atuin-receipt.json
+arda/dot_config/config/.config/dconf/user
+arda/dot_config/config/.config/fish/conf.d/atuin.env.fish
+arda/dot_config/config/.config/fragments/bandwidth-groups.json
+arda/dot_config/config/.config/fragments/connections.conf
+arda/dot_config/config/.config/fragments/stats.json
+arda/dot_config/config/.config/onedrive/.config.backup
+arda/dot_config/config/.config/onedrive/.config.hash
+arda/dot_config/config/.config/onedrive/items.sqlite3-shm
+arda/dot_config/config/.config/onedrive/items.sqlite3-wal
+arda/dot_config/config/.config/onedrive/refresh_token
+arda/dot_config/config/.config/rstudio/Cookies
+arda/dot_config/config/.config/rstudio/Cookies-journal
+arda/dot_config/config/.config/rstudio/DIPS
+arda/dot_config/config/.config/rstudio/Dictionaries/pt-BR-3-0.bdic
+arda/dot_config/config/.config/rstudio/Local State
+arda/dot_config/config/.config/rstudio/Network Persistent State
+arda/dot_config/config/.config/rstudio/Trust Tokens
+arda/dot_config/config/.config/rstudio/Trust Tokens-journal
+arda/dot_config/config/.config/rstudio/whats-new-state.json
+arda/dot_config/config/.config/texstudio/lastSession.txss2
+arda/dot_config/config/.config/texstudio/packageCache.dat
+arda/dot_config/config/.config/texstudio/wordCount.usage
+arda/dot_config/config/.config/user-dirs.locale
+arda/dot_config/config/.config/uv/uv-receipt.json
+gondor/dot_config/config/.config/KDE/UserFeedback.conf
+gondor/dot_config/config/.config/QtProject.conf
+gondor/dot_config/config/.config/Trolltech.conf
+gondor/dot_config/config/.config/akonadi-firstrunrc
+gondor/dot_config/config/.config/akonadi_contacts_resource_0rc
+gondor/dot_config/config/.config/akonadi_ical_resource_0rc
+gondor/dot_config/config/.config/akonadi_indexing_agentrc
+gondor/dot_config/config/.config/akonadi_maildir_resource_0rc
+gondor/dot_config/config/.config/atuin/atuin-receipt.json
+gondor/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
+gondor/dot_config/config/.config/autostart/dropbox.desktop
+gondor/dot_config/config/.config/baloofilerc
+gondor/dot_config/config/.config/dconf/user
+gondor/dot_config/config/.config/discoverrc
+gondor/dot_config/config/.config/emaildefaults
+gondor/dot_config/config/.config/emailidentities
+gondor/dot_config/config/.config/fragments/bandwidth-groups.json
+gondor/dot_config/config/.config/fragments/connections.conf
+gondor/dot_config/config/.config/fragments/dht.dat
+gondor/dot_config/config/.config/fragments/queue.json
+gondor/dot_config/config/.config/fragments/stats.json
+gondor/dot_config/config/.config/gtkrc
+gondor/dot_config/config/.config/gtkrc-2.0
+gondor/dot_config/config/.config/kactivitymanagerdrc
+gondor/dot_config/config/.config/katevirc
+gondor/dot_config/config/.config/kconf_updaterc
+gondor/dot_config/config/.config/kde.org/dragonplayer.conf
+gondor/dot_config/config/.config/kdeconnect/certificate.pem
+gondor/dot_config/config/.config/kdeconnect/config
+gondor/dot_config/config/.config/kdeconnect/privateKey.pem
+gondor/dot_config/config/.config/kded5rc
+gondor/dot_config/config/.config/kded6rc
+gondor/dot_config/config/.config/konsolesshconfig
+gondor/dot_config/config/.config/ktimezonedrc
+gondor/dot_config/config/.config/kwalletrc
+gondor/dot_config/config/.config/kwriterc
+gondor/dot_config/config/.config/nvim/lazy-lock.json
+gondor/dot_config/config/.config/okularrc
+gondor/dot_config/config/.config/onedrive/.config.backup
+gondor/dot_config/config/.config/onedrive/.config.hash
+gondor/dot_config/config/.config/onedrive/items.sqlite3-shm
+gondor/dot_config/config/.config/onedrive/items.sqlite3-wal
+gondor/dot_config/config/.config/onedrive/refresh_token
+gondor/dot_config/config/.config/plasma-localerc
+gondor/dot_config/config/.config/plasma-org.kde.plasma.desktop-appletsrc
+gondor/dot_config/config/.config/plasma-welcomerc
+gondor/dot_config/config/.config/plasmanotifyrc
+gondor/dot_config/config/.config/rclone/rclone.conf
+gondor/dot_config/config/.config/session/dolphin_dolphin_dolphin
+gondor/dot_config/config/.config/specialmailcollectionsrc
+gondor/dot_config/config/.config/sublime-text/Local/Auto Save Session.sublime_session
+gondor/dot_config/config/.config/sublime-text/Local/Session.sublime_session
+gondor/dot_config/config/.config/texstudio/lastSession.txss2
+gondor/dot_config/config/.config/texstudio/packageCache.dat
+gondor/dot_config/config/.config/texstudio/wordCount.usage
+gondor/dot_config/config/.config/toolbox/podman-system-migrate
+gondor/dot_config/config/.config/trashrc
+gondor/dot_config/config/.config/user-dirs.dirs
+gondor/dot_config/config/.config/user-dirs.locale
+gondor/dot_config/config/.config/uv/uv-receipt.json
+gondor/dot_config/config/.config/xsettingsd/xsettingsd.conf
+gondor/maquinas_virtuais/qemu/fedora.xml
+imlandris/dot_config/config/.config/.gsd-keyboard.settings-ported
+imlandris/dot_config/config/.config/Insync/logs.db
+imlandris/dot_config/config/.config/Insync/out.txt
+imlandris/dot_config/config/.config/Insync/settings.db
+imlandris/dot_config/config/.config/Insync/settings.db-wal
+imlandris/dot_config/config/.config/QtProject.conf
+imlandris/dot_config/config/.config/VSCodium/DIPS
+imlandris/dot_config/config/.config/VSCodium/Dictionaries/pt-BR-3-0.bdic
+imlandris/dot_config/config/.config/VSCodium/Local State
+imlandris/dot_config/config/.config/VSCodium/Network Persistent State
+imlandris/dot_config/config/.config/VSCodium/SharedStorage
+imlandris/dot_config/config/.config/VSCodium/TransportSecurity
+imlandris/dot_config/config/.config/VSCodium/Trust Tokens
+imlandris/dot_config/config/.config/VSCodium/Trust Tokens-journal
+imlandris/dot_config/config/.config/VSCodium/machineid
+imlandris/dot_config/config/.config/atuin/atuin-receipt.json
+imlandris/dot_config/config/.config/atuin/config.toml
+imlandris/dot_config/config/.config/dconf/user
+imlandris/dot_config/config/.config/fragments/bandwidth-groups.json
+imlandris/dot_config/config/.config/fragments/connections.conf
+imlandris/dot_config/config/.config/fragments/dht.dat
+imlandris/dot_config/config/.config/fragments/queue.json
+imlandris/dot_config/config/.config/fragments/settings.json
+imlandris/dot_config/config/.config/fragments/stats.json
+imlandris/dot_config/config/.config/gnome-mosaic/config.json
+imlandris/dot_config/config/.config/monitors.xml~
+imlandris/dot_config/config/.config/nvim/lazy-lock.json
+imlandris/dot_config/config/.config/onedrive/.config.backup
+imlandris/dot_config/config/.config/onedrive/.config.hash
+imlandris/dot_config/config/.config/onedrive/refresh_token
+imlandris/dot_config/config/.config/rofi/config.rasi-BKP
+imlandris/dot_config/config/.config/rstudio/DIPS
+imlandris/dot_config/config/.config/rstudio/Local State
+imlandris/dot_config/config/.config/rstudio/Network Persistent State
+imlandris/dot_config/config/.config/rstudio/Trust Tokens
+imlandris/dot_config/config/.config/rstudio/Trust Tokens-journal
+imlandris/dot_config/config/.config/rstudio/rstudio-prefs.json
+imlandris/dot_config/config/.config/rstudio/whats-new-state.json
+imlandris/dot_config/config/.config/sublime-text/Local/Auto Save Session.sublime_session
+imlandris/dot_config/config/.config/sublime-text/Local/Session.sublime_session
+imlandris/dot_config/config/.config/sublime-text/Packages/User/Package Control.user-ca-bundle
+imlandris/dot_config/config/.config/texstudio/lastSession.txss2
+imlandris/dot_config/config/.config/texstudio/packageCache.dat
+imlandris/dot_config/config/.config/texstudio/wordCount.usage
+imlandris/dot_config/config/.config/vlcrc
+numenor/dot_config/config/.config/PlasmaDiscoverUpdates
+numenor/dot_config/config/.config/QtProject.conf
+numenor/dot_config/config/.config/Trolltech.conf
+numenor/dot_config/config/.config/akonadi-firstrunrc
+numenor/dot_config/config/.config/akonadi_contacts_resource_0rc
+numenor/dot_config/config/.config/gtkrc
+numenor/dot_config/config/.config/gtkrc-2.0
+numenor/dot_config/config/.config/kate-externaltoolspluginrc
+numenor/dot_config/config/.config/katerc
+numenor/dot_config/config/.config/kdeconnect/certificate.pem
+numenor/dot_config/config/.config/kdeconnect/privateKey.pem
+numenor/dot_config/config/.config/ktrashrc
+numenor/dot_config/config/.config/nvim/lazy-lock.json
+numenor/dot_config/config/.config/onedrive/.config.backup
+numenor/dot_config/config/.config/onedrive/.config.hash
+numenor/dot_config/config/.config/onedrive/items.sqlite3-shm
+numenor/dot_config/config/.config/onedrive/items.sqlite3-wal
+numenor/dot_config/config/.config/onedrive/refresh_token
+numenor/dot_config/config/.config/onedrive/resume_download.tDlqR4SVLCMm05I8
+numenor/dot_config/config/.config/partitionmanagerrc
+numenor/dot_config/config/.config/plasma-welcomerc
+numenor/dot_config/config/.config/rstudio/Cookies
+numenor/dot_config/config/.config/rstudio/Cookies-journal
+numenor/dot_config/config/.config/rstudio/DIPS
+numenor/dot_config/config/.config/rstudio/Network Persistent State
+numenor/dot_config/config/.config/rstudio/Trust Tokens
+numenor/dot_config/config/.config/rstudio/Trust Tokens-journal
+numenor/dot_config/config/.config/rstudio/whats-new-state.json
+numenor/dot_config/config/.config/session/dolphin_dolphin_dolphin
+numenor/dot_config/config/.config/session/kwin_saved at previous logout_
+numenor/dot_config/config/.config/sublime-text/Local/Auto Save Session.sublime_session
+numenor/dot_config/config/.config/sublime-text/Local/Session.sublime_session
+numenor/dot_config/config/.config/systemmonitorrc
+numenor/dot_config/config/.config/texstudio/lastSession.txss2
+numenor/dot_config/config/.config/texstudio/packageCache.dat
+numenor/dot_config/config/.config/texstudio/wordCount.usage
+numenor/dot_config/config/.config/toolbox/podman-system-migrate
+numenor/dot_config/config/.config/transmission/queue.json
+numenor/dot_config/config/.config/transmission/stats.json
+numenor/dot_config/config/.config/trashrc
+numenor/dot_config/config/.config/uv/uv-receipt.json
+numenor/dot_config/config/.config/vlc/vlc-qt-interface.conf
+numenor/dot_config/config/.config/vlcrc
+numenor/maquinas_virtuais/qemu/nixos.xml
+rivendel/configuracoes_usando_stow/config/.config/.gsd-keyboard.settings-ported
+rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell-BKP/.changelog-1.4
+rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell-BKP/.firstlaunch
+rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell/.changelog-1.4
+rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell/.firstlaunch
+rivendel/configuracoes_usando_stow/config/.config/KDE/UserFeedback.conf
+rivendel/configuracoes_usando_stow/config/.config/KeePassXCrc
+rivendel/configuracoes_usando_stow/config/.config/QtProject.conf
+rivendel/configuracoes_usando_stow/config/.config/Trolltech.conf
+rivendel/configuracoes_usando_stow/config/.config/atuin/atuin-receipt.json
+rivendel/configuracoes_usando_stow/config/.config/baloofileinformationrc
+rivendel/configuracoes_usando_stow/config/.config/dconf/user
+rivendel/configuracoes_usando_stow/config/.config/emacs/
+rivendel/configuracoes_usando_stow/config/.config/evince/print-settings
+rivendel/configuracoes_usando_stow/config/.config/fish/conf.d/atuin.env.fish
+rivendel/configuracoes_usando_stow/config/.config/fish/conf.d/uv.env.fish
+rivendel/configuracoes_usando_stow/config/.config/gnome-xdg-terminals.list
+rivendel/configuracoes_usando_stow/config/.config/gtk-4.0/servers
+rivendel/configuracoes_usando_stow/config/.config/gtkrc
+rivendel/configuracoes_usando_stow/config/.config/gwenviewrc
+rivendel/configuracoes_usando_stow/config/.config/htop/htoprc
+rivendel/configuracoes_usando_stow/config/.config/katevirc
+rivendel/configuracoes_usando_stow/config/.config/kiorc
+rivendel/configuracoes_usando_stow/config/.config/kmail2rc
+rivendel/configuracoes_usando_stow/config/.config/kmailsearchindexingrc
+rivendel/configuracoes_usando_stow/config/.config/knfsshare
+rivendel/configuracoes_usando_stow/config/.config/kwinoutputconfig.json
+rivendel/configuracoes_usando_stow/config/.config/kwriterc
+rivendel/configuracoes_usando_stow/config/.config/menus
+rivendel/configuracoes_usando_stow/config/.config/menus/applications.menu
+rivendel/configuracoes_usando_stow/config/.config/monitors.xml~
+rivendel/configuracoes_usando_stow/config/.config/nvim/.luarc.json
+rivendel/configuracoes_usando_stow/config/.config/nvim/.neoconf.json
+rivendel/configuracoes_usando_stow/config/.config/nvim/.stylua.toml
+rivendel/configuracoes_usando_stow/config/.config/nvim/README.md
+rivendel/configuracoes_usando_stow/config/.config/nvim/lazy-lock.json
+rivendel/configuracoes_usando_stow/config/.config/nvim/lua/plugins/indent.log
+rivendel/configuracoes_usando_stow/config/.config/nvim/neovim.yml
+rivendel/configuracoes_usando_stow/config/.config/nvim/selene.toml
+rivendel/configuracoes_usando_stow/config/.config/okularpartrc
+rivendel/configuracoes_usando_stow/config/.config/okularrc
+rivendel/configuracoes_usando_stow/config/.config/onedrive/items.sqlite3-shm
+rivendel/configuracoes_usando_stow/config/.config/onedrive/items.sqlite3-wal
+rivendel/configuracoes_usando_stow/config/.config/onedrive/refresh_token
+rivendel/configuracoes_usando_stow/config/.config/onedrive/resume_download.d6cNBhs1O5Tma2WU
+rivendel/configuracoes_usando_stow/config/.config/org.gnome.Ptyxis/session.gvariant
+rivendel/configuracoes_usando_stow/config/.config/partitionmanagerrc
+rivendel/configuracoes_usando_stow/config/.config/phishingurlrc
+rivendel/configuracoes_usando_stow/config/.config/picom/README.md
+rivendel/configuracoes_usando_stow/config/.config/plasmanotifyrc
+rivendel/configuracoes_usando_stow/config/.config/pulse/cookie
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Cookies
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Cookies-journal
+rivendel/configuracoes_usando_stow/config/.config/rstudio/DIPS
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Network Persistent State
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Trust Tokens
+rivendel/configuracoes_usando_stow/config/.config/rstudio/Trust Tokens-journal
+rivendel/configuracoes_usando_stow/config/.config/rstudio/whats-new-state.json
+rivendel/configuracoes_usando_stow/config/.config/spectaclerc
+rivendel/configuracoes_usando_stow/config/.config/texstudio/lastSession.txss2
+rivendel/configuracoes_usando_stow/config/.config/texstudio/packageCache.dat
+rivendel/configuracoes_usando_stow/config/.config/texstudio/wordCount.usage
+rivendel/configuracoes_usando_stow/config/.config/trashrc
+rivendel/configuracoes_usando_stow/config/.config/uv/uv-receipt.json
+rivendel/configuracoes_usando_stow/config/.config/vlc
+rivendel/configuracoes_usando_stow/config/.config/vlcrc
+rivendel/configuracoes_usando_stow/config/.config/xdg-terminals.list
+rivendel/configuracoes_usando_stow/config/.config/xsettingsd/xsettingsd.conf
+rivendel/configuracoes_usando_stow/zsh_history/.zsh_history
+rivendel/gnome/debian_gnome_settings.ini-bkp
+rivendel/maquinas_virtuais/qemu/CachyOS.xml
 rivendel/maquinas_virtuais/qemu/Debian.xml
+rivendel/maquinas_virtuais/qemu/Fedora.xml
+rivendel/maquinas_virtuais/qemu/NixOS.xml
+rivendel/maquinas_virtuais/qemu/PFSense.xml
+rivendel/maquinas_virtuais/qemu/PFsense.xml
 rivendel/maquinas_virtuais/qemu/VoidLinux.xml
+rivendel/maquinas_virtuais/qemu/Webmail.xml
+rivendel/maquinas_virtuais/qemu/debian13.xml
+rivendel/maquinas_virtuais/qemu/freebsd15.0.xml
+rivendel/maquinas_virtuais/qemu/manjaro.xml
 rivendel/stow_configs/config/.config/.gsd-keyboard.settings-ported
+rivendel/stow_configs/config/.config/.mono/keypairs
 rivendel/stow_configs/config/.config/PlasmaDiscoverUpdates
 rivendel/stow_configs/config/.config/QtProject.conf
 rivendel/stow_configs/config/.config/Trolltech.conf
@@ -837,14 +1323,19 @@ rivendel/stow_configs/config/.config/akonadi_indexing_agentrc
 rivendel/stow_configs/config/.config/akonadi_maildir_resource_0rc
 rivendel/stow_configs/config/.config/arkrc
 rivendel/stow_configs/config/.config/atuin/atuin-receipt.json
+rivendel/stow_configs/config/.config/autostart/dropbox.desktop
 rivendel/stow_configs/config/.config/baloofilerc
+rivendel/stow_configs/config/.config/btop/btop.log
 rivendel/stow_configs/config/.config/emaildefaults
 rivendel/stow_configs/config/.config/emailidentities
 rivendel/stow_configs/config/.config/filetypesrc
+rivendel/stow_configs/config/.config/fish/conf.d/uv.env.fish
 rivendel/stow_configs/config/.config/gnome-initial-setup-done
 rivendel/stow_configs/config/.config/gtk-4.0/servers
 rivendel/stow_configs/config/.config/gtkrc
 rivendel/stow_configs/config/.config/gtkrc-2.0
+rivendel/stow_configs/config/.config/htop/htoprc
+rivendel/stow_configs/config/.config/hypr/hyprpaper.conf
 rivendel/stow_configs/config/.config/kalarmrc
 rivendel/stow_configs/config/.config/kate-externaltoolspluginrc
 rivendel/stow_configs/config/.config/katerc
@@ -859,6 +1350,7 @@ rivendel/stow_configs/config/.config/kwalletrc
 rivendel/stow_configs/config/.config/kwinoutputconfig.json
 rivendel/stow_configs/config/.config/lazygit/config.yml
 rivendel/stow_configs/config/.config/mimeapps.list
+rivendel/stow_configs/config/.config/monitors.xml~
 rivendel/stow_configs/config/.config/nautilus/search-metadata
 rivendel/stow_configs/config/.config/nvim/lazy-lock.json
 rivendel/stow_configs/config/.config/nvim/lazyvim.json
@@ -870,6 +1362,7 @@ rivendel/stow_configs/config/.config/onedrive/.config.hash
 rivendel/stow_configs/config/.config/onedrive/items.sqlite3-shm
 rivendel/stow_configs/config/.config/onedrive/items.sqlite3-wal
 rivendel/stow_configs/config/.config/onedrive/refresh_token
+rivendel/stow_configs/config/.config/onedrive/resume_download.*
 rivendel/stow_configs/config/.config/onedrive/session_upload.*
 rivendel/stow_configs/config/.config/onedrive/session_upload.3TFYf9QVjEqxeUlv
 rivendel/stow_configs/config/.config/onedrive/session_upload.AVCey47fXW1zxMHp
@@ -886,677 +1379,174 @@ rivendel/stow_configs/config/.config/pavucontrol.ini
 rivendel/stow_configs/config/.config/plasma-welcomerc
 rivendel/stow_configs/config/.config/qtile/__pycache__/colors.cpython-311.pyc
 rivendel/stow_configs/config/.config/qtile/__pycache__/config.cpython-311.pyc
+rivendel/stow_configs/config/.config/rstudio/Cookies
+rivendel/stow_configs/config/.config/rstudio/Cookies-journal
+rivendel/stow_configs/config/.config/rstudio/DIPS
+rivendel/stow_configs/config/.config/rstudio/Dictionaries/pt-BR-3-0.bdic
+rivendel/stow_configs/config/.config/rstudio/Network Persistent State
+rivendel/stow_configs/config/.config/rstudio/SharedStorage
+rivendel/stow_configs/config/.config/rstudio/Trust Tokens
+rivendel/stow_configs/config/.config/rstudio/Trust Tokens-journal
+rivendel/stow_configs/config/.config/rstudio/crash-handler.conf
+rivendel/stow_configs/config/.config/rstudio/rstudio-prefs.json
 rivendel/stow_configs/config/.config/specialmailcollectionsrc
+rivendel/stow_configs/config/.config/texstudio/packageCache.dat
 rivendel/stow_configs/config/.config/trashrc
+rivendel/stow_configs/config/.config/uv/uv-receipt.json
 rivendel/stow_configs/config/.config/volumeicon/volumeicon
 rivendel/stow_configs/config/.config/yazi/keymap.toml
 rivendel/stow_configs/config/.config/yazi/keymap.toml-1749649365043113
 rivendel/stow_configs/config/.config/yazi/yazi.toml-1749649365038831
-stow_configs/config/.config/gtkrc
-/rivendel/stow_configs/config/.config/fastfetch
-/rivendel/stow_configs/config/.config/balenaEtcher
-rivendel/stow_configs/config/.config/onedrive/resume_download.*
-/rivendel/stow_configs/config/.config/xournalpp/metadata
-rivendel/stow_configs/config/.config/autostart/dropbox.desktop
-rivendel/stow_configs/config/.config/htop/htoprc
-rivendel/stow_configs/config/.config/hypr/hyprpaper.conf
-/rivendel/stow_configs/config/.config/rstudio/Cache
-/rivendel/stow_configs/config/.config/rstudio/Code Cache
-rivendel/stow_configs/config/.config/rstudio/Cookies
-rivendel/stow_configs/config/.config/rstudio/Cookies-journal
-rivendel/stow_configs/config/.config/rstudio/crash-handler.conf
-/rivendel/stow_configs/config/.config/rstudio/Crashpad
-/rivendel/stow_configs/config/.config/rstudio/DawnGraphiteCache
-/rivendel/stow_configs/config/.config/rstudio/DawnWebGPUCache
-rivendel/stow_configs/config/.config/rstudio/Dictionaries/pt-BR-3-0.bdic
-/rivendel/stow_configs/config/.config/rstudio/GPUCache
-/rivendel/stow_configs/config/.config/rstudio/Local Storage
-rivendel/stow_configs/config/.config/rstudio/Network Persistent State
-/rivendel/stow_configs/config/.config/rstudio/Session Storage
-/rivendel/stow_configs/config/.config/rstudio/Shared Dictionary
-rivendel/stow_configs/config/.config/rstudio/SharedStorage
-rivendel/stow_configs/config/.config/rstudio/Trust Tokens
-rivendel/stow_configs/config/.config/rstudio/Trust Tokens-journal
-/rivendel/stow_configs/config/.config/winboat/Cache
-rivendel/stow_configs/config/.config/fish/conf.d/uv.env.fish
-rivendel/stow_configs/config/.config/monitors.xml~
-/rivendel/stow_configs/config/.config/winboat/Code Cache
-/rivendel/stow_configs/config/.config/winboat/Crashpad
-/rivendel/stow_configs/config/.config/winboat/DawnGraphiteCache
-/rivendel/stow_configs/config/.config/winboat/DawnWebGPUCache
-/rivendel/stow_configs/config/.config/winboat/GPUCache
-/rivendel/stow_configs/config/.config/winboat/Local Storage
-/rivendel/stow_configs/config/.config/winboat/Session Storage
-/rivendel/stow_configs/config/.config/winboat/Shared Dictionary
-rivendel/stow_configs/config/.config/rstudio/DIPS
-rivendel/stow_configs/config/.config/rstudio/rstudio-prefs.json
-rivendel/stow_configs/config/.config/uv/uv-receipt.json
-rivendel/maquinas_virtuais/qemu/CachyOS.xml
-rivendel/maquinas_virtuais/qemu/CachyOS.xml
-rivendel/maquinas_virtuais/qemu/Fedora.xml
-rivendel/maquinas_virtuais/qemu/NixOS.xml
-rivendel/maquinas_virtuais/qemu/CachyOS.xml
-rivendel/stow_configs/config/.config/btop/btop.log
-/rivendel/stow_configs/config/.config/clipse
-rivendel/maquinas_virtuais/qemu/debian13.xml
-rivendel/maquinas_virtuais/qemu/manjaro.xml
-/rivendel/stow_configs/config/.config/mozilla
-rivendel/stow_configs/config/.config/hypr/hyprpaper.conf
-rivendel/stow_configs/config/.config/.mono/keypairs
-/rivendel/stow_configs/texstudio/.var/app/io.github.shiftey.Desktop
 rivendel/stow_configs/extensions/.local/share/gnome-shell/session-active-history.json
-/rivendel/stow_configs/config/.config/google-chrome
-rivendel/stow_configs/config/.config/texstudio/packageCache.dat
-rivendel/stow_configs/config/.config/uv/uv-receipt.json
-/rivendel/configuracoes_usando_stow/config/.config/.mono
-rivendel/configuracoes_usando_stow/config/.config/atuin/atuin-receipt.json
-/rivendel/configuracoes_usando_stow/config/.config/gtk-3.0/assets
-rivendel/configuracoes_usando_stow/config/.config/nvim/lazy-lock.json
-rivendel/configuracoes_usando_stow/config/.config/onedrive/items.sqlite3-shm
-rivendel/configuracoes_usando_stow/config/.config/onedrive/items.sqlite3-wal
-rivendel/configuracoes_usando_stow/config/.config/onedrive/refresh_token
-rivendel/configuracoes_usando_stow/config/.config/picom/README.md
-rivendel/configuracoes_usando_stow/zsh_history/.zsh_history
-/rivendel/configuracoes_usando_stow/config/.config/BraveSoftware
-/rivendel/configuracoes_usando_stow/config/.config/transmission
-/rivendel/configuracoes_usando_stow/config/.config/libreoffice
-rivendel/configuracoes_usando_stow/config/.config/pulse/cookie
-rivendel/configuracoes_usando_stow/config/.config/xdg-terminals.list
-rivendel/configuracoes_usando_stow/config/.config/gnome-xdg-terminals.list
-/rivendel/configuracoes_usando_stow/config/.config/sublime-text
-/rivendel/configuracoes_usando_stow/config/.config/ibus
-/rivendel/configuracoes_usando_stow/config/.config/evolution
-/rivendel/configuracoes_usando_stow/config/.config/enchant
-/rivendel/configuracoes_usando_stow/config/.config/dconf
-/rivendel/configuracoes_usando_stow/config/.config/texstudio/completion
-rivendel/configuracoes_usando_stow/config/.config/texstudio/lastSession.txss2
-rivendel/configuracoes_usando_stow/config/.config/texstudio/packageCache.dat
-rivendel/configuracoes_usando_stow/config/.config/texstudio/wordCount.usage
-rivendel/configuracoes_usando_stow/config/.config/dconf/user
-rivendel/configuracoes_usando_stow/config/.config/QtProject.conf
-/rivendel/configuracoes_usando_stow/config/.config/xm1
-rivendel/configuracoes_usando_stow/config/.config/vlc
-/rivendel/configuracoes_usando_stow/config/.config/spyder-py3
-rivendel/configuracoes_usando_stow/config/.config/emacs/
-rivendel/configuracoes_usando_stow/config/.config/menus
-rivendel/configuracoes_usando_stow/config/.config/htop/htoprc
-rivendel/configuracoes_usando_stow/config/.config/menus/applications.menu
-/rivendel/configuracoes_usando_stow/config/.config/rstudio/Cache
-/rivendel/configuracoes_usando_stow/config/.config/rstudio/Code Cache
-rivendel/configuracoes_usando_stow/config/.config/rstudio/Cookies
-rivendel/configuracoes_usando_stow/config/.config/rstudio/Cookies-journal
-/rivendel/configuracoes_usando_stow/config/.config/rstudio/Crashpad
-/rivendel/configuracoes_usando_stow/config/.config/rstudio/DawnGraphiteCache
-/rivendel/configuracoes_usando_stow/config/.config/rstudio/DawnWebGPUCache
-rivendel/configuracoes_usando_stow/config/.config/rstudio/DIPS
-/rivendel/configuracoes_usando_stow/config/.config/rstudio/GPUCache
-/rivendel/configuracoes_usando_stow/config/.config/rstudio/Local Storage
-rivendel/configuracoes_usando_stow/config/.config/rstudio/Network Persistent State
-rivendel/configuracoes_usando_stow/config/.config/org.gnome.Ptyxis/session.gvariant
-/rivendel/configuracoes_usando_stow/config/.config/rstudio/Session Storage
-/rivendel/configuracoes_usando_stow/config/.config/rstudio/Shared Dictionary
-rivendel/configuracoes_usando_stow/config/.config/rstudio/Trust Tokens
-rivendel/configuracoes_usando_stow/config/.config/rstudio/Trust Tokens-journal
-/rivendel/configuracoes_usando_stow/config/.config/doom
-rivendel/configuracoes_usando_stow/config/.config/nvim/.luarc.json
-rivendel/configuracoes_usando_stow/config/.config/nvim/.neoconf.json
-rivendel/configuracoes_usando_stow/config/.config/nvim/.stylua.toml
-rivendel/configuracoes_usando_stow/config/.config/nvim/neovim.yml
-rivendel/configuracoes_usando_stow/config/.config/nvim/README.md
-rivendel/configuracoes_usando_stow/config/.config/nvim/selene.toml
-rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell/.firstlaunch
-rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell/.changelog-1.4
-rivendel/configuracoes_usando_stow/config/.config/fish/conf.d/atuin.env.fish
-rivendel/configuracoes_usando_stow/config/.config/fish/conf.d/uv.env.fish
-rivendel/configuracoes_usando_stow/config/.config/.gsd-keyboard.settings-ported
-rivendel/configuracoes_usando_stow/config/.config/uv/uv-receipt.json
-rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell-BKP/.changelog-1.4
-rivendel/configuracoes_usando_stow/config/.config/DankMaterialShell-BKP/.firstlaunch
-rivendel/configuracoes_usando_stow/config/.config/evince/print-settings
-/tirith/configuracoes_usando_stow/config/.config/BraveSoftware
-/tirith/configuracoes_usando_stow/config/.config/browsh
-/tirith/configuracoes_usando_stow/config/.config/ibus
+shire/dot_config/config/.config/.gsd-keyboard.settings-ported
+shire/dot_config/config/.config/QtProject.conf
+shire/dot_config/config/.config/arkrc
+shire/dot_config/config/.config/atuin/atuin-receipt.json
+shire/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
+shire/dot_config/config/.config/autostart/dropbox.desktop
+shire/dot_config/config/.config/bluedevilglobalrc
+shire/dot_config/config/.config/drkonqirc
+shire/dot_config/config/.config/fish/conf.d/atuin.env.fish
+shire/dot_config/config/.config/fish/conf.d/uv.env.fish
+shire/dot_config/config/.config/gtkrc
+shire/dot_config/config/.config/gtkrc-2.0
+shire/dot_config/config/.config/hypr/hyprpaper.conf
+shire/dot_config/config/.config/katevirc
+shire/dot_config/config/.config/kiorc
+shire/dot_config/config/.config/konsolesshconfig
+shire/dot_config/config/.config/kwalletrc
+shire/dot_config/config/.config/kwinoutputconfig.json
+shire/dot_config/config/.config/kwinrc
+shire/dot_config/config/.config/kwriterc
+shire/dot_config/config/.config/monitors.xml~
+shire/dot_config/config/.config/nvim/lazy-lock.json
+shire/dot_config/config/.config/onedrive/.config.backup
+shire/dot_config/config/.config/onedrive/.config.hash
+shire/dot_config/config/.config/onedrive/items.sqlite3-shm
+shire/dot_config/config/.config/onedrive/items.sqlite3-wal
+shire/dot_config/config/.config/onedrive/refresh_token
+shire/dot_config/config/.config/org.gnome.Ptyxis/session.gvariant
+shire/dot_config/config/.config/partitionmanagerrc
+shire/dot_config/config/.config/plasma-welcomerc
+shire/dot_config/config/.config/rstudio/Cookies
+shire/dot_config/config/.config/rstudio/Cookies-journal
+shire/dot_config/config/.config/rstudio/DIPS
+shire/dot_config/config/.config/rstudio/Network Persistent State
+shire/dot_config/config/.config/rstudio/Trust Tokens
+shire/dot_config/config/.config/rstudio/Trust Tokens-journal
+shire/dot_config/config/.config/rstudio/whats-new-state.json
+shire/dot_config/config/.config/sublime-text/Local/Auto Save Session.sublime_session
+shire/dot_config/config/.config/sublime-text/Local/Session.sublime_session
+shire/dot_config/config/.config/systemmonitorrc
+shire/dot_config/config/.config/texstudio/lastSession.txss2
+shire/dot_config/config/.config/texstudio/packageCache.dat
+shire/dot_config/config/.config/texstudio/wordCount.usage
+shire/dot_config/config/.config/trashrc
+shire/dot_config/config/.config/uv/uv-receipt.json
+shire/maquinas_virtuais/qemu/OpenSUSE.xml
+stow_configs/config/.config/gtkrc
+temporario/config/.config/KDE
+temporario/config/.config/PlasmaDiscoverUpdates
+temporario/config/.config/Trolltech.conf
+temporario/config/.config/bluedevilglobalrc
+temporario/config/.config/dconf
+temporario/config/.config/gtk-3.0
+temporario/config/.config/gtk-4.0
+temporario/config/.config/kactivitymanagerdrc
+temporario/config/.config/kconf_updaterc
+temporario/config/.config/kde.org
+temporario/config/.config/kdeconnect
+temporario/config/.config/kded5rc
+temporario/config/.config/kdedefaults
+temporario/config/.config/ktrashrc
+temporario/config/.config/kwinoutputconfig.json
+temporario/config/.config/lazygit
+temporario/config/.config/libaccounts-glib
+temporario/config/.config/plasma-localerc
+temporario/config/.config/plasma-welcomerc
+temporario/config/.config/pulse
+temporario/config/.config/session/dolphin_dolphin_dolphin
+temporario/config/.config/user-dirs.dirs
+temporario/config/.config/user-dirs.locale
+temporario/config/.config/xsettingsd
+tirith/configuracoes_usando_stow/config/.config/QtProject.conf
 tirith/configuracoes_usando_stow/config/.config/onedrive/items.sqlite3-shm
 tirith/configuracoes_usando_stow/config/.config/onedrive/items.sqlite3-wal
 tirith/configuracoes_usando_stow/config/.config/onedrive/refresh_token
-/tirith/configuracoes_usando_stow/config/.config/pulse
-/tirith/configuracoes_usando_stow/config/.config/sublime-text
-/tirith/configuracoes_usando_stow/config/.config/texstudio/completion
+tirith/configuracoes_usando_stow/config/.config/onedrive/session_upload.70E1PXZgIc6tCTxe
 tirith/configuracoes_usando_stow/config/.config/texstudio/lastSession.txss2
 tirith/configuracoes_usando_stow/config/.config/texstudio/packageCache.dat
 tirith/configuracoes_usando_stow/config/.config/texstudio/wordCount.usage
 tirith/configuracoes_usando_stow/config/.config/uv/uv-receipt.json
-tirith/configuracoes_usando_stow/config/.config/onedrive/session_upload.70E1PXZgIc6tCTxe
-tirith/configuracoes_usando_stow/config/.config/QtProject.conf
-rivendel/gnome/debian_gnome_settings.ini-bkp
-rivendel/configuracoes_usando_stow/config/.config/monitors.xml~
-/rivendel/configuracoes_usando_stow/config/.config/Bitwarden
-/rivendel/configuracoes_usando_stow/config/.config/GitHub Desktop
-/rivendel/configuracoes_usando_stow/config/.config/go
-/rivendel/configuracoes_usando_stow/config/.config/nvm
-/rivendel/configuracoes_usando_stow/config/.config/fragments
-rivendel/configuracoes_usando_stow/config/.config/trashrc
-rivendel/configuracoes_usando_stow/config/.config/katevirc
-rivendel/configuracoes_usando_stow/config/.config/KDE/UserFeedback.conf
-rivendel/configuracoes_usando_stow/config/.config/KeePassXCrc
-rivendel/configuracoes_usando_stow/config/.config/knfsshare
-rivendel/configuracoes_usando_stow/config/.config/partitionmanagerrc
-rivendel/configuracoes_usando_stow/config/.config/plasmanotifyrc
-/rivendel/configuracoes_usando_stow/config/.config/session
-rivendel/configuracoes_usando_stow/config/.config/kwriterc
-rivendel/maquinas_virtuais/qemu/freebsd15.0.xml
-/rivendel/configuracoes_usando_stow/config/.config/akonadi
-rivendel/configuracoes_usando_stow/config/.config/baloofileinformationrc
-rivendel/configuracoes_usando_stow/config/.config/gtkrc
-rivendel/configuracoes_usando_stow/config/.config/gwenviewrc
-rivendel/configuracoes_usando_stow/config/.config/kmail2rc
-rivendel/configuracoes_usando_stow/config/.config/kmailsearchindexingrc
-rivendel/configuracoes_usando_stow/config/.config/kwinoutputconfig.json
-rivendel/configuracoes_usando_stow/config/.config/okularpartrc
-rivendel/configuracoes_usando_stow/config/.config/okularrc
-rivendel/configuracoes_usando_stow/config/.config/onedrive/resume_download.d6cNBhs1O5Tma2WU
-rivendel/configuracoes_usando_stow/config/.config/phishingurlrc
-rivendel/configuracoes_usando_stow/config/.config/rstudio/whats-new-state.json
-rivendel/configuracoes_usando_stow/config/.config/spectaclerc
-rivendel/configuracoes_usando_stow/config/.config/vlcrc
-rivendel/configuracoes_usando_stow/config/.config/kiorc
-rivendel/configuracoes_usando_stow/config/.config/nvim/lua/plugins/indent.log
-rivendel/maquinas_virtuais/qemu/PFSense.xml
-rivendel/maquinas_virtuais/qemu/PFsense.xml
-rivendel/configuracoes_usando_stow/config/.config/gtk-4.0/servers
-/numenor/dot_config/config/.config/BraveSoftware
-/numenor/dot_config/config/.config/gtk-3.0
-/numenor/dot_config/config/.config/kde.org
-/numenor/dot_config/config/.config/KDE
-numenor/dot_config/config/.config/kdeconnect/certificate.pem
-numenor/dot_config/config/.config/kdeconnect/privateKey.pem
-numenor/dot_config/config/.config/nvim/lazy-lock.json
-numenor/dot_config/config/.config/onedrive/.config.backup
-numenor/dot_config/config/.config/onedrive/.config.hash
-numenor/dot_config/config/.config/onedrive/items.sqlite3-shm
-numenor/dot_config/config/.config/onedrive/items.sqlite3-wal
-numenor/dot_config/config/.config/onedrive/refresh_token
-numenor/dot_config/config/.config/plasma-welcomerc
-/numenor/dot_config/config/.config/pulse
-numenor/dot_config/config/.config/QtProject.conf
-/numenor/dot_config/config/.config/rstudio/Cache
-/numenor/dot_config/config/.config/rstudio/Code Cache
-numenor/dot_config/config/.config/rstudio/Cookies
-numenor/dot_config/config/.config/rstudio/Cookies-journal
-/numenor/dot_config/config/.config/rstudio/Crashpad
-/numenor/dot_config/config/.config/rstudio/DawnGraphiteCache
-/numenor/dot_config/config/.config/rstudio/DawnWebGPUCache
-numenor/dot_config/config/.config/rstudio/DIPS
-/numenor/dot_config/config/.config/rstudio/GPUCache
-/numenor/dot_config/config/.config/rstudio/Local Storage
-numenor/dot_config/config/.config/rstudio/Network Persistent State
-/numenor/dot_config/config/.config/rstudio/Session Storage
-/numenor/dot_config/config/.config/rstudio/Shared Dictionary
-numenor/dot_config/config/.config/rstudio/Trust Tokens
-numenor/dot_config/config/.config/rstudio/Trust Tokens-journal
-numenor/dot_config/config/.config/rstudio/whats-new-state.json
-numenor/dot_config/config/.config/session/dolphin_dolphin_dolphin
-numenor/dot_config/config/.config/session/kwin_saved at previous logout_
-numenor/dot_config/config/.config/sublime-text/Local/Session.sublime_session
-numenor/dot_config/config/.config/trashrc
-numenor/dot_config/config/.config/Trolltech.conf
-numenor/dot_config/config/.config/uv/uv-receipt.json
-rivendel/maquinas_virtuais/qemu/Webmail.xml
-rivendel/configuracoes_usando_stow/config/.config/xsettingsd/xsettingsd.conf
-rivendel/configuracoes_usando_stow/config/.config/Trolltech.conf
-numenor/dot_config/config/.config/texstudio/lastSession.txss2
-numenor/dot_config/config/.config/texstudio/packageCache.dat
-numenor/dot_config/config/.config/texstudio/wordCount.usage
-numenor/dot_config/config/.config/sublime-text/Local/Auto Save Session.sublime_session
-numenor/dot_config/config/.config/ktrashrc
-/numenor/dot_config/config/.config/kate
-numenor/dot_config/config/.config/kate-externaltoolspluginrc
-numenor/dot_config/config/.config/katerc
-numenor/dot_config/config/.config/katerc
-numenor/dot_config/config/.config/partitionmanagerrc
-numenor/dot_config/config/.config/gtkrc
-numenor/dot_config/config/.config/gtkrc-2.0
-numenor/dot_config/config/.config/PlasmaDiscoverUpdates
-/numenor/dot_config/config/.config/texstudio/cache
-/numenor/dot_config/config/.config/texstudio/completion
-numenor/dot_config/config/.config/systemmonitorrc
-/numenor/dot_config/config/.config/libreoffice/4/cache
-/numenor/dot_config/config/.config/libreoffice/4/user
-/numenor/dot_config/config/.config/libaccounts-glib
-numenor/dot_config/config/.config/vlc/vlc-qt-interface.conf
-numenor/dot_config/config/.config/vlcrc
-/numenor/dot_config/config/.config/vlc
-numenor/dot_config/config/.config/onedrive/resume_download.tDlqR4SVLCMm05I8
-numenor/dot_config/config/.config/transmission/queue.json
-numenor/dot_config/config/.config/transmission/stats.json
-numenor/maquinas_virtuais/qemu/nixos.xml
-/numenor/dot_config/config/.config/mozilla
-numenor/dot_config/config/.config/toolbox/podman-system-migrate
-/valinor/dot_config/config/.config/texstudio/cache
-/valinor/dot_config/config/.config/texstudio/completion
-valinor/dot_config/config/.config/sublime-text/Local/Session.sublime_session
-/valinor/dot_config/config/.config/rstudio/Cache
-/valinor/dot_config/config/.config/rstudio/DawnWebGPUCache
-/valinor/dot_config/config/.config/rstudio/GPUCache
-/valinor/dot_config/config/.config/rstudio/Local Storage
-/valinor/dot_config/config/.config/rstudio/Session Storage
-/valinor/dot_config/config/.config/rstudio/Shared Dictionary
-/valinor/dot_config/config/.config/rstudio/Code Cache
-/valinor/dot_config/config/.config/rstudio/DawnGraphiteCache
-/valinor/dot_config/config/.config/libreoffice/4
-/valinor/dot_config/config/.config/onedrive/.config.backup
-/valinor/dot_config/config/.config/onedrive/.config.hash
-/valinor/dot_config/config/.config/onedrive/refresh_token
-/valinor/dot_config/config/.config/pulse
-/valinor/dot_config/config/.config/rstudio
-/valinor/dot_config/config/.config/session
-/valinor/dot_config/config/.config/kdeconnect
-/valinor/dot_config/config/.config/kdeconnect
-/numenor/dot_config/bin/.bin/.instala_fedora.sh.kate-swp
-/numenor/dot_config/config/.config/akonadi
-numenor/dot_config/config/.config/akonadi_contacts_resource_0rc
-numenor/dot_config/config/.config/akonadi-firstrunrc
-/numenor/dot_config/config/.config/akonadi_ical_resource_0rc
-/numenor/dot_config/config/.config/akonadi_indexing_agentrc
-/numenor/dot_config/config/.config/akonadi_maildir_resource_0rc
-/numenor/dot_config/config/.config/baloofilerc
-/numenor/dot_config/config/.config/emaildefaults
-/numenor/dot_config/config/.config/emailidentities
-/numenor/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
-shire/dot_config/config/.config/onedrive/.config.backup
-shire/dot_config/config/.config/onedrive/.config.hash
-shire/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
-/shire/dot_config/config/.config/BraveSoftware
-shire/dot_config/config/.config/bluedevilglobalrc
-/shire/dot_config/config/.config/pulse
-/shire/dot_config/config/.config/session
-/shire/dot_config/config/.config/libreoffice
-shire/dot_config/config/.config/trashrc
-shire/dot_config/config/.config/texstudio/packageCache.dat
-/shire/dot_config/config/.config/texstudio/cache
-shire/dot_config/config/.config/texstudio/lastSession.txss2
-shire/dot_config/config/.config/texstudio/wordCount.usage
-shire/dot_config/config/.config/systemmonitorrc
-shire/dot_config/config/.config/katevirc
-shire/dot_config/config/.config/kwalletrc
-shire/dot_config/config/.config/kwinoutputconfig.json
-shire/dot_config/config/.config/kwriterc
-shire/dot_config/config/.config/konsolesshconfig
-shire/dot_config/config/.config/QtProject.conf
-shire/dot_config/config/.config/kwinrc
-shire/dot_config/config/.config/onedrive/items.sqlite3-wal
-shire/dot_config/config/.config/onedrive/refresh_token
-/shire/dot_config/config/.config/dconf
-shire/dot_config/config/.config/sublime-text/Local/Session.sublime_session
-shire/maquinas_virtuais/qemu/OpenSUSE.xml
-shire/dot_config/config/.config/onedrive/items.sqlite3-shm
-shire/dot_config/config/.config/sublime-text/Local/Auto Save Session.sublime_session
-shire/dot_config/config/.config/kiorc
-/shire/dot_config/config/.config/gtk-3.0/assets
-shire/dot_config/config/.config/arkrc
-shire/dot_config/config/.config/gtkrc
-/shire/dot_config/config/.config/kdeconnect
-shire/dot_config/config/.config/partitionmanagerrc
-shire/dot_config/config/.config/plasma-welcomerc
-shire/dot_config/config/.config/gtkrc-2.0
-shire/dot_config/config/.config/gtkrc
-shire/dot_config/config/.config/uv/uv-receipt.json
-shire/dot_config/config/.config/atuin/atuin-receipt.json
-shire/dot_config/config/.config/drkonqirc
-/shire/dot_config/config/.config/evolution
-shire/dot_config/config/.config/fish/conf.d/atuin.env.fish
-shire/dot_config/config/.config/fish/conf.d/uv.env.fish
-/shire/dot_config/config/.config/ibus
-shire/dot_config/config/.config/org.gnome.Ptyxis/session.gvariant
-shire/dot_config/config/.config/.gsd-keyboard.settings-ported
-shire/dot_config/config/.config/autostart/dropbox.desktop
-/shire/dot_config/config/.config/texstudio/completion
-/shire/dot_config/config/.config/rstudio/Cache
-/shire/dot_config/config/.config/rstudio/Code Cache
-shire/dot_config/config/.config/rstudio/Cookies
-shire/dot_config/config/.config/rstudio/Cookies-journal
-/shire/dot_config/config/.config/rstudio/Crashpad
-/shire/dot_config/config/.config/rstudio/DawnGraphiteCache
-/shire/dot_config/config/.config/rstudio/DawnWebGPUCache
-shire/dot_config/config/.config/rstudio/DIPS
-/shire/dot_config/config/.config/rstudio/GPUCache
-/shire/dot_config/config/.config/rstudio/Dictionaries
-/shire/dot_config/config/.config/rstudio/Local Storage
-shire/dot_config/config/.config/rstudio/Network Persistent State
-/shire/dot_config/config/.config/rstudio/Session Storage
-/shire/dot_config/config/.config/rstudio/Shared Dictionary
-shire/dot_config/config/.config/rstudio/Trust Tokens
-shire/dot_config/config/.config/rstudio/Trust Tokens-journal
-shire/dot_config/config/.config/rstudio/whats-new-state.json
-shire/dot_config/config/.config/hypr/hyprpaper.conf
-shire/dot_config/config/.config/nvim/lazy-lock.json
-shire/dot_config/config/.config/monitors.xml~
-/gondor/dot_config/config/.config/akonadi
-gondor/dot_config/config/.config/akonadi-firstrunrc
-gondor/dot_config/config/.config/akonadi_contacts_resource_0rc
-gondor/dot_config/config/.config/akonadi_ical_resource_0rc
-gondor/dot_config/config/.config/akonadi_indexing_agentrc
-gondor/dot_config/config/.config/akonadi_maildir_resource_0rc
-gondor/dot_config/config/.config/atuin/atuin-receipt.json
-gondor/dot_config/config/.config/autostart/com.bitwarden.desktop.desktop
-gondor/dot_config/config/.config/autostart/dropbox.desktop
-gondor/dot_config/config/.config/baloofilerc
-/gondor/dot_config/config/.config/BraveSoftware/Brave-Browser
-gondor/dot_config/config/.config/dconf/user
-gondor/dot_config/config/.config/emaildefaults
-gondor/dot_config/config/.config/emailidentities
-/gondor/dot_config/config/.config/gtk-3.0
-/gondor/dot_config/config/.config/gtk-4.0
-gondor/dot_config/config/.config/kdeconnect/certificate.pem
-gondor/dot_config/config/.config/kdeconnect/privateKey.pem
-/gondor/dot_config/config/.config/libaccounts-glib
-/gondor/dot_config/config/.config/libreoffice
-/gondor/dot_config/config/.config/mozilla
-gondor/dot_config/config/.config/onedrive/.config.backup
-gondor/dot_config/config/.config/onedrive/.config.hash
-gondor/dot_config/config/.config/onedrive/items.sqlite3-shm
-gondor/dot_config/config/.config/onedrive/items.sqlite3-wal
-gondor/dot_config/config/.config/onedrive/refresh_token
-gondor/dot_config/config/.config/sublime-text/Local/Auto Save Session.sublime_session
-gondor/dot_config/config/.config/trashrc
-gondor/dot_config/config/.config/Trolltech.conf
-gondor/dot_config/config/.config/uv/uv-receipt.json
-/shire/dot_config/config/.config/transmission
-gondor/dot_config/config/.config/nvim/lazy-lock.json
-gondor/dot_config/config/.config/QtProject.conf
-/gondor/dot_config/config/.config/pulse
-gondor/dot_config/config/.config/specialmailcollectionsrc
-gondor/dot_config/config/.config/toolbox/podman-system-migrate
-gondor/dot_config/config/.config/user-dirs.locale
-gondor/dot_config/config/.config/user-dirs.dirs
-gondor/dot_config/config/.config/texstudio/lastSession.txss2
-gondor/dot_config/config/.config/texstudio/packageCache.dat
-gondor/dot_config/config/.config/texstudio/wordCount.usage
-/gondor/dot_config/config/.config/texstudio/cache
-/gondor/dot_config/config/.config/texstudio/completion
-gondor/dot_config/config/.config/katevirc
-gondor/dot_config/config/.config/kactivitymanagerdrc
-gondor/dot_config/config/.config/kconf_updaterc
-gondor/dot_config/config/.config/kdeconnect/config
-gondor/dot_config/config/.config/kded5rc
-gondor/dot_config/config/.config/kded6rc
-gondor/dot_config/config/.config/konsolesshconfig
-gondor/dot_config/config/.config/ktimezonedrc
-gondor/dot_config/config/.config/kwalletrc
-gondor/dot_config/config/.config/kwriterc
-gondor/dot_config/config/.config/plasma-localerc
-gondor/dot_config/config/.config/plasma-welcomerc
-gondor/dot_config/config/.config/gtkrc
-gondor/dot_config/config/.config/gtkrc-2.0
-gondor/dot_config/config/.config/sublime-text/Local/Session.sublime_session
-gondor/dot_config/config/.config/xsettingsd/xsettingsd.conf
-/gondor/dot_config/config/.config/session
-gondor/dot_config/config/.config/session/dolphin_dolphin_dolphin
-gondor/dot_config/config/.config/plasma-org.kde.plasma.desktop-appletsrc
-gondor/dot_config/config/.config/KDE/UserFeedback.conf
-gondor/dot_config/config/.config/fragments/bandwidth-groups.json
-gondor/dot_config/config/.config/fragments/connections.conf
-gondor/dot_config/config/.config/fragments/dht.dat
-gondor/dot_config/config/.config/fragments/queue.json
-gondor/dot_config/config/.config/fragments/stats.json
-gondor/dot_config/config/.config/kde.org/dragonplayer.conf
-gondor/dot_config/config/.config/plasmanotifyrc
-gondor/dot_config/config/.config/discoverrc
-/gondor/dot_config/config/.config/fragments/resume
-/gondor/dot_config/config/.config/fragments/torrents
-gondor/maquinas_virtuais/qemu/fedora.xml
-arda/dot_config/config/.config/atuin/atuin-receipt.json
-arda/dot_config/config/.config/.gsd-keyboard.settings-ported
-arda/dot_config/config/.config/dconf/user
-/arda/dot_config/config/.config/evolution
-arda/dot_config/config/.config/fish/conf.d/atuin.env.fish
-/arda/dot_config/config/.config/ibus
-/arda/dot_config/config/.config/mozilla
-/arda/dot_config/config/.config/org.gnome.Ptyxis
-arda/dot_config/config/.config/onedrive/refresh_token
-arda/dot_config/config/.config/onedrive/items.sqlite3-wal
-arda/dot_config/config/.config/onedrive/items.sqlite3-shm
-arda/dot_config/config/.config/onedrive/.config.hash
-arda/dot_config/config/.config/onedrive/.config.backup
-/arda/dot_config/config/.config/pulse
-/arda/dot_config/config/.config/sublime-text/Local
-/arda/dot_config/config/.config/texstudio/cache
-/arda/dot_config/config/.config/texstudio/completion
-/arda/dot_config/config/.config/texstudio/dictionaries
-arda/dot_config/config/.config/texstudio/lastSession.txss2
-arda/dot_config/config/.config/texstudio/packageCache.dat
-arda/dot_config/config/.config/texstudio/wordCount.usage
-arda/dot_config/config/.config/user-dirs.locale
-arda/dot_config/config/.config/uv/uv-receipt.json
-gondor/dot_config/config/.config/rclone/rclone.conf
-gondor/dot_config/config/.config/okularrc
-/arda/dot_config/config/.config/BraveSoftware
-/arda/dot_config/config/.config/rstudio/Cache
-/arda/dot_config/config/.config/rstudio/Code Cache
-arda/dot_config/config/.config/rstudio/Cookies
-arda/dot_config/config/.config/rstudio/Cookies-journal
-/arda/dot_config/config/.config/rstudio/Crashpad
-/arda/dot_config/config/.config/rstudio/DawnGraphiteCache
-/arda/dot_config/config/.config/rstudio/DawnWebGPUCache
-arda/dot_config/config/.config/rstudio/Dictionaries/pt-BR-3-0.bdic
-arda/dot_config/config/.config/rstudio/DIPS
-/arda/dot_config/config/.config/rstudio/GPUCache
-arda/dot_config/config/.config/rstudio/Local State
-/arda/dot_config/config/.config/rstudio/Local Storage
-arda/dot_config/config/.config/rstudio/Network Persistent State
-/arda/dot_config/config/.config/rstudio/Session Storage
-/arda/dot_config/config/.config/rstudio/Shared Dictionary
-arda/dot_config/config/.config/rstudio/Trust Tokens
-arda/dot_config/config/.config/rstudio/Trust Tokens-journal
-arda/dot_config/config/.config/rstudio/whats-new-state.json
-/arda/dot_config/config/.config/libreoffice
-arda/dot_config/config/.config/fragments/bandwidth-groups.json
-arda/dot_config/config/.config/fragments/connections.conf
-arda/dot_config/config/.config/fragments/stats.json
-/valinor/dot_config/config/.config/BraveSoftware
-valinor/dot_config/config/.config/dconf/user
-valinor/dot_config/config/.config/gnome-xdg-terminals.list
-valinor/dot_config/config/.config/fish/conf.d/uv.env.fish
-valinor/dot_config/config/.config/fish/conf.d/atuin.env.fish
-/valinor/dot_config/config/.config/evolution
-/valinor/dot_config/config/.config/ibus
-valinor/dot_config/config/.config/user-dirs.locale
-valinor/dot_config/config/.config/uv/uv-receipt.json
-valinor/dot_config/config/.config/xdg-terminals.list
 valinor/dot_config/config/.config/.gsd-keyboard.settings-ported
-valinor/dot_config/config/.config/atuin/atuin-receipt.json
-valinor/dot_config/config/.config/onedrive/items.sqlite3-shm
-valinor/dot_config/config/.config/onedrive/items.sqlite3-wal
-/valinor/dot_config/config/.config/sublime-text/Local
-valinor/dot_config/config/.config/monitors.xml~
 valinor/dot_config/config/.config/BraveSoftware/Brave-Browser/BrowserMetrics-spare.pma
-valinor/dot_config/config/.config/BraveSoftware/Brave-Browser/BrowserMetrics-spare.pma
-valinor/dot_config/config/.config/vlc/vlcrc
-valinor/dot_config/config/.config/vlc/vlc-qt-interface.conf
-/valinor/dot_config/config/.config/VSCodium/Backups
-/valinor/dot_config/config/.config/VSCodium/Cache
-/valinor/dot_config/config/.config/VSCodium/CachedData
-/valinor/dot_config/config/.config/VSCodium/CachedProfilesData
-/valinor/dot_config/config/.config/VSCodium/Code Cache
-/valinor/dot_config/config/.config/VSCodium/DawnGraphiteCache
-/valinor/dot_config/config/.config/VSCodium/DawnWebGPUCache
-/valinor/dot_config/config/.config/VSCodium/GPUCache
-/valinor/dot_config/config/.config/VSCodium/Local Storage
-valinor/dot_config/config/.config/VSCodium/Network Persistent State
-valinor/dot_config/config/.config/VSCodium/machineid
-valinor/dot_config/config/.config/VSCodium/Local State
+valinor/dot_config/config/.config/KDE
+valinor/dot_config/config/.config/KDE/UserFeedback.org.kde.plasma-welcome.conf
+valinor/dot_config/config/.config/PlasmaDiscoverUpdates
+valinor/dot_config/config/.config/QtProject.conf
+valinor/dot_config/config/.config/Trolltech.conf
 valinor/dot_config/config/.config/VSCodium/DIPS
-/valinor/dot_config/config/.config/VSCodium/Dictionaries
-/valinor/dot_config/config/.config/VSCodium/Crashpad
-/valinor/dot_config/config/.config/VSCodium/Service Worker
-/valinor/dot_config/config/.config/VSCodium/Session Storage
-/valinor/dot_config/config/.config/VSCodium/Shared Dictionary
-valinor/dot_config/config/.config/VSCodium/TransportSecurity
+valinor/dot_config/config/.config/VSCodium/Local State
+valinor/dot_config/config/.config/VSCodium/Network Persistent State
 valinor/dot_config/config/.config/VSCodium/SharedStorage
+valinor/dot_config/config/.config/VSCodium/TransportSecurity
 valinor/dot_config/config/.config/VSCodium/Trust Tokens
 valinor/dot_config/config/.config/VSCodium/Trust Tokens-journal
-/valinor/dot_config/config/.config/VSCodium/User
-/valinor/dot_config/config/.config/VSCodium/WebStorage
+valinor/dot_config/config/.config/VSCodium/machineid
+valinor/dot_config/config/.config/alacritty/alacritty.toml.6507b52e.bak
+valinor/dot_config/config/.config/atuin/atuin-receipt.json
+valinor/dot_config/config/.config/dconf/user
+valinor/dot_config/config/.config/device_automounter_kcmrc
+valinor/dot_config/config/.config/fish/conf.d/atuin.env.fish
+valinor/dot_config/config/.config/fish/conf.d/uv.env.fish
 valinor/dot_config/config/.config/fragments/bandwidth-groups.json
 valinor/dot_config/config/.config/fragments/connections.conf
+valinor/dot_config/config/.config/fragments/dht.dat
 valinor/dot_config/config/.config/fragments/queue.json
 valinor/dot_config/config/.config/fragments/stats.json
-valinor/dot_config/config/.config/fragments/dht.dat
-valinor/dot_config/config/.config/texstudio/wordCount.usage
-valinor/maquinas_virtuais/qemu/Debian.xml
-valinor/dot_config/config/.config/transmission/stats.json
-valinor/dot_config/config/.config/transmission/queue.json
-valinor/dot_config/config/.config/transmission/dht.dat
-valinor/dot_config/config/.config/transmission/bandwidth-groups.json
-valinor/dot_config/config/.config/totem/state.ini
-valinor/dot_config/config/.config/texstudio/lastSession.txss2
-valinor/dot_config/config/.config/QtProject.conf
-valinor/dot_config/config/.config/htop/htoprc
-/valinor/dot_config/config/.config/mango/wallpaper
-valinor/dot_config/config/.config/sublime-text/Installed Packages/0_package_control_loader.sublime-package
-valinor/dot_config/config/.config/sublime-text/Installed Packages/Package Control.sublime-package
-valinor/dot_config/config/.config/sublime-text/Lib/python33/package_control.py
-valinor/dot_config/config/.config/sublime-text/Lib/python38/package_control.py
-valinor/dot_config/config/.config/sublime-text/Packages/User/Package Control.user-ca-bundle
-valinor/dot_config/config/.config/sublime-text/Lib/python314/package_control.py
-valinor/dot_config/config/.config/onedrive/resume_download.lqrQRjA5SHFksz6J
-valinor/dot_config/config/.config/rclone/rclone.conf
-valinor/dot_config/config/.config/yelp/yelp.cfg
-/valinor/dot_config/config/.config/Insync
-temporario/config/.config/KDE
-temporario/config/.config/dconf
-temporario/config/.config/gtk-3.0
-temporario/config/.config/gtk-4.0
-temporario/config/.config/kde.org
-temporario/config/.config/kdeconnect
-temporario/config/.config/kdedefaults
-temporario/config/.config/lazygit
-temporario/config/.config/pulse
-temporario/config/.config/xsettingsd
-temporario/config/.config/Trolltech.conf
-temporario/config/.config/bluedevilglobalrc
-temporario/config/.config/kconf_updaterc
-temporario/config/.config/kded5rc
-temporario/config/.config/kactivitymanagerdrc
-temporario/config/.config/kwinoutputconfig.json
-temporario/config/.config/plasma-localerc
-temporario/config/.config/plasma-welcomerc
-temporario/config/.config/user-dirs.dirs
-temporario/config/.config/user-dirs.locale
-valinor/maquinas_virtuais/qemu/FedoraKDE.xml=======
-temporario/config/.config/PlasmaDiscoverUpdates
-temporario/config/.config/ktrashrc
-temporario/config/.config/session/dolphin_dolphin_dolphin
-
-temporario/config/.config/libaccounts-glib
-/valinor/dot_config/config/.config/gtk-3.0
-/valinor/dot_config/config/.config/gtk-4.0
+valinor/dot_config/config/.config/gh/config.yml
+valinor/dot_config/config/.config/gh/hosts.yml
+valinor/dot_config/config/.config/gnome-xdg-terminals.list
 valinor/dot_config/config/.config/gtkrc
 valinor/dot_config/config/.config/gtkrc-2.0
-/valinor/dot_config/config/.config/kde.org
-valinor/dot_config/config/.config/KDE/UserFeedback.org.kde.plasma-welcome.conf
-/valinor/dot_config/config/.config/libaccounts-glib
-valinor/dot_config/config/.config/Trolltech.conf
-/valinor/dot_config/config/.config/xsettingsd
-valinor/dot_config/config/.config/PlasmaDiscoverUpdates
-valinor/dot_config/config/.config/plasma-welcomerc
+valinor/dot_config/config/.config/htop/htoprc
 valinor/dot_config/config/.config/kactivitymanagerd-statsrc
 valinor/dot_config/config/.config/kactivitymanagerdrc
 valinor/dot_config/config/.config/kconf_updaterc
 valinor/dot_config/config/.config/kded5rc
-/valinor/dot_config/config/.config/kdedefaults
+valinor/dot_config/config/.config/kiorc
+valinor/dot_config/config/.config/konsolesshconfig
 valinor/dot_config/config/.config/ktimezonedrc
 valinor/dot_config/config/.config/kwinoutputconfig.json
-valinor/dot_config/config/.config/QtProject.conf
-valinor/dot_config/config/.config/konsolesshconfig
-valinor/dot_config/config/.config/device_automounter_kcmrc
+valinor/dot_config/config/.config/monitors.xml~
+valinor/dot_config/config/.config/onedrive/items.sqlite3-shm
+valinor/dot_config/config/.config/onedrive/items.sqlite3-wal
+valinor/dot_config/config/.config/onedrive/resume_download.lqrQRjA5SHFksz6J
 valinor/dot_config/config/.config/partitionmanagerrc
-valinor/dot_config/config/.config/vlcrc
+valinor/dot_config/config/.config/plasma-welcomerc
+valinor/dot_config/config/.config/rclone/rclone.conf
+valinor/dot_config/config/.config/sublime-text/Installed Packages/0_package_control_loader.sublime-package
+valinor/dot_config/config/.config/sublime-text/Installed Packages/Package Control.sublime-package
+valinor/dot_config/config/.config/sublime-text/Lib/python314/package_control.py
+valinor/dot_config/config/.config/sublime-text/Lib/python33/package_control.py
+valinor/dot_config/config/.config/sublime-text/Lib/python38/package_control.py
+valinor/dot_config/config/.config/sublime-text/Local/Session.sublime_session
+valinor/dot_config/config/.config/sublime-text/Packages/User/Package Control.user-ca-bundle
+valinor/dot_config/config/.config/texstudio/lastSession.txss2
+valinor/dot_config/config/.config/texstudio/wordCount.usage
+valinor/dot_config/config/.config/totem/state.ini
+valinor/dot_config/config/.config/transmission/bandwidth-groups.json
+valinor/dot_config/config/.config/transmission/dht.dat
+valinor/dot_config/config/.config/transmission/queue.json
+valinor/dot_config/config/.config/transmission/stats.json
 valinor/dot_config/config/.config/trashrc
-valinor/dot_config/config/.config/KDE
-valinor/dot_config/config/.config/alacritty/alacritty.toml.6507b52e.bak
+valinor/dot_config/config/.config/user-dirs.locale
+valinor/dot_config/config/.config/uv/uv-receipt.json
+valinor/dot_config/config/.config/vlc/vlc-qt-interface.conf
+valinor/dot_config/config/.config/vlc/vlcrc
+valinor/dot_config/config/.config/vlcrc
+valinor/dot_config/config/.config/xdg-terminals.list
+valinor/dot_config/config/.config/yelp/yelp.cfg
 valinor/dot_config/local/.local/share/applications/claude-code-url-handler.desktop
-valinor/dot_config/config/.config/QtProject.conf
-valinor/dot_config/config/.config/kiorc
-valinor/dot_config/config/.config/gh/hosts.yml
-valinor/dot_config/config/.config/gh/config.yml
-/imlandris/dot_config/config/.config/BraveSoftware
-/imlandris/dot_config/config/.config/evolution
-imlandris/dot_config/config/.config/fragments/dht.dat
-imlandris/dot_config/config/.config/fragments/queue.json
-imlandris/dot_config/config/.config/fragments/connections.conf
-imlandris/dot_config/config/.config/fragments/stats.json
-/imlandris/dot_config/config/.config/gh
-/imlandris/dot_config/config/.config/ibus
-/imlandris/dot_config/config/.config/Insync/data
-/imlandris/dot_config/config/.config/Insync/live
-imlandris/dot_config/config/.config/Insync/logs.db
-imlandris/dot_config/config/.config/Insync/out.txt
-imlandris/dot_config/config/.config/Insync/settings.db
-imlandris/dot_config/config/.config/Insync/settings.db-wal
-/imlandris/dot_config/config/.config/libreoffice
-/imlandris/dot_config/config/.config/rstudio/Cache
-/imlandris/dot_config/config/.config/rstudio/Code Cache
-/imlandris/dot_config/config/.config/texstudio/cache
-/imlandris/dot_config/config/.config/vlc
-imlandris/dot_config/config/.config/vlcrc
-/imlandris/dot_config/config/.config/VSCodium/Cache
-/imlandris/dot_config/config/.config/VSCodium/CachedData
-/imlandris/dot_config/config/.config/VSCodium/CachedProfilesData
-/imlandris/dot_config/config/.config/VSCodium/Code Cache
-/imlandris/dot_config/config/.config/VSCodium/Crashpad
-/imlandris/dot_config/config/.config/VSCodium/DawnGraphiteCache
-/imlandris/dot_config/config/.config/VSCodium/DawnWebGPUCache
-imlandris/dot_config/config/.config/VSCodium/DIPS
-/imlandris/dot_config/config/.config/VSCodium/GPUCache
-imlandris/dot_config/config/.config/VSCodium/Local State
-/imlandris/dot_config/config/.config/VSCodium/Local Storage
-imlandris/dot_config/config/.config/VSCodium/Network Persistent State
-imlandris/dot_config/config/.config/VSCodium/machineid
-/imlandris/dot_config/config/.config/VSCodium/Service Worker
-/imlandris/dot_config/config/.config/VSCodium/Session Storage
-/imlandris/dot_config/config/.config/VSCodium/Shared Dictionary
-imlandris/dot_config/config/.config/VSCodium/Trust Tokens
-imlandris/dot_config/config/.config/VSCodium/TransportSecurity
-imlandris/dot_config/config/.config/VSCodium/SharedStorage
-/imlandris/dot_config/config/.config/VSCodium/User
-/imlandris/dot_config/config/.config/VSCodium/WebStorage
-/imlandris/dot_config/config/.config/texstudio/completion
-imlandris/dot_config/config/.config/texstudio/lastSession.txss2
-imlandris/dot_config/config/.config/texstudio/packageCache.dat
-imlandris/dot_config/config/.config/texstudio/wordCount.usage
-imlandris/dot_config/config/.config/VSCodium/Trust Tokens-journal
-imlandris/dot_config/config/.config/.gsd-keyboard.settings-ported
-imlandris/dot_config/config/.config/atuin/atuin-receipt.json
-imlandris/dot_config/config/.config/atuin/config.toml
-imlandris/dot_config/config/.config/dconf/user
-imlandris/dot_config/config/.config/fragments/bandwidth-groups.json
-imlandris/dot_config/config/.config/gnome-mosaic/config.json
-imlandris/dot_config/config/.config/fragments/settings.json
-imlandris/dot_config/config/.config/monitors.xml~
-imlandris/dot_config/config/.config/nvim/lazy-lock.json
-imlandris/dot_config/config/.config/onedrive/.config.backup
-imlandris/dot_config/config/.config/onedrive/.config.hash
-imlandris/dot_config/config/.config/onedrive/refresh_token
-/imlandris/dot_config/config/.config/pulse
-imlandris/dot_config/config/.config/rofi/config.rasi-BKP
-/imlandris/dot_config/config/.config/rstudio/DawnGraphiteCache
-/imlandris/dot_config/config/.config/rstudio/DawnWebGPUCache
-imlandris/dot_config/config/.config/rstudio/DIPS
-/imlandris/dot_config/config/.config/rstudio/GPUCache
-imlandris/dot_config/config/.config/rstudio/Local State
-/imlandris/dot_config/config/.config/rstudio/Local Storage
-imlandris/dot_config/config/.config/rstudio/Network Persistent State
-imlandris/dot_config/config/.config/rstudio/rstudio-prefs.json
-/imlandris/dot_config/config/.config/rstudio/Session Storage
-/imlandris/dot_config/config/.config/rstudio/Shared Dictionary
-imlandris/dot_config/config/.config/rstudio/Trust Tokens
-imlandris/dot_config/config/.config/rstudio/Trust Tokens-journal
-imlandris/dot_config/config/.config/rstudio/whats-new-state.json
-/imlandris/dot_config/config/.config/sublime-text/Installed Packages
-/imlandris/dot_config/config/.config/sublime-text/Lib
-imlandris/dot_config/config/.config/sublime-text/Packages/User/Package Control.user-ca-bundle
-imlandris/dot_config/config/.config/sublime-text/Local/Session.sublime_session
-imlandris/dot_config/config/.config/VSCodium/Dictionaries/pt-BR-3-0.bdic
-imlandris/dot_config/config/.config/sublime-text/Local/Auto Save Session.sublime_session
-imlandris/dot_config/config/.config/QtProject.conf
+valinor/maquinas_virtuais/qemu/Debian.xml
+valinor/maquinas_virtuais/qemu/FedoraKDE.xml=======
